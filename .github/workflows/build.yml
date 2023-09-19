@@ -1,13 +1,13 @@
-name: Create new tagged release
+name: Build master branch
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - "master"
 
 jobs:
-  tag-release:
-    name: "Create tagged release"
+  create-build:
+    name: "Create build"
     runs-on: "ubuntu-latest"
 
     steps:
@@ -43,5 +43,14 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
+          prerelease: true
+          automatic_release_tag: "latest-dev"
+          title: "Development Build"
           files: "build/libs/addressbook.jar"
+
+      - name: Upload build as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: addressbook.jar.zip
+          path: build/libs/addressbook.jar
+          if-no-files-found: error
