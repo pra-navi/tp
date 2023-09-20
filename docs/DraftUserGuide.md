@@ -141,7 +141,7 @@ Output:
 
 Errors:
 
-- `<TODO DEMO ERROR>`
+![addPerson error](images/error/addPerson_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -194,7 +194,11 @@ Output:
 
 Errors:
 
-- `<TODO DEMO ERROR>`
+- Incorrect parameters or command format
+![editPerson error](images/error/editPerson_error.png)
+
+- Incorrect or missing index 
+![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -236,7 +240,7 @@ Output:
 
 Errors:
 
-- `<TODO DEMO ERROR>`
+![findPerson error](images/error/findPerson_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -268,7 +272,7 @@ Output:
 
 Errors:
 
-- `<TODO DEMO ERROR>`
+![deletePerson error](images/error/deletePerson_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -316,11 +320,11 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+![addTask_success](images/output/addTask_success.png)
 
 Errors:
 
-- `<TODO DEMO ERROR>`
+![addTask_error](images/error/addTask_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -341,7 +345,7 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+![listTask_success](images/output/listTask_success.png)
 
 
 <div style="page-break-after: always;"></div>
@@ -369,13 +373,15 @@ Examples:
 - `findTask Call Caterer` returns `Call Flower`, `Caterer Find`
 
 Output:
+- There are search outcomes to be displayed.
+  ![findTask_success](images/output/findTask_success.png)
 
-- `<TODO DEMO OUTPUT>`
+- There are no search outcomes to be displayed.
+  ![addTask_noResults](images/output/findTask_noResults.png)
 
 Errors:
 
-- `<TODO DEMO ERROR>`
-- `findTask Callo CatererO` returns `No Task Found Error`
+![findTask_error](images/error/findTask_error.png)
 
 
 <div style="page-break-after: always;"></div>
@@ -402,12 +408,11 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+![deleteTask_success](images/output/deleteTask_success.png)
 
 Errors:
 
-- `<TODO DEMO ERROR>`
-- `deleteTask 5` returns `Index Out Of Range Error`
+![deleteTask_error](images/error/deleteTask_error.png)
 
 
 <div style="page-break-after: always;"></div>
