@@ -100,8 +100,6 @@ Always make a backup before you edit!
 
 You can access the help page at any time, ensuring that you will never be lost.
 
-![help message](images/helpMessage.png)
-
 Format:
 
 ```
@@ -114,11 +112,8 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
-
-Errors:
-
-- `<TODO DEMO ERROR>`
+- `Opened help window`
+  ![help message](images/helpMessage.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -142,12 +137,11 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+![addPerson success](images/addPerson_success.png)
 
 Errors:
 
 - `<TODO DEMO ERROR>`
-- `addPerson e/randy@example.com t/friend` returns `No Name Error`
 
 <div style="page-break-after: always;"></div>
 
@@ -168,7 +162,7 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+![listPerson success](images/listPerson_success.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -196,13 +190,11 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+![editPerson success](images/editPerson_success.png)
 
 Errors:
 
 - `<TODO DEMO ERROR>`
-- `editPerson 5` returns `Index Out Of Range Error`
-
 
 <div style="page-break-after: always;"></div>
 
@@ -229,16 +221,22 @@ Examples:
 
 - `findPerson John` returns `john` and `John Doe`
 - `findPerson alex david` returns `Alex Yeoh`, `David Li`
+- `findPerson alexo davido` returns `0 Persons Listed`
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+- There are search outcomes to be displayed.
+
+![findPerson success with a list](images/findPerson_success.png)
+
+
+- There are no search outcomes to be displayed.
+
+![findPerson success with zero results](images/findPerson_success_zeroResults.png)
 
 Errors:
 
 - `<TODO DEMO ERROR>`
-- `findPerson alexo david` returns `No Person Found Error`
-
 
 <div style="page-break-after: always;"></div>
 
@@ -266,13 +264,11 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
+![deletePerson success](images/deletePerson_success.png)
 
 Errors:
 
 - `<TODO DEMO ERROR>`
-- `deletePerson 5` returns `Index Out Of Range Error`
-
 
 <div style="page-break-after: always;"></div>
 
@@ -296,8 +292,7 @@ Examples:
 
 Output:
 
-- `<TODO DEMO OUTPUT>`
-
+![deleteAllPerson success](images/deleteAllPerson_success.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -309,7 +304,7 @@ Adds a person, a vendor, to your contact list.
 Format:
 
 ```
-addTask n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
+addTask n/NAME e/EVENT
 ```
 
 {% include admonition.html type="info" title="A person can have any number of tags (including 0)." %}
@@ -326,8 +321,6 @@ Output:
 Errors:
 
 - `<TODO DEMO ERROR>`
-- `addTask e/Birthday` returns `No Name Error`
-
 
 <div style="page-break-after: always;"></div>
 
@@ -425,7 +418,6 @@ Errors:
 You can exit the program.
 
 Format: `exit`
-
 
 <div style="page-break-after: always;"></div>
 
