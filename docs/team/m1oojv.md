@@ -9,6 +9,8 @@ CoordiMate is a **desktop app for event planners**. It helps you **manage your c
 
 CoordiMate is **optimized for use via a Command Line Interface (CLI)** while still having the benefits of a Graphical User Interface (GUI).
 
+If you can type fast, CoordiMate can help you get your contact management tasks done **faster than traditional GUI apps**.
+
 Given below are my contributions to the project.
 
 * **New Feature**: [Coming soon!]
