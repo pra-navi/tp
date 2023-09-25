@@ -20,8 +20,7 @@ Given below are my contributions to the project.
     * Credits: To be added soon!
 
 
-* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=jiakai-17&breakdown=true)
-
+* **Code contributed**: [Coming soon!]
 * **Project management**:
     * To be added soon!
 
@@ -30,7 +29,7 @@ Given below are my contributions to the project.
 
 * **Documentation**:
     * User Guide:
-        * Added Admonitions to User Guide [\#2](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/2)
+        * Added the images for the user guide.
     * Developer Guide:
         * To be added soon!
 
