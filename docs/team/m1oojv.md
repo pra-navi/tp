@@ -9,10 +9,6 @@ CoordiMate is a **desktop app for event planners**. It helps you **manage your c
 
 CoordiMate is **optimized for use via a Command Line Interface (CLI)** while still having the benefits of a Graphical User Interface (GUI).
 
-If you can type fast, CoordiMate can help you get your contact management tasks done **faster than traditional GUI apps**.
-
-The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
-
 Given below are my contributions to the project.
 
 * **New Feature**: [Coming soon!]
@@ -29,7 +25,7 @@ Given below are my contributions to the project.
 
 * **Documentation**:
   * User Guide:
-    * Added self drawn mockups of GUI for User Guide [\#0a25954](https://github.com/nus-cs2103-AY2324S1/tp/commit/0a25954d0d7a5b4d0a5b5da7ddf313bd0861c78b)
+    * Added self drawn mockups of GUI for User Guide [\#0a25954](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/20/commits/0a25954d0d7a5b4d0a5b5da7ddf313bd0861c78b)
   * Developer Guide: [Coming soon!]
 
 * **Community**:
