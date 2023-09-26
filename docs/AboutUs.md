@@ -38,12 +38,12 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Data
 
-### Jean Doe
+### Megan Loo
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/m1oojv.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/m1oojv)]
+[[portfolio](team/m1oojv.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
