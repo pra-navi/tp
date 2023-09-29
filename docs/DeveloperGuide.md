@@ -40,7 +40,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
 
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
@@ -73,13 +73,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -90,7 +90,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -122,7 +122,7 @@ How the parsing works:
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="450" />
 
@@ -144,7 +144,7 @@ An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="images/StorageClassDiagram.png" width="550" />
 
@@ -281,20 +281,25 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Value proposition**: 
 
-* Manages contacts for various events
-* Manages tasks to be done for various events
-* More efficient than a typical mouse/GUI driven app
+CoordiMate helps event planners to easily keep track of contact details as well as the tasks to be done for various events, in a more efficient way compared to a typical mouse/GUI driven app.
 
 ### User stories
 
-Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
+Priorities: 
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
+* `* * *` - High (must have)
+* `* *` - Medium (nice to have)
+* `*` - Low (unlikely to have)
+
+| Priority | As a …​                                     | I want to …​                    | So that I can…​                                                         |
 | -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
 | `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
 | `* * *`  | user                                       | add a new person               |                                                                        |
 | `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
+| `* * *`  | event planner                              | find a person by name          | locate a specific person without having to go through the entire list  |
+| `* * *`  | event planner                              | find a task by name            | locate a specific task without having to go through the entire list    |
+| `* * *`  | event planner                              | save my data automatically     | ensure that my contact and task data will not be lost                  |
+| `* * *`  | event planner                              | load my data automatically     | quickly continue from where I left off in the last session             |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
 
@@ -302,7 +307,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise.
+
+---
 
 **Use case: Delete a person**
 
@@ -313,19 +320,117 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3.  User requests to delete a specific person in the list
 4.  AddressBook deletes the person
 
-    Use case ends.
+Use case ends.
 
 **Extensions**
 
 * 2a. The list is empty.
 
-  Use case ends.
+   Use case ends.
 
 * 3a. The given index is invalid.
 
     * 3a1. AddressBook shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes from step 2.
+
+---
+
+**Use case: Find a person**
+
+**MSS**
+
+1. User provides a search term
+2. CoordiMate lists all persons whose names contain the search term
+
+Use case ends.
+
+**Extensions**
+
+* 1a. User provides an empty search term.
+
+  * 1a1. CoordiMate lists all persons.
+
+      Use case ends.
+
+---
+
+**Use case: Find a task**
+
+**MSS**
+
+1. User provides a search term
+2. CoordiMate lists all tasks whose names contain the search term
+
+Use case ends.
+
+**Extensions**
+
+* 1a. User provides an empty search term.
+
+  * 1a1. CoordiMate lists all tasks.
+
+     Use case ends.
+
+---
+
+**Use case: Load data from save file**
+
+**MSS**
+
+1. User launches CoordiMate
+2. CoordiMate shows the data from the save file
+
+Use case ends.
+
+**Extensions**
+
+* 1a. The save file is missing.
+
+  * 1a1. CoordiMate shows sample data.
+
+      Use case ends.
+
+* 1b. The save file is corrupted.
+
+  * 1b1. CoordiMate shows an error message.
+  * 1b2. CoordiMate shows empty data.
+
+      Use case ends.
+
+* 1c. An error occurs while loading the save file.
+
+  * 1c1. CoordiMate shows an error message.
+  * 1c2. CoordiMate shows empty data.
+
+      Use case ends.
+
+---
+
+**Use case: Save data to save file**
+
+**MSS**
+
+1. User makes changes to the data in CoordiMate
+2. CoordiMate indicates that data is successfully saved to the save file
+
+Use case ends.
+
+**Extensions**
+
+* 1a. The save file is missing.
+
+  * 1a1. CoordiMate creates a new save file.
+
+      Use case resumes from step 2.
+
+* 1b. An error occurs while saving to the save file.
+
+  * 1b1. CoordiMate shows an error message.
+
+      Use case ends.
+
+---
 
 *{More to be added}*
 
