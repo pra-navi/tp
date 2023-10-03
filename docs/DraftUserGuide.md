@@ -424,32 +424,35 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 11. Deleting a task : `deleteTask`
+### 12. Deleting a task : `deleteTask`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
-You can remove the old vendor's specified contact from your contact list.
+You can remove a task from your task list.
 
 Format:
 
 `deleteTask INDEX`
 
 - Deletes the task at the specified `INDEX`.
-- The index refers to the index number shown in the displayed task list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+- The index refers to the index number shown in the task list currently displayed.
 
 Examples:
 
-- `listTask` followed by `deleteTask 2` deletes the 2nd task in the task list.
-- `findTask Call` followed by `deleteTask 1` deletes the 1st task in the results of the `findTask` command.
+- `deleteTask 2`
+  - Deletes the 2nd task in the task list.
+- `findTask Call` followed by `deleteTask 1`
+  - Deletes the 1st task in the results of the `findTask` command.
 
 Output:
 
-![deleteTask_success](images/output/deleteTask_success.png)
+- Deletes task 2.
+  ![deleteTask_success](images/output/deleteTask_success1.png)
 
 Errors:
 
-![deleteTask_error](images/error/deleteTask_error.png)
+- Index specified is not available in the task list.
+  ![deleteTask_error](images/error/deleteTask_error1.png)
 
 
 <div style="page-break-after: always;"></div>
