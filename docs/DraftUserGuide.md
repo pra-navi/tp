@@ -350,6 +350,43 @@ Output:
 
 <div style="page-break-after: always;"></div>
 
+### 10. Editing a task : `editTask`
+
+You can edit the details of a task in your task list.
+
+Format:
+
+```
+editTask INDEX [t/TITLE] [n/NOTE]
+```
+
+- Edits the task at the specified `INDEX`.
+- The index refers to the index number shown in the displayed task list with the `listTask` command.
+- Specify a new title with the `t/` prefix. This field is **optional**.
+- Specify a new note with the `n/` prefix. This field is **optional**.
+
+Examples:
+
+- `editTask 1 t/Call Caterer`
+  - Edits the title of the 1st task to be `Call Caterer`.
+- `editTask 2 t/Book room n/By Friday`
+  - Edits the title of the 2nd task to be `Book room` and the note to be `By Friday`.
+- `editTask`
+  - Negative example as the index is not specified.
+
+Output:
+
+- Title of task 1 is edited to `Call Caterer`.
+  ![editTask_success](images/output/editTask_success1.png)
+- Title of task 2 is edited to `Book room` and note is edited to `By Friday`.
+  ![editTask_success](images/output/editTask_success2.png)
+
+Errors:
+
+- Index is not specified.
+  ![editTask_error](images/error/editTask_error.png)
+
+<div style="page-break-after: always;"></div>
 
 ### 10. Find specific task: `findTask`
 
