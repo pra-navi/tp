@@ -279,7 +279,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | user                                       | delete a person                | remove person entries that I no longer need                            |
 | `* * *`  | user                                       | delete all tasks               | clear all task entries and restart with a new clean task list          |
 | `* * *`  | user                                       | mark a task as completed       | keep track of task progress and the number of completed tasks          |
-| `* * *`  | user                                       | mark a task as uncomplete      | keep track of task progress and the number of uncompleted tasks        |
+| `* * *`  | user                                       | mark a task as incomplete      | keep track of task progress and the number of uncompleted tasks        |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
 
@@ -357,14 +357,14 @@ Use case ends.
 
       Use case ends.
 
-**Use case: Mark a task as uncomplete**
+**Use case: Mark a task as incomplete**
 
 **MSS**
 
 1.  User requests to list tasks
 2.  CoordiMate shows a list of tasks
-3.  User requests to mark a specific task in the list as uncomplete
-4.  CoordiMate updates the status of the task to be uncomplete
+3.  User requests to mark a specific task in the list as incomplete
+4.  CoordiMate updates the status of the task to be incomplete
 
 Use case ends.
 
@@ -380,9 +380,9 @@ Use case ends.
 
       Use case resumes from step 2.
 
-* 15c. The specific task is already mark as uncomplete.
+* 15c. The specific task is already mark as incomplete.
 
-    * 15c1. CoordiMate displays task as uncomplete.
+    * 15c1. CoordiMate displays task as incomplete.
 
       Use case ends.
 
