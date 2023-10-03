@@ -277,12 +277,12 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 7. Clearing all entries : `deleteAllPerson`
+### 7. Clearing all contacts: `deleteAllPerson`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 AddressBook will discard all Person data and start with an empty data file at the next run.<br>" %}
 
-Allows you to remove all entries from your contact list.
+Clears all contacts in your contact list.
 
 Format:
 
@@ -293,10 +293,12 @@ deleteAllPerson
 Examples:
 
 - `deleteAllPerson`
+  - Deletes all persons in your contact list.
 
 Output:
 
-![deleteAllPerson success](images/deleteAllPerson_success.png)
+- All persons in the contact list are deleted.
+  ![deleteAllPerson success](images/deleteAllPerson_success.png)
 
 <div style="page-break-after: always;"></div>
 
