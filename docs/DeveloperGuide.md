@@ -274,8 +274,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
 | `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
 | `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
+| `* * *`  | user                                       | edit a person's details        | update details of persons that are outdated with new information       |
 | `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
+| `* * *`  | user                                       | delete a person                | remove person entries that I no longer need                            |
+| `* * *`  | user                                       | delete all tasks               | clear all task entries and restart with a new clean task list          |
+| `* * *`  | user                                       | mark a task as completed       | keep track of task progress and the number of completed tasks          |
+| `* * *`  | user                                       | mark a task as uncomplete      | keep track of task progress and the number of uncompleted tasks        |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
 
@@ -283,30 +287,104 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+For all use cases below, the **System** is the `CoordiMate` and the **Actor** is the `user`, unless specified otherwise
 
-**Use case: Delete a person**
+**Use case: Edit a person's details**
 
 **MSS**
 
 1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+2.  CoordiMate shows a list of persons
+3.  User requests to edit a specific person in the list and provides the new person particulars
+4.  CoordiMate updates the person's details with the provided new information
 
-    Use case ends.
+Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 4a. The list is empty.
 
   Use case ends.
 
-* 3a. The given index is invalid.
+* 4b. The given index is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 4b1. CoordiMate shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes from step 2.
+
+**Use case: Delete all tasks**
+
+**MSS**
+
+1.  User requests to clear all tasks in task list
+2.  CoordiMate clears entire task list
+3.  CoordiMate shows an empty list of tasks
+
+Use case ends.
+
+**Extensions**
+
+* 13a. The list is empty.
+
+  Use case ends.
+
+**Use case: Mark a task as completed**
+
+**MSS**
+
+1.  User requests to list tasks
+2.  CoordiMate shows a list of tasks
+3.  User requests to mark a specific task in the list as completed
+4.  CoordiMate updates the status of the task to be completed
+
+Use case ends.
+
+**Extensions**
+
+* 14a. The list is empty.
+
+  Use case ends.
+
+* 14b. The given index is invalid.
+
+    * 14b1. CoordiMate shows an error message.
+
+      Use case resumes from step 2.
+
+* 14c. The specific task is already mark as completed.
+
+    * 14c1. CoordiMate displays task as completed.
+
+      Use case ends.
+
+**Use case: Mark a task as uncomplete**
+
+**MSS**
+
+1.  User requests to list tasks
+2.  CoordiMate shows a list of tasks
+3.  User requests to mark a specific task in the list as uncomplete
+4.  CoordiMate updates the status of the task to be uncomplete
+
+Use case ends.
+
+**Extensions**
+
+* 15a. The list is empty.
+
+  Use case ends.
+
+* 15b. The given index is invalid.
+
+    * 15b1. CoordiMate shows an error message.
+
+      Use case resumes from step 2.
+
+* 15c. The specific task is already mark as uncomplete.
+
+    * 15c1. CoordiMate displays task as uncomplete.
+
+      Use case ends.
 
 *{More to be added}*
 
