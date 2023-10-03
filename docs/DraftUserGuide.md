@@ -361,7 +361,7 @@ editTask INDEX [t/TITLE] [n/NOTE]
 ```
 
 - Edits the task at the specified `INDEX`.
-- The index refers to the index number shown in the displayed task list with the `listTask` command.
+- The index refers to the index number shown in the task list currently displayed.
 - Specify a new title with the `t/` prefix. This field is **optional**.
 - Specify a new note with the `n/` prefix. This field is **optional**.
 
