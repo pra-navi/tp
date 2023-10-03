@@ -112,8 +112,8 @@ Examples:
 
 Output:
 
-- `Opened help window`
-  ![help message](images/helpMessage.png)
+- `Open a window, leading you to our user guide.`
+  ![help message](images/output/help_success.png)
 
 <div style="page-break-after: always;"></div>
 
