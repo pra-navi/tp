@@ -436,7 +436,7 @@ Examples:
 
 Output:
 
-![deleteAllTask success](images/deleteAllPerson_success.png)
+![deleteAllTask success](images/output/deleteAllTask_success.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -454,7 +454,7 @@ markTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="info" title="Tasks start off as works in progress **(incomplete)** by default." %}
+{% include admonition.html type="info" title="Tasks start off as works in progress incomplete by default." %}
 
 Examples:
 
@@ -463,13 +463,11 @@ Examples:
 
 Output:
 
-![markTask_success](images/output/deleteTask_success.png)
-
-![markTask_noUpdate](images/output/deleteTask_success.png)
+![markTask_success](images/output/markTask_success.png)
 
 Errors:
 
-![markTask_error](images/error/deleteTask_error.png)
+![markTask_error](images/error/markTask_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -487,7 +485,7 @@ unmarkTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="info" title="Tasks start off as works in progress **(incomplete)** by default." %}
+{% include admonition.html type="info" title="Tasks start off as works in progress incomplete by default." %}
 
 Examples:
 
@@ -496,18 +494,16 @@ Examples:
 
 Output:
 
-![unmarkTask_success](images/output/deleteTask_success.png)
-
-![unmarkTask_noUpdate](images/output/deleteTask_success.png)
+![unmarkTask_success](images/output/unmarkTask_success.png)
 
 Errors:
 
-![unmarkTask_error](images/error/deleteTask_error.png)
+![unmarkTask_error](images/error/unmarkTask_error.png)
 
 <div style="page-break-after: always;"></div>
 
 
-### 12. Exiting the program : `exit`
+### 15. Exiting the program : `exit`
 
 You can exit the program.
 
