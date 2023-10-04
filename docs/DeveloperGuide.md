@@ -274,12 +274,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
 | `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
 | `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | edit a person's details        | update details of persons that are outdated with new information       |
+| `* * *`  | event planner                              | edit a person's details        | update details of persons that are outdated with new information       |
 | `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
 | `* * *`  | user                                       | delete a person                | remove person entries that I no longer need                            |
-| `* * *`  | user                                       | delete all tasks               | clear all task entries and restart with a new clean task list          |
-| `* * *`  | user                                       | mark a task as completed       | keep track of task progress and the number of completed tasks          |
-| `* * *`  | user                                       | mark a task as incomplete      | keep track of task progress and the number of uncompleted tasks        |
+| `* * *`  | event planner                              | delete all tasks               | clear all task entries and restart with a new clean task list          |
+| `* * *`  | event planner                              | mark a task as done            | keep track of task progress and the number of done tasks               |
+| `* * *`  | event planner                              | mark a task as not done        | keep track of task progress and the number of not done tasks           |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
 
@@ -289,104 +289,97 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 For all use cases below, the **System** is the `CoordiMate` and the **Actor** is the `user`, unless specified otherwise
 
-**Use case: Edit a person's details**
+**Use case: UC04 - Edit a person's details**
 
 **MSS**
 
-1.  User requests to list persons
-2.  CoordiMate shows a list of persons
-3.  User requests to edit a specific person in the list and provides the new person particulars
-4.  CoordiMate updates the person's details with the provided new information
+1.  User requests to list persons.
+2.  CoordiMate shows a list of persons.
+3.  User requests to edit a specific person in the list and provides the new person particulars.
+4.  CoordiMate updates the person's details with the provided new information.
 
 Use case ends.
 
 **Extensions**
 
-* 4a. The list is empty.
+* 2a. The list is empty.
 
   Use case ends.
 
-* 4b. The given index is invalid.
+* 3a. The given index is invalid.
 
-    * 4b1. CoordiMate shows an error message.
+    * 3a1. CoordiMate shows an error message.
 
       Use case resumes from step 2.
 
-**Use case: Delete all tasks**
+**Use case: UC13 - Delete all tasks**
 
 **MSS**
 
-1.  User requests to clear all tasks in task list
-2.  CoordiMate clears entire task list
-3.  CoordiMate shows an empty list of tasks
+1.  User requests to clear all tasks in task list.
+2.  CoordiMate clears entire task list.
 
 Use case ends.
 
 **Extensions**
 
-* 13a. The list is empty.
+* 1a. The list is empty.
 
   Use case ends.
 
-**Use case: Mark a task as completed**
+**Use case: UC14 - Mark a task as done**
 
 **MSS**
 
-1.  User requests to list tasks
-2.  CoordiMate shows a list of tasks
-3.  User requests to mark a specific task in the list as completed
-4.  CoordiMate updates the status of the task to be completed
+1.  User requests to list tasks.
+2.  CoordiMate shows a list of tasks.
+3.  User requests to mark a specific task in the list as done.
+4.  CoordiMate updates the status of the task to be done.
 
 Use case ends.
 
 **Extensions**
 
-* 14a. The list is empty.
+* 2a. The list is empty.
 
   Use case ends.
 
-* 14b. The given index is invalid.
+* 3a. The given index is invalid.
 
-    * 14b1. CoordiMate shows an error message.
+    * 3a1. CoordiMate shows an error message.
 
       Use case resumes from step 2.
 
-* 14c. The specific task is already mark as completed.
+* 3b. The specific task is already marked as done.
 
-    * 14c1. CoordiMate displays task as completed.
+  Use case ends.
 
-      Use case ends.
-
-**Use case: Mark a task as incomplete**
+**Use case: UC15 - Mark a task as not done**
 
 **MSS**
 
-1.  User requests to list tasks
-2.  CoordiMate shows a list of tasks
-3.  User requests to mark a specific task in the list as incomplete
-4.  CoordiMate updates the status of the task to be incomplete
+1.  User requests to list tasks.
+2.  CoordiMate shows a list of tasks.
+3.  User requests to mark a specific task in the list as not done.
+4.  CoordiMate updates the status of the task to be not done.
 
 Use case ends.
 
 **Extensions**
 
-* 15a. The list is empty.
+* 2a. The list is empty.
 
   Use case ends.
 
-* 15b. The given index is invalid.
+* 3a. The given index is invalid.
 
-    * 15b1. CoordiMate shows an error message.
+    * 3a1. CoordiMate shows an error message.
 
       Use case resumes from step 2.
 
-* 15c. The specific task is already mark as incomplete.
+* 3b. The specific task is already marked as not done.
 
-    * 15c1. CoordiMate displays task as incomplete.
-
-      Use case ends.
-
-*{More to be added}*
+  Use case ends.
 
 ### Non-Functional Requirements
 
