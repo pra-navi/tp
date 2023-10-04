@@ -270,14 +270,16 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​                                    | I want to …​                 | So that I can…​                                                        |
+| -------- |--------------------------------------------|------------------------------|------------------------------------------------------------------------|
+| `* * *`  | new user                                   | see usage instructions       | refer to instructions when I forget how to use the App                 |
+| `* * *`  | event planner                              | add a new person's details   | remember details of new people I meet                                  |
+| `* * *`  | event planner                              | list each person's details   | view all my contacts' details at a quick glance                        |
+| `* * *`  | user                                       | delete a person              | remove entries that I no longer need                                   |
+| `* * *`  | user                                       | find a person by name        | locate details of persons without having to go through the entire list |
+| `* *`    | user                                       | hide private contact details | minimize chance of someone else seeing them by accident                |
+| `*`      | user with many persons in the address book | sort persons by name         | locate a person easily                                                 |
+| `* * *`  | event planner                              | list each task's details     | view all my tasks' details at a quick glance                           |
 
 *{More to be added}*
 
@@ -285,28 +287,57 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a person**
+**Use case: Add a person**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  User requests to add a new person's particulars
+2.  CoordiMate validates the provided particulars
+3.  CoordiMate adds the person
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The given particulars are invalid
 
-  Use case ends.
+    * 2a1. CoordiMate shows an error message.
 
-* 3a. The given index is invalid.
+      Use case ends.
 
-    * 3a1. AddressBook shows an error message.
+**Use case: List all persons**
 
-      Use case resumes at step 2.
+**MSS**
+
+1. User requests to list all persons
+2. CoordiMate shows a list of all persons
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. The list of persons is empty
+
+    * 2a1. CoordiMate displays an empty list message.
+
+      Use case ends.
+
+**Use case: List all tasks**
+
+**MSS**
+
+1. User requests to list all tasks
+2. CoordiMate shows a list of all tasks
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. The list of tasks is empty
+
+    * 2a1. CoordiMate displays an empty list message.
+
+      Use case ends.
 
 *{More to be added}*
 
