@@ -246,7 +246,7 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 6. Deleting a contact : `deletePerson`
+### 6. Deleting a person's contact : `deletePerson`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
@@ -269,7 +269,7 @@ Examples:
 
 Output:
 
-![deletePerson success](images/deletePerson_success.png)
+![deletePerson success](images/output/deletePerson_success.png)
 
 Errors:
 
@@ -307,20 +307,18 @@ Output:
 
 ### 8. Adding a task: `addTask`
 
-Adds a person, a vendor, to your contact list.
+Adds a task to your task list.
 
 Format:
 
 ```
-addTask n/NAME e/EVENT
+addTask t/TITLE n/NOTE
 ```
-
-{% include admonition.html type="info" title="A person can have any number of tags (including 0)." %}
 
 Examples:
 
-- `addTask n/Get Flowers e/Wedding Anniversary`
-- `addTask n/Call Caterers e/Reunion Dinner`
+- `addTask t/Get Flowers n/Wedding Anniversary`
+- `addTask t/Call Caterers n/Reunion Dinner`
 
 Output:
 
