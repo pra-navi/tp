@@ -303,7 +303,7 @@ Output:
 
 ### 8. Adding a task: `addTask`
 
-Adds a task, to your task list.
+Adds a task to your task list.
 
 Format:
 
