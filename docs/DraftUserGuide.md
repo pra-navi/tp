@@ -170,7 +170,7 @@ Output:
 
 ### 4. Editing a person : `editPerson`
 
-Enables you to make edits to an existing contact in your contact list.
+Enables you to change the details or particulars of an existing contact in your contact list.
 
 Format:
 
@@ -204,7 +204,7 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 5. Find specific vendors: `findPerson`
+### 5. Finding specific vendors: `findPerson`
 
 Type in a few keywords linked to a vendor's name, and watch the right details unfold.
 
@@ -278,7 +278,8 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 7. Clearing all contacts: `deleteAllPerson`
+### 7. Clearing all person entries : `deleteAllPerson`
+
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 AddressBook will discard all Person data and start with an empty data file at the next run.<br>" %}
@@ -394,7 +395,7 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
-### 10. Find specific task: `findTask`
+### 10. Finding specific task: `findTask`
 
 You can locate tasks containing your specified keywords in their names.
 
@@ -465,8 +466,93 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
+### 13. Clearing all task entries : `deleteAllTask`
 
-### 12. Exiting the program : `exit`
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
+AddressBook will discard all Task data and start with an empty data file at the next run.<br>" %}
+
+Allows you to remove all entries from your task list.
+
+Format:
+
+```
+deleteAllTask
+```
+
+Examples:
+
+- `deleteAllTask`
+
+Output:
+
+![deleteAllTask success](images/output/deleteAllTask_success.png)
+
+<div style="page-break-after: always;"></div>
+
+### 14. Marking a task as done: `markTask`
+
+Allows you to indicate that a specific task as **completed**.
+
+Format:
+
+```
+markTask INDEX
+```
+
+- Marks the task at the specified `INDEX`.
+- The index refers to the index number shown in the displayed task list.
+- The index **_must be a positive integer_** 1, 2, 3, …
+
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+
+Examples:
+
+- `listTask` followed by `markTask 2` marks the 2nd task in the task list as **done**.
+- `findTask Call` followed by `markTask 1` marks the 1st task in the results of the `findTask` command as **done**.
+
+Output:
+
+![markTask_success](images/output/markTask_success.png)
+
+Errors:
+
+![markTask_error](images/error/markTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 14. Marking a task as not done: `unmarkTask`
+
+Allows you to indicate that a specific task **has not been completed**.
+
+Format:
+
+```
+unmarkTask INDEX
+```
+
+- Marks the task at the specified `INDEX`.
+- The index refers to the index number shown in the displayed task list.
+- The index **_must be a positive integer_** 1, 2, 3, …
+
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+
+Examples:
+
+- `listTask` followed by `unmarkTask 2` marks the 2nd task in the task list as **not done**.
+- `findTask Call` followed by `unmarkTask 1` marks the 1st task in the results of the `findTask` command as **not done**.
+
+Output:
+
+![unmarkTask_success](images/output/unmarkTask_success.png)
+
+Errors:
+
+![unmarkTask_error](images/error/unmarkTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+
+### 15. Exiting the program : `exit`
 
 You can exit the program.
 
