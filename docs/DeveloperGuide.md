@@ -287,52 +287,52 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Add a person**
+**Use case: UC02 - Add a person**
 
 **MSS**
 
-1. User requests to add a new person's particulars
-2. CoordiMate adds the person
+1. User requests to add a new person's particulars.
+2. CoordiMate adds the person.
 
     Use case ends.
 
 **Extensions**
 
-* 1a. The given particulars are invalid
+* 1a. The given particulars are invalid.
 
     * 1a1. CoordiMate shows an error message.
 
       Use case ends.
 
-**Use case: List all persons**
+**Use case: UC03 - List all persons**
 
 **MSS**
 
-1. User requests to list all persons
-2. CoordiMate shows a list of all persons
+1. User requests to list all persons.
+2. CoordiMate shows a list of all persons.
 
    Use case ends.
 
 **Extensions**
 
-* 1a. The list of persons is empty
+* 1a. The list of persons is empty.
 
     * 1a1. CoordiMate displays an empty list message.
 
       Use case ends.
 
-**Use case: List all tasks**
+**Use case: UC09 - List all tasks**
 
 **MSS**
 
-1. User requests to list all tasks
-2. CoordiMate shows a list of all tasks
+1. User requests to list all tasks.
+2. CoordiMate shows a list of all tasks.
 
    Use case ends.
 
 **Extensions**
 
-* 1a. The list of tasks is empty
+* 1a. The list of tasks is empty.
 
     * 1a1. CoordiMate displays an empty list message.
 
