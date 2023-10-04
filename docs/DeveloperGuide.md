@@ -304,13 +304,13 @@ For all use cases below, the **System** is the `CoordiMate` and the **Actor** is
 
 * 2a. The list is empty.
 
-      Use case ends.
+  Use case ends.
 
 * 3a. The given index is invalid.
 
     * 3a1. CoordiMate shows an error message.
 
-           Use case resumes from step 2.
+      Use case resumes from step 2.
 
 **Use case: UC13 - Delete all tasks**
 
@@ -325,7 +325,7 @@ For all use cases below, the **System** is the `CoordiMate` and the **Actor** is
 
 * 1a. The list is empty.
 
-      Use case ends.
+  Use case ends.
 
 **Use case: UC14 - Mark a task as done**
 
@@ -342,17 +342,17 @@ For all use cases below, the **System** is the `CoordiMate` and the **Actor** is
 
 * 2a. The list is empty.
 
-      Use case ends.
+  Use case ends.
 
 * 3a. The given index is invalid.
 
     * 3a1. CoordiMate shows an error message.
 
-           Use case resumes from step 2.
+      Use case resumes from step 2.
 
 * 3b. The specific task is already marked as done.
 
-      Use case ends.
+  Use case ends.
 
 **Use case: UC15 - Mark a task as not done**
 
@@ -369,17 +369,17 @@ For all use cases below, the **System** is the `CoordiMate` and the **Actor** is
 
 * 2a. The list is empty.
 
-      Use case ends.
+  Use case ends.
 
 * 3a. The given index is invalid.
 
     * 3a1. CoordiMate shows an error message.
 
-           Use case resumes from step 2.
+      Use case resumes from step 2.
 
 * 3b. The specific task is already marked as not done.
 
-      Use case ends.
+  Use case ends.
 
 ### Non-Functional Requirements
 
