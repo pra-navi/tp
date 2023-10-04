@@ -113,6 +113,7 @@ Examples:
 Output:
 
 - `Open a window, leading you to our user guide.`
+
   ![help message](images/output/help_success.png)
 
 <div style="page-break-after: always;"></div>
@@ -298,6 +299,7 @@ Examples:
 Output:
 
 - All persons in the contact list are deleted.
+
   ![deleteAllPerson success](images/deleteAllPerson_success.png)
 
 <div style="page-break-after: always;"></div>
@@ -379,13 +381,17 @@ Examples:
 Output:
 
 - Title of task 1 is edited to `Call Caterer`.
+
   ![editTask_success](images/output/editTask_success1.png)
+
 - Title of task 2 is edited to `Book room` and note is edited to `By Friday`.
+
   ![editTask_success](images/output/editTask_success2.png)
 
 Errors:
 
 - Index is not specified.
+
   ![editTask_error](images/error/editTask_error.png)
 
 <div style="page-break-after: always;"></div>
@@ -449,11 +455,13 @@ Examples:
 Output:
 
 - Deletes task 2.
+
   ![deleteTask_success](images/output/deleteTask_success1.png)
 
 Errors:
 
 - Index specified is not available in the task list.
+
   ![deleteTask_error](images/error/deleteTask_error1.png)
 
 
