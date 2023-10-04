@@ -341,11 +341,11 @@ listTasks
 
 Examples:
 
-- `listTask`
+- `listTasks`
 
 Output:
 
-![listTask_success](images/output/listTask_success.png)
+![listTask_success](images/output/listTasks_success.png)
 
 
 <div style="page-break-after: always;"></div>
