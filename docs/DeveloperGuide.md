@@ -277,9 +277,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | event planner                              | list each person's details   | view all my contacts' details at a quick glance                        |
 | `* * *`  | user                                       | delete a person              | remove entries that I no longer need                                   |
 | `* * *`  | user                                       | find a person by name        | locate details of persons without having to go through the entire list |
+| `* * *`  | event planner                              | list each task's details     | view all my tasks' details at a quick glance                           |
 | `* *`    | user                                       | hide private contact details | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name         | locate a person easily                                                 |
-| `* * *`  | event planner                              | list each task's details     | view all my tasks' details at a quick glance                           |
 
 *{More to be added}*
 
@@ -291,17 +291,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to add a new person's particulars
-2.  CoordiMate validates the provided particulars
-3.  CoordiMate adds the person
+1. User requests to add a new person's particulars
+2. CoordiMate adds the person
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The given particulars are invalid
+* 1a. The given particulars are invalid
 
-    * 2a1. CoordiMate shows an error message.
+    * 1a1. CoordiMate shows an error message.
 
       Use case ends.
 
@@ -316,9 +315,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 2a. The list of persons is empty
+* 1a. The list of persons is empty
 
-    * 2a1. CoordiMate displays an empty list message.
+    * 1a1. CoordiMate displays an empty list message.
 
       Use case ends.
 
@@ -333,9 +332,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 2a. The list of tasks is empty
+* 1a. The list of tasks is empty
 
-    * 2a1. CoordiMate displays an empty list message.
+    * 1a1. CoordiMate displays an empty list message.
 
       Use case ends.
 
