@@ -270,7 +270,7 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
+| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                         |
 | -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
 | `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
 | `* * *`  | user                                       | add a new person               |                                                                        |
@@ -298,19 +298,19 @@ For all use cases below, the **System** is the `CoordiMate` and the **Actor** is
 3.  User requests to edit a specific person in the list and provides the new person particulars.
 4.  CoordiMate updates the person's details with the provided new information.
 
-Use case ends.
+    Use case ends.
 
 **Extensions**
 
 * 2a. The list is empty.
 
-  Use case ends.
+      Use case ends.
 
 * 3a. The given index is invalid.
 
     * 3a1. CoordiMate shows an error message.
 
-      Use case resumes from step 2.
+           Use case resumes from step 2.
 
 **Use case: UC13 - Delete all tasks**
 
@@ -319,13 +319,13 @@ Use case ends.
 1.  User requests to clear all tasks in task list.
 2.  CoordiMate clears entire task list.
 
-Use case ends.
+    Use case ends.
 
 **Extensions**
 
 * 1a. The list is empty.
 
-  Use case ends.
+      Use case ends.
 
 **Use case: UC14 - Mark a task as done**
 
@@ -336,23 +336,23 @@ Use case ends.
 3.  User requests to mark a specific task in the list as done.
 4.  CoordiMate updates the status of the task to be done.
 
-Use case ends.
+    Use case ends.
 
 **Extensions**
 
 * 2a. The list is empty.
 
-  Use case ends.
+      Use case ends.
 
 * 3a. The given index is invalid.
 
     * 3a1. CoordiMate shows an error message.
 
-      Use case resumes from step 2.
+           Use case resumes from step 2.
 
 * 3b. The specific task is already marked as done.
 
-  Use case ends.
+      Use case ends.
 
 **Use case: UC15 - Mark a task as not done**
 
@@ -363,23 +363,23 @@ Use case ends.
 3.  User requests to mark a specific task in the list as not done.
 4.  CoordiMate updates the status of the task to be not done.
 
-Use case ends.
+    Use case ends.
 
 **Extensions**
 
 * 2a. The list is empty.
 
-  Use case ends.
+      Use case ends.
 
 * 3a. The given index is invalid.
 
     * 3a1. CoordiMate shows an error message.
 
-      Use case resumes from step 2.
+           Use case resumes from step 2.
 
 * 3b. The specific task is already marked as not done.
 
-  Use case ends.
+      Use case ends.
 
 ### Non-Functional Requirements
 
