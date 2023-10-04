@@ -313,14 +313,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
-**Extensions**
-
-* 1a. The list of persons is empty.
-
-    * 1a1. CoordiMate displays an empty list message.
-
-      Use case ends.
-
 **Use case: UC09 - List all tasks**
 
 **MSS**
@@ -329,14 +321,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. CoordiMate shows a list of all tasks.
 
    Use case ends.
-
-**Extensions**
-
-* 1a. The list of tasks is empty.
-
-    * 1a1. CoordiMate displays an empty list message.
-
-      Use case ends.
 
 *{More to be added}*
 
