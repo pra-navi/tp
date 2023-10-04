@@ -275,12 +275,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI             |
 | `* * *`  | event planner                              | add a new person's details         | remember details of new people I meet                                  |
 | `* * *`  | event planner                              | list each person's details         | view all my contacts' details at a quick glance                        |
+| `* * *`  | event planner                              | edit a person's details            | update details of persons that are outdated with new information       |
 | `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                  |
 | `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my addressbook                        |
 | `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event              |
 | `* * *`  | event planner                              | list each task's details           | view all my tasks' details at a quick glance                           |
 | `* * *`  | event planner                              | edit a task                        | ensure task details are up-to-date with latest information             |
 | `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                               |
+| `* * *`  | event planner                              | delete all tasks                   | clear all task entries and restart with a new clean task list          |
+| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of done tasks               |
+| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of not done tasks           |
 | `* * *`  | user                                       | find a person by name              | locate details of persons without having to go through the entire list |
 | `* *`    | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                 |
@@ -326,6 +330,27 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. CoordiMate shows a list of all persons.
 
    Use case ends.
+   
+**Use case: UC04 - Edit a person's details**
+
+**MSS**
+
+1.  User requests to list persons.
+2.  CoordiMate shows a list of persons.
+3.  User requests to edit a specific person in the list and provides the new person particulars.
+4.  CoordiMate updates the person's details with the provided new information.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+
+      Use case resumes at step 2.
 
 **Use case: UC06 - Delete a person from contact list**
 
@@ -348,7 +373,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     * 3a1. CoordiMate shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes from step 2.
 
 **Use case: UC07 - Delete all existing contacts**
 
@@ -357,7 +382,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. User requests to delete all contacts.
 2. CoordiMate deletes all contacts shows a confirmation message.
 
-    Use case ends.
+   Use case ends.
 
 **Use case: UC08 - Add task to task list**
 
@@ -394,7 +419,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3. User requests to edit a specific task in the list with new details.
 4. CoordiMate edits the task with the new details.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions**
 
@@ -430,6 +455,75 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
 
       Use case resumes at step 3.
+
+**Use case: UC13 - Delete all tasks**
+
+**MSS**
+
+1.  User requests to clear all tasks in task list.
+2.  CoordiMate clears entire task list.
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. The list is empty.
+
+  Use case ends.
+
+**Use case: UC14 - Mark a task as done**
+
+**MSS**
+
+1.  User requests to list tasks.
+2.  CoordiMate shows a list of tasks.
+3.  User requests to mark a specific task in the list as done.
+4.  CoordiMate updates the status of the task to be done.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. CoordiMate shows an error message.
+
+      Use case resumes from step 2.
+
+* 3b. The specific task is already marked as done.
+
+  Use case ends.
+
+**Use case: UC15 - Mark a task as not done**
+
+**MSS**
+
+1.  User requests to list tasks.
+2.  CoordiMate shows a list of tasks.
+3.  User requests to mark a specific task in the list as not done.
+4.  CoordiMate updates the status of the task to be not done.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. CoordiMate shows an error message.
+
+      Use case resumes from step 2.
+
+* 3b. The specific task is already marked as not done.
+
+  Use case ends.
 
 *{More to be added}*
 
