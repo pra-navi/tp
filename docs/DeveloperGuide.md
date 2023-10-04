@@ -326,17 +326,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User requests to delete all contacts.
-2. CoordiMate shows a confirmation message.
+2. CoordiMate deletes all contacts shows a confirmation message.
 
     Use case ends.
-
-**Extensions**
-
-* 2a. User requests to list all contacts, to verify that all contacts are deleted.
-    * 2a1. CoordiMate shows an empty contact list.
-
-      Use case ends.
-
 
 **Use case: UC10 - Edit a task**
 
