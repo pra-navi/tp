@@ -272,9 +272,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
 | -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
+| `* * *`  | new user                                   | see help instructions          | refer to documentation to understand the existing features effectively |
 | `* * *`  | user                                       | add a new person               |                                                                        |
 | `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
+| `* * *`  | event planner                              | delete all contacts            | efficiently restart or declutter my addressbook                        |
+| `* * *`  | event planner                              | editTask                       | ensure task details are up-to-date with latest information             |
+| `* * *`  | event planner                              | deleteTask                     | remove tasks that are no longer relevant                               |
 | `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
@@ -307,6 +310,81 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
+
+**Use case: UC01 - See help instructions**
+
+**MSS**
+
+1. User requests for help.
+2. AddressBook shows the help instructions, with a link to user guide.
+3. User clicks on the link to user guide.
+
+    Use case ends.
+
+**Use case: UC07 - Delete all existing contacts**
+
+**MSS**
+
+1. User requests to delete all contacts.
+2. CoordiMate shows a confirmation message.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. User requests to list all contacts, to verify that all contacts are deleted.
+    * 2a1. CoordiMate shows an empty contact list.
+
+      Use case ends.
+
+
+**Use case: UC10 - Edit a task**
+
+**MSS**
+
+1. User requests to list all tasks.
+2. CoordiMate shows a list of tasks.
+3. User requests to edit a specific task in the list with new details.
+4. CoordiMate edits the task with the new details.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3b1. CoordiMate shows an error message and prompts the user to enter a valid index.
+    * 3b2. User requests an edit with a valid index.
+
+      Use case resumes at step 4.
+
+**Use case: UC12 - Delete a task**
+
+**MSS**
+
+1. User requests to list all tasks.
+2. CoordiMate shows a list of tasks.
+3. User requests to delete a specific task in the list.
+4. CoordiMate deletes the task.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3b1. CoordiMate shows an error message and prompts the user to enter a valid index.
+    * 3b2. User requests a deletion with a valid index.
+
+      Use case resumes at step 4.
 
 *{More to be added}*
 
