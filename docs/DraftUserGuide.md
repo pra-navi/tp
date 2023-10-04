@@ -112,8 +112,9 @@ Examples:
 
 Output:
 
-- `Opened help window`
-  ![help message](images/helpMessage.png)
+- `Open a window, leading you to our user guide.`
+
+  ![help message](images/output/help_success.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -169,7 +170,7 @@ Output:
 
 ### 4. Editing a person : `editPerson`
 
-Enables you to make edits to an existing contact in your contact list.
+Enables you to change the details or particulars of an existing contact in your contact list.
 
 Format:
 
@@ -203,7 +204,7 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 5. Find specific vendors: `findPerson`
+### 5. Finding specific vendors: `findPerson`
 
 Type in a few keywords linked to a vendor's name, and watch the right details unfold.
 
@@ -245,7 +246,7 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 6. Deleting a contact : `deletePerson`
+### 6. Deleting a person's contact : `deletePerson`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
@@ -268,7 +269,7 @@ Examples:
 
 Output:
 
-![deletePerson success](images/deletePerson_success.png)
+![deletePerson success](images/output/deletePerson_success.png)
 
 Errors:
 
@@ -277,12 +278,13 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 7. Clearing all entries : `deleteAllPerson`
+### 7. Clearing all person entries : `deleteAllPerson`
+
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 AddressBook will discard all Person data and start with an empty data file at the next run.<br>" %}
 
-Allows you to remove all entries from your contact list.
+Clears all contacts in your contact list.
 
 Format:
 
@@ -293,30 +295,31 @@ deleteAllPerson
 Examples:
 
 - `deleteAllPerson`
+  - Deletes all persons in your contact list.
 
 Output:
 
-![deleteAllPerson success](images/deleteAllPerson_success.png)
+- All persons in the contact list are deleted.
+
+  ![deleteAllPerson success](images/deleteAllPerson_success.png)
 
 <div style="page-break-after: always;"></div>
 
 
 ### 8. Adding a task: `addTask`
 
-Adds a person, a vendor, to your contact list.
+Adds a task to your task list.
 
 Format:
 
 ```
-addTask n/NAME e/EVENT
+addTask t/TITLE n/NOTE
 ```
-
-{% include admonition.html type="info" title="A person can have any number of tags (including 0)." %}
 
 Examples:
 
-- `addTask n/Get Flowers e/Wedding Anniversary`
-- `addTask n/Call Caterers e/Reunion Dinner`
+- `addTask t/Get Flowers n/Wedding Anniversary`
+- `addTask t/Call Caterers n/Reunion Dinner`
 
 Output:
 
@@ -329,14 +332,14 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 9. Listing all tasks : `listTasks`
+### 9. Listing all tasks : `listTask`
 
 Provides you with a complete list of tasks in your task list.
 
 Format:
 
 ```
-listTasks
+listTask
 ```
 
 Examples:
@@ -350,8 +353,49 @@ Output:
 
 <div style="page-break-after: always;"></div>
 
+### 10. Editing a task : `editTask`
 
-### 10. Find specific task: `findTask`
+You can edit the details of a task in your task list.
+
+Format:
+
+```
+editTask INDEX [t/TITLE] [n/NOTE]
+```
+
+- Edits the task at the specified `INDEX`.
+- The index refers to the index number shown in the task list currently displayed.
+- Specify a new title with the `t/` prefix. This field is **optional**.
+- Specify a new note with the `n/` prefix. This field is **optional**.
+
+Examples:
+
+- `editTask 1 t/Call Caterer`
+  - Edits the title of the 1st task to be `Call Caterer`.
+- `editTask 2 t/Book room n/By Friday`
+  - Edits the title of the 2nd task to be `Book room` and the note to be `By Friday`.
+- `editTask`
+  - Negative example as the index is not specified.
+
+Output:
+
+- Title of task 1 is edited to `Call Caterer`.
+
+  ![editTask_success](images/output/editTask_success1.png)
+
+- Title of task 2 is edited to `Book room` and note is edited to `By Friday`.
+
+  ![editTask_success](images/output/editTask_success2.png)
+
+Errors:
+
+- Index is not specified.
+
+  ![editTask_error](images/error/editTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 10. Finding specific task: `findTask`
 
 You can locate tasks containing your specified keywords in their names.
 
@@ -387,38 +431,128 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 11. Deleting a task : `deleteTask`
+### 12. Deleting a task : `deleteTask`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
-You can remove the old vendor's specified contact from your contact list.
+You can remove a task from your task list.
 
 Format:
 
 `deleteTask INDEX`
 
 - Deletes the task at the specified `INDEX`.
-- The index refers to the index number shown in the displayed task list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+- The index refers to the index number shown in the task list currently displayed.
 
 Examples:
 
-- `listTask` followed by `deleteTask 2` deletes the 2nd task in the task list.
-- `findTask Call` followed by `deleteTask 1` deletes the 1st task in the results of the `findTask` command.
+- `deleteTask 2`
+  - Deletes the 2nd task in the task list.
+- `findTask Call` followed by `deleteTask 1`
+  - Deletes the 1st task in the results of the `findTask` command.
 
 Output:
 
-![deleteTask_success](images/output/deleteTask_success.png)
+- Deletes task 2.
+
+  ![deleteTask_success](images/output/deleteTask_success1.png)
 
 Errors:
 
-![deleteTask_error](images/error/deleteTask_error.png)
+- Index specified is not available in the task list.
+
+  ![deleteTask_error](images/error/deleteTask_error1.png)
 
 
 <div style="page-break-after: always;"></div>
 
+### 13. Clearing all task entries : `deleteAllTask`
 
-### 12. Exiting the program : `exit`
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
+AddressBook will discard all Task data and start with an empty data file at the next run.<br>" %}
+
+Allows you to remove all entries from your task list.
+
+Format:
+
+```
+deleteAllTask
+```
+
+Examples:
+
+- `deleteAllTask`
+
+Output:
+
+![deleteAllTask success](images/output/deleteAllTask_success.png)
+
+<div style="page-break-after: always;"></div>
+
+### 14. Marking a task as done: `markTask`
+
+Allows you to indicate that a specific task as **completed**.
+
+Format:
+
+```
+markTask INDEX
+```
+
+- Marks the task at the specified `INDEX`.
+- The index refers to the index number shown in the displayed task list.
+- The index **_must be a positive integer_** 1, 2, 3, …
+
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+
+Examples:
+
+- `listTask` followed by `markTask 2` marks the 2nd task in the task list as **done**.
+- `findTask Call` followed by `markTask 1` marks the 1st task in the results of the `findTask` command as **done**.
+
+Output:
+
+![markTask_success](images/output/markTask_success.png)
+
+Errors:
+
+![markTask_error](images/error/markTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 14. Marking a task as not done: `unmarkTask`
+
+Allows you to indicate that a specific task **has not been completed**.
+
+Format:
+
+```
+unmarkTask INDEX
+```
+
+- Marks the task at the specified `INDEX`.
+- The index refers to the index number shown in the displayed task list.
+- The index **_must be a positive integer_** 1, 2, 3, …
+
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+
+Examples:
+
+- `listTask` followed by `unmarkTask 2` marks the 2nd task in the task list as **not done**.
+- `findTask Call` followed by `unmarkTask 1` marks the 1st task in the results of the `findTask` command as **not done**.
+
+Output:
+
+![unmarkTask_success](images/output/unmarkTask_success.png)
+
+Errors:
+
+![unmarkTask_error](images/error/unmarkTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+
+### 15. Exiting the program : `exit`
 
 You can exit the program.
 
