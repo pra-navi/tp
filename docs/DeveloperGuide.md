@@ -291,7 +291,7 @@ Priorities:
 * `* *` - Medium (nice to have)
 * `*` - Low (unlikely to have)
 
-| Priority | As a …​                                     | I want to …​                        | So that I can…​                                                         |
+| Priority | As a …​                                     | I want to …​                        | So that I can …​                                                        |
 | -------- | ------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------- |
 | `* * *`  | new user                                   | see help instructions              | refer to documentation to understand the existing features effectively |
 | `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI             |
@@ -307,8 +307,8 @@ Priorities:
 | `* * *`  | event planner                              | find a task by name                | locate a specific task without having to go through the entire list    |
 | `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                               |
 | `* * *`  | event planner                              | delete all tasks                   | clear all task entries and restart with a new clean task list          |
-| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of done tasks               |
-| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of not done tasks           |
+| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of tasks that are done      |
+| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of tasks that are not done  |
 | `* * *`  | event planner                              | save my data automatically         | ensure that my contact and task data will not be lost                  |
 | `* * *`  | event planner                              | load my data automatically         | quickly continue from where I left off in the last session             |
 | `*`      | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
@@ -437,9 +437,17 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 **MSS**
 
 1. User requests to delete all contacts.
-2. CoordiMate deletes all contacts shows a confirmation message.
+2. CoordiMate deletes all contacts and shows a confirmation message.
 
    Use case ends.
+
+**Extensions**
+
+* 1a. The contact list is empty.
+
+  * 1a1. CoordiMate informs the user that there are no contacts to be deleted.
+
+      Use case ends.
 
 ---
 
@@ -447,7 +455,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 **MSS**
 
-1. User requests to add a task with a name and note.
+1. User requests to add a task with a title and note.
 2. CoordiMate adds the task.
 
    Use case ends.
@@ -542,7 +550,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC13 - Delete all tasks**
+**Use case: UC13 - Delete all tasks from the task list**
 
 **MSS**
 
@@ -553,9 +561,11 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 **Extensions**
 
-* 1a. The list is empty.
+* 1a. The task list is empty.
 
-   Use case ends.
+  * 1a1. CoordiMate informs the user that there are no tasks to be deleted.
+
+      Use case ends.
 
 ---
 
