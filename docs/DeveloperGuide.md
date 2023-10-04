@@ -468,6 +468,7 @@ Priorities:
 * **Exploratory testing**: Testing a feature based on the tester's intuitive understanding of how the feature should function.
 * **GUI**: Graphical User Interface, a way of interacting with a computer program by manipulating graphical elements on the screen.
 * **Mainstream OS**: One of these operating systems: Windows, Linux, Unix, OS-X
+* **MSS**: Main Success Scenario, which is the most straightforward interaction for a given use case assuming that nothing goes wrong.
 * **Private contact detail**: A contact detail that is not meant to be shared with others
 
 
