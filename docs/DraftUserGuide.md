@@ -197,7 +197,7 @@ Errors:
 - Incorrect parameters or command format
 ![editPerson error](images/error/editPerson_error.png)
 
-- Incorrect or missing index 
+- Incorrect or missing index
 ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>

@@ -291,59 +291,37 @@ Priorities:
 * `* *` - Medium (nice to have)
 * `*` - Low (unlikely to have)
 
-| Priority | As a …​                                     | I want to …​                    | So that I can…​                                                         |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | event planner                              | find a person by name          | locate a specific person without having to go through the entire list  |
-| `* * *`  | event planner                              | find a task by name            | locate a specific task without having to go through the entire list    |
-| `* * *`  | event planner                              | save my data automatically     | ensure that my contact and task data will not be lost                  |
-| `* * *`  | event planner                              | load my data automatically     | quickly continue from where I left off in the last session             |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​                                     | I want to …​                        | So that I can…​                                                        |
+| -------- | ------------------------------------------ | ---------------------------------- | --------------------------------------------------------------------- |
+| `* * *`  | new user                                   | see usage instructions             | refer to instructions when I forget how to use the App                |
+| `* * *`  | user                                       | add a new person                   |                                                                       |
+| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event             |
+| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI            |
+| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                 |
+| `* * *`  | event planner                              | find a person by name              | locate a specific person without having to go through the entire list |
+| `* * *`  | event planner                              | find a task by name                | locate a specific task without having to go through the entire list   |
+| `* * *`  | event planner                              | save my data automatically         | ensure that my contact and task data will not be lost                 |
+| `* * *`  | event planner                              | load my data automatically         | quickly continue from where I left off in the last session            |
+| `* *`    | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident               |
+| `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                |
+
 
 *{More to be added}*
 
 ### Use cases
 
-For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise.
+(For all use cases below, the **System** is `CoordiMate` and the **Actor** is the `user`, unless specified otherwise)
 
 ---
 
-**Use case: Delete a person**
+**Use case: UC05 - Find a person in the contact list**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
-
-Use case ends.
-
-**Extensions**
-
-* 2a. The list is empty.
+1. User provides a search term.
+2. CoordiMate lists all persons whose names contain the search term.
 
    Use case ends.
-
-* 3a. The given index is invalid.
-
-    * 3a1. AddressBook shows an error message.
-
-      Use case resumes from step 2.
-
----
-
-**Use case: Find a person**
-
-**MSS**
-
-1. User provides a search term
-2. CoordiMate lists all persons whose names contain the search term
-
-Use case ends.
 
 **Extensions**
 
@@ -355,14 +333,58 @@ Use case ends.
 
 ---
 
-**Use case: Find a task**
+**Use case: UC06 - Delete a person from the contact list**
 
 **MSS**
 
-1. User provides a search term
-2. CoordiMate lists all tasks whose names contain the search term
+1. User requests to list persons.
+2. CoordiMate shows a list of persons.
+3. User requests to delete a specific person in the list.
+4. CoordiMate deletes the person.
 
-Use case ends.
+   Use case ends.
+
+**Extensions**
+
+* 2a. The contact list is empty.
+
+   Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. CoordiMate shows an error message.
+
+      Use case resumes from step 2.
+
+---
+
+**Use case: UC08 - Add a task to the task list**
+
+**MSS**
+
+1. User requests to add a task.
+2. CoordiMate adds the task.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. There is no task name provided.
+
+    * 1a1. CoordiMate shows an error message.
+
+      Use case resumes at step 1.
+
+---
+
+**Use case: UC11 - Find a task in the task list**
+
+**MSS**
+
+1. User provides a search term.
+2. CoordiMate lists all tasks whose names contain the search term.
+
+   Use case ends.
 
 **Extensions**
 
@@ -370,18 +392,18 @@ Use case ends.
 
   * 1a1. CoordiMate lists all tasks.
 
-     Use case ends.
+      Use case ends.
 
 ---
 
-**Use case: Load data from save file**
+**Use case: UC17 - Load data from save file**
 
 **MSS**
 
-1. User launches CoordiMate
-2. CoordiMate shows the data from the save file
+1. User launches CoordiMate.
+2. CoordiMate shows the data from the save file.
 
-Use case ends.
+   Use case ends.
 
 **Extensions**
 
@@ -393,28 +415,26 @@ Use case ends.
 
 * 1b. The save file is corrupted.
 
-  * 1b1. CoordiMate shows an error message.
-  * 1b2. CoordiMate shows empty data.
+  * 1b1. CoordiMate shows an error message and shows no entries.
 
       Use case ends.
 
 * 1c. An error occurs while loading the save file.
 
-  * 1c1. CoordiMate shows an error message.
-  * 1c2. CoordiMate shows empty data.
+  * 1c1. CoordiMate shows an error message and shows no entries.
 
       Use case ends.
 
 ---
 
-**Use case: Save data to save file**
+**Use case: UC18 - Save data to save file**
 
 **MSS**
 
-1. User makes changes to the data in CoordiMate
-2. CoordiMate indicates that data is successfully saved to the save file
+1. User makes changes to the data in CoordiMate.
+2. CoordiMate indicates that data is successfully saved to the save file.
 
-Use case ends.
+   Use case ends.
 
 **Extensions**
 

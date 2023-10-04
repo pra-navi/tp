@@ -9,34 +9,32 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
-### John Doe
+### Xing Lingxi
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/hugenoob.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
-
-* Role: Project Advisor
-
-### Jane Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
-
-* Role: Team Lead
-* Responsibilities: UI
-
-### Johnny Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
+[[github](https://github.com/HugeNoob)]
+[[portfolio](team/hugenoob.md)]
 
 * Role: Developer
-* Responsibilities: Data
+
+### Li Jiakai
+
+<img src="images/jiakai-17.png" width="200px">
+
+[[github](https://github.com/jiakai-17)]
+[[portfolio](team/jiakai-17.md)]
+
+* Role: Developer
+* Responsibilities: In charge of Storage and Documentation
+
+### Pranavi
+
+<img src="images/pra-navi.png" width="200px">
+
+[[github](http://github.com/pra-navi)] [[portfolio](team/pra-navi.md)]
+
+* Role: Developer
 
 ### Megan Loo
 
