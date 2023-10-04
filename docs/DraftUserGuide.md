@@ -440,9 +440,9 @@ Output:
 
 <div style="page-break-after: always;"></div>
 
-### 14. Marking a task as completed: `markTask`
+### 14. Marking a task as done: `markTask`
 
-Allows you to indicate that a specific task **has been finished**.
+Allows you to indicate that a specific task as **completed**.
 
 Format:
 
@@ -454,12 +454,12 @@ markTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="info" title="Tasks start off as works in progress incomplete by default." %}
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
 
 Examples:
 
-- `listTask` followed by `markTask 2` marks the 2nd task in the task list as **completed**.
-- `findTask Call` followed by `markTask 1` marks the 1st task in the results of the `findTask` command as **completed**.
+- `listTask` followed by `markTask 2` marks the 2nd task in the task list as **done**.
+- `findTask Call` followed by `markTask 1` marks the 1st task in the results of the `findTask` command as **done**.
 
 Output:
 
@@ -471,9 +471,9 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
-### 14. Marking a task as incomplete: `unmarkTask`
+### 14. Marking a task as not done: `unmarkTask`
 
-Allows you to indicate that a specific task **has not been finished**.
+Allows you to indicate that a specific task **has not been completed**.
 
 Format:
 
@@ -485,12 +485,12 @@ unmarkTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="info" title="Tasks start off as works in progress incomplete by default." %}
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
 
 Examples:
 
-- `listTask` followed by `unmarkTask 2` marks the 2nd task in the task list as **incomplete**.
-- `findTask Call` followed by `unmarkTask 1` marks the 1st task in the results of the `findTask` command as **incomplete**.
+- `listTask` followed by `unmarkTask 2` marks the 2nd task in the task list as **not done**.
+- `findTask Call` followed by `unmarkTask 1` marks the 1st task in the results of the `findTask` command as **not done**.
 
 Output:
 
