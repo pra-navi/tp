@@ -276,8 +276,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | user                                       | add a new person               |                                                                        |
 | `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
 | `* * *`  | event planner                              | delete all contacts            | efficiently restart or declutter my addressbook                        |
-| `* * *`  | event planner                              | editTask                       | ensure task details are up-to-date with latest information             |
-| `* * *`  | event planner                              | deleteTask                     | remove tasks that are no longer relevant                               |
+| `* * *`  | event planner                              | edit a task                    | ensure task details are up-to-date with latest information             |
+| `* * *`  | event planner                              | delete a task                  | remove tasks that are no longer relevant                               |
 | `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
@@ -316,7 +316,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User requests for help.
-2. AddressBook shows the help instructions, with a link to user guide.
+2. CoordiMate shows the help instructions, with a link to user guide.
 3. User clicks on the link to user guide.
 
     Use case ends.
@@ -357,10 +357,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3b1. CoordiMate shows an error message and prompts the user to enter a valid index.
-    * 3b2. User requests an edit with a valid index.
+    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
 
-      Use case resumes at step 4.
+      Use case resumes at step 3.
 
 **Use case: UC12 - Delete a task**
 
@@ -381,17 +380,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3b1. CoordiMate shows an error message and prompts the user to enter a valid index.
-    * 3b2. User requests a deletion with a valid index.
+    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
 
-      Use case resumes at step 4.
+      Use case resumes at step 3.
 
 *{More to be added}*
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 1000 persons and tasks without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  Application should be designed for a single user.
 5.  Data should be stored locally in a human-readable and editable text file.
