@@ -265,48 +265,64 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Value proposition**: manage contacts faster than a typical mouse/GUI driven app
 
-
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​                                    | I want to …​                       | So that I can…​                                                                   |
+| -------- |--------------------------------------------|------------------------------------|-----------------------------------------------------------------------------------|
+| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event                         |
+| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI                        |
+| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                             |
+| `* * *`  | user                                       | find a person by name              | locate details of persons without having to go through the entire list            |
+| `* *`    | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                           |
+| `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                            |
 
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is `CoordiMate` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a person**
+**Use case: UC06 - Delete a person from contact list**
 
 **MSS**
 
 1.  User requests to list persons
-2.  AddressBook shows a list of persons
+2.  CoordiMate shows a list of persons
 3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+4.  CoordiMate deletes the person
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The contact list is empty.
 
   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 3a1. CoordiMate shows an error message.
 
       Use case resumes at step 2.
+
+**Use case: UC08 - Add task to task list**
+
+**MSS**
+
+1.  User requests to add a task
+2.  CoordiMate adds the task
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. There is no task name provided.
+
+    * 1a1. CoordiMate shows an error message.
+
+      Use case resumes at step 1.
 
 *{More to be added}*
 
