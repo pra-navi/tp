@@ -331,14 +331,14 @@ Errors:
 <div style="page-break-after: always;"></div>
 
 
-### 9. Listing all tasks : `listTasks`
+### 9. Listing all tasks : `listTask`
 
 Provides you with a complete list of tasks in your task list.
 
 Format:
 
 ```
-listTasks
+listTask
 ```
 
 Examples:
