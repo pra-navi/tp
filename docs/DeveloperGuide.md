@@ -269,25 +269,63 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see help instructions          | refer to documentation to understand the existing features effectively |
-| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI                        |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                             |
-| `* * *`  | event planner                              | delete all contacts            | efficiently restart or declutter my addressbook                        |
-| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event                         |
-| `* * *`  | event planner                              | edit a task                    | ensure task details are up-to-date with latest information             |
-| `* * *`  | event planner                              | delete a task                  | remove tasks that are no longer relevant                               |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​                                    | I want to …​                       | So that I can…​                                                        |
+| -------- | ------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------- |
+| `* * *`  | new user                                   | see help instructions              | refer to documentation to understand the existing features effectively |
+| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI             |
+| `* * *`  | event planner                              | add a new person's details         | remember details of new people I meet                                  |
+| `* * *`  | event planner                              | list each person's details         | view all my contacts' details at a quick glance                        |
+| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                  |
+| `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my addressbook                        |
+| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event              |
+| `* * *`  | event planner                              | list each task's details           | view all my tasks' details at a quick glance                           |
+| `* * *`  | event planner                              | edit a task                        | ensure task details are up-to-date with latest information             |
+| `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                               |
+| `* * *`  | user                                       | find a person by name              | locate details of persons without having to go through the entire list |
+| `* *`    | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
+| `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                 |
 
 *{More to be added}*
 
 ### Use cases
 
 (For all use cases below, the **System** is `CoordiMate` and the **Actor** is the `user`, unless specified otherwise)
+
+**Use case: UC01 - See help instructions**
+
+**MSS**
+
+1. User requests for help.
+2. CoordiMate shows the help instructions, with a link to user guide.
+3. User clicks on the link to user guide.
+
+    Use case ends.
+
+**Use case: UC02 - Add a person**
+
+**MSS**
+
+1. User requests to add a new person's particulars.
+2. CoordiMate adds the person.
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. The given particulars are invalid.
+
+    * 1a1. CoordiMate shows an error message.
+
+      Use case ends.
+
+**Use case: UC03 - List all persons**
+
+**MSS**
+
+1. User requests to list all persons.
+2. CoordiMate shows a list of all persons.
+
+   Use case ends.
 
 **Use case: UC06 - Delete a person from contact list**
 
@@ -311,16 +349,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. CoordiMate shows an error message.
 
       Use case resumes at step 2.
-
-**Use case: UC01 - See help instructions**
-
-**MSS**
-
-1. User requests for help.
-2. CoordiMate shows the help instructions, with a link to user guide.
-3. User clicks on the link to user guide.
-
-    Use case ends.
 
 **Use case: UC07 - Delete all existing contacts**
 
@@ -347,6 +375,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1a1. CoordiMate shows an error message.
 
       Use case resumes at step 1.
+      
+**Use case: UC09 - List all tasks**
+
+**MSS**
+
+1. User requests to list all tasks.
+2. CoordiMate shows a list of all tasks.
+
+   Use case ends.
 
 **Use case: UC10 - Edit a task**
 
