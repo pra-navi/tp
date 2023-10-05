@@ -85,6 +85,54 @@ Output:
 
 <div style="page-break-after: always;"></div>
 
+### 2. Adding a person: `addPerson`
+
+Add new people that you meet, be it new clients, vendors or friends.
+
+Format:
+
+```
+addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
+```
+
+{% include admonition.html type="info" title="A person can have any number of tags (including 0)." %}
+
+Examples:
+
+- `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
+- `addPerson n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+
+Output:
+
+![addPerson success](images/addPerson_success.png)
+
+Errors:
+
+![addPerson error](images/error/addPerson_error.png)
+
+<div style="page-break-after: always;"></div>
+
+
+### 3. Listing all persons: `listPerson`
+
+Presents you with a comprehensive list of contacts in your contact list.
+
+Format:
+
+```
+listPerson
+```
+
+Examples:
+
+- `listPerson`
+
+Output:
+
+![listPerson success](images/listPerson_success.png)
+
+<div style="page-break-after: always;"></div>
+
 ### 7. Clearing all person entries: `deleteAllPerson`
 
 
@@ -109,6 +157,27 @@ Output:
 - All persons in the contact list are deleted.
 
   ![deleteAllPerson success](images/deleteAllPerson_success.png)
+
+<div style="page-break-after: always;"></div>
+
+### 9. Listing all tasks: `listTask`
+
+Provides you with a complete list of tasks in your task list.
+
+Format:
+
+```
+listTask
+```
+
+Examples:
+
+- `listTask`
+
+Output:
+
+![listTask_success](images/output/listTask_success.png)
+
 
 <div style="page-break-after: always;"></div>
 
