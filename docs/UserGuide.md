@@ -39,13 +39,19 @@ This user guide contains all the information you need to get started with Coordi
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `listPerson` : Lists all persons.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
+   * `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a new contact named `John Doe` with the specified details.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list.
+   * `deletePerson 3` : Deletes the 3rd contact shown in the current contact list.
 
-   * `clear` : Deletes all contacts.
+   * `listTask` : Lists all tasks.
+
+   * `addTask t/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding Anniversary` to the task list.
+
+   * `markTask 1` : Marks the 1st task shown in the current task list as done.
+
+   * `findTask Get` : Finds all tasks with the word `Get` in their title or note.
 
    * `exit` : Exits the app.
 
@@ -88,8 +94,7 @@ Always make a backup before you edit!
   <li>
     <p>
       Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.<br>
-      e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>, <br>
-      where <code>John Doe</code> is the value of the parameter <code>NAME</code>. <br>
+      e.g. in <code>addPerson n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>addPerson n/John Doe</code>, where <code>John Doe</code> is the value of the parameter <code>NAME</code>. <br>
     </p>
   </li>
 
@@ -117,7 +122,7 @@ Always make a backup before you edit!
 
   <li>
     <p>
-      Extraneous parameters for commands that do not take in parameters (such as <code>help</code>, <code>list</code>, <code>exit</code> and <code>clear</code>) will be ignored.<br>
+      Extraneous parameters for commands that do not take in parameters (such as <code>help</code>, <code>listPerson</code>, <code>deleteAllPerson</code>, <code>listTask</code>, <code>deleteAllTask</code> and <code>exit</code>) will be ignored.<br>
       e.g. if the command specifies <code>help 123</code>, it will be interpreted as <code>help</code>.
     </p>
   </li>
