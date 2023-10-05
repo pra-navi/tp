@@ -168,8 +168,38 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
-### 7. Clearing all person entries: `deleteAllPerson`
+### 6. Deleting a person entry: `deletePerson`
 
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
+
+Erase an outdated person from your contact list with ease.
+
+Format:
+
+```
+deletePerson INDEX
+```
+
+- Deletes the person at the specified `INDEX`.
+- The index refers to the index number shown in the displayed person list.
+- The index **_must be a positive integer_** 1, 2, 3, …
+
+Examples:
+
+- `listPerson` followed by `deletePerson 2` deletes the 2nd person in the contact list.
+- `findPerson Betsy` followed by `deletePerson 1` deletes the 1st person in the results of the `findPerson` command.
+
+Output:
+
+![deletePerson success](images/output/deletePerson_success.png)
+
+Errors:
+
+![deletePerson error](images/error/deletePerson_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 7. Clearing all person entries: `deleteAllPerson`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 AddressBook will discard <b>all</b> Person data and start with an empty data file at the next run.<br>" %}
@@ -192,6 +222,31 @@ Output:
 - All persons in the contact list are deleted.
 
   ![deleteAllPerson success](images/deleteAllPerson_success.png)
+
+<div style="page-break-after: always;"></div>
+
+### 8. Adding a task: `addTask`
+
+Adds a task to your task list.
+
+Format:
+
+```
+addTask t/TITLE n/NOTE
+```
+
+Examples:
+
+- `addTask t/Get Flowers n/Wedding Anniversary`
+- `addTask t/Call Caterers n/Reunion Dinner`
+
+Output:
+
+![addTask_success](images/output/addTask_success.png)
+
+Errors:
+
+![addTask_error](images/error/addTask_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -374,6 +429,18 @@ Output:
 Errors:
 
 ![unmarkTask_error](images/error/unmarkTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 16. Exiting the program : `exit`
+
+Once you are done with your work in CoordiMate, you can exit the program by typing a command.
+
+Format: `exit`
+
+Output:
+
+- CoordiMate exits and the program window closes.
 
 <div style="page-break-after: always;"></div>
 
