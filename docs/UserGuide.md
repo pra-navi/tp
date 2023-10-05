@@ -3,26 +3,40 @@ layout: page
 title: User Guide
 ---
 
-AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps.
+Do you have trouble managing contacts?
 
+Don't worry, CoordiMate is here to help!
+
+CoordiMate is a **desktop app for event planners**. It helps you **manage your contacts and tasks** for your events, so that you can focus on the event itself.
+
+CoordiMate is **optimized for use via a Command Line Interface (CLI)** while still having the benefits of a Graphical User Interface (GUI).
+
+If you can type fast, CoordiMate can help you get your contact management tasks done **faster than traditional GUI apps**.
+
+This user guide contains all the information you need to get started with CoordiMate.
+
+<h2> Table of Contents </h2>
 * Table of Contents
 {:toc}
 
---------------------------------------------------------------------------------------------------------------------
+---
+
+<div style="page-break-after: always;"></div>
 
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `addressbook.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
+2. Download the latest `addressbook.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
+3. Copy `addressbook.jar` to the folder you want to use as the _home folder_ for CoordiMate. This folder will be used by CoordiMate to store its data.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar addressbook.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+4. Open a command terminal, `cd` into the folder you put `addressbook.jar` in, and use the `java -jar addressbook.jar` command to start CoordiMate.<br>
+
+   A GUI similar to the below picture should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all contacts.
@@ -35,33 +49,89 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Usage](#usage) section below for details of each command.
 
---------------------------------------------------------------------------------------------------------------------
+---
+
+<div style="page-break-after: always;"></div>
 
 ## Features
 
-<div markdown="block" class="alert alert-info">
+1. Create, Read, Update, Delete (CRUD) Person
+2. Find Person
+3. CRUD Task
+4. Find Task
+5. Automatic saving and loading of data from save file
+    1. CoordiMate automatically saves its data as a JSON file located at `[JAR file location]/data/addressbook.json`.
+    2. There is no need to save manually.
+    3. On startup, CoordiMate will automatically load existing data (if any) from the JSON file.
+6. Editable file format
+   1. Advanced users are welcome to update data directly by editing that data file.
 
-**:information_source: Notes about the command format:**<br>
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 
-* Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
-  e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
+If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.
 
-* Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
+Always make a backup before you edit!
 
-* Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+" %}
 
-* Parameters can be in any order.<br>
-  e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+---
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
-  e.g. if the command specifies `help 123`, it will be interpreted as `help`.
+<div style="page-break-after: always;"></div>
 
-* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
-</div>
+## Usage
+
+{% include admonition.html type="info" title="Info: About Command Formats" body="
+
+<ul>
+  <li>
+    <p>
+      Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.<br>
+      e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>, <br>
+      where <code>John Doe</code> is the value of the parameter <code>NAME</code>. <br>
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Items in square brackets are optional.<br>
+      e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.<br>
+      Note that the square brackets (<code>[</code> and <code>]</code>) are not part of the syntax.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Items in square brackets with <code>…</code> after them can be used multiple times, including zero times.<br>
+      e.g. <code>[t/TAG]…​</code> can be used as <code> </code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Parameters can be in any order.<br>
+      e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Extraneous parameters for commands that do not take in parameters (such as <code>help</code>, <code>list</code>, <code>exit</code> and <code>clear</code>) will be ignored.<br>
+      e.g. if the command specifies <code>help 123</code>, it will be interpreted as <code>help</code>.
+    </p>
+  </li>
+</ul>
+
+" %}
+
+{% include admonition.html type="warning" title="Warning: Using the PDF version of this document" body="
+
+If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+
+" %}
+
+<div style="page-break-after: always;"></div>
 
 ### 1. Viewing help: `help`
 
@@ -111,7 +181,6 @@ Errors:
 ![addPerson error](images/error/addPerson_error.png)
 
 <div style="page-break-after: always;"></div>
-
 
 ### 3. Listing all persons: `listPerson`
 
@@ -165,6 +234,56 @@ Errors:
 
 - Incorrect or missing index
 ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
+
+<div style="page-break-after: always;"></div>
+
+### 5. Finding a specific person: `findPerson`
+
+Type in a few keywords linked to a person's name, and the matching persons' details will be displayed on screen.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all persons that do not match the search criteria. <br>
+To reset the Persons view, simply run the <code>listPerson</code> command to list all persons.
+
+" %}
+
+Format:
+
+```
+findPerson KEYWORD [MORE_KEYWORDS]…
+```
+
+- At least one keyword is required to search.
+- The search is case-insensitive. e.g `hans` will match `Hans`.
+- The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
+- Only the name is searched.
+- Only full words will be matched e.g. `Han` will not match `Hans`.
+- Persons matching at least one keyword will be returned (i.e. `OR` search).
+  - e.g. `Hans Bo` will match `Hans Gruber`, `Bo Yang`.
+
+Examples:
+
+- `findPerson John` returns `john` and `John Doe`
+- `findPerson alex david` returns `Alex Yeoh`, `David Li`
+- Assuming `Jane` is not in your contacts list, `findPerson Jane` returns `0 Persons Listed`.
+
+Output:
+
+- There are search outcomes to be displayed.
+
+![findPerson success with a list](images/output/findPerson_success.png)
+
+
+- There are no search outcomes to be displayed.
+
+![findPerson success with zero results](images/output/findPerson_noResults.png)
+
+Errors:
+
+- Incorrect number of parameters.
+
+![findPerson error](images/error/findPerson_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -268,7 +387,6 @@ Output:
 
 ![listTask_success](images/output/listTask_success.png)
 
-
 <div style="page-break-after: always;"></div>
 
 ### 10. Editing a task: `editTask`
@@ -310,6 +428,57 @@ Errors:
 - Index is not specified.
 
   ![editTask_error](images/error/editTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 11. Finding a specific task: `findTask`
+
+You can locate tasks containing your specified keywords in their title and/or note.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all Tasks that do not match the search criteria. <br>
+To reset the Tasks view, simply run the <code>listTasks</code> command to list all Tasks.
+
+" %}
+
+Format:
+
+```
+findTask KEYWORD [MORE_KEYWORDS]…
+```
+
+- At least one keyword is required to search.
+- The search is case-insensitive. e.g `call` will match `Call`.
+- The order of the keywords does not matter. e.g. `Call Caterer` will match `Caterer Call`.
+- Both the title and note of a task is searched.
+- Only full words will be matched e.g. `Call` will not match `Calls`.
+- Tasks matching at least one keyword in either the title or the note will be returned (i.e. `OR` search).
+  - e.g. `Call Wedding` will match `Call Hotel`, `Wedding Anniversary`.
+
+Examples:
+
+- `findTask Call Wedding` 
+  - Finds tasks with titles or notes containing either `Call` or `Wedding`.
+- `findTask Photography`
+  - Finds tasks with titles or notes containing `Photography`.
+- `findTask`
+  - Negative example as no keywords are specified.
+
+Output:
+- Both tasks are displayed as Task 1 has the word `Call` in its title and Task 2 has the word `Wedding` in its note.
+
+  ![findTask_success](images/output/findTask_success.png)
+
+- There are no tasks to be displayed, as no Task has the word `Photography` in its title or note.
+  
+  ![findTask_noResults](images/output/findTask_noResults.png)
+
+Errors:
+
+- No keywords are specified.
+  
+  ![findTask_error](images/error/findTask_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -444,29 +613,47 @@ Output:
 
 <div style="page-break-after: always;"></div>
 
---------------------------------------------------------------------------------------------------------------------
-
 ## FAQ
 
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
+{% include admonition.html type="question" title="How do I transfer my data to another computer?" body="
 
---------------------------------------------------------------------------------------------------------------------
+Install the app in the other computer and overwrite the empty data file with your previous save file.
+
+" %}
+
+---
+
+<div style="page-break-after: always;"></div>
 
 ## Known issues
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+{% include admonition.html type="bug" title="Bug: The GUI will open off-screen if you switch between multiple screens." body="
 
---------------------------------------------------------------------------------------------------------------------
+Delete the <code>preferences.json</code> file created by CoordiMate before running CoordiMate again.
+
+"%}
+
+---
+
+<div style="page-break-after: always;"></div>
 
 ## Command summary
 
-Action | Format, Examples
---------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
-**Clear** | `clear`
-**Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
-**Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
-**List** | `list`
-**Help** | `help`
+ Action | Format | Example
+--------|--------|----------
+[**View Help**](#1-viewing-help-help) | `help` | `help`
+[**Add Person**](#2-adding-a-person-addperson)|`addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…`|`addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
+[**List All Person**](#3-listing-all-persons-listperson) | `listPerson` | `listPerson`
+[**Edit Person**](#4-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com`
+[**Find Person**](#5-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John`
+[**Delete Person**](#6-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1`
+[**Delete All Person**](#7-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson`
+[**Add Task**](#8-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
+[**List All Task**](#9-listing-all-tasks-listtask) | `listTask` | `listTask`
+[**Edit Task**](#10-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
+[**Find Task**](#11-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
+[**Delete Task**](#12-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1`
+[**Delete All Task**](#13-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
+[**Mark Task**](#14-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
+[**Unmark Task**](#15-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
+[**Exit**](#16-exiting-the-program--exit) | `exit` | `exit`
