@@ -168,11 +168,11 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
-### 6. Deleting a person's contact : `deletePerson`
+### 6. Deleting a person entry: `deletePerson`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
-Erase an outdated vendor from your contact list with ease.
+Erase an outdated person from your contact list with ease.
 
 Format:
 
@@ -432,11 +432,15 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
-### 15. Exiting the program : `exit`
+### 16. Exiting the program : `exit`
 
-You can exit the program.
+Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
 Format: `exit`
+
+Output:
+
+- CoordiMate exits and the program window closes.
 
 <div style="page-break-after: always;"></div>
 
