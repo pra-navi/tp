@@ -432,6 +432,14 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
+### 15. Exiting the program : `exit`
+
+You can exit the program.
+
+Format: `exit`
+
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
