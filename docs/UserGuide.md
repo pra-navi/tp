@@ -63,111 +63,131 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
-### Viewing help : `help`
+### 1. Viewing help: `help`
 
-Shows a message explaning how to access the help page.
+You can access the help page at any time, ensuring that you will never be lost.
 
-![help message](images/helpMessage.png)
+Format:
 
-Format: `help`
-
-
-### Adding a person: `add`
-
-Adds a person to the address book.
-
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
-
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A person can have any number of tags (including 0)
-</div>
+```
+help
+```
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
 
-### Listing all persons : `list`
+- `help`
 
-Shows a list of all persons in the address book.
+Output:
 
-Format: `list`
+- Opens a window with a link to our user guide.
 
-### Editing a person : `edit`
+  ![help message](images/output/help_success.png)
 
-Edits an existing person in the address book.
+<div style="page-break-after: always;"></div>
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
+### 7. Clearing all person entries: `deleteAllPerson`
 
-* Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
-* At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
-* When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
-* You can remove all the person’s tags by typing `t/` without
-    specifying any tags after it.
 
-Examples:
-*  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
+AddressBook will discard <b>all</b> Person data and start with an empty data file at the next run.<br>" %}
 
-### Locating persons by name: `find`
+Clears all contacts in your contact list.
 
-Finds persons whose names contain any of the given keywords.
+Format:
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
-
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
-* Persons matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+```
+deleteAllPerson
+```
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
 
-### Deleting a person : `delete`
+- `deleteAllPerson`
+  - Deletes all persons in your contact list.
 
-Deletes the specified person from the address book.
+Output:
 
-Format: `delete INDEX`
+- All persons in the contact list are deleted.
 
-* Deletes the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed person list.
-* The index **must be a positive integer** 1, 2, 3, …​
+  ![deleteAllPerson success](images/deleteAllPerson_success.png)
+
+<div style="page-break-after: always;"></div>
+
+### 10. Editing a task: `editTask`
+
+You can edit the details of a task in your task list.
+
+Format:
+
+```
+editTask INDEX [t/TITLE] [n/NOTE]
+```
+
+- Edits the task at the specified `INDEX`.
+- The index refers to the index number shown in the task list currently displayed.
+- Specify a new title with the `t/` prefix. This field is **optional**.
+- Specify a new note with the `n/` prefix. This field is **optional**.
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd person in the address book.
-* `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
-### Clearing all entries : `clear`
+- `editTask 1 t/Call Caterer`
+  - Edits the title of the 1st task to be `Call Caterer`.
+- `editTask 2 t/Book room n/By Friday`
+  - Edits the title of the 2nd task to be `Book room` and the note to be `By Friday`.
+- `editTask`
+  - Negative example as the index is not specified.
 
-Clears all entries from the address book.
+Output:
 
-Format: `clear`
+- Title of task 1 is edited to `Call Caterer`.
 
-### Exiting the program : `exit`
+  ![editTask_success](images/output/editTask_success1.png)
 
-Exits the program.
+- Title of task 2 is edited to `Book room` and note is edited to `By Friday`.
 
-Format: `exit`
+  ![editTask_success](images/output/editTask_success2.png)
 
-### Saving the data
+Errors:
 
-AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+- Index is not specified.
 
-### Editing the data file
+  ![editTask_error](images/error/editTask_error.png)
 
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+<div style="page-break-after: always;"></div>
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
-</div>
+### 12. Deleting a task entry: `deleteTask`
 
-### Archiving data files `[coming in v2.0]`
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
-_Details coming soon ..._
+You can remove a task from your task list.
+
+Format:
+
+`deleteTask INDEX`
+
+- Deletes the task at the specified `INDEX`.
+- The index refers to the index number shown in the task list currently displayed.
+
+Examples:
+
+- `deleteTask 2`
+  - Deletes the 2nd task in the task list.
+- `findTask Call` followed by `deleteTask 1`
+  - Deletes the 1st task in the results of the `findTask` command.
+
+Output:
+
+- Deletes task 2.
+
+  ![deleteTask_success](images/output/deleteTask_success1.png)
+
+Errors:
+
+- Index specified is not available in the task list.
+
+  ![deleteTask_error](images/error/deleteTask_error1.png)
+
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
