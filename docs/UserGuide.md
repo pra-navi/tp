@@ -133,6 +133,41 @@ Output:
 
 <div style="page-break-after: always;"></div>
 
+### 4. Editing a person: `editPerson`
+
+Enables you to change the details or particulars of an existing contact in your contact list.
+
+Format:
+
+```
+editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
+```
+
+- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
+- At least one of the optional fields must be provided.
+- Existing values will be updated to the input values.
+- When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
+- You can remove all the person’s tags by typing `t/` without specifying any tags after it.
+
+Examples:
+
+- `editPerson 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
+- `editPerson 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+
+Output:
+
+![editPerson success](images/editPerson_success.png)
+
+Errors:
+
+- Incorrect parameters or command format
+![editPerson error](images/error/editPerson_error.png)
+
+- Incorrect or missing index
+![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
+
+<div style="page-break-after: always;"></div>
+
 ### 7. Clearing all person entries: `deleteAllPerson`
 
 
@@ -255,6 +290,90 @@ Errors:
 
   ![deleteTask_error](images/error/deleteTask_error1.png)
 
+<div style="page-break-after: always;"></div>
+
+### 13. Clearing all task entries: `deleteAllTask`
+
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
+AddressBook will discard <b>all</b> Task data and start with an empty data file at the next run.<br>" %}
+
+Allows you to remove all entries from your task list.
+
+Format:
+
+```
+deleteAllTask
+```
+
+Examples:
+
+- `deleteAllTask`
+
+Output:
+
+![deleteAllTask success](images/output/deleteAllTask_success.png)
+
+<div style="page-break-after: always;"></div>
+
+### 14. Marking a task as done: `markTask`
+
+Allows you to indicate that a specific task as **completed**.
+
+Format:
+
+```
+markTask INDEX
+```
+
+- Marks the task at the specified `INDEX`.
+- The index refers to the index number shown in the displayed task list.
+- The index **_must be a positive integer_** 1, 2, 3, …
+
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+
+Examples:
+
+- `listTask` followed by `markTask 2` marks the 2nd task in the task list as **done**.
+- `findTask Call` followed by `markTask 1` marks the 1st task in the results of the `findTask` command as **done**.
+
+Output:
+
+![markTask_success](images/output/markTask_success.png)
+
+Errors:
+
+![markTask_error](images/error/markTask_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 15. Marking a task as not done: `unmarkTask`
+
+Allows you to indicate that a specific task as **not completed**.
+
+Format:
+
+```
+unmarkTask INDEX
+```
+
+- Marks the task at the specified `INDEX`.
+- The index refers to the index number shown in the displayed task list.
+- The index **_must be a positive integer_** 1, 2, 3, …
+
+{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+
+Examples:
+
+- `listTask` followed by `unmarkTask 2` marks the 2nd task in the task list as **not done**.
+- `findTask Call` followed by `unmarkTask 1` marks the 1st task in the results of the `findTask` command as **not done**.
+
+Output:
+
+![unmarkTask_success](images/output/unmarkTask_success.png)
+
+Errors:
+
+![unmarkTask_error](images/error/unmarkTask_error.png)
 
 <div style="page-break-after: always;"></div>
 
