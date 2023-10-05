@@ -2,6 +2,8 @@
 layout: page
 title: Developer Guide
 ---
+
+<h2> Table of Contents </h2>
 * Table of Contents
 {:toc}
 
@@ -21,10 +23,12 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ## **Design**
 
-<div markdown="span" class="alert alert-primary">
+{% include admonition.html type="tip" title="Tip" body="
 
-:bulb: **Tip:** The `.puml` files used to create diagrams in this document `docs/diagrams` folder. Refer to the [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
-</div>
+The <code>.puml</code> files used to create diagrams in this document are in the <code>docs/diagrams</code> folder. <br>
+Refer to the <a href='https://se-education.org/guides/tutorials/plantUml.html'><i>PlantUML Tutorial</i> at se-edu/guides</a> to learn how to create and edit diagrams.
+
+" %}
 
 ### Architecture
 
@@ -36,7 +40,8 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -68,13 +73,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -85,7 +90,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -95,15 +100,18 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 ![Interactions Inside the Logic Component for the `delete 1` Command](images/DeleteSequenceDiagram.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</div>
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
 
 How the `Logic` component works:
 
 1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
-1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
-1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).
-1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
+2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
+3. The command can communicate with the `Model` when it is executed (e.g. to delete a person).
+4. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
 
@@ -114,7 +122,7 @@ How the parsing works:
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="450" />
 
@@ -126,16 +134,17 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
+{% include admonition.html type="note" title="Note" body="
 
-<img src="images/BetterModelClassDiagram.png" width="450" />
+An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br> 
 
-</div>
+<img src='images/BetterModelClassDiagram.png' width='450' />
 
+" %}
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="images/StorageClassDiagram.png" width="550" />
 
@@ -180,32 +189,40 @@ Step 3. The user executes `add n/David …​` to add a new person. The `add` co
 
 ![UndoRedoState2](images/UndoRedoState2.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
+{% include admonition.html type="note" title="Note" body="
 
-</div>
+If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
+
+" %}
 
 Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
 
 ![UndoRedoState3](images/UndoRedoState3.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
+{% include admonition.html type="note" title="Note" body="
+
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather
 than attempting to perform the undo.
 
-</div>
+" %}
 
 The following sequence diagram shows how the undo operation works:
 
 ![UndoSequenceDiagram](images/UndoSequenceDiagram.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+{% include admonition.html type="note" title="Note" body="
 
-</div>
+The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
 
 The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+{% include admonition.html type="note" title="Note" body="
 
-</div>
+If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone AddressBook states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+
+" %}
 
 Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
 
@@ -257,72 +274,85 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
-* is reasonably comfortable using CLI apps
+* Has a need to manage various contacts and tasks for event-planning
+* Prefers desktop apps over other types
+* Is comfortable with CLI apps
+* Is able to type fast
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: 
+
+CoordiMate helps event planners to easily keep track of contact details as well as the tasks to be done for various events, in a more efficient way compared to a typical mouse/GUI driven app.
 
 ### User stories
 
-Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
+Priorities: 
 
-| Priority | As a …​                                    | I want to …​                       | So that I can…​                                                        |
+* `* * *` - High (must have)
+* `* *` - Medium (nice to have)
+* `*` - Low (unlikely to have)
+
+| Priority | As a …​                                     | I want to …​                        | So that I can …​                                                        |
 | -------- | ------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------- |
 | `* * *`  | new user                                   | see help instructions              | refer to documentation to understand the existing features effectively |
 | `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI             |
 | `* * *`  | event planner                              | add a new person's details         | remember details of new people I meet                                  |
 | `* * *`  | event planner                              | list each person's details         | view all my contacts' details at a quick glance                        |
 | `* * *`  | event planner                              | edit a person's details            | update details of persons that are outdated with new information       |
+| `* * *`  | event planner                              | find a person by name              | locate a specific person without having to go through the entire list  |
 | `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                  |
-| `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my addressbook                        |
+| `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my contacts list                      |
 | `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event              |
 | `* * *`  | event planner                              | list each task's details           | view all my tasks' details at a quick glance                           |
 | `* * *`  | event planner                              | edit a task                        | ensure task details are up-to-date with latest information             |
+| `* * *`  | event planner                              | find a task by name                | locate a specific task without having to go through the entire list    |
 | `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                               |
 | `* * *`  | event planner                              | delete all tasks                   | clear all task entries and restart with a new clean task list          |
-| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of done tasks               |
-| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of not done tasks           |
-| `* * *`  | user                                       | find a person by name              | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
+| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of tasks that are done      |
+| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of tasks that are not done  |
+| `* * *`  | event planner                              | save my data automatically         | ensure that my contact and task data will not be lost                  |
+| `* * *`  | event planner                              | load my data automatically         | quickly continue from where I left off in the last session             |
+| `*`      | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
 | `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                 |
 
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is `CoordiMate` and the **Actor** is the `user`, unless specified otherwise)
+For all use cases below, the **System** is `CoordiMate` and the **Actor** is the `user`, unless specified otherwise.
 
-**Use case: UC01 - See help instructions**
+---
+
+**Use case: UC01 - View help instructions**
 
 **MSS**
 
 1. User requests for help.
 2. CoordiMate shows the help instructions, with a link to user guide.
-3. User clicks on the link to user guide.
 
-    Use case ends.
+   Use case ends.
 
-**Use case: UC02 - Add a person**
+---
+
+**Use case: UC02 - Add a person to the contact list**
 
 **MSS**
 
 1. User requests to add a new person's particulars.
-2. CoordiMate adds the person.
+2. CoordiMate adds the person with the specified particulars.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions**
 
 * 1a. The given particulars are invalid.
 
-    * 1a1. CoordiMate shows an error message.
+  * 1a1. CoordiMate shows an error message.
 
-      Use case ends.
+      Use case resumes from step 1.
 
-**Use case: UC03 - List all persons**
+---
+
+**Use case: UC03 - List all persons in the contact list**
 
 **MSS**
 
@@ -330,78 +360,117 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. CoordiMate shows a list of all persons.
 
    Use case ends.
-   
-**Use case: UC04 - Edit a person's details**
+
+---
+
+**Use case: UC04 - Edit a person's details in the contact list**
 
 **MSS**
 
-1.  User requests to list persons.
-2.  CoordiMate shows a list of persons.
-3.  User requests to edit a specific person in the list and provides the new person particulars.
-4.  CoordiMate updates the person's details with the provided new information.
+1. User requests to list all persons.
+2. CoordiMate shows a list of persons.
+3. User requests to edit a specific person in the list and provides the new particulars.
+4. CoordiMate updates the person's details with the new particulars.
+
+   Use case ends.
 
 **Extensions**
 
 * 2a. The list is empty.
 
-  Use case ends.
+   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+  * 3a1. CoordiMate shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes from step 3.
 
-**Use case: UC06 - Delete a person from contact list**
+---
+
+**Use case: UC05 - Find a person in the contact list**
 
 **MSS**
 
-1.  User requests to list persons
-2.  CoordiMate shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  CoordiMate deletes the person
+1. User requests to search the contacts list with a search term.
+2. CoordiMate lists all persons whose names contain the search term.
 
-    Use case ends.
+   Use case ends.
+
+**Extensions**
+
+* 1a. User provides an empty search term.
+
+  * 1a1. CoordiMate shows an error message.
+
+      Use case resumes from step 1.
+
+---
+
+**Use case: UC06 - Delete a person from the contact list**
+
+**MSS**
+
+1. User requests to list all persons.
+2. CoordiMate shows a list of persons.
+3. User requests to delete a specific person in the list.
+4. CoordiMate deletes the person.
+
+   Use case ends.
 
 **Extensions**
 
 * 2a. The contact list is empty.
 
-  Use case ends.
+   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. CoordiMate shows an error message.
+  * 3a1. CoordiMate shows an error message.
 
-      Use case resumes from step 2.
+      Use case resumes from step 3.
+
+---
 
 **Use case: UC07 - Delete all existing contacts**
 
 **MSS**
 
 1. User requests to delete all contacts.
-2. CoordiMate deletes all contacts shows a confirmation message.
+2. CoordiMate deletes all contacts and shows a confirmation message.
 
    Use case ends.
 
-**Use case: UC08 - Add task to task list**
+**Extensions**
+
+* 1a. The contact list is empty.
+
+  * 1a1. CoordiMate informs the user that there are no contacts to be deleted.
+
+      Use case ends.
+
+---
+
+**Use case: UC08 - Add a task to the task list**
 
 **MSS**
 
-1.  User requests to add a task
-2.  CoordiMate adds the task
+1. User requests to add a task with a title and note.
+2. CoordiMate adds the task.
 
-    Use case ends.
-    
- **Extensions**
- 
-* 1a. There is no task name provided.
+   Use case ends.
 
-    * 1a1. CoordiMate shows an error message.
+**Extensions**
 
-      Use case resumes at step 1.
+* 1a. No task title or note was provided.
+
+  * 1a1. CoordiMate shows an error message.
+
+      Use case resumes from step 1.
+
+---
       
-**Use case: UC09 - List all tasks**
+**Use case: UC09 - List all tasks in the task list**
 
 **MSS**
 
@@ -410,7 +479,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
-**Use case: UC10 - Edit a task**
+---
+
+**Use case: UC10 - Edit a task in the task list**
 
 **MSS**
 
@@ -423,17 +494,38 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The task list is empty.
 
   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+  * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
 
-      Use case resumes at step 3.
+      Use case resumes from step 3.
 
-**Use case: UC12 - Delete a task**
+---
+
+**Use case: UC11 - Find a task in the task list**
+
+**MSS**
+
+1. User provides a search term.
+2. CoordiMate lists all tasks whose names contain the search term.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. User provides an empty search term.
+
+  * 1a1. CoordiMate shows an error message.
+
+      Use case resumes from step 1.
+
+---
+
+**Use case: UC12 - Delete a task from the task list**
 
 **MSS**
 
@@ -442,7 +534,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3. User requests to delete a specific task in the list.
 4. CoordiMate deletes the task.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions**
 
@@ -452,98 +544,178 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+  * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
 
       Use case resumes at step 3.
 
-**Use case: UC13 - Delete all tasks**
+---
+
+**Use case: UC13 - Delete all tasks from the task list**
 
 **MSS**
 
-1.  User requests to clear all tasks in task list.
-2.  CoordiMate clears entire task list.
+1. User requests to clear all tasks in task list.
+2. CoordiMate clears entire task list.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions**
 
-* 1a. The list is empty.
+* 1a. The task list is empty.
 
-  Use case ends.
+  * 1a1. CoordiMate informs the user that there are no tasks to be deleted.
+
+      Use case ends.
+
+---
 
 **Use case: UC14 - Mark a task as done**
 
 **MSS**
 
-1.  User requests to list tasks.
-2.  CoordiMate shows a list of tasks.
-3.  User requests to mark a specific task in the list as done.
-4.  CoordiMate updates the status of the task to be done.
+1. User requests to list tasks.
+2. CoordiMate shows a list of tasks.
+3. User requests to mark a specific task in the list as done.
+4. CoordiMate updates the status of the task to be done.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions**
 
 * 2a. The list is empty.
 
-  Use case ends.
+   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. CoordiMate shows an error message.
+  * 3a1. CoordiMate shows an error message.
 
-      Use case resumes from step 2.
+      Use case resumes from step 3.
 
 * 3b. The specific task is already marked as done.
 
-  Use case ends.
+   Use case ends.
+
+---
 
 **Use case: UC15 - Mark a task as not done**
 
 **MSS**
 
-1.  User requests to list tasks.
-2.  CoordiMate shows a list of tasks.
-3.  User requests to mark a specific task in the list as not done.
-4.  CoordiMate updates the status of the task to be not done.
+1. User requests to list tasks.
+2. CoordiMate shows a list of tasks.
+3. User requests to mark a specific task in the list as not done.
+4. CoordiMate updates the status of the task to be not done.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions**
 
 * 2a. The list is empty.
 
-  Use case ends.
+   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. CoordiMate shows an error message.
+  * 3a1. CoordiMate shows an error message.
 
-      Use case resumes from step 2.
+      Use case resumes from step 3.
 
 * 3b. The specific task is already marked as not done.
 
-  Use case ends.
+   Use case ends.
 
-*{More to be added}*
+---
+
+**Use case: UC16 - Exit CoordiMate**
+
+**MSS**
+
+1. User requests to exit CoordiMate.
+2. CoordiMate exits.
+
+   Use case ends.
+
+---
+
+**Use case: UC17 - Load data from save file**
+
+**MSS**
+
+1. User launches CoordiMate.
+2. CoordiMate shows the data from the save file.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. The save file is missing.
+
+  * 1a1. CoordiMate shows sample data.
+
+      Use case ends.
+
+* 1b. The save file is corrupted.
+
+  * 1b1. CoordiMate shows an error message and shows no entries.
+
+      Use case ends.
+
+* 1c. An error occurs while loading the save file.
+
+  * 1c1. CoordiMate shows an error message and shows no entries.
+
+      Use case ends.
+
+---
+
+**Use case: UC18 - Save data to save file**
+
+**MSS**
+
+1. User makes changes to the data in CoordiMate.
+2. CoordiMate indicates that data is successfully saved to the save file.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. The save file is missing.
+
+  * 1a1. CoordiMate creates a new save file.
+
+      Use case resumes from step 2.
+
+* 1b. An error occurs while saving to the save file.
+
+  * 1b1. CoordiMate shows an error message.
+
+      Use case ends.
+
+---
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons and tasks without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-4.  Application should be designed for a single user.
-5.  Data should be stored locally in a human-readable and editable text file.
-6.  Data should persist across usage sessions.
-7.  Application should not require internet connection to run.
-8.  GUI should work well for standard screen resolutions of 1920x1080 and higher, and for screen scales of 100% and 125%.
-9.  GUI should be usable for resolutions of 1280x720 and higher, and for screen scales of 150%.
+1. Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
+2. Should be able to hold up to 1000 persons and tasks without a noticeable sluggishness in performance for typical usage.
+3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4. Application should be designed for a single user.
+5. Data should be stored locally in a human-readable and editable text file.
+6. Data should persist across usage sessions.
+7. Application should not require internet connection to run.
+8. GUI should work well for standard screen resolutions of 1920x1080 and higher, and for screen scales of 100% and 125%.
+9. GUI should be usable for resolutions of 1280x720 and higher, and for screen scales of 150%.
 10. Application should be packaged and delivered to user in a single JAR file under 100MB.
 
 ### Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, OS-X
+* **CLI**: Command Line Interface, a way of interacting with a computer program by typing commands and receiving text responses.
+* **Exploratory testing**: Testing a feature based on the tester's intuitive understanding of how the feature should function.
+* **GUI**: Graphical User Interface, a way of interacting with a computer program by manipulating graphical elements on the screen.
+* **Mainstream OS**: One of these operating systems: Windows, Linux, Unix, OS-X
+* **MSS**: Main Success Scenario, which is the most straightforward interaction for a given use case assuming that nothing goes wrong.
 * **Private contact detail**: A contact detail that is not meant to be shared with others
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -551,10 +723,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 Given below are instructions to test the app manually.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
-testers are expected to do more *exploratory* testing.
+{% include admonition.html type="info" title="Info" body="
 
-</div>
+These instructions only provide a starting point for testers to work on;
+testers are expected to do more <i>exploratory testing</i>.
+
+" %}
 
 ### Launch and shutdown
 
