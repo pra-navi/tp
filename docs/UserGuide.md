@@ -27,11 +27,11 @@ This user guide contains all the information you need to get started with Coordi
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-2. Download the latest `addressbook.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/releases).
+2. Download the latest `CoordiMate.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/releases).
 
-3. Copy `addressbook.jar` to the folder you want to use as the _home folder_ for CoordiMate. This folder will be used by CoordiMate to store its data.
+3. Copy `CoordiMate.jar` to the folder you want to use as the _home folder_ for CoordiMate. This folder will be used by CoordiMate to store its data.
 
-4. Open a command terminal, `cd` into the folder you put `addressbook.jar` in, and use the `java -jar addressbook.jar` command to start CoordiMate.<br>
+4. Open a command terminal, `cd` into the folder you put `CoordiMate.jar` in, and use the `java -jar CoordiMate.jar` command to start CoordiMate.<br>
 
    A GUI similar to the below picture should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
@@ -68,7 +68,7 @@ This user guide contains all the information you need to get started with Coordi
 3. CRUD Task
 4. Find Task
 5. Automatic saving and loading of data from save file
-    1. CoordiMate automatically saves its data as a JSON file located at `[JAR file location]/data/addressbook.json`.
+    1. CoordiMate automatically saves its data as a JSON file located at `[JAR file location]/data/CoordiMate.json`.
     2. There is no need to save manually.
     3. On startup, CoordiMate will automatically load existing data (if any) from the JSON file.
 6. Editable file format
@@ -76,7 +76,7 @@ This user guide contains all the information you need to get started with Coordi
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.
+If your changes to the data file makes its format invalid, CoordiMate will discard all data and start with an empty data file at the next run.
 
 Always make a backup before you edit!
 
@@ -326,7 +326,7 @@ Errors:
 ### 7. Clearing all person entries: `deleteAllPerson`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
-AddressBook will discard <b>all</b> Person data and start with an empty data file at the next run.<br>" %}
+CoordiMate will discard <b>all</b> Person data and start with an empty data file at the next run.<br>" %}
 
 Clears all contacts in your contact list.
 
@@ -524,7 +524,7 @@ Errors:
 ### 13. Clearing all task entries: `deleteAllTask`
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
-AddressBook will discard <b>all</b> Task data and start with an empty data file at the next run.<br>" %}
+CoordiMate will discard <b>all</b> Task data and start with an empty data file at the next run.<br>" %}
 
 Allows you to remove all entries from your task list.
 
