@@ -13,6 +13,7 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.util.StringUtil;
 
 /**
  * Controller for a help page
@@ -117,10 +118,10 @@ public class HelpWindow extends UiPart<Stage> {
         } catch (IOException e) {
             // Handle the IOException, which may occur when the system cannot open the
             // default browser.
-            e.printStackTrace();
+            logger.warning("Failed to open URL in default browser: " + StringUtil.getDetails(e));
         } catch (URISyntaxException e) {
             // Handle the URISyntaxException, which may occur when the URL is not valid.
-            e.printStackTrace();
+            logger.warning("Invalid URL specified: " + StringUtil.getDetails(e));
         }
     }
 }
