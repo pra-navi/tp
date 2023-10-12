@@ -128,6 +128,15 @@ public class UniquePersonListTest {
     }
 
     @Test
+    public void removeAll_clearsList() {
+        uniquePersonList.add(ALICE);
+        uniquePersonList.add(BOB);
+        uniquePersonList.removeAll();
+        UniquePersonList expectedUniquePersonList = new UniquePersonList();
+        assertEquals(expectedUniquePersonList, uniquePersonList);
+    }
+
+    @Test
     public void setPersons_nullUniquePersonList_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniquePersonList.setPersons((UniquePersonList) null));
     }
