@@ -115,9 +115,9 @@ public class EditPersonCommand extends Command {
             return false;
         }
 
-        EditPersonCommand otherEditCommand = (EditPersonCommand) other;
-        return index.equals(otherEditCommand.index)
-                && editPersonDescriptor.equals(otherEditCommand.editPersonDescriptor);
+        EditPersonCommand otherEditPersonCommand = (EditPersonCommand) other;
+        return index.equals(otherEditPersonCommand.index)
+                && editPersonDescriptor.equals(otherEditPersonCommand.editPersonDescriptor);
     }
 
     @Override
