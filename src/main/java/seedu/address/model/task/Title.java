@@ -12,15 +12,15 @@ import java.util.Objects;
 public class Title {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Title should only contain alphanumeric characters and spaces, and it should not be blank";
+            "Titles can take any value, as long as it is not blank and does not start with a whitespace";
 
     /*
      * The first character of the task title must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+    public static final String VALIDATION_REGEX = "\\S.*";
 
-    public final String taskTitle;
+    public final String value;
 
     /**
      * Constructs a {@code Title}.
@@ -30,7 +30,7 @@ public class Title {
     public Title(String title) {
         requireNonNull(title);
         checkArgument(isValidTitle(title), MESSAGE_CONSTRAINTS);
-        taskTitle = title;
+        value = title;
     }
 
     /**
@@ -42,7 +42,7 @@ public class Title {
 
     @Override
     public String toString() {
-        return taskTitle;
+        return value;
     }
 
     @Override
@@ -57,12 +57,12 @@ public class Title {
         }
 
         Title otherTitle = (Title) other;
-        return taskTitle.equals(otherTitle.taskTitle);
+        return value.equals(otherTitle.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskTitle);
+        return Objects.hash(value);
     }
 
 }

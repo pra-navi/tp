@@ -21,10 +21,8 @@ public class NoteTest {
         assertThrows(IllegalArgumentException.class, () -> new Note(""));
         // spaces only
         assertThrows(IllegalArgumentException.class, () -> new Note(" "));
-        // only non-alphanumeric characters
-        assertThrows(IllegalArgumentException.class, () -> new Note("^"));
-        // contains non-alphanumeric characters
-        assertThrows(IllegalArgumentException.class, () -> new Note("SELECT*"));
+        // starts with a whitespace
+        assertThrows(IllegalArgumentException.class, () -> new Note(" do work"));
     }
 
     @Test
@@ -35,15 +33,18 @@ public class NoteTest {
         // invalid notes
         assertFalse(Note.isValidNote("")); // empty string
         assertFalse(Note.isValidNote(" ")); // spaces only
-        assertFalse(Note.isValidNote("^")); // only non-alphanumeric characters
-        assertFalse(Note.isValidNote("SELECT*")); // contains non-alphanumeric characters
+        assertFalse(Note.isValidNote(" do work")); // starts with a whitespace
 
         // valid notes
+        assertTrue(Note.isValidNote("^")); // only non-alphanumeric characters
+        assertTrue(Note.isValidNote("SELECT*")); // contains non-alphanumeric characters
         assertTrue(Note.isValidNote("do work")); // alphabets only
         assertTrue(Note.isValidNote("12345")); // numbers only
         assertTrue(Note.isValidNote("submit by the 2nd")); // alphanumeric characters
         assertTrue(Note.isValidNote("CS2103")); // with capital letters
         assertTrue(Note.isValidNote("CoordiMate for Event Planners of CS2103")); // long notes
+        assertTrue(Title.isValidTitle("\uD83D\uDC4B\uD83C\uDFFB \uD83C\uDDF8\uD83C\uDDEC")); // emojis
+        assertTrue(Title.isValidTitle("(ノಠ益ಠ)ノ彡┻━┻")); // non-English characters
     }
 
     @Test

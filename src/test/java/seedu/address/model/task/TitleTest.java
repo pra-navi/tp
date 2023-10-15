@@ -21,10 +21,8 @@ public class TitleTest {
         assertThrows(IllegalArgumentException.class, () -> new Title(""));
         // spaces only
         assertThrows(IllegalArgumentException.class, () -> new Title(" "));
-        // only non-alphanumeric characters
-        assertThrows(IllegalArgumentException.class, () -> new Title("^"));
-        // contains non-alphanumeric characters
-        assertThrows(IllegalArgumentException.class, () -> new Title("SELECT*"));
+        // starts with a whitespace
+        assertThrows(IllegalArgumentException.class, () -> new Title(" do work"));
     }
 
     @Test
@@ -35,15 +33,18 @@ public class TitleTest {
         // invalid titles
         assertFalse(Title.isValidTitle("")); // empty string
         assertFalse(Title.isValidTitle(" ")); // spaces only
-        assertFalse(Title.isValidTitle("^")); // only non-alphanumeric characters
-        assertFalse(Title.isValidTitle("SELECT*")); // contains non-alphanumeric characters
+        assertFalse(Title.isValidTitle(" do work")); // starts with a whitespace
 
         // valid titles
+        assertTrue(Title.isValidTitle("^")); // only non-alphanumeric characters
+        assertTrue(Title.isValidTitle("SELECT*")); // contains non-alphanumeric characters
         assertTrue(Title.isValidTitle("do work")); // alphabets only
         assertTrue(Title.isValidTitle("12345")); // numbers only
         assertTrue(Title.isValidTitle("submit by the 2nd")); // alphanumeric characters
         assertTrue(Title.isValidTitle("CS2103")); // with capital letters
         assertTrue(Title.isValidTitle("CoordiMate for Event Planners of CS2103")); // long titles
+        assertTrue(Title.isValidTitle("\uD83D\uDC4B\uD83C\uDFFB \uD83C\uDDF8\uD83C\uDDEC")); // emojis
+        assertTrue(Title.isValidTitle("(ノಠ益ಠ)ノ彡┻━┻")); // non-English characters
     }
 
     @Test

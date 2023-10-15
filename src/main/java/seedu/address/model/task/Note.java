@@ -12,15 +12,15 @@ import java.util.Objects;
 public class Note {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Note should only contain alphanumeric characters and spaces, and it should not be blank";
+            "Notes can take any value, as long as it is not blank and does not start with a whitespace";
 
     /*
      * The first character of the task note must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+    public static final String VALIDATION_REGEX = "\\S.*";
 
-    public final String taskNote;
+    public final String value;
 
     /**
      * Constructs a {@code Title}.
@@ -30,7 +30,7 @@ public class Note {
     public Note(String note) {
         requireNonNull(note);
         checkArgument(isValidNote(note), MESSAGE_CONSTRAINTS);
-        taskNote = note;
+        value = note;
     }
 
     /**
@@ -42,7 +42,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return taskNote;
+        return value;
     }
 
     @Override
@@ -57,12 +57,12 @@ public class Note {
         }
 
         Note otherNote = (Note) other;
-        return taskNote.equals(otherNote.taskNote);
+        return value.equals(otherNote.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskNote);
+        return Objects.hash(value);
     }
 
 }
