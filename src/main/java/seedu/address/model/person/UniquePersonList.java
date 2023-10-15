@@ -79,6 +79,13 @@ public class UniquePersonList implements Iterable<Person> {
         }
     }
 
+    /**
+     * Removes all persons from the list.
+     */
+    public void removeAll() {
+        internalList.clear();
+    }
+
     public void setPersons(UniquePersonList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);

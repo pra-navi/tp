@@ -89,6 +89,13 @@ public class AddressBookTest {
         assertEquals(expected, addressBook.toString());
     }
 
+    @Test
+    public void removeAllPerson_clearsPersonList() {
+        AddressBook newData = getTypicalAddressBook();
+        newData.removeAllPerson();
+        assertEquals(addressBook.getPersonList(), newData.getPersonList());
+    }
+
     /**
      * A stub ReadOnlyAddressBook whose persons list can violate interface constraints.
      */
