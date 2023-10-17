@@ -65,7 +65,8 @@ public class TaskTest {
     @Test
     public void toStringMethod() {
         String expected = Task.class.getCanonicalName() + "{title=" + TEST_TASK_1_1.getTitle()
-                + ", note=" + TEST_TASK_1_1.getNote() + "}";
+                + ", note=" + TEST_TASK_1_1.getNote()  + ", status=" + TEST_TASK_1_1.getStatus()
+                + "}";
         assertEquals(expected, TEST_TASK_1_1.toString());
     }
 

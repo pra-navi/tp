@@ -15,15 +15,18 @@ public class Task {
     // Identity fields
     private final Title title;
     private final Note note;
+    private Status status;
 
     /**
      * A Task consists of a title and a note.
      * Both fields must be present and not null.
+     * Tasks will be default not done when created.
      */
     public Task(Title title, Note note) {
         requireAllNonNull(title, note);
         this.title = title;
         this.note = note;
+        this.status = new Status("false");
     }
 
     public Title getTitle() {
@@ -34,15 +37,33 @@ public class Task {
         return note;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
     /**
-     * Returns true if both tasks have the same title and note.
+     * Update the Status
+     */
+    public void markDone() {
+        this.status = new Status("true");
+    }
+
+    /**
+     * Update the Status
+     */
+    public void markNotDone() {
+        this.status = new Status("false");
+    }
+
+    /**
+     * Returns true if both tasks have the same title, note and status.
      */
     public boolean isSameTask(Task otherTask) {
         return this.equals(otherTask);
     }
 
     /**
-     * Returns true if both tasks have the same title and note.
+     * Returns true if both tasks have the same title, note and status.
      */
     @Override
     public boolean equals(Object other) {
@@ -57,13 +78,14 @@ public class Task {
 
         Task otherTask = (Task) other;
         return title.equals(otherTask.title)
-                && note.equals(otherTask.note);
+                && note.equals(otherTask.note)
+                && status.equals(otherTask.status);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(title, note);
+        return Objects.hash(title, note, status);
     }
 
     @Override
@@ -71,6 +93,7 @@ public class Task {
         return new ToStringBuilder(this)
                 .add("title", title)
                 .add("note", note)
+                .add("status", status)
                 .toString();
     }
 
