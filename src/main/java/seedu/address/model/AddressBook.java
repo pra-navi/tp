@@ -32,7 +32,8 @@ public class AddressBook implements ReadOnlyAddressBook {
         tasks = new UniqueTaskList();
     }
 
-    public AddressBook() {}
+    public AddressBook() {
+    }
 
     /**
      * Creates an AddressBook using the Persons in the {@code toBeCopied}
@@ -70,7 +71,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         setTasks(newData.getTaskList());
     }
 
-    //// person-level operations
+    //=========== Person Level Operations ==============================================================================
 
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
@@ -114,7 +115,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         persons.removeAll();
     }
 
-    //// task-level operations
+    //=========== Task Level Operations ================================================================================
 
     /**
      * Returns true if a task with the same identity as {@code task} exists in the address book.

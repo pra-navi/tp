@@ -90,7 +90,7 @@ public class ModelManager implements Model {
         return addressBook;
     }
 
-    //// person-level operations
+    //=========== Person Level Operations ==============================================================================
 
     @Override
     public boolean hasPerson(Person person) {
@@ -138,7 +138,7 @@ public class ModelManager implements Model {
         filteredPersons.setPredicate(predicate);
     }
 
-    //// task-level operations
+    //=========== Task Level Operations ================================================================================
 
     @Override
     public boolean hasTask(Task task) {
