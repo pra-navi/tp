@@ -54,6 +54,8 @@ public interface Model {
     /** Returns the AddressBook */
     ReadOnlyAddressBook getAddressBook();
 
+    //=========== Person Level Operations ==============================================================================
+
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
      */
@@ -91,43 +93,4 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
-
-    /**
-     * Returns true if a task with the same title and note as {@code task} exists in
-     * the address book.
-     */
-    boolean hasTask(Task task);
-
-    /**
-     * Adds the given task.
-     * {@code task} must not already exist in the address book.
-     */
-    void addTask(Task task);
-
-    /** Returns an unmodifiable view of the filtered task list */
-    ObservableList<Task> getFilteredTaskList();
-
-    /**
-     * Updates the filter of the filtered task list to filter by the given
-     * {@code predicate}.
-     *
-     * @throws NullPointerException if {@code predicate} is null.
-     */
-    void updateFilteredTaskList(Predicate<Task> predicate);
-
-    /**
-     * Updates the given task of the filtered task list to mark it as done.
-     * The task must exist in the task list.
-     *
-     * @param task The task to be marked as done.
-     */
-    void markTask(Task task);
-
-    /**
-     * Updates the given task of the filtered task list to mark it as not done.
-     * The task must exist in the task list.
-     *
-     * @param task The task to be marked as not done.
-     */
-    void unmarkTask(Task task);
 }

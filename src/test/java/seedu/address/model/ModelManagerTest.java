@@ -7,6 +7,7 @@ import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BENSON;
+import static seedu.address.testutil.TypicalTasks.AGENDA;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -93,6 +94,28 @@ public class ModelManagerTest {
         assertThrows(UnsupportedOperationException.class, () -> modelManager.getFilteredPersonList().remove(0));
     }
 
+    @Test
+    public void hasTask_nullTask_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> modelManager.hasTask(null));
+    }
+
+    @Test
+    public void hasTask_taskNotInAddressBook_returnsFalse() {
+        assertFalse(modelManager.hasTask(AGENDA));
+    }
+
+    @Test
+    public void hasTask_taskInAddressBook_returnsTrue() {
+        modelManager.addTask(AGENDA);
+        assertTrue(modelManager.hasTask(AGENDA));
+    }
+
+    @Test
+    public void getFilteredTaskList_modifyList_throwsUnsupportedOperationException() {
+        assertThrows(UnsupportedOperationException.class, () -> modelManager.getFilteredTaskList().remove(0));
+    }
+
+    // TODO: Improve on equals test after adding withTask to AddressBookBuilder
     @Test
     public void equals() {
         AddressBook addressBook = new AddressBookBuilder().withPerson(ALICE).withPerson(BENSON).build();
