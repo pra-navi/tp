@@ -121,46 +121,6 @@ public class ModelManager implements Model {
         addressBook.setPerson(target, editedPerson);
     }
 
-    @Override
-    public boolean hasTask(Task task) {
-        requireNonNull(task);
-        return addressBook.hasTask(task);
-    }
-
-    @Override
-    public void addTask(Task task) {
-        addressBook.addTask(task);
-        updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
-    }
-
-    @Override
-    public void markTask(Task task) {
-        task.markDone();
-    }
-
-    @Override
-    public void unmarkTask(Task task) {
-        task.markNotDone();
-    }
-
-    //=========== Filtered Task List Accessors =============================================================
-
-    /**
-     * Returns an unmodifiable view of the list of {@code Task} backed by the
-     * internal list of
-     * {@code versionedAddressBook}
-     */
-    @Override
-    public ObservableList<Task> getFilteredTaskList() {
-        return filteredTasks;
-    }
-
-    @Override
-    public void updateFilteredTaskList(Predicate<Task> predicate) {
-        requireNonNull(predicate);
-        filteredTasks.setPredicate(predicate);
-    }
-
     //=========== Filtered Person List Accessors =============================================================
 
     /**
@@ -190,6 +150,16 @@ public class ModelManager implements Model {
     public void addTask(Task task) {
         addressBook.addTask(task);
         updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
+    }
+
+    @Override
+    public void markTask(Task task) {
+        task.markDone();
+    }
+
+    @Override
+    public void unmarkTask(Task task) {
+        task.markNotDone();
     }
 
     //=========== Filtered Task List Accessors =============================================================

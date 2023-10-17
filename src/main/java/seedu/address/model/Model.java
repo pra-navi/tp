@@ -93,4 +93,44 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
+
+    //=========== Task Level Operations ================================================================================
+
+    /**
+     * Returns true if a task with the same title and note as {@code task} exists in
+     * the address book.
+     */
+    boolean hasTask(Task task);
+
+    /**
+     * Adds the given task.
+     * {@code task} must not already exist in the address book.
+     */
+    void addTask(Task task);
+
+    /** Returns an unmodifiable view of the filtered task list */
+    ObservableList<Task> getFilteredTaskList();
+
+    /**
+     * Updates the filter of the filtered task list to filter by the given
+     * {@code predicate}.
+     *
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    void updateFilteredTaskList(Predicate<Task> predicate);
+
+    /**
+     * Updates the task of the filtered task list to mark it as done.
+     *
+     * @param task The specific task to mark in the filtered task list.
+     */
+    void markTask(Task task);
+
+    /**
+     * Updates the task of the filtered task list to mark it as not done.
+     *
+     * @param task The specific task to mark in the filtered task list.
+     */
+    void unmarkTask(Task task);
+
 }
