@@ -1,9 +1,9 @@
 package seedu.address.testutil;
 
 import seedu.address.model.task.Note;
+import seedu.address.model.task.Status;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
-import seedu.address.model.task.Status;
 
 /**
  * A utility class to help with building Task objects.
@@ -59,6 +59,9 @@ public class TaskBuilder {
         return this;
     }
 
+    /**
+     * Builds the {@code Task} with the relevant information.
+     */
     public Task build() {
         Task newTask = new Task(title, note);
         if (this.status.equals(new Status("true"))) {

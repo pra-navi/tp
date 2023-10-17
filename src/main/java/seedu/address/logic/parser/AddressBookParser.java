@@ -79,7 +79,7 @@ public class AddressBookParser {
 
         case UnmarkTaskCommand.COMMAND_WORD:
             return new UnmarkTaskCommandParser().parse(arguments);
-            
+
         case AddTaskCommand.COMMAND_WORD:
             return new AddTaskCommandParser().parse(arguments);
 

@@ -10,7 +10,8 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.task.*;
+import seedu.address.model.task.Status;
+import seedu.address.model.task.Task;
 
 /**
  * Marks the status of an existing task in the task list as done.
@@ -26,13 +27,13 @@ public class MarkTaskCommand extends Command {
 
     public static final String MESSAGE_MARK_TASK_SUCCESS = "Marked Task as Done: %1$s";
     public static final String MESSAGE_HAS_BEEN_MARKED = "This task is already marked as done in the task list.";
-
-    private final Index index;
     /**
      * Status flag for done tasks.
      * It is set to {@code true} to indicate tasks that are done.
      */
-    private final static Status STATUS = new Status("true");
+    private static final Status STATUS = new Status("true");
+
+    private final Index index;
 
     /**
      * @param index of the task in the filtered task list to mark as done

@@ -10,7 +10,8 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.task.*;
+import seedu.address.model.task.Status;
+import seedu.address.model.task.Task;
 
 /**
  * Marks the status of an existing task in the task list as not done.
@@ -27,13 +28,12 @@ public class UnmarkTaskCommand extends Command {
     public static final String MESSAGE_UNMARK_TASK_SUCCESS = "Marked Task as Not Done: %1$s";
     public static final String MESSAGE_HAS_BEEN_MARKED = "This task is already marked as not done in the task list.";
 
-    private final Index index;
-
     /**
      * Status flag for not done tasks.
      * It is set to {@code false} to indicate tasks that are not done.
      */
-    private final static Status STATUS = new Status("false");
+    private static final Status STATUS = new Status("false");
+    private final Index index;
 
     /**
      * @param index of the task in the filtered task list to mark as not done
