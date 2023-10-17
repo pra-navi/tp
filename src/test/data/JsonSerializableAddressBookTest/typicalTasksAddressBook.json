@@ -1,0 +1,42 @@
+{
+  "_comment": "AddressBook save file which contains the same Task values as in TypicalTasks#getTypicalAddressBook()",
+  "persons": [],
+  "tasks": [
+    {
+      "title": "Prepare Agenda",
+      "note": "To book venue"
+    },
+    {
+      "title": "Prepare Budget",
+      "note": "For CS2102"
+    },
+    {
+      "title": "Book Catering",
+      "note": "For CS2101"
+    },
+    {
+      "title": "Send Budget and Draft",
+      "note": "For CS2100"
+    },
+    {
+      "title": "Book Entertainment",
+      "note": "For CS1101"
+    },
+    {
+      "title": "Prepare Funding",
+      "note": "For MA2001"
+    },
+    {
+      "title": "Prepare Guestlist",
+      "note": "For CS2103T"
+    },
+    {
+      "title": "Ensure Hospitality",
+      "note": "For CS2103T"
+    },
+    {
+      "title": "Send Invitations and Guestlist",
+      "note": "For CS2103T"
+    }
+  ]
+}

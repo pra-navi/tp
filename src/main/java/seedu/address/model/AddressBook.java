@@ -8,6 +8,8 @@ import javafx.collections.ObservableList;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.UniquePersonList;
+import seedu.address.model.task.Task;
+import seedu.address.model.task.UniqueTaskList;
 
 /**
  * Wraps all data at the address-book level
@@ -16,6 +18,7 @@ import seedu.address.model.person.UniquePersonList;
 public class AddressBook implements ReadOnlyAddressBook {
 
     private final UniquePersonList persons;
+    private final UniqueTaskList tasks;
 
     /*
      * The 'unusual' code block below is a non-static initialization block, sometimes used to avoid duplication
@@ -26,6 +29,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     {
         persons = new UniquePersonList();
+        tasks = new UniqueTaskList();
     }
 
     public AddressBook() {}
@@ -49,12 +53,21 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Replaces the contents of the task list with {@code tasks}.
+     * {@code tasks} must not contain duplicate tasks.
+     */
+    public void setTasks(List<Task> tasks) {
+        this.tasks.setTasks(tasks);
+    }
+
+    /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
 
         setPersons(newData.getPersonList());
+        setTasks(newData.getTaskList());
     }
 
     //// person-level operations
@@ -101,6 +114,24 @@ public class AddressBook implements ReadOnlyAddressBook {
         persons.removeAll();
     }
 
+    //// task-level operations
+
+    /**
+     * Returns true if a task with the same identity as {@code task} exists in the address book.
+     */
+    public boolean hasTask(Task task) {
+        requireNonNull(task);
+        return tasks.contains(task);
+    }
+
+    /**
+     * Adds a task to the address book.
+     * The task must not already exist in the address book.
+     */
+    public void addTask(Task t) {
+        tasks.add(t);
+    }
+
     //// util methods
 
     @Override
@@ -113,6 +144,11 @@ public class AddressBook implements ReadOnlyAddressBook {
     @Override
     public ObservableList<Person> getPersonList() {
         return persons.asUnmodifiableObservableList();
+    }
+
+    @Override
+    public ObservableList<Task> getTaskList() {
+        return tasks.asUnmodifiableObservableList();
     }
 
     @Override
