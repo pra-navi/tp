@@ -17,6 +17,9 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.address.model.task.Status;
+import seedu.address.model.task.Status.TaskStatus;
+import seedu.address.model.task.Task;
 import seedu.address.testutil.AddressBookBuilder;
 
 public class ModelManagerTest {
@@ -108,6 +111,28 @@ public class ModelManagerTest {
     public void hasTask_taskInAddressBook_returnsTrue() {
         modelManager.addTask(AGENDA);
         assertTrue(modelManager.hasTask(AGENDA));
+    }
+
+    @Test
+    public void markTask_validTask_success() {
+        modelManager.addTask(AGENDA);
+        Task markedTask = modelManager.markTask(AGENDA);
+
+        assertTrue(markedTask.getStatus().equals(new Status(TaskStatus.DONE)));
+
+        assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(new Status(TaskStatus.DONE)));
+    }
+
+    @Test
+    public void unmarkTask_validTask_success() {
+        modelManager.addTask(AGENDA);
+        Task markedTask = modelManager.markTask(AGENDA);
+        Task unmarkedTask = modelManager.unmarkTask(markedTask);
+
+        assertTrue(unmarkedTask.getStatus().equals(new Status(TaskStatus.NOT_DONE)));
+
+        assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(
+                new Status(TaskStatus.NOT_DONE)));
     }
 
     @Test

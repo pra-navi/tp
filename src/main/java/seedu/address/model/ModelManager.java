@@ -152,7 +152,26 @@ public class ModelManager implements Model {
         updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
     }
 
-    //=========== Filtered Task List Accessors ===============================================================
+    @Override
+    public void setTask(Task target, Task editedTask) {
+        requireAllNonNull(target, editedTask);
+
+        addressBook.setTask(target, editedTask);
+    }
+
+    @Override
+    public Task markTask(Task task) {
+        setTask(task, task.markDone());
+        return task.markDone();
+    }
+
+    @Override
+    public Task unmarkTask(Task task) {
+        setTask(task, task.unmarkDone());
+        return task.unmarkDone();
+    }
+
+    //=========== Filtered Task List Accessors =============================================================
 
     /**
      * Returns an unmodifiable view of the list of {@code Task} backed by the
