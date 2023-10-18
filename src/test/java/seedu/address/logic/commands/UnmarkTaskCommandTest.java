@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showTaskAtIndex;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;
 import static seedu.address.testutil.TypicalTasks.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
@@ -29,9 +29,9 @@ public class UnmarkTaskCommandTest {
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
-        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST.getZeroBased());
         Task taskToUnmark = model.markTask(taskToMark);
-        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST);
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         Task markedTask = expectedModel.unmarkTask(taskToUnmark);
@@ -53,21 +53,21 @@ public class UnmarkTaskCommandTest {
 
     @Test
     public void execute_unmarkAlreadyUnmarkedTask_throwsCommandException() {
-        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST);
 
         assertCommandFailure(unmarkTaskCommand, model, UnmarkTaskCommand.MESSAGE_HAS_BEEN_MARKED);
     }
 
     @Test
     public void execute_validIndexFilteredList_success() {
-        showTaskAtIndex(model, INDEX_FIRST_PERSON);
+        showTaskAtIndex(model, INDEX_FIRST);
 
-        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST.getZeroBased());
         Task taskToUnmark = model.markTask(taskToMark);
-        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST);
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        showTaskAtIndex(expectedModel, INDEX_FIRST_PERSON);
+        showTaskAtIndex(expectedModel, INDEX_FIRST);
         Task markedTask = expectedModel.unmarkTask(taskToUnmark);
         Task unmarkedTask = expectedModel.unmarkTask(markedTask);
 
@@ -79,9 +79,9 @@ public class UnmarkTaskCommandTest {
 
     @Test
     public void execute_invalidIndexFilteredList_throwsCommandException() {
-        showTaskAtIndex(model, INDEX_FIRST_PERSON);
+        showTaskAtIndex(model, INDEX_FIRST);
 
-        Index outOfBoundIndex = INDEX_SECOND_PERSON;
+        Index outOfBoundIndex = INDEX_SECOND;
         // ensures that outOfBoundIndex is still in bounds of address book list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getTaskList().size());
 
@@ -92,14 +92,14 @@ public class UnmarkTaskCommandTest {
 
     @Test
     public void equals() {
-        UnmarkTaskCommand unmarkTaskFirstCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
-        UnmarkTaskCommand unmarkTaskSecondCommand = new UnmarkTaskCommand(INDEX_SECOND_PERSON);
+        UnmarkTaskCommand unmarkTaskFirstCommand = new UnmarkTaskCommand(INDEX_FIRST);
+        UnmarkTaskCommand unmarkTaskSecondCommand = new UnmarkTaskCommand(INDEX_SECOND);
 
         // same object -> returns true
         assertTrue(unmarkTaskFirstCommand.equals(unmarkTaskFirstCommand));
 
         // same values -> returns true
-        UnmarkTaskCommand unmarkTaskFirstCommandCopy = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+        UnmarkTaskCommand unmarkTaskFirstCommandCopy = new UnmarkTaskCommand(INDEX_FIRST);
         assertTrue(unmarkTaskFirstCommand.equals(unmarkTaskFirstCommandCopy));
 
         // different types -> returns false
@@ -108,7 +108,7 @@ public class UnmarkTaskCommandTest {
         // null -> returns false
         assertFalse(unmarkTaskFirstCommand.equals(null));
 
-        // different person -> returns false
+        // different index -> returns false
         assertFalse(unmarkTaskFirstCommand.equals(unmarkTaskSecondCommand));
     }
     @Test

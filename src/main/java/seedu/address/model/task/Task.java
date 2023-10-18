@@ -85,14 +85,13 @@ public class Task {
 
         Task otherTask = (Task) other;
         return title.equals(otherTask.title)
-                && note.equals(otherTask.note)
-                && status.equals(otherTask.status);
+                && note.equals(otherTask.note);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(title, note, status);
+        return Objects.hash(title, note);
     }
 
     @Override

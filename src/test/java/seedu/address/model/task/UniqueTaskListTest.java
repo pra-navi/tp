@@ -35,7 +35,7 @@ public class UniqueTaskListTest {
         uniqueTaskList.add(AGENDA);
         String agendaTaskTitleString = AGENDA.getTitle().toString();
         String agendaTaskNoteString = AGENDA.getNote().toString();
-        Status.TaskStatus agendaTaskStatus = AGENDA.getStatus().taskStatus;
+        Status agendaTaskStatus = AGENDA.getStatus();
         Task agendaCopy = new TaskBuilder()
                 .withTitle(agendaTaskTitleString)
                 .withNote(agendaTaskNoteString)

@@ -55,8 +55,8 @@ public class TaskBuilder {
     /**
      * Sets the {@code Status} of the {@code Task} that we are building.
      */
-    public TaskBuilder withStatus(TaskStatus status) {
-        this.status = new Status(status);
+    public TaskBuilder withStatus(Status status) {
+        this.status = status;
         return this;
     }
 

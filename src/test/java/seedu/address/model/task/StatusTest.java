@@ -47,10 +47,10 @@ public class StatusTest {
     public void hashCodeTest() {
         Status status = new Status(Status.TaskStatus.DONE);
 
-        // same note -> same hashcode
+        // same value -> same hashcode
         assertEquals(status.hashCode(), new Status(Status.TaskStatus.DONE).hashCode());
 
-        // different note -> different hashcode
+        // different value -> different hashcode
         assertNotEquals(status.hashCode(), new Status(Status.TaskStatus.NOT_DONE).hashCode());
 
         // different types -> returns false

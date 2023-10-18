@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showTaskAtIndex;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;
 import static seedu.address.testutil.TypicalTasks.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
@@ -29,8 +29,8 @@ public class MarkTaskCommandTest {
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
-        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
-        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
+        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST.getZeroBased());
+        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST);
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         Task markedTask = expectedModel.markTask(taskToMark);
@@ -51,22 +51,22 @@ public class MarkTaskCommandTest {
 
     @Test
     public void execute_markAlreadyMarkedTask_throwsCommandException() {
-        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST.getZeroBased());
         model.markTask(taskToMark);
-        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
+        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST);
 
         assertCommandFailure(markTaskCommand, model, MarkTaskCommand.MESSAGE_HAS_BEEN_MARKED);
     }
 
     @Test
     public void execute_validIndexFilteredList_success() {
-        showTaskAtIndex(model, INDEX_FIRST_PERSON);
+        showTaskAtIndex(model, INDEX_FIRST);
 
-        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
-        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
+        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST.getZeroBased());
+        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST);
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        showTaskAtIndex(expectedModel, INDEX_FIRST_PERSON);
+        showTaskAtIndex(expectedModel, INDEX_FIRST);
         Task markedTask = expectedModel.markTask(taskToMark);
 
         String expectedMessage = String.format(MarkTaskCommand.MESSAGE_MARK_TASK_SUCCESS,
@@ -77,9 +77,9 @@ public class MarkTaskCommandTest {
 
     @Test
     public void execute_invalidIndexFilteredList_throwsCommandException() {
-        showTaskAtIndex(model, INDEX_FIRST_PERSON);
+        showTaskAtIndex(model, INDEX_FIRST);
 
-        Index outOfBoundIndex = INDEX_SECOND_PERSON;
+        Index outOfBoundIndex = INDEX_SECOND;
         // ensures that outOfBoundIndex is still in bounds of address book list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getTaskList().size());
 
@@ -90,14 +90,14 @@ public class MarkTaskCommandTest {
 
     @Test
     public void equals() {
-        MarkTaskCommand markTaskFirstCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
-        MarkTaskCommand markTaskSecondCommand = new MarkTaskCommand(INDEX_SECOND_PERSON);
+        MarkTaskCommand markTaskFirstCommand = new MarkTaskCommand(INDEX_FIRST);
+        MarkTaskCommand markTaskSecondCommand = new MarkTaskCommand(INDEX_SECOND);
 
         // same object -> returns true
         assertTrue(markTaskFirstCommand.equals(markTaskFirstCommand));
 
         // same values -> returns true
-        MarkTaskCommand markTaskFirstCommandCopy = new MarkTaskCommand(INDEX_FIRST_PERSON);
+        MarkTaskCommand markTaskFirstCommandCopy = new MarkTaskCommand(INDEX_FIRST);
         assertTrue(markTaskFirstCommand.equals(markTaskFirstCommandCopy));
 
         // different types -> returns false
@@ -106,7 +106,7 @@ public class MarkTaskCommandTest {
         // null -> returns false
         assertFalse(markTaskFirstCommand.equals(null));
 
-        // different person -> returns false
+        // different index -> returns false
         assertFalse(markTaskFirstCommand.equals(markTaskSecondCommand));
     }
     @Test

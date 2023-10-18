@@ -20,11 +20,11 @@ public class Status {
         /**
          * Represents a completed task status.
          */
-        DONE("true"),
+        DONE("Done"),
         /**
          * Represents a pending task status.
          */
-        NOT_DONE("false");
+        NOT_DONE("Not Done");
 
         private final String value;
 
@@ -45,7 +45,7 @@ public class Status {
 
     @Override
     public String toString() {
-        return taskStatus == TaskStatus.DONE ? "Done" : "Not Done";
+        return taskStatus.value;
     }
 
     @Override

@@ -114,12 +114,12 @@ public class ModelStub implements Model {
 
     @Override
     public Task markTask(Task task) {
-        throw new AssertionError("this method should not be called.");
+        throw new AssertionError("This method should not be called.");
     }
 
     @Override
     public Task unmarkTask(Task task) {
-        throw new AssertionError("this method should not be called.");
+        throw new AssertionError("This method should not be called.");
     }
 
 }
