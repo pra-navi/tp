@@ -1,43 +1,51 @@
 package seedu.address.model.task;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
 
 import java.util.Objects;
 
 /**
  * Represents a Task's status in the task list.
- * Guarantees: immutable; is valid as declared in {@link #isValidStatus(String)}
+ * Guarantees: immutable; Status can be either {@link TaskStatus#DONE} or {@link TaskStatus#NOT_DONE}.
  */
 public class Status {
+    public final TaskStatus taskStatus;
 
-    public static final String MESSAGE_CONSTRAINTS =
-            "Status can only be true (done) or false (not done)";
-    public static final String VALIDATION_REGEX = "(true|false)";
+    /**
+     * Enum representing the status of a task in the task list.
+     * Each enum constant corresponds to a specific status: {@code DONE} for completed tasks and
+     * {@code NOT_DONE} for pending tasks.
+     */
+    public enum TaskStatus {
+        /**
+         * Represents a completed task status.
+         */
+        DONE("true"),
+        /**
+         * Represents a pending task status.
+         */
+        NOT_DONE("false");
 
-    public final String value;
+        private final String value;
+
+        TaskStatus(String value) {
+            this.value = value;
+        }
+    }
 
     /**
      * Constructs a {@code Status}.
      *
-     * @param status A valid status for a task (true for done, false for not done).
+     * @param status A valid status for a task (DONE or NOT_DONE).
      */
-    public Status(String status) {
+    public Status(TaskStatus status) {
         requireNonNull(status);
-        checkArgument(isValidStatus(status), MESSAGE_CONSTRAINTS);
-        value = status;
-    }
-
-    /**
-     * Returns true if a given string is a valid note.
-     */
-    public static boolean isValidStatus(String test) {
-        return test.matches(VALIDATION_REGEX);
+        this.taskStatus = status;
     }
 
     @Override
     public String toString() {
-        return value;
+        return taskStatus == TaskStatus.DONE ? "Done" : "Not Done";
     }
 
     @Override
@@ -52,12 +60,12 @@ public class Status {
         }
 
         Status otherStatus = (Status) other;
-        return value.equals(otherStatus.value);
+        return taskStatus.equals(otherStatus.taskStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(taskStatus);
     }
 
 }

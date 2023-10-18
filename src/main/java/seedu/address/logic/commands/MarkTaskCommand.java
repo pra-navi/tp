@@ -11,6 +11,7 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.task.Status;
+import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 
 /**
@@ -25,13 +26,13 @@ public class MarkTaskCommand extends Command {
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1 ";
 
-    public static final String MESSAGE_MARK_TASK_SUCCESS = "Done: %1$s";
+    public static final String MESSAGE_MARK_TASK_SUCCESS = "Marked as Done: %1$s";
     public static final String MESSAGE_HAS_BEEN_MARKED = "This task is already marked as done in the task list.";
     /**
      * Status flag for done tasks.
      * It is set to {@code true} to indicate tasks that are done.
      */
-    private static final Status STATUS = new Status("true");
+    private static final Status STATUS = new Status(TaskStatus.DONE);
 
     private final Index index;
 

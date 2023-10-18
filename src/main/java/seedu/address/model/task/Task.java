@@ -26,7 +26,7 @@ public class Task {
         requireAllNonNull(title, note);
         this.title = title;
         this.note = note;
-        this.status = new Status("false");
+        this.status = new Status(Status.TaskStatus.NOT_DONE);
     }
 
     private Task(Title title, Note note, Status status) {
@@ -52,14 +52,14 @@ public class Task {
      * Update the Status
      */
     public Task markDone() {
-        return new Task(title, note, new Status("true"));
+        return new Task(title, note, new Status(Status.TaskStatus.DONE));
     }
 
     /**
      * Update the Status
      */
     public Task markNotDone() {
-        return new Task(title, note, new Status("false"));
+        return new Task(title, note, new Status(Status.TaskStatus.NOT_DONE));
     }
 
     /**

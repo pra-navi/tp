@@ -26,13 +26,13 @@ public class MessagesTest {
 
     @Test
     public void format_task_agenda() {
-        String expected = "Prepare Agenda; Note: To book venue; Status: false";
+        String expected = "Prepare Agenda; Note: To book venue; Status: Not Done";
         assertEquals(expected, Messages.format(AGENDA));
     }
 
     @Test
     public void format_task_budget() {
-        String expected = "Prepare Budget; Note: For CS2102; Status: false";
+        String expected = "Prepare Budget; Note: For CS2102; Status: Done";
         assertEquals(expected, Messages.format(BUDGET));
     }
 
