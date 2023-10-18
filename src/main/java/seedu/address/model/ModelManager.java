@@ -152,6 +152,11 @@ public class ModelManager implements Model {
         updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
     }
 
+    @Override
+    public void deleteTask(Task task) {
+        addressBook.removeTask(task);
+    }
+
     //=========== Filtered Task List Accessors =============================================================
 
     /**
