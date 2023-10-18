@@ -19,6 +19,8 @@ import seedu.address.logic.commands.DeleteAllTaskCommand;
 import seedu.address.logic.commands.DeletePersonCommand;
 import seedu.address.logic.commands.EditPersonCommand;
 import seedu.address.logic.commands.EditPersonCommand.EditPersonDescriptor;
+import seedu.address.logic.commands.EditTaskCommand;
+import seedu.address.logic.commands.EditTaskCommand.EditTaskDescriptor;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindPersonCommand;
 import seedu.address.logic.commands.FindTaskCommand;
@@ -33,6 +35,7 @@ import seedu.address.model.person.Person;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskContainsKeywordsPredicate;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
+import seedu.address.testutil.EditTaskDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
 import seedu.address.testutil.PersonUtil;
 import seedu.address.testutil.TaskBuilder;
@@ -130,6 +133,15 @@ public class AddressBookParserTest {
         UnmarkTaskCommand command = (UnmarkTaskCommand) parser.parseCommand(
                 UnmarkTaskCommand.COMMAND_WORD + " " + INDEX_FIRST.getOneBased());
         assertEquals(new UnmarkTaskCommand(INDEX_FIRST), command);
+    }
+
+    @Test
+    public void parseCommand_editTask() throws Exception {
+        Task task = new TaskBuilder().build();
+        EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder(task).build();
+        EditTaskCommand command = (EditTaskCommand) parser.parseCommand(EditTaskCommand.COMMAND_WORD + " "
+                + INDEX_FIRST.getOneBased() + " " + TaskUtil.getEditTaskDescriptorDetails(descriptor));
+        assertEquals(new EditTaskCommand(INDEX_FIRST, descriptor), command);
     }
 
     @Test
