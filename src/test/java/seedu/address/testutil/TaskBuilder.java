@@ -1,6 +1,8 @@
 package seedu.address.testutil;
 
 import seedu.address.model.task.Note;
+import seedu.address.model.task.Status;
+import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
 
@@ -14,6 +16,7 @@ public class TaskBuilder {
 
     private Title title;
     private Note note;
+    private Status status;
 
     /**
      * Creates a {@code TaskBuilder} with the default details.
@@ -21,6 +24,7 @@ public class TaskBuilder {
     public TaskBuilder() {
         title = new Title(DEFAULT_TITLE);
         note = new Note(DEFAULT_NOTE);
+        status = new Status(TaskStatus.NOT_DONE);
     }
 
     /**
@@ -29,6 +33,7 @@ public class TaskBuilder {
     public TaskBuilder(Task taskToCopy) {
         title = taskToCopy.getTitle();
         note = taskToCopy.getNote();
+        status = taskToCopy.getStatus();
     }
 
     /**
@@ -47,7 +52,18 @@ public class TaskBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Status} of the {@code Task} that we are building.
+     */
+    public TaskBuilder withStatus(Status status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * Builds the {@code Task} with the relevant information.
+     */
     public Task build() {
-        return new Task(title, note);
+        return new Task(title, note, status);
     }
 }

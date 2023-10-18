@@ -13,16 +13,16 @@ import seedu.address.model.task.exceptions.TaskNotFoundException;
 
 /**
  * A list of tasks that enforces uniqueness between its elements and does not allow nulls.
- * A task is considered unique by comparing using {@code Task#isSameTask(Task)}. As such, adding and updating
- * of tasks uses Task#isSameTask(Task) for equality to ensure that the task being added or updated is
- * unique in terms of identity in the UniqueTaskList. However, the removal of a task uses Task#equals(Object)
- * to ensure that the task with exactly the same fields will be removed.
+ * A task is considered unique by comparing using {@code Task#isSameTask(Task)}. As such, adding and updating of
+ * tasks uses Task#isSameTask(Task) for equality so as to ensure that the task being added or updated is
+ * unique in terms of identity in the UniqueTaskList. However, the removal of a task uses Task#equals(Task) so
+ * as to ensure that the task with exactly the same fields will be removed.
+ *
  * Supports a minimal set of list operations.
  *
  * @see Task#isSameTask(Task)
  */
 public class UniqueTaskList implements Iterable<Task> {
-
     private final ObservableList<Task> internalList = FXCollections.observableArrayList();
     private final ObservableList<Task> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
@@ -71,11 +71,18 @@ public class UniqueTaskList implements Iterable<Task> {
      * Removes the equivalent task from the list.
      * The task must exist in the list.
      */
-    public void remove(Task toRemove) {
-        requireNonNull(toRemove);
-        if (!internalList.remove(toRemove)) {
+    public void delete(Task toDelete) {
+        requireNonNull(toDelete);
+        if (!internalList.remove(toDelete)) {
             throw new TaskNotFoundException();
         }
+    }
+
+    /**
+     * Removes all tasks from the list.
+     */
+    public void deleteAll() {
+        internalList.clear();
     }
 
     /**

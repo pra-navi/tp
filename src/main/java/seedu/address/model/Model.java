@@ -12,19 +12,21 @@ import seedu.address.model.task.Task;
  * The API of the Model component.
  */
 public interface Model {
-    /** {@code Predicate} that always evaluate to true */
+    /**
+     * {@code Predicate} that always evaluate to true
+     */
     Predicate<Person> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
     Predicate<Task> PREDICATE_SHOW_ALL_TASKS = unused -> true;
-
-    /**
-     * Replaces user prefs data with the data in {@code userPrefs}.
-     */
-    void setUserPrefs(ReadOnlyUserPrefs userPrefs);
 
     /**
      * Returns the user prefs.
      */
     ReadOnlyUserPrefs getUserPrefs();
+
+    /**
+     * Replaces user prefs data with the data in {@code userPrefs}.
+     */
+    void setUserPrefs(ReadOnlyUserPrefs userPrefs);
 
     /**
      * Returns the user prefs' GUI settings.
@@ -47,12 +49,14 @@ public interface Model {
     void setAddressBookFilePath(Path addressBookFilePath);
 
     /**
+     * Returns the AddressBook
+     */
+    ReadOnlyAddressBook getAddressBook();
+
+    /**
      * Replaces address book data with the data in {@code addressBook}.
      */
     void setAddressBook(ReadOnlyAddressBook addressBook);
-
-    /** Returns the AddressBook */
-    ReadOnlyAddressBook getAddressBook();
 
     // ========== Person Level Operations ==============================================================================
 
@@ -81,15 +85,19 @@ public interface Model {
     /**
      * Replaces the given person {@code target} with {@code editedPerson}.
      * {@code target} must exist in the address book.
-     * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
+     * The person identity of {@code editedPerson} must not be the same as another existing person
+     * in the address book.
      */
     void setPerson(Person target, Person editedPerson);
 
-    /** Returns an unmodifiable view of the filtered person list */
+    /**
+     * Returns an unmodifiable view of the filtered person list
+     */
     ObservableList<Person> getFilteredPersonList();
 
     /**
      * Updates the filter of the filtered person list to filter by the given {@code predicate}.
+     *
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
@@ -98,12 +106,17 @@ public interface Model {
 
     /**
      * Returns true if a task with the same title and note as {@code task} exists in
-     * the address book.
+     * the task list.
      */
     boolean hasTask(Task task);
 
     /**
-     * Adds the given task.
+     * Deletes all tasks in the task list.
+     */
+    void deleteAllTask();
+
+    /**
+     * Adds the given task to the task list.
      * {@code task} must not already exist in the address book.
      */
     void addTask(Task task);
@@ -115,15 +128,30 @@ public interface Model {
      */
     void setTask(Task target, Task editedTask);
 
-    /** Returns an unmodifiable view of the filtered task list */
+    /**
+     * Returns an unmodifiable view of the filtered task list
+     */
     ObservableList<Task> getFilteredTaskList();
 
     /**
-     * Updates the filter of the filtered task list to filter by the given
-     * {@code predicate}.
+     * Updates the filter of the filtered task list to filter by the given {@code predicate}.
      *
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredTaskList(Predicate<Task> predicate);
+
+    /**
+     * Updates the task of the filtered task list to mark it as done.
+     *
+     * @param task The specific task to mark in the filtered task list.
+     */
+    Task markTask(Task task);
+
+    /**
+     * Updates the task of the filtered task list to mark it as not done.
+     *
+     * @param task The specific task to mark in the filtered task list.
+     */
+    Task unmarkTask(Task task);
 
 }

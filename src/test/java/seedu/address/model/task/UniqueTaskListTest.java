@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalTasks.AGENDA;
+import static seedu.address.testutil.TypicalTasks.BUDGET;
 
 import org.junit.jupiter.api.Test;
 
@@ -35,11 +36,22 @@ public class UniqueTaskListTest {
         uniqueTaskList.add(AGENDA);
         String agendaTaskTitleString = AGENDA.getTitle().toString();
         String agendaTaskNoteString = AGENDA.getNote().toString();
+        Status agendaTaskStatus = AGENDA.getStatus();
         Task agendaCopy = new TaskBuilder()
                 .withTitle(agendaTaskTitleString)
                 .withNote(agendaTaskNoteString)
+                .withStatus(agendaTaskStatus)
                 .build();
         assertTrue(uniqueTaskList.contains(agendaCopy));
+    }
+
+    @Test
+    public void deleteAll_clearsList() {
+        uniqueTaskList.add(AGENDA);
+        uniqueTaskList.add(BUDGET);
+        uniqueTaskList.deleteAll();
+        UniqueTaskList expectedUniqueTaskList = new UniqueTaskList();
+        assertEquals(expectedUniqueTaskList, uniqueTaskList);
     }
 
     // TODO: Add more tests for different methods of UniqueTaskList
