@@ -132,6 +132,7 @@ public class CommandTestUtil {
      * {@code model}'s address book.
      */
     public static void showPersonAtIndex(Model model, Index targetIndex) {
+        System.out.println("Filtered persons: " +  model.getFilteredPersonList());
         assertTrue(targetIndex.getZeroBased() < model.getFilteredPersonList().size());
 
         Person person = model.getFilteredPersonList().get(targetIndex.getZeroBased());
@@ -149,15 +150,8 @@ public class CommandTestUtil {
         assertTrue(targetIndex.getZeroBased() < model.getFilteredTaskList().size());
 
         Task task = model.getFilteredTaskList().get(targetIndex.getZeroBased());
-
-        // Splitting both title and note into arrays of words
-        final String[] splitTitle = task.getTitle().value.split("\\s+");
-        final String[] splitNote = task.getNote().value.split("\\s+");
-
-        List<String> keywords = new ArrayList<>();
-        keywords.addAll(Arrays.asList(splitTitle));
-        keywords.addAll(Arrays.asList(splitNote));
-        model.updateFilteredTaskList(new TaskContainsKeywordsPredicate(keywords));
+        final String[] splitName = task.getTitle().value.split("\\s+");
+        model.updateFilteredTaskList(new TaskContainsKeywordsPredicate(Arrays.asList(splitName[1])));
 
         assertEquals(1, model.getFilteredTaskList().size());
     }
