@@ -3,7 +3,6 @@ package seedu.address.model.task;
 import java.util.List;
 import java.util.function.Predicate;
 
-import seedu.address.commons.util.StringUtil;
 import seedu.address.commons.util.ToStringBuilder;
 
 /**
@@ -11,19 +10,23 @@ import seedu.address.commons.util.ToStringBuilder;
  */
 public class TaskContainsKeywordsPredicate implements Predicate<Task> {
     private final List<String> keywords;
+    private final TitleContainsKeywordsPredicate titlePredicate;
+    private final NoteContainsKeywordsPredicate notePredicate;
 
+    /**
+     * Constructs a {@code TaskContainsKeywordsPredicate} with the specified keywords.
+     *
+     * @param keywords A list of keywords to search for.
+     */
     public TaskContainsKeywordsPredicate(List<String> keywords) {
         this.keywords = keywords;
+        this.titlePredicate = new TitleContainsKeywordsPredicate(keywords);
+        this.notePredicate = new NoteContainsKeywordsPredicate(keywords);
     }
 
     @Override
     public boolean test(Task task) {
-        return keywords
-                .stream()
-                .anyMatch(keyword -> {
-                    String titleAndNote = task.getTitle().toString() + " " + task.getNote().toString();
-                    return StringUtil.containsWordIgnoreCase(titleAndNote, keyword);
-                });
+        return titlePredicate.test(task) || notePredicate.test(task);
     }
 
     @Override
