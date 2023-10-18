@@ -153,13 +153,22 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void markTask(Task task) {
-        task.markDone();
+    public void setTask(Task target, Task editedTask) {
+        requireAllNonNull(target, editedTask);
+
+        addressBook.setTask(target, editedTask);
     }
 
     @Override
-    public void unmarkTask(Task task) {
-        task.markNotDone();
+    public Task markTask(Task task) {
+        setTask(task, task.markDone());
+        return task.markDone();
+    }
+
+    @Override
+    public Task unmarkTask(Task task) {
+        setTask(task, task.markNotDone());
+        return task.markNotDone();
     }
 
     //=========== Filtered Task List Accessors =============================================================

@@ -20,32 +20,34 @@ import seedu.address.model.task.Task;
 
 /**
  * Contains integration tests (interaction with the Model) and unit tests for
- * {@code MarkTaskCommand}.
+ * {@code UnmarkTaskCommand}.
  */
-public class MarkTaskCommandTest {
+public class UnmarkTaskCommandTest {
 
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
         Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
-        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
+        Task taskToUnmark = model.markTask(taskToMark);
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        Task markedTask = expectedModel.markTask(taskToMark);
+        Task markedTask = expectedModel.unmarkTask(taskToUnmark);
+        Task unmarkedTask = expectedModel.unmarkTask(markedTask);
 
-        String expectedMessage = String.format(MarkTaskCommand.MESSAGE_MARK_TASK_SUCCESS,
-                Messages.format(markedTask));
+        String expectedMessage = String.format(UnmarkTaskCommand.MESSAGE_UNMARK_TASK_SUCCESS,
+                Messages.format(unmarkedTask));
 
-        assertCommandSuccess(markTaskCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(unmarkTaskCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
     public void execute_invalidIndexUnfilteredList_throwsCommandException() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredTaskList().size() + 1);
-        MarkTaskCommand markTaskCommand = new MarkTaskCommand(outOfBoundIndex);
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(outOfBoundIndex);
 
-        assertCommandFailure(markTaskCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+        assertCommandFailure(unmarkTaskCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
     }
 
     //    @Test
@@ -79,30 +81,30 @@ public class MarkTaskCommandTest {
 
     @Test
     public void equals() {
-        MarkTaskCommand markTaskFirstCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
-        MarkTaskCommand markTaskSecondCommand = new MarkTaskCommand(INDEX_SECOND_PERSON);
+        UnmarkTaskCommand unmarkTaskFirstCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+        UnmarkTaskCommand unmarkTaskSecondCommand = new UnmarkTaskCommand(INDEX_SECOND_PERSON);
 
         // same object -> returns true
-        assertTrue(markTaskFirstCommand.equals(markTaskFirstCommand));
+        assertTrue(unmarkTaskFirstCommand.equals(unmarkTaskFirstCommand));
 
         // same values -> returns true
-        MarkTaskCommand markTaskFirstCommandCopy = new MarkTaskCommand(INDEX_FIRST_PERSON);
-        assertTrue(markTaskFirstCommand.equals(markTaskFirstCommandCopy));
+        UnmarkTaskCommand unmarkTaskFirstCommandCopy = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+        assertTrue(unmarkTaskFirstCommand.equals(unmarkTaskFirstCommandCopy));
 
         // different types -> returns false
-        assertFalse(markTaskFirstCommand.equals(1));
+        assertFalse(unmarkTaskFirstCommand.equals(1));
 
         // null -> returns false
-        assertFalse(markTaskFirstCommand.equals(null));
+        assertFalse(unmarkTaskFirstCommand.equals(null));
 
         // different person -> returns false
-        assertFalse(markTaskFirstCommand.equals(markTaskSecondCommand));
+        assertFalse(unmarkTaskFirstCommand.equals(unmarkTaskSecondCommand));
     }
     @Test
     public void toStringMethod() {
         Index targetIndex = Index.fromOneBased(1);
-        MarkTaskCommand markTaskCommand = new MarkTaskCommand(targetIndex);
-        String expected = MarkTaskCommand.class.getCanonicalName() + "{targetIndex=" + targetIndex + "}";
-        assertEquals(expected, markTaskCommand.toString());
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(targetIndex);
+        String expected = UnmarkTaskCommand.class.getCanonicalName() + "{targetIndex=" + targetIndex + "}";
+        assertEquals(expected, unmarkTaskCommand.toString());
     }
 }

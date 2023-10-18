@@ -25,7 +25,7 @@ public class MarkTaskCommand extends Command {
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1 ";
 
-    public static final String MESSAGE_MARK_TASK_SUCCESS = "Marked Task as Done: %1$s";
+    public static final String MESSAGE_MARK_TASK_SUCCESS = "Done: %1$s";
     public static final String MESSAGE_HAS_BEEN_MARKED = "This task is already marked as done in the task list.";
     /**
      * Status flag for done tasks.
@@ -59,9 +59,9 @@ public class MarkTaskCommand extends Command {
             throw new CommandException(MESSAGE_HAS_BEEN_MARKED);
         }
 
-        model.markTask(taskToMark);
+        Task markedTask = model.markTask(taskToMark);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_MARK_TASK_SUCCESS, Messages.format(taskToMark)));
+        return new CommandResult(String.format(MESSAGE_MARK_TASK_SUCCESS, Messages.format(markedTask)));
     }
 
     @Override

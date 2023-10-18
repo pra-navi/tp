@@ -98,15 +98,22 @@ public interface Model {
 
     /**
      * Returns true if a task with the same title and note as {@code task} exists in
-     * the address book.
+     * the task list.
      */
     boolean hasTask(Task task);
 
     /**
      * Adds the given task.
-     * {@code task} must not already exist in the address book.
+     * {@code task} must not already exist in the task list.
      */
     void addTask(Task task);
+
+    /**
+     * Replaces the given task {@code target} with {@code editedTask}.
+     * {@code target} must exist in the task list.
+     * The task information of {@code editedTask} must not be the same as another existing task in the task list.
+     */
+    void setTask(Task target, Task editedTask);
 
     /** Returns an unmodifiable view of the filtered task list */
     ObservableList<Task> getFilteredTaskList();
@@ -124,13 +131,13 @@ public interface Model {
      *
      * @param task The specific task to mark in the filtered task list.
      */
-    void markTask(Task task);
+    Task markTask(Task task);
 
     /**
      * Updates the task of the filtered task list to mark it as not done.
      *
      * @param task The specific task to mark in the filtered task list.
      */
-    void unmarkTask(Task task);
+    Task unmarkTask(Task task);
 
 }

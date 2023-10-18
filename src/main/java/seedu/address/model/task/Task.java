@@ -29,6 +29,13 @@ public class Task {
         this.status = new Status("false");
     }
 
+    private Task(Title title, Note note, Status status) {
+        requireAllNonNull(title, note);
+        this.title = title;
+        this.note = note;
+        this.status = status;
+    }
+
     public Title getTitle() {
         return title;
     }
@@ -44,15 +51,15 @@ public class Task {
     /**
      * Update the Status
      */
-    public void markDone() {
-        this.status = new Status("true");
+    public Task markDone() {
+        return new Task(title, note, new Status("true"));
     }
 
     /**
      * Update the Status
      */
-    public void markNotDone() {
-        this.status = new Status("false");
+    public Task markNotDone() {
+        return new Task(title, note, new Status("false"));
     }
 
     /**

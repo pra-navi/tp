@@ -25,7 +25,7 @@ public class UnmarkTaskCommand extends Command {
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1 ";
 
-    public static final String MESSAGE_UNMARK_TASK_SUCCESS = "Marked Task as Not Done: %1$s";
+    public static final String MESSAGE_UNMARK_TASK_SUCCESS = "Not Done: %1$s";
     public static final String MESSAGE_HAS_BEEN_MARKED = "This task is already marked as not done in the task list.";
 
     /**
@@ -50,7 +50,7 @@ public class UnmarkTaskCommand extends Command {
         List<Task> lastShownList = model.getFilteredTaskList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
         }
 
         Task taskToMark = lastShownList.get(index.getZeroBased());
@@ -59,9 +59,9 @@ public class UnmarkTaskCommand extends Command {
             throw new CommandException(MESSAGE_HAS_BEEN_MARKED);
         }
 
-        model.unmarkTask(taskToMark);
+        Task unmarkedTask = model.unmarkTask(taskToMark);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_UNMARK_TASK_SUCCESS, Messages.format(taskToMark)));
+        return new CommandResult(String.format(MESSAGE_UNMARK_TASK_SUCCESS, Messages.format(unmarkedTask)));
     }
 
     @Override
@@ -82,7 +82,7 @@ public class UnmarkTaskCommand extends Command {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("index", index)
+                .add("targetIndex", index)
                 .toString();
     }
 }
