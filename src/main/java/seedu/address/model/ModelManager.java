@@ -46,14 +46,14 @@ public class ModelManager implements Model {
     //=========== UserPrefs ==================================================================================
 
     @Override
-    public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
-        requireNonNull(userPrefs);
-        this.userPrefs.resetData(userPrefs);
+    public ReadOnlyUserPrefs getUserPrefs() {
+        return userPrefs;
     }
 
     @Override
-    public ReadOnlyUserPrefs getUserPrefs() {
-        return userPrefs;
+    public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
+        requireNonNull(userPrefs);
+        this.userPrefs.resetData(userPrefs);
     }
 
     @Override
@@ -81,16 +81,16 @@ public class ModelManager implements Model {
     //=========== AddressBook ================================================================================
 
     @Override
-    public void setAddressBook(ReadOnlyAddressBook addressBook) {
-        this.addressBook.resetData(addressBook);
-    }
-
-    @Override
     public ReadOnlyAddressBook getAddressBook() {
         return addressBook;
     }
 
-    //=========== Person Level Operations ==============================================================================
+    @Override
+    public void setAddressBook(ReadOnlyAddressBook addressBook) {
+        this.addressBook.resetData(addressBook);
+    }
+
+    //=========== Person-Level Operations ====================================================================
 
     @Override
     public boolean hasPerson(Person person) {
@@ -138,7 +138,7 @@ public class ModelManager implements Model {
         filteredPersons.setPredicate(predicate);
     }
 
-    //=========== Task Level Operations ================================================================================
+    //=========== Task-Level Operations ======================================================================
 
     @Override
     public boolean hasTask(Task task) {
@@ -155,6 +155,25 @@ public class ModelManager implements Model {
     @Override
     public void deleteTask(Task task) {
         addressBook.removeTask(task);
+    }
+
+    @Override
+    public void setTask(Task target, Task editedTask) {
+        requireAllNonNull(target, editedTask);
+
+        addressBook.setTask(target, editedTask);
+    }
+
+    @Override
+    public Task markTask(Task task) {
+        setTask(task, task.markDone());
+        return task.markDone();
+    }
+
+    @Override
+    public Task unmarkTask(Task task) {
+        setTask(task, task.unmarkDone());
+        return task.unmarkDone();
     }
 
     //=========== Filtered Task List Accessors =============================================================
@@ -174,6 +193,8 @@ public class ModelManager implements Model {
         requireNonNull(predicate);
         filteredTasks.setPredicate(predicate);
     }
+
+    //=========== Object Overrides ===========================================================================
 
     @Override
     public boolean equals(Object other) {

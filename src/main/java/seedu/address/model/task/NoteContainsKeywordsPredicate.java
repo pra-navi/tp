@@ -7,12 +7,12 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.commons.util.ToStringBuilder;
 
 /**
- * Tests that a {@code Task}'s {@code Title} matches any of the keywords given.
+ * Tests that a {@code Task}'s {@code Note} matches any of the keywords given.
  */
-public class TitleContainsKeywordsPredicate implements Predicate<Task> {
+public class NoteContainsKeywordsPredicate implements Predicate<Task> {
     private final List<String> keywords;
 
-    public TitleContainsKeywordsPredicate(List<String> keywords) {
+    public NoteContainsKeywordsPredicate(List<String> keywords) {
         this.keywords = keywords;
     }
 
@@ -20,7 +20,7 @@ public class TitleContainsKeywordsPredicate implements Predicate<Task> {
     public boolean test(Task task) {
         return keywords
                 .stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(task.getTitle().toString(), keyword));
+                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(task.getNote().toString(), keyword));
     }
 
     @Override
@@ -30,12 +30,12 @@ public class TitleContainsKeywordsPredicate implements Predicate<Task> {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof TitleContainsKeywordsPredicate)) {
+        if (!(other instanceof NoteContainsKeywordsPredicate)) {
             return false;
         }
 
-        TitleContainsKeywordsPredicate otherTitleContainsKeywordsPredicate = (TitleContainsKeywordsPredicate) other;
-        return keywords.equals(otherTitleContainsKeywordsPredicate.keywords);
+        NoteContainsKeywordsPredicate otherNoteContainsKeywordsPredicate = (NoteContainsKeywordsPredicate) other;
+        return keywords.equals(otherNoteContainsKeywordsPredicate.keywords);
     }
 
     @Override
