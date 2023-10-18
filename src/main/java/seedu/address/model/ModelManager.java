@@ -43,7 +43,7 @@ public class ModelManager implements Model {
         this(new AddressBook(), new UserPrefs());
     }
 
-    //=========== UserPrefs ==================================================================================
+    // =========== UserPrefs ==================================================================================
 
     @Override
     public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
@@ -78,7 +78,7 @@ public class ModelManager implements Model {
         userPrefs.setAddressBookFilePath(addressBookFilePath);
     }
 
-    //=========== AddressBook ================================================================================
+    // =========== AddressBook ================================================================================
 
     @Override
     public void setAddressBook(ReadOnlyAddressBook addressBook) {
@@ -90,7 +90,7 @@ public class ModelManager implements Model {
         return addressBook;
     }
 
-    //=========== Person Level Operations ==============================================================================
+    // =========== Person Level Operations =============================================================================
 
     @Override
     public boolean hasPerson(Person person) {
@@ -121,7 +121,7 @@ public class ModelManager implements Model {
         addressBook.setPerson(target, editedPerson);
     }
 
-    //=========== Filtered Person List Accessors =============================================================
+    // =========== Filtered Person List Accessors =============================================================
 
     /**
      * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
@@ -138,7 +138,7 @@ public class ModelManager implements Model {
         filteredPersons.setPredicate(predicate);
     }
 
-    //=========== Task Level Operations ================================================================================
+    // ========== Task Level Operations ================================================================================
 
     @Override
     public boolean hasTask(Task task) {
@@ -152,7 +152,14 @@ public class ModelManager implements Model {
         updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
     }
 
-    //=========== Filtered Task List Accessors =============================================================
+    @Override
+    public void setTask(Task target, Task editedTask) {
+        requireAllNonNull(target, editedTask);
+
+        addressBook.setTask(target, editedTask);
+    }
+
+    // =========== Filtered Task List Accessors =============================================================
 
     /**
      * Returns an unmodifiable view of the list of {@code Task} backed by the

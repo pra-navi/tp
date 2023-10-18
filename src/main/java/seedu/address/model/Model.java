@@ -54,7 +54,7 @@ public interface Model {
     /** Returns the AddressBook */
     ReadOnlyAddressBook getAddressBook();
 
-    //=========== Person Level Operations ==============================================================================
+    // ========== Person Level Operations ==============================================================================
 
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
@@ -94,7 +94,7 @@ public interface Model {
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
 
-    //=========== Task Level Operations ================================================================================
+    // =========== Task Level Operations ===============================================================================
 
     /**
      * Returns true if a task with the same title and note as {@code task} exists in
@@ -107,6 +107,13 @@ public interface Model {
      * {@code task} must not already exist in the address book.
      */
     void addTask(Task task);
+
+    /**
+     * Replaces the given task {@code target} with {@code editedTask}.
+     * {@code target} must exist in the task list.
+     * The task information of {@code editedTask} must not be the same as another existing task in the task list.
+     */
+    void setTask(Task target, Task editedTask);
 
     /** Returns an unmodifiable view of the filtered task list */
     ObservableList<Task> getFilteredTaskList();

@@ -25,7 +25,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      * between constructors. See https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html
      *
      * Note that non-static init blocks are not recommended to use. There are other ways to avoid duplication
-     *   among constructors.
+     * among constructors.
      */
     {
         persons = new UniquePersonList();
@@ -71,7 +71,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         setTasks(newData.getTaskList());
     }
 
-    //=========== Person Level Operations ==============================================================================
+    // =========== Person Level Operations =============================================================================
 
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
@@ -115,7 +115,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         persons.removeAll();
     }
 
-    //=========== Task Level Operations ================================================================================
+    // =========== Task Level Operations ===============================================================================
 
     /**
      * Returns true if a task with the same identity as {@code task} exists in the address book.
@@ -131,6 +131,17 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public void addTask(Task t) {
         tasks.add(t);
+    }
+
+    /**
+     * Replaces the given task {@code target} in the list with {@code editedTask}.
+     * {@code target} must exist in the address book.
+     * The task information of {@code editedTask} must not be the same as another existing task in the address book.
+     */
+    public void setTask(Task target, Task editedTask) {
+        requireNonNull(editedTask);
+
+        tasks.setTask(target, editedTask);
     }
 
     //// util methods
