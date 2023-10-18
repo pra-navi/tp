@@ -44,7 +44,7 @@ public class SampleDataUtil {
     }
 
     public static Task[] getSampleTasks() {
-        return new Task[]{
+        return new Task[] {
             new Task(new Title("Buy Flowers"), new Note("from Gina")),
             new Task(new Title("Buy Milk"), new Note("from NTUC"))
         };

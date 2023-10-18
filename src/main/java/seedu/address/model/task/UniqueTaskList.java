@@ -78,6 +78,10 @@ public class UniqueTaskList implements Iterable<Task> {
         }
     }
 
+    /**
+     * Replaces the contents of this list with another {@code UniqueTaskList}.
+     * @param replacement the {@code UniqueTaskList} to replace this list with.
+     */
     public void setTasks(UniqueTaskList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);

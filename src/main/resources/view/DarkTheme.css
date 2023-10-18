@@ -134,8 +134,8 @@
 
 .cell_header_label {
     -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 30px;
-    -fx-padding: 10 0 10 0;
+    -fx-font-size: 22px;
+    -fx-padding: 0 0 10 0;
     -fx-text-fill: white;
 }
 
