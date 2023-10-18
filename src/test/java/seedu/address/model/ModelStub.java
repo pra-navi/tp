@@ -93,6 +93,11 @@ public class ModelStub implements Model {
     }
 
     @Override
+    public void setTask(Task target, Task editedTask) {
+        throw new AssertionError("This method should not be called.");
+    }
+
+    @Override
     public ObservableList<Person> getFilteredPersonList() {
         throw new AssertionError("This method should not be called.");
     }
@@ -111,4 +116,15 @@ public class ModelStub implements Model {
     public void updateFilteredTaskList(Predicate<Task> predicate) {
         throw new AssertionError("This method should not be called.");
     }
+
+    @Override
+    public Task markTask(Task task) {
+        throw new AssertionError("This method should not be called.");
+    }
+
+    @Override
+    public Task unmarkTask(Task task) {
+        throw new AssertionError("This method should not be called.");
+    }
+
 }
