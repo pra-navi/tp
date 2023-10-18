@@ -150,7 +150,7 @@ public class CommandTestUtil {
 
         Task task = model.getFilteredTaskList().get(targetIndex.getZeroBased());
         final String[] splitName = task.getTitle().value.split("\\s+");
-        model.updateFilteredTaskList(new TaskContainsKeywordsPredicate(Arrays.asList(splitName[0])));
+        model.updateFilteredTaskList(new TaskContainsKeywordsPredicate(Arrays.asList(splitName[1])));
 
         assertEquals(1, model.getFilteredTaskList().size());
     }

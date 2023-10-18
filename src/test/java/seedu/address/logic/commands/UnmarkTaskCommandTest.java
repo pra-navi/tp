@@ -3,8 +3,7 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.CommandTestUtil.*;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 import static seedu.address.testutil.TypicalTasks.getTypicalAddressBook;
@@ -50,34 +49,37 @@ public class UnmarkTaskCommandTest {
         assertCommandFailure(unmarkTaskCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
     }
 
-    //    @Test
-    //    public void execute_validIndexFilteredList_success() {
-    //        showTaskAtIndex(model, INDEX_FIRST_PERSON);
-    //
-    //        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
-    //        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
-    //
-    //        String expectedMessage = String.format(MarkTaskCommand.MESSAGE_MARK_TASK_SUCCESS,
-    //                Messages.format(taskToMark));
-    //
-    //        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-    //        expectedModel.markTask(taskToMark);
-    //
-    //        assertCommandSuccess(markTaskCommand, model, expectedMessage, expectedModel);
-    //    }
-    //
-    //    @Test
-    //    public void execute_invalidIndexFilteredList_throwsCommandException() {
-    //        showTaskAtIndex(model, INDEX_FIRST_PERSON);
-    //
-    //        Index outOfBoundIndex = INDEX_SECOND_PERSON;
-    //        // ensures that outOfBoundIndex is still in bounds of address book list
-    //        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getPersonList().size());
-    //
-    //        MarkTaskCommand markTaskCommand = new MarkTaskCommand(outOfBoundIndex);
-    //
-    //        assertCommandFailure(markTaskCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
-    //    }
+    @Test
+    public void execute_validIndexFilteredList_success() {
+        showTaskAtIndex(model, INDEX_FIRST_PERSON);
+
+        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Task taskToUnmark = model.markTask(taskToMark);
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        showTaskAtIndex(expectedModel, INDEX_FIRST_PERSON);
+        Task markedTask = expectedModel.unmarkTask(taskToUnmark);
+        Task unmarkedTask = expectedModel.unmarkTask(markedTask);
+
+        String expectedMessage = String.format(UnmarkTaskCommand.MESSAGE_UNMARK_TASK_SUCCESS,
+                Messages.format(unmarkedTask));
+
+        assertCommandSuccess(unmarkTaskCommand, model, expectedMessage, expectedModel);
+    }
+
+    @Test
+    public void execute_invalidIndexFilteredList_throwsCommandException() {
+        showTaskAtIndex(model, INDEX_FIRST_PERSON);
+
+        Index outOfBoundIndex = INDEX_SECOND_PERSON;
+        // ensures that outOfBoundIndex is still in bounds of address book list
+        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getTaskList().size());
+
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(outOfBoundIndex);
+
+        assertCommandFailure(unmarkTaskCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+    }
 
     @Test
     public void equals() {
