@@ -21,6 +21,8 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
+import seedu.address.model.task.Task;
+import seedu.address.model.task.TaskContainsKeywordsPredicate;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 
 /**
@@ -137,6 +139,27 @@ public class CommandTestUtil {
         model.updateFilteredPersonList(new NameContainsKeywordsPredicate(Arrays.asList(splitName[0])));
 
         assertEquals(1, model.getFilteredPersonList().size());
+    }
+
+    /**
+     * Updates {@code model}'s filtered list to show only the task at the given {@code targetIndex} in the
+     * {@code model}'s address book.
+     */
+    public static void showTaskAtIndex(Model model, Index targetIndex) {
+        assertTrue(targetIndex.getZeroBased() < model.getFilteredTaskList().size());
+
+        Task task = model.getFilteredTaskList().get(targetIndex.getZeroBased());
+
+        // Splitting both title and note into arrays of words
+        final String[] splitTitle = task.getTitle().value.split("\\s+");
+        final String[] splitNote = task.getNote().value.split("\\s+");
+
+        List<String> keywords = new ArrayList<>();
+        keywords.addAll(Arrays.asList(splitTitle));
+        keywords.addAll(Arrays.asList(splitNote));
+        model.updateFilteredTaskList(new TaskContainsKeywordsPredicate(keywords));
+
+        assertEquals(1, model.getFilteredTaskList().size());
     }
 
 }
