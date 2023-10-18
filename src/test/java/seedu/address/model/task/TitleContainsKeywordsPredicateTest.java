@@ -13,24 +13,24 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.testutil.TaskBuilder;
 
-public class TaskContainsKeywordsPredicateTest {
+public class TitleContainsKeywordsPredicateTest {
 
     @Test
     public void equals() {
         List<String> firstPredicateKeywordList = Collections.singletonList("first");
         List<String> secondPredicateKeywordList = Arrays.asList("first", "second");
 
-        TaskContainsKeywordsPredicate firstPredicate =
-                new TaskContainsKeywordsPredicate(firstPredicateKeywordList);
-        TaskContainsKeywordsPredicate secondPredicate =
-                new TaskContainsKeywordsPredicate(secondPredicateKeywordList);
+        TitleContainsKeywordsPredicate firstPredicate =
+                new TitleContainsKeywordsPredicate(firstPredicateKeywordList);
+        TitleContainsKeywordsPredicate secondPredicate =
+                new TitleContainsKeywordsPredicate(secondPredicateKeywordList);
 
         // same object -> returns true
         assertEquals(firstPredicate, firstPredicate);
 
         // same values -> returns true
-        TaskContainsKeywordsPredicate firstPredicateCopy =
-                new TaskContainsKeywordsPredicate(firstPredicateKeywordList);
+        TitleContainsKeywordsPredicate firstPredicateCopy =
+                new TitleContainsKeywordsPredicate(firstPredicateKeywordList);
         assertEquals(firstPredicate, firstPredicateCopy);
 
         // different types -> returns false
@@ -52,56 +52,56 @@ public class TaskContainsKeywordsPredicateTest {
                 .build();
 
         // One keyword in Title
-        TaskContainsKeywordsPredicate predicate =
-                new TaskContainsKeywordsPredicate(Collections.singletonList("Bob"));
+        TitleContainsKeywordsPredicate predicate =
+                new TitleContainsKeywordsPredicate(Collections.singletonList("Bob"));
         assertTrue(predicate.test(testTask));
 
         // One keyword in Note
-        predicate = new TaskContainsKeywordsPredicate(Collections.singletonList("Harry"));
+        predicate = new TitleContainsKeywordsPredicate(Collections.singletonList("Harry"));
         assertTrue(predicate.test(testTask));
 
         // Multiple keywords in Title
-        predicate = new TaskContainsKeywordsPredicate(Arrays.asList("Alice", "Bob"));
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Alice", "Bob"));
         assertTrue(predicate.test(testTask));
 
         // Multiple keywords in Note
-        predicate = new TaskContainsKeywordsPredicate(Arrays.asList("Fiona", "George"));
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Fiona", "George"));
         assertTrue(predicate.test(testTask));
 
         // Only one matching keyword in Title
-        predicate = new TaskContainsKeywordsPredicate(Arrays.asList("Alice", "Invalid"));
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Alice", "Invalid"));
         assertTrue(predicate.test(testTask));
 
         // Only one matching keyword in Note
-        predicate = new TaskContainsKeywordsPredicate(Arrays.asList("Invalid", "Harry"));
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("Invalid", "Harry"));
         assertTrue(predicate.test(testTask));
 
         // Mixed-case keywords in Title
-        predicate = new TaskContainsKeywordsPredicate(Arrays.asList("aLIce", "echO"));
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("aLIce", "echO"));
         assertTrue(predicate.test(testTask));
 
         // Mixed-case keywords in Note
-        predicate = new TaskContainsKeywordsPredicate(Arrays.asList("fIoNA", "iRENE"));
+        predicate = new TitleContainsKeywordsPredicate(Arrays.asList("fIoNA", "iRENE"));
         assertTrue(predicate.test(testTask));
     }
 
     @Test
     public void test_nameDoesNotContainKeywords_returnsFalse() {
         // Zero keywords
-        TaskContainsKeywordsPredicate predicate = new TaskContainsKeywordsPredicate(Collections.emptyList());
+        TitleContainsKeywordsPredicate predicate = new TitleContainsKeywordsPredicate(Collections.emptyList());
         assertFalse(predicate.test(new TaskBuilder().withTitle("Alice").withNote("Bob").build()));
 
         // Non-matching keyword
-        predicate = new TaskContainsKeywordsPredicate(Collections.singletonList("Carol"));
+        predicate = new TitleContainsKeywordsPredicate(Collections.singletonList("Carol"));
         assertFalse(predicate.test(new TaskBuilder().withTitle("Alice").withNote("Bob").build()));
     }
 
     @Test
     public void toStringMethod() {
         List<String> keywords = List.of("keyword1", "keyword2");
-        TaskContainsKeywordsPredicate predicate = new TaskContainsKeywordsPredicate(keywords);
+        TitleContainsKeywordsPredicate predicate = new TitleContainsKeywordsPredicate(keywords);
 
-        String expected = TaskContainsKeywordsPredicate.class.getCanonicalName() + "{keywords=" + keywords + "}";
+        String expected = TitleContainsKeywordsPredicate.class.getCanonicalName() + "{keywords=" + keywords + "}";
         assertEquals(expected, predicate.toString());
     }
 }
