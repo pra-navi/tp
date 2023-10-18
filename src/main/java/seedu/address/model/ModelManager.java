@@ -159,7 +159,7 @@ public class ModelManager implements Model {
 
     @Override
     public void deleteTask(Task task) {
-        addressBook.removeTask(task);
+        addressBook.deleteTask(task);
     }
 
     @Override
