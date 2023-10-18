@@ -44,10 +44,10 @@ public class UniqueTaskListTest {
     }
 
     @Test
-    public void removeAll_clearsList() {
+    public void deleteAll_clearsList() {
         uniqueTaskList.add(AGENDA);
         uniqueTaskList.add(BUDGET);
-        uniqueTaskList.removeAll();
+        uniqueTaskList.deleteAll();
         UniqueTaskList expectedUniqueTaskList = new UniqueTaskList();
         assertEquals(expectedUniqueTaskList, uniqueTaskList);
     }

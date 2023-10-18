@@ -91,16 +91,16 @@ public class AddressBookTest {
     }
 
     @Test
-    public void removeAllPerson_clearsPersonList() {
+    public void deleteAllPerson_clearsPersonList() {
         AddressBook newData = getTypicalAddressBook();
-        newData.removeAllPerson();
+        newData.deleteAllPerson();
         assertEquals(addressBook.getPersonList(), newData.getPersonList());
     }
 
     @Test
-    public void removeAllTask_clearsTaskList() {
+    public void deleteAllTask_clearsTaskList() {
         AddressBook newData = getTypicalAddressBook();
-        newData.removeAllTask();
+        newData.deleteAllTask();
         assertEquals(addressBook.getTaskList(), newData.getTaskList());
     }
 

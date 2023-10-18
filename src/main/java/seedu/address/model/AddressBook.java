@@ -104,15 +104,15 @@ public class AddressBook implements ReadOnlyAddressBook {
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
-    public void removePerson(Person key) {
-        persons.remove(key);
+    public void deletePerson(Person key) {
+        persons.delete(key);
     }
 
     /**
      * Removes all persons from the contact list.
      */
-    public void removeAllPerson() {
-        persons.removeAll();
+    public void deleteAllPerson() {
+        persons.deleteAll();
     }
 
     //=========== Task Level Operations ================================================================================
@@ -134,10 +134,18 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Removes {@code key} from this {@code AddressBook}.
+     * {@code key} must exist in the address book.
+     */
+    public void deleteTask(Task key) {
+        tasks.delete(key);
+    }
+
+    /**
      * Removes all tasks from the task list.
      */
-    public void removeAllTask() {
-        tasks.removeAll();
+    public void deleteAllTask() {
+        tasks.deleteAll();
     }
 
     //// util methods
