@@ -49,14 +49,14 @@ public class Task {
     }
 
     /**
-     * Update the Status
+     * Updates the Status of the Task as Done.
      */
     public Task markDone() {
         return new Task(title, note, new Status(Status.TaskStatus.DONE));
     }
 
     /**
-     * Update the Status
+     * Updates the Status of the Task as not Done.
      */
     public Task markNotDone() {
         return new Task(title, note, new Status(Status.TaskStatus.NOT_DONE));

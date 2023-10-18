@@ -12,7 +12,7 @@ public class Status {
     public final TaskStatus taskStatus;
 
     /**
-     * Enum representing the status of a task in the task list.
+     * Represents the status of a task in the task list.
      * Each enum constant corresponds to a specific status: {@code DONE} for completed tasks and
      * {@code NOT_DONE} for pending tasks.
      */

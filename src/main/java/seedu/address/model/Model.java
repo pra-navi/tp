@@ -103,7 +103,7 @@ public interface Model {
     boolean hasTask(Task task);
 
     /**
-     * Adds the given task.
+     * Adds the given task to the task list.
      * {@code task} must not already exist in the task list.
      */
     void addTask(Task task);

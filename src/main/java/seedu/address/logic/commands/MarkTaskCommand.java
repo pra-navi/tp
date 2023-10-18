@@ -32,11 +32,12 @@ public class MarkTaskCommand extends Command {
      * Status flag for done tasks.
      * It is set to {@code true} to indicate tasks that are done.
      */
-    private static final Status STATUS = new Status(TaskStatus.DONE);
+    private static final Status STATUS_DONE = new Status(TaskStatus.DONE);
 
     private final Index index;
 
     /**
+     * Constructs a MarkTaskCommand.
      * @param index of the task in the filtered task list to mark as done
      */
     public MarkTaskCommand(Index index) {
@@ -56,7 +57,7 @@ public class MarkTaskCommand extends Command {
 
         Task taskToMark = lastShownList.get(index.getZeroBased());
 
-        if (taskToMark.getStatus().equals(STATUS)) {
+        if (taskToMark.getStatus().equals(STATUS_DONE)) {
             throw new CommandException(MESSAGE_HAS_BEEN_MARKED);
         }
 
