@@ -17,9 +17,12 @@ public class TitleContainsKeywordsPredicate implements Predicate<Task> {
 
     @Override
     public boolean test(Task task) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(
-                        task.getTitle().value, keyword));
+        return keywords
+                .stream()
+                .anyMatch(keyword -> {
+                    String titleAndNote = task.getTitle().toString() + " " + task.getNote().toString();
+                    return StringUtil.containsWordIgnoreCase(titleAndNote, keyword);
+                });
     }
 
     @Override
