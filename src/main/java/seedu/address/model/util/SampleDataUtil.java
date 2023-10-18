@@ -12,6 +12,9 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.task.Title;
+import seedu.address.model.task.Task;
+import seedu.address.model.task.Note;
 
 /**
  * Contains utility methods for populating {@code AddressBook} with sample data.
@@ -40,10 +43,21 @@ public class SampleDataUtil {
         };
     }
 
+    public static Task[] getSampleTasks() {
+        return new Task[]{
+                new Task(new Title("Buy Flowers"), new Note("from Gina")),
+                new Task(new Title("Buy Milk"), new Note("from NTUC"))
+        };
+    }
+
     public static ReadOnlyAddressBook getSampleAddressBook() {
         AddressBook sampleAb = new AddressBook();
         for (Person samplePerson : getSamplePersons()) {
             sampleAb.addPerson(samplePerson);
+        }
+
+        for (Task sampleTask : getSampleTasks()) {
+            sampleAb.addTask(sampleTask);
         }
         return sampleAb;
     }
