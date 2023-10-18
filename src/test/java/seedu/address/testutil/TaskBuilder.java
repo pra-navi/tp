@@ -64,10 +64,6 @@ public class TaskBuilder {
      * Builds the {@code Task} with the relevant information.
      */
     public Task build() {
-        Task newTask = new Task(title, note);
-        if (this.status.equals(new Status(TaskStatus.DONE))) {
-            return newTask.markDone();
-        }
-        return newTask;
+        return new Task(title, note, status);
     }
 }

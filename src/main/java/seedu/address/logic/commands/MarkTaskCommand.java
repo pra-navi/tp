@@ -1,7 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.address.model.task.Status.STATUS_DONE;
 
 import java.util.List;
 
@@ -10,8 +10,6 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.task.Status;
-import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 
 /**
@@ -28,11 +26,6 @@ public class MarkTaskCommand extends Command {
 
     public static final String MESSAGE_MARK_TASK_SUCCESS = "Marked as Done: %1$s";
     public static final String MESSAGE_HAS_BEEN_MARKED = "This task is already marked as done in the task list.";
-    /**
-     * Status flag for done tasks.
-     * It is set to {@code true} to indicate tasks that are done.
-     */
-    private static final Status STATUS_DONE = new Status(TaskStatus.DONE);
 
     private final Index index;
 
@@ -62,7 +55,6 @@ public class MarkTaskCommand extends Command {
         }
 
         Task markedTask = model.markTask(taskToMark);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         return new CommandResult(String.format(MESSAGE_MARK_TASK_SUCCESS, Messages.format(markedTask)));
     }
 

@@ -9,6 +9,8 @@ import java.util.Objects;
  * Guarantees: immutable; Status can be either {@link TaskStatus#DONE} or {@link TaskStatus#NOT_DONE}.
  */
 public class Status {
+    public static final Status STATUS_DONE = new Status(TaskStatus.DONE);
+    public static final Status STATUS_NOT_DONE = new Status(TaskStatus.NOT_DONE);
     public final TaskStatus taskStatus;
 
     /**

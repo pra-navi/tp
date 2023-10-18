@@ -1,7 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.address.model.task.Status.STATUS_NOT_DONE;
 
 import java.util.List;
 
@@ -10,8 +10,6 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.task.Status;
-import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 
 /**
@@ -29,11 +27,6 @@ public class UnmarkTaskCommand extends Command {
     public static final String MESSAGE_UNMARK_TASK_SUCCESS = "Marked as Not Done: %1$s";
     public static final String MESSAGE_HAS_BEEN_MARKED = "This task is already marked as not done in the task list.";
 
-    /**
-     * Status flag for not done tasks.
-     * It is set to {@code false} to indicate tasks that are not done.
-     */
-    private static final Status STATUS = new Status(TaskStatus.NOT_DONE);
     private final Index index;
 
     /**
@@ -56,12 +49,11 @@ public class UnmarkTaskCommand extends Command {
 
         Task taskToMark = lastShownList.get(index.getZeroBased());
 
-        if (taskToMark.getStatus().equals(STATUS)) {
+        if (taskToMark.getStatus().equals(STATUS_NOT_DONE)) {
             throw new CommandException(MESSAGE_HAS_BEEN_MARKED);
         }
 
         Task unmarkedTask = model.unmarkTask(taskToMark);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         return new CommandResult(String.format(MESSAGE_UNMARK_TASK_SUCCESS, Messages.format(unmarkedTask)));
     }
 

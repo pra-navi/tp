@@ -167,8 +167,8 @@ public class ModelManager implements Model {
 
     @Override
     public Task unmarkTask(Task task) {
-        setTask(task, task.markNotDone());
-        return task.markNotDone();
+        setTask(task, task.unmarkDone());
+        return task.unmarkDone();
     }
 
     //=========== Filtered Task List Accessors =============================================================
