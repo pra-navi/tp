@@ -133,6 +133,13 @@ public class AddressBook implements ReadOnlyAddressBook {
         tasks.add(t);
     }
 
+    /**
+     * Removes all tasks from the task list.
+     */
+    public void removeAllTask() {
+        tasks.removeAll();
+    }
+
     //// util methods
 
     @Override

@@ -79,6 +79,13 @@ public class UniqueTaskList implements Iterable<Task> {
     }
 
     /**
+     * Removes all tasks from the list.
+     */
+    public void removeAll() {
+        internalList.clear();
+    }
+
+    /**
      * Replaces the contents of this list with another {@code UniqueTaskList}.
      * @param replacement the {@code UniqueTaskList} to replace this list with.
      */
