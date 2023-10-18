@@ -138,7 +138,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      * {@code key} must exist in the address book.
      */
     public void removeTask(Task key) {
-        tasks.remove(key);
+        tasks.delete(key);
     }
 
     /**

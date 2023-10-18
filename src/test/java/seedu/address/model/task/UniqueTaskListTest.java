@@ -48,18 +48,18 @@ public class UniqueTaskListTest {
 
     @Test
     public void remove_nullTask_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> uniqueTaskList.remove(null));
+        assertThrows(NullPointerException.class, () -> uniqueTaskList.delete(null));
     }
 
     @Test
     public void remove_staffDoesNotExist_throwsTaskNotFoundException() {
-        assertThrows(TaskNotFoundException.class, () -> uniqueTaskList.remove(AGENDA));
+        assertThrows(TaskNotFoundException.class, () -> uniqueTaskList.delete(AGENDA));
     }
 
     @Test
     public void remove_existingTask_removesTask() {
         uniqueTaskList.add(AGENDA);
-        uniqueTaskList.remove(AGENDA);
+        uniqueTaskList.delete(AGENDA);
         UniqueTaskList expectedUniqueTaskList = new UniqueTaskList();
         assertEquals(expectedUniqueTaskList, uniqueTaskList);
     }
