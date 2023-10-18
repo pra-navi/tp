@@ -50,6 +50,15 @@ public class MarkTaskCommandTest {
     }
 
     @Test
+    public void execute_markAlreadyMarkedTask_throwsCommandException() {
+        Task taskToMark = model.getFilteredTaskList().get(INDEX_FIRST_PERSON.getZeroBased());
+        model.markTask(taskToMark);
+        MarkTaskCommand markTaskCommand = new MarkTaskCommand(INDEX_FIRST_PERSON);
+
+        assertCommandFailure(markTaskCommand, model, MarkTaskCommand.MESSAGE_HAS_BEEN_MARKED);
+    }
+
+    @Test
     public void execute_validIndexFilteredList_success() {
         showTaskAtIndex(model, INDEX_FIRST_PERSON);
 

@@ -52,6 +52,13 @@ public class UnmarkTaskCommandTest {
     }
 
     @Test
+    public void execute_unmarkAlreadyUnmarkedTask_throwsCommandException() {
+        UnmarkTaskCommand unmarkTaskCommand = new UnmarkTaskCommand(INDEX_FIRST_PERSON);
+
+        assertCommandFailure(unmarkTaskCommand, model, UnmarkTaskCommand.MESSAGE_HAS_BEEN_MARKED);
+    }
+
+    @Test
     public void execute_validIndexFilteredList_success() {
         showTaskAtIndex(model, INDEX_FIRST_PERSON);
 
