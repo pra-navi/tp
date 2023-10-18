@@ -170,7 +170,7 @@ public class ModelManager implements Model {
         filteredTasks.setPredicate(predicate);
     }
 
-    //=========== Equal Method Override ======================================================================
+    //=========== Object Overrides ===========================================================================
 
     @Override
     public boolean equals(Object other) {
