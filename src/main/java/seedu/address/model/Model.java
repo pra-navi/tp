@@ -111,8 +111,13 @@ public interface Model {
     boolean hasTask(Task task);
 
     /**
+     * Deletes all tasks in the task list.
+     */
+    void deleteAllTask();
+
+    /**
      * Adds the given task to the task list.
-     * {@code task} must not already exist in the task list.
+     * {@code task} must not already exist in the address book.
      */
     void addTask(Task task);
 

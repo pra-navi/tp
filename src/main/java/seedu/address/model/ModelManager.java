@@ -100,12 +100,12 @@ public class ModelManager implements Model {
 
     @Override
     public void deletePerson(Person target) {
-        addressBook.removePerson(target);
+        addressBook.deletePerson(target);
     }
 
     @Override
     public void deleteAllPerson() {
-        addressBook.removeAllPerson();
+        addressBook.deleteAllPerson();
     }
 
     @Override
@@ -144,6 +144,11 @@ public class ModelManager implements Model {
     public boolean hasTask(Task task) {
         requireNonNull(task);
         return addressBook.hasTask(task);
+    }
+
+    @Override
+    public void deleteAllTask() {
+        addressBook.deleteAllTask();
     }
 
     @Override
