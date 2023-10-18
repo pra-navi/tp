@@ -58,7 +58,7 @@ public interface Model {
      */
     void setAddressBook(ReadOnlyAddressBook addressBook);
 
-    //=========== Person-Level operations ============================================================================
+    //=========== Person Level Operations ====================================================================
 
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
@@ -102,7 +102,7 @@ public interface Model {
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
 
-    //=========== Task-Level operations ==============================================================================
+    //=========== Task-Level operations ======================================================================
 
     /**
      * Returns true if a task with the same title and note as {@code task} exists in the address book.
