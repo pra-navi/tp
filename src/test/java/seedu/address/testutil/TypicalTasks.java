@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import seedu.address.model.AddressBook;
+import seedu.address.model.task.Status;
+import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 
 /**
@@ -20,6 +22,7 @@ public class TypicalTasks {
     public static final Task BUDGET = new TaskBuilder()
             .withTitle("Prepare Budget")
             .withNote("For CS2102")
+            .withStatus(new Status(TaskStatus.DONE))
             .build();
 
     public static final Task CATERING = new TaskBuilder()
