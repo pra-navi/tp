@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.task.Note;
+import seedu.address.model.task.Status;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
 
@@ -17,22 +18,27 @@ class JsonAdaptedTask {
 
     private final String title;
     private final String note;
+    private final boolean isDone;
 
     /**
      * Constructs a {@code JsonAdaptedTask} with the given task details.
      */
     @JsonCreator
-    public JsonAdaptedTask(@JsonProperty("title") String title, @JsonProperty("note") String note) {
+    public JsonAdaptedTask(@JsonProperty("title") String title,
+                           @JsonProperty("note") String note,
+                           @JsonProperty("isDone") boolean isDone) {
         this.title = title;
         this.note = note;
+        this.isDone = isDone;
     }
 
     /**
      * Converts a given {@code Task} into this class for Jackson use.
      */
     public JsonAdaptedTask(Task source) {
-        title = source.getTitle().value;
-        note = source.getNote().value;
+        title = source.getTitle().toString();
+        note = source.getNote().toString();
+        isDone = source.getStatus() == Status.STATUS_DONE;
     }
 
     /**
@@ -57,6 +63,10 @@ class JsonAdaptedTask {
         }
         final Note modelNote = new Note(note);
 
-        return new Task(modelTitle, modelNote);
+        if (isDone) {
+            return new Task(modelTitle, modelNote, Status.STATUS_DONE);
+        }
+
+        return new Task(modelTitle, modelNote, Status.STATUS_NOT_DONE);
     }
 }
