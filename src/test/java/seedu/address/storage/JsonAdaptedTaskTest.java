@@ -78,4 +78,14 @@ public class JsonAdaptedTaskTest {
         JsonAdaptedTask task = new JsonAdaptedTask(VALID_TITLE, VALID_NOTE, true);
         assertEquals(VALID_DONE_TASK, task.toModelType());
     }
+
+    @Test
+    public void toModelType_reloadTask_returnsSameTask() throws Exception {
+        Task task = new JsonAdaptedTask(VALID_TITLE, VALID_NOTE, false).toModelType();
+        Task expectedTask = new JsonAdaptedTask(VALID_TITLE, VALID_NOTE, true).toModelType();
+
+        Task updatedTask = task.markDone();
+        Task reloadedTask = new JsonAdaptedTask(updatedTask).toModelType();
+        assertEquals(expectedTask, reloadedTask);
+    }
 }

@@ -38,7 +38,7 @@ class JsonAdaptedTask {
     public JsonAdaptedTask(Task source) {
         title = source.getTitle().toString();
         note = source.getNote().toString();
-        isDone = source.getStatus() == Status.STATUS_DONE;
+        isDone = source.getStatus().equals(Status.STATUS_DONE);
     }
 
     /**
