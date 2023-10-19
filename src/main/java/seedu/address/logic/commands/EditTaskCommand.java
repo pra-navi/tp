@@ -125,8 +125,7 @@ public class EditTaskCommand extends Command {
         }
 
         /**
-         * Copy constructor.
-         * A defensive copy of {@code tags} is used internally.
+         * Creates a EditTaskDescriptor to store the changes to a task.
          */
         public EditTaskDescriptor(EditTaskDescriptor toCopy) {
             setTitle(toCopy.title);

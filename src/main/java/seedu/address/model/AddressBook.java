@@ -71,7 +71,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         setTasks(newData.getTaskList());
     }
 
-    // =========== Person Level Operations =============================================================================
+    // =========== Person Level Operations ===================================================================
 
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
@@ -115,7 +115,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         persons.deleteAll();
     }
 
-    // =========== Task Level Operations ===============================================================================
+    // =========== Task Level Operations =====================================================================
 
     /**
      * Returns true if a task with the same identity as {@code task} exists in the address book.
