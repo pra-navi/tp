@@ -98,6 +98,11 @@ public class ModelStub implements Model {
     }
 
     @Override
+    public void deleteTask(Task task) {
+        throw new AssertionError("This method should not be called.");
+    }
+
+    @Override
     public ObservableList<Person> getFilteredPersonList() {
         throw new AssertionError("This method should not be called.");
     }

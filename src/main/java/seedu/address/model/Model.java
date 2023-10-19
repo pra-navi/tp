@@ -122,6 +122,12 @@ public interface Model {
     void addTask(Task task);
 
     /**
+     * Deletes the given task.
+     * The task must exist in the address book.
+     */
+    void deleteTask(Task target);
+
+    /**
      * Replaces the given task {@code target} with {@code editedTask}.
      * {@code target} must exist in the task list.
      * The task information of {@code editedTask} must not be the same as another existing task in the task list.
