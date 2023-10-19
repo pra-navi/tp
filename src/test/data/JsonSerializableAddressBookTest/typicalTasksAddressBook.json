@@ -4,39 +4,48 @@
   "tasks": [
     {
       "title": "Prepare Agenda",
-      "note": "To book venue"
+      "note": "To book venue",
+      "isDone": false
     },
     {
       "title": "Prepare Budget",
-      "note": "For CS2102"
+      "note": "For CS2102",
+      "isDone": true
     },
     {
       "title": "Book Catering",
-      "note": "For CS2101"
+      "note": "For CS2101",
+      "isDone": false
     },
     {
       "title": "Send Budget and Draft",
-      "note": "For CS2100"
+      "note": "For CS2100",
+      "isDone": false
     },
     {
       "title": "Book Entertainment",
-      "note": "For CS1101"
+      "note": "For CS1101",
+      "isDone": true
     },
     {
       "title": "Prepare Funding",
-      "note": "For MA2001"
+      "note": "For MA2001",
+      "isDone": true
     },
     {
       "title": "Prepare Guestlist",
-      "note": "For CS2103T"
+      "note": "For CS2103T",
+      "isDone": true
     },
     {
       "title": "Ensure Hospitality",
-      "note": "For CS2103T"
+      "note": "For CS2103T",
+      "isDone": true
     },
     {
       "title": "Send Invitations and Guestlist",
-      "note": "For CS2103T"
+      "note": "For CS2103T",
+      "isDone": false
     }
   ]
 }
