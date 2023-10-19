@@ -26,3 +26,6 @@ docs/_site/
 /.settings/
 .classpath
 .project
+
+# Ignore bin files
+/bin/

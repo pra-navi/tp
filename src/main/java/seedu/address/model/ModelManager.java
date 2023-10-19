@@ -158,6 +158,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void deleteTask(Task task) {
+        addressBook.deleteTask(task);
+    }
+
+    @Override
     public void setTask(Task target, Task editedTask) {
         requireAllNonNull(target, editedTask);
 

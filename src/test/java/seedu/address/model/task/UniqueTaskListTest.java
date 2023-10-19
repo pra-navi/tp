@@ -9,6 +9,7 @@ import static seedu.address.testutil.TypicalTasks.BUDGET;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.task.exceptions.TaskNotFoundException;
 import seedu.address.testutil.TaskBuilder;
 
 public class UniqueTaskListTest {
@@ -43,6 +44,24 @@ public class UniqueTaskListTest {
                 .withStatus(agendaTaskStatus)
                 .build();
         assertTrue(uniqueTaskList.contains(agendaCopy));
+    }
+
+    @Test
+    public void remove_nullTask_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> uniqueTaskList.delete(null));
+    }
+
+    @Test
+    public void remove_staffDoesNotExist_throwsTaskNotFoundException() {
+        assertThrows(TaskNotFoundException.class, () -> uniqueTaskList.delete(AGENDA));
+    }
+
+    @Test
+    public void remove_existingTask_removesTask() {
+        uniqueTaskList.add(AGENDA);
+        uniqueTaskList.delete(AGENDA);
+        UniqueTaskList expectedUniqueTaskList = new UniqueTaskList();
+        assertEquals(expectedUniqueTaskList, uniqueTaskList);
     }
 
     @Test
