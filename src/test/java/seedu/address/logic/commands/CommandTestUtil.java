@@ -25,6 +25,7 @@ import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskContainsKeywordsPredicate;
 import seedu.address.model.task.TitleContainsKeywordsPredicate;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
+import seedu.address.testutil.EditTaskDescriptorBuilder;
 
 /**
  * Contains helper methods for testing commands.
@@ -60,22 +61,29 @@ public class CommandTestUtil {
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
 
+    public static final EditPersonCommand.EditPersonDescriptor DESC_AMY;
+    public static final EditPersonCommand.EditPersonDescriptor DESC_BOB;
+
     // task
     public static final String VALID_NOTE_AGENDA = "To book venue";
+    public static final String VALID_NOTE_BUDGET = "For CS2102";
     public static final String VALID_TITLE_AGENDA = "Prepare Agenda";
+    public static final String VALID_TITLE_BUDGET = "Prepare Budget";
 
     public static final String NOTE_DESC_AGENDA = " " + PREFIX_TASK_NOTE + VALID_NOTE_AGENDA;
+    public static final String NOTE_DESC_BUDGET = " " + PREFIX_TASK_NOTE + VALID_NOTE_BUDGET;
     public static final String TITLE_DESC_AGENDA = " " + PREFIX_TASK_TITLE + VALID_TITLE_AGENDA;
+    public static final String TITLE_DESC_BUDGET = " " + PREFIX_TASK_TITLE + VALID_TITLE_BUDGET;
 
     public static final String INVALID_NOTE_DESC = " " + PREFIX_TASK_NOTE; // empty string not allowed for notes
     public static final String INVALID_TITLE_DESC = " " + PREFIX_TASK_TITLE; // empty string not allowed for titles
 
+    public static final EditTaskCommand.EditTaskDescriptor DESC_TASK_AGENDA;
+    public static final EditTaskCommand.EditTaskDescriptor DESC_TASK_BUDGET;
+
     // shared
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
-
-    public static final EditPersonCommand.EditPersonDescriptor DESC_AMY;
-    public static final EditPersonCommand.EditPersonDescriptor DESC_BOB;
 
     static {
         DESC_AMY = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY)
@@ -84,6 +92,10 @@ public class CommandTestUtil {
         DESC_BOB = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB)
                 .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB)
                 .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
+        DESC_TASK_AGENDA = new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_AGENDA)
+                .withNote(VALID_NOTE_AGENDA).build();
+        DESC_TASK_BUDGET = new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_BUDGET)
+                .withNote(VALID_NOTE_BUDGET).build();
     }
 
     /**
@@ -128,6 +140,7 @@ public class CommandTestUtil {
         assertEquals(expectedAddressBook, actualModel.getAddressBook());
         assertEquals(expectedFilteredList, actualModel.getFilteredPersonList());
     }
+
     /**
      * Updates {@code model}'s filtered list to show only the person at the given {@code targetIndex} in the
      * {@code model}'s address book.
