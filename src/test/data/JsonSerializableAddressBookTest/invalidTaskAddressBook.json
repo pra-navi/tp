@@ -3,7 +3,8 @@
   "tasks": [
     {
       "title": " Note the whitespace!",
-      "description": "Remember to throw error"
+      "description": "Remember to throw error",
+      "isDone": false
     }
   ]
 }

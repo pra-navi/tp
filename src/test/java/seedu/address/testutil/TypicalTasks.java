@@ -6,7 +6,6 @@ import java.util.List;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.task.Status;
-import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 
 /**
@@ -17,47 +16,55 @@ public class TypicalTasks {
     public static final Task AGENDA = new TaskBuilder()
             .withTitle("Prepare Agenda")
             .withNote("To book venue")
+            .withStatus(Status.STATUS_NOT_DONE)
             .build();
 
     public static final Task BUDGET = new TaskBuilder()
             .withTitle("Prepare Budget")
             .withNote("For CS2102")
-            .withStatus(new Status(TaskStatus.DONE))
+            .withStatus(Status.STATUS_DONE)
             .build();
 
     public static final Task CATERING = new TaskBuilder()
             .withTitle("Book Catering")
             .withNote("For CS2101")
+            .withStatus(Status.STATUS_NOT_DONE)
             .build();
 
     public static final Task DRAFT = new TaskBuilder()
             .withTitle("Send Budget and Draft")
             .withNote("For CS2100")
+            .withStatus(Status.STATUS_NOT_DONE)
             .build();
 
     public static final Task ENTERTAINMENT = new TaskBuilder()
             .withTitle("Book Entertainment")
             .withNote("For CS1101")
+            .withStatus(Status.STATUS_DONE)
             .build();
 
     public static final Task FUNDING = new TaskBuilder()
             .withTitle("Prepare Funding")
             .withNote("For MA2001")
+            .withStatus(Status.STATUS_DONE)
             .build();
 
     public static final Task GUESTLIST = new TaskBuilder()
             .withTitle("Prepare Guestlist")
             .withNote("For CS2103T")
+            .withStatus(Status.STATUS_DONE)
             .build();
 
     public static final Task HOSPITALITY = new TaskBuilder()
             .withTitle("Ensure Hospitality")
             .withNote("For CS2103T")
+            .withStatus(Status.STATUS_DONE)
             .build();
 
     public static final Task INVITATION = new TaskBuilder()
             .withTitle("Send Invitations and Guestlist")
             .withNote("For CS2103T")
+            .withStatus(Status.STATUS_NOT_DONE)
             .build();
 
     // Keywords
