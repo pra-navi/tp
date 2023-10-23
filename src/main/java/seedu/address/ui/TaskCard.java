@@ -2,6 +2,7 @@ package seedu.address.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.task.Task;
@@ -29,7 +30,6 @@ public class TaskCard extends UiPart<Region> {
     private Label title;
     @FXML
     private Label note;
-
     @FXML
     private Label id;
 

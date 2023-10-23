@@ -14,8 +14,13 @@ import seedu.address.model.task.Task;
  * Panel containing the list of tasks.
  */
 public class TaskListPanel extends UiPart<Region> {
+    private static final String DONE_BACKGROUND_COLOR_EVEN = "-fx-background-color: #334f3c";
+    private static final String DONE_BACKGROUND_COLOR_ODD = "-fx-background-color: #82ba75";
     private static final String FXML = "TaskListPanel.fxml";
+    private static final String NOT_DONE_BACKGROUND_COLOR_EVEN = "-fx-background-color: #5d3538";
+    private static final String NOT_DONE_BACKGROUND_COLOR_ODD = "-fx-background-color: #ba7575";
     private final Logger logger = LogsCenter.getLogger(TaskListPanel.class);
+
 
     @FXML
     private ListView<Task> taskListView;
@@ -42,7 +47,23 @@ public class TaskListPanel extends UiPart<Region> {
                 setText(null);
             } else {
                 setGraphic(new TaskCard(task, getIndex() + 1).getRoot());
+                String backgroundColor;
+                if (task.getStatus().toString().equals("Done")) {
+                    if (getIndex() % 2 == 0) {
+                        backgroundColor = DONE_BACKGROUND_COLOR_EVEN;
+                    } else {
+                        backgroundColor = DONE_BACKGROUND_COLOR_ODD;
+                    }
+                } else {
+                    if (getIndex() % 2 == 0) {
+                        backgroundColor = NOT_DONE_BACKGROUND_COLOR_EVEN;
+                    } else {
+                        backgroundColor = NOT_DONE_BACKGROUND_COLOR_ODD;
+                    }
+                }
+                setStyle(backgroundColor);
             }
+
         }
     }
 
