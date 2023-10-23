@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
 
 <HBox id="cardPane" fx:id="cardPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <GridPane HBox.hgrow="ALWAYS">
@@ -24,6 +25,7 @@
                         <Region fx:constant="USE_PREF_SIZE" />
                     </minWidth>
                 </Label>
+                <ImageView fx:id="statusIcon" fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true" />
                 <Label fx:id="title" text="\$title" styleClass="cell_big_label" wrapText="true"/>
             </HBox>
             <Label fx:id="note" styleClass="cell_small_label" text="\$note" wrapText="true"/>
