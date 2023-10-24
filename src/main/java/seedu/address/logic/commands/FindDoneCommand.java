@@ -1,11 +1,11 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.model.Model.PREDICATE_SHOW_DONE_TASKS;
 
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.task.Status;
-import seedu.address.model.task.TaskStatusPredicate;
 
 /**
  * Finds and lists all task in address book whose status is {@link Status#STATUS_DONE}.
@@ -18,16 +18,12 @@ public class FindDoneCommand extends Command {
             + "done and displays them as a list with index numbers.\n"
             + "Example: " + COMMAND_WORD;
 
-    private final TaskStatusPredicate predicate;
-
-    public FindDoneCommand() {
-        this.predicate = new TaskStatusPredicate(Status.STATUS_DONE);
-    }
+    public FindDoneCommand() {}
 
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
-        model.updateFilteredTaskList(predicate);
+        model.updateFilteredTaskList(PREDICATE_SHOW_DONE_TASKS);
         return new CommandResult(
                 String.format(Messages.MESSAGE_TASKS_LISTED_OVERVIEW, model.getFilteredTaskList().size()));
     }
