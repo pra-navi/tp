@@ -19,6 +19,7 @@ public interface Model {
     Predicate<Person> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
     Predicate<Task> PREDICATE_SHOW_ALL_TASKS = unused -> true;
     Predicate<Task> PREDICATE_SHOW_DONE_TASKS = task -> task.getStatus().equals(Status.STATUS_DONE);
+    Predicate<Task> PREDICATE_SHOW_NOT_DONE_TASKS = task -> task.getStatus().equals(Status.STATUS_NOT_DONE);
 
     /**
      * Returns the user prefs.
