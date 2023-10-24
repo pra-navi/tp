@@ -5,9 +5,10 @@ import static seedu.address.storage.JsonAdaptedTask.MISSING_FIELD_MESSAGE_FORMAT
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalTasks.BUDGET;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,17 +29,10 @@ public class JsonAdaptedTaskTest {
 
     public static final String VALID_TITLE = "Valid Title 1234 !@#$";
     public static final String VALID_NOTE = "Valid Note 1234 !@#$";
-    private static final List<JsonAdaptedTag> VALID_TAGS = BUDGET.getTags().stream()
-            .map(JsonAdaptedTag::new)
-            .collect(Collectors.toList());
-    private static final Set<Tag> VALID_TAGS_SET =
-            VALID_TAGS.stream().map(tag -> {
-                try {
-                    return tag.toModelType();
-                } catch (IllegalValueException e) {
-                    throw new RuntimeException(e);
-                }
-            }).collect(Collectors.toSet());
+    private static final List<JsonAdaptedTag> VALID_TAGS = Arrays.asList(new JsonAdaptedTag("class"),
+            new JsonAdaptedTag("finance"));
+
+    private static final Set<Tag> VALID_TAGS_SET = BUDGET.getTags();
     public static final Task VALID_TASK = new Task(new Title(VALID_TITLE), new Note(VALID_NOTE), VALID_TAGS_SET);
     public static final Task VALID_DONE_TASK = new Task(new Title(VALID_TITLE), new Note(VALID_NOTE),
             Status.STATUS_DONE, VALID_TAGS_SET);
@@ -58,7 +52,8 @@ public class JsonAdaptedTaskTest {
         JsonAdaptedTask invalidTaskTitle = new JsonAdaptedTask(INVALID_TITLE, VALID_NOTE, false, VALID_TAGS);
         String expectedMessage = Title.MESSAGE_CONSTRAINTS;
         assertThrows(IllegalValueException.class, expectedMessage, emptyTaskTitle::toModelType);
-        assertThrows(IllegalValueException.class, expectedMessage, invalidTaskTitle::toModelType);
+        assertThrows(IllegalValueException.class, expectedMessage,
+                invalidTaskTitle::toModelType);
     }
 
     @Test
@@ -98,7 +93,7 @@ public class JsonAdaptedTaskTest {
 
     @Test
     public void toModelType_invalidTags_throwsIllegalValueException() {
-        List<JsonAdaptedTag> invalidTags = VALID_TAGS;
+        List<JsonAdaptedTag> invalidTags = new ArrayList<>();
         invalidTags.add(new JsonAdaptedTag(INVALID_TAG));
         JsonAdaptedTask task =
                 new JsonAdaptedTask(VALID_TITLE, VALID_NOTE, false, invalidTags);
