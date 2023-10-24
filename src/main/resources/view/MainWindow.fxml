@@ -24,7 +24,7 @@
         <URL value="@Extensions.css" />
       </stylesheets>
 
-      <VBox>
+      <VBox prefHeight="500">
         <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
           <Menu mnemonicParsing="false" text="File">
             <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
@@ -40,7 +40,7 @@
           </padding>
         </StackPane>
 
-        <SplitPane dividerPositions="0.0" prefWidth="700" orientation="VERTICAL" VBox.vgrow="ALWAYS" >
+        <SplitPane dividerPositions="0.1" prefWidth="700" orientation="VERTICAL" VBox.vgrow="ALWAYS" >
           <items>
 
               <StackPane VBox.vgrow="ALWAYS" fx:id="resultDisplayPlaceholder" styleClass="pane-with-border"
