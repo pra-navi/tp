@@ -25,14 +25,13 @@ public class JsonAdaptedTaskTest {
     public static final String EMPTY_NOTE = " ";
     public static final String INVALID_TITLE = " Invalid Title 123";
     public static final String INVALID_NOTE = " Invalid Note 123";
-    private static final String INVALID_TAG = "#friend";
+    public static final String INVALID_TAG = "#friend";
 
     public static final String VALID_TITLE = "Valid Title 1234 !@#$";
     public static final String VALID_NOTE = "Valid Note 1234 !@#$";
-    private static final List<JsonAdaptedTag> VALID_TAGS = Arrays.asList(new JsonAdaptedTag("class"),
+    public static final List<JsonAdaptedTag> VALID_TAGS = Arrays.asList(new JsonAdaptedTag("class"),
             new JsonAdaptedTag("finance"));
-
-    private static final Set<Tag> VALID_TAGS_SET = BUDGET.getTags();
+    public static final Set<Tag> VALID_TAGS_SET = BUDGET.getTags();
     public static final Task VALID_TASK = new Task(new Title(VALID_TITLE), new Note(VALID_NOTE), VALID_TAGS_SET);
     public static final Task VALID_DONE_TASK = new Task(new Title(VALID_TITLE), new Note(VALID_NOTE),
             Status.STATUS_DONE, VALID_TAGS_SET);
