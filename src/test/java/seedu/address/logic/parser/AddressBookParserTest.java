@@ -23,6 +23,7 @@ import seedu.address.logic.commands.EditPersonCommand.EditPersonDescriptor;
 import seedu.address.logic.commands.EditTaskCommand;
 import seedu.address.logic.commands.EditTaskCommand.EditTaskDescriptor;
 import seedu.address.logic.commands.ExitCommand;
+import seedu.address.logic.commands.FindDoneCommand;
 import seedu.address.logic.commands.FindPersonCommand;
 import seedu.address.logic.commands.FindTaskCommand;
 import seedu.address.logic.commands.HelpCommand;
@@ -120,6 +121,12 @@ public class AddressBookParserTest {
         FindTaskCommand command = (FindTaskCommand) parser.parseCommand(
                 FindTaskCommand.COMMAND_WORD + " " + String.join(" ", keywords));
         assertEquals(new FindTaskCommand(new TaskContainsKeywordsPredicate(keywords)), command);
+    }
+
+    @Test
+    public void parseCommand_findDone() throws Exception {
+        assertTrue(parser.parseCommand(FindDoneCommand.COMMAND_WORD) instanceof FindDoneCommand);
+        assertTrue(parser.parseCommand(FindDoneCommand.COMMAND_WORD + " 3") instanceof FindDoneCommand);
     }
 
     @Test
