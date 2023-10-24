@@ -163,6 +163,47 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Find Task feature
+
+#### Implementation
+
+The `findTask` command accepts a String of space-separated keywords, and returns a list of tasks that contain any of their keywords in their title or note. The search is case-insensitive. 
+
+The sequence diagram below illustrates how the `findTask` command works.
+
+![FindTaskSequenceDiagram](images/FindTaskSequenceDiagram.png)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>FindTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+This feature is accomplished by a `TaskContainsKeywordPredicate` class which is used to filter the list of tasks in the `Model` component.
+
+The `TaskContainsKeywordPredicate` class creates two more `Predicate<Task>` objects using the provided search terms, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, which are omitted from the diagram above for brevity. 
+
+The `TitleContainsKeywordPredicate` object checks if a given task's `Title` contains any of the keywords in the search term. 
+
+The `NoteContainsKeywordPredicate` object checks if a given task's `Note` contains any of the keywords in the search term.
+
+These two predicates are used to filter the list of tasks in the `Model` component, by using a short-circuiting OR operation to combine the two predicates.
+
+#### Design considerations
+
+**Aspect: How to implement the `Predicate<Task>` class:**
+
+  * **Alternative 1:** Use a single `TaskContainsKeywordPredicate` class that implements `Predicate<Task>` to search both the task's `Title` and `Note`.
+    * Pros: Simple to implement.
+    * Cons: Not extensible. If we want to search other fields in the future, we will have to modify the `TaskContainsKeywordPredicate` class. <br/><br/>
+
+
+  * **Alternative 2 (current choice):** Use two `Predicate<Task>` classes, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, to search the task's `Title` and `Note` respectively.
+    * Pros: Extensible. We can easily add more `Predicate<Task>` classes to search other fields in the future. <br/>These classes also allow us to search the task's `Title` and `Note` separately, if needed.
+    * Cons: More complex to implement.
+
+<div style="page-break-after: always;"></div>
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
