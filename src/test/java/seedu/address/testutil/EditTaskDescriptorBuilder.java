@@ -1,6 +1,11 @@
 package seedu.address.testutil;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import seedu.address.logic.commands.EditTaskCommand.EditTaskDescriptor;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Note;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
@@ -27,6 +32,7 @@ public class EditTaskDescriptorBuilder {
         descriptor = new EditTaskDescriptor();
         descriptor.setTitle(title.getTitle());
         descriptor.setNote(title.getNote());
+        descriptor.setTags(title.getTags());
     }
 
     /**
@@ -42,6 +48,16 @@ public class EditTaskDescriptorBuilder {
      */
     public EditTaskDescriptorBuilder withNote(String note) {
         descriptor.setNote(new Note(note));
+        return this;
+    }
+
+    /**
+     * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code EditTaskDescriptor}
+     * that we are building.
+     */
+    public EditTaskDescriptorBuilder withTags(String... tags) {
+        Set<Tag> tagSet = Stream.of(tags).map(Tag::new).collect(Collectors.toSet());
+        descriptor.setTags(tagSet);
         return this;
     }
 

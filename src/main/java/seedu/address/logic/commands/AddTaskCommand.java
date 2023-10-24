@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NOTE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_TITLE;
 
@@ -19,10 +20,13 @@ public class AddTaskCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a task to the address book. "
             + "Parameters: "
             + PREFIX_TASK_TITLE + "TITLE "
-            + PREFIX_TASK_NOTE + "NOTE\n"
+            + PREFIX_TASK_NOTE + "NOTE"
+            + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_TASK_TITLE + "Get flowers "
-            + PREFIX_TASK_NOTE + "Wedding Anniversary";
+            + PREFIX_TASK_NOTE + "Wedding Anniversary"
+            + PREFIX_TAG + "finance "
+            + PREFIX_TAG + "class ";
 
     public static final String MESSAGE_SUCCESS = "New task added: %1$s";
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the address book";

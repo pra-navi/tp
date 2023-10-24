@@ -69,14 +69,19 @@ public class CommandTestUtil {
     public static final String VALID_NOTE_BUDGET = "For CS2102";
     public static final String VALID_TITLE_AGENDA = "Prepare Agenda";
     public static final String VALID_TITLE_BUDGET = "Prepare Budget";
+    public static final String VALID_TAG_AGENDA = "location";
+    public static final String VALID_TAG_BUDGET = "finance";
 
     public static final String NOTE_DESC_AGENDA = " " + PREFIX_TASK_NOTE + VALID_NOTE_AGENDA;
     public static final String NOTE_DESC_BUDGET = " " + PREFIX_TASK_NOTE + VALID_NOTE_BUDGET;
     public static final String TITLE_DESC_AGENDA = " " + PREFIX_TASK_TITLE + VALID_TITLE_AGENDA;
     public static final String TITLE_DESC_BUDGET = " " + PREFIX_TASK_TITLE + VALID_TITLE_BUDGET;
+    public static final String TAG_DESC_AGENDA = " " + PREFIX_TAG + VALID_TAG_AGENDA;
+    public static final String TAG_DESC_BUDGET = " " + PREFIX_TAG + VALID_TAG_BUDGET;
 
     public static final String INVALID_NOTE_DESC = " " + PREFIX_TASK_NOTE; // empty string not allowed for notes
     public static final String INVALID_TITLE_DESC = " " + PREFIX_TASK_TITLE; // empty string not allowed for titles
+    public static final String INVALID_TAG_TASK_DESC = " " + PREFIX_TAG + "location*"; // '*' not allowed in tags
 
     public static final EditTaskCommand.EditTaskDescriptor DESC_TASK_AGENDA;
     public static final EditTaskCommand.EditTaskDescriptor DESC_TASK_BUDGET;
@@ -93,9 +98,9 @@ public class CommandTestUtil {
                 .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB)
                 .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
         DESC_TASK_AGENDA = new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_AGENDA)
-                .withNote(VALID_NOTE_AGENDA).build();
+                .withNote(VALID_NOTE_AGENDA).withTags(VALID_TAG_AGENDA).build();
         DESC_TASK_BUDGET = new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_BUDGET)
-                .withNote(VALID_NOTE_BUDGET).build();
+                .withNote(VALID_NOTE_BUDGET).withTags(VALID_TAG_BUDGET).build();
     }
 
     /**

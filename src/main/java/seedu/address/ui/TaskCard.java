@@ -1,9 +1,12 @@
 package seedu.address.ui;
 
+import java.util.Comparator;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.task.Status;
@@ -32,12 +35,12 @@ public class TaskCard extends UiPart<Region> {
     private Label title;
     @FXML
     private Label note;
-
     @FXML
     private Label id;
-
     @FXML
     private ImageView statusIcon;
+    @FXML
+    private FlowPane tags;
 
     /**
      * Creates a {@code TaskCode} with the given {@code Task} and index to display.
@@ -54,5 +57,9 @@ public class TaskCard extends UiPart<Region> {
         } else {
             statusIcon.setImage(new Image("/images/not_done.png"));
         }
+
+        task.getTags().stream()
+                .sorted(Comparator.comparing(tag -> tag.tagName))
+                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 }
