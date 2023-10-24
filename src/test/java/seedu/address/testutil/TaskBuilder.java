@@ -2,7 +2,6 @@ package seedu.address.testutil;
 
 import seedu.address.model.task.Note;
 import seedu.address.model.task.Status;
-import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
 
@@ -24,7 +23,7 @@ public class TaskBuilder {
     public TaskBuilder() {
         title = new Title(DEFAULT_TITLE);
         note = new Note(DEFAULT_NOTE);
-        status = new Status(TaskStatus.NOT_DONE);
+        status = Status.STATUS_NOT_DONE;
     }
 
     /**

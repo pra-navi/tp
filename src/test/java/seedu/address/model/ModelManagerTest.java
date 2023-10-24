@@ -18,7 +18,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.task.Status;
-import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 import seedu.address.testutil.AddressBookBuilder;
 
@@ -118,9 +117,9 @@ public class ModelManagerTest {
         modelManager.addTask(AGENDA);
         Task markedTask = modelManager.markTask(AGENDA);
 
-        assertTrue(markedTask.getStatus().equals(new Status(TaskStatus.DONE)));
+        assertTrue(markedTask.getStatus().equals(Status.STATUS_DONE));
 
-        assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(new Status(TaskStatus.DONE)));
+        assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(Status.STATUS_DONE));
     }
 
     @Test
@@ -129,10 +128,9 @@ public class ModelManagerTest {
         Task markedTask = modelManager.markTask(AGENDA);
         Task unmarkedTask = modelManager.unmarkTask(markedTask);
 
-        assertTrue(unmarkedTask.getStatus().equals(new Status(TaskStatus.NOT_DONE)));
+        assertTrue(unmarkedTask.getStatus().equals(Status.STATUS_NOT_DONE));
 
-        assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(
-                new Status(TaskStatus.NOT_DONE)));
+        assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(Status.STATUS_NOT_DONE));
     }
 
     @Test

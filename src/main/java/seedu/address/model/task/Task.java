@@ -26,7 +26,7 @@ public class Task {
         requireAllNonNull(title, note);
         this.title = title;
         this.note = note;
-        this.status = new Status(Status.TaskStatus.NOT_DONE);
+        this.status = Status.STATUS_NOT_DONE;
     }
 
     /**
@@ -59,14 +59,14 @@ public class Task {
      * Updates the Status of the Task as Done.
      */
     public Task markDone() {
-        return new Task(title, note, new Status(Status.TaskStatus.DONE));
+        return new Task(title, note, Status.STATUS_DONE);
     }
 
     /**
      * Updates the Status of the Task as not Done.
      */
     public Task unmarkDone() {
-        return new Task(title, note, new Status(Status.TaskStatus.NOT_DONE));
+        return new Task(title, note, Status.STATUS_NOT_DONE);
     }
 
     /**
