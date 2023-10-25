@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.UniquePersonList;
+import seedu.address.model.tag.TagFrequencyTable;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.UniqueTaskList;
 
@@ -157,6 +158,15 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public void deleteAllTask() {
         tasks.deleteAll();
+    }
+
+    // =========== Tag Level Operations ======================================================================
+
+    /**
+     * Returns a frequency table of all tags in the address book.
+     */
+    public TagFrequencyTable getTagFrequencyTable() {
+        return new TagFrequencyTable(persons.asUnmodifiableObservableList(), tasks.asUnmodifiableObservableList());
     }
 
     //// util methods

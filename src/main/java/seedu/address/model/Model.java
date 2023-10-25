@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.Person;
+import seedu.address.model.tag.TagFrequencyTable;
 import seedu.address.model.task.Task;
 
 /**
@@ -160,4 +161,10 @@ public interface Model {
      */
     Task unmarkTask(Task task);
 
+    // =========== Tag Level Operations ======================================================================
+
+    /**
+     * Returns a frequency table of all tags in the address book.
+     */
+    TagFrequencyTable getTagFrequencyTable();
 }

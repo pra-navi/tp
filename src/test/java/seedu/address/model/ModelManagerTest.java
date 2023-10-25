@@ -7,7 +7,9 @@ import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BENSON;
+import static seedu.address.testutil.TypicalPersons.getTypicalPersons;
 import static seedu.address.testutil.TypicalTasks.AGENDA;
+import static seedu.address.testutil.TypicalTasks.getTypicalTasks;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,6 +19,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.address.model.tag.TagFrequencyTable;
 import seedu.address.model.task.Status;
 import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
@@ -133,6 +136,19 @@ public class ModelManagerTest {
 
         assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(
                 new Status(TaskStatus.NOT_DONE)));
+    }
+
+    @Test
+    public void getTagFrequencyTable_returnsSameTable() {
+        AddressBook typicalAddressBook = new AddressBook();
+        typicalAddressBook.setPersons(getTypicalPersons());
+        typicalAddressBook.setTasks(getTypicalTasks());
+        modelManager.setAddressBook(typicalAddressBook);
+
+        TagFrequencyTable tagFrequencyTable =
+                new TagFrequencyTable(getTypicalPersons(), getTypicalTasks());
+
+        assertEquals(modelManager.getTagFrequencyTable(), tagFrequencyTable);
     }
 
     @Test

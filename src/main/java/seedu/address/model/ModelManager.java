@@ -12,6 +12,7 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.person.Person;
+import seedu.address.model.tag.TagFrequencyTable;
 import seedu.address.model.task.Task;
 
 /**
@@ -179,6 +180,13 @@ public class ModelManager implements Model {
     public Task unmarkTask(Task task) {
         setTask(task, task.unmarkDone());
         return task.unmarkDone();
+    }
+
+    // =========== Tag Level Operations ======================================================================
+
+    @Override
+    public TagFrequencyTable getTagFrequencyTable() {
+        return addressBook.getTagFrequencyTable();
     }
 
     // =========== Filtered Task List Accessors ==============================================================
