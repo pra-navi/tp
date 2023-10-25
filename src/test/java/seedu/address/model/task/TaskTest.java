@@ -10,113 +10,100 @@ import org.junit.jupiter.api.Test;
 
 public class TaskTest {
 
-    private static final Task TEST_TASK_1_1 = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
+    private static final Task TEST_TASK = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
             new Status(Status.TaskStatus.DONE), getTagSet("Test1"));
-    private static final Task TEST_TASK_1_1_COPY = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
+    private static final Task TEST_TASK_SAME = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
             new Status(Status.TaskStatus.DONE), getTagSet("Test1"));
-    private static final Task TEST_TASK_1_2 = new Task(new Title("Test Task 1"), new Note("Test Note 2"), getTagSet(
-            "Test12"));
-    private static final Task TEST_TASK_2_1 = new Task(new Title("Test Task 2"), new Note("Test Note 1"), getTagSet(
-            "Test21"));
-    private static final Task TEST_TASK_2_2 = new Task(new Title("Test Task 2"), new Note("Test Note 2"), getTagSet(
-            "Test22"));
-    private static final Task TEST_TASK_3_3 = new Task(new Title("Test Task 3"), new Note("Test Note 3"), getTagSet(
-            "Test1"));
-    private static final Task TEST_TASK_4_4 = new Task(new Title("Test Task 4"), new Note("Test Note 4"),
+    private static final Task TEST_TASK_TITLE = new Task(new Title("Test Task 1"), new Note("Test Note 2"), getTagSet(
+            "Test2"));
+    private static final Task TEST_TASK_NOTE = new Task(new Title("Test Task 1"), new Note("Test Note 1"), getTagSet(
+            "Test2"));
+    private static final Task TEST_TASK_STATUS = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
             new Status(Status.TaskStatus.DONE), getTagSet("Test2"));
+    private static final Task TEST_TASK_DIFFERENT = new Task(new Title("Test Task 2"), new Note("Test Note 2"),
+            getTagSet("Test2"));
 
 
     @Test
     public void isSameTask() {
-        // same values -> returns true
-        assertTrue(TEST_TASK_1_1.isSameTask(TEST_TASK_1_1_COPY));
+        // null -> returns false
+        assertFalse(TEST_TASK.isSameTask(null));
+
+        // all different -> returns false
+        assertFalse(TEST_TASK.isSameTask(TEST_TASK_DIFFERENT));
+
+        // only title same -> returns false
+        assertFalse(TEST_TASK.isSameTask(TEST_TASK_TITLE));
+
+        // only title and note same -> returns true
+        assertTrue(TEST_TASK.isSameTask(TEST_TASK_NOTE));
+
+        // only title, note and status same -> returns true
+        assertTrue(TEST_TASK.isSameTask(TEST_TASK_STATUS));
+
+        // all same values -> returns true
+        assertTrue(TEST_TASK.isSameTask(TEST_TASK_SAME));
 
         // same object -> returns true
-        assertTrue(TEST_TASK_1_1.isSameTask(TEST_TASK_1_1));
-
-        // null -> returns false
-        assertFalse(TEST_TASK_1_1.isSameTask(null));
-
-        // different title, status and tag, same note -> returns false
-        assertFalse(TEST_TASK_1_1.isSameTask(TEST_TASK_2_1));
-
-        // same title, different note, status and tag -> returns false
-        assertFalse(TEST_TASK_1_1.isSameTask(TEST_TASK_1_2));
-
-        // same tag, different title, status and note -> returns false
-        assertFalse(TEST_TASK_1_1.isSameTask(TEST_TASK_3_3));
-
-        // same status, different title, note and tag -> returns false
-        assertFalse(TEST_TASK_1_1.isSameTask(TEST_TASK_4_4));
-
-        // different title, note, status and tag -> returns false
-        assertFalse(TEST_TASK_1_1.isSameTask(TEST_TASK_2_2));
+        assertTrue(TEST_TASK.isSameTask(TEST_TASK));
     }
 
     @Test
     public void equals() {
-        // same values -> returns true
-        assertEquals(TEST_TASK_1_1, TEST_TASK_1_1_COPY);
-
-        // same object -> returns true
-        assertEquals(TEST_TASK_1_1, TEST_TASK_1_1);
-
         // null -> returns false
-        // assertNotEquals calls the 1st argument's equals method
-        assertNotEquals(TEST_TASK_1_1, null);
+        assertFalse(TEST_TASK.equals(null));
 
         // different type -> returns false
-        assertNotEquals(TEST_TASK_1_1, 5.0f);
+        assertFalse(TEST_TASK.equals(5.0f));
 
-        // different title, status and tag, same note -> returns false
-        assertNotEquals(TEST_TASK_1_1, TEST_TASK_2_1);
+        // all different values -> returns false
+        assertFalse(TEST_TASK.equals(TEST_TASK_DIFFERENT));
 
-        // same title, different note, status and tag -> returns false
-        assertNotEquals(TEST_TASK_1_1, TEST_TASK_1_2);
+        // only title same -> returns false
+        assertFalse(TEST_TASK.equals(TEST_TASK_TITLE));
 
-        // same tag, different title, status and note -> returns false
-        assertNotEquals(TEST_TASK_1_1, TEST_TASK_3_3);
+        // only title and note same -> returns false
+        assertFalse(TEST_TASK.equals(TEST_TASK_NOTE));
 
-        // same status, different title, note and tag -> returns false
-        assertNotEquals(TEST_TASK_1_1, TEST_TASK_4_4);
+        // only title, note and status same -> returns false
+        assertFalse(TEST_TASK.equals(TEST_TASK_STATUS));
 
-        // different title, note, status and tag -> returns false
-        assertNotEquals(TEST_TASK_1_1, TEST_TASK_2_2);
+        // all same values -> returns true
+        assertTrue(TEST_TASK.equals(TEST_TASK_SAME));
+
+        // same object -> returns true
+        assertTrue(TEST_TASK.equals(TEST_TASK));
     }
 
     @Test
     public void toStringMethod() {
-        String expected = Task.class.getCanonicalName() + "{title=" + TEST_TASK_1_1.getTitle()
-                + ", note=" + TEST_TASK_1_1.getNote() + ", status=" + TEST_TASK_1_1.getStatus()
-                + ", tags=" + TEST_TASK_1_1.getTags() + "}";
-        assertEquals(expected, TEST_TASK_1_1.toString());
+        String expected = Task.class.getCanonicalName() + "{title=" + TEST_TASK.getTitle()
+                + ", note=" + TEST_TASK.getNote() + ", status=" + TEST_TASK.getStatus()
+                + ", tags=" + TEST_TASK.getTags() + "}";
+        assertEquals(expected, TEST_TASK.toString());
     }
 
     @Test
     public void hashCodeTest() {
-        // same values -> returns true
-        assertEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_1_1_COPY.hashCode());
+        // different types -> returns false
+        assertNotEquals(TEST_TASK.hashCode(), "Test Task 1 Test Note 1".hashCode());
+
+        // all different values -> returns false
+        assertNotEquals(TEST_TASK.hashCode(), TEST_TASK_DIFFERENT.hashCode());
+
+        // only title same -> returns false
+        assertNotEquals(TEST_TASK.hashCode(), TEST_TASK_TITLE.hashCode());
+
+        // only title and note same -> returns false
+        assertNotEquals(TEST_TASK.hashCode(), TEST_TASK_NOTE.hashCode());
+
+        // only title, note and status same -> returns false
+        assertNotEquals(TEST_TASK.hashCode(), TEST_TASK_STATUS.hashCode());
+
+        // all same values -> returns true
+        assertEquals(TEST_TASK.hashCode(), TEST_TASK_SAME.hashCode());
 
         // same object -> returns true
-        assertEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_1_1.hashCode());
-
-        // different title, status and tag, same note -> returns false
-        assertNotEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_2_1.hashCode());
-
-        // same title, different note, status and tag -> returns false
-        assertNotEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_1_2.hashCode());
-
-        // same tag, different title, status and note -> returns false
-        assertNotEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_3_3.hashCode());
-
-        // same status, different title, note and tag -> returns false
-        assertNotEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_4_4.hashCode());
-
-        // different title, note, status and tag -> returns false
-        assertNotEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_2_2.hashCode());
-
-        // different types -> returns false
-        assertNotEquals(TEST_TASK_1_1.hashCode(), "Test Task 1 Test Note 1".hashCode());
-
+        assertEquals(TEST_TASK.hashCode(), TEST_TASK.hashCode());
     }
 }
