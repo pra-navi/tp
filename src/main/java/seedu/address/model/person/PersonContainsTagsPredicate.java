@@ -20,10 +20,8 @@ public class PersonContainsTagsPredicate implements Predicate<Person> {
     @Override
     public boolean test(Person person) {
         return keywords.stream()
-                .anyMatch(keyword -> {
-                    return StringUtil.containsWordIgnoreCase(person.getTags().stream().map(Object::toString)
-                            .collect(Collectors.joining(" ")), "[" + keyword + "]");
-                        });
+                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(person.getTags().stream().map(Object::toString)
+                        .collect(Collectors.joining(" ")), "[" + keyword + "]"));
     }
 
     @Override

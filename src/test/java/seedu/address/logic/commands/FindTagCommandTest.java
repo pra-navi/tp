@@ -4,8 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static seedu.address.logic.Messages.MESSAGE_PERSONS_TASKS_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.testutil.TypicalPersons.*;
-import static seedu.address.testutil.TypicalTasks.*;
+import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.BENSON;
+import static seedu.address.testutil.TypicalPersons.DANIEL;
+import static seedu.address.testutil.TypicalPersons.getTypicalPersons;
+import static seedu.address.testutil.TypicalTasks.BUDGET;
+import static seedu.address.testutil.TypicalTasks.DRAFT;
+import static seedu.address.testutil.TypicalTasks.FUNDING;
+import static seedu.address.testutil.TypicalTasks.getTypicalTasks;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,14 +45,14 @@ public class FindTagCommandTest {
         PersonContainsTagsPredicate secondPersonPredicate =
                 new PersonContainsTagsPredicate(Collections.singletonList("secondTag"));
 
-        FindTagCommand firstFindTagCommand = new FindTagCommand(firstTaskPredicate, firstPersonPredicate);
-        FindTagCommand secondFindTagCommand = new FindTagCommand(secondTaskPredicate, secondPersonPredicate);
+        FindTagCommand firstFindTagCommand = new FindTagCommand(firstPersonPredicate, firstTaskPredicate);
+        FindTagCommand secondFindTagCommand = new FindTagCommand(secondPersonPredicate, secondTaskPredicate);
 
         // same object -> returns true
         assertEquals(firstFindTagCommand, firstFindTagCommand);
         System.out.println("firstFindTagCommand: " + firstFindTagCommand);
         // same values -> returns true
-        FindTagCommand firstFindTagCommandCopy = new FindTagCommand(firstTaskPredicate, firstPersonPredicate);
+        FindTagCommand firstFindTagCommandCopy = new FindTagCommand(firstPersonPredicate, firstTaskPredicate);
         assertEquals(firstFindTagCommand, firstFindTagCommandCopy);
         System.out.println("firstFindTagCommandCopy: " + firstFindTagCommandCopy);
         // different types -> returns false
@@ -65,7 +71,7 @@ public class FindTagCommandTest {
         String expectedMessage = String.format(MESSAGE_PERSONS_TASKS_LISTED_OVERVIEW, 0, 0);
         TaskContainsTagsPredicate taskPredicate = prepareTaskTagPredicate(" ");
         PersonContainsTagsPredicate personPredicate = preparePersonTagPredicate(" ");
-        FindTagCommand command = new FindTagCommand(taskPredicate, personPredicate);
+        FindTagCommand command = new FindTagCommand(personPredicate, taskPredicate);
         expectedModel.updateFilteredTaskList(taskPredicate);
         expectedModel.updateFilteredPersonList(personPredicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
@@ -77,7 +83,7 @@ public class FindTagCommandTest {
     public void toStringMethod() {
         TaskContainsTagsPredicate taskPredicate = new TaskContainsTagsPredicate(List.of("tag1"));
         PersonContainsTagsPredicate personPredicate = new PersonContainsTagsPredicate(List.of("tag2"));
-        FindTagCommand findTagCommand = new FindTagCommand(taskPredicate, personPredicate);
+        FindTagCommand findTagCommand = new FindTagCommand(personPredicate, taskPredicate);
         String expected = FindTagCommand.class.getCanonicalName()
                 + "{personPredicate=" + personPredicate + ", taskPredicate=" + taskPredicate + "}";
         assertEquals(expected, findTagCommand.toString());
@@ -89,7 +95,7 @@ public class FindTagCommandTest {
         TaskContainsTagsPredicate taskPredicate = prepareTaskTagPredicate("finance");
         PersonContainsTagsPredicate personPredicate = preparePersonTagPredicate("friends");
 
-        FindTagCommand command = new FindTagCommand(taskPredicate, personPredicate);
+        FindTagCommand command = new FindTagCommand(personPredicate, taskPredicate);
         expectedModel.updateFilteredTaskList(taskPredicate);
         expectedModel.updateFilteredPersonList(personPredicate);
 
