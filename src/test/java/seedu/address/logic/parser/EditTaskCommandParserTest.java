@@ -11,6 +11,7 @@ import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_BUDGET;
 import static seedu.address.logic.commands.CommandTestUtil.TITLE_DESC_AGENDA;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NOTE_AGENDA;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_AGENDA;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_BUDGET;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_AGENDA;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NOTE;
@@ -90,10 +91,10 @@ public class EditTaskCommandParserTest {
     @Test
     public void parse_allFieldsSpecified_success() {
         Index targetIndex = INDEX_SECOND;
-        String userInput = targetIndex.getOneBased() + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA;
+        String userInput = targetIndex.getOneBased() + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_BUDGET;
 
         EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_AGENDA)
-                .withNote(VALID_NOTE_AGENDA).build();
+                .withNote(VALID_NOTE_AGENDA).withTags(VALID_TAG_BUDGET).build();
         EditTaskCommand expectedCommand = new EditTaskCommand(targetIndex, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);

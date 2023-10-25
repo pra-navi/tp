@@ -20,6 +20,8 @@ public class TaskTest {
             "Test21"));
     private static final Task TEST_TASK_2_2 = new Task(new Title("Test Task 2"), new Note("Test Note 2"), getTagSet(
             "Test22"));
+    private static final Task TEST_TASK_3_1 = new Task(new Title("Test Task 3"), new Note("Test Note 3"), getTagSet(
+            "Test1"));
 
 
     @Test
@@ -41,6 +43,9 @@ public class TaskTest {
 
         // different title, note and tag -> returns false
         assertFalse(TEST_TASK_1_1.isSameTask(TEST_TASK_2_2));
+
+        // same tag, different title and note -> returns false
+        assertFalse(TEST_TASK_1_1.isSameTask(TEST_TASK_3_1));
     }
 
     @Test
@@ -63,6 +68,9 @@ public class TaskTest {
 
         // same title, different note and tag -> returns false
         assertNotEquals(TEST_TASK_1_1, TEST_TASK_1_2);
+
+        // same tag, different title and note -> returns false
+        assertNotEquals(TEST_TASK_1_1, TEST_TASK_3_1);
 
         // different title, note and tag -> returns false
         assertNotEquals(TEST_TASK_1_1, TEST_TASK_2_2);
@@ -92,6 +100,9 @@ public class TaskTest {
 
         // different title, note and tag -> returns false
         assertNotEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_2_2.hashCode());
+
+        // same tag, different title and note -> returns false
+        assertNotEquals(TEST_TASK_1_1.hashCode(), TEST_TASK_3_1.hashCode());
 
         // different types -> returns false
         assertNotEquals(TEST_TASK_1_1.hashCode(), "Test Task 1 Test Note 1".hashCode());

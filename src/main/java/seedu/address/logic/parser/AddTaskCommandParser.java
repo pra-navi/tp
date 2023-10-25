@@ -28,8 +28,8 @@ public class AddTaskCommandParser implements Parser<AddTaskCommand> {
      * @throws ParseException if the user input does not conform the expected format
      */
     public AddTaskCommand parse(String args) throws ParseException {
-        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TASK_TITLE, PREFIX_TASK_NOTE,
-                PREFIX_TAG);
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args,
+                PREFIX_TASK_TITLE, PREFIX_TASK_NOTE, PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_TASK_TITLE, PREFIX_TASK_NOTE)
                 || !argMultimap.getPreamble().isEmpty()) {
@@ -40,7 +40,6 @@ public class AddTaskCommandParser implements Parser<AddTaskCommand> {
         Title title = ParserUtil.parseTitle(argMultimap.getValue(PREFIX_TASK_TITLE).get());
         Note note = ParserUtil.parseNote(argMultimap.getValue(PREFIX_TASK_NOTE).get());
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
-
 
         Task task = new Task(title, note, tagList);
 
