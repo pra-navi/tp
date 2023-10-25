@@ -1,13 +1,16 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NOTE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_TITLE;
 
+import java.util.Set;
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.AddTaskCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Note;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
@@ -25,7 +28,8 @@ public class AddTaskCommandParser implements Parser<AddTaskCommand> {
      * @throws ParseException if the user input does not conform the expected format
      */
     public AddTaskCommand parse(String args) throws ParseException {
-        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TASK_TITLE, PREFIX_TASK_NOTE);
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args,
+                PREFIX_TASK_TITLE, PREFIX_TASK_NOTE, PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_TASK_TITLE, PREFIX_TASK_NOTE)
                 || !argMultimap.getPreamble().isEmpty()) {
@@ -35,8 +39,9 @@ public class AddTaskCommandParser implements Parser<AddTaskCommand> {
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_TASK_TITLE, PREFIX_TASK_NOTE);
         Title title = ParserUtil.parseTitle(argMultimap.getValue(PREFIX_TASK_TITLE).get());
         Note note = ParserUtil.parseNote(argMultimap.getValue(PREFIX_TASK_NOTE).get());
+        Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
-        Task task = new Task(title, note);
+        Task task = new Task(title, note, tagList);
 
         return new AddTaskCommand(task);
     }

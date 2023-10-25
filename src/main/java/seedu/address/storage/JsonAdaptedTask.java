@@ -1,9 +1,16 @@
 package seedu.address.storage;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Note;
 import seedu.address.model.task.Status;
 import seedu.address.model.task.Task;
@@ -19,6 +26,7 @@ class JsonAdaptedTask {
     private final String title;
     private final String note;
     private final boolean isDone;
+    private final List<JsonAdaptedTag> tags = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedTask} with the given task details.
@@ -26,10 +34,14 @@ class JsonAdaptedTask {
     @JsonCreator
     public JsonAdaptedTask(@JsonProperty("title") String title,
                            @JsonProperty("note") String note,
-                           @JsonProperty("isDone") boolean isDone) {
+                           @JsonProperty("isDone") boolean isDone,
+                           @JsonProperty("tags") List<JsonAdaptedTag> tags) {
         this.title = title;
         this.note = note;
         this.isDone = isDone;
+        if (tags != null) {
+            this.tags.addAll(tags);
+        }
     }
 
     /**
@@ -39,6 +51,9 @@ class JsonAdaptedTask {
         title = source.getTitle().toString();
         note = source.getNote().toString();
         isDone = source.getStatus().equals(Status.STATUS_DONE);
+        tags.addAll(source.getTags().stream()
+                .map(JsonAdaptedTag::new)
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -47,6 +62,11 @@ class JsonAdaptedTask {
      * @throws IllegalValueException if there were any data constraints violated in the adapted task.
      */
     public Task toModelType() throws IllegalValueException {
+        final List<Tag> taskTags = new ArrayList<>();
+        for (JsonAdaptedTag tag : tags) {
+            taskTags.add(tag.toModelType());
+        }
+
         if (title == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Title.class.getSimpleName()));
         }
@@ -63,10 +83,12 @@ class JsonAdaptedTask {
         }
         final Note modelNote = new Note(note);
 
+        final Set<Tag> modelTags = new HashSet<>(taskTags);
+
         if (isDone) {
-            return new Task(modelTitle, modelNote, Status.STATUS_DONE);
+            return new Task(modelTitle, modelNote, Status.STATUS_DONE, modelTags);
         }
 
-        return new Task(modelTitle, modelNote, Status.STATUS_NOT_DONE);
+        return new Task(modelTitle, modelNote, Status.STATUS_NOT_DONE, modelTags);
     }
 }

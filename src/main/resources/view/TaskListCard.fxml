@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.image.ImageView?>
 
+<?import javafx.scene.layout.FlowPane?>
 <HBox id="cardPane" fx:id="cardPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <GridPane HBox.hgrow="ALWAYS">
         <columnConstraints>
@@ -28,6 +29,7 @@
                 <ImageView fx:id="statusIcon" fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true" />
                 <Label fx:id="title" text="\$title" styleClass="cell_big_label" wrapText="true"/>
             </HBox>
+            <FlowPane fx:id="tags" />
             <Label fx:id="note" styleClass="cell_small_label" text="\$note" wrapText="true"/>
         </VBox>
     </GridPane>

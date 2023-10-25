@@ -5,8 +5,12 @@ import static seedu.address.logic.commands.CommandTestUtil.INVALID_NOTE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TITLE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.NOTE_DESC_AGENDA;
 import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_AGENDA;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_BUDGET;
 import static seedu.address.logic.commands.CommandTestUtil.TITLE_DESC_AGENDA;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NOTE_AGENDA;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_AGENDA;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_BUDGET;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_AGENDA;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NOTE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_TITLE;
@@ -28,16 +32,25 @@ public class AddTaskCommandParserTest {
 
     @Test
     public void parse_allFieldsPresent_success() {
-        Task expectedTask = new TaskBuilder(AGENDA).build();
+        Task expectedTask = new TaskBuilder(AGENDA).withTags(VALID_TAG_AGENDA).build();
 
         // whitespace only preamble
-        assertParseSuccess(parser, PREAMBLE_WHITESPACE + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA,
+        assertParseSuccess(parser, PREAMBLE_WHITESPACE + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_AGENDA,
                 new AddTaskCommand(expectedTask));
+
+
+        // multiple tags - all accepted
+        Task expectedTaskMultipleTags = new TaskBuilder(AGENDA)
+                .withTags(VALID_TAG_AGENDA, VALID_TAG_BUDGET)
+                .build();
+        assertParseSuccess(parser,
+                TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_AGENDA + TAG_DESC_BUDGET,
+                new AddTaskCommand(expectedTaskMultipleTags));
     }
 
     @Test
     public void parse_repeatedValue_failure() {
-        String validExpectedTaskString = TITLE_DESC_AGENDA + NOTE_DESC_AGENDA;
+        String validExpectedTaskString = TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_AGENDA;
 
         // multiple titles
         assertParseFailure(parser, TITLE_DESC_AGENDA + validExpectedTaskString,
@@ -72,6 +85,14 @@ public class AddTaskCommandParserTest {
         assertParseFailure(parser, validExpectedTaskString + INVALID_NOTE_DESC,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_TASK_NOTE));
 
+    }
+
+    @Test
+    public void parse_optionalFieldsMissing_success() {
+        // zero tags
+        Task expectedTask = new TaskBuilder(AGENDA).withTags().build();
+        assertParseSuccess(parser, TITLE_DESC_AGENDA + NOTE_DESC_AGENDA,
+                new AddTaskCommand(expectedTask));
     }
 
     @Test
