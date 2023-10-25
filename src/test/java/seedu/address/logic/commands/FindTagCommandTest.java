@@ -50,11 +50,11 @@ public class FindTagCommandTest {
 
         // same object -> returns true
         assertEquals(firstFindTagCommand, firstFindTagCommand);
-        System.out.println("firstFindTagCommand: " + firstFindTagCommand);
+
         // same values -> returns true
         FindTagCommand firstFindTagCommandCopy = new FindTagCommand(firstPersonPredicate, firstTaskPredicate);
         assertEquals(firstFindTagCommand, firstFindTagCommandCopy);
-        System.out.println("firstFindTagCommandCopy: " + firstFindTagCommandCopy);
+
         // different types -> returns false
         assertNotEquals(firstFindTagCommand, 1);
         assertNotEquals(1, firstFindTagCommand);
