@@ -102,10 +102,8 @@ public class FindTagCommandTest {
         String expectedMessage = String.format(MESSAGE_PERSONS_TASKS_LISTED_OVERVIEW, 3, 3);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
 
-        // For tasks with tags "location" and "finance", we have AGENDA and BUDGET from the TypicalTasks.
         assertEquals(Arrays.asList(BUDGET, DRAFT, FUNDING), model.getFilteredTaskList());
 
-        // For persons with tags "friends" and "owesMoney", we have ALICE, BENSON, and DANIEL from the TypicalPersons.
         assertEquals(Arrays.asList(ALICE, BENSON, DANIEL), model.getFilteredPersonList());
     }
 
