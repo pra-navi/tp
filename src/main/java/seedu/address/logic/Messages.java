@@ -59,7 +59,9 @@ public class Messages {
                 .append("; Note: ")
                 .append(task.getNote())
                 .append("; Status: ")
-                .append(task.getStatus());
+                .append(task.getStatus())
+                .append("; Tags: ");
+        task.getTags().forEach(builder::append);
         return builder.toString();
     }
 

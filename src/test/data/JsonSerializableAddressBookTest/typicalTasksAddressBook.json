@@ -5,47 +5,81 @@
     {
       "title": "Prepare Agenda",
       "note": "To book venue",
-      "isDone": false
+      "isDone": false,
+      "tags": [
+        "location"
+      ]
     },
     {
       "title": "Prepare Budget",
       "note": "For CS2102",
-      "isDone": true
+      "isDone": true,
+      "tags": [
+        "finance",
+        "class"
+      ]
     },
     {
       "title": "Book Catering",
       "note": "For CS2101",
-      "isDone": false
+      "isDone": false,
+      "tags": [
+        "caterer",
+        "class"
+      ]
     },
     {
       "title": "Send Budget and Draft",
       "note": "For CS2100",
-      "isDone": false
+      "isDone": false,
+      "tags": [
+        "finance",
+        "class"
+      ]
     },
     {
       "title": "Book Entertainment",
       "note": "For CS1101",
-      "isDone": true
+      "isDone": true,
+      "tags": [
+        "class"
+      ]
     },
     {
       "title": "Prepare Funding",
       "note": "For MA2001",
-      "isDone": true
+      "isDone": true,
+      "tags": [
+        "finance",
+        "class"
+      ]
     },
     {
       "title": "Prepare Guestlist",
       "note": "For CS2103T",
-      "isDone": true
+      "isDone": true,
+      "tags": [
+        "admin",
+        "class"
+      ]
     },
     {
       "title": "Ensure Hospitality",
       "note": "For CS2103T",
-      "isDone": true
+      "isDone": true,
+      "tags": [
+        "admin",
+        "class"
+      ]
     },
     {
       "title": "Send Invitations and Guestlist",
       "note": "For CS2103T",
-      "isDone": false
+      "isDone": false,
+      "tags": [
+        "admin",
+        "class"
+      ]
     }
   ]
 }

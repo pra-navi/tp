@@ -2,9 +2,13 @@ package seedu.address.model.task;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Task in the task list.
@@ -16,17 +20,19 @@ public class Task {
     private final Title title;
     private final Note note;
     private Status status;
+    private final Set<Tag> tags = new HashSet<>();
 
     /**
-     * A Task consists of a title and a note.
-     * Both fields must be present and not null.
+     * A Task consists of a title, a note, a status and tags.
+     * All fields must be present and not null.
      * Tasks will be default not done when created.
      */
-    public Task(Title title, Note note) {
-        requireAllNonNull(title, note);
+    public Task(Title title, Note note, Set<Tag> tags) {
+        requireAllNonNull(title, note, tags);
         this.title = title;
         this.note = note;
         this.status = Status.STATUS_NOT_DONE;
+        this.tags.addAll(tags);
     }
 
     /**
@@ -35,12 +41,14 @@ public class Task {
      * @param title  The title of the task. Must not be null.
      * @param note   The note associated with the task. Must not be null.
      * @param status The status of the task. Must not be null.
+     * @param tags The tags linked to the task. Must not be null.
      */
-    public Task(Title title, Note note, Status status) {
+    public Task(Title title, Note note, Status status, Set<Tag> tags) {
         requireAllNonNull(title, note);
         this.title = title;
         this.note = note;
         this.status = status;
+        this.tags.addAll(tags);
     }
 
     public Title getTitle() {
@@ -59,14 +67,22 @@ public class Task {
      * Updates the Status of the Task as Done.
      */
     public Task markDone() {
-        return new Task(title, note, Status.STATUS_DONE);
+        return new Task(title, note, Status.STATUS_DONE, tags);
     }
 
     /**
      * Updates the Status of the Task as not Done.
      */
     public Task unmarkDone() {
-        return new Task(title, note, Status.STATUS_NOT_DONE);
+        return new Task(title, note, Status.STATUS_NOT_DONE, tags);
+    }
+
+    /**
+     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
+     * if modification is attempted.
+     */
+    public Set<Tag> getTags() {
+        return Collections.unmodifiableSet(tags);
     }
 
     /**
@@ -84,7 +100,7 @@ public class Task {
     }
 
     /**
-     * Returns true if both tasks have the same title, note and status.
+     * Returns true if both tasks have the same title, note, status and tags.
      */
     @Override
     public boolean equals(Object other) {
@@ -100,13 +116,14 @@ public class Task {
         Task otherTask = (Task) other;
         return title.equals(otherTask.title)
                 && note.equals(otherTask.note)
-                && status.equals(otherTask.status);
+                && status.equals(otherTask.status)
+                && tags.equals(otherTask.tags);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(title, note, status);
+        return Objects.hash(title, note, status, tags);
     }
 
     @Override
@@ -115,6 +132,7 @@ public class Task {
                 .add("title", title)
                 .add("note", note)
                 .add("status", status)
+                .add("tags", tags)
                 .toString();
     }
 

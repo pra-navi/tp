@@ -1,10 +1,14 @@
 package seedu.address.testutil;
 
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NOTE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_TITLE;
 
+import java.util.Set;
+
 import seedu.address.logic.commands.AddTaskCommand;
 import seedu.address.logic.commands.EditTaskCommand.EditTaskDescriptor;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Task;
 
 /**
@@ -26,6 +30,9 @@ public class TaskUtil {
         StringBuilder sb = new StringBuilder();
         sb.append(PREFIX_TASK_TITLE + task.getTitle().value + " ");
         sb.append(PREFIX_TASK_NOTE + task.getNote().value + " ");
+        task.getTags().stream().forEach(
+                s -> sb.append(PREFIX_TAG + s.tagName + " ")
+        );
 
         return sb.toString();
     }
@@ -37,6 +44,14 @@ public class TaskUtil {
         StringBuilder sb = new StringBuilder();
         descriptor.getTitle().ifPresent(title -> sb.append(PREFIX_TASK_TITLE).append(title.value).append(" "));
         descriptor.getNote().ifPresent(note -> sb.append(PREFIX_TASK_NOTE).append(note.value).append(" "));
+        if (descriptor.getTags().isPresent()) {
+            Set<Tag> tags = descriptor.getTags().get();
+            if (tags.isEmpty()) {
+                sb.append(PREFIX_TAG);
+            } else {
+                tags.forEach(s -> sb.append(PREFIX_TAG).append(s.tagName).append(" "));
+            }
+        }
         return sb.toString();
     }
 }

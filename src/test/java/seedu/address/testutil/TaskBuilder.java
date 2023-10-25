@@ -1,9 +1,14 @@
 package seedu.address.testutil;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Note;
 import seedu.address.model.task.Status;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
+import seedu.address.model.util.SampleDataUtil;
 
 /**
  * A utility class to help with building Task objects.
@@ -16,6 +21,7 @@ public class TaskBuilder {
     private Title title;
     private Note note;
     private Status status;
+    private Set<Tag> tags;
 
     /**
      * Creates a {@code TaskBuilder} with the default details.
@@ -24,6 +30,7 @@ public class TaskBuilder {
         title = new Title(DEFAULT_TITLE);
         note = new Note(DEFAULT_NOTE);
         status = Status.STATUS_NOT_DONE;
+        tags = new HashSet<>();
     }
 
     /**
@@ -33,6 +40,7 @@ public class TaskBuilder {
         title = taskToCopy.getTitle();
         note = taskToCopy.getNote();
         status = taskToCopy.getStatus();
+        tags = new HashSet<>(taskToCopy.getTags());
     }
 
     /**
@@ -60,9 +68,17 @@ public class TaskBuilder {
     }
 
     /**
+     * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Task} that we are building.
+     */
+    public TaskBuilder withTags(String ... tags) {
+        this.tags = SampleDataUtil.getTagSet(tags);
+        return this;
+    }
+
+    /**
      * Builds the {@code Task} with the relevant information.
      */
     public Task build() {
-        return new Task(title, note, status);
+        return new Task(title, note, status, tags);
     }
 }

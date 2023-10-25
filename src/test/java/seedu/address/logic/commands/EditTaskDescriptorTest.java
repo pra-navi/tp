@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_TASK_AGENDA;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_TASK_BUDGET;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NOTE_BUDGET;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_BUDGET;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_BUDGET;
 
 import org.junit.jupiter.api.Test;
@@ -41,6 +42,10 @@ public class EditTaskDescriptorTest {
         // different note -> returns false
         editedAgenda = new EditTaskDescriptorBuilder(DESC_TASK_AGENDA).withNote(VALID_NOTE_BUDGET).build();
         assertFalse(DESC_TASK_AGENDA.equals(editedAgenda));
+
+        // different tags -> returns false
+        editedAgenda = new EditTaskDescriptorBuilder(DESC_TASK_AGENDA).withTags(VALID_TAG_BUDGET).build();
+        assertFalse(DESC_TASK_AGENDA.equals(editedAgenda));
     }
 
     @Test
@@ -48,7 +53,8 @@ public class EditTaskDescriptorTest {
         EditTaskDescriptor editTaskDescriptor = new EditTaskDescriptor();
         String expected = EditTaskDescriptor.class.getCanonicalName() + "{title="
                 + editTaskDescriptor.getTitle().orElse(null) + ", note="
-                + editTaskDescriptor.getNote().orElse(null) + "}";
+                + editTaskDescriptor.getNote().orElse(null) + ", tags="
+                + editTaskDescriptor.getTags().orElse(null) + "}";
         assertEquals(expected, editTaskDescriptor.toString());
     }
 }

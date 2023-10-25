@@ -1,13 +1,17 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NOTE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_TITLE;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASKS;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
@@ -15,6 +19,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Note;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
@@ -31,7 +36,8 @@ public class EditTaskCommand extends Command {
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TASK_TITLE + "TITLE] "
-            + "[" + PREFIX_TASK_NOTE + "NOTE]\n"
+            + "[" + PREFIX_TASK_NOTE + "NOTE] "
+            + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_TASK_TITLE + "Prepare Agenda "
             + PREFIX_TASK_NOTE + "To book venue";
@@ -85,8 +91,9 @@ public class EditTaskCommand extends Command {
 
         Title updatedTitle = editTaskDescriptor.getTitle().orElse(taskToEdit.getTitle());
         Note updatedNote = editTaskDescriptor.getNote().orElse(taskToEdit.getNote());
+        Set<Tag> updatedTags = editTaskDescriptor.getTags().orElse(taskToEdit.getTags());
 
-        return new Task(updatedTitle, updatedNote);
+        return new Task(updatedTitle, updatedNote, updatedTags);
     }
 
     @Override
@@ -120,6 +127,7 @@ public class EditTaskCommand extends Command {
     public static class EditTaskDescriptor {
         private Title title;
         private Note note;
+        private Set<Tag> tags;
 
         public EditTaskDescriptor() {
         }
@@ -130,13 +138,14 @@ public class EditTaskCommand extends Command {
         public EditTaskDescriptor(EditTaskDescriptor toCopy) {
             setTitle(toCopy.title);
             setNote(toCopy.note);
+            setTags(toCopy.tags);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(title, note);
+            return CollectionUtil.isAnyNonNull(title, note, tags);
         }
 
         public void setTitle(Title title) {
@@ -155,6 +164,23 @@ public class EditTaskCommand extends Command {
             return Optional.ofNullable(note);
         }
 
+        /**
+         * Sets {@code tags} to this object's {@code tags}.
+         * A defensive copy of {@code tags} is used internally.
+         */
+        public void setTags(Set<Tag> tags) {
+            this.tags = (tags != null) ? new HashSet<>(tags) : null;
+        }
+
+        /**
+         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code tags} is null.
+         */
+        public Optional<Set<Tag>> getTags() {
+            return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
+        }
+
         @Override
         public boolean equals(Object other) {
             if (other == this) {
@@ -168,7 +194,8 @@ public class EditTaskCommand extends Command {
 
             EditTaskDescriptor otherEditTaskDescriptor = (EditTaskDescriptor) other;
             return Objects.equals(title, otherEditTaskDescriptor.title)
-                    && Objects.equals(note, otherEditTaskDescriptor.note);
+                    && Objects.equals(note, otherEditTaskDescriptor.note)
+                    && Objects.equals(tags, otherEditTaskDescriptor.tags);
         }
 
         @Override
@@ -176,6 +203,7 @@ public class EditTaskCommand extends Command {
             return new ToStringBuilder(this)
                     .add("title", title)
                     .add("note", note)
+                    .add("tags", tags)
                     .toString();
         }
     }
