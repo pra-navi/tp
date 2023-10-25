@@ -22,7 +22,7 @@ public class TaskContainsTagsPredicate implements Predicate<Task> {
         return keywords.stream()
                 .anyMatch(keyword ->
                         StringUtil.containsWordIgnoreCase(task.getTags().stream().map(Object::toString)
-                                .collect(Collectors.joining(", ")), "[" + keyword + "]"));
+                                .collect(Collectors.joining(" ")), "[" + keyword + "]"));
     }
 
     @Override
