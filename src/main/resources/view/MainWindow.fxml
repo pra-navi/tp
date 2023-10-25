@@ -24,7 +24,7 @@
         <URL value="@Extensions.css" />
       </stylesheets>
 
-      <VBox>
+      <VBox prefHeight="500">
         <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
           <Menu mnemonicParsing="false" text="File">
             <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
@@ -40,39 +40,45 @@
           </padding>
         </StackPane>
 
-        <StackPane VBox.vgrow="NEVER" fx:id="resultDisplayPlaceholder" styleClass="pane-with-border"
-                   minHeight="100" prefHeight="100" maxHeight="100">
-          <padding>
-            <Insets top="5" right="10" bottom="5" left="10" />
-          </padding>
-        </StackPane>
+        <SplitPane dividerPositions="0.1" prefWidth="700" orientation="VERTICAL" VBox.vgrow="ALWAYS" >
+          <items>
 
-        <SplitPane dividerPositions="0.50" prefHeight="160" prefWidth="700" VBox.vgrow="ALWAYS">
-          <AnchorPane minHeight="160" minWidth="200">
-            <children>
-              <VBox fx:id="personList" styleClass="pane-with-border" minWidth="160" prefWidth="200"
-                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                    AnchorPane.topAnchor="0.0">
+              <StackPane VBox.vgrow="ALWAYS" fx:id="resultDisplayPlaceholder" styleClass="pane-with-border"
+                         minHeight="100" prefHeight="100" >
                 <padding>
-                  <Insets top="10" right="10" bottom="10" left="10" />
+                  <Insets top="5" right="10" bottom="5" left="10" />
                 </padding>
-              <StackPane fx:id="personListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-              </VBox>
-            </children>
-          </AnchorPane>
+              </StackPane>
 
-          <AnchorPane minHeight="160" minWidth="200">
-            <children>
-              <VBox fx:id="taskList" styleClass="pane-with-border" minWidth="160" prefWidth="200"
-                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                    AnchorPane.topAnchor="0.0">
-                <padding>
-                  <Insets top="10" right="10" bottom="10" left="10" />
-                </padding>
-                <StackPane fx:id="taskListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-              </VBox>
-            </children>
-          </AnchorPane>
+
+          <SplitPane dividerPositions="0.50" prefHeight="160" prefWidth="700" VBox.vgrow="ALWAYS">
+            <AnchorPane minHeight="160" minWidth="200">
+              <children>
+                <VBox fx:id="personList" styleClass="pane-with-border" minWidth="160" prefWidth="200"
+                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+                  <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                  </padding>
+                <StackPane fx:id="personListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+                </VBox>
+              </children>
+            </AnchorPane>
+
+            <AnchorPane minHeight="160" minWidth="200">
+              <children>
+                <VBox fx:id="taskList" styleClass="pane-with-border" minWidth="160" prefWidth="200"
+                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+                  <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                  </padding>
+                  <StackPane fx:id="taskListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </SplitPane>
+          </items>
         </SplitPane>
 
         <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
