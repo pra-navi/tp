@@ -19,9 +19,8 @@ public class FindTagCommand extends Command {
             + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
             + "Example: " + COMMAND_WORD + " agenda";
-
-    private final TaskContainsTagsPredicate taskPredicate;
     private final PersonContainsTagsPredicate personPredicate;
+    private final TaskContainsTagsPredicate taskPredicate;
 
     /**
      * Creates a FindTagCommand to find the specified {@code TaskContainsTagsPredicate} and
@@ -49,7 +48,7 @@ public class FindTagCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof FindTaskCommand)) {
+        if (!(other instanceof FindTagCommand)) {
             return false;
         }
 
@@ -61,8 +60,8 @@ public class FindTagCommand extends Command {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("taskPredicate", taskPredicate)
                 .add("personPredicate", personPredicate)
+                .add("taskPredicate", taskPredicate)
                 .toString();
     }
 }
