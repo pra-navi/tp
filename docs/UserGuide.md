@@ -612,11 +612,49 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
-### 16. Exiting the program : `exit`
+### 16. Listing all tags: `listTag`
+
+Provides you with a complete list of tags you have used in your contact list and task list.
+
+The list is sorted by frequency of each tag in descending order. 
+
+If two tags have the same frequency, the tags are sorted in ASCII order.
+
+{% include admonition.html type="note" title="ASCII" body="
+
+ASCII is a character encoding standard well understood by computers. <br>
+In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
+For more information, see <a href='https://en.wikipedia.org/wiki/ASCII'>ASCII</a> on Wikipedia.
+
+" %}
+
+Format:
+
+```
+listTag
+```
+
+Output:
+
+![listTag success](images/output/listTag_success.png)
+
+{% include admonition.html type="failure" title="TODO: Missing Picture!" body="
+
+Please remove this message after adding the picture!
+
+" %}
+
+<div style="page-break-after: always;"></div>
+
+### 17. Exiting the program: `exit`
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
-Format: `exit`
+Format: 
+
+```
+exit
+```
 
 Output:
 
@@ -667,4 +705,5 @@ Delete the <code>preferences.json</code> file created by CoordiMate before runni
 [**Delete All Task**](#13-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
 [**Mark Task**](#14-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
 [**Unmark Task**](#15-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
-[**Exit**](#16-exiting-the-program--exit) | `exit` | `exit`
+[**List All Tags**](#16-listing-all-tags-listtag) | `listTag` | `listTag`
+[**Exit**](#17-exiting-the-program-exit) | `exit` | `exit`
