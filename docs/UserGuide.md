@@ -358,9 +358,9 @@ Please run <code>findPerson</code> and update the screenshot!
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
-Erase an outdated person from your contact list with ease.
+Allows you to remove an outdated person from your contact list with ease.
 
-Format:
+<h4>Format:</h4>
 
 ```
 deletePerson INDEX
@@ -370,18 +370,49 @@ deletePerson INDEX
 - The index refers to the index number shown in the displayed person list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-Examples:
+<h4>Examples:</h4>
 
-- `listPerson` followed by `deletePerson 2` deletes the 2nd person in the contact list.
-- `findPerson Betsy` followed by `deletePerson 1` deletes the 1st person in the results of the `findPerson` command.
+- `listPerson` followed by `deletePerson 2`
+  - Deletes the 2nd person in your contact list.<br><br>
+  ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
 
-Output:
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
 
-![deletePerson success](images/output/deletePerson_success.png)
+Please run <code>listPerson</code> and then <code>deletePerson 2</code> and update the screenshot!
 
-Errors:
+"%}
 
-![deletePerson error](images/error/deletePerson_error.png)
+- `findPerson Bernice` followed by `deletePerson 1` 
+  - Deletes the 1st person in the results of the `findPerson` command.<br><br>
+  ![deletePerson_success_with_findPerson](images/output/deletePerson_success.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>findPerson Bernice</code> and then <code>deletePerson 1</code> and update the screenshot!
+
+"%}
+
+<h4>Errors:</h4>
+
+- `deletePerson`
+  - Negative example as no index is specified.<br><br>
+  ![deletePerson error_no_index](images/error/deletePerson_error.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>deletePerson</code> and update the screenshot!
+
+"%}
+
+- `deletePerson 1000`
+  - Invalid index is provided.<br><br>
+  ![deletePerson error_invalid_index](images/error/deletePerson_error.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>deletePerson 1000</code> and update the screenshot!
+
+"%}
 
 <div style="page-break-after: always;"></div>
 
@@ -560,33 +591,58 @@ Please run <code>findTask</code> and update the screenshot!
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
 
-You can remove a task from your task list.
+Allows you to remove a task from your task list with ease.
 
-Format:
+<h4>Format:</h4>
 
 `deleteTask INDEX`
 
 - Deletes the task at the specified `INDEX`.
 - The index refers to the index number shown in the task list currently displayed.
 
-Examples:
+<h4>Examples:</h4>
 
-- `deleteTask 2`
-  - Deletes the 2nd task in the task list.
-- `findTask Call` followed by `deleteTask 1`
-  - Deletes the 1st task in the results of the `findTask` command.
+- `listTask` followed by `deleteTask 2`
+    - Deletes the 2nd task in your task list.<br><br>
+      ![deleteTask_success_with_listTask](images/output/deleteTask_success1.png)
 
-Output:
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
 
-- Deletes task 2.
+Please run <code>listTask</code> and then <code>deleteTask 2</code> and update the screenshot!
 
-  ![deleteTask_success](images/output/deleteTask_success1.png)
+"%}
 
-Errors:
+- `findTask caterer` followed by `deleteTask 1`
+    - Deletes the 1st task in the results of the `findTask` command.<br><br>
+      ![deleteTask_success_with_findTask](images/output/deleteTask_success1.png)
 
-- Index specified is not available in the task list.
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
 
-  ![deleteTask_error](images/error/deleteTask_error1.png)
+Please run <code>findTask caterer</code> and then <code>deleteTask 1</code> and update the screenshot!
+
+"%}
+
+<h4>Errors:</h4>
+
+- `deleteTask`
+    - Negative example as no index is specified.<br><br>
+      ![deleteTask error_no_index](images/error/deleteTask_error1.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>deleteTask</code> and update the screenshot!
+
+"%}
+
+- `deleteTask 1000`
+    - Invalid index is provided.<br><br>
+      ![deleteTask error_invalid_index](images/error/deleteTask_error1.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>deleteTask 1000</code> and update the screenshot!
+
+"%}
 
 <div style="page-break-after: always;"></div>
 
