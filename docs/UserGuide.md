@@ -453,21 +453,19 @@ addTask T/TITLE n/NOTE [t/TAG]...
 
 ### 9. Listing all tasks: `listTask`
 
-Provides you with a complete list of tasks in your task list.
+Provides you with a comprehensive list of tasks in your task list.
 
-Format:
+<h4>Format:</h4>
 
 ```
 listTask
 ```
 
-Examples:
-
+<h4>Examples:</h4>
 - `listTask`
+    - Displays a complete list of all tasks in your task list. <br><br>
 
-Output:
-
-![listTask_success](images/output/listTask_success.png)
+  ![listTask success](images/output/listTask_success.png)
 
 <div style="page-break-after: always;"></div>
 
