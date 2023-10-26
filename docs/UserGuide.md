@@ -624,7 +624,7 @@ If two tags have the same frequency, the tags are sorted in ASCII order.
 
 ASCII is a character encoding standard well understood by computers. <br>
 In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
-For more information, see <a href='https://en.wikipedia.org/wiki/ASCII'>ASCII</a> on Wikipedia.
+For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
 
 " %}
 
