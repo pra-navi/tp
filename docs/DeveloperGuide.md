@@ -222,6 +222,38 @@ These two predicates are used to filter the list of tasks in the `Model` compone
 
 <div style="page-break-after: always;"></div>
 
+### Delete Task feature
+
+#### Implementation
+
+The `deleteTask` command accepts a numeric Index, and removes the task at that index from the task list.
+
+The sequence diagram below illustrates how the `deleteTask` command works for the example input `deleteTask 1`.
+
+![DeleteTaskSequenceDiagram](images/DeleteTaskSequenceDiagram.png)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>DeleteTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
+PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: How delete executes:**
+
+* **Alternative 1 (current choice):** Deletes task based on the filtered list shown to the user.
+    * Pros: Users do not have to use the `listTask` command everytime before they delete a task.
+    * Cons: Users cannot delete a task that is not shown in the filtered list. <br/><br/>
+
+* **Alternative 2:** Deletes task based on the full list of tasks.
+    * Pros: Users can delete a task that is not shown in the filtered list.
+    * Cons: Users have to use the `listTask` command everytime to confirm the index of the task before they delete the
+      task.
+
+<div style="page-break-after: always;"></div>
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
