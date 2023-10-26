@@ -209,7 +209,7 @@ help
 
 ### 2. Adding a person: `addPerson`
 
-Add new individuals to your list such as clients, vendors, or friends.
+You can add new individuals to your list such as clients, vendors, or friends.
 
 <h4>Format:</h4>
 
@@ -242,7 +242,7 @@ addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 
 ### 3. Listing all persons: `listPerson`
 
-Retrieve a comprehensive list of all contacts in your contact list.
+You can view details of all your contacts.
 
 <h4>Format:</h4>
 
@@ -453,7 +453,7 @@ addTask T/TITLE n/NOTE [t/TAG]...
 
 ### 9. Listing all tasks: `listTask`
 
-Provides you with a comprehensive list of tasks in your task list.
+You can view details of all your tasks.
 
 <h4>Format:</h4>
 
