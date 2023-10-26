@@ -231,14 +231,18 @@ Examples:
 
 Output:
 
-![editPerson success](images/editPerson_success.png)
+![editPerson success](images/output/editPerson_success.png)
 
 Errors:
 
-- Incorrect parameters or command format
-![editPerson error](images/error/editPerson_error.png)
+- Incorrect command format
 
-- Incorrect or missing index
+![editPerson error](images/error/editPerson_error.png)
+- Missing fields
+
+![editPerson error](images/error/editPerson_missingFields.png)
+- Invalid index
+
 ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
@@ -576,8 +580,13 @@ Output:
 ![markTask_success](images/output/markTask_success.png)
 
 Errors:
+- Wrong command format
 
 ![markTask_error](images/error/markTask_error.png)
+
+- Invalid index
+
+![markTask_wrongIndex](images/error/markTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -608,7 +617,13 @@ Output:
 
 Errors:
 
+- Wrong command format
+
 ![unmarkTask_error](images/error/unmarkTask_error.png)
+
+- Invalid index
+
+![markTask_wrongIndex](images/error/unmarkTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
