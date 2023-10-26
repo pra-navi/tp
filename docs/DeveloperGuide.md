@@ -181,6 +181,37 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Edit Task feature
+
+#### Implementation
+
+The `editTask` command accepts an index, title, note, and tags, and edits the task at that index with the new fields. The index should be numeric. The title, note, and tags can be any string. At least one of the title, note, or tag must be provided for the command to be valid.
+
+The sequence diagram below illustrates how the `editTask` command works for the example input `editTask 1 T/title n/note t/tag`.
+
+![EditTaskSequenceDiagram](assets/svg/dg/EditTaskSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>EditTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
+PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: How to encapsulate edited fields:**
+
+* **Alternative 1:** Store each edited field in a separate variable directly into `EditTaskCommand` after parsing.
+      * Pros: Simple to implement.
+      * Cons: Low level of abstraction. Difficult to test, maintain, and extend if more fields are to be added. It is also difficult to pass each field around to classes that need access to the edited fields.  <br/><br/>
+
+* **Alternative 2 (current choice):** Encapsulate edited fields in a `EditTaskDescriptor` class.
+      * Pros: High level of abstraction. Encapsulation allows the details of an `editTask` command to be passed around as a single object to be used by other classes.
+      * Cons: More complex to implement due to boilerplate code.
+
+<div style="page-break-after: always;"></div>
+
 ### Find Task feature
 
 #### Implementation
@@ -219,37 +250,6 @@ These two predicates are used to filter the list of tasks in the `Model` compone
   * **Alternative 2 (current choice):** Use two `Predicate<Task>` classes, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, to search the task's `Title` and `Note` respectively.
     * Pros: Extensible. We can easily add more `Predicate<Task>` classes to search other fields in the future. <br/>These classes also allow us to search the task's `Title` and `Note` separately, if needed.
     * Cons: More complex to implement.
-
-<div style="page-break-after: always;"></div>
-
-### Edit Task feature
-
-#### Implementation
-
-The `editTask` command accepts an index, title, note, and tags, and edits the task at that index with the new fields. The index should be numeric. The title, note, and tags can be any string. At least one of the title, note, or tag must be provided for the command to be valid.
-
-The sequence diagram below illustrates how the `editTask` command works for the example input `editTask 1 T/title n/note t/tag`.
-
-![EditTaskSequenceDiagram](assets/svg/dg/EditTaskSequenceDiagram.svg)
-
-{% include admonition.html type="note" title="Note" body="
-
-The lifeline for <code>EditTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
-PlantUML, the lifeline reaches the end of diagram.
-
-" %}
-
-#### Design considerations
-
-**Aspect: How to encapsulate edited fields:**
-
-* **Alternative 1:** Store each edited field in a separate variable directly into `EditTaskCommand` after parsing.
-      * Pros: Simple to implement.
-      * Cons: Low level of abstraction. Difficult to test, maintain, and extend if more fields are to be added. It is also difficult to pass each field around to classes that need access to the edited fields.  <br/><br/>
-
-* **Alternative 2 (current choice):** Encapsulate edited fields in a `EditTaskDescriptor` class.
-      * Pros: High level of abstraction. Encapsulation allows the details of an `editTask` command to be passed around as a single object to be used by other classes.
-      * Cons: More complex to implement due to boilerplate code.
 
 <div style="page-break-after: always;"></div>
 
