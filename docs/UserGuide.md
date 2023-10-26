@@ -15,8 +15,58 @@ If you can type fast, CoordiMate can help you get your contact management tasks 
 
 This user guide contains all the information you need to get started with CoordiMate.
 
-<h2> Table of Contents </h2>
-* Table of Contents
+## Using This Guide
+
+This document will guide you on the various features of CoordiMate and how to use them.
+
+If you are a new user, we recommend that you read this guide starting from the [Quick Start](#quick-start) section.
+
+If you are an advanced user, you can use the [Table of Contents](#table-of-contents) below to quickly locate the relevant section. Alternatively, you can jump to the [Command Summary](#command-summary) section for an overview of the command syntax.
+
+Here are some annotations used in this guide:
+
+{% include admonition.html type="danger" title="Danger!" body="
+
+Be careful when performing these operations as they can lead to data loss.
+
+" %}
+
+{% include admonition.html type="warning" title="Warning" body="
+
+Take note of these as they can cause unexpected behaviour when using CoordiMate.
+
+" %}
+
+{% include admonition.html type="note" title="Note" body="
+
+Contains useful information to help you use CoordiMate better.
+
+" %}
+
+{% include admonition.html type="question" title="Question" body="
+
+Answers to frequently asked questions about CoordiMate.
+
+" %}
+
+{% include admonition.html type="bug" title="Known Issue" body="
+
+Known issues that you may face when using CoordiMate and how to resolve them.
+
+" %}
+
+Throughout this guide, you will see different text styles that are used to highlight important information.
+
+- <a href="javascript: void(0)">Text in blue</a> are links which you can click on to jump to the relevant section.
+- `Text with light blue background` are commands or file names which are used for CoordiMate.
+
+<div style="page-break-after: always;"></div>
+
+---
+
+## Table of Contents
+
+- Table of Contents
 {:toc}
 
 ---
