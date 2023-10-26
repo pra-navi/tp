@@ -473,7 +473,7 @@ You can quickly locate tasks that contains your specified keywords in their titl
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all Tasks that do not match the search criteria. <br>
-To reset the Tasks view, simply run the <code>listTasks</code> command to list all Tasks.
+To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
 
 " %}
 
@@ -674,7 +674,7 @@ track completed items with ease.
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all Tasks that are not done. <br>
-To reset the Tasks view, simply run the <code>listTasks</code> command to list all Tasks.
+To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
 
 " %}
 
@@ -707,7 +707,7 @@ helping you focus on what needs to be done and prioritize your workflow effectiv
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all Tasks that are not done. <br>
-To reset the Tasks view, simply run the <code>listTasks</code> command to list all Tasks.
+To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
 
 " %}
 
