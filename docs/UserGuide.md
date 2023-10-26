@@ -7,13 +7,45 @@ Do you have trouble managing contacts?
 
 Don't worry, CoordiMate is here to help!
 
-CoordiMate is a **desktop app for event planners**. It helps you **manage your contacts and tasks** for your events, so that you can focus on the event itself.
+Are you a SOC Computing Club event planner juggling numerous tasks and contacts for your upcoming events? 
+Managing everything efficiently just got easier with CoordiMate!
 
-CoordiMate is **optimized for use via a Command Line Interface (CLI)** while still having the benefits of a Graphical User Interface (GUI).
+CoordiMate is your go-to **desktop app designed specifically for SOC Computing Club event planners**. 
+It helps you **manage your contacts and tasks** for your events, so that you can focus on the event itself.
 
-If you can type fast, CoordiMate can help you get your contact management tasks done **faster than traditional GUI apps**.
+Whether you're organizing a workshop, seminar, or a grand social event, CoordiMate is tailored 
+to meet the unique needs of SOC Computing Club event planners. 
+And here's the best part – while it's perfect for SOC Computing Club, 
+**event planners of all kinds** can benefit from CoordiMate's powerful features too!
 
-This user guide contains all the information you need to get started with CoordiMate.
+Don't let the stress of managing contacts and tasks weigh you down. Let CoordiMate handle the details, 
+so you can focus on creating extraordinary events.
+
+Why choose CoordiMate? Here's why:
+
+1. **Tailored Precision**: Designed with SOC Computing Club event planners in mind, 
+CoordiMate ensures every feature meets your specific requirements.
+
+2. **Efficient Management**: Seamlessly handle your contacts and tasks, 
+allowing you to focus on the creative aspects of your event.
+
+3. **User-Friendly CLI**: CoordiMate is optimized for use via a Command Line Interface (CLI), 
+offering the speed of typing with all the benefits of a Graphical User Interface (GUI).
+
+4. **Speedy Performance**: If you're a fast typist, CoordiMate will help you complete your contact and 
+tasks management faster than traditional GUI apps, ensuring your productivity soars.
+
+Don't let the stress of contact and task management hinder your event planning creativity. 
+Let CoordiMate take care of the details, empowering you to craft extraordinary events with confidence.
+
+Ready to plan your events effortlessly?  
+**CoordiMate is here to support your success!**
+
+This comprehensive user guide contains all the information you need to get started with CoordiMate. 
+
+- If you're a **new user**, head to our Quick Start section for a smooth initiation.  
+- For **returning users** needing a quick refresher, our Command Summary section will be your handy guide.
+
 
 ## Using This Guide
 
