@@ -15,7 +15,9 @@ import seedu.address.model.task.Task;
  * Adds a task to the address book.
  */
 public class AddTaskCommand extends Command {
+
     public static final String COMMAND_WORD = "addTask";
+    public static final String SHORTENED_COMMAND_WORD = "at";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a task to the address book. "
             + "Parameters: "

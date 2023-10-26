@@ -18,6 +18,7 @@ import seedu.address.model.task.Task;
 public class UnmarkTaskCommand extends Command {
 
     public static final String COMMAND_WORD = "unmarkTask";
+    public static final String SHORTENED_COMMAND_WORD = "ut";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Mark status as not done for the task specified "
             + "by the index number used in the displayed task list.\n"
@@ -79,4 +80,3 @@ public class UnmarkTaskCommand extends Command {
                 .toString();
     }
 }
-

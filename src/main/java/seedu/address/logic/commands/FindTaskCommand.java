@@ -14,6 +14,7 @@ import seedu.address.model.task.TaskContainsKeywordsPredicate;
 public class FindTaskCommand extends Command {
 
     public static final String COMMAND_WORD = "findTask";
+    public static final String SHORTENED_COMMAND_WORD = "ft";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all tasks whose title or note contain any of "
             + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
