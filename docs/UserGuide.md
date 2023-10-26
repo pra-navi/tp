@@ -88,7 +88,7 @@ Always make a backup before you edit!
 
 ## Usage
 
-{% include admonition.html type="info" title="Info: About Command Formats" body="
+{% include admonition.html type="note" title="Note: About Command Formats" body="
 
 <ul>
   <li>
@@ -170,7 +170,7 @@ Format:
 addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 ```
 
-{% include admonition.html type="info" title="A person can have any number of tags (including 0)." %}
+{% include admonition.html type="note" title="A person can have any number of tags (including 0)." %}
 
 Examples:
 
@@ -606,7 +606,7 @@ markTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+{% include admonition.html type="note" title="Tasks are marked as not done by default." %}
 
 Examples:
 
@@ -642,7 +642,7 @@ unmarkTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="info" title="Tasks are marked as not done by default." %}
+{% include admonition.html type="note" title="Tasks are marked as not done by default." %}
 
 Examples:
 
