@@ -201,7 +201,7 @@ help
 <h4>Examples:</h4>
 
 - `help`
-  - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly.
+  - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly. <br><br>
 
   ![help message](images/output/help_success.png)
 
@@ -410,7 +410,7 @@ deleteAllPerson
 <h4>Examples:</h4>
 
 - `deleteAllPerson`
-  - Deletes all persons in your contact list.
+  - Deletes all persons in your contact list. <br><br>
 
   ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
 
@@ -429,19 +429,20 @@ addTask T/TITLE n/NOTE [t/TAG]...
 <h4>Examples:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
-  - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.
+  - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`. <br><br>
 
   ![addTask_success](images/output/addTask_success1.png)
 
 - `addTask T/Call Caterers n/For 292 people t/orientation`
-  - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`.
+  - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`. <br><br>
   
   ![addTask_success](images/output/addTask_success2.png)
 
 <h4>Errors:</h4>
 
 - `addTask T/Book rooms`
-  - Negative example as the note is not specified.
+  - Negative example as the note is not specified. <br><br>
+
   ![addTask_error](images/error/addTask_error.png)
 
 <div style="page-break-after: always;"></div>
@@ -485,19 +486,19 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 <h4>Examples:</h4>
 
 - `editTask 1 T/Find Caterer`
-  - Edits the title of the 1st task to be `Find Caterer`.
+  - Edits the title of the 1st task to be `Find Caterer`. <br><br>
 
   ![editTask_success](images/output/editTask_success1.png)
 
 - `editTask 2 T/Book room n/By Friday t/orientation`
-  - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.
+  - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`. <br><br>
 
   ![editTask_success](images/output/editTask_success2.png)
 
 <h4>Errors:</h4>
 
 - `editTask`
-  - Negative example as the index is not specified.
+  - Negative example as the index is not specified. <br><br>
 
   ![editTask_error](images/error/editTask_error.png)
 
