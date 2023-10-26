@@ -308,24 +308,25 @@ editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 
 Examples:
 
-- `editPerson 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-- `editPerson 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+- `editPerson 1 p/91234567 e/johndoe@example.com` 
+  - Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.<br><br>
+    ![editPerson success](images/output/editPerson_success.png)
 
-Output:
-
-![editPerson success](images/output/editPerson_success.png)
+- `editPerson 2 n/Betsy Crower t/` 
+   - Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.<br><br>
+     ![editPerson success](images/output/editPerson_success_clearTag.png)
 
 Errors:
 
-- Incorrect command format
-
-![editPerson error](images/error/editPerson_error.png)
-- Missing fields
-
-![editPerson error](images/error/editPerson_missingFields.png)
-- Invalid index
-
-![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
+- `editPerson`
+    - Negative example as no index or field is specified.<br><br>
+    ![editPerson error](images/error/editPerson_error.png)
+- `editPerson 1`
+  - Negative example as no fields are specified.<br><br>
+    ![editPerson error](images/error/editPerson_missingFields.png)
+- `editPerson 10 p/91234567 e/johndoe@example.com`
+    - Negative example as invalid index provided.<br><br>
+    ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -612,10 +613,8 @@ deleteAllTask
 Examples:
 
 - `deleteAllTask`
-
-Output:
-
-![deleteAllTask success](images/output/deleteAllTask_success.png)
+  - Deletes all tasks in your task list. <br><br>
+  ![deleteAllTask success](images/output/deleteAllTask_success.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -637,21 +636,22 @@ markTask INDEX
 
 Examples:
 
-- `listTask` followed by `markTask 2` marks the 2nd task in the task list as **done**.
-- `findTask Call` followed by `markTask 1` marks the 1st task in the results of the `findTask` command as **done**.
+- `listTask` followed by `markTask 1` 
+  - Marks the 1st task in the task list as **done** <br><br>
+    ![markTask_success](images/output/markTask_success.png)
 
-Output:
-
-![markTask_success](images/output/markTask_success.png)
+- `findTask budget` followed by `markTask 1` 
+  - Marks the 1st task in the results of the `findTask` command as **done** <br><br>
+    ![markTask_success](images/output/markTask_success_filteredList.png)
 
 Errors:
-- Wrong command format
+- `markTask`
+  - Negative example as no index is given. <br><br>
+  ![markTask_error](images/error/markTask_error.png)
 
-![markTask_error](images/error/markTask_error.png)
-
-- Invalid index
-
-![markTask_wrongIndex](images/error/markTask_wrongIndex.png)
+- `markTask 10`
+  - Negative example as invalid index is given. <br><br>
+  ![markTask_wrongIndex](images/error/markTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -673,22 +673,23 @@ unmarkTask INDEX
 
 Examples:
 
-- `listTask` followed by `unmarkTask 2` marks the 2nd task in the task list as **not done**.
-- `findTask Call` followed by `unmarkTask 1` marks the 1st task in the results of the `findTask` command as **not done**.
+- `listTask` followed by `unmarkTask 1` 
+  - Marks the 1st task in the task list as **not done** <br><br>
+    ![unmarkTask_success](images/output/unmarkTask_success.png)
 
-Output:
-
-![unmarkTask_success](images/output/unmarkTask_success.png)
+- `findTask budget` followed by `unmarkTask 1` 
+  - marks the 1st task in the results of the `findTask` command as **not done** <br><br>
+    ![unmarkTask_success](images/output/unmarkTask_success_filteredList.png)
 
 Errors:
 
-- Wrong command format
+- `unmarkTask`
+  - Negative example as no index is given. <br><br>
+  ![unmarkTask_error](images/error/unmarkTask_error.png)
 
-![unmarkTask_error](images/error/unmarkTask_error.png)
-
-- Invalid index
-
-![markTask_wrongIndex](images/error/unmarkTask_wrongIndex.png)
+- `unmarkTask 10`
+  - Negative example as invalid index is given. <br><br>
+  ![markTask_wrongIndex](images/error/unmarkTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -712,14 +713,11 @@ findDone
 Examples:
 
 - `findDone`
-
-Output:
-- Tasks are displayed as they are marked as done.
-
+  - Tasks are displayed as they are marked as done. <br><br>
   ![findDone_success](images/output/findDone_success.png)
 
-- There are no tasks to be displayed, as no Task is done.
-
+- `findDone`
+  - There are no tasks to be displayed, as no Task is done. <br><br>
   ![findDone_noResults](images/output/findDone_noResults.png)
 
 <div style="page-break-after: always;"></div>
@@ -744,14 +742,11 @@ findNotDone
 Examples:
 
 - `findNotDone`
-
-Output:
-- Tasks are displayed as they are marked as not done.
-
+  - Tasks are displayed as they are marked as not done. <br><br>
   ![findNotDone_success](images/output/findNotDone_success.png)
 
-- There are no tasks to be displayed, as no Task is not done.
-
+- `findNotDone`
+  - There are no tasks to be displayed, as no Task is not done. <br><br>
   ![findNotDone_noResults](images/output/findNotDone_noResults.png)
 
 <div style="page-break-after: always;"></div>
