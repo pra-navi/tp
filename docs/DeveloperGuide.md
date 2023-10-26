@@ -181,6 +181,7 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+<<<<<<< Updated upstream
 ### Edit Task feature
 
 #### Implementation
@@ -209,6 +210,36 @@ PlantUML, the lifeline reaches the end of diagram.
 * **Alternative 2 (current choice):** Encapsulate edited fields in a `EditTaskDescriptor` class.
       * Pros: High level of abstraction. Encapsulation allows the details of an `editTask` command to be passed around as a single object to be used by other classes.
       * Cons: More complex to implement due to boilerplate code.
+
+<div style="page-break-after: always;"></div>
+
+### List Task feature
+
+#### Implementation
+
+The `listTask` command is designed to exhibit all tasks currently stored within CoordiMate to the user. It takes in no arguments and provides a straightforward view of all tasks in their current state.
+
+To get a visual representation of how the `listTask` command operates, the sequence diagram below provides a detailed overview:
+
+![ListTaskSequenceDiagram](assets/svg/dg/ListTaskSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The appearance of the lifeline for <code>ListTaskCommand</code> may vary depending on the diagram creation tool being used.
+
+" %}
+
+#### Design considerations
+
+**Aspect: Design and format of task display:**
+
+* **Alternative 1:** Simply present tasks using basic string output.
+  * Pros: Direct approach and simple to design and implement.
+  * Cons: Can seem too plain and might not capture users' attention effectively. <br/><br/>
+
+* **Alternative 2 (current choice):** Offer a more structured and visually enhanced display format for tasks.
+  * Pros: Ensures better user engagement due to organized and eye-catching content presentation.
+  * Cons: Can be challenging to implement given the added layers of design and subsequent testing.
 
 <div style="page-break-after: always;"></div>
 
