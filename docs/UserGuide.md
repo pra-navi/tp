@@ -468,7 +468,7 @@ Errors:
 
 ### 11. Finding a specific task: `findTask`
 
-You can locate tasks containing your specified keywords in their title and/or note.
+You can quickly locate tasks that contains your specified keywords in their title and/or note.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -484,36 +484,55 @@ findTask KEYWORD [MORE_KEYWORDS]…
 ```
 
 - At least one keyword is required to search.
-- The search is case-insensitive. e.g `call` will match `Call`.
-- The order of the keywords does not matter. e.g. `Call Caterer` will match `Caterer Call`.
-- Both the title and note of a task is searched.
-- Only full words will be matched e.g. `Call` will not match `Calls`.
+- The search is case-insensitive. e.g `find` will match `Find`.
+- The order of the keywords does not matter. e.g. `Find Venue` will match `Venue Find`.
+- Both the **title and note** of a task are searched.
+- Only full words will be matched e.g. `Venue` will not match `Venues`.
 - Tasks matching at least one keyword in either the title or the note will be returned (i.e. `OR` search).
-  - e.g. `Call Wedding` will match `Call Hotel`, `Wedding Anniversary`.
+  - e.g. `Budget Venue` will match `Find Venue`, `Create Budget`.
 
 Examples:
 
-- `findTask Call Wedding` 
-  - Finds tasks with titles or notes containing either `Call` or `Wedding`.
+- `findTask Find Finale` 
+  - Finds tasks with titles or notes containing either `Find` or `Finale`.
 - `findTask Photography`
   - Finds tasks with titles or notes containing `Photography`.
 - `findTask`
   - Negative example as no keywords are specified.
 
 Output:
-- Both tasks are displayed as Task 1 has the word `Call` in its title and Task 2 has the word `Wedding` in its note.
+
+- Both tasks are displayed as Task 1 has the word `Find` in its title and Task 2 has the word `Finale` in its note.
 
   ![findTask_success](images/output/findTask_success.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>findTask Find Finale</code> and update the screenshot!
+
+"%}
 
 - There are no tasks to be displayed, as no Task has the word `Photography` in its title or note.
   
   ![findTask_noResults](images/output/findTask_noResults.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>findTask Photography</code> and update the screenshot!
+
+"%}
 
 Errors:
 
 - No keywords are specified.
   
   ![findTask_error](images/error/findTask_error.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>findTask</code> and update the screenshot!
+
+"%}
 
 <div style="page-break-after: always;"></div>
 
