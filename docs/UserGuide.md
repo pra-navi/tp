@@ -420,24 +420,28 @@ deleteAllPerson
 
 Adds a task to your task list.
 
-Format:
+#### Format:
 
 ```
 addTask T/TITLE n/NOTE [t/TAG]...
 ```
 
-Examples:
+#### Examples:
 
-- `addTask T/Book rooms n/For amazing race, day 2 of orientation t/day2 t/orientation t/bookings`
-- `addTask T/Call Caterers n/For 292 people, day 1 of orientation`
+- `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
+  - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.
 
-Output:
+  ![addTask_success](images/output/addTask_success1.png)
 
-![addTask_success](images/output/addTask_success.png)
+- `addTask T/Call Caterers n/For 292 people t/orientation`
+  - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`.
+  
+  ![addTask_success](images/output/addTask_success2.png)
 
-Errors:
-
-![addTask_error](images/error/addTask_error.png)
+#### Errors:
+- `addTask T/Book rooms`
+  - Negative example as the note is not specified.
+  ![addTask_error](images/error/addTask_error.png)
 
 <div style="page-break-after: always;"></div>
 
