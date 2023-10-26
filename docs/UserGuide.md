@@ -229,7 +229,7 @@ addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
   - Adds a person named `Charlotte Oliveiro` with phone number `93210283`, email `charlotteo@example.com`, 
    address `Blk 11 Ang Mo Kio Street 74, #11-04`, and tag `flowers`. <br><br>
   
-  ![addPerson success](images/addPerson_success.png)
+  ![addPerson success](images/output/addPerson_success.png)
 
 <h4>Errors:</h4>
 - `addPerson`
@@ -254,7 +254,7 @@ listPerson
 - `listPerson`
     - Shows a full list of all the contacts in your contact list. <br><br>
 
-  ![listPerson success](images/listPerson_success.png)
+  ![listPerson success](images/output/listPerson_success.png)
 
 <div style="page-break-after: always;"></div>
 
