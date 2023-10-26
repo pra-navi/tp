@@ -192,13 +192,13 @@ If you are using a PDF version of this document, be careful when copying and pas
 
 You can view a link to access the user guide at any time, ensuring that you will never be lost.
 
-#### Format:
+<h4>Format:</h4>
 
 ```
 help
 ```
 
-#### Examples:
+<h4>Examples:</h4>
 
 - `help`
   - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly.
@@ -401,13 +401,13 @@ Clears all contacts in your contact list.
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 CoordiMate will discard <b>all</b> Person data and start with an empty data file at the next run.<br>" %}
 
-#### Format:
+<h4>Format:</h4>
 
 ```
 deleteAllPerson
 ```
 
-#### Examples:
+<h4>Examples:</h4>
 
 - `deleteAllPerson`
   - Deletes all persons in your contact list.
@@ -420,13 +420,13 @@ deleteAllPerson
 
 Adds a task to your task list.
 
-#### Format:
+<h4>Format:</h4>
 
 ```
 addTask T/TITLE n/NOTE [t/TAG]...
 ```
 
-#### Examples:
+<h4>Examples:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
   - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.
@@ -438,7 +438,8 @@ addTask T/TITLE n/NOTE [t/TAG]...
   
   ![addTask_success](images/output/addTask_success2.png)
 
-#### Errors:
+<h4>Errors:</h4>
+
 - `addTask T/Book rooms`
   - Negative example as the note is not specified.
   ![addTask_error](images/error/addTask_error.png)
@@ -469,7 +470,7 @@ Output:
 
 You can edit the details of a task in your task list.
 
-#### Format:
+<h4>Format:</h4>
 
 ```
 editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
@@ -481,7 +482,7 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 - Specify new tags with the `t/` prefix. This field is **optional**.
 - At least one of the optional fields must be provided for the command to be valid.
 
-#### Examples:
+<h4>Examples:</h4>
 
 - `editTask 1 T/Find Caterer`
   - Edits the title of the 1st task to be `Find Caterer`.
@@ -493,7 +494,7 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 
   ![editTask_success](images/output/editTask_success2.png)
 
-#### Errors:
+<h4>Errors:</h4>
 
 - `editTask`
   - Negative example as the index is not specified.
