@@ -627,7 +627,73 @@ Errors:
 
 <div style="page-break-after: always;"></div>
 
-### 16. Listing all tags: `listTag`
+### 16. Finding all tasks that are done: `findDone`
+
+You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or 
+track completed items with ease.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all Tasks that are not done. <br>
+To reset the Tasks view, simply run the <code>listTasks</code> command to list all Tasks.
+
+" %}
+
+Format:
+
+```
+findDone
+```
+
+Examples:
+
+- `findDone`
+
+Output:
+- Tasks are displayed as they are marked as done.
+
+  ![findDone_success](images/output/findDone_success.png)
+
+- There are no tasks to be displayed, as no Task is done.
+
+  ![findDone_noResults](images/output/findDone_noResults.png)
+
+<div style="page-break-after: always;"></div>
+
+### 17. Finding all tasks that are not done: `findNotDone`
+
+You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, 
+helping you focus on what needs to be done and prioritize your workflow effectively
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all Tasks that are not done. <br>
+To reset the Tasks view, simply run the <code>listTasks</code> command to list all Tasks.
+
+" %}
+
+Format:
+
+```
+findNotDone
+```
+
+Examples:
+
+- `findNotDone`
+
+Output:
+- Tasks are displayed as they are marked as not done.
+
+  ![findNotDone_success](images/output/findNotDone_success.png)
+
+- There are no tasks to be displayed, as no Task is not done.
+
+  ![findNotDone_noResults](images/output/findNotDone_noResults.png)
+
+<div style="page-break-after: always;"></div>
+
+### 18. Listing all tags: `listTag`
 
 Provides you with a complete list of tags you have used in your contact list and task list.
 
@@ -661,7 +727,7 @@ Please remove this message after adding the picture!
 
 <div style="page-break-after: always;"></div>
 
-### 17. Exiting the program: `exit`
+### 19. Exiting the program: `exit`
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
@@ -720,5 +786,7 @@ Delete the <code>preferences.json</code> file created by CoordiMate before runni
 [**Delete All Task**](#13-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
 [**Mark Task**](#14-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
 [**Unmark Task**](#15-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
-[**List All Tags**](#16-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Exit**](#17-exiting-the-program-exit) | `exit` | `exit`
+[**Find Done Task**](#16-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
+[**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
+[**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
+[**Exit**](#19-exiting-the-program-exit) | `exit` | `exit` 
