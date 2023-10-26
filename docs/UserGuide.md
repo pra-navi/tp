@@ -823,8 +823,8 @@ You can search for persons and tasks using tags.
       
     ![findTag_success_1](images/output/findTag_success1.png)
   
-- `findTag finance`
-    - Shows all persons and tasks with tags containing the word "finance". <br><br>
+- `findTag orientation`
+    - Shows all persons and tasks with tags containing the word "orientation". <br><br>
       
     ![findTag_success_2](images/output/findTag_success2.png)
 
