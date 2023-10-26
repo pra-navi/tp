@@ -784,12 +784,6 @@ listTag
   - Shows you a list of all tags used in your contact list and task list and the number of times each tag has been used.<br><br>
   ![listTag success](images/output/listTag_success.png)
 
-{% include admonition.html type="failure" title="TODO: Missing Picture!" body="
-
-Please remove this message after adding the picture!
-
-" %}
-
 <div style="page-break-after: always;"></div>
 
 ### 19. Finding persons and tasks by tag: `findTag`
