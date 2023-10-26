@@ -396,27 +396,23 @@ Errors:
 
 ### 7. Clearing all person entries: `deleteAllPerson`
 
+Clears all contacts in your contact list.
+
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 CoordiMate will discard <b>all</b> Person data and start with an empty data file at the next run.<br>" %}
 
-Clears all contacts in your contact list.
-
-Format:
+#### Format:
 
 ```
 deleteAllPerson
 ```
 
-Examples:
+#### Examples:
 
 - `deleteAllPerson`
   - Deletes all persons in your contact list.
 
-Output:
-
-- All persons in the contact list are deleted.
-
-  ![deleteAllPerson success](images/deleteAllPerson_success.png)
+  ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
 
 <div style="page-break-after: always;"></div>
 
