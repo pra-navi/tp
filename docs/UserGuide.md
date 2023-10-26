@@ -249,7 +249,7 @@ Errors:
 
 ### 5. Finding a specific person: `findPerson`
 
-Type in a few keywords linked to a person's name, and the matching persons' details will be displayed on screen.
+Allows you to quickly find a specific person's details by their name.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -267,33 +267,53 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 - At least one keyword is required to search.
 - The search is case-insensitive. e.g `hans` will match `Hans`.
 - The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
-- Only the name is searched.
+- Only the **name** is searched.
 - Only full words will be matched e.g. `Han` will not match `Hans`.
 - Persons matching at least one keyword will be returned (i.e. `OR` search).
   - e.g. `Hans Bo` will match `Hans Gruber`, `Bo Yang`.
 
 Examples:
 
-- `findPerson John` returns `john` and `John Doe`
-- `findPerson alex david` returns `Alex Yeoh`, `David Li`
-- Assuming `Jane` is not in your contacts list, `findPerson Jane` returns `0 Persons Listed`.
+- `findPerson alex yu`
+  - Finds persons whose names contains either `alex` or `yu`.
+- `findPerson David`
+  - Finds persons whose name contains `David`.
+- `findTask`
+  - Negative example as no keywords are specified.
 
 Output:
 
-- There are search outcomes to be displayed.
+- The details of `Alex Yeoh` and `Bernice Yu` are displayed as they match the search criteria `alex yu`.
 
 ![findPerson success with a list](images/output/findPerson_success.png)
 
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
 
-- There are no search outcomes to be displayed.
+Please run <code>findPerson alex yu</code> and update the screenshot!
+
+"%}
+
+- No persons are displayed as no person matches the search criteria `David`.
 
 ![findPerson success with zero results](images/output/findPerson_noResults.png)
 
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>findPerson david</code> and update the screenshot!
+
+"%}
+
 Errors:
 
-- Incorrect number of parameters.
+- No keywords are specified.
 
 ![findPerson error](images/error/findPerson_error.png)
+
+{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
+
+Please run <code>findPerson</code> and update the screenshot!
+
+"%}
 
 <div style="page-break-after: always;"></div>
 
