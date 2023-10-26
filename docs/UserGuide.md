@@ -360,33 +360,15 @@ findPerson KEYWORD [MORE_KEYWORDS]…
   - Finds all persons whose names contains either `alex` or `yu`.<br><br>
   ![findPerson success with a list](images/output/findPerson_success.png)
 
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findPerson alex yu</code> and update the screenshot!
-
-"%}
-
 - `findPerson David`
   - No results are displayed as no person has a name that contains `David`.<br><br>
   ![findPerson success with zero results](images/output/findPerson_noResults.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findPerson david</code> and update the screenshot!
-
-"%}
 
 <h4>Errors:</h4>
 
 - `findPerson`
   - Negative example as no keywords are specified.<br><br>
   ![findPerson error](images/error/findPerson_error.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findPerson</code> and update the screenshot!
-
-"%}
 
 <div style="page-break-after: always;"></div>
 
@@ -412,21 +394,9 @@ deletePerson INDEX
   - Deletes the 2nd person in your contact list.<br><br>
   ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
 
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>listPerson</code> and then <code>deletePerson 2</code> and update the screenshot!
-
-"%}
-
 - `findPerson Bernice` followed by `deletePerson 1` 
   - Deletes the 1st person in the results of the `findPerson` command.<br><br>
-  ![deletePerson_success_with_findPerson](images/output/deletePerson_success.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findPerson Bernice</code> and then <code>deletePerson 1</code> and update the screenshot!
-
-"%}
+  ![deletePerson_success_with_findPerson](images/output/deletePerson_success_filteredList.png)
 
 <h4>Errors:</h4>
 
@@ -434,21 +404,9 @@ Please run <code>findPerson Bernice</code> and then <code>deletePerson 1</code> 
   - Negative example as no index is specified.<br><br>
   ![deletePerson error_no_index](images/error/deletePerson_error.png)
 
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>deletePerson</code> and update the screenshot!
-
-"%}
-
 - `deletePerson 1000`
   - Invalid index is provided.<br><br>
-  ![deletePerson error_invalid_index](images/error/deletePerson_error.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>deletePerson 1000</code> and update the screenshot!
-
-"%}
+  ![deletePerson error_invalid_index](images/error/deletePerson_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -591,33 +549,15 @@ findTask KEYWORD [MORE_KEYWORDS]…
   - Finds tasks with titles or notes containing either `Find` or `Finale`.<br><br>
   ![findTask_success](images/output/findTask_success.png)
 
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findTask Find Finale</code> and update the screenshot!
-
-"%}
-
 - `findTask Photography`
   - No results are displayed as no task has a title or note that contains `Photography`.<br><br>
-  ![findTask_noResults](images/output/findTask_noResults.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findTask Photography</code> and update the screenshot!
-
-"%}
+  ![findTask_noResults](images/output/findTask_noResults.png)1
 
 <h4>Errors:</h4>
 
 - `findTask`
   - Negative example as no keywords are specified.<br><br>
   ![findTask_error](images/error/findTask_error.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findTask</code> and update the screenshot!
-
-"%}
 
 <div style="page-break-after: always;"></div>
 
@@ -638,45 +578,21 @@ Allows you to remove a task from your task list with ease.
 
 - `listTask` followed by `deleteTask 2`
     - Deletes the 2nd task in your task list.<br><br>
-      ![deleteTask_success_with_listTask](images/output/deleteTask_success1.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>listTask</code> and then <code>deleteTask 2</code> and update the screenshot!
-
-"%}
+      ![deleteTask_success_with_listTask](images/output/deleteTask_success.png)
 
 - `findTask caterer` followed by `deleteTask 1`
     - Deletes the 1st task in the results of the `findTask` command.<br><br>
-      ![deleteTask_success_with_findTask](images/output/deleteTask_success1.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>findTask caterer</code> and then <code>deleteTask 1</code> and update the screenshot!
-
-"%}
+      ![deleteTask_success_with_findTask](images/output/deleteTask_success_filteredList.png)
 
 <h4>Errors:</h4>
 
 - `deleteTask`
     - Negative example as no index is specified.<br><br>
-      ![deleteTask error_no_index](images/error/deleteTask_error1.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>deleteTask</code> and update the screenshot!
-
-"%}
+      ![deleteTask error_no_index](images/error/deleteTask_error.png)
 
 - `deleteTask 1000`
     - Invalid index is provided.<br><br>
-      ![deleteTask error_invalid_index](images/error/deleteTask_error1.png)
-
-{% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
-
-Please run <code>deleteTask 1000</code> and update the screenshot!
-
-"%}
+      ![deleteTask error_invalid_index](images/error/deleteTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -971,4 +887,5 @@ Delete the <code>preferences.json</code> file created by CoordiMate before runni
 [**Find Done Task**](#16-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
 [**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
 [**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Exit**](#19-exiting-the-program-exit) | `exit` | `exit`
+[**Find Tags**](#19-finding-persons-and-tasks-by-tag-findtag) | `indTag TAG [MORE_TAGS]...` | `findTag orientation`
+[**Exit**](#20-exiting-the-program-exit) | `exit` | `exit`
