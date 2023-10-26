@@ -329,7 +329,7 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 Please run <code>findPerson alex yu</code> and update the screenshot!
 
 "%}
-  
+
 - `findPerson David`
   - No results are displayed as no person has a name that contains `David`.<br><br>
   ![findPerson success with zero results](images/output/findPerson_noResults.png)
@@ -426,7 +426,7 @@ addTask T/TITLE n/NOTE [t/TAG]...
 
 - `addTask T/Call Caterers n/For 292 people t/orientation`
   - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`. <br><br>
-  
+
   ![addTask_success](images/output/addTask_success2.png)
 
 <h4>Errors:</h4>
@@ -752,29 +752,31 @@ Output:
 
 ### 18. Listing all tags: `listTag`
 
-Provides you with a complete list of tags you have used in your contact list and task list.
+Provides you with a complete list of tags you have used in your contact list and task list, and the number of times each tag has been used.
 
 The list is sorted by frequency of each tag in descending order.
 
 If two tags have the same frequency, the tags are sorted in ASCII order.
 
-{% include admonition.html type="note" title="ASCII" body="
+{% include admonition.html type="note" title="About ASCII" body="
 
-ASCII is a character encoding standard well understood by computers. <br>
+The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
 In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
 For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
 
 " %}
 
-Format:
+<h4>Format:</h4>
 
 ```
 listTag
 ```
 
-Output:
+<h4>Example:</h4>
 
-![listTag success](images/output/listTag_success.png)
+- `listTag`
+  - Shows you a list of all tags used in your contact list and task list and the number of times each tag has been used.<br><br>
+  ![listTag success](images/output/listTag_success.png)
 
 {% include admonition.html type="failure" title="TODO: Missing Picture!" body="
 
