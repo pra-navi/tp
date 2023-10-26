@@ -83,7 +83,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
 4. Open a command terminal, `cd` into the folder you put `CoordiMate.jar` in, and use the `java -jar CoordiMate.jar` command to start CoordiMate.<br>
 
-   A GUI similar to the below picture should appear in a few seconds. Note how the app contains some sample data.<br>
+   A GUI similar to the below picture should appear in a few seconds. Note how the app contains some sample data.<br><br>
    ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
