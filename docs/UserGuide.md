@@ -469,44 +469,34 @@ Output:
 
 You can edit the details of a task in your task list.
 
-Format:
+#### Format:
 
 ```
 editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 ```
 
-- Edits the task at the specified `INDEX`.
-- The index refers to the index number shown in the task list currently displayed.
+- Edits the task at the specified `INDEX`. The index refers to the index number shown in the task list currently displayed.
 - Specify a new title with the `T/` prefix. This field is **optional**.
 - Specify a new note with the `n/` prefix. This field is **optional**.
 - Specify new tags with the `t/` prefix. This field is **optional**.
+- At least one of the optional fields must be provided for the command to be valid.
 
-Examples:
+#### Examples:
 
-- `editTask 1 T/Call Caterer`
-  - Edits the title of the 1st task to be `Call Caterer`.
-- `editTask 2 T/Book room n/By Friday`
-  - Edits the title of the 2nd task to be `Book room` and the note to be `By Friday`.
-- `editTask 1 t/catering t/urgent`
-  - Adds the tags `catering` and `urgent` to the 1st task.
-- `editTask 1 t/`
-  - Removes all tags from the 1st task.
-- `editTask`
-  - Negative example as the index is not specified.
-
-Output:
-
-- Title of task 1 is edited to `Call Caterer`.
+- `editTask 1 T/Find Caterer`
+  - Edits the title of the 1st task to be `Find Caterer`.
 
   ![editTask_success](images/output/editTask_success1.png)
 
-- Title of task 2 is edited to `Book room` and note is edited to `By Friday`.
+- `editTask 2 T/Book room n/By Friday t/orientation`
+  - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.
 
   ![editTask_success](images/output/editTask_success2.png)
 
-Errors:
+#### Errors:
 
-- Index is not specified.
+- `editTask`
+  - Negative example as the index is not specified.
 
   ![editTask_error](images/error/editTask_error.png)
 
