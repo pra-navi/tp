@@ -43,8 +43,8 @@ Ready to plan your events effortlessly?
 
 This comprehensive user guide contains all the information you need to get started with CoordiMate. 
 
-- If you're a **new user**, head to our Quick Start section for a smooth initiation.  
-- For **returning users** needing a quick refresher, our Command Summary section will be your handy guide.
+- If you're a **new user**, head to our [Quick Start](#quick-start) section for a smooth initiation.  
+- For **returning users** needing a quick refresher, our [Command Summary](#command-summary) section will be your handy guide.
 
 
 ## Using This Guide
