@@ -45,13 +45,14 @@ This user guide contains all the information you need to get started with Coordi
 
    * `deletePerson 3` : Deletes the 3rd contact shown in the current contact list.
 
+   * `findTask Get` : Finds all tasks with the word `caterer` in their title or note.
+
    * `listTask` : Lists all tasks.
 
-   * `addTask t/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding Anniversary` to the task list.
+   * `addTask T/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding 
+     Anniversary` to the task list.
 
    * `markTask 1` : Marks the 1st task shown in the current task list as done.
-
-   * `findTask Get` : Finds all tasks with the word `Get` in their title or note.
 
    * `exit` : Exits the app.
 
@@ -356,13 +357,13 @@ Adds a task to your task list.
 Format:
 
 ```
-addTask t/TITLE n/NOTE
+addTask T/TITLE n/NOTE [t/TAG]...
 ```
 
 Examples:
 
-- `addTask t/Get Flowers n/Wedding Anniversary`
-- `addTask t/Call Caterers n/Reunion Dinner`
+- `addTask T/Book rooms n/For amazing race, day 2 of orientation t/day2 t/orientation t/bookings`
+- `addTask T/Call Caterers n/For 292 people, day 1 of orientation`
 
 Output:
 
@@ -401,20 +402,25 @@ You can edit the details of a task in your task list.
 Format:
 
 ```
-editTask INDEX [t/TITLE] [n/NOTE]
+editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 ```
 
 - Edits the task at the specified `INDEX`.
 - The index refers to the index number shown in the task list currently displayed.
-- Specify a new title with the `t/` prefix. This field is **optional**.
+- Specify a new title with the `T/` prefix. This field is **optional**.
 - Specify a new note with the `n/` prefix. This field is **optional**.
+- Specify new tags with the `t/` prefix. This field is **optional**.
 
 Examples:
 
-- `editTask 1 t/Call Caterer`
+- `editTask 1 T/Call Caterer`
   - Edits the title of the 1st task to be `Call Caterer`.
-- `editTask 2 t/Book room n/By Friday`
+- `editTask 2 T/Book room n/By Friday`
   - Edits the title of the 2nd task to be `Book room` and the note to be `By Friday`.
+- `editTask 1 t/catering t/urgent`
+  - Adds the tags `catering` and `urgent` to the 1st task.
+- `editTask 1 t/`
+  - Removes all tags from the 1st task.
 - `editTask`
   - Negative example as the index is not specified.
 
