@@ -242,21 +242,19 @@ addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 
 ### 3. Listing all persons: `listPerson`
 
-Presents you with a comprehensive list of contacts in your contact list.
+Retrieve a comprehensive list of all contacts in your contact list.
 
-Format:
+<h4>Format:</h4>
 
 ```
 listPerson
 ```
 
-Examples:
-
+<h4>Examples:</h4>
 - `listPerson`
+    - Shows a full list of all the contacts in your contact list. <br><br>
 
-Output:
-
-![listPerson success](images/listPerson_success.png)
+  ![listPerson success](images/listPerson_success.png)
 
 <div style="page-break-after: always;"></div>
 
