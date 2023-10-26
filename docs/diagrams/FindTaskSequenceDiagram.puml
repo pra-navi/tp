@@ -6,9 +6,9 @@ box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":FindTaskCommandParser" as FindTaskCommandParser LOGIC_COLOR
-participant "p:TaskContainsKeywordsPredicate" as TaskContainsKeywordsPredicate LOGIC_COLOR
-participant "c:FindTaskCommand" as FindTaskCommand LOGIC_COLOR
-participant "r:CommandResult" as CommandResult LOGIC_COLOR
+participant "pred:TaskContainsKeywordsPredicate" as TaskContainsKeywordsPredicate LOGIC_COLOR
+participant "cmd:FindTaskCommand" as FindTaskCommand LOGIC_COLOR
+participant "res:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
@@ -22,7 +22,7 @@ LogicManager -> AddressBookParser : parseCommand("findTask agenda")
 activate AddressBookParser
 
 create FindTaskCommandParser
-AddressBookParser -> FindTaskCommandParser
+AddressBookParser -> FindTaskCommandParser : FindTaskCommandParser()
 activate FindTaskCommandParser
 
 FindTaskCommandParser --> AddressBookParser
@@ -32,47 +32,53 @@ AddressBookParser -> FindTaskCommandParser : parse("agenda")
 activate FindTaskCommandParser
 
 create TaskContainsKeywordsPredicate
-FindTaskCommandParser -> TaskContainsKeywordsPredicate
+FindTaskCommandParser -> TaskContainsKeywordsPredicate : TaskContainsKeywordsPredicate(["agenda"])
 activate TaskContainsKeywordsPredicate
 
-TaskContainsKeywordsPredicate --> FindTaskCommandParser
+TaskContainsKeywordsPredicate --> FindTaskCommandParser : pred
 deactivate TaskContainsKeywordsPredicate
 
 create FindTaskCommand
-FindTaskCommandParser -> FindTaskCommand
+FindTaskCommandParser -> FindTaskCommand : FindTaskCommand(pred)
 activate FindTaskCommand
 
-FindTaskCommand --> FindTaskCommandParser : c
+FindTaskCommand --> FindTaskCommandParser : cmd
 deactivate FindTaskCommand
 
-FindTaskCommandParser --> AddressBookParser : c
+FindTaskCommandParser --> AddressBookParser : cmd
 deactivate FindTaskCommandParser
+
 'Hidden arrow to position the destroy marker below the end of the activation bar.
 FindTaskCommandParser -[hidden]-> AddressBookParser
 destroy FindTaskCommandParser
 
-AddressBookParser --> LogicManager : c
+AddressBookParser --> LogicManager : cmd
 deactivate AddressBookParser
 
 LogicManager -> FindTaskCommand : execute()
 activate FindTaskCommand
 
-FindTaskCommand -> Model : updateFilteredTaskList(p)
+FindTaskCommand -> Model : updateFilteredTaskList(pred)
 activate Model
 
 Model --> FindTaskCommand
 deactivate Model
 
 create CommandResult
-FindTaskCommand -> CommandResult
+FindTaskCommand -> CommandResult : CommandResult(MESSAGE_TASKS_LISTED_OVERVIEW)
 activate CommandResult
 
-CommandResult --> FindTaskCommand
+CommandResult --> FindTaskCommand : res
 deactivate CommandResult
 
-FindTaskCommand --> LogicManager : r
+FindTaskCommand --> LogicManager : res
 deactivate FindTaskCommand
 
-[<--LogicManager
+[<--LogicManager : res
 deactivate LogicManager
+
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+TaskContainsKeywordsPredicate -[hidden]-> LogicManager
+destroy TaskContainsKeywordsPredicate
+destroy FindTaskCommand
 @enduml
