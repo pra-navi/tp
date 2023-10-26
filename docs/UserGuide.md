@@ -209,28 +209,34 @@ help
 
 ### 2. Adding a person: `addPerson`
 
-Add new people that you meet, be it new clients, vendors or friends.
+Add new individuals to your list such as clients, vendors, or friends.
 
-Format:
+<h4>Format:</h4>
 
 ```
 addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 ```
+- Provide the full name of the individual using the `n/` prefix. This field is **mandatory**.
+- Provide the phone number with the `p/` prefix. This field is **mandatory**.
+- Provide the email address using the `e/` prefix. This field is **mandatory**.
+- Provide the address using the `a/` prefix. This field is **mandatory**.
+- Tag the person using the `t/` prefix. This field is **optional**.
 
 {% include admonition.html type="note" title="A person can have any number of tags (including 0)." %}
 
-Examples:
+<h4>Examples:</h4>
+- `addPerson n/Charlotte Oliveiro p/93210283 e/charlotteo@example.com a/Blk 11 Ang Mo Kio Street 74, #11-04 t/flowers`
+  - Adds a person named `Charlotte Oliveiro` with phone number `93210283`, email `charlotteo@example.com`, 
+   address `Blk 11 Ang Mo Kio Street 74, #11-04`, and tag `flowers`. <br><br>
+  
+  ![addPerson success](images/addPerson_success.png)
 
-- `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-- `addPerson n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+<h4>Errors:</h4>
+- `addPerson`
 
-Output:
-
-![addPerson success](images/addPerson_success.png)
-
-Errors:
-
-![addPerson error](images/error/addPerson_error.png)
+  - Negative example as the name, phone number, email address, and address are not specified. <br><br>
+  
+  ![addPerson error](images/error/addPerson_error.png)
 
 <div style="page-break-after: always;"></div>
 
