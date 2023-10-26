@@ -294,7 +294,7 @@ listPerson
 
 Enables you to change the details or particulars of an existing contact in your contact list.
 
-Format:
+<h4>Format:</h4>
 
 ```
 editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
@@ -306,7 +306,7 @@ editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 - When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
 - You can remove all the person’s tags by typing `t/` without specifying any tags after it.
 
-Examples:
+<h4>Examples:</h4>
 
 - `editPerson 1 p/91234567 e/johndoe@example.com` 
   - Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.<br><br>
@@ -316,7 +316,7 @@ Examples:
    - Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.<br><br>
      ![editPerson success](images/output/editPerson_success_clearTag.png)
 
-Errors:
+<h4>Errors:</h4>
 
 - `editPerson`
     - Negative example as no index or field is specified.<br><br>
@@ -604,13 +604,13 @@ CoordiMate will discard <b>all</b> Task data and start with an empty data file a
 
 Allows you to remove all entries from your task list.
 
-Format:
+<h4>Format:</h4>
 
 ```
 deleteAllTask
 ```
 
-Examples:
+<h4>Examples:</h4>
 
 - `deleteAllTask`
   - Deletes all tasks in your task list. <br><br>
@@ -622,7 +622,7 @@ Examples:
 
 Allows you to indicate that a specific task as **completed**.
 
-Format:
+<h4>Format:</h4>
 
 ```
 markTask INDEX
@@ -634,7 +634,7 @@ markTask INDEX
 
 {% include admonition.html type="note" title="Tasks are marked as not done by default." %}
 
-Examples:
+<h4>Examples:</h4>
 
 - `listTask` followed by `markTask 1` 
   - Marks the 1st task in the task list as **done** <br><br>
@@ -644,7 +644,7 @@ Examples:
   - Marks the 1st task in the results of the `findTask` command as **done** <br><br>
     ![markTask_success](images/output/markTask_success_filteredList.png)
 
-Errors:
+<h4>Errors:</h4>
 - `markTask`
   - Negative example as no index is given. <br><br>
   ![markTask_error](images/error/markTask_error.png)
@@ -659,7 +659,7 @@ Errors:
 
 Allows you to indicate that a specific task as **not completed**.
 
-Format:
+<h4>Format:</h4>
 
 ```
 unmarkTask INDEX
@@ -671,7 +671,7 @@ unmarkTask INDEX
 
 {% include admonition.html type="note" title="Tasks are marked as not done by default." %}
 
-Examples:
+<h4>Examples:</h4>
 
 - `listTask` followed by `unmarkTask 1` 
   - Marks the 1st task in the task list as **not done** <br><br>
@@ -681,7 +681,7 @@ Examples:
   - marks the 1st task in the results of the `findTask` command as **not done** <br><br>
     ![unmarkTask_success](images/output/unmarkTask_success_filteredList.png)
 
-Errors:
+<h4>Errors:</h4>
 
 - `unmarkTask`
   - Negative example as no index is given. <br><br>
@@ -704,13 +704,13 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 " %}
 
-Format:
+<h4>Format:</h4>
 
 ```
 findDone
 ```
 
-Examples:
+<h4>Examples:</h4>
 
 - `findDone`
   - Tasks are displayed as they are marked as done. <br><br>
@@ -733,13 +733,13 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 " %}
 
-Format:
+<h4>Format:</h4>
 
 ```
 findNotDone
 ```
 
-Examples:
+<h4>Examples:</h4>
 
 - `findNotDone`
   - Tasks are displayed as they are marked as not done. <br><br>
@@ -818,7 +818,7 @@ You can search for persons and tasks using tags.
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
-Format:
+<h4>Format:</h4>
 
 ```
 exit
