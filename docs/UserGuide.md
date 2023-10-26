@@ -506,7 +506,7 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 " %}
 
-Format:
+<h4>Format:</h4>
 
 ```
 findTask KEYWORD [MORE_KEYWORDS]…
@@ -520,19 +520,10 @@ findTask KEYWORD [MORE_KEYWORDS]…
 - Tasks matching at least one keyword in either the title or the note will be returned (i.e. `OR` search).
   - e.g. `Budget Venue` will match `Find Venue`, `Create Budget`.
 
-Examples:
+<h4>Examples:</h4>
 
 - `findTask Find Finale`
-  - Finds tasks with titles or notes containing either `Find` or `Finale`.
-- `findTask Photography`
-  - Finds tasks with titles or notes containing `Photography`.
-- `findTask`
-  - Negative example as no keywords are specified.
-
-Output:
-
-- Both tasks are displayed as Task 1 has the word `Find` in its title and Task 2 has the word `Finale` in its note.
-
+  - Finds tasks with titles or notes containing either `Find` or `Finale`.<br><br>
   ![findTask_success](images/output/findTask_success.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
@@ -541,8 +532,8 @@ Please run <code>findTask Find Finale</code> and update the screenshot!
 
 "%}
 
-- There are no tasks to be displayed, as no Task has the word `Photography` in its title or note.
-
+- `findTask Photography`
+  - No results are displayed as no task has a title or note that contains `Photography`.<br><br>
   ![findTask_noResults](images/output/findTask_noResults.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
@@ -551,10 +542,10 @@ Please run <code>findTask Photography</code> and update the screenshot!
 
 "%}
 
-Errors:
+<h4>Errors:</h4>
 
-- No keywords are specified.
-
+- `findTask`
+  - Negative example as no keywords are specified.<br><br>
   ![findTask_error](images/error/findTask_error.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
