@@ -190,21 +190,18 @@ If you are using a PDF version of this document, be careful when copying and pas
 
 ### 1. Viewing help: `help`
 
-You can access the help page at any time, ensuring that you will never be lost.
+You can view a link to access the user guide at any time, ensuring that you will never be lost.
 
-Format:
+#### Format:
 
 ```
 help
 ```
 
-Examples:
+#### Examples:
 
 - `help`
-
-Output:
-
-- Opens a window with a link to our user guide.
+  - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly.
 
   ![help message](images/output/help_success.png)
 
