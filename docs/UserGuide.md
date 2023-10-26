@@ -49,8 +49,7 @@ This user guide contains all the information you need to get started with Coordi
 
    * `listTask` : Lists all tasks.
 
-   * `addTask T/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding 
-     Anniversary` to the task list.
+   * `addTask T/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding Anniversary` to the task list.
 
    * `markTask 1` : Marks the 1st task shown in the current task list as done.
 
@@ -493,7 +492,7 @@ findTask KEYWORD [MORE_KEYWORDS]…
 
 Examples:
 
-- `findTask Find Finale` 
+- `findTask Find Finale`
   - Finds tasks with titles or notes containing either `Find` or `Finale`.
 - `findTask Photography`
   - Finds tasks with titles or notes containing `Photography`.
@@ -513,7 +512,7 @@ Please run <code>findTask Find Finale</code> and update the screenshot!
 "%}
 
 - There are no tasks to be displayed, as no Task has the word `Photography` in its title or note.
-  
+
   ![findTask_noResults](images/output/findTask_noResults.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
@@ -525,7 +524,7 @@ Please run <code>findTask Photography</code> and update the screenshot!
 Errors:
 
 - No keywords are specified.
-  
+
   ![findTask_error](images/error/findTask_error.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
@@ -668,8 +667,7 @@ Errors:
 
 ### 16. Finding all tasks that are done: `findDone`
 
-You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or 
-track completed items with ease.
+You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or track completed items with ease.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -701,8 +699,7 @@ Output:
 
 ### 17. Finding all tasks that are not done: `findNotDone`
 
-You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, 
-helping you focus on what needs to be done and prioritize your workflow effectively
+You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -736,7 +733,7 @@ Output:
 
 Provides you with a complete list of tags you have used in your contact list and task list.
 
-The list is sorted by frequency of each tag in descending order. 
+The list is sorted by frequency of each tag in descending order.
 
 If two tags have the same frequency, the tags are sorted in ASCII order.
 
@@ -770,7 +767,7 @@ Please remove this message after adding the picture!
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
-Format: 
+Format:
 
 ```
 exit
@@ -828,4 +825,4 @@ Delete the <code>preferences.json</code> file created by CoordiMate before runni
 [**Find Done Task**](#16-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
 [**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
 [**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Exit**](#19-exiting-the-program-exit) | `exit` | `exit` 
+[**Exit**](#19-exiting-the-program-exit) | `exit` | `exit`
