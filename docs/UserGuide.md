@@ -552,7 +552,7 @@ findTask KEYWORD [MORE_KEYWORDS]…
 
 - `findTask Photography`
   - No results are displayed as no task has a title or note that contains `Photography`.<br><br>
-  ![findTask_noResults](images/output/findTask_noResults.png)1
+  ![findTask_noResults](images/output/findTask_noResults.png)
 
 <h4>Errors:</h4>
 
