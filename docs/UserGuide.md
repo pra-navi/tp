@@ -304,7 +304,7 @@ To reset the Persons view, simply run the <code>listPerson</code> command to lis
 
 " %}
 
-Format:
+<h4>Format:</h4>
 
 ```
 findPerson KEYWORD [MORE_KEYWORDS]…
@@ -318,30 +318,21 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 - Persons matching at least one keyword will be returned (i.e. `OR` search).
   - e.g. `Hans Bo` will match `Hans Gruber`, `Bo Yang`.
 
-Examples:
+<h4>Examples:</h4>
 
 - `findPerson alex yu`
-  - Finds persons whose names contains either `alex` or `yu`.
-- `findPerson David`
-  - Finds persons whose name contains `David`.
-- `findTask`
-  - Negative example as no keywords are specified.
-
-Output:
-
-- The details of `Alex Yeoh` and `Bernice Yu` are displayed as they match the search criteria `alex yu`.
-
-![findPerson success with a list](images/output/findPerson_success.png)
+  - Finds all persons whose names contains either `alex` or `yu`.<br><br>
+  ![findPerson success with a list](images/output/findPerson_success.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
 
 Please run <code>findPerson alex yu</code> and update the screenshot!
 
 "%}
-
-- No persons are displayed as no person matches the search criteria `David`.
-
-![findPerson success with zero results](images/output/findPerson_noResults.png)
+  
+- `findPerson David`
+  - No results are displayed as no person has a name that contains `David`.<br><br>
+  ![findPerson success with zero results](images/output/findPerson_noResults.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
 
@@ -349,11 +340,11 @@ Please run <code>findPerson david</code> and update the screenshot!
 
 "%}
 
-Errors:
+<h4>Errors:</h4>
 
-- No keywords are specified.
-
-![findPerson error](images/error/findPerson_error.png)
+- `findPerson`
+  - Negative example as no keywords are specified.<br><br>
+  ![findPerson error](images/error/findPerson_error.png)
 
 {% include admonition.html type="failure" title="TODO: Outdated Screenshot!" body="
 
