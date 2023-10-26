@@ -189,7 +189,7 @@ The `findTask` command accepts a String of space-separated keywords, and returns
 
 The sequence diagram below illustrates how the `findTask` command works.
 
-![FindTaskSequenceDiagram](images/FindTaskSequenceDiagram.png)
+![FindTaskSequenceDiagram](assets/svg/dg/FindTaskSequenceDiagram.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -230,7 +230,7 @@ The `editTask` command accepts an index, title, note, and tags, and edits the ta
 
 The sequence diagram below illustrates how the `editTask` command works for the example input `editTask 1 T/title n/note t/tag`.
 
-![EditTaskSequenceDiagram](assets/svg/EditTaskSequenceDiagram.svg)
+![EditTaskSequenceDiagram](assets/svg/dg/EditTaskSequenceDiagram.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
