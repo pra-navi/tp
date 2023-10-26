@@ -804,7 +804,40 @@ Please remove this message after adding the picture!
 
 <div style="page-break-after: always;"></div>
 
-### 19. Exiting the program: `exit`
+### 19. Finding persons and tasks by tag: `findTag`
+
+You can search for persons and tasks using tags.
+
+<h4>Format:</h4>
+    
+    findTag TAG [MORE_TAGS]...
+
+- Finds the persons and tasks whose tags contain at least one of the specified `TAG`.
+- Specify a tag with the `TAG` parameter. This field is **mandatory**.
+- Specify more tags to expand your search scope with the `MORE_TAGS` parameter. This field is **optional**.
+
+<h4>Examples:</h4>
+
+- `findTag catering orientation`
+    - Shows all persons and tasks with tags containing the words "catering" or "orientation". <br><br>
+      
+    ![findTag_success_1](images/output/findTag_success1.png)
+  
+- `findTag finance`
+    - Shows all persons and tasks with tags containing the word "finance". <br><br>
+      
+    ![findTag_success_2](images/output/findTag_success2.png)
+
+<h4>Errors:</h4>
+
+- `findTag`
+    - An invalid command format. The application expects one or more keywords after `findTag`. <br><br>
+      
+    ![FindTag Example 2](images/error/findTag_error.png)
+
+<div style="page-break-after: always;"></div>
+
+### 20. Exiting the program: `exit`
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
