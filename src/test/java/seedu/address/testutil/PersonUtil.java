@@ -26,6 +26,13 @@ public class PersonUtil {
     }
 
     /**
+     * Returns a shortened addPerson command string for adding the {@code person}.
+     */
+    public static String getShortenedAddPersonCommand(Person person) {
+        return AddPersonCommand.SHORTENED_COMMAND_WORD + " " + getPersonDetails(person);
+    }
+
+    /**
      * Returns the part of command string for the given {@code person}'s details.
      */
     public static String getPersonDetails(Person person) {
