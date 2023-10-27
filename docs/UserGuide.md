@@ -41,10 +41,7 @@ Let CoordiMate take care of the details, empowering you to craft extraordinary e
 Ready to plan your events effortlessly?  
 **CoordiMate is here to support your success!**
 
-This comprehensive user guide contains all the information you need to get started with CoordiMate. 
-
-- If you're a **new user**, head to our [Quick Start](#quick-start) section for a smooth initiation.  
-- For **returning users** needing a quick refresher, our [Command Summary](#command-summary) section will be your handy guide.
+This comprehensive user guide contains all the information you need to get started with CoordiMate.
 
 
 ## Using This Guide
