@@ -11,15 +11,15 @@ import org.junit.jupiter.api.Test;
 public class TaskTest {
 
     private static final Task TEST_TASK = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
-            new Status(Status.TaskStatus.DONE), getTagSet("Test1"));
+            Status.STATUS_DONE, getTagSet("Test1"));
     private static final Task TEST_TASK_SAME = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
-            new Status(Status.TaskStatus.DONE), getTagSet("Test1"));
+            Status.STATUS_DONE, getTagSet("Test1"));
     private static final Task TEST_TASK_TITLE = new Task(new Title("Test Task 1"), new Note("Test Note 2"), getTagSet(
             "Test2"));
     private static final Task TEST_TASK_NOTE = new Task(new Title("Test Task 1"), new Note("Test Note 1"), getTagSet(
             "Test2"));
     private static final Task TEST_TASK_STATUS = new Task(new Title("Test Task 1"), new Note("Test Note 1"),
-            new Status(Status.TaskStatus.DONE), getTagSet("Test2"));
+            Status.STATUS_DONE, getTagSet("Test2"));
     private static final Task TEST_TASK_DIFFERENT = new Task(new Title("Test Task 2"), new Note("Test Note 2"),
             getTagSet("Test2"));
 

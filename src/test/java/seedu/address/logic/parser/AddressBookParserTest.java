@@ -23,6 +23,8 @@ import seedu.address.logic.commands.EditPersonCommand.EditPersonDescriptor;
 import seedu.address.logic.commands.EditTaskCommand;
 import seedu.address.logic.commands.EditTaskCommand.EditTaskDescriptor;
 import seedu.address.logic.commands.ExitCommand;
+import seedu.address.logic.commands.FindDoneCommand;
+import seedu.address.logic.commands.FindNotDoneCommand;
 import seedu.address.logic.commands.FindPersonCommand;
 import seedu.address.logic.commands.FindTagCommand;
 import seedu.address.logic.commands.FindTaskCommand;
@@ -134,6 +136,18 @@ public class AddressBookParserTest {
                         new PersonContainsTagsPredicate(tagKeywords),
                         new TaskContainsTagsPredicate(tagKeywords)),
                 command);
+    }
+
+    @Test
+    public void parseCommand_findDone() throws Exception {
+        assertTrue(parser.parseCommand(FindDoneCommand.COMMAND_WORD) instanceof FindDoneCommand);
+        assertTrue(parser.parseCommand(FindDoneCommand.COMMAND_WORD + " 3") instanceof FindDoneCommand);
+    }
+
+    @Test
+    public void parseCommand_findNotDone() throws Exception {
+        assertTrue(parser.parseCommand(FindNotDoneCommand.COMMAND_WORD) instanceof FindNotDoneCommand);
+        assertTrue(parser.parseCommand(FindNotDoneCommand.COMMAND_WORD + " 3") instanceof FindNotDoneCommand);
     }
 
     @Test
