@@ -20,7 +20,8 @@ public class MarkTaskCommand extends Command {
     public static final String COMMAND_WORD = "markTask";
     public static final String SHORTENED_COMMAND_WORD = "mt";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Mark status as done for the task specified "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
+            + ": Mark status as done for the task specified "
             + "by the index number used in the displayed task list.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1 ";

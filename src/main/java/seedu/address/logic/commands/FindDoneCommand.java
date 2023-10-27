@@ -15,7 +15,8 @@ public class FindDoneCommand extends Command {
     public static final String COMMAND_WORD = "findDone";
     public static final String SHORTENED_COMMAND_WORD = "fd";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all tasks whose status is marked as "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
+            + ": Finds all tasks whose status is marked as "
             + "done and displays them as a list with index numbers.\n"
             + "Example: " + COMMAND_WORD;
 

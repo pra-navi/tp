@@ -19,7 +19,7 @@ public class DeleteTaskCommand extends Command {
     public static final String COMMAND_WORD = "deleteTask";
     public static final String SHORTENED_COMMAND_WORD = "dt";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
             + ": Deletes the task identified by the index number used in the displayed task list.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";

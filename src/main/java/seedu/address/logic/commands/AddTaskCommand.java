@@ -19,7 +19,8 @@ public class AddTaskCommand extends Command {
     public static final String COMMAND_WORD = "addTask";
     public static final String SHORTENED_COMMAND_WORD = "at";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a task to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
+            + ": Adds a task to the address book.\n"
             + "Parameters: "
             + PREFIX_TASK_TITLE + "TITLE "
             + PREFIX_TASK_NOTE + "NOTE "
