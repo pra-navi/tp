@@ -5,80 +5,118 @@ skinparam ArrowFontStyle plain
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
-participant ":FindTaskCommandParser" as FindTaskCommandParser LOGIC_COLOR
-participant "pred:TaskContainsKeywordsPredicate" as TaskContainsKeywordsPredicate LOGIC_COLOR
-participant "cmd:FindTaskCommand" as FindTaskCommand LOGIC_COLOR
+participant ":MarkTaskCommandParser" as MarkTaskCommandParser LOGIC_COLOR
+participant "idx:ParserUtil" as ParserUtil LOGIC_COLOR
+participant "cmd:MarkTaskCommand" as MarkTaskCommand LOGIC_COLOR
 participant "res:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
+participant "editedTask:Task" as Task MODEL_COLOR
+participant ":AddressBook" as AddressBook MODEL_COLOR
+participant ":UniqueTaskList" as UniqueTaskList MODEL_COLOR
 end box
 
-[-> LogicManager : execute("findTask agenda")
+[-> LogicManager : execute("markTask 1")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("findTask agenda")
+LogicManager -> AddressBookParser : parseCommand("markTask 1")
 activate AddressBookParser
 
-create FindTaskCommandParser
-AddressBookParser -> FindTaskCommandParser : FindTaskCommandParser()
-activate FindTaskCommandParser
+create MarkTaskCommandParser
+AddressBookParser -> MarkTaskCommandParser : MarkTaskCommandParser()
+activate MarkTaskCommandParser
 
-FindTaskCommandParser --> AddressBookParser
-deactivate FindTaskCommandParser
+MarkTaskCommandParser --> AddressBookParser
+deactivate MarkTaskCommandParser
 
-AddressBookParser -> FindTaskCommandParser : parse("agenda")
-activate FindTaskCommandParser
+AddressBookParser -> MarkTaskCommandParser : parse("1")
+activate MarkTaskCommandParser
 
-create TaskContainsKeywordsPredicate
-FindTaskCommandParser -> TaskContainsKeywordsPredicate : TaskContainsKeywordsPredicate(["agenda"])
-activate TaskContainsKeywordsPredicate
+create ParserUtil
+MarkTaskCommandParser -> ParserUtil : parseIndex("1")
+activate ParserUtil
 
-TaskContainsKeywordsPredicate --> FindTaskCommandParser : pred
-deactivate TaskContainsKeywordsPredicate
+ParserUtil --> MarkTaskCommandParser : idx
+deactivate ParserUtil
 
-create FindTaskCommand
-FindTaskCommandParser -> FindTaskCommand : FindTaskCommand(pred)
-activate FindTaskCommand
+create MarkTaskCommand
+MarkTaskCommandParser -> MarkTaskCommand : MarkTaskCommand(idx)
+activate MarkTaskCommand
 
-FindTaskCommand --> FindTaskCommandParser : cmd
-deactivate FindTaskCommand
+MarkTaskCommand --> MarkTaskCommandParser : cmd
+deactivate MarkTaskCommand
 
-FindTaskCommandParser --> AddressBookParser : cmd
-deactivate FindTaskCommandParser
+MarkTaskCommandParser --> AddressBookParser : cmd
+deactivate MarkTaskCommandParser
 
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-FindTaskCommandParser -[hidden]-> AddressBookParser
-destroy FindTaskCommandParser
+MarkTaskCommandParser -[hidden]-> AddressBookParser
+destroy MarkTaskCommandParser
 
 AddressBookParser --> LogicManager : cmd
 deactivate AddressBookParser
 
-LogicManager -> FindTaskCommand : execute()
-activate FindTaskCommand
+LogicManager -> MarkTaskCommand : execute()
+activate MarkTaskCommand
 
-FindTaskCommand -> Model : updateFilteredTaskList(pred)
+MarkTaskCommand -> Model : getFilteredTaskList()
 activate Model
 
-Model --> FindTaskCommand
+Model --> MarkTaskCommand : lastShownList
+deactivate Model
+
+'Get task to mark
+MarkTaskCommand -> MarkTaskCommand : lastShownList.get(idx)
+activate MarkTaskCommand
+MarkTaskCommand --> MarkTaskCommand : taskToMark
+deactivate MarkTaskCommand
+
+MarkTaskCommand -> Model : markTask(taskToMark)
+activate Model
+
+Model -> Task: markDone()
+activate Task
+Task --> Model: editedTask
+deactivate Task
+
+Model -> Model: setTask(taskToMark, editedTask)
+activate Model
+
+Model -> AddressBook : setTask(taskToMark, editedTask)
+activate AddressBook
+
+AddressBook -> UniqueTaskList : setTask(taskToMark, editedTask)
+activate UniqueTaskList
+
+UniqueTaskList --> AddressBook
+deactivate UniqueTaskList
+
+AddressBook --> Model
+deactivate AddressBook
+
+Model --> Model :
+deactivate Model
+
+Model --> MarkTaskCommand : editedTask
 deactivate Model
 
 create CommandResult
-FindTaskCommand -> CommandResult : CommandResult(MESSAGE_TASKS_LISTED_OVERVIEW)
+MarkTaskCommand -> CommandResult : CommandResult(MESSAGE_MARK_TASK_SUCCESS)
 activate CommandResult
 
-CommandResult --> FindTaskCommand : res
+CommandResult --> MarkTaskCommand : res
 deactivate CommandResult
 
-FindTaskCommand --> LogicManager : res
-deactivate FindTaskCommand
+MarkTaskCommand --> LogicManager : res
+deactivate MarkTaskCommand
 
 [<--LogicManager : res
 deactivate LogicManager
 
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-TaskContainsKeywordsPredicate -[hidden]-> LogicManager
-destroy TaskContainsKeywordsPredicate
-destroy FindTaskCommand
+ParserUtil -[hidden]-> LogicManager
+destroy ParserUtil
+destroy MarkTaskCommand
 @enduml
