@@ -302,25 +302,26 @@ PlantUML, the lifeline reaches the end of diagram.
 
 #### Design considerations
 
+**Aspect: How to create status of a Task:**
+
+* **Alternative 1:** Using String input to create a status.
+    * Pros: Simple to implement. Provides flexibility, allowing for dynamic input without changing code.
+    * Cons: Can lead to potential issues related to typos or inconsistent naming conventions. 
+  Any string can be passed as a status, potentially resulting in invalid or unexpected states.<br/><br/>
+
+* **Alternative 2 (current choice):** Using an enum input to create a status.
+    * Pros: Provides a type-safe way to represent task statuses, ensuring that only valid status values can be used. If new status types are introduced, developers can easily update the TaskStatus enum, ensuring all usages are consistent
+    * Cons: More complex to implement. Require modifying the enum itself to add new status types, potentially leading to more extensive code changes <br/><br/>
+
 **Aspect: How to update the task status of a Task:**
 
 * **Alternative 1:** Directly change the status attribute of each task every time it is marked.
-  * Pros: More memory-efficient
-  * Cons: Not immutable. Can lead to challenges in testing and tracking task state changes over time <br/><br/>
+    * Pros: More memory-efficient
+    * Cons: Not immutable. Can lead to challenges in testing and tracking task state changes over time <br/><br/>
 
 * **Alternative 2 (current choice):** Create a new task with same details and a done status every time it is marked.
-  * Pros: Ensures immutability and preserves the history of task states, allowing for easy tracking of changes and maintaining a clear historical record of task statuses.
-  * Cons: Incur a slight performance overhead, especially if the tasks contain a large amount of data, impacting the overall execution speed of the program. <br/><br/>
-
-**Aspect: How to parse task status when creating a Task:**
-
-* **Alternative 1:** Using String input to create a status.
-    * Pros: Simple to implement. Provides flexibility of status labels without changing code.
-    * Cons: Slower and less efficient. Can lead to potential issues related to typos or inconsistent naming conventions. <br/><br/>
-
-* **Alternative 2 (current choice):** Using an enum input to create a status.
-    * Pros: Provides a type-safe way to represent task statuses, ensuring that only valid status values can be used.
-    * Cons: Less flexible. If there's a need to introduce new status values dynamically without modifying the code, enums might not be the ideal choice. <br/><br/>
+    * Pros: Ensures immutability and preserves the history of task states, allowing for easy tracking of changes and maintaining a clear historical record of task statuses.
+    * Cons: Incur a slight performance overhead, especially if the tasks contain a large amount of data, impacting the overall execution speed of the program. <br/><br/>
 
 <div style="page-break-after: always;"></div>
 
