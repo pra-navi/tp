@@ -26,6 +26,7 @@ import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindDoneCommand;
 import seedu.address.logic.commands.FindNotDoneCommand;
 import seedu.address.logic.commands.FindPersonCommand;
+import seedu.address.logic.commands.FindTagCommand;
 import seedu.address.logic.commands.FindTaskCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListPersonCommand;
@@ -36,8 +37,10 @@ import seedu.address.logic.commands.UnmarkTaskCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.PersonContainsTagsPredicate;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskContainsKeywordsPredicate;
+import seedu.address.model.task.TaskContainsTagsPredicate;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 import seedu.address.testutil.EditTaskDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
@@ -123,6 +126,17 @@ public class AddressBookParserTest {
         FindTaskCommand command = (FindTaskCommand) parser.parseCommand(
                 FindTaskCommand.COMMAND_WORD + " " + String.join(" ", keywords));
         assertEquals(new FindTaskCommand(new TaskContainsKeywordsPredicate(keywords)), command);
+    }
+
+    @Test
+    public void parseCommand_findTag() throws Exception {
+        List<String> tagKeywords = Arrays.asList("tag1", "tag2", "tag3");
+        FindTagCommand command = (FindTagCommand) parser.parseCommand(
+                FindTagCommand.COMMAND_WORD + " " + String.join(" ", tagKeywords));
+        assertEquals(new FindTagCommand(
+                        new PersonContainsTagsPredicate(tagKeywords),
+                        new TaskContainsTagsPredicate(tagKeywords)),
+                command);
     }
 
     @Test
