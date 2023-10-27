@@ -17,11 +17,23 @@ public class PersonContainsTagsPredicate implements Predicate<Person> {
         this.keywords = keywords;
     }
 
+    // Returns true if person's tags contain any of the keywords
     @Override
     public boolean test(Person person) {
+
+        // Convert each tag of the person to its string representation and then concatenate them using spaces.
+        // The square brackets encapsulate each tag to ensure distinctiveness when checking against keywords.
+        // For example, tags such as [Engineer, Developer] will translate to the string "[Engineer] [Developer]".
+        String personTags = person.getTags()
+                .stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(" "));
+
+        // Match against the concatenated string of tags.
+        // The square brackets ensure that keywords match against full tags rather than partial matches.
+        // This way, a keyword like "[Eng]" won't match with the tag "[Engineer]".
         return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(person.getTags().stream().map(Object::toString)
-                        .collect(Collectors.joining(" ")), "[" + keyword + "]"));
+                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(personTags, keyword));
     }
 
     @Override

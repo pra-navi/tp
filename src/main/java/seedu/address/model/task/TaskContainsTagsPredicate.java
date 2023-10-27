@@ -17,12 +17,23 @@ public class TaskContainsTagsPredicate implements Predicate<Task> {
         this.keywords = keywords;
     }
 
+    // Returns true if task's tags contain any of the keywords
     @Override
     public boolean test(Task task) {
+
+        // Convert each tag of the task to its string representation and then concatenate them using spaces.
+        // The square brackets encapsulate each tag to ensure distinctiveness when checking against keywords.
+        // For example, tags such as [Homework, Urgent] will translate to the string "[Homework] [Urgent]".
+        String taskTags = task.getTags()
+                .stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(" "));
+
+        // Match against the concatenated string of tags.
+        // The square brackets ensure that keywords match against full tags rather than partial matches.
+        // This way, a keyword like "[Home]" won't match with the tag "[Homework]".
         return keywords.stream()
-                .anyMatch(keyword ->
-                        StringUtil.containsWordIgnoreCase(task.getTags().stream().map(Object::toString)
-                                .collect(Collectors.joining(" ")), "[" + keyword + "]"));
+                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(taskTags, "[" + keyword + "]"));
     }
 
     @Override
