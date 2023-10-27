@@ -26,17 +26,21 @@ import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindDoneCommand;
 import seedu.address.logic.commands.FindNotDoneCommand;
 import seedu.address.logic.commands.FindPersonCommand;
+import seedu.address.logic.commands.FindTagCommand;
 import seedu.address.logic.commands.FindTaskCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListPersonCommand;
+import seedu.address.logic.commands.ListTagCommand;
 import seedu.address.logic.commands.ListTaskCommand;
 import seedu.address.logic.commands.MarkTaskCommand;
 import seedu.address.logic.commands.UnmarkTaskCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.PersonContainsTagsPredicate;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskContainsKeywordsPredicate;
+import seedu.address.model.task.TaskContainsTagsPredicate;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 import seedu.address.testutil.EditTaskDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
@@ -205,6 +209,16 @@ public class AddressBookParserTest {
         assertEquals(new FindTaskCommand(new TaskContainsKeywordsPredicate(keywords)), command);
     }
 
+    public void parseCommand_findTag() throws Exception {
+        List<String> tagKeywords = Arrays.asList("tag1", "tag2", "tag3");
+        FindTagCommand command = (FindTagCommand) parser.parseCommand(
+                FindTagCommand.COMMAND_WORD + " " + String.join(" ", tagKeywords));
+        assertEquals(new FindTagCommand(
+                new PersonContainsTagsPredicate(tagKeywords),
+                new TaskContainsTagsPredicate(tagKeywords)),
+                command);
+    }
+
     @Test
     public void parseCommand_findDone() throws Exception {
         assertTrue(parser.parseCommand(FindDoneCommand.COMMAND_WORD) instanceof FindDoneCommand);
@@ -294,17 +308,24 @@ public class AddressBookParserTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void parseCommand_shortened_deleteAllTask() throws Exception {
         assertTrue(parser.parseCommand(DeleteAllTaskCommand.SHORTENED_COMMAND_WORD) instanceof DeleteAllTaskCommand);
         assertTrue(
                 parser.parseCommand(
                         DeleteAllTaskCommand.SHORTENED_COMMAND_WORD + " 3") instanceof DeleteAllTaskCommand);
+=======
+
+    public void parseCommand_listTag() throws Exception {
+        assertTrue(parser.parseCommand(ListTagCommand.COMMAND_WORD) instanceof ListTagCommand);
+        assertTrue(parser.parseCommand(ListTagCommand.COMMAND_WORD + " 3") instanceof ListTagCommand);
+>>>>>>> master
     }
 
     @Test
     public void parseCommand_unrecognisedInput_throwsParseException() {
-        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE), ()
-            -> parser.parseCommand(""));
+        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE),
+                () -> parser.parseCommand(""));
     }
 
     @Test
