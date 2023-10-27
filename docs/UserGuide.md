@@ -50,7 +50,7 @@ This document will guide you on the various features of CoordiMate and how to us
 
 If you are a new user, we recommend that you read this guide starting from the [Quick Start](#quick-start) section.
 
-If you are an advanced user, you can use the [Table of Contents](#table-of-contents) below to quickly locate the relevant section. Alternatively, you can jump to the [Command Summary](#command-summary) section for an overview of the command syntax.
+If you are an experienced user, you can use the [Table of Contents](#table-of-contents) below to quickly locate the relevant section. Alternatively, you can jump to the [Command Summary](#command-summary) section for an overview of the command syntax.
 
 Here are some annotations used in this guide:
 
@@ -124,7 +124,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
    * `deletePerson 3` : Deletes the 3rd contact shown in the current contact list.
 
-   * `findTask Get` : Finds all tasks with the word `caterer` in their title or note.
+   * `findTask caterer` : Finds all tasks with the word `caterer` in their title or note.
 
    * `listTask` : Lists all tasks.
 
