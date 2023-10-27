@@ -145,16 +145,25 @@ Throughout this guide, you will see different text styles that are used to highl
 
 ## Features
 
-1. Create, Read, Update, Delete (CRUD) Person
-2. Find Person
-3. CRUD Task
-4. Find Task
-5. Automatic saving and loading of data from save file
-    1. CoordiMate automatically saves its data as a JSON file located at `[JAR file location]/data/CoordiMate.json`.
-    2. There is no need to save manually.
-    3. On startup, CoordiMate will automatically load existing data (if any) from the JSON file.
-6. Editable file format
-   1. Advanced users are welcome to update data directly by editing that data file.
+1. **Easy Management of People**:
+    - Seamlessly create, update, and delete person records. CoordiMate ensures your contact list is always up-to-date, putting people at the heart of your event planning.
+2. **Quick Person Search**:
+    - Find specific individuals effortlessly. No more digging through piles of data. With CoordiMate, finding the right person is just a search away, making your interactions more personal and meaningful.
+3. **Effortless Task Control**:
+    - Manage tasks without the fuss. CoordiMate's intuitive interface lets you handle tasks with ease. From creation to completion, stay in control of every event detail.
+4. **Simplified Task Tracking**:
+    - Easily locate tasks based on your criteria. CoordiMate streamlines your search, ensuring you stay organized and focused on tasks that matter most to you and your attendees.
+5. **Hassle-Free Data Handling**:
+    - Automatic Data Management: 
+      - CoordiMate takes care of saving and loading data for you. No need to worry about manual saves; your information is secure and ready whenever you are.
+      - Saved data safely as a JSON file located at `[JAR file location]/data/CoordiMate.json`.
+    - Startup Ready: 
+      - Instantly pick up where you left off. CoordiMate loads your existing data upon startup, eliminating downtime and ensuring you're always in the loop.
+6. **Empowering User Control**:
+    - Editable File Format: 
+      - For advanced users, CoordiMate offers complete data control. Tailor your event data directly by editing the data file, putting you in charge of your event management.
+
+With these user-centric features, CoordiMate empowers you to focus on what truly matters: creating exceptional events and nurturing valuable connections. Experience event planning made personal, efficient, and stress-free with CoordiMate!
 
 {% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
 
