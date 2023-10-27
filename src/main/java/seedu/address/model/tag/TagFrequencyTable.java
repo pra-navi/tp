@@ -16,9 +16,9 @@ import seedu.address.model.task.Task;
  */
 public class TagFrequencyTable {
 
-    private final Map<Tag, Integer> personTagFrequency;
-    private final Map<Tag, Integer> taskTagFrequency;
-    private final Map<Tag, Integer> combinedTagFrequency;
+    private final Map<Tag, Integer> personTagFrequencyTable;
+    private final Map<Tag, Integer> taskTagFrequencyTable;
+    private final Map<Tag, Integer> combinedTagFrequencyTable;
 
     /**
      * Constructs a new {@code TagFrequencyTable} from a list of {@code Person}s and {@code Task}s.
@@ -27,9 +27,9 @@ public class TagFrequencyTable {
      * @param taskList List of {@code Task}s.
      */
     public TagFrequencyTable(List<Person> personList, List<Task> taskList) {
-        this.personTagFrequency = new HashMap<>();
-        this.taskTagFrequency = new HashMap<>();
-        this.combinedTagFrequency = new HashMap<>();
+        this.personTagFrequencyTable = new HashMap<>();
+        this.taskTagFrequencyTable = new HashMap<>();
+        this.combinedTagFrequencyTable = new HashMap<>();
 
         personList.forEach(this::processPerson);
         taskList.forEach(this::processTask);
@@ -42,8 +42,8 @@ public class TagFrequencyTable {
      */
     private void processPerson(Person p) {
         p.getTags().forEach(tag -> {
-            personTagFrequency.put(tag, personTagFrequency.getOrDefault(tag, 0) + 1);
-            combinedTagFrequency.put(tag, combinedTagFrequency.getOrDefault(tag, 0) + 1);
+            personTagFrequencyTable.put(tag, personTagFrequencyTable.getOrDefault(tag, 0) + 1);
+            combinedTagFrequencyTable.put(tag, combinedTagFrequencyTable.getOrDefault(tag, 0) + 1);
         });
     }
 
@@ -54,21 +54,21 @@ public class TagFrequencyTable {
      */
     private void processTask(Task t) {
         t.getTags().forEach(tag -> {
-            taskTagFrequency.put(tag, taskTagFrequency.getOrDefault(tag, 0) + 1);
-            combinedTagFrequency.put(tag, combinedTagFrequency.getOrDefault(tag, 0) + 1);
+            taskTagFrequencyTable.put(tag, taskTagFrequencyTable.getOrDefault(tag, 0) + 1);
+            combinedTagFrequencyTable.put(tag, combinedTagFrequencyTable.getOrDefault(tag, 0) + 1);
         });
     }
 
-    public Map<Tag, Integer> getPersonTagFrequency() {
-        return new HashMap<>(personTagFrequency);
+    public Map<Tag, Integer> getPersonTagFrequencyTable() {
+        return new HashMap<>(personTagFrequencyTable);
     }
 
-    public Map<Tag, Integer> getTaskTagFrequency() {
-        return new HashMap<>(taskTagFrequency);
+    public Map<Tag, Integer> getTaskTagFrequencyTable() {
+        return new HashMap<>(taskTagFrequencyTable);
     }
 
-    public Map<Tag, Integer> getCombinedTagFrequency() {
-        return new HashMap<>(combinedTagFrequency);
+    public Map<Tag, Integer> getCombinedTagFrequencyTable() {
+        return new HashMap<>(combinedTagFrequencyTable);
     }
 
     /**
@@ -88,14 +88,14 @@ public class TagFrequencyTable {
                         ? e1.getKey().compareTo(e2.getKey())
                         : e2.getValue().compareTo(e1.getValue());
 
-        combinedTagFrequency.entrySet()
+        combinedTagFrequencyTable.entrySet()
                 .stream()
                 .sorted(comparator)
                 .map(entry -> String.format("%s: %d items (%d Persons, %d Tasks)",
                         entry.getKey(),
                         entry.getValue(),
-                        personTagFrequency.getOrDefault(entry.getKey(), 0),
-                        taskTagFrequency.getOrDefault(entry.getKey(), 0)))
+                        personTagFrequencyTable.getOrDefault(entry.getKey(), 0),
+                        taskTagFrequencyTable.getOrDefault(entry.getKey(), 0)))
                 .forEach(formattedTagList::add);
 
         return String.join("\n", formattedTagList);
@@ -107,15 +107,15 @@ public class TagFrequencyTable {
      * @return True if the tag frequency table is empty.
      */
     public boolean isEmpty() {
-        return combinedTagFrequency.isEmpty();
+        return combinedTagFrequencyTable.isEmpty();
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("personTagFrequency", personTagFrequency)
-                .add("taskTagFrequency", taskTagFrequency)
-                .add("combinedTagFrequency", combinedTagFrequency)
+                .add("personTagFrequencyTable", personTagFrequencyTable)
+                .add("taskTagFrequencyTable", taskTagFrequencyTable)
+                .add("combinedTagFrequencyTable", combinedTagFrequencyTable)
                 .toString();
     }
 
@@ -131,13 +131,13 @@ public class TagFrequencyTable {
         }
 
         TagFrequencyTable otherTable = (TagFrequencyTable) other;
-        return personTagFrequency.equals(otherTable.personTagFrequency)
-               && taskTagFrequency.equals(otherTable.taskTagFrequency)
-               && combinedTagFrequency.equals(otherTable.combinedTagFrequency);
+        return personTagFrequencyTable.equals(otherTable.personTagFrequencyTable)
+               && taskTagFrequencyTable.equals(otherTable.taskTagFrequencyTable)
+               && combinedTagFrequencyTable.equals(otherTable.combinedTagFrequencyTable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(personTagFrequency, taskTagFrequency, combinedTagFrequency);
+        return Objects.hash(personTagFrequencyTable, taskTagFrequencyTable, combinedTagFrequencyTable);
     }
 }

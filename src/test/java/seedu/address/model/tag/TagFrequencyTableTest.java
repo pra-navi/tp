@@ -41,24 +41,24 @@ class TagFrequencyTableTest {
     }
 
     @Test
-    public void getPersonTagFrequency_addEntry_notModified() {
-        Map<Tag, Integer> modifiedMap = tagFrequencyTable.getPersonTagFrequency();
+    public void getPersonTagFrequencyTable_addEntry_notModified() {
+        Map<Tag, Integer> modifiedMap = tagFrequencyTable.getPersonTagFrequencyTable();
         modifiedMap.put(new Tag("modifiedEntry"), 1);
-        assertNotEquals(modifiedMap, tagFrequencyTable.getPersonTagFrequency());
+        assertNotEquals(modifiedMap, tagFrequencyTable.getPersonTagFrequencyTable());
     }
 
     @Test
-    public void getTaskTagFrequency_addEntry_notModified() {
-        Map<Tag, Integer> modifiedMap = tagFrequencyTable.getTaskTagFrequency();
+    public void getTaskTagFrequencyTable_addEntry_notModified() {
+        Map<Tag, Integer> modifiedMap = tagFrequencyTable.getTaskTagFrequencyTable();
         modifiedMap.put(new Tag("modifiedEntry"), 1);
-        assertNotEquals(modifiedMap, tagFrequencyTable.getTaskTagFrequency());
+        assertNotEquals(modifiedMap, tagFrequencyTable.getTaskTagFrequencyTable());
     }
 
     @Test
-    public void getCombinedTagFrequency_addEntry_notModified() {
-        Map<Tag, Integer> modifiedMap = tagFrequencyTable.getCombinedTagFrequency();
+    public void getCombinedTagFrequencyTable_addEntry_notModified() {
+        Map<Tag, Integer> modifiedMap = tagFrequencyTable.getCombinedTagFrequencyTable();
         modifiedMap.put(new Tag("modifiedEntry"), 1);
-        assertNotEquals(modifiedMap, tagFrequencyTable.getCombinedTagFrequency());
+        assertNotEquals(modifiedMap, tagFrequencyTable.getCombinedTagFrequencyTable());
     }
 
     @Test
@@ -89,9 +89,9 @@ class TagFrequencyTableTest {
 
         // check format
         String expected = TagFrequencyTable.class.getCanonicalName()
-                          + "{personTagFrequency=" + tagFrequencyTable.getPersonTagFrequency()
-                          + ", taskTagFrequency=" + tagFrequencyTable.getTaskTagFrequency()
-                          + ", combinedTagFrequency=" + tagFrequencyTable.getCombinedTagFrequency()
+                          + "{personTagFrequencyTable=" + tagFrequencyTable.getPersonTagFrequencyTable()
+                          + ", taskTagFrequencyTable=" + tagFrequencyTable.getTaskTagFrequencyTable()
+                          + ", combinedTagFrequencyTable=" + tagFrequencyTable.getCombinedTagFrequencyTable()
                           + "}";
         assertEquals(expected, tagFrequencyTable.toString());
     }
