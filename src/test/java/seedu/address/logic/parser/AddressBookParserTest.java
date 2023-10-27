@@ -30,6 +30,7 @@ import seedu.address.logic.commands.FindTagCommand;
 import seedu.address.logic.commands.FindTaskCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListPersonCommand;
+import seedu.address.logic.commands.ListTagCommand;
 import seedu.address.logic.commands.ListTaskCommand;
 import seedu.address.logic.commands.MarkTaskCommand;
 import seedu.address.logic.commands.UnmarkTaskCommand;
@@ -183,6 +184,12 @@ public class AddressBookParserTest {
     public void parseCommand_deleteAllTask() throws Exception {
         assertTrue(parser.parseCommand(DeleteAllTaskCommand.COMMAND_WORD) instanceof DeleteAllTaskCommand);
         assertTrue(parser.parseCommand(DeleteAllTaskCommand.COMMAND_WORD + " 3") instanceof DeleteAllTaskCommand);
+    }
+
+    @Test
+    public void parseCommand_listTag() throws Exception {
+        assertTrue(parser.parseCommand(ListTagCommand.COMMAND_WORD) instanceof ListTagCommand);
+        assertTrue(parser.parseCommand(ListTagCommand.COMMAND_WORD + " 3") instanceof ListTagCommand);
     }
 
     @Test
