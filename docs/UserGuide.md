@@ -3,46 +3,23 @@ layout: page
 title: User Guide
 ---
 
-Do you have trouble managing contacts?
+Are you a School of Computing (SoC) Computing Club event planner juggling numerous tasks and contacts for your upcoming events?
 
-Don't worry, CoordiMate is here to help!
-
-Are you a SOC Computing Club event planner juggling numerous tasks and contacts for your upcoming events? 
 Managing everything efficiently just got easier with CoordiMate!
 
-CoordiMate is your go-to **desktop app designed specifically for SOC Computing Club event planners**. 
-It helps you **manage your contacts and tasks** for your events, so that you can focus on the event itself.
+CoordiMate is your go-to **desktop app** designed specifically for **SoC Computing Club event planners** to help you **manage your contacts and tasks** for your events, so that you can focus on the event itself.
 
-Whether you're organizing a workshop, seminar, or a grand social event, CoordiMate is tailored 
-to meet the unique needs of SOC Computing Club event planners. 
-And here's the best part – while it's perfect for SOC Computing Club, 
-**event planners of all kinds** can benefit from CoordiMate's powerful features too!
+And here's the best part – while it's perfect for members of SoC Computing Club, **event planners of all kinds** can benefit from CoordiMate's powerful features too!
 
-Don't let the stress of managing contacts and tasks weigh you down. Let CoordiMate handle the details, 
-so you can focus on creating extraordinary events.
+<h4>Why choose CoordiMate?</h4>
 
-Why choose CoordiMate? Here's why:
+1. **User-Friendly Command Line Interface (CLI)**: CoordiMate is optimized for use via a CLI, combining all the benefits of a Graphical User Interface (GUI) with the efficiency of a CLI.
 
-1. **Tailored Precision**: Designed with SOC Computing Club event planners in mind, 
-CoordiMate ensures every feature meets your specific requirements.
+2. **Speedy Navigation**: If you're a fast typist, CoordiMate will help you complete your contact and tasks management faster than traditional GUI apps, maximising your productivity.
 
-2. **Efficient Management**: Seamlessly handle your contacts and tasks, 
-allowing you to focus on the creative aspects of your event.
+Don't let the stress of contact and task management hinder your event planning creativity.
 
-3. **User-Friendly CLI**: CoordiMate is optimized for use via a Command Line Interface (CLI), 
-offering the speed of typing with all the benefits of a Graphical User Interface (GUI).
-
-4. **Speedy Performance**: If you're a fast typist, CoordiMate will help you complete your contact and 
-tasks management faster than traditional GUI apps, ensuring your productivity soars.
-
-Don't let the stress of contact and task management hinder your event planning creativity. 
-Let CoordiMate take care of the details, empowering you to craft extraordinary events with confidence.
-
-Ready to plan your events effortlessly?  
-**CoordiMate is here to support your success!**
-
-This comprehensive user guide contains all the information you need to get started with CoordiMate.
-
+Let **CoordiMate** take care of the details, while you craft extraordinary events with confidence.
 
 ## Using This Guide
 
@@ -104,7 +81,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java `11` or above installed in your computer.
 
 2. Download the latest `CoordiMate.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/releases).
 
@@ -112,10 +89,11 @@ Throughout this guide, you will see different text styles that are used to highl
 
 4. Open a command terminal, `cd` into the folder you put `CoordiMate.jar` in, and use the `java -jar CoordiMate.jar` command to start CoordiMate.<br>
 
-   A GUI similar to the below picture should appear in a few seconds. Note how the app contains some sample data.<br><br>
+   A GUI similar to the below screenshot should appear in a few seconds. Note how the app contains some sample data.<br><br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br><br>
+
    Some example commands you can try:
 
    * `listPerson` : Lists all persons.
