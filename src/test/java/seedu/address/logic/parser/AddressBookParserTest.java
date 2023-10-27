@@ -205,15 +205,28 @@ public class AddressBookParserTest {
         assertEquals(new FindTaskCommand(new TaskContainsKeywordsPredicate(keywords)), command);
     }
 
+    @Test
     public void parseCommand_findDone() throws Exception {
         assertTrue(parser.parseCommand(FindDoneCommand.COMMAND_WORD) instanceof FindDoneCommand);
         assertTrue(parser.parseCommand(FindDoneCommand.COMMAND_WORD + " 3") instanceof FindDoneCommand);
     }
 
     @Test
+    public void parseCommand_shortened_findDone() throws Exception {
+        assertTrue(parser.parseCommand(FindDoneCommand.SHORTENED_COMMAND_WORD) instanceof FindDoneCommand);
+        assertTrue(parser.parseCommand(FindDoneCommand.SHORTENED_COMMAND_WORD + " 3") instanceof FindDoneCommand);
+    }
+
+    @Test
     public void parseCommand_findNotDone() throws Exception {
         assertTrue(parser.parseCommand(FindNotDoneCommand.COMMAND_WORD) instanceof FindNotDoneCommand);
         assertTrue(parser.parseCommand(FindNotDoneCommand.COMMAND_WORD + " 3") instanceof FindNotDoneCommand);
+    }
+
+    @Test
+    public void parseCommand_shortened_findNotDone() throws Exception {
+        assertTrue(parser.parseCommand(FindNotDoneCommand.SHORTENED_COMMAND_WORD) instanceof FindNotDoneCommand);
+        assertTrue(parser.parseCommand(FindNotDoneCommand.SHORTENED_COMMAND_WORD + " 3") instanceof FindNotDoneCommand);
     }
 
     @Test

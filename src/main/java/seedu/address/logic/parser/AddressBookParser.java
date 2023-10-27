@@ -129,9 +129,13 @@ public class AddressBookParser {
             return new FindTaskCommandParser().parse(arguments);
 
         case FindDoneCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindDoneCommand.SHORTENED_COMMAND_WORD:
             return new FindDoneCommand();
 
         case FindNotDoneCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindNotDoneCommand.SHORTENED_COMMAND_WORD:
             return new FindNotDoneCommand();
 
         case DeleteAllTaskCommand.COMMAND_WORD:
