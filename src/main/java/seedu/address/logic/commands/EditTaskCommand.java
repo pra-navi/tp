@@ -21,6 +21,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Note;
+import seedu.address.model.task.Status;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
 
@@ -92,9 +93,10 @@ public class EditTaskCommand extends Command {
 
         Title updatedTitle = editTaskDescriptor.getTitle().orElse(taskToEdit.getTitle());
         Note updatedNote = editTaskDescriptor.getNote().orElse(taskToEdit.getNote());
+        Status taskStatus = taskToEdit.getStatus();
         Set<Tag> updatedTags = editTaskDescriptor.getTags().orElse(taskToEdit.getTags());
 
-        return new Task(updatedTitle, updatedNote, updatedTags);
+        return new Task(updatedTitle, updatedNote, taskStatus, updatedTags);
     }
 
     @Override

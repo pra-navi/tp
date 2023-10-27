@@ -6,7 +6,6 @@ import java.util.Set;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Note;
 import seedu.address.model.task.Status;
-import seedu.address.model.task.Status.TaskStatus;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.Title;
 import seedu.address.model.util.SampleDataUtil;
@@ -30,7 +29,7 @@ public class TaskBuilder {
     public TaskBuilder() {
         title = new Title(DEFAULT_TITLE);
         note = new Note(DEFAULT_NOTE);
-        status = new Status(TaskStatus.NOT_DONE);
+        status = Status.STATUS_NOT_DONE;
         tags = new HashSet<>();
     }
 
