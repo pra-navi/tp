@@ -23,7 +23,7 @@ public class PersonContainsTagsPredicate implements Predicate<Person> {
 
         // Convert each tag of the person to its string representation and then concatenate them using spaces.
         // The square brackets encapsulate each tag to ensure distinctiveness when checking against keywords.
-        // For example, tags such as [Engineer, Developer] will translate to the string "[Engineer] [Developer]".
+        // For example, tags such as [[Engineer], [Developer]] will translate to the string "[Engineer] [Developer]".
         String personTags = person.getTags()
                 .stream()
                 .map(Object::toString)
@@ -33,7 +33,7 @@ public class PersonContainsTagsPredicate implements Predicate<Person> {
         // The square brackets ensure that keywords match against full tags rather than partial matches.
         // This way, a keyword like "[Eng]" won't match with the tag "[Engineer]".
         return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(personTags, keyword));
+                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(personTags, "[" + keyword + "]"));
     }
 
     @Override

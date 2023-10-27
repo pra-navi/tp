@@ -23,7 +23,7 @@ public class TaskContainsTagsPredicate implements Predicate<Task> {
 
         // Convert each tag of the task to its string representation and then concatenate them using spaces.
         // The square brackets encapsulate each tag to ensure distinctiveness when checking against keywords.
-        // For example, tags such as [Homework, Urgent] will translate to the string "[Homework] [Urgent]".
+        // For example, tags such as [[Homework], [Urgent]] will translate to the string "[Homework] [Urgent]".
         String taskTags = task.getTags()
                 .stream()
                 .map(Object::toString)
