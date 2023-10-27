@@ -17,9 +17,12 @@ import seedu.address.model.person.Person;
  * Adds a person to the address book.
  */
 public class AddPersonCommand extends Command {
-    public static final String COMMAND_WORD = "addPerson";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to the address book. "
+    public static final String COMMAND_WORD = "addPerson";
+    public static final String SHORTENED_COMMAND_WORD = "ap";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
+            + ": Adds a person to the address book.\n"
             + "Parameters: "
             + PREFIX_NAME + "NAME "
             + PREFIX_PHONE + "PHONE "
@@ -81,6 +84,3 @@ public class AddPersonCommand extends Command {
                 .toString();
     }
 }
-
-
-

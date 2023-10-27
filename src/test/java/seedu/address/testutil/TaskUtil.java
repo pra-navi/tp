@@ -24,6 +24,13 @@ public class TaskUtil {
     }
 
     /**
+     * Returns a shortened addTask command string for adding the {@code task}.
+     */
+    public static String getShortenedAddTaskCommand(Task task) {
+        return AddTaskCommand.SHORTENED_COMMAND_WORD + " " + getTaskDetails(task);
+    }
+
+    /**
      * Returns the part of command string for the given {@code task}'s details.
      */
     public static String getTaskDetails(Task task) {

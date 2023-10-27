@@ -9,10 +9,11 @@ import seedu.address.model.Model;
  * Lists all tasks in CoordiMate to the user.
  */
 public class ListTaskCommand extends Command {
+
     public static final String COMMAND_WORD = "listTask";
+    public static final String SHORTENED_COMMAND_WORD = "lt";
 
     public static final String MESSAGE_SUCCESS = "Listed all tasks";
-
 
     @Override
     public CommandResult execute(Model model) {

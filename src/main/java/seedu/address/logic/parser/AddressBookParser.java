@@ -66,63 +66,103 @@ public class AddressBookParser {
         switch (commandWord) {
 
         case AddPersonCommand.COMMAND_WORD:
+            // Fallthrough
+        case AddPersonCommand.SHORTENED_COMMAND_WORD:
             return new AddPersonCommandParser().parse(arguments);
 
         case EditPersonCommand.COMMAND_WORD:
+            // Fallthrough
+        case EditPersonCommand.SHORTENED_COMMAND_WORD:
             return new EditPersonCommandParser().parse(arguments);
 
         case DeletePersonCommand.COMMAND_WORD:
+            // Fallthrough
+        case DeletePersonCommand.SHORTENED_COMMAND_WORD:
             return new DeletePersonCommandParser().parse(arguments);
 
         case DeleteAllPersonCommand.COMMAND_WORD:
+            // Fallthrough
+        case DeleteAllPersonCommand.SHORTENED_COMMAND_WORD:
             return new DeleteAllPersonCommand();
 
         case FindPersonCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindPersonCommand.SHORTENED_COMMAND_WORD:
             return new FindPersonCommandParser().parse(arguments);
 
         case ListPersonCommand.COMMAND_WORD:
+            // Fallthrough
+        case ListPersonCommand.SHORTENED_COMMAND_WORD:
             return new ListPersonCommand();
 
         case ListTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case ListTaskCommand.SHORTENED_COMMAND_WORD:
             return new ListTaskCommand();
 
         case DeleteTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case DeleteTaskCommand.SHORTENED_COMMAND_WORD:
             return new DeleteTaskCommandParser().parse(arguments);
 
         case MarkTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case MarkTaskCommand.SHORTENED_COMMAND_WORD:
             return new MarkTaskCommandParser().parse(arguments);
 
         case UnmarkTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case UnmarkTaskCommand.SHORTENED_COMMAND_WORD:
             return new UnmarkTaskCommandParser().parse(arguments);
 
         case AddTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case AddTaskCommand.SHORTENED_COMMAND_WORD:
             return new AddTaskCommandParser().parse(arguments);
 
         case EditTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case EditTaskCommand.SHORTENED_COMMAND_WORD:
             return new EditTaskCommandParser().parse(arguments);
 
         case FindTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindTaskCommand.SHORTENED_COMMAND_WORD:
             return new FindTaskCommandParser().parse(arguments);
 
         case FindDoneCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindDoneCommand.SHORTENED_COMMAND_WORD:
             return new FindDoneCommand();
 
         case FindNotDoneCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindNotDoneCommand.SHORTENED_COMMAND_WORD:
             return new FindNotDoneCommand();
 
         case DeleteAllTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case DeleteAllTaskCommand.SHORTENED_COMMAND_WORD:
             return new DeleteAllTaskCommand();
 
         case FindTagCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindTagCommand.SHORTENED_COMMAND_WORD:
             return new FindTagCommandParser().parse(arguments);
 
         case ListTagCommand.COMMAND_WORD:
+            // Fallthrough
+        case ListTagCommand.SHORTENED_COMMAND_WORD:
             return new ListTagCommand();
 
         case ExitCommand.COMMAND_WORD:
+            // Fallthrough
+        case ExitCommand.SHORTENED_COMMAND_WORD:
             return new ExitCommand();
 
         case HelpCommand.COMMAND_WORD:
+            // Fallthrough
+        case HelpCommand.SHORTENED_COMMAND_WORD:
             return new HelpCommand();
 
         default:

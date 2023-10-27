@@ -10,6 +10,8 @@ import seedu.address.model.Model;
 public class DeleteAllTaskCommand extends Command {
 
     public static final String COMMAND_WORD = "deleteAllTask";
+    public static final String SHORTENED_COMMAND_WORD = "dat";
+
     public static final String MESSAGE_DELETE_ALL_TASK_SUCCESS = "Deleted all tasks";
 
     @Override

@@ -11,9 +11,9 @@ import seedu.address.model.Model;
 public class ListPersonCommand extends Command {
 
     public static final String COMMAND_WORD = "listPerson";
+    public static final String SHORTENED_COMMAND_WORD = "lp";
 
     public static final String MESSAGE_SUCCESS = "Listed all persons";
-
 
     @Override
     public CommandResult execute(Model model) {
