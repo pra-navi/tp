@@ -895,6 +895,29 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
+**Use case: UC19 - Find persons and tasks by tag**
+
+**MSS**
+
+1. User requests to find persons tasks by specific tag(s).
+2. CoordiMate shows two separate lists of persons and tasks associated with the given tag(s).
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. The given tag does not exist or no tasks are associated with it.
+
+    * 1a1. CoordiMate informs the user that there are no tasks associated with the given tag(s).
+
+      Use case ends.
+
+* 1b. The provided input for the tag search is invalid.
+
+    * 1b1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
+
+      Use case resumes at step 1.
+
 <div style="page-break-after: always;"></div>
 
 ### Non-Functional Requirements
