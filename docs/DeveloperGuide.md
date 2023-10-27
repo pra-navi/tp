@@ -148,7 +148,7 @@ The `Model` component,
 
 {% include admonition.html type="note" title="Note" body="
 
-An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br> 
+An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br>
 
 <img src='images/BetterModelClassDiagram.png' width='450' />
 
@@ -193,7 +193,7 @@ To get a visual representation of how the `listTask` command operates, the seque
 
 {% include admonition.html type="note" title="Note" body="
 
-The appearance of the lifeline for <code>ListTaskCommand</code> may vary depending on the diagram creation tool being used.
+The lifeline for <code>ListTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
@@ -223,8 +223,7 @@ The sequence diagram below illustrates how the `editTask` command works for the 
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>EditTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
-PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>EditTaskCommandParser</code> and <code>EditTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
@@ -246,7 +245,7 @@ PlantUML, the lifeline reaches the end of diagram.
 
 #### Implementation
 
-The `findTask` command accepts a String of space-separated keywords, and returns a list of tasks that contain any of their keywords in their title or note. The search is case-insensitive. 
+The `findTask` command accepts a String of space-separated keywords, and returns a list of tasks that contain any of their keywords in their title or note. The search is case-insensitive.
 
 The sequence diagram below illustrates how the `findTask` command works.
 
@@ -254,15 +253,15 @@ The sequence diagram below illustrates how the `findTask` command works.
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>FindTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>FindTaskCommandParser</code>, <code>TaskContainsKeywordsPredicate</code> and <code>FindTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
 This feature is accomplished by a `TaskContainsKeywordPredicate` class which is used to filter the list of tasks in the `Model` component.
 
-The `TaskContainsKeywordPredicate` class creates two more `Predicate<Task>` objects using the provided search terms, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, which are omitted from the diagram above for brevity. 
+The `TaskContainsKeywordPredicate` class creates two more `Predicate<Task>` objects using the provided search terms, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, which are omitted from the diagram above for brevity.
 
-The `TitleContainsKeywordPredicate` object checks if a given task's `Title` contains any of the keywords in the search term. 
+The `TitleContainsKeywordPredicate` object checks if a given task's `Title` contains any of the keywords in the search term.
 
 The `NoteContainsKeywordPredicate` object checks if a given task's `Note` contains any of the keywords in the search term.
 
@@ -295,8 +294,7 @@ The sequence diagram below illustrates how the `markTask` command works for the 
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>MarkTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
-PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>MarkTaskCommandParser</code>, <code>ParserUtil</code> and <code>MarkTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
@@ -306,7 +304,7 @@ PlantUML, the lifeline reaches the end of diagram.
 
 * **Alternative 1:** Using String input to create a status.
     * Pros: Simple to implement. Provides flexibility, allowing for dynamic input without changing code.
-    * Cons: Can lead to potential issues related to typos or inconsistent naming conventions. 
+    * Cons: Can lead to potential issues related to typos or inconsistent naming conventions.
   Any string can be passed as a status, potentially resulting in invalid or unexpected states.<br/><br/>
 
 * **Alternative 2 (current choice):** Using an enum input to create a status.
@@ -478,7 +476,7 @@ _{Explain here how the data archiving feature will be implemented}_
 * Is comfortable with CLI apps
 * Is able to type fast
 
-**Value proposition**: 
+**Value proposition**:
 
 CoordiMate helps event planners to easily keep track of contact details as well as the tasks to be done for various events, in a more efficient way compared to a typical mouse/GUI driven app.
 
@@ -486,7 +484,7 @@ CoordiMate helps event planners to easily keep track of contact details as well 
 
 ### User stories
 
-Priorities: 
+Priorities:
 
 * `* * *` - High (must have)
 * `* *` - Medium (nice to have)
@@ -672,7 +670,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
       Use case resumes from step 1.
 
 ---
-      
+
 **Use case: UC09 - List all tasks in the task list**
 
 **MSS**
