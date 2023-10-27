@@ -7,17 +7,23 @@ title: Developer Guide
 * Table of Contents
 {:toc}
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
 
 * {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 
+<div style="page-break-after: always;"></div>
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -71,6 +77,8 @@ For example, the `Logic` component defines its API in the `Logic.java` interface
 
 The sections below give more details of each component.
 
+<div style="page-break-after: always;"></div>
+
 ### UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
@@ -87,6 +95,8 @@ The `UI` component,
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
+
+<div style="page-break-after: always;"></div>
 
 ### Logic component
 
@@ -121,6 +131,8 @@ How the parsing works:
 * When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
+<div style="page-break-after: always;"></div>
+
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
@@ -136,11 +148,13 @@ The `Model` component,
 
 {% include admonition.html type="note" title="Note" body="
 
-An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br> 
+An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br>
 
 <img src='images/BetterModelClassDiagram.png' width='450' />
 
 " %}
+
+<div style="page-break-after: always;"></div>
 
 ### Storage component
 
@@ -153,15 +167,193 @@ The `Storage` component,
 * inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
+<div style="page-break-after: always;"></div>
+
 ### Common classes
 
 Classes used by multiple components are in the `seedu.addressbook.commons` package.
+
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### List Task feature
+
+#### Implementation
+
+The `listTask` command is designed to exhibit all tasks currently stored within CoordiMate to the user. It takes in no arguments and provides a straightforward view of all tasks in their current state.
+
+To get a visual representation of how the `listTask` command operates, the sequence diagram below provides a detailed overview:
+
+![ListTaskSequenceDiagram](assets/svg/dg/ListTaskSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>ListTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: Design and format of task display:**
+
+* **Alternative 1:** Simply present tasks using basic string output.
+    * Pros: Direct approach and simple to design and implement.
+    * Cons: Can seem too plain and might not capture users' attention effectively. <br/><br/>
+
+* **Alternative 2 (current choice):** Offer a more structured and visually enhanced display format for tasks.
+    * Pros: Ensures better user engagement due to organized and eye-catching content presentation.
+    * Cons: Can be challenging to implement given the added layers of design and subsequent testing.
+
+<div style="page-break-after: always;"></div>
+
+### Edit Task feature
+
+#### Implementation
+
+The `editTask` command accepts an index, title, note, and tags, and edits the task at that index with the new fields. The index should be numeric. The title, note, and tags can be any string. At least one of the title, note, or tag must be provided for the command to be valid.
+
+The sequence diagram below illustrates how the `editTask` command works for the example input `editTask 1 T/title n/note t/tag`.
+
+![EditTaskSequenceDiagram](assets/svg/dg/EditTaskSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>EditTaskCommandParser</code> and <code>EditTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: How to encapsulate edited fields:**
+
+* **Alternative 1:** Store each edited field in a separate variable directly into `EditTaskCommand` after parsing.
+      * Pros: Simple to implement.
+      * Cons: Low level of abstraction. Difficult to test, maintain, and extend if more fields are to be added. It is also difficult to pass each field around to classes that need access to the edited fields.  <br/><br/>
+
+* **Alternative 2 (current choice):** Encapsulate edited fields in a `EditTaskDescriptor` class.
+      * Pros: High level of abstraction. Encapsulation allows the details of an `editTask` command to be passed around as a single object to be used by other classes.
+      * Cons: More complex to implement due to boilerplate code.
+
+<div style="page-break-after: always;"></div>
+
+### Find Task feature
+
+#### Implementation
+
+The `findTask` command accepts a String of space-separated keywords, and returns a list of tasks that contain any of their keywords in their title or note. The search is case-insensitive.
+
+The sequence diagram below illustrates how the `findTask` command works.
+
+![FindTaskSequenceDiagram](assets/svg/dg/FindTaskSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>FindTaskCommandParser</code>, <code>TaskContainsKeywordsPredicate</code> and <code>FindTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+This feature is accomplished by a `TaskContainsKeywordPredicate` class which is used to filter the list of tasks in the `Model` component.
+
+The `TaskContainsKeywordPredicate` class creates two more `Predicate<Task>` objects using the provided search terms, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, which are omitted from the diagram above for brevity.
+
+The `TitleContainsKeywordPredicate` object checks if a given task's `Title` contains any of the keywords in the search term.
+
+The `NoteContainsKeywordPredicate` object checks if a given task's `Note` contains any of the keywords in the search term.
+
+These two predicates are used to filter the list of tasks in the `Model` component, by using a short-circuiting OR operation to combine the two predicates.
+
+#### Design considerations
+
+**Aspect: How to implement the `Predicate<Task>` class:**
+
+  * **Alternative 1:** Use a single `TaskContainsKeywordPredicate` class that implements `Predicate<Task>` to search both the task's `Title` and `Note`.
+    * Pros: Simple to implement.
+    * Cons: Not extensible. If we want to search other fields in the future, we will have to modify the `TaskContainsKeywordPredicate` class. <br/><br/>
+
+
+  * **Alternative 2 (current choice):** Use two `Predicate<Task>` classes, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, to search the task's `Title` and `Note` respectively.
+    * Pros: Extensible. We can easily add more `Predicate<Task>` classes to search other fields in the future. <br/>These classes also allow us to search the task's `Title` and `Note` separately, if needed.
+    * Cons: More complex to implement.
+
+<div style="page-break-after: always;"></div>
+
+### Mark Task feature
+
+#### Implementation
+
+The `markTask` command accepts an index and marks the task at that index with task status of **done**. The index should be numeric.
+
+The sequence diagram below illustrates how the `markTask` command works for the example input `markTask 1`.
+
+![MarkTaskSequenceDiagram](assets/svg/dg/MarkTaskSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>MarkTaskCommandParser</code>, <code>ParserUtil</code> and <code>MarkTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: How to create status of a Task:**
+
+* **Alternative 1:** Using String input to create a status.
+    * Pros: Simple to implement. Provides flexibility, allowing for dynamic input without changing code.
+    * Cons: Can lead to potential issues related to typos or inconsistent naming conventions.
+  Any string can be passed as a status, potentially resulting in invalid or unexpected states.<br/><br/>
+
+* **Alternative 2 (current choice):** Using an enum input to create a status.
+    * Pros: Provides a type-safe way to represent task statuses, ensuring that only valid status values can be used. If new status types are introduced, developers can easily update the TaskStatus enum, ensuring all usages are consistent
+    * Cons: More complex to implement. Require modifying the enum itself to add new status types, potentially leading to more extensive code changes <br/><br/>
+
+**Aspect: How to update the task status of a Task:**
+
+* **Alternative 1:** Directly change the status attribute of each task every time it is marked.
+    * Pros: More memory-efficient
+    * Cons: Not immutable. Can lead to challenges in testing and tracking task state changes over time <br/><br/>
+
+* **Alternative 2 (current choice):** Create a new task with same details and a done status every time it is marked.
+    * Pros: Ensures immutability and preserves the history of task states, allowing for easy tracking of changes and maintaining a clear historical record of task statuses.
+    * Cons: Incur a slight performance overhead, especially if the tasks contain a large amount of data, impacting the overall execution speed of the program. <br/><br/>
+
+<div style="page-break-after: always;"></div>
+
+### Delete Task feature
+
+#### Implementation
+
+The `deleteTask` command accepts a numeric Index, and removes the task at that index from the task list.
+
+The sequence diagram below illustrates how the `deleteTask` command works for the example input `deleteTask 1`.
+
+![DeleteTaskSequenceDiagram](images/DeleteTaskSequenceDiagram.png)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>DeleteTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
+PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: How delete executes:**
+
+* **Alternative 1 (current choice):** Deletes task based on the filtered list shown to the user.
+    * Pros: Users do not have to use the `listTask` command everytime before they delete a task.
+    * Cons: Users cannot delete a task that is not shown in the filtered list. <br/><br/>
+
+* **Alternative 2:** Deletes task based on the full list of tasks.
+    * Pros: Users can delete a task that is not shown in the filtered list.
+    * Cons: Users have to use the `listTask` command everytime to confirm the index of the task before they delete the
+      task.
+
+<div style="page-break-after: always;"></div>
 
 ### \[Proposed\] Undo/redo feature
 
@@ -251,10 +443,13 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 _{more aspects and alternatives to be added}_
 
+<div style="page-break-after: always;"></div>
+
 ### \[Proposed\] Data archiving
 
 _{Explain here how the data archiving feature will be implemented}_
 
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -268,6 +463,8 @@ _{Explain here how the data archiving feature will be implemented}_
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Appendix: Requirements**
 
 ### Product scope
@@ -279,13 +476,15 @@ _{Explain here how the data archiving feature will be implemented}_
 * Is comfortable with CLI apps
 * Is able to type fast
 
-**Value proposition**: 
+**Value proposition**:
 
 CoordiMate helps event planners to easily keep track of contact details as well as the tasks to be done for various events, in a more efficient way compared to a typical mouse/GUI driven app.
 
+<div style="page-break-after: always;"></div>
+
 ### User stories
 
-Priorities: 
+Priorities:
 
 * `* * *` - High (must have)
 * `* *` - Medium (nice to have)
@@ -315,6 +514,8 @@ Priorities:
 | `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                 |
 
 *{More to be added}*
+
+<div style="page-break-after: always;"></div>
 
 ### Use cases
 
@@ -469,7 +670,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
       Use case resumes from step 1.
 
 ---
-      
+
 **Use case: UC09 - List all tasks in the task list**
 
 **MSS**
@@ -694,6 +895,31 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
+**Use case: UC19 - Find persons and tasks by tag**
+
+**MSS**
+
+1. User requests to find persons tasks by specific tag(s).
+2. CoordiMate shows two separate lists of persons and tasks associated with the given tag(s).
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. The given tag does not exist or no tasks are associated with it.
+
+    * 1a1. CoordiMate informs the user that there are no tasks associated with the given tag(s).
+
+      Use case ends.
+
+* 1b. The provided input for the tag search is invalid.
+
+    * 1b1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
+
+      Use case resumes at step 1.
+
+<div style="page-break-after: always;"></div>
+
 ### Non-Functional Requirements
 
 1. Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
@@ -716,6 +942,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 * **MSS**: Main Success Scenario, which is the most straightforward interaction for a given use case assuming that nothing goes wrong.
 * **Private contact detail**: A contact detail that is not meant to be shared with others
 
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 

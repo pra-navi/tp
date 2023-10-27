@@ -1,0 +1,122 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":MarkTaskCommandParser" as MarkTaskCommandParser LOGIC_COLOR
+participant "idx:ParserUtil" as ParserUtil LOGIC_COLOR
+participant "cmd:MarkTaskCommand" as MarkTaskCommand LOGIC_COLOR
+participant "res:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+participant "editedTask:Task" as Task MODEL_COLOR
+participant ":AddressBook" as AddressBook MODEL_COLOR
+participant ":UniqueTaskList" as UniqueTaskList MODEL_COLOR
+end box
+
+[-> LogicManager : execute("markTask 1")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("markTask 1")
+activate AddressBookParser
+
+create MarkTaskCommandParser
+AddressBookParser -> MarkTaskCommandParser : MarkTaskCommandParser()
+activate MarkTaskCommandParser
+
+MarkTaskCommandParser --> AddressBookParser
+deactivate MarkTaskCommandParser
+
+AddressBookParser -> MarkTaskCommandParser : parse("1")
+activate MarkTaskCommandParser
+
+create ParserUtil
+MarkTaskCommandParser -> ParserUtil : parseIndex("1")
+activate ParserUtil
+
+ParserUtil --> MarkTaskCommandParser : idx
+deactivate ParserUtil
+
+create MarkTaskCommand
+MarkTaskCommandParser -> MarkTaskCommand : MarkTaskCommand(idx)
+activate MarkTaskCommand
+
+MarkTaskCommand --> MarkTaskCommandParser : cmd
+deactivate MarkTaskCommand
+
+MarkTaskCommandParser --> AddressBookParser : cmd
+deactivate MarkTaskCommandParser
+
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+MarkTaskCommandParser -[hidden]-> AddressBookParser
+destroy MarkTaskCommandParser
+
+AddressBookParser --> LogicManager : cmd
+deactivate AddressBookParser
+
+LogicManager -> MarkTaskCommand : execute()
+activate MarkTaskCommand
+
+MarkTaskCommand -> Model : getFilteredTaskList()
+activate Model
+
+Model --> MarkTaskCommand : lastShownList
+deactivate Model
+
+'Get task to mark
+MarkTaskCommand -> MarkTaskCommand : lastShownList.get(idx)
+activate MarkTaskCommand
+MarkTaskCommand --> MarkTaskCommand : taskToMark
+deactivate MarkTaskCommand
+
+MarkTaskCommand -> Model : markTask(taskToMark)
+activate Model
+
+Model -> Task: markDone()
+activate Task
+Task --> Model: editedTask
+deactivate Task
+
+Model -> Model: setTask(taskToMark, editedTask)
+activate Model
+
+Model -> AddressBook : setTask(taskToMark, editedTask)
+activate AddressBook
+
+AddressBook -> UniqueTaskList : setTask(taskToMark, editedTask)
+activate UniqueTaskList
+
+UniqueTaskList --> AddressBook
+deactivate UniqueTaskList
+
+AddressBook --> Model
+deactivate AddressBook
+
+Model --> Model :
+deactivate Model
+
+Model --> MarkTaskCommand : editedTask
+deactivate Model
+
+create CommandResult
+MarkTaskCommand -> CommandResult : CommandResult(MESSAGE_MARK_TASK_SUCCESS)
+activate CommandResult
+
+CommandResult --> MarkTaskCommand : res
+deactivate CommandResult
+
+MarkTaskCommand --> LogicManager : res
+deactivate MarkTaskCommand
+
+[<--LogicManager : res
+deactivate LogicManager
+
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+ParserUtil -[hidden]-> LogicManager
+destroy ParserUtil
+destroy MarkTaskCommand
+@enduml
