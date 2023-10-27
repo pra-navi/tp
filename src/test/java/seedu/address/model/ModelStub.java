@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.Person;
+import seedu.address.model.tag.TagFrequencyTable;
 import seedu.address.model.task.Task;
 
 /**
@@ -129,6 +130,11 @@ public class ModelStub implements Model {
 
     @Override
     public Task unmarkTask(Task task) {
+        throw new AssertionError("This method should not be called.");
+    }
+
+    @Override
+    public TagFrequencyTable getTagFrequencyTable() {
         throw new AssertionError("This method should not be called.");
     }
 
