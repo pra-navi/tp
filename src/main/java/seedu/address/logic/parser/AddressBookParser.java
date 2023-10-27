@@ -146,9 +146,13 @@ public class AddressBookParser {
             return new DeleteAllTaskCommand();
 
         case FindTagCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindTagCommand.SHORTENED_COMMAND_WORD:
             return new FindTagCommandParser().parse(arguments);
 
         case ListTagCommand.COMMAND_WORD:
+            // Fallthrough
+        case ListTagCommand.SHORTENED_COMMAND_WORD:
             return new ListTagCommand();
 
         case ExitCommand.COMMAND_WORD:

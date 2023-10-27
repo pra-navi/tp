@@ -209,10 +209,22 @@ public class AddressBookParserTest {
         assertEquals(new FindTaskCommand(new TaskContainsKeywordsPredicate(keywords)), command);
     }
 
+    @Test
     public void parseCommand_findTag() throws Exception {
         List<String> tagKeywords = Arrays.asList("tag1", "tag2", "tag3");
         FindTagCommand command = (FindTagCommand) parser.parseCommand(
                 FindTagCommand.COMMAND_WORD + " " + String.join(" ", tagKeywords));
+        assertEquals(new FindTagCommand(
+                new PersonContainsTagsPredicate(tagKeywords),
+                new TaskContainsTagsPredicate(tagKeywords)),
+                command);
+    }
+
+    @Test
+    public void parseCommand_shortened_findTag() throws Exception {
+        List<String> tagKeywords = Arrays.asList("tag1", "tag2", "tag3");
+        FindTagCommand command = (FindTagCommand) parser.parseCommand(
+                FindTagCommand.SHORTENED_COMMAND_WORD + " " + String.join(" ", tagKeywords));
         assertEquals(new FindTagCommand(
                 new PersonContainsTagsPredicate(tagKeywords),
                 new TaskContainsTagsPredicate(tagKeywords)),
@@ -308,24 +320,29 @@ public class AddressBookParserTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void parseCommand_shortened_deleteAllTask() throws Exception {
         assertTrue(parser.parseCommand(DeleteAllTaskCommand.SHORTENED_COMMAND_WORD) instanceof DeleteAllTaskCommand);
         assertTrue(
                 parser.parseCommand(
                         DeleteAllTaskCommand.SHORTENED_COMMAND_WORD + " 3") instanceof DeleteAllTaskCommand);
-=======
+    }
 
+    @Test
     public void parseCommand_listTag() throws Exception {
         assertTrue(parser.parseCommand(ListTagCommand.COMMAND_WORD) instanceof ListTagCommand);
         assertTrue(parser.parseCommand(ListTagCommand.COMMAND_WORD + " 3") instanceof ListTagCommand);
->>>>>>> master
+    }
+
+    @Test
+    public void parseCommand_shortened_listTag() throws Exception {
+        assertTrue(parser.parseCommand(ListTagCommand.SHORTENED_COMMAND_WORD) instanceof ListTagCommand);
+        assertTrue(parser.parseCommand(ListTagCommand.SHORTENED_COMMAND_WORD + " 3") instanceof ListTagCommand);
     }
 
     @Test
     public void parseCommand_unrecognisedInput_throwsParseException() {
-        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE),
-                () -> parser.parseCommand(""));
+        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE), ()
+                -> parser.parseCommand(""));
     }
 
     @Test
