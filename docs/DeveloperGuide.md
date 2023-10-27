@@ -283,6 +283,47 @@ These two predicates are used to filter the list of tasks in the `Model` compone
 
 <div style="page-break-after: always;"></div>
 
+### Mark Task feature
+
+#### Implementation
+
+The `markTask` command accepts an index and marks the task at that index with task status of **done**. The index should be numeric.
+
+The sequence diagram below illustrates how the `markTask` command works for the example input `markTask 1`.
+
+![MarkTaskSequenceDiagram](assets/svg/dg/MarkTaskSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>MarkTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
+PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: How to update the task status:**
+
+* **Alternative 1:** Directly change the status of each task every time it is marked.
+  * Pros:.
+  * Cons: .  <br/><br/>
+
+* **Alternative 2 (current choice):** Create a new task with same details but done status every time it is marked.
+  * Pros: .
+  * Cons: . <br/><br/>
+
+**Aspect: How to encode task status:**
+
+* **Alternative 1:** Directly change the status of each task every time it is marked.
+    * Pros:.
+    * Cons: .  <br/><br/>
+
+* **Alternative 2 (current choice):** Using an enum.
+    * Pros: .
+    * Cons: . <br/><br/>
+
+<div style="page-break-after: always;"></div>
+
 ### Delete Task feature
 
 #### Implementation
