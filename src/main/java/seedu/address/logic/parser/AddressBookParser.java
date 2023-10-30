@@ -24,6 +24,7 @@ import seedu.address.logic.commands.FindPersonCommand;
 import seedu.address.logic.commands.FindTagCommand;
 import seedu.address.logic.commands.FindTaskCommand;
 import seedu.address.logic.commands.HelpCommand;
+import seedu.address.logic.commands.ListAllCommand;
 import seedu.address.logic.commands.ListPersonCommand;
 import seedu.address.logic.commands.ListTagCommand;
 import seedu.address.logic.commands.ListTaskCommand;
@@ -99,6 +100,11 @@ public class AddressBookParser {
             // Fallthrough
         case ListTaskCommand.SHORTENED_COMMAND_WORD:
             return new ListTaskCommand();
+
+        case ListAllCommand.COMMAND_WORD:
+            // Fallthrough
+        case ListAllCommand.SHORTENED_COMMAND_WORD:
+            return new ListAllCommand();
 
         case DeleteTaskCommand.COMMAND_WORD:
             // Fallthrough
