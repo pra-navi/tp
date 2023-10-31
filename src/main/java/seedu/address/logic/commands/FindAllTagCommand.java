@@ -29,7 +29,8 @@ public class FindAllTagCommand extends Command {
      * Creates a FindAllTagCommand to find the specified {@code PersonContainsAllTagsPredicate} and
      * {@code TaskContainsAllTagsPredicate}
      */
-    public FindAllTagCommand(PersonContainsAllTagsPredicate personPredicate, TaskContainsAllTagsPredicate taskPredicate) {
+    public FindAllTagCommand(PersonContainsAllTagsPredicate personPredicate,
+                             TaskContainsAllTagsPredicate taskPredicate) {
         this.taskPredicate = taskPredicate;
         this.personPredicate = personPredicate;
     }

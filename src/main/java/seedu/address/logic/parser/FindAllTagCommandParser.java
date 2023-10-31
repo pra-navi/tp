@@ -29,7 +29,8 @@ public class FindAllTagCommandParser implements Parser<FindAllTagCommand> {
 
         String[] tagKeywords = trimmedArgs.split("\\s+");
 
-        return new FindAllTagCommand(new PersonContainsAllTagsPredicate(Arrays.asList(tagKeywords)), new TaskContainsAllTagsPredicate(Arrays.asList(tagKeywords))
+        return new FindAllTagCommand(new PersonContainsAllTagsPredicate(Arrays.asList(tagKeywords)),
+                new TaskContainsAllTagsPredicate(Arrays.asList(tagKeywords))
         );
     }
 }
