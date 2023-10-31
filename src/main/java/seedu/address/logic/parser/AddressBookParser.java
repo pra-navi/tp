@@ -9,6 +9,8 @@ import java.util.regex.Pattern;
 
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.AddPersonCommand;
+import seedu.address.logic.commands.AddTagPersonCommand;
+import seedu.address.logic.commands.AddTagTaskCommand;
 import seedu.address.logic.commands.AddTaskCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.DeleteAllPersonCommand;
@@ -75,6 +77,11 @@ public class AddressBookParser {
         case EditPersonCommand.SHORTENED_COMMAND_WORD:
             return new EditPersonCommandParser().parse(arguments);
 
+        case AddTagPersonCommand.COMMAND_WORD:
+            // Fallthrough
+        case AddTagPersonCommand.SHORTENED_COMMAND_WORD:
+            return new AddTagPersonCommandParser().parse(arguments);
+
         case DeletePersonCommand.COMMAND_WORD:
             // Fallthrough
         case DeletePersonCommand.SHORTENED_COMMAND_WORD:
@@ -124,6 +131,11 @@ public class AddressBookParser {
             // Fallthrough
         case EditTaskCommand.SHORTENED_COMMAND_WORD:
             return new EditTaskCommandParser().parse(arguments);
+
+        case AddTagTaskCommand.COMMAND_WORD:
+            // Fallthrough
+        case AddTagTaskCommand.SHORTENED_COMMAND_WORD:
+            return new AddTagTaskCommandParser().parse(arguments);
 
         case FindTaskCommand.COMMAND_WORD:
             // Fallthrough

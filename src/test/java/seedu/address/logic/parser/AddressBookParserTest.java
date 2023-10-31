@@ -8,11 +8,15 @@ import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.AddPersonCommand;
+import seedu.address.logic.commands.AddTagPersonCommand;
+import seedu.address.logic.commands.AddTagTaskCommand;
 import seedu.address.logic.commands.AddTaskCommand;
 import seedu.address.logic.commands.DeleteAllPersonCommand;
 import seedu.address.logic.commands.DeleteAllTaskCommand;
@@ -38,6 +42,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.PersonContainsTagsPredicate;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskContainsKeywordsPredicate;
 import seedu.address.model.task.TaskContainsTagsPredicate;
@@ -113,6 +118,28 @@ public class AddressBookParserTest {
                 .parseCommand(EditPersonCommand.SHORTENED_COMMAND_WORD + " "
                         + INDEX_FIRST.getOneBased() + " " + PersonUtil.getEditPersonDescriptorDetails(descriptor));
         assertEquals(new EditPersonCommand(INDEX_FIRST, descriptor), command);
+    }
+
+    @Test
+    public void parseCommand_addTagPerson() throws Exception {
+        Tag tag = new Tag("caterer");
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag);
+        AddTagPersonCommand command = (AddTagPersonCommand) parser
+                .parseCommand(AddTagPersonCommand.COMMAND_WORD + " "
+                        + INDEX_FIRST.getOneBased() + " t/caterer");
+        assertEquals(new AddTagPersonCommand(INDEX_FIRST, tags), command);
+    }
+
+    @Test
+    public void parseCommand_shortened_addTagPerson() throws Exception {
+        Tag tag = new Tag("caterer");
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag);
+        AddTagPersonCommand command = (AddTagPersonCommand) parser
+                .parseCommand(AddTagPersonCommand.SHORTENED_COMMAND_WORD + " "
+                        + INDEX_FIRST.getOneBased() + " t/caterer");
+        assertEquals(new AddTagPersonCommand(INDEX_FIRST, tags), command);
     }
 
     @Test
@@ -301,12 +328,36 @@ public class AddressBookParserTest {
         assertEquals(new EditTaskCommand(INDEX_FIRST, descriptor), command);
     }
 
+    @Test
+    public void parseCommand_addTagTask() throws Exception {
+        Tag tag = new Tag("class");
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag);
+        AddTagTaskCommand command = (AddTagTaskCommand) parser
+                .parseCommand(AddTagTaskCommand.COMMAND_WORD + " "
+                        + INDEX_FIRST.getOneBased() + " " + " t/class");
+        assertEquals(new AddTagTaskCommand(INDEX_FIRST, tags), command);
+    }
+
+    @Test
+    public void parseCommand_shortened_addTagTask() throws Exception {
+        Tag tag = new Tag("class");
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag);
+        AddTagTaskCommand command = (AddTagTaskCommand) parser
+                .parseCommand(AddTagTaskCommand.SHORTENED_COMMAND_WORD + " "
+                        + INDEX_FIRST.getOneBased() + " " + " t/class");
+        assertEquals(new AddTagTaskCommand(INDEX_FIRST, tags), command);
+    }
+
+    @Test
     public void parseCommand_deleteTask() throws Exception {
         DeleteTaskCommand command = (DeleteTaskCommand) parser.parseCommand(
                 DeleteTaskCommand.COMMAND_WORD + " " + INDEX_FIRST.getOneBased());
         assertEquals(new DeleteTaskCommand(INDEX_FIRST), command);
     }
 
+    @Test
     public void parseCommand_shortened_deleteTask() throws Exception {
         DeleteTaskCommand command = (DeleteTaskCommand) parser.parseCommand(
                 DeleteTaskCommand.SHORTENED_COMMAND_WORD + " " + INDEX_FIRST.getOneBased());
