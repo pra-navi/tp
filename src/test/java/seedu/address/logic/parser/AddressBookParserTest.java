@@ -23,6 +23,7 @@ import seedu.address.logic.commands.EditPersonCommand.EditPersonDescriptor;
 import seedu.address.logic.commands.EditTaskCommand;
 import seedu.address.logic.commands.EditTaskCommand.EditTaskDescriptor;
 import seedu.address.logic.commands.ExitCommand;
+import seedu.address.logic.commands.FindAllTagCommand;
 import seedu.address.logic.commands.FindDoneCommand;
 import seedu.address.logic.commands.FindNotDoneCommand;
 import seedu.address.logic.commands.FindPersonCommand;
@@ -37,9 +38,11 @@ import seedu.address.logic.commands.UnmarkTaskCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.PersonContainsAllTagsPredicate;
 import seedu.address.model.person.PersonContainsTagsPredicate;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskContainsKeywordsPredicate;
+import seedu.address.model.task.TaskContainsAllTagsPredicate;
 import seedu.address.model.task.TaskContainsTagsPredicate;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 import seedu.address.testutil.EditTaskDescriptorBuilder;
@@ -228,6 +231,28 @@ public class AddressBookParserTest {
         assertEquals(new FindTagCommand(
                 new PersonContainsTagsPredicate(tagKeywords),
                 new TaskContainsTagsPredicate(tagKeywords)),
+                command);
+    }
+
+    @Test
+    public void parseCommand_findAllTag() throws Exception {
+        List<String> tagKeywords = Arrays.asList("tag1", "tag2", "tag3");
+        FindAllTagCommand command = (FindAllTagCommand) parser.parseCommand(
+                FindAllTagCommand.COMMAND_WORD + " " + String.join(" ", tagKeywords));
+        assertEquals(new FindAllTagCommand(
+                         new PersonContainsAllTagsPredicate(tagKeywords), new TaskContainsAllTagsPredicate(tagKeywords)
+                ),
+                command);
+    }
+
+    @Test
+    public void parseCommand_shortened_findAllTag() throws Exception {
+        List<String> tagKeywords = Arrays.asList("tag1", "tag2", "tag3");
+        FindAllTagCommand command = (FindAllTagCommand) parser.parseCommand(
+                FindAllTagCommand.SHORTENED_COMMAND_WORD + " " + String.join(" ", tagKeywords));
+        assertEquals(new FindAllTagCommand(
+                        new PersonContainsAllTagsPredicate(tagKeywords),
+                        new TaskContainsAllTagsPredicate(tagKeywords)),
                 command);
     }
 
