@@ -80,6 +80,33 @@
         "admin",
         "class"
       ]
+    },
+    {
+      "title": "Journal Review",
+      "note": "Review journals for Syndicate A updates",
+      "isDone": false,
+      "tags": [
+        "colleague",
+        "syndicateA"
+      ]
+    },
+    {
+      "title": "KPI Setting",
+      "note": "Set KPIs for Syndicate B this year",
+      "isDone": false,
+      "tags": [
+        "colleague",
+        "syndicateB"
+      ]
+    },
+    {
+      "title": "Lecture Preparation",
+      "note": "Redo content for syndicateA's lecture next month",
+      "isDone": false,
+      "tags": [
+        "colleague",
+        "syndicateA"
+      ]
     }
   ]
 }

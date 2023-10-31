@@ -76,6 +76,27 @@ public class TypicalTasks {
             .withTags("admin", "class")
             .build();
 
+    public static final Task JOURNAL = new TaskBuilder()
+            .withTitle("Journal Review")
+            .withNote("Review journals for Syndicate A updates")
+            .withStatus(Status.STATUS_NOT_DONE)
+            .withTags("colleague", "syndicateA")
+            .build();
+
+    public static final Task KPI = new TaskBuilder()
+            .withTitle("KPI Setting")
+            .withNote("Set KPIs for Syndicate B this year")
+            .withStatus(Status.STATUS_NOT_DONE)
+            .withTags("colleague", "syndicateB")
+            .build();
+
+    public static final Task LECTURE = new TaskBuilder()
+            .withTitle("Lecture Preparation")
+            .withNote("Redo content for syndicateA's lecture next month")
+            .withStatus(Status.STATUS_NOT_DONE)
+            .withTags("colleague", "syndicateA")
+            .build();
+
     // Keywords
     public static final String KEYWORD_MATCHING_BOOK = "Book";
     public static final String KEYWORD_MATCHING_PREPARE = "Prepare";
@@ -99,6 +120,7 @@ public class TypicalTasks {
 
     public static List<Task> getTypicalTasks() {
         return new ArrayList<>(Arrays.asList(
-                AGENDA, BUDGET, CATERING, DRAFT, ENTERTAINMENT, FUNDING, GUESTLIST, HOSPITALITY, INVITATION));
+                AGENDA, BUDGET, CATERING, DRAFT, ENTERTAINMENT, FUNDING, GUESTLIST, HOSPITALITY, INVITATION,
+                JOURNAL, KPI, LECTURE));
     }
 }
