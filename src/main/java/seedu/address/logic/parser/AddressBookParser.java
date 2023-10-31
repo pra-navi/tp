@@ -147,6 +147,8 @@ public class AddressBookParser {
             return new DeleteAllTaskCommand();
 
         case FindAllTagCommand.COMMAND_WORD:
+            // Fallthrough
+        case FindAllTagCommand.SHORTENED_COMMAND_WORD:
             return new FindAllTagCommandParser().parse(arguments);
 
         case FindTagCommand.COMMAND_WORD:
