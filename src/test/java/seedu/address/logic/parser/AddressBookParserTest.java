@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.AddPersonCommand;
 import seedu.address.logic.commands.AddTaskCommand;
+import seedu.address.logic.commands.DeleteAllDoneCommand;
 import seedu.address.logic.commands.DeleteAllPersonCommand;
 import seedu.address.logic.commands.DeleteAllTaskCommand;
 import seedu.address.logic.commands.DeletePersonCommand;
@@ -86,6 +87,7 @@ public class AddressBookParserTest {
     public void parseCommand_deletePerson() throws Exception {
         DeletePersonCommand command = (DeletePersonCommand) parser.parseCommand(
                 DeletePersonCommand.COMMAND_WORD + " " + INDEX_FIRST.getOneBased());
+        assertEquals(new DeletePersonCommand(INDEX_FIRST), command);
         assertEquals(new DeletePersonCommand(INDEX_FIRST), command);
     }
 
@@ -325,6 +327,22 @@ public class AddressBookParserTest {
         assertTrue(
                 parser.parseCommand(
                         DeleteAllTaskCommand.SHORTENED_COMMAND_WORD + " 3") instanceof DeleteAllTaskCommand);
+    }
+
+    @Test
+    public void parseCommand_deleteAllDone() throws Exception {
+        assertTrue(parser.parseCommand(DeleteAllDoneCommand.COMMAND_WORD) instanceof DeleteAllDoneCommand);
+        assertTrue(
+                parser.parseCommand(
+                        DeleteAllDoneCommand.COMMAND_WORD + " 3") instanceof DeleteAllDoneCommand);
+    }
+
+    @Test
+    public void parseCommand_shortened_deleteAllDone() throws Exception {
+        assertTrue(parser.parseCommand(DeleteAllDoneCommand.SHORTENED_COMMAND_WORD) instanceof DeleteAllDoneCommand);
+        assertTrue(
+                parser.parseCommand(
+                        DeleteAllDoneCommand.SHORTENED_COMMAND_WORD + " 3") instanceof DeleteAllDoneCommand);
     }
 
     @Test
