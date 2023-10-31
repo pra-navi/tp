@@ -4,17 +4,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static seedu.address.logic.Messages.MESSAGE_PERSONS_TASKS_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.testutil.AddressBookBuilder.getTypicalAddressBook;
 import static seedu.address.testutil.TypicalPersons.JAMES;
 import static seedu.address.testutil.TypicalPersons.KAREN;
 import static seedu.address.testutil.TypicalPersons.LUCAS;
-import static seedu.address.testutil.TypicalPersons.getTypicalPersons;
 import static seedu.address.testutil.TypicalTasks.GUESTLIST;
 import static seedu.address.testutil.TypicalTasks.HOSPITALITY;
 import static seedu.address.testutil.TypicalTasks.INVITATION;
 import static seedu.address.testutil.TypicalTasks.JOURNAL;
 import static seedu.address.testutil.TypicalTasks.KPI;
 import static seedu.address.testutil.TypicalTasks.LECTURE;
-import static seedu.address.testutil.TypicalTasks.getTypicalTasks;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,13 +21,10 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.person.Person;
 import seedu.address.model.person.PersonContainsAllTagsPredicate;
-import seedu.address.model.task.Task;
 import seedu.address.model.task.TaskContainsAllTagsPredicate;
 
 public class FindAllTagCommandTest {
@@ -172,20 +168,6 @@ public class FindAllTagCommandTest {
      */
     private PersonContainsAllTagsPredicate preparePersonTagPredicate(String userInput) {
         return new PersonContainsAllTagsPredicate(Arrays.asList(userInput.split("\\s+")));
-    }
-
-    public static AddressBook getTypicalAddressBook() {
-        AddressBook ab = new AddressBook();
-
-        for (Task task : getTypicalTasks()) {
-            ab.addTask(task);
-        }
-
-        for (Person person : getTypicalPersons()) {
-            ab.addPerson(person);
-        }
-
-        return ab;
     }
 
 }
