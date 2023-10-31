@@ -22,15 +22,14 @@ public class FindAllTagCommand extends Command {
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
             + "Example: " + COMMAND_WORD + " agenda";
 
-    private final TaskContainsAllTagsPredicate taskPredicate;
     private final PersonContainsAllTagsPredicate personPredicate;
+    private final TaskContainsAllTagsPredicate taskPredicate;
 
     /**
-     * Creates a FindAllTagCommand to find the specified {@code TaskContainsAllTagsPredicate} and
-     * {@code PersonContainsAllTagsPredicate}
+     * Creates a FindAllTagCommand to find the specified {@code PersonContainsAllTagsPredicate} and
+     * {@code TaskContainsAllTagsPredicate}
      */
-    public FindAllTagCommand(TaskContainsAllTagsPredicate taskPredicate,
-                             PersonContainsAllTagsPredicate personPredicate) {
+    public FindAllTagCommand(PersonContainsAllTagsPredicate personPredicate, TaskContainsAllTagsPredicate taskPredicate) {
         this.taskPredicate = taskPredicate;
         this.personPredicate = personPredicate;
     }
@@ -52,7 +51,7 @@ public class FindAllTagCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof FindTaskCommand)) {
+        if (!(other instanceof FindAllTagCommand)) {
             return false;
         }
 
@@ -64,8 +63,8 @@ public class FindAllTagCommand extends Command {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("taskPredicate", taskPredicate)
                 .add("personPredicate", personPredicate)
+                .add("taskPredicate", taskPredicate)
                 .toString();
     }
 }
