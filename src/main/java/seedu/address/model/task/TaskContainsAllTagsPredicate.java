@@ -8,7 +8,7 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.commons.util.ToStringBuilder;
 
 /**
- * Tests that a {@code Task}'s {@code Tags} matches all the keywords given.
+ * Tests that a {@code Task} has {@code Tags} that matches all the keywords given.
  */
 public class TaskContainsAllTagsPredicate implements Predicate<Task> {
     private final List<String> keywords;
