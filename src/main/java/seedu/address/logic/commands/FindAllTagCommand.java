@@ -9,7 +9,7 @@ import seedu.address.model.person.PersonContainsAllTagsPredicate;
 import seedu.address.model.task.TaskContainsAllTagsPredicate;
 
 /**
- * Finds and lists all persons and tasks in address book whose tag contains any of the argument keywords.
+ * Finds and lists all persons and tasks in address book whose tag contains all the argument keywords.
  */
 public class FindAllTagCommand extends Command {
 

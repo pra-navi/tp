@@ -10,7 +10,7 @@ import seedu.address.model.person.PersonContainsAllTagsPredicate;
 import seedu.address.model.task.TaskContainsAllTagsPredicate;
 
 /**
- * Parses input arguments and creates a new FindAllTagCommand object
+ * Parses input arguments and creates a new FindAllTagCommand object.
  */
 public class FindAllTagCommandParser implements Parser<FindAllTagCommand> {
 
