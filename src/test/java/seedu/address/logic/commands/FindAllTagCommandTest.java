@@ -59,10 +59,9 @@ public class FindAllTagCommandTest {
 
         // different types -> returns false
         assertNotEquals(firstFindAllTagCommand, 1);
-        assertNotEquals(1, firstFindAllTagCommand);
 
         // null -> returns false
-        assertNotEquals(null, firstFindAllTagCommand);
+        assertNotEquals(firstFindAllTagCommand, null);
 
         // different tag -> returns false
         assertNotEquals(firstFindAllTagCommand, secondFindAllTagCommand);
@@ -71,7 +70,7 @@ public class FindAllTagCommandTest {
     @Test
     public void execute_invalidTag_noPersonsTasksFound() {
         String expectedMessage = String.format(MESSAGE_PERSONS_TASKS_LISTED_OVERVIEW, 0, 0);
-        TaskContainsAllTagsPredicate taskPredicate = prepareTaskTagPredicate("invalidTag ");
+        TaskContainsAllTagsPredicate taskPredicate = prepareTaskTagPredicate("invalidTag");
         PersonContainsAllTagsPredicate personPredicate = preparePersonTagPredicate("invalidTag");
         FindAllTagCommand command = new FindAllTagCommand(personPredicate, taskPredicate);
         expectedModel.updateFilteredTaskList(taskPredicate);
@@ -141,6 +140,24 @@ public class FindAllTagCommandTest {
         // Only KPI task and KAREN person should match
         assertEquals(Collections.singletonList(KPI), model.getFilteredTaskList());
         assertEquals(Collections.singletonList(KAREN), model.getFilteredPersonList());
+    }
+
+    @Test
+    public void equals_diffPersonPredicates_returnsFalse() {
+        TaskContainsAllTagsPredicate commonTaskPredicate =
+                new TaskContainsAllTagsPredicate(Collections.singletonList("commonTag"));
+
+        PersonContainsAllTagsPredicate firstPersonPredicate =
+                new PersonContainsAllTagsPredicate(Collections.singletonList("firstPersonTag"));
+        PersonContainsAllTagsPredicate secondPersonPredicate =
+                new PersonContainsAllTagsPredicate(Collections.singletonList("secondPersonTag"));
+
+        FindAllTagCommand commandWithFirstPersonPredicate =
+                new FindAllTagCommand(firstPersonPredicate, commonTaskPredicate);
+        FindAllTagCommand commandWithSecondPersonPredicate =
+                new FindAllTagCommand(secondPersonPredicate, commonTaskPredicate);
+
+        assertNotEquals(commandWithFirstPersonPredicate, commandWithSecondPersonPredicate);
     }
 
     /**

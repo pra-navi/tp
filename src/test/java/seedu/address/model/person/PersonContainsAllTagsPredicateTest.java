@@ -35,11 +35,10 @@ public class PersonContainsAllTagsPredicateTest {
         assertEquals(firstPredicate, firstPredicateCopy);
 
         // different types -> returns false
-        assertNotEquals(1, firstPredicate);
-        assertFalse(firstPredicate.equals(1));
+        assertNotEquals(firstPredicate, 1);
 
         // null -> returns false
-        assertNotEquals(null, firstPredicate);
+        assertNotEquals(firstPredicate, null);
 
         // different values -> returns false
         assertNotEquals(firstPredicate, secondPredicate);
