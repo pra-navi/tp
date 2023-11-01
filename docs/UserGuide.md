@@ -834,7 +834,39 @@ findTag TAG [MORE_TAGS]...
 
 <div style="page-break-after: always;"></div>
 
-### 20. Exiting the program: `exit`
+
+#### 20. Listing all persons and tasks: `listAll`
+
+You can list all persons and tasks in your contact list and task list at the same time.
+
+{% include admonition.html type="note" title="Note" body="
+
+You can use this command to quickly clear all filters after using the <code>findPerson</code>, <code>findTask</code>, <code>findDone</code>, <code>findNotDone</code>, or <code>findTag</code> commands, instead of having to type the <code>listPerson</code> and <code>listTask</code> commands manually.
+
+" %}
+
+<h4>Format:</h4>
+
+```
+listAll
+```
+
+<h4>Example:</h4>
+- `listAll`
+  - Shows all the persons and tasks in your contact list and task list.<br><br>
+
+  ![listAll success](images/output/listAll_success.png)
+
+{% include admonition.html type="failure" title="TODO: Missing Screenshot" body="
+
+Please add a screenshot of the output of the command `listAll`.
+
+" %}
+
+<div style="page-break-after: always;"></div>
+
+
+#### 21. Exiting the program: `exit`
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
@@ -897,4 +929,5 @@ Delete the <code>preferences.json</code> file created by CoordiMate before runni
 [**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
 [**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
 [**Find Tags**](#19-finding-persons-and-tasks-by-tag-findtag) | `indTag TAG [MORE_TAGS]...` | `findTag orientation`
-[**Exit**](#20-exiting-the-program-exit) | `exit` | `exit`
+[**List All Person and Task**](#20-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
+[**Exit**](#21-exiting-the-program-exit) | `exit` | `exit`
