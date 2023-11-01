@@ -3,46 +3,23 @@ layout: page
 title: User Guide
 ---
 
-Do you have trouble managing contacts?
+Are you a School of Computing (SoC) Computing Club event planner juggling numerous tasks and contacts for your upcoming events?
 
-Don't worry, CoordiMate is here to help!
-
-Are you a SOC Computing Club event planner juggling numerous tasks and contacts for your upcoming events? 
 Managing everything efficiently just got easier with CoordiMate!
 
-CoordiMate is your go-to **desktop app designed specifically for SOC Computing Club event planners**. 
-It helps you **manage your contacts and tasks** for your events, so that you can focus on the event itself.
+CoordiMate is your go-to **desktop app** designed specifically for **SoC Computing Club event planners** to help you **manage your contacts and tasks** for your events, so that you can focus on the event itself.
 
-Whether you're organizing a workshop, seminar, or a grand social event, CoordiMate is tailored 
-to meet the unique needs of SOC Computing Club event planners. 
-And here's the best part – while it's perfect for SOC Computing Club, 
-**event planners of all kinds** can benefit from CoordiMate's powerful features too!
+And here's the best part – while it's perfect for members of SoC Computing Club, **event planners of all kinds** can benefit from CoordiMate's powerful features too!
 
-Don't let the stress of managing contacts and tasks weigh you down. Let CoordiMate handle the details, 
-so you can focus on creating extraordinary events.
+<h4>Why choose CoordiMate?</h4>
 
-Why choose CoordiMate? Here's why:
+1. **User-Friendly Command Line Interface (CLI)**: CoordiMate is optimized for use via a CLI, combining all the benefits of a Graphical User Interface (GUI) with the efficiency of a CLI.
 
-1. **Tailored Precision**: Designed with SOC Computing Club event planners in mind, 
-CoordiMate ensures every feature meets your specific requirements.
+2. **Speedy Navigation**: If you're a fast typist, CoordiMate will help you complete your contact and tasks management faster than traditional GUI apps, maximising your productivity.
 
-2. **Efficient Management**: Seamlessly handle your contacts and tasks, 
-allowing you to focus on the creative aspects of your event.
+Don't let the stress of contact and task management hinder your event planning creativity.
 
-3. **User-Friendly CLI**: CoordiMate is optimized for use via a Command Line Interface (CLI), 
-offering the speed of typing with all the benefits of a Graphical User Interface (GUI).
-
-4. **Speedy Performance**: If you're a fast typist, CoordiMate will help you complete your contact and 
-tasks management faster than traditional GUI apps, ensuring your productivity soars.
-
-Don't let the stress of contact and task management hinder your event planning creativity. 
-Let CoordiMate take care of the details, empowering you to craft extraordinary events with confidence.
-
-Ready to plan your events effortlessly?  
-**CoordiMate is here to support your success!**
-
-This comprehensive user guide contains all the information you need to get started with CoordiMate.
-
+Let **CoordiMate** take care of the details, while you craft extraordinary events with confidence.
 
 ## Using This Guide
 
@@ -104,7 +81,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java `11` or above installed in your computer.
 
 2. Download the latest `CoordiMate.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/releases).
 
@@ -112,10 +89,11 @@ Throughout this guide, you will see different text styles that are used to highl
 
 4. Open a command terminal, `cd` into the folder you put `CoordiMate.jar` in, and use the `java -jar CoordiMate.jar` command to start CoordiMate.<br>
 
-   A GUI similar to the below picture should appear in a few seconds. Note how the app contains some sample data.<br><br>
+   A GUI similar to the below screenshot should appear in a few seconds. Note how the app contains some sample data.<br><br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br><br>
+
    Some example commands you can try:
 
    * `listPerson` : Lists all persons.
@@ -151,13 +129,13 @@ Throughout this guide, you will see different text styles that are used to highl
 4. **Simplified Task Tracking**:
     - Easily locate tasks based on your criteria. CoordiMate streamlines your search, ensuring you stay organized and focused on tasks that matter most to you and your attendees.
 5. **Hassle-Free Data Handling**:
-    - Automatic Data Management: 
+    - Automatic Data Management:
       - CoordiMate takes care of saving and loading data for you. No need to worry about manual saves; your information is secure and ready whenever you are.
       - Saved data safely as a JSON file located at `[JAR file location]/data/CoordiMate.json`.
-    - Startup Ready: 
+    - Startup Ready:
       - Instantly pick up where you left off. CoordiMate loads your existing data upon startup, eliminating downtime and ensuring you're always in the loop.
 6. **Empowering User Control**:
-    - Editable File Format: 
+    - Editable File Format:
       - For advanced users, CoordiMate offers complete data control. Tailor your event data directly by editing the data file, putting you in charge of your event management.
 
 With these user-centric features, CoordiMate empowers you to focus on what truly matters: creating exceptional events and nurturing valuable connections. Experience event planning made personal, efficient, and stress-free with CoordiMate!
@@ -236,10 +214,10 @@ You can view a link to access the user guide at any time, ensuring that you will
 help
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `help`
-  - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly. <br><br>
+  - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly.<br><br>
 
   ![help message](images/output/help_success.png)
 
@@ -262,18 +240,17 @@ addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 
 {% include admonition.html type="note" title="A person can have any number of tags (including 0)." %}
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 - `addPerson n/Charlotte Oliveiro p/93210283 e/charlotteo@example.com a/Blk 11 Ang Mo Kio Street 74, #11-04 t/flowers`
-  - Adds a person named `Charlotte Oliveiro` with phone number `93210283`, email `charlotteo@example.com`, 
-   address `Blk 11 Ang Mo Kio Street 74, #11-04`, and tag `flowers`. <br><br>
-  
+  - Adds a person named `Charlotte Oliveiro` with phone number `93210283`, email `charlotteo@example.com`,
+   address `Blk 11 Ang Mo Kio Street 74, #11-04`, and tag `flowers`.<br><br>
+
   ![addPerson success](images/output/addPerson_success.png)
 
-<h4>Errors:</h4>
+<h4>Potential Error:</h4>
 - `addPerson`
+  - Negative example as the name, phone number, email address, and address are not specified.<br><br>
 
-  - Negative example as the name, phone number, email address, and address are not specified. <br><br>
-  
   ![addPerson error](images/error/addPerson_error.png)
 
 <div style="page-break-after: always;"></div>
@@ -288,9 +265,9 @@ You can view details of all your contacts.
 listPerson
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 - `listPerson`
-    - Shows a full list of all the contacts in your contact list. <br><br>
+    - Shows a full list of all the contacts in your contact list.<br><br>
 
   ![listPerson success](images/output/listPerson_success.png)
 
@@ -314,25 +291,32 @@ editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 
 <h4>Examples:</h4>
 
-- `editPerson 1 p/91234567 e/johndoe@example.com` 
+- `editPerson 1 p/91234567 e/johndoe@example.com`
   - Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.<br><br>
-    ![editPerson success](images/output/editPerson_success.png)
 
-- `editPerson 2 n/Betsy Crower t/` 
-   - Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.<br><br>
-     ![editPerson success](images/output/editPerson_success_clearTag.png)
+  ![editPerson success](images/output/editPerson_success.png)<br><br>
 
-<h4>Errors:</h4>
+- `editPerson 2 n/Betsy Crower t/`
+  - Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.<br><br>
+
+  ![editPerson success](images/output/editPerson_success_clearTag.png)
+
+<h4>Potential Errors:</h4>
 
 - `editPerson`
-    - Negative example as no index or field is specified.<br><br>
-    ![editPerson error](images/error/editPerson_error.png)
+  - Negative example as no index or field is specified.<br><br>
+
+  ![editPerson error](images/error/editPerson_error.png)<br><br>
+
 - `editPerson 1`
   - Negative example as no fields are specified.<br><br>
-    ![editPerson error](images/error/editPerson_missingFields.png)
+
+  ![editPerson error](images/error/editPerson_missingFields.png)<br><br>
+
 - `editPerson 10 p/91234567 e/johndoe@example.com`
-    - Negative example as invalid index provided.<br><br>
-    ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
+  - Negative example as invalid index provided.<br><br>
+
+  ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -365,16 +349,19 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 
 - `findPerson alex yu`
   - Finds all persons whose names contains either `alex` or `yu`.<br><br>
-  ![findPerson success with a list](images/output/findPerson_success.png)
+
+  ![findPerson success with a list](images/output/findPerson_success.png)<br><br>
 
 - `findPerson David`
   - No results are displayed as no person has a name that contains `David`.<br><br>
+
   ![findPerson success with zero results](images/output/findPerson_noResults.png)
 
-<h4>Errors:</h4>
+<h4>Potential Error:</h4>
 
 - `findPerson`
   - Negative example as no keywords are specified.<br><br>
+
   ![findPerson error](images/error/findPerson_error.png)
 
 <div style="page-break-after: always;"></div>
@@ -399,20 +386,24 @@ deletePerson INDEX
 
 - `listPerson` followed by `deletePerson 2`
   - Deletes the 2nd person in your contact list.<br><br>
-  ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
 
-- `findPerson Bernice` followed by `deletePerson 1` 
+  ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)<br><br>
+
+- `findPerson Bernice` followed by `deletePerson 1`
   - Deletes the 1st person in the results of the `findPerson` command.<br><br>
+
   ![deletePerson_success_with_findPerson](images/output/deletePerson_success_filteredList.png)
 
-<h4>Errors:</h4>
+<h4>Potential Errors:</h4>
 
 - `deletePerson`
   - Negative example as no index is specified.<br><br>
-  ![deletePerson error_no_index](images/error/deletePerson_error.png)
+
+  ![deletePerson error_no_index](images/error/deletePerson_error.png)<br><br>
 
 - `deletePerson 1000`
   - Invalid index is provided.<br><br>
+
   ![deletePerson error_invalid_index](images/error/deletePerson_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
@@ -430,10 +421,10 @@ CoordiMate will discard <b>all</b> Person data and start with an empty data file
 deleteAllPerson
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteAllPerson`
-  - Deletes all persons in your contact list. <br><br>
+  - Deletes all persons in your contact list.<br><br>
 
   ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
 
@@ -452,19 +443,19 @@ addTask T/TITLE n/NOTE [t/TAG]...
 <h4>Examples:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
-  - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`. <br><br>
+  - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.<br><br>
 
-  ![addTask_success](images/output/addTask_success1.png)
+  ![addTask_success](images/output/addTask_success1.png)<br><br>
 
 - `addTask T/Call Caterers n/For 292 people t/orientation`
-  - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`. <br><br>
+  - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`.<br><br>
 
   ![addTask_success](images/output/addTask_success2.png)
 
-<h4>Errors:</h4>
+<h4>Potential Errors:</h4>
 
 - `addTask T/Book rooms`
-  - Negative example as the note is not specified. <br><br>
+  - Negative example as the note is not specified.<br><br>
 
   ![addTask_error](images/error/addTask_error.png)
 
@@ -482,7 +473,7 @@ listTask
 
 <h4>Examples:</h4>
 - `listTask`
-    - Displays a complete list of all tasks in your task list. <br><br>
+    - Displays a complete list of all tasks in your task list.<br><br>
 
   ![listTask success](images/output/listTask_success.png)
 
@@ -507,19 +498,19 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 <h4>Examples:</h4>
 
 - `editTask 1 T/Find Caterer`
-  - Edits the title of the 1st task to be `Find Caterer`. <br><br>
+  - Edits the title of the 1st task to be `Find Caterer`.<br><br>
 
-  ![editTask_success](images/output/editTask_success1.png)
+  ![editTask_success](images/output/editTask_success1.png)<br><br>
 
 - `editTask 2 T/Book room n/By Friday t/orientation`
-  - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`. <br><br>
+  - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.<br><br>
 
   ![editTask_success](images/output/editTask_success2.png)
 
-<h4>Errors:</h4>
+<h4>Potential Error:</h4>
 
 - `editTask`
-  - Negative example as the index is not specified. <br><br>
+  - Negative example as the index is not specified.<br><br>
 
   ![editTask_error](images/error/editTask_error.png)
 
@@ -554,16 +545,19 @@ findTask KEYWORD [MORE_KEYWORDS]…
 
 - `findTask Find Finale`
   - Finds tasks with titles or notes containing either `Find` or `Finale`.<br><br>
-  ![findTask_success](images/output/findTask_success.png)
+
+  ![findTask_success](images/output/findTask_success.png)<br><br>
 
 - `findTask Photography`
   - No results are displayed as no task has a title or note that contains `Photography`.<br><br>
+
   ![findTask_noResults](images/output/findTask_noResults.png)
 
-<h4>Errors:</h4>
+<h4>Potential Error:</h4>
 
 - `findTask`
   - Negative example as no keywords are specified.<br><br>
+
   ![findTask_error](images/error/findTask_error.png)
 
 <div style="page-break-after: always;"></div>
@@ -585,21 +579,25 @@ Allows you to remove a task from your task list with ease.
 
 - `listTask` followed by `deleteTask 2`
     - Deletes the 2nd task in your task list.<br><br>
-      ![deleteTask_success_with_listTask](images/output/deleteTask_success.png)
+
+  ![deleteTask_success_with_listTask](images/output/deleteTask_success.png)<br><br>
 
 - `findTask caterer` followed by `deleteTask 1`
     - Deletes the 1st task in the results of the `findTask` command.<br><br>
-      ![deleteTask_success_with_findTask](images/output/deleteTask_success_filteredList.png)
 
-<h4>Errors:</h4>
+  ![deleteTask_success_with_findTask](images/output/deleteTask_success_filteredList.png)
+
+<h4>Potential Errors:</h4>
 
 - `deleteTask`
     - Negative example as no index is specified.<br><br>
-      ![deleteTask error_no_index](images/error/deleteTask_error.png)
+
+  ![deleteTask error_no_index](images/error/deleteTask_error.png)<br><br>
 
 - `deleteTask 1000`
     - Invalid index is provided.<br><br>
-      ![deleteTask error_invalid_index](images/error/deleteTask_wrongIndex.png)
+
+  ![deleteTask error_invalid_index](images/error/deleteTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -616,10 +614,11 @@ Allows you to remove all entries from your task list.
 deleteAllTask
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteAllTask`
-  - Deletes all tasks in your task list. <br><br>
+  - Deletes all tasks in your task list.<br><br>
+
   ![deleteAllTask success](images/output/deleteAllTask_success.png)
 
 <div style="page-break-after: always;"></div>
@@ -642,21 +641,25 @@ markTask INDEX
 
 <h4>Examples:</h4>
 
-- `listTask` followed by `markTask 1` 
-  - Marks the 1st task in the task list as **done** <br><br>
-    ![markTask_success](images/output/markTask_success.png)
+- `listTask` followed by `markTask 1`
+  - Marks the 1st task in the task list as **done**<br><br>
 
-- `findTask budget` followed by `markTask 1` 
-  - Marks the 1st task in the results of the `findTask` command as **done** <br><br>
-    ![markTask_success](images/output/markTask_success_filteredList.png)
+  ![markTask_success](images/output/markTask_success.png)<br><br>
 
-<h4>Errors:</h4>
+- `findTask budget` followed by `markTask 1`
+  - Marks the 1st task in the results of the `findTask` command as **done**<br><br>
+
+  ![markTask_success](images/output/markTask_success_filteredList.png)
+
+<h4>Potential Errors:</h4>
 - `markTask`
-  - Negative example as no index is given. <br><br>
-  ![markTask_error](images/error/markTask_error.png)
+  - Negative example as no index is given.<br><br>
+
+  ![markTask_error](images/error/markTask_error.png)<br><br>
 
 - `markTask 10`
-  - Negative example as invalid index is given. <br><br>
+  - Negative example as invalid index is given.<br><br>
+
   ![markTask_wrongIndex](images/error/markTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
@@ -679,22 +682,26 @@ unmarkTask INDEX
 
 <h4>Examples:</h4>
 
-- `listTask` followed by `unmarkTask 1` 
-  - Marks the 1st task in the task list as **not done** <br><br>
-    ![unmarkTask_success](images/output/unmarkTask_success.png)
+- `listTask` followed by `unmarkTask 1`
+  - Marks the 1st task in the task list as **not done**<br><br>
 
-- `findTask budget` followed by `unmarkTask 1` 
-  - marks the 1st task in the results of the `findTask` command as **not done** <br><br>
-    ![unmarkTask_success](images/output/unmarkTask_success_filteredList.png)
+  ![unmarkTask_success](images/output/unmarkTask_success.png)<br><br>
 
-<h4>Errors:</h4>
+- `findTask budget` followed by `unmarkTask 1`
+  - marks the 1st task in the results of the `findTask` command as **not done**<br><br>
+
+  ![unmarkTask_success](images/output/unmarkTask_success_filteredList.png)
+
+<h4>Potential Errors:</h4>
 
 - `unmarkTask`
-  - Negative example as no index is given. <br><br>
-  ![unmarkTask_error](images/error/unmarkTask_error.png)
+  - Negative example as no index is given.<br><br>
+
+  ![unmarkTask_error](images/error/unmarkTask_error.png)<br><br>
 
 - `unmarkTask 10`
-  - Negative example as invalid index is given. <br><br>
+  - Negative example as invalid index is given.<br><br>
+
   ![markTask_wrongIndex](images/error/unmarkTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
@@ -719,11 +726,13 @@ findDone
 <h4>Examples:</h4>
 
 - `findDone`
-  - Tasks are displayed as they are marked as done. <br><br>
-  ![findDone_success](images/output/findDone_success.png)
+  - Tasks are displayed as they are marked as done.<br><br>
+
+  ![findDone_success](images/output/findDone_success.png)<br><br>
 
 - `findDone`
-  - There are no tasks to be displayed, as no Task is done. <br><br>
+  - There are no tasks to be displayed, as no Task is done.<br><br>
+
   ![findDone_noResults](images/output/findDone_noResults.png)
 
 <div style="page-break-after: always;"></div>
@@ -748,11 +757,13 @@ findNotDone
 <h4>Examples:</h4>
 
 - `findNotDone`
-  - Tasks are displayed as they are marked as not done. <br><br>
-  ![findNotDone_success](images/output/findNotDone_success.png)
+  - Tasks are displayed as they are marked as not done.<br><br>
+
+  ![findNotDone_success](images/output/findNotDone_success.png)<br><br>
 
 - `findNotDone`
-  - There are no tasks to be displayed, as no Task is not done. <br><br>
+  - There are no tasks to be displayed, as no Task is not done.<br><br>
+
   ![findNotDone_noResults](images/output/findNotDone_noResults.png)
 
 <div style="page-break-after: always;"></div>
@@ -783,6 +794,7 @@ listTag
 
 - `listTag`
   - Shows you a list of all tags used in your contact list and task list and the number of times each tag has been used.<br><br>
+
   ![listTag success](images/output/listTag_success.png)
 
 <div style="page-break-after: always;"></div>
@@ -792,8 +804,10 @@ listTag
 You can search for persons and tasks using tags.
 
 <h4>Format:</h4>
-    
-    findTag TAG [MORE_TAGS]...
+
+```
+findTag TAG [MORE_TAGS]...
+```
 
 - Finds the persons and tasks whose tags contain at least one of the specified `TAG`.
 - Specify a tag with the `TAG` parameter. This field is **mandatory**.
@@ -802,21 +816,21 @@ You can search for persons and tasks using tags.
 <h4>Examples:</h4>
 
 - `findTag catering orientation`
-    - Shows all persons and tasks with tags containing the words "catering" or "orientation". <br><br>
-      
-    ![findTag_success_1](images/output/findTag_success1.png)
-  
-- `findTag orientation`
-    - Shows all persons and tasks with tags containing the word "orientation". <br><br>
-      
-    ![findTag_success_2](images/output/findTag_success2.png)
+  - Shows all persons and tasks with tags containing the words "catering" or "orientation".<br><br>
 
-<h4>Errors:</h4>
+  ![findTag_success_1](images/output/findTag_success1.png)
+
+- `findTag orientation`
+  - Shows all persons and tasks with tags containing the word "orientation".<br><br>
+
+  ![findTag_success_2](images/output/findTag_success2.png)
+
+<h4>Potential Error:</h4>
 
 - `findTag`
-    - An invalid command format. The application expects one or more keywords after `findTag`. <br><br>
-      
-    ![FindTag Example 2](images/error/findTag_error.png)
+  - An invalid command format. The application expects one or more keywords after `findTag`.<br><br>
+
+  ![FindTag Example 2](images/error/findTag_error.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -830,9 +844,9 @@ Once you are done with your work in CoordiMate, you can exit the program by typi
 exit
 ```
 
-Output:
-
-- CoordiMate exits and the program window closes.
+<h4>Example:</h4>
+- `exit`
+  - CoordiMate exits and the program window closes.
 
 <div style="page-break-after: always;"></div>
 
