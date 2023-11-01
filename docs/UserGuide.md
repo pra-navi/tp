@@ -768,7 +768,36 @@ findNotDone
 
 <div style="page-break-after: always;"></div>
 
-### 18. Listing all tags: `listTag`
+### 18. Deleting all tasks that are done: `deleteAllDone`
+
+You can easily clean up your task list by deleting all completed task, allowing you maintain an organized and clutter-free task management system. 
+
+{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
+CoordiMate will discard all related data for Tasks that are marked as Done at the next run.<br>" %}
+
+<h4>Format:</h4>
+
+```
+deleteAllDone
+```
+
+<h4>Examples:</h4>
+
+- `deleteAllDone`
+  - All tasks that are marked as done are deleted.<br><br>
+
+  ![deleteAllDone_success](images/output/deleteAllDone_success.png)<br><br>
+
+<h4>Potential Errors:</h4>
+
+- `deleteAllDone`
+  - There are no tasks found that are marked as done.<br><br>
+
+  ![deleteAllDone_error](images/error/deleteAllDone_error.png)<br><br>
+
+<div style="page-break-after: always;"></div>
+
+### 19. Listing all tags: `listTag`
 
 Provides you with a complete list of tags you have used in your contact list and task list, and the number of times each tag has been used.
 
@@ -799,7 +828,7 @@ listTag
 
 <div style="page-break-after: always;"></div>
 
-### 19. Finding persons and tasks by tag: `findTag`
+### 20. Finding persons and tasks by tag: `findTag`
 
 You can search for persons and tasks using tags.
 
@@ -834,7 +863,7 @@ findTag TAG [MORE_TAGS]...
 
 <div style="page-break-after: always;"></div>
 
-### 20. Exiting the program: `exit`
+### 21. Exiting the program: `exit`
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
@@ -895,6 +924,7 @@ Delete the <code>preferences.json</code> file created by CoordiMate before runni
 [**Unmark Task**](#15-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
 [**Find Done Task**](#16-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
 [**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
-[**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Find Tags**](#19-finding-persons-and-tasks-by-tag-findtag) | `indTag TAG [MORE_TAGS]...` | `findTag orientation`
-[**Exit**](#20-exiting-the-program-exit) | `exit` | `exit`
+[**Delete All Done Task**](#18-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
+[**List All Tags**](#19-listing-all-tags-listtag) | `listTag` | `listTag`
+[**Find Tags**](#20-finding-persons-and-tasks-by-tag-findtag) | `indTag TAG [MORE_TAGS]...` | `findTag orientation`
+[**Exit**](#21-exiting-the-program-exit) | `exit` | `exit`
