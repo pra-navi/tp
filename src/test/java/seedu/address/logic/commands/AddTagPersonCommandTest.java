@@ -44,10 +44,22 @@ public class AddTagPersonCommandTest {
         Set<Tag> updatedTags = new HashSet<>(existingTags);
         updatedTags.add(tag);
 
-        Person editedPerson = new PersonBuilder(personToEdit).editTags(updatedTags).build();
+        Set<Tag> newTags = new HashSet<>();
+        Set<Tag> oldTags = new HashSet<>();
+
+        for (Tag t : tags) {
+            if (existingTags.contains(tag)) {
+                oldTags.add(t);
+            } else {
+                newTags.add(t);
+            }
+        }
+
+        Person editedPerson = new PersonBuilder(personToEdit).setTags(updatedTags).build();
 
         String expectedMessage = String.format(AddTagPersonCommand.MESSAGE_EDIT_PERSON_SUCCESS,
-                Messages.format(editedPerson));
+                Messages.format(editedPerson), AddTagPersonCommand.setToString(newTags),
+                AddTagPersonCommand.setToString(oldTags));
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(personToEdit, editedPerson);
@@ -82,10 +94,22 @@ public class AddTagPersonCommandTest {
         Set<Tag> updatedTags = new HashSet<>(existingTags);
         updatedTags.add(tag);
 
-        Person editedPerson = new PersonBuilder(personToEdit).editTags(updatedTags).build();
+        Set<Tag> newTags = new HashSet<>();
+        Set<Tag> oldTags = new HashSet<>();
+
+        for (Tag t : tags) {
+            if (existingTags.contains(tag)) {
+                oldTags.add(t);
+            } else {
+                newTags.add(t);
+            }
+        }
+
+        Person editedPerson = new PersonBuilder(personToEdit).setTags(updatedTags).build();
 
         String expectedMessage = String.format(AddTagPersonCommand.MESSAGE_EDIT_PERSON_SUCCESS,
-                Messages.format(editedPerson));
+                Messages.format(editedPerson), AddTagPersonCommand.setToString(newTags),
+                AddTagPersonCommand.setToString(oldTags));
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(personToEdit, editedPerson);

@@ -7,6 +7,7 @@ import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASKS;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
@@ -35,9 +36,12 @@ public class AddTagTaskCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_TAG + "class";
 
-    public static final String MESSAGE_EDIT_TASK_SUCCESS = "Edited Task: %1$s";
+    public static final String MESSAGE_EDIT_TASK_SUCCESS = "Edited Task: %1$s \n" + "Successfully added these "
+            + "tags: %2$s \n" + "These tags were not added as they already exists: %3$s";
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the address book.";
 
+    private static Set<Tag> newTags = new HashSet<>();
+    private static Set<Tag> oldTags = new HashSet<>();
     private final Set<Tag> tagsToAdd;
     private final Index index;
 
@@ -51,6 +55,8 @@ public class AddTagTaskCommand extends Command {
 
         this.index = index;
         this.tagsToAdd = tagsToAdd;
+        newTags = new HashSet<>();
+        oldTags = new HashSet<>();
     }
 
     @Override
@@ -67,7 +73,8 @@ public class AddTagTaskCommand extends Command {
 
         model.setTask(taskToEdit, editedTask);
         model.updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
-        return new CommandResult(String.format(MESSAGE_EDIT_TASK_SUCCESS, Messages.format(editedTask)));
+        return new CommandResult(String.format(MESSAGE_EDIT_TASK_SUCCESS, Messages.format(editedTask),
+                setToString(newTags), setToString(oldTags)));
     }
 
     /**
@@ -80,10 +87,40 @@ public class AddTagTaskCommand extends Command {
         Note note = taskToEdit.getNote();
         Status taskStatus = taskToEdit.getStatus();
         Set<Tag> existingTags = taskToEdit.getTags();
+
+        for (Tag tag : tagsToAdd) {
+            if (existingTags.contains(tag)) {
+                oldTags.add(tag);
+            } else {
+                newTags.add(tag);
+            }
+        }
+
         Set<Tag> updatedTags = new HashSet<>(existingTags);
         updatedTags.addAll(tagsToAdd);
 
         return new Task(title, note, taskStatus, updatedTags);
+    }
+
+    public static String setToString(Set<Tag> tags) {
+
+        if (tags.isEmpty()) {
+            return "-";
+        } else {
+            String tagString = tags.stream()
+                    .map(Tag::toString)
+                    .collect(Collectors.joining(", "));
+
+            return tagString;
+        }
+    }
+
+    public static Set<Tag> getNewTags() {
+        return newTags;
+    }
+
+    public static Set<Tag> getOldTags() {
+        return oldTags;
     }
 
     @Override

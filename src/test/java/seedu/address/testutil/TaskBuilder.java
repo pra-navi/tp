@@ -78,7 +78,7 @@ public class TaskBuilder {
     /**
      * Sets the {@code tags} of the {@code Task} that we are building.
      */
-    public TaskBuilder editTags(Set<Tag> tags) {
+    public TaskBuilder setTags(Set<Tag> tags) {
         this.tags = tags;
         return this;
     }

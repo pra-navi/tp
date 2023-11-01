@@ -125,9 +125,8 @@ public class AddressBookParserTest {
         Tag tag = new Tag("caterer");
         Set<Tag> tags = new HashSet<>();
         tags.add(tag);
-        AddTagPersonCommand command = (AddTagPersonCommand) parser
-                .parseCommand(AddTagPersonCommand.COMMAND_WORD + " "
-                        + INDEX_FIRST.getOneBased() + " t/caterer");
+        AddTagPersonCommand command = (AddTagPersonCommand) parser.parseCommand(AddTagPersonCommand.COMMAND_WORD
+                + " " + INDEX_FIRST.getOneBased() + " t/caterer");
         assertEquals(new AddTagPersonCommand(INDEX_FIRST, tags), command);
     }
 
@@ -136,9 +135,8 @@ public class AddressBookParserTest {
         Tag tag = new Tag("caterer");
         Set<Tag> tags = new HashSet<>();
         tags.add(tag);
-        AddTagPersonCommand command = (AddTagPersonCommand) parser
-                .parseCommand(AddTagPersonCommand.SHORTENED_COMMAND_WORD + " "
-                        + INDEX_FIRST.getOneBased() + " t/caterer");
+        AddTagPersonCommand command = (AddTagPersonCommand) parser.parseCommand(
+                AddTagPersonCommand.SHORTENED_COMMAND_WORD + " " + INDEX_FIRST.getOneBased() + " t/caterer");
         assertEquals(new AddTagPersonCommand(INDEX_FIRST, tags), command);
     }
 
@@ -333,9 +331,8 @@ public class AddressBookParserTest {
         Tag tag = new Tag("class");
         Set<Tag> tags = new HashSet<>();
         tags.add(tag);
-        AddTagTaskCommand command = (AddTagTaskCommand) parser
-                .parseCommand(AddTagTaskCommand.COMMAND_WORD + " "
-                        + INDEX_FIRST.getOneBased() + " " + " t/class");
+        AddTagTaskCommand command = (AddTagTaskCommand) parser.parseCommand(AddTagTaskCommand.COMMAND_WORD
+                + " " + INDEX_FIRST.getOneBased() + " " + " t/class");
         assertEquals(new AddTagTaskCommand(INDEX_FIRST, tags), command);
     }
 
@@ -344,9 +341,8 @@ public class AddressBookParserTest {
         Tag tag = new Tag("class");
         Set<Tag> tags = new HashSet<>();
         tags.add(tag);
-        AddTagTaskCommand command = (AddTagTaskCommand) parser
-                .parseCommand(AddTagTaskCommand.SHORTENED_COMMAND_WORD + " "
-                        + INDEX_FIRST.getOneBased() + " " + " t/class");
+        AddTagTaskCommand command = (AddTagTaskCommand) parser.parseCommand(AddTagTaskCommand.SHORTENED_COMMAND_WORD
+                + " " + INDEX_FIRST.getOneBased() + " " + " t/class");
         assertEquals(new AddTagTaskCommand(INDEX_FIRST, tags), command);
     }
 

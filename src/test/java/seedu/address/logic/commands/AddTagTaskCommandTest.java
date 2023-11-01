@@ -44,10 +44,22 @@ public class AddTagTaskCommandTest {
         Set<Tag> updatedTags = new HashSet<>(existingTags);
         updatedTags.add(tag);
 
-        Task editedTask = new TaskBuilder(taskToEdit).editTags(updatedTags).build();
+        Set<Tag> newTags = new HashSet<>();
+        Set<Tag> oldTags = new HashSet<>();
+
+        for (Tag t : tags) {
+            if (existingTags.contains(tag)) {
+                oldTags.add(t);
+            } else {
+                newTags.add(t);
+            }
+        }
+
+        Task editedTask = new TaskBuilder(taskToEdit).setTags(updatedTags).build();
 
         String expectedMessage = String.format(AddTagTaskCommand.MESSAGE_EDIT_TASK_SUCCESS,
-                Messages.format(editedTask));
+                Messages.format(editedTask), AddTagTaskCommand.setToString(newTags),
+                AddTagTaskCommand.setToString(oldTags));
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setTask(taskToEdit, editedTask);
@@ -82,10 +94,22 @@ public class AddTagTaskCommandTest {
         Set<Tag> updatedTags = new HashSet<>(existingTags);
         updatedTags.add(tag);
 
-        Task editedTask = new TaskBuilder(taskToEdit).editTags(updatedTags).build();
+        Set<Tag> newTags = new HashSet<>();
+        Set<Tag> oldTags = new HashSet<>();
+
+        for (Tag t : tags) {
+            if (existingTags.contains(tag)) {
+                oldTags.add(t);
+            } else {
+                newTags.add(t);
+            }
+        }
+
+        Task editedTask = new TaskBuilder(taskToEdit).setTags(updatedTags).build();
 
         String expectedMessage = String.format(AddTagTaskCommand.MESSAGE_EDIT_TASK_SUCCESS,
-                Messages.format(editedTask));
+                Messages.format(editedTask), AddTagTaskCommand.setToString(newTags),
+                AddTagTaskCommand.setToString(oldTags));
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setTask(taskToEdit, editedTask);
