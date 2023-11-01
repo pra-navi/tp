@@ -30,6 +30,7 @@ import seedu.address.logic.commands.FindPersonCommand;
 import seedu.address.logic.commands.FindTagCommand;
 import seedu.address.logic.commands.FindTaskCommand;
 import seedu.address.logic.commands.HelpCommand;
+import seedu.address.logic.commands.ListAllCommand;
 import seedu.address.logic.commands.ListPersonCommand;
 import seedu.address.logic.commands.ListTagCommand;
 import seedu.address.logic.commands.ListTaskCommand;
@@ -167,6 +168,18 @@ public class AddressBookParserTest {
     public void parseCommand_shortened_listPerson() throws Exception {
         assertTrue(parser.parseCommand(ListPersonCommand.SHORTENED_COMMAND_WORD) instanceof ListPersonCommand);
         assertTrue(parser.parseCommand(ListPersonCommand.SHORTENED_COMMAND_WORD + " 3") instanceof ListPersonCommand);
+    }
+
+    @Test
+    public void parseCommand_listAll() throws Exception {
+        assertTrue(parser.parseCommand(ListAllCommand.COMMAND_WORD) instanceof ListAllCommand);
+        assertTrue(parser.parseCommand(ListAllCommand.COMMAND_WORD + " 3") instanceof ListAllCommand);
+    }
+
+    @Test
+    public void parseCommand_shortened_listAll() throws Exception {
+        assertTrue(parser.parseCommand(ListAllCommand.SHORTENED_COMMAND_WORD) instanceof ListAllCommand);
+        assertTrue(parser.parseCommand(ListAllCommand.SHORTENED_COMMAND_WORD + " 3") instanceof ListAllCommand);
     }
 
     @Test
