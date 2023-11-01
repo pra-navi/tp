@@ -1,0 +1,96 @@
+package seedu.address.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import seedu.address.commons.core.index.Index;
+import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.logic.Messages;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.Model;
+import seedu.address.model.person.Person;
+import seedu.address.model.tag.Tag;
+
+/**
+ * Deletes a tag from a person identified using its displayed index from the address book.
+ */
+public class DeleteTagPersonCommand extends Command {
+
+    public static final String COMMAND_WORD = "deleteTagPerson";
+    public static final String SHORTENED_COMMAND_WORD = "dtagp";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
+            + ": Deletes a tag from a person identified using its displayed index from the address book.\n"
+            + "Parameters: INDEX (must be a positive integer)\n"
+            + "Example: " + COMMAND_WORD + " 1 " + PREFIX_TAG + "catering";
+
+    public static final String MESSAGE_DELETE_TAG_PERSON_SUCCESS = "Deleted tag from person: %1$s";
+
+    private final Index targetIndex;
+    private final Set<Tag> tagsToDelete;
+
+    /**
+     * @param index of the person in the filtered person list to edit
+     * @param tagsToDelete tags to delete from the person
+     */
+    public DeleteTagPersonCommand(Index targetIndex, Set<Tag> tagsToDelete) {
+        this.targetIndex = targetIndex;
+        this.tagsToDelete = tagsToDelete;
+    }
+
+    @Override
+    public CommandResult execute(Model model) throws CommandException {
+        requireNonNull(model);
+        List<Person> lastShownList = model.getFilteredPersonList();
+
+        if (targetIndex.getZeroBased() >= lastShownList.size()) {
+            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+        }
+
+        Person personToEdit = lastShownList.get(targetIndex.getZeroBased());
+        Person editedPerson = createEditedPerson(personToEdit, tagsToDelete);
+        return new CommandResult(String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson)));
+    }
+
+    private static Person createEditedPerson(Person personToEdit, Set<Tag> tagsToDelete) {
+        requireNonNull(personToEdit);
+        requireNonNull(tagsToDelete);
+
+        Set<Tag> newTags = new HashSet<>(personToEdit.getTags());
+        newTags.removeAll(tagsToDelete);
+        return new Person(
+                personToEdit.getName(),
+                personToEdit.getPhone(),
+                personToEdit.getEmail(),
+                personToEdit.getAddress(),
+                newTags);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof DeleteTagPersonCommand)) {
+            return false;
+        }
+
+        DeleteTagPersonCommand otherDeleteCommand = (DeleteTagPersonCommand) other;
+        return targetIndex.equals(otherDeleteCommand.targetIndex)
+                && tagsToDelete.equals(otherDeleteCommand.tagsToDelete);
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .add("targetIndex", targetIndex)
+                .add("tagsToDelete", tagsToDelete)
+                .toString();
+    }
+}
