@@ -64,9 +64,12 @@ class TagFrequencyTableTest {
     @Test
     public void format() {
         String expected = "[class]: 8 items (0 Persons, 8 Tasks)\n"
+                          + "[colleague]: 6 items (3 Persons, 3 Tasks)\n"
+                          + "[syndicateA]: 4 items (2 Persons, 2 Tasks)\n"
                           + "[admin]: 3 items (0 Persons, 3 Tasks)\n"
                           + "[finance]: 3 items (0 Persons, 3 Tasks)\n"
                           + "[friends]: 3 items (3 Persons, 0 Tasks)\n"
+                          + "[syndicateB]: 2 items (1 Persons, 1 Tasks)\n"
                           + "[caterer]: 1 items (0 Persons, 1 Tasks)\n"
                           + "[location]: 1 items (0 Persons, 1 Tasks)\n"
                           + "[owesMoney]: 1 items (1 Persons, 0 Tasks)";

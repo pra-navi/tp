@@ -8,6 +8,9 @@ import static seedu.address.testutil.TypicalTasks.AGENDA;
 import static seedu.address.testutil.TypicalTasks.CATERING;
 import static seedu.address.testutil.TypicalTasks.DRAFT;
 import static seedu.address.testutil.TypicalTasks.INVITATION;
+import static seedu.address.testutil.TypicalTasks.JOURNAL;
+import static seedu.address.testutil.TypicalTasks.KPI;
+import static seedu.address.testutil.TypicalTasks.LECTURE;
 import static seedu.address.testutil.TypicalTasks.getTypicalAddressBook;
 
 import java.util.Arrays;
@@ -42,11 +45,11 @@ public class FindNotDoneCommandTest {
 
     @Test
     public void execute_multipleTasksFound() {
-        String expectedMessage = String.format(MESSAGE_TASKS_LISTED_OVERVIEW, 4);
+        String expectedMessage = String.format(MESSAGE_TASKS_LISTED_OVERVIEW, 7);
         FindNotDoneCommand command = new FindNotDoneCommand();
         expectedModel.updateFilteredTaskList(PREDICATE_SHOW_NOT_DONE_TASKS);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
-        assertEquals(Arrays.asList(AGENDA, CATERING, DRAFT, INVITATION),
+        assertEquals(Arrays.asList(AGENDA, CATERING, DRAFT, INVITATION, JOURNAL, KPI, LECTURE),
                 model.getFilteredTaskList());
     }
 }

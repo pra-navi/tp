@@ -56,6 +56,36 @@
       "email": "anna@example.com",
       "address": "4th street",
       "tags": []
+    },
+    {
+      "name": "James Watson",
+      "phone": "91351251",
+      "email": "james@example.com",
+      "address": "789, Ang Mo Kio Ave 6, #12-111",
+      "tags": [
+        "colleague",
+        "syndicateA"
+      ]
+    },
+    {
+      "name": "Karen Chen",
+      "phone": "91765431",
+      "email": "karen@example.com",
+      "address": "159, Tampines St 21, #03-10",
+      "tags": [
+        "colleague",
+        "syndicateB"
+      ]
+    },
+    {
+      "name": "Lucas Yang",
+      "phone": "91352853",
+      "email": "lucas@example.com",
+      "address": "2, Serangoon North Ave 2",
+      "tags": [
+        "colleague",
+        "syndicateA"
+      ]
     }
   ],
   "tasks": []
