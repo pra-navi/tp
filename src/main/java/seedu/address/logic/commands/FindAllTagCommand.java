@@ -17,10 +17,10 @@ public class FindAllTagCommand extends Command {
     public static final String SHORTENED_COMMAND_WORD = "fatag";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
-            + ": Finds all persons and tasks whose tag contain all of "
+            + ": Finds all persons and tasks whose tags contain all of "
             + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            + "Example: " + COMMAND_WORD + " agenda";
+            + "Example: " + COMMAND_WORD + " agenda budget";
 
     private final PersonContainsAllTagsPredicate personPredicate;
     private final TaskContainsAllTagsPredicate taskPredicate;

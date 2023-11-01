@@ -19,12 +19,8 @@ public class TypicalAddressBook {
      */
     public static AddressBook getTypicalAddressBook() {
         AddressBook ab = new AddressBook();
-        for (Person person : getTypicalPersons()) {
-            ab.addPerson(person);
-        }
-        for (Task task : getTypicalTasks()) {
-            ab.addTask(task);
-        }
+        ab.setPersons(getTypicalPersons());
+        ab.setTasks(getTypicalTasks());
         return ab;
     }
 }
