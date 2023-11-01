@@ -30,19 +30,20 @@ public class AddTagPersonCommand extends Command {
     public static final String SHORTENED_COMMAND_WORD = "atagp";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
-            + ": Adds new tag to the person identified "
+            + ": Adds new tags to the person identified "
             + "by the index number used in the displayed contact list. \n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_TAG + "catering";
+            + PREFIX_TAG + "catering " + PREFIX_TAG + "smallBusiness";
 
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Person: %1$s \n" + "Successfully added these "
             + "tags: %2$s \n" + "These tags were not added as they already exists: %3$s";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book.";
 
-    private static Set<Tag> newTags = new HashSet<>();
-    private static Set<Tag> oldTags = new HashSet<>();
+    // newTags stores those from tagsToAdd that are not already in personToEdit's tags
+    private static Set<Tag> newTags;
+    // oldTags stores those from tagsToAdd that are already in personToEdit's tags
+    private static Set<Tag> oldTags;
     private final Set<Tag> tagsToAdd;
     private final Index index;
 
@@ -90,13 +91,13 @@ public class AddTagPersonCommand extends Command {
         Address address = personToEdit.getAddress();
         Set<Tag> existingTags = personToEdit.getTags();
 
-        for (Tag tag : tagsToAdd) {
-            if (existingTags.contains(tag)) {
-                oldTags.add(tag);
-            } else {
-                newTags.add(tag);
-            }
-        }
+        Set<Tag> commonTags = new HashSet<>(existingTags);
+        commonTags.retainAll(tagsToAdd);
+
+        oldTags.addAll(commonTags);
+
+        newTags.addAll(tagsToAdd);
+        newTags.removeAll(existingTags);
 
         Set<Tag> updatedTags = new HashSet<>(existingTags);
         updatedTags.addAll(tagsToAdd);
@@ -109,20 +110,10 @@ public class AddTagPersonCommand extends Command {
         if (tags.isEmpty()) {
             return "-";
         } else {
-            String tagString = tags.stream()
+            return tags.stream()
                     .map(Tag::toString)
                     .collect(Collectors.joining(", "));
-
-            return tagString;
         }
-    }
-
-    public static Set<Tag> getNewTags() {
-        return newTags;
-    }
-
-    public static Set<Tag> getOldTags() {
-        return oldTags;
     }
 
     @Override

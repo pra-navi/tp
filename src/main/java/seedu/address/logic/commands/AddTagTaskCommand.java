@@ -29,19 +29,20 @@ public class AddTagTaskCommand extends Command {
     public static final String SHORTENED_COMMAND_WORD = "atagt";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
-            + ": Adds new tag to the task identified "
+            + ": Adds new tags to the task identified "
             + "by the index number used in the displayed task list. \n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_TAG + "class";
+            + PREFIX_TAG + "class " + PREFIX_TAG + "finance";
 
     public static final String MESSAGE_EDIT_TASK_SUCCESS = "Edited Task: %1$s \n" + "Successfully added these "
             + "tags: %2$s \n" + "These tags were not added as they already exists: %3$s";
-    public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the address book.";
 
-    private static Set<Tag> newTags = new HashSet<>();
-    private static Set<Tag> oldTags = new HashSet<>();
+    // newTags stores those from tagsToAdd that are not already in taskToEdit's tags
+    private static Set<Tag> newTags;
+    // oldTags stores those from tagsToAdd that are already in taskToEdit's tags
+    private static Set<Tag> oldTags;
     private final Set<Tag> tagsToAdd;
     private final Index index;
 
@@ -88,13 +89,13 @@ public class AddTagTaskCommand extends Command {
         Status taskStatus = taskToEdit.getStatus();
         Set<Tag> existingTags = taskToEdit.getTags();
 
-        for (Tag tag : tagsToAdd) {
-            if (existingTags.contains(tag)) {
-                oldTags.add(tag);
-            } else {
-                newTags.add(tag);
-            }
-        }
+        Set<Tag> commonTags = new HashSet<>(existingTags);
+        commonTags.retainAll(tagsToAdd);
+
+        oldTags.addAll(commonTags);
+
+        newTags.addAll(tagsToAdd);
+        newTags.removeAll(existingTags);
 
         Set<Tag> updatedTags = new HashSet<>(existingTags);
         updatedTags.addAll(tagsToAdd);
@@ -107,20 +108,10 @@ public class AddTagTaskCommand extends Command {
         if (tags.isEmpty()) {
             return "-";
         } else {
-            String tagString = tags.stream()
+            return tags.stream()
                     .map(Tag::toString)
                     .collect(Collectors.joining(", "));
-
-            return tagString;
         }
-    }
-
-    public static Set<Tag> getNewTags() {
-        return newTags;
-    }
-
-    public static Set<Tag> getOldTags() {
-        return oldTags;
     }
 
     @Override

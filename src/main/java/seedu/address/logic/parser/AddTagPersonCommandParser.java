@@ -12,7 +12,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.tag.Tag;
 
 /**
- * Parses input arguments and creates a new AddTagPersonCommand object
+ * Parses input arguments and creates a new AddTagPersonCommand object.
  */
 public class AddTagPersonCommandParser implements Parser<AddTagPersonCommand> {
 
@@ -37,7 +37,7 @@ public class AddTagPersonCommandParser implements Parser<AddTagPersonCommand> {
 
         Set<Tag> tags = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
-        if (tags.size() == 0) {
+        if (tags.isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddTagPersonCommand.MESSAGE_USAGE));
         }
 

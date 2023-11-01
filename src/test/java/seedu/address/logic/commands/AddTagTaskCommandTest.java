@@ -47,13 +47,13 @@ public class AddTagTaskCommandTest {
         Set<Tag> newTags = new HashSet<>();
         Set<Tag> oldTags = new HashSet<>();
 
-        for (Tag t : tags) {
-            if (existingTags.contains(tag)) {
-                oldTags.add(t);
-            } else {
-                newTags.add(t);
-            }
-        }
+        Set<Tag> commonTags = new HashSet<>(existingTags);
+        commonTags.retainAll(tags);
+
+        oldTags.addAll(commonTags);
+
+        newTags.addAll(tags);
+        newTags.removeAll(existingTags);
 
         Task editedTask = new TaskBuilder(taskToEdit).setTags(updatedTags).build();
 
@@ -97,13 +97,13 @@ public class AddTagTaskCommandTest {
         Set<Tag> newTags = new HashSet<>();
         Set<Tag> oldTags = new HashSet<>();
 
-        for (Tag t : tags) {
-            if (existingTags.contains(tag)) {
-                oldTags.add(t);
-            } else {
-                newTags.add(t);
-            }
-        }
+        Set<Tag> commonTags = new HashSet<>(existingTags);
+        commonTags.retainAll(tags);
+
+        oldTags.addAll(commonTags);
+
+        newTags.addAll(tags);
+        newTags.removeAll(existingTags);
 
         Task editedTask = new TaskBuilder(taskToEdit).setTags(updatedTags).build();
 
@@ -141,6 +141,9 @@ public class AddTagTaskCommandTest {
 
         AddTagTaskCommand addTagTaskCommand1 = new AddTagTaskCommand(INDEX_FIRST, tags);
         AddTagTaskCommand addTagTaskCommand2 = new AddTagTaskCommand(INDEX_FIRST, tags);
+
+        // Different object -> returns false
+        assertFalse(addTagTaskCommand1.equals(1));
 
         // Same values -> returns true
         assertTrue(addTagTaskCommand1.equals(addTagTaskCommand1));

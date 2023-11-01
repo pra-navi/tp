@@ -47,13 +47,13 @@ public class AddTagPersonCommandTest {
         Set<Tag> newTags = new HashSet<>();
         Set<Tag> oldTags = new HashSet<>();
 
-        for (Tag t : tags) {
-            if (existingTags.contains(tag)) {
-                oldTags.add(t);
-            } else {
-                newTags.add(t);
-            }
-        }
+        Set<Tag> commonTags = new HashSet<>(existingTags);
+        commonTags.retainAll(tags);
+
+        oldTags.addAll(commonTags);
+
+        newTags.addAll(tags);
+        newTags.removeAll(existingTags);
 
         Person editedPerson = new PersonBuilder(personToEdit).setTags(updatedTags).build();
 
@@ -97,13 +97,13 @@ public class AddTagPersonCommandTest {
         Set<Tag> newTags = new HashSet<>();
         Set<Tag> oldTags = new HashSet<>();
 
-        for (Tag t : tags) {
-            if (existingTags.contains(tag)) {
-                oldTags.add(t);
-            } else {
-                newTags.add(t);
-            }
-        }
+        Set<Tag> commonTags = new HashSet<>(existingTags);
+        commonTags.retainAll(tags);
+
+        oldTags.addAll(commonTags);
+
+        newTags.addAll(tags);
+        newTags.removeAll(existingTags);
 
         Person editedPerson = new PersonBuilder(personToEdit).setTags(updatedTags).build();
 
@@ -141,6 +141,9 @@ public class AddTagPersonCommandTest {
 
         AddTagPersonCommand addTagPersonCommand1 = new AddTagPersonCommand(INDEX_FIRST, tags);
         AddTagPersonCommand addTagPersonCommand2 = new AddTagPersonCommand(INDEX_FIRST, tags);
+
+        // Different object -> returns false
+        assertFalse(addTagPersonCommand1.equals(1));
 
         // Same values -> returns true
         assertTrue(addTagPersonCommand1.equals(addTagPersonCommand1));
