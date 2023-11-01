@@ -4,8 +4,6 @@ import static seedu.address.testutil.TypicalPersons.getTypicalPersons;
 import static seedu.address.testutil.TypicalTasks.getTypicalTasks;
 
 import seedu.address.model.AddressBook;
-import seedu.address.model.person.Person;
-import seedu.address.model.task.Task;
 
 /**
  * A utility class containing a list of {@code Person} and {@code Task} objects to be used in tests.
