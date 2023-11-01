@@ -24,9 +24,11 @@ public class DeleteTagPersonCommand extends Command {
     public static final String SHORTENED_COMMAND_WORD = "dtagp";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
-            + ": Deletes a tag from a person identified using its displayed index from the address book.\n"
+            + ": Deletes one or more tags from a person identified using its displayed index from the address book.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD + " 1 " + PREFIX_TAG + "catering";
+            + "Example: " + COMMAND_WORD + " 1 "
+            + PREFIX_TAG + "catering "
+            + PREFIX_TAG + "budget";
 
     public static final String MESSAGE_DELETE_TAG_PERSON_SUCCESS = "Deleted tag from person: %1$s";
 
@@ -53,6 +55,7 @@ public class DeleteTagPersonCommand extends Command {
 
         Person personToEdit = lastShownList.get(targetIndex.getZeroBased());
         Person editedPerson = createEditedPerson(personToEdit, tagsToDelete);
+        model.setPerson(personToEdit, editedPerson);
         return new CommandResult(String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
 
