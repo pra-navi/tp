@@ -30,7 +30,8 @@ public class DeleteTagPersonCommand extends Command {
             + PREFIX_TAG + "catering "
             + PREFIX_TAG + "budget";
 
-    public static final String MESSAGE_DELETE_TAG_PERSON_SUCCESS = "Deleted tag from person: %1$s";
+    public static final String MESSAGE_DELETE_TAG_PERSON_SUCCESS = "Deleted tag(s) from person: %1$s.\n";
+    public static final String MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS = "These tags did not seem to exist: %1$s.\n";
 
     private final Index targetIndex;
     private final Set<Tag> tagsToDelete;
@@ -56,7 +57,7 @@ public class DeleteTagPersonCommand extends Command {
         Person personToEdit = lastShownList.get(targetIndex.getZeroBased());
         Person editedPerson = createEditedPerson(personToEdit, tagsToDelete);
         model.setPerson(personToEdit, editedPerson);
-        return new CommandResult(String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson)));
+        return new CommandResult(formatResultMessage(personToEdit, editedPerson, tagsToDelete));
     }
 
     private static Person createEditedPerson(Person personToEdit, Set<Tag> tagsToDelete) {
@@ -71,6 +72,24 @@ public class DeleteTagPersonCommand extends Command {
                 personToEdit.getEmail(),
                 personToEdit.getAddress(),
                 newTags);
+    }
+
+    /**
+     * Determines what the CommandResult string should be.
+     * Handles cases of missing tags.
+     */
+    public static String formatResultMessage(Person personToEdit, Person editedPerson, Set<Tag> tagsToDelete) {
+        Set<Tag> toDelete = new HashSet<>(personToEdit.getTags());
+        toDelete.retainAll(tagsToDelete);
+
+        Set<Tag> missing = new HashSet<>(tagsToDelete);
+        missing.removeAll(toDelete);
+
+        String res = String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson));
+        if (missing.size() > 0) {
+            res += String.format(MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missing);
+        }
+        return res;
     }
 
     @Override

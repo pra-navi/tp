@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
@@ -22,6 +23,7 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.person.Person;
 import seedu.address.model.tag.Tag;
+import seedu.address.testutil.PersonBuilder;
 
 public class DeleteTagPersonCommandTest {
 
@@ -47,8 +49,7 @@ public class DeleteTagPersonCommandTest {
                 personToEdit.getAddress(),
                 newTags);
 
-        String expectedMessage = String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_SUCCESS,
-                Messages.format(editedPerson));
+        String expectedMessage = DeleteTagPersonCommand.formatResultMessage(personToEdit, editedPerson, tags);
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(personToEdit, editedPerson);
@@ -63,6 +64,27 @@ public class DeleteTagPersonCommandTest {
                 new HashSet<>());
 
         assertCommandFailure(deleteTagPersonCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+    }
+
+    @Test
+    public void formatResultMessageMethod() {
+        Person personToEdit = new PersonBuilder().withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND).build();
+
+        Set<Tag> tags = new HashSet<>();
+        tags.add(new Tag(VALID_TAG_FRIEND));
+        tags.add(new Tag("blabla"));
+
+        Person editPerson = new PersonBuilder(personToEdit).withTags(VALID_TAG_HUSBAND).build();
+
+        String expectedString = String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_SUCCESS,
+                Messages.format(editPerson))
+                + String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, new HashSet<>() {
+                    {
+                        add(new Tag("blabla"));
+                    }
+                });
+
+        assertEquals(expectedString, DeleteTagPersonCommand.formatResultMessage(personToEdit, editPerson, tags));
     }
 
     @Test
