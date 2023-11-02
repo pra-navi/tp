@@ -862,24 +862,26 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 <h4>Format:</h4>
 
 ```
-findTag TAG [MORE_TAGS]...
+findTag KEYWORD [MORE_KEYWORDS]...
 ```
 
 - Finds the persons and tasks whose tags contain at least one of the specified `TAG`.
-- Specify a tag with the `TAG` parameter. This field is **mandatory**.
-- Specify more tags to expand your search scope with the `MORE_TAGS` parameter. This field is **optional**.
+- Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
+- Specify more tags to expand your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Shows results that contain at least one of the specified keywords.
 
 <h4>Examples:</h4>
 
-- `findTag catering orientation`
-  - Shows all persons and tasks with tags containing the words "catering" or "orientation".<br><br>
-
-  ![findTag_success_1](images/output/findTag_success1.png)<br><br>
-
 - `findTag orientation`
-  - Shows all persons and tasks with tags containing the word "orientation".<br><br>
+  - Shows all persons and tasks with tags of keyword: "orientation".<br><br>
 
   ![findTag_success_2](images/output/findTag_success2.png)
+
+
+- `findTag catering orientation`
+  - Shows all persons and tasks with tags of keywordsL "catering" or "orientation".<br><br>
+
+  ![findTag_success_1](images/output/findTag_success1.png)<br><br>
 
 <h4>Potential Error:</h4>
 
@@ -892,9 +894,54 @@ findTag TAG [MORE_TAGS]...
 
 <div style="page-break-after: always;"></div>
 
+#### 20. Finding persons and tasks by tag: `findAllTag`
+
+You can search for persons and tasks using all keywords given. 
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all persons and tasks that do not match the search criteria. <br>
+To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
+
+" %}
+
+<h4>Format:</h4>
+
+```
+findAllTag KEYWORD [MORE_KEYWORDS]...
+```
+
+- Finds the persons and tasks whose tags contain at least one of the specified `KEYWORD`.
+- Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
+- Specify more tags to expand your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Shows only results that contain all keywords given.
+
+<h4>Examples:</h4>
+
+- `findAllTag orientation`
+  - Shows all persons and tasks with tags of keyword: "catering".<br><br>
+
+  ![findAllTag_success_1](images/output/findAllTag_success1.png)<br><br>
+
+- `findAllTag catering orientation`
+  - Shows all persons and tasks with tags of keywords: "catering" and "orientation":.<br><br>
+
+  ![findAllTag_success_2](images/output/findAllTag_success2.png)
+
+<h4>Potential Error:</h4>
+
+- `findAllTag`
+  - An invalid command format. The application expects one or more keywords after `findAllTag`.<br><br>
+
+  ![FindAllTag Example 2](images/error/findAllTag_error.png)
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ### General Commands
 
-#### 20. Viewing help: `help`
+#### 21. Viewing help: `help`
 
 You can view a link to access the user guide at any time, ensuring that you will never be lost.
 
@@ -913,7 +960,7 @@ help
 
 <div style="page-break-after: always;"></div>
 
-#### 21. Listing all persons and tasks: `listAll`
+#### 22. Listing all persons and tasks: `listAll`
 
 You can list all persons and tasks in your contact list and task list at the same time.
 
@@ -943,7 +990,7 @@ Please add a screenshot of the output of the command `listAll`.
 
 <div style="page-break-after: always;"></div>
 
-#### 22. Exiting the program: `exit`
+#### 23. Exiting the program: `exit`
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
