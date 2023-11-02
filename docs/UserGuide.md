@@ -31,7 +31,7 @@ If you are an experienced user, you can use the [Table of Contents](#table-of-co
 
 Here are some annotations used in this guide:
 
-{% include admonition.html type="danger" title="Danger!" body="
+{% include admonition.html type="danger" title="Danger" body="
 
 Be careful when performing these operations as they can lead to data loss.
 
@@ -140,7 +140,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
 With these user-centric features, CoordiMate empowers you to focus on what truly matters: creating exceptional events and nurturing valuable connections. Experience event planning made personal, efficient, and stress-free with CoordiMate!
 
-{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
+{% include admonition.html type="danger" title="Danger" body="
 
 If your changes to the data file makes its format invalid, CoordiMate will discard all data and start with an empty data file at the next run.
 
@@ -154,7 +154,7 @@ Always make a backup before you edit!
 
 ## Usage
 
-{% include admonition.html type="note" title="Note: About Command Formats" body="
+{% include admonition.html type="note" title="Note" body="
 
 <ul>
   <li>
@@ -196,7 +196,7 @@ Always make a backup before you edit!
 
 " %}
 
-{% include admonition.html type="warning" title="Warning: Using the PDF version of this document" body="
+{% include admonition.html type="warning" title="Warning" body="
 
 If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
@@ -221,7 +221,11 @@ addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 - Provide the address using the `a/` prefix. This field is **mandatory**.
 - Tag the person using the `t/` prefix. This field is **optional**.
 
-{% include admonition.html type="note" title="A person can have any number of tags (including 0)." %}
+{% include admonition.html type="note" title="Note" body="
+
+A person can have any number of tags (including 0).
+
+" %}
 
 <h4>Example:</h4>
 - `addPerson n/Charlotte Oliveiro p/93210283 e/charlotteo@example.com a/Blk 11 Ang Mo Kio Street 74, #11-04 t/flowers`
@@ -351,9 +355,13 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 
 #### 5. Deleting a person entry: `deletePerson`
 
-{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
-
 Allows you to remove an outdated person from your contact list with ease.
+
+{% include admonition.html type="danger" title="Danger" body="
+
+This action is irreversible.
+
+" %}
 
 <h4>Format:</h4>
 
@@ -393,10 +401,13 @@ deletePerson INDEX
 
 #### 6. Clearing all person entries: `deleteAllPerson`
 
-Clears all contacts in your contact list.
+Clears **all** contacts in your contact list.
 
-{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
-CoordiMate will discard <b>all</b> Person data and start with an empty data file at the next run.<br>" %}
+{% include admonition.html type="danger" title="Danger" body="
+
+This action is irreversible.
+
+" %}
 
 <h4>Format:</h4>
 
@@ -551,9 +562,13 @@ findTask KEYWORD [MORE_KEYWORDS]…
 
 #### 11. Deleting a task entry: `deleteTask`
 
-{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="This action is irreversible." %}
-
 Allows you to remove a task from your task list with ease.
+
+{% include admonition.html type="danger" title="Danger" body="
+
+This action is irreversible.
+
+" %}
 
 <h4>Format:</h4>
 
@@ -590,10 +605,13 @@ Allows you to remove a task from your task list with ease.
 
 #### 12. Clearing all task entries: `deleteAllTask`
 
-{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
-CoordiMate will discard <b>all</b> Task data and start with an empty data file at the next run.<br>" %}
+Allows you to remove **all** entries from your task list.
 
-Allows you to remove all entries from your task list.
+{% include admonition.html type="danger" title="Danger" body="
+
+This action is irreversible.
+
+" %}
 
 <h4>Format:</h4>
 
@@ -624,7 +642,11 @@ markTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="note" title="Tasks are marked as not done by default." %}
+{% include admonition.html type="note" title="Note" body="
+
+Tasks are marked as not done by default.
+
+" %}
 
 <h4>Examples:</h4>
 
@@ -665,7 +687,11 @@ unmarkTask INDEX
 - The index refers to the index number shown in the displayed task list.
 - The index **_must be a positive integer_** 1, 2, 3, …
 
-{% include admonition.html type="note" title="Tasks are marked as not done by default." %}
+{% include admonition.html type="note" title="Note" body="
+
+Tasks are marked as not done by default.
+
+" %}
 
 <h4>Examples:</h4>
 
@@ -726,7 +752,7 @@ findDone
 
 #### 16. Finding all tasks that are not done: `findNotDone`
 
-You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively
+You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -757,10 +783,13 @@ findNotDone
 
 #### 17. Deleting all tasks that are done: `deleteAllDone`
 
-You can easily clean up your task list by deleting all completed task, allowing you maintain an organized and clutter-free task management system.
+You can easily clean up your task list by deleting all completed tasks, allowing you maintain an organized and clutter-free task management system.
 
-{% include admonition.html type="danger" title="Potentially Dangerous Operation!" body="
-CoordiMate will discard all related data for Tasks that are marked as Done at the next run.<br>" %}
+{% include admonition.html type="danger" title="Danger" body="
+
+This action is irreversible.
+
+" %}
 
 <h4>Format:</h4>
 
@@ -794,9 +823,9 @@ Provides you with a complete list of tags you have used in your contact list and
 
 The list is sorted by frequency of each tag in descending order.
 
-If two tags have the same frequency, the tags are sorted in ASCII order.
+If two tags have the same frequency, the tags are sorted in the order as defined in the American Standard Code for Information Interchange (ASCII).
 
-{% include admonition.html type="note" title="About ASCII" body="
+{% include admonition.html type="note" title="Note" body="
 
 The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
 In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
@@ -822,6 +851,13 @@ listTag
 #### 19. Finding persons and tasks by tag: `findTag`
 
 You can search for persons and tasks using tags.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all persons and tasks that do not match the search criteria. <br>
+To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
+
+" %}
 
 <h4>Format:</h4>
 
@@ -931,7 +967,8 @@ exit
 
 {% include admonition.html type="question" title="How do I transfer my data to another computer?" body="
 
-Install the app in the other computer and overwrite the empty data file with your previous save file.
+1. Locate the save file at <code>[CoordiMate JAR file location]/data/addressbook.json</code> on your current computer. <br>
+2. Copy the save file to the same location on your new computer.
 
 " %}
 
@@ -943,9 +980,11 @@ Install the app in the other computer and overwrite the empty data file with you
 
 ## Known Issues
 
-{% include admonition.html type="bug" title="Bug: The GUI will open off-screen if you switch between multiple screens." body="
+{% include admonition.html type="bug" title="CoordiMate does not open on the correct screen." body="
 
-Delete the <code>preferences.json</code> file created by CoordiMate before running CoordiMate again.
+CoordiMate remembers the last screen it was on when it was closed. If that screen is no longer available when CoordiMate is opened, you will not be able to see the application window. <br><br>
+
+To resolve this issue, you can simply delete the <code>preferences.json</code> file that is in the same folder as the CoordiMate JAR file.
 
 "%}
 
