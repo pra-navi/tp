@@ -442,29 +442,30 @@ addTagPerson INDEX [t/TAG]…
   - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the 
     output to have already been included in the list of existing tags.<br><br>
 
-  ![addTagPerson success](images/output/addTagPerson_success_oneNewOneOld.jpg)<br><br>
+  ![addTagPerson success](images/output/addTagPerson_success.png)<br><br>
 
 <h4>Potential Errors:</h4>
 
 - `addTagPerson`
   - Negative example as no index or field is specified.<br><br>
 
-  ![addTagPerson error_noParameters](images/error/addTagPerson_error_noParameters.jpg)<br><br>
+  ![addTagPerson error_noParameters](images/error/addTagPerson_error_noParameters.png)<br><br>
 
 - `addTagPerson 1`
   - Negative example as no tag is specified.<br><br>
 
-  ![addTagPerson error_validIndex](images/error/addTagPerson_error_validIndex.jpg)<br><br>
+  ![addTagPerson error_validIndex](images/error/addTagPerson_error_validIndex.png)<br><br>
+
 
 - `addTagPerson 1 t/`
   - Negative example as no input is specified.<br><br>
 
-  ![addTagPerson error_noInput](images/error/addTagPerson_error_prefix.jpg)<br><br>
+  ![addTagPerson error_noInput](images/error/addTagPerson_error_noInput.png)<br><br>
 
 - `addTagPerson 10 t/friends`
   - Negative example as invalid index provided.<br><br>
 
-  ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.jpg)
+  ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
 
 <div style="page-break-after: always;"></div>
 
