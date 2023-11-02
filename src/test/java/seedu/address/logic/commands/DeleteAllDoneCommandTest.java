@@ -40,10 +40,10 @@ public class DeleteAllDoneCommandTest {
         }
         List<Task> tasksToMarkAndDelete = Arrays.asList(AGENDA, CATERING);
         for (Task task : tasksToMarkAndDelete) {
-            Task taskToDelete = expectedModel.markTask(task);
-            expectedModel.deleteTask(taskToDelete);
+            expectedModel.markTask(task);
             model.markTask(task);
         }
+        expectedModel.deleteAllDone();
         assertCommandSuccess(new DeleteAllDoneCommand(), model,
                 DeleteAllDoneCommand.MESSAGE_DELETE_ALL_DONE_SUCCESS, expectedModel);
     }

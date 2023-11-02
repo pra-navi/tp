@@ -96,6 +96,7 @@ public class ModelManager implements Model {
     @Override
     public boolean hasPerson(Person person) {
         requireNonNull(person);
+        requireNonNull(person);
         return addressBook.hasPerson(person);
     }
 
@@ -150,6 +151,16 @@ public class ModelManager implements Model {
     @Override
     public void deleteAllTask() {
         addressBook.deleteAllTask();
+    }
+
+    @Override
+    public void deleteAllDone() {
+        updateFilteredTaskList(PREDICATE_SHOW_DONE_TASKS);
+        for (int i = filteredTasks.size() - 1; i >= 0; i--) {
+            Task task = filteredTasks.get(i);
+            deleteTask(task);
+        }
+        updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
     }
 
     @Override

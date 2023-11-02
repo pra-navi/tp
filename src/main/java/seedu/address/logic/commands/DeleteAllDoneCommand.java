@@ -11,7 +11,7 @@ import seedu.address.model.Model;
 import seedu.address.model.task.Task;
 
 /**
- * Deletes all persons in the contacts list.
+ * Deletes all done tasks in the task list.
  */
 public class DeleteAllDoneCommand extends Command {
 
@@ -30,11 +30,7 @@ public class DeleteAllDoneCommand extends Command {
             model.updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
             throw new CommandException(MESSAGE_NO_DONE_TASKS);
         }
-        for (int i = lastShownList.size() - 1; i >= 0; i--) {
-            Task task = lastShownList.get(i);
-            model.deleteTask(task);
-        }
-        model.updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
+        model.deleteAllDone();
         return new CommandResult(MESSAGE_DELETE_ALL_DONE_SUCCESS);
     }
 }

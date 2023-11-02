@@ -120,6 +120,11 @@ public interface Model {
     void deleteAllTask();
 
     /**
+     * Deletes all done tasks in the task list.
+     */
+    void deleteAllDone();
+
+    /**
      * Adds the given task to the task list.
      * {@code task} must not already exist in the address book.
      */
