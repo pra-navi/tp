@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="706px" preserveAspectRatio="none" style="width:1470px;height:706px;background:#FFFFFF;" version="1.1" viewBox="0 0 1470 706" width="1470px" zoomAndPan="magnify"><defs/><g><rect fill="#C8C8FA" height="687.3594" style="stroke:#181818;stroke-width:0.5;" width="940" x="94" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="35" x="544.5" y="19.4951">Logic</text><rect fill="#F97181" height="687.3594" style="stroke:#181818;stroke-width:0.5;" width="428" x="1036" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="39" x="1228.5" y="19.4951">Model</text><rect fill="#FFFFFF" height="590.0469" style="stroke:#181818;stroke-width:1.0;" width="10" x="157" y="91.3125"/><rect fill="#FFFFFF" height="234.625" style="stroke:#181818;stroke-width:1.0;" width="10" x="369" y="121.6641"/><rect fill="#FFFFFF" height="32.6094" style="stroke:#181818;stroke-width:1.0;" width="10" x="569" y="145.6641"/><rect fill="#FFFFFF" height="103.3125" style="stroke:#181818;stroke-width:1.0;" width="10" x="569" y="208.625"/><rect fill="#FFFFFF" height="48.9609" style="stroke:#181818;stroke-width:1.0;" width="10" x="777.5" y="232.625"/><rect fill="#FFFFFF" height="280.7188" style="stroke:#181818;stroke-width:1.0;" width="10" x="777.5" y="386.6406"/><rect fill="#FFFFFF" height="32.6094" style="stroke:#181818;stroke-width:1.0;" width="10" x="951.5" y="604.3984"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1106.5" y="416.9922"/><rect fill="#FFFFFF" height="102.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="1106.5" y="477.6953"/><rect fill="#FFFFFF" height="58.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1249" y="508.0469"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="1387.5" y="538.3984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="162" x2="162" y1="58.9609" y2="699.3594"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="374" x2="374" y1="58.9609" y2="699.3594"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="574" x2="574" y1="160.9688" y2="699.3594"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="782" x2="782" y1="247.9297" y2="699.3594"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="956" x2="956" y1="619.7031" y2="699.3594"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1111" x2="1111" y1="58.9609" y2="699.3594"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1254" x2="1254" y1="58.9609" y2="699.3594"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1392" x2="1392" y1="58.9609" y2="699.3594"/><rect fill="#3333C4" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108" x="108" y="26.3516"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="115" y="47.8848">:LogicManager</text><rect fill="#3333C4" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="144" x="302" y="26.3516"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="309" y="47.8848">:AddressBookParser</text><rect fill="#9D0012" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="1050" y="26.3516"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="1057" y="47.8848">m:ModelManager</text><rect fill="#9D0012" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="102" x="1203" y="26.3516"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1210" y="47.8848">:AddressBook</text><rect fill="#9D0012" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="115" x="1335" y="26.3516"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="1342" y="47.8848">:UniqueTaskList</text><rect fill="#FFFFFF" height="590.0469" style="stroke:#181818;stroke-width:1.0;" width="10" x="157" y="91.3125"/><rect fill="#FFFFFF" height="234.625" style="stroke:#181818;stroke-width:1.0;" width="10" x="369" y="121.6641"/><rect fill="#FFFFFF" height="32.6094" style="stroke:#181818;stroke-width:1.0;" width="10" x="569" y="145.6641"/><rect fill="#FFFFFF" height="103.3125" style="stroke:#181818;stroke-width:1.0;" width="10" x="569" y="208.625"/><rect fill="#FFFFFF" height="48.9609" style="stroke:#181818;stroke-width:1.0;" width="10" x="777.5" y="232.625"/><rect fill="#FFFFFF" height="280.7188" style="stroke:#181818;stroke-width:1.0;" width="10" x="777.5" y="386.6406"/><rect fill="#FFFFFF" height="32.6094" style="stroke:#181818;stroke-width:1.0;" width="10" x="951.5" y="604.3984"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1106.5" y="416.9922"/><rect fill="#FFFFFF" height="102.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="1106.5" y="477.6953"/><rect fill="#FFFFFF" height="58.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1249" y="508.0469"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="1387.5" y="538.3984"/><polygon fill="#181818" points="145,87.3125,155,91.3125,145,95.3125,149,91.3125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="0" x2="151" y1="91.3125" y2="91.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="138" x="9.5" y="86.4561">execute("deleteTask 1")</text><polygon fill="#181818" points="357,117.6641,367,121.6641,357,125.6641,361,121.6641" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="167" x2="363" y1="121.6641" y2="121.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="183" x="176.5" y="116.8076">parseCommand("deleteTask 1")</text><polygon fill="#181818" points="464,131.6641,474,135.6641,464,139.6641,468,135.6641" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="379" x2="470" y1="135.6641" y2="135.6641"/><rect fill="#3333C4" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="196" x="476" y="129.6641"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="483" y="151.1973">:DeleteTaskCommandParser</text><polygon fill="#181818" points="390,174.2734,380,178.2734,390,182.2734,386,178.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="384" x2="573" y1="178.2734" y2="178.2734"/><polygon fill="#181818" points="557,204.625,567,208.625,557,212.625,561,208.625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="379" x2="563" y1="208.625" y2="208.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="445.5" y="203.7686">parse("1")</text><polygon fill="#181818" points="690,218.625,700,222.625,690,226.625,694,222.625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="579" x2="696" y1="222.625" y2="222.625"/><rect fill="#3333C4" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="161" x="702" y="216.625"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="709" y="238.1582">c:DeleteTaskCommand</text><polygon fill="#181818" points="590,277.5859,580,281.5859,590,285.5859,586,281.5859" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="584" x2="781.5" y1="281.5859" y2="281.5859"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="677.25" y="276.7295">c</text><polygon fill="#181818" points="390,307.9375,380,311.9375,390,315.9375,386,311.9375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="384" x2="573" y1="311.9375" y2="311.9375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="473" y="307.0811">c</text><line style="stroke:#A80036;stroke-width:2.0;" x1="565" x2="583" y1="316.9375" y2="334.9375"/><line style="stroke:#A80036;stroke-width:2.0;" x1="565" x2="583" y1="334.9375" y2="316.9375"/><polygon fill="#181818" points="178,352.2891,168,356.2891,178,360.2891,174,356.2891" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="172" x2="373" y1="356.2891" y2="356.2891"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="267" y="351.4326">c</text><polygon fill="#181818" points="765.5,382.6406,775.5,386.6406,765.5,390.6406,769.5,386.6406" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="167" x2="771.5" y1="386.6406" y2="386.6406"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="439.75" y="381.7842">execute(m)</text><polygon fill="#181818" points="1094.5,412.9922,1104.5,416.9922,1094.5,420.9922,1098.5,416.9922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="787.5" x2="1100.5" y1="416.9922" y2="416.9922"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="888" y="412.1357">getFilteredTaskList()</text><polygon fill="#181818" points="798.5,443.3438,788.5,447.3438,798.5,451.3438,794.5,447.3438" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="792.5" x2="1110.5" y1="447.3438" y2="447.3438"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="909" y="442.4873">lastShownList</text><polygon fill="#181818" points="1094.5,473.6953,1104.5,477.6953,1094.5,481.6953,1098.5,477.6953" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="787.5" x2="1100.5" y1="477.6953" y2="477.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="899" y="472.8389">deleteTask(task)</text><polygon fill="#181818" points="1237,504.0469,1247,508.0469,1237,512.0469,1241,508.0469" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1116.5" x2="1243" y1="508.0469" y2="508.0469"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="1134.75" y="503.1904">deleteTask(task)</text><polygon fill="#181818" points="1375.5,534.3984,1385.5,538.3984,1375.5,542.3984,1379.5,538.3984" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1259" x2="1381.5" y1="538.3984" y2="538.3984"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="68" x="1289.25" y="533.542">delete(task)</text><polygon fill="#181818" points="1270,548.3984,1260,552.3984,1270,556.3984,1266,552.3984" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1264" x2="1391.5" y1="552.3984" y2="552.3984"/><polygon fill="#181818" points="1127.5,562.3984,1117.5,566.3984,1127.5,570.3984,1123.5,566.3984" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1121.5" x2="1253" y1="566.3984" y2="566.3984"/><polygon fill="#181818" points="798.5,576.3984,788.5,580.3984,798.5,584.3984,794.5,580.3984" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="792.5" x2="1110.5" y1="580.3984" y2="580.3984"/><polygon fill="#181818" points="881,590.3984,891,594.3984,881,598.3984,885,594.3984" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="787.5" x2="887" y1="594.3984" y2="594.3984"/><rect fill="#3333C4" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="127" x="893" y="588.3984"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="900" y="609.9316">r:CommandResult</text><polygon fill="#181818" points="798.5,633.0078,788.5,637.0078,798.5,641.0078,794.5,637.0078" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="792.5" x2="955.5" y1="637.0078" y2="637.0078"/><polygon fill="#181818" points="178,663.3594,168,667.3594,178,671.3594,174,667.3594" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="172" x2="781.5" y1="667.3594" y2="667.3594"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="472.75" y="662.5029">r</text><polygon fill="#181818" points="11,677.3594,1,681.3594,11,685.3594,7,681.3594" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="5" x2="161" y1="681.3594" y2="681.3594"/><!--MD5=[91bedc6a9680b459a4df4479ce4ba621]
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":DeleteTaskCommandParser" as DeleteTaskCommandParser LOGIC_COLOR
+participant "c:DeleteTaskCommand" as DeleteTaskCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "m:ModelManager" as ModelManager MODEL_COLOR
+participant ":AddressBook" as AddressBook MODEL_COLOR
+participant ":UniqueTaskList" as UniqueTaskList MODEL_COLOR
+end box
+
+[-> LogicManager : execute("deleteTask 1")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("deleteTask 1")
+activate AddressBookParser
+
+create DeleteTaskCommandParser
+AddressBookParser -> DeleteTaskCommandParser
+activate DeleteTaskCommandParser
+
+DeleteTaskCommandParser - -> AddressBookParser
+deactivate DeleteTaskCommandParser
+
+AddressBookParser -> DeleteTaskCommandParser : parse("1")
+activate DeleteTaskCommandParser
+
+create DeleteTaskCommand
+DeleteTaskCommandParser -> DeleteTaskCommand
+activate DeleteTaskCommand
+
+DeleteTaskCommand - -> DeleteTaskCommandParser : c
+deactivate DeleteTaskCommand
+
+DeleteTaskCommandParser - -> AddressBookParser : c
+deactivate DeleteTaskCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+DeleteTaskCommandParser -[hidden]-> AddressBookParser
+destroy DeleteTaskCommandParser
+
+AddressBookParser - -> LogicManager : c
+deactivate AddressBookParser
+
+LogicManager -> DeleteTaskCommand : execute(m)
+activate DeleteTaskCommand
+
+DeleteTaskCommand -> ModelManager : getFilteredTaskList()
+activate ModelManager
+
+ModelManager - -> DeleteTaskCommand : lastShownList
+deactivate ModelManager
+
+DeleteTaskCommand -> ModelManager : deleteTask(task)
+activate ModelManager
+
+ModelManager -> AddressBook : deleteTask(task)
+activate AddressBook
+
+AddressBook -> UniqueTaskList : delete(task)
+activate UniqueTaskList
+
+UniqueTaskList - -> AddressBook
+deactivate UniqueTaskList
+
+AddressBook - -> ModelManager
+deactivate AddressBook
+
+ModelManager - -> DeleteTaskCommand
+deactivate ModelManager
+
+create CommandResult
+DeleteTaskCommand -> CommandResult
+activate CommandResult
+
+CommandResult - -> DeleteTaskCommand
+deactivate CommandResult
+
+DeleteTaskCommand - -> LogicManager : r
+deactivate DeleteTaskCommand
+
+[<- -LogicManager
+deactivate LogicManager
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+
+skinparam Package {
+    BackgroundColor #FFFFFF
+    BorderThickness 1
+    FontSize 16
+}
+
+skinparam Class {
+    FontColor #FFFFFF
+    FontSize 15
+    BorderThickness 1
+    BorderColor #FFFFFF
+    StereotypeFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Actor {
+    BorderColor #000000
+    Color #000000
+    FontName Arial
+}
+
+skinparam Sequence {
+    MessageAlign center
+    BoxFontSize 15
+    BoxPadding 0
+    BoxFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Participant {
+    FontColor #FFFFFFF
+    Padding 20
+}
+
+skinparam ArrowFontStyle bold
+skinparam MinClassWidth 50
+skinparam ParticipantPadding 10
+skinparam Shadowing false
+skinparam DefaultTextAlignment center
+skinparam packageStyle Rectangle
+
+hide footbox
+hide members
+hide circle
+skinparam ArrowFontStyle plain
+
+box Logic #C8C8FA
+participant ":LogicManager" as LogicManager #3333C4
+participant ":AddressBookParser" as AddressBookParser #3333C4
+participant ":DeleteTaskCommandParser" as DeleteTaskCommandParser #3333C4
+participant "c:DeleteTaskCommand" as DeleteTaskCommand #3333C4
+participant "r:CommandResult" as CommandResult #3333C4
+end box
+
+box Model #F97181
+participant "m:ModelManager" as ModelManager #9D0012
+participant ":AddressBook" as AddressBook #9D0012
+participant ":UniqueTaskList" as UniqueTaskList #9D0012
+end box
+
+[-> LogicManager : execute("deleteTask 1")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("deleteTask 1")
+activate AddressBookParser
+
+create DeleteTaskCommandParser
+AddressBookParser -> DeleteTaskCommandParser
+activate DeleteTaskCommandParser
+
+DeleteTaskCommandParser - -> AddressBookParser
+deactivate DeleteTaskCommandParser
+
+AddressBookParser -> DeleteTaskCommandParser : parse("1")
+activate DeleteTaskCommandParser
+
+create DeleteTaskCommand
+DeleteTaskCommandParser -> DeleteTaskCommand
+activate DeleteTaskCommand
+
+DeleteTaskCommand - -> DeleteTaskCommandParser : c
+deactivate DeleteTaskCommand
+
+DeleteTaskCommandParser - -> AddressBookParser : c
+deactivate DeleteTaskCommandParser
+DeleteTaskCommandParser -[hidden]-> AddressBookParser
+destroy DeleteTaskCommandParser
+
+AddressBookParser - -> LogicManager : c
+deactivate AddressBookParser
+
+LogicManager -> DeleteTaskCommand : execute(m)
+activate DeleteTaskCommand
+
+DeleteTaskCommand -> ModelManager : getFilteredTaskList()
+activate ModelManager
+
+ModelManager - -> DeleteTaskCommand : lastShownList
+deactivate ModelManager
+
+DeleteTaskCommand -> ModelManager : deleteTask(task)
+activate ModelManager
+
+ModelManager -> AddressBook : deleteTask(task)
+activate AddressBook
+
+AddressBook -> UniqueTaskList : delete(task)
+activate UniqueTaskList
+
+UniqueTaskList - -> AddressBook
+deactivate UniqueTaskList
+
+AddressBook - -> ModelManager
+deactivate AddressBook
+
+ModelManager - -> DeleteTaskCommand
+deactivate ModelManager
+
+create CommandResult
+DeleteTaskCommand -> CommandResult
+activate CommandResult
+
+CommandResult - -> DeleteTaskCommand
+deactivate CommandResult
+
+DeleteTaskCommand - -> LogicManager : r
+deactivate DeleteTaskCommand
+
+[<- -LogicManager
+deactivate LogicManager
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 01:01:30 SGT 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: SG
+--></g></svg>
