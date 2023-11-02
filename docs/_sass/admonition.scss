@@ -7,9 +7,9 @@ $primary-color: #eab308; // yellow-500
 $primary-bgcolor: #fef9c3; // yellow-100
 $admonitions:
     //class (type), icon filename, icon/border color, title bg color
-    ('note', 'pen-solid.svg', '#2563eb', '#dbeafe') // blue-600; blue-100
+    ('note', 'pen-solid.svg', '#0ea5e9', '#e0f2fe') // sky-500; sky-100
     ('abstract', 'align-left-solid.svg', '#65a30d', '#ecfccb') // lime-600; lime-100
-    ('info', 'info-circle-solid.svg', '#0ea5e9', '#e0f2fe') // sky-500; sky-100
+    // ('info', 'info-circle-solid.svg', '#0ea5e9', '#e0f2fe') // sky-500; sky-100
     ('tip', 'fire-solid.svg', '#14b8a6', '#cafdf8') // teal-500; turquoise-100?
     ('success', 'check-circle-solid.svg', '#059669', '#d1fae5') // emerald-600; emerald-100
     ('question', 'question-circle-solid.svg', '#4f46e5', '#e0e7ff') // indigo-600; indigo-100

@@ -26,10 +26,10 @@ public class AddTaskCommand extends Command {
             + PREFIX_TASK_NOTE + "NOTE "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
-            + PREFIX_TASK_TITLE + "Get flowers "
-            + PREFIX_TASK_NOTE + "Wedding Anniversary "
-            + PREFIX_TAG + "finance "
-            + PREFIX_TAG + "class ";
+            + PREFIX_TASK_TITLE + "Meeting with team "
+            + PREFIX_TASK_NOTE + "Need to finalize event schedule "
+            + PREFIX_TAG + "orientation "
+            + PREFIX_TAG + "activities ";
 
     public static final String MESSAGE_SUCCESS = "New task added: %1$s";
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the address book";

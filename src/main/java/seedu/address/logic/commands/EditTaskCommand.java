@@ -41,8 +41,8 @@ public class EditTaskCommand extends Command {
             + "[" + PREFIX_TASK_TITLE + "TITLE] "
             + "[" + PREFIX_TASK_NOTE + "NOTE] "
             + "[" + PREFIX_TAG + "TAG]...\n"
-            + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_TASK_TITLE + "Prepare Agenda "
+            + "Example: " + COMMAND_WORD + " 2 "
+            + PREFIX_TASK_TITLE + "Discuss Agenda and Budget "
             + PREFIX_TASK_NOTE + "To book venue";
 
     public static final String MESSAGE_EDIT_TASK_SUCCESS = "Edited Task: %1$s";
