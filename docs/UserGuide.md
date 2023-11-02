@@ -422,57 +422,13 @@ deleteAllPerson
 
   ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
 
-#### 7. Add tag(s) to a person: `addTagPerson`
-
-Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
-
-<h4>Format:</h4>
-
-```
-addTagPerson INDEX [t/TAG]…
-```
-
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
-
-<h4>Examples:</h4>
-
-- `addTagPerson 1 t/friends t/expensive`
-  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
-
-  ![addTagPerson success](images/output/addTagPerson_success.png)<br><br>
-
-<h4>Potential Errors:</h4>
-
-- `addTagPerson`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![addTagPerson error_noParameters](images/error/addTagPerson_error_noParameters.png)<br><br>
-
-- `addTagPerson 1`
-  - Negative example as no tag is specified.<br><br>
-
-  ![addTagPerson error_validIndex](images/error/addTagPerson_error_validIndex.png)<br><br>
-
-
-- `addTagPerson 1 t/`
-  - Negative example as no input is specified.<br><br>
-
-  ![addTagPerson error_noInput](images/error/addTagPerson_error_noInput.png)<br><br>
-
-- `addTagPerson 10 t/friends`
-  - Negative example as invalid index provided.<br><br>
-
-  ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
-
 ---
 
 <div style="page-break-after: always;"></div>
 
 ### Commands to Manage Tasks
 
-#### 8. Adding a task: `addTask`
+#### 7. Adding a task: `addTask`
 
 Adds a task to your task list.
 
@@ -503,7 +459,7 @@ addTask T/TITLE n/NOTE [t/TAG]...
 
 <div style="page-break-after: always;"></div>
 
-#### 9. Listing all tasks: `listTask`
+#### 8. Listing all tasks: `listTask`
 
 You can view details of all your tasks.
 
@@ -521,7 +477,7 @@ listTask
 
 <div style="page-break-after: always;"></div>
 
-#### 10. Editing a task: `editTask`
+#### 9. Editing a task: `editTask`
 
 You can edit the details of a task in your task list.
 
@@ -558,7 +514,7 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 
 <div style="page-break-after: always;"></div>
 
-#### 11. Finding a specific task: `findTask`
+#### 10. Finding a specific task: `findTask`
 
 You can quickly locate tasks that contains your specified keywords in their title and/or note.
 
@@ -604,7 +560,7 @@ findTask KEYWORD [MORE_KEYWORDS]…
 
 <div style="page-break-after: always;"></div>
 
-#### 12. Deleting a task entry: `deleteTask`
+#### 11. Deleting a task entry: `deleteTask`
 
 Allows you to remove a task from your task list with ease.
 
@@ -647,7 +603,7 @@ This action is irreversible.
 
 <div style="page-break-after: always;"></div>
 
-#### 13. Clearing all task entries: `deleteAllTask`
+#### 12. Clearing all task entries: `deleteAllTask`
 
 Allows you to remove **all** entries from your task list.
 
@@ -672,7 +628,7 @@ deleteAllTask
 
 <div style="page-break-after: always;"></div>
 
-#### 14. Marking a task as done: `markTask`
+#### 13. Marking a task as done: `markTask`
 
 Allows you to indicate that a specific task as **completed**.
 
@@ -717,7 +673,7 @@ Tasks are marked as not done by default.
 
 <div style="page-break-after: always;"></div>
 
-#### 15. Marking a task as not done: `unmarkTask`
+#### 14. Marking a task as not done: `unmarkTask`
 
 Allows you to indicate that a specific task as **not completed**.
 
@@ -763,7 +719,7 @@ Tasks are marked as not done by default.
 
 <div style="page-break-after: always;"></div>
 
-#### 16. Finding all tasks that are done: `findDone`
+#### 15. Finding all tasks that are done: `findDone`
 
 You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or track completed items with ease.
 
@@ -794,7 +750,7 @@ findDone
 
 <div style="page-break-after: always;"></div>
 
-#### 17. Finding all tasks that are not done: `findNotDone`
+#### 16. Finding all tasks that are not done: `findNotDone`
 
 You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively.
 
@@ -825,7 +781,7 @@ findNotDone
 
 <div style="page-break-after: always;"></div>
 
-#### 18. Deleting all tasks that are done: `deleteAllDone`
+#### 17. Deleting all tasks that are done: `deleteAllDone`
 
 You can easily clean up your task list by deleting all completed tasks, allowing you maintain an organized and clutter-free task management system.
 
@@ -855,58 +811,13 @@ deleteAllDone
 
   ![deleteAllDone_error](images/error/deleteAllDone_error.png)<br><br>
 
-#### 19. Add tag(s) to a task: `addTagTask`
-
-Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
-
-<h4>Format:</h4>
-
-```
-addTagTask INDEX [t/TAG]…
-```
-
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
-  index **_must be a positive integer_** 1, 2, 3, …
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
-
-<h4>Examples:</h4>
-
-- `addTagTask 1 t/day1 t/day2`
-  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the
-    output to have already been included in the list of existing tags.<br><br>
-
-  ![addTagTask success](images/output/addTagTask_success.png)<br><br>
-
-<h4>Potential Errors:</h4>
-
-- `addTagTask`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![addTagTask error_noParameters](images/error/addTagTask_error_noParameters.png)<br><br>
-
-- `addTagTask 1`
-  - Negative example as no tag is specified.<br><br>
-
-  ![addTagTask error_validIndex](images/error/addTagTask_error_validIndex.png)<br><br>
-
-- `addTagTask 1 t/`
-  - Negative example as no input is specified.<br><br>
-
-  ![addTagTask error_noInput](images/error/addTagTask_error_noInput.png)<br><br>
-
-- `addTagTask 3 t/day1`
-  - Negative example as invalid index provided.<br><br>
-
-  ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.png)
-
 ---
 
 <div style="page-break-after: always;"></div>
 
 ### Commands to Manage Tags
 
-#### 20. Listing all tags: `listTag`
+#### 18. Listing all tags: `listTag`
 
 Provides you with a complete list of tags you have used in your contact list and task list, and the number of times each tag has been used.
 
@@ -937,7 +848,7 @@ listTag
 
 <div style="page-break-after: always;"></div>
 
-#### 21. Finding persons and tasks with any matching tag: `findTag`
+#### 19. Finding persons and tasks with any matching tag: `findTag`
 
 You can search for persons and tasks using any keywords that match their tags.
 
@@ -981,7 +892,7 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
 <div style="page-break-after: always;"></div>
 
-#### 22. Finding persons and tasks with all matching tags: `findAllTag`
+#### 20. Finding persons and tasks with all matching tags: `findAllTag`
 
 You can search for persons and tasks using all keywords that match their tags.
 
@@ -1023,6 +934,95 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
   ![FindAllTag Example 2](images/error/findAllTag_error.png)
 
 <div style="page-break-after: always;"></div>
+
+#### 21. Add tag(s) to a person: `addTagPerson`
+
+Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
+
+<h4>Format:</h4>
+
+```
+addTagPerson INDEX [t/TAG]…
+```
+
+- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
+- At least one tag must be provided.
+- Existing list of tags will be updated after adding in the input tags.
+
+<h4>Examples:</h4>
+
+- `addTagPerson 1 t/friends t/expensive`
+  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
+
+  ![addTagPerson success](images/output/addTagPerson_success.png)<br><br>
+
+<h4>Potential Errors:</h4>
+
+- `addTagPerson`
+  - Negative example as no index or field is specified.<br><br>
+
+  ![addTagPerson error_noParameters](images/error/addTagPerson_error_noParameters.png)<br><br>
+
+- `addTagPerson 1`
+  - Negative example as no tag is specified.<br><br>
+
+  ![addTagPerson error_validIndex](images/error/addTagPerson_error_validIndex.png)<br><br>
+
+
+- `addTagPerson 1 t/`
+  - Negative example as no input is specified.<br><br>
+
+  ![addTagPerson error_noInput](images/error/addTagPerson_error_noInput.png)<br><br>
+
+- `addTagPerson 10 t/friends`
+  - Negative example as invalid index provided.<br><br>
+
+  ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
+
+#### 22. Add tag(s) to a task: `addTagTask`
+
+Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
+
+<h4>Format:</h4>
+
+```
+addTagTask INDEX [t/TAG]…
+```
+
+- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
+  index **_must be a positive integer_** 1, 2, 3, …
+- At least one tag must be provided.
+- Existing list of tags will be updated after adding in the input tags.
+
+<h4>Examples:</h4>
+
+- `addTagTask 1 t/day1 t/day2`
+  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the
+    output to have already been included in the list of existing tags.<br><br>
+
+  ![addTagTask success](images/output/addTagTask_success.png)<br><br>
+
+<h4>Potential Errors:</h4>
+
+- `addTagTask`
+  - Negative example as no index or field is specified.<br><br>
+
+  ![addTagTask error_noParameters](images/error/addTagTask_error_noParameters.png)<br><br>
+
+- `addTagTask 1`
+  - Negative example as no tag is specified.<br><br>
+
+  ![addTagTask error_validIndex](images/error/addTagTask_error_validIndex.png)<br><br>
+
+- `addTagTask 1 t/`
+  - Negative example as no input is specified.<br><br>
+
+  ![addTagTask error_noInput](images/error/addTagTask_error_noInput.png)<br><br>
+
+- `addTagTask 3 t/day1`
+  - Negative example as invalid index provided.<br><br>
+
+  ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.png)
 
 #### 23. Deleting tag(s) from a person: `deleteTagPerson`
 
@@ -1180,39 +1180,39 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Find Person**](#4-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John`
 [**Delete Person**](#5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1`
 [**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson`
-[**Add Tag(s) to a Person**](#7-add-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
 
 ### Managing Tasks
 
  Action | Format | Example
 --------|--------|---------
-[**Add Task**](#8-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
-[**List All Task**](#9-listing-all-tasks-listtask) | `listTask` | `listTask`
-[**Edit Task**](#10-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
-[**Find Task**](#11-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
-[**Delete Task**](#12-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1`
-[**Delete All Task**](#13-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
-[**Mark Task**](#14-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
-[**Unmark Task**](#15-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
-[**Find Done Task**](#16-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
-[**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
-[**Delete All Done Task**](#18-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
-[**Add Tag(s) to a Task**](#19-add-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
+[**Add Task**](#7-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
+[**List All Task**](#8-listing-all-tasks-listtask) | `listTask` | `listTask`
+[**Edit Task**](#9-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
+[**Find Task**](#10-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
+[**Delete Task**](#11-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1`
+[**Delete All Task**](#12-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
+[**Mark Task**](#13-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
+[**Unmark Task**](#14-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
+[**Find Done Task**](#15-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
+[**Find Not Done Task**](#16-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
+[**Delete All Done Task**](#17-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
 
 ### Managing Tags
 
  Action | Format | Example
 --------|--------|---------
-[**List All Tags**](#20-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Find Tags**](#21-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
-[**Find All Tags**](#22-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
+[**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
+[**Find Tags**](#19-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
+[**Find All Tags**](#20-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
+[**Add Tag(s) to a Person**](#21-add-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
+[**Add Tag(s) to a Task**](#22-add-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
 [**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
-[**Delete Tag(s) from Task**](#23-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
+[**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
 ### General
 
  Action | Format | Example
 --------|--------|---------
-[**View Help**](#23-viewing-help-help) | `help` | `help`
-[**List All Person and Task**](#24-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
-[**Exit**](#25-exiting-the-program-exit) | `exit` | `exit`
+[**View Help**](#25-viewing-help-help) | `help` | `help`
+[**List All Person and Task**](#26-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
+[**Exit**](#27-exiting-the-program-exit) | `exit` | `exit`
