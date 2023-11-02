@@ -153,6 +153,16 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void deleteAllDone() {
+        updateFilteredTaskList(PREDICATE_SHOW_DONE_TASKS);
+        for (int i = filteredTasks.size() - 1; i >= 0; i--) {
+            Task task = filteredTasks.get(i);
+            deleteTask(task);
+        }
+        updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
+    }
+
+    @Override
     public void addTask(Task task) {
         addressBook.addTask(task);
         updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);

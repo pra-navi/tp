@@ -9,11 +9,16 @@ import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BENSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalPersons;
 import static seedu.address.testutil.TypicalTasks.AGENDA;
+import static seedu.address.testutil.TypicalTasks.BUDGET;
+import static seedu.address.testutil.TypicalTasks.CATERING;
+import static seedu.address.testutil.TypicalTasks.DRAFT;
+import static seedu.address.testutil.TypicalTasks.ENTERTAINMENT;
 import static seedu.address.testutil.TypicalTasks.getTypicalTasks;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -134,6 +139,18 @@ public class ModelManagerTest {
         assertTrue(unmarkedTask.getStatus().equals(Status.STATUS_NOT_DONE));
 
         assertTrue(modelManager.getFilteredTaskList().get(0).getStatus().equals(Status.STATUS_NOT_DONE));
+    }
+
+    @Test
+    public void deleteAllDone_validTaskList_success() {
+        List<Task> taskToAdd = Arrays.asList(AGENDA, BUDGET, CATERING, DRAFT, ENTERTAINMENT);
+        for (Task task: taskToAdd) {
+            modelManager.addTask(task);
+        }
+        modelManager.deleteAllDone();
+
+        List<Task> correctList = Arrays.asList(AGENDA, CATERING, DRAFT);
+        assertTrue(modelManager.getFilteredTaskList().equals(correctList));
     }
 
     @Test
