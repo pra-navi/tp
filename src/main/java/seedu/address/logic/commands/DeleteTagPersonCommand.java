@@ -26,7 +26,9 @@ public class DeleteTagPersonCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
             + ": Deletes one or more tags from a person identified using its displayed index from the address book.\n"
-            + "Parameters: INDEX (must be a positive integer)\n"
+            + "Parameters: INDEX (must be a positive integer) "
+            + PREFIX_TAG + "TAG "
+            + "[" + PREFIX_TAG + "MORE TAGS]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_TAG + "catering "
             + PREFIX_TAG + "budget";
