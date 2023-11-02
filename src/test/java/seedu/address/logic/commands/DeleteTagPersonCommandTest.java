@@ -69,7 +69,51 @@ public class DeleteTagPersonCommandTest {
     }
 
     @Test
-    public void formatResultMessageMethod() {
+    public void formatResultMessage_matching() {
+        Person personToEdit = new PersonBuilder().withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND).build();
+
+        Set<Tag> tags = new HashSet<>();
+        tags.add(new Tag(VALID_TAG_FRIEND));
+        tags.add(new Tag(VALID_TAG_HUSBAND));
+
+        Person editPerson = new PersonBuilder(personToEdit).withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND).build();
+
+        Set<Tag> matchingTag = new HashSet<>(Arrays.asList(new Tag(VALID_TAG_FRIEND), new Tag(VALID_TAG_HUSBAND)));
+        String matchingTagsString = matchingTag.stream().map(Tag::toString).collect(Collectors.joining(", "));
+
+        String expectedString = String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_SUCCESS,
+                Messages.format(editPerson))
+                + String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS, matchingTagsString);
+
+        assertEquals(expectedString, DeleteTagPersonCommand.formatResultMessage(personToEdit, editPerson, tags));
+    }
+
+    @Test
+    public void formatResultMessage_missing() {
+        Person personToEdit = new PersonBuilder().withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND).build();
+
+        Set<Tag> tags = new HashSet<>();
+        tags.add(new Tag("blabla"));
+
+        Person editPerson = new Person(
+                personToEdit.getName(),
+                personToEdit.getPhone(),
+                personToEdit.getEmail(),
+                personToEdit.getAddress(),
+                new HashSet<>());
+
+        Set<Tag> missingTag = new HashSet<>(Arrays.asList(new Tag("blabla")));
+        String missingTagsString = missingTag.stream().map(Tag::toString).collect(Collectors.joining(", "));
+
+        String expectedString = String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_SUCCESS,
+                Messages.format(editPerson))
+                + String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missingTagsString);
+
+        assertEquals(expectedString, DeleteTagPersonCommand.formatResultMessage(personToEdit, editPerson, tags));
+    }
+
+    @Test
+    public void formatResultMessage_matchingAndMissing() {
         Person personToEdit = new PersonBuilder().withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND).build();
 
         Set<Tag> tags = new HashSet<>();
