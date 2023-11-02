@@ -96,21 +96,21 @@ Throughout this guide, you will see different text styles that are used to highl
 
    Some example commands you can try:
 
-   * `listPerson` : Lists all persons.
+   - `listPerson` : Lists all persons.
 
-   * `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a new contact named `John Doe` with the specified details.
+   - `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a new contact named `John Doe` with the specified details.
 
-   * `deletePerson 3` : Deletes the 3rd contact shown in the current contact list.
+   - `deletePerson 3` : Deletes the 3rd contact shown in the current contact list.
 
-   * `findTask caterer` : Finds all tasks with the word `caterer` in their title or note.
+   - `findTask caterer` : Finds all tasks with the word `caterer` in their title or note.
 
-   * `listTask` : Lists all tasks.
+   - `listTask` : Lists all tasks.
 
-   * `addTask T/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding Anniversary` to the task list.
+   - `addTask T/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding Anniversary` to the task list.
 
-   * `markTask 1` : Marks the 1st task shown in the current task list as done.
+   - `markTask 1` : Marks the 1st task shown in the current task list as done.
 
-   * `exit` : Exits the app.
+   - `exit` : Exits the app.
 
 6. Refer to the [Usage](#usage) section below for details of each command.
 
@@ -215,6 +215,7 @@ You can add new individuals to your list such as clients, vendors, or friends.
 ```
 addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 ```
+
 - Provide the full name of the individual using the `n/` prefix. This field is **mandatory**.
 - Provide the phone number with the `p/` prefix. This field is **mandatory**.
 - Provide the email address using the `e/` prefix. This field is **mandatory**.
@@ -580,24 +581,24 @@ This action is irreversible.
 <h4>Examples:</h4>
 
 - `listTask` followed by `deleteTask 2`
-    - Deletes the 2nd task in your task list.<br><br>
+  - Deletes the 2nd task in your task list.<br><br>
 
   ![deleteTask_success_with_listTask](images/output/deleteTask_success.png)<br><br>
 
 - `findTask caterer` followed by `deleteTask 1`
-    - Deletes the 1st task in the results of the `findTask` command.<br><br>
+  - Deletes the 1st task in the results of the `findTask` command.<br><br>
 
   ![deleteTask_success_with_findTask](images/output/deleteTask_success_filteredList.png)
 
 <h4>Potential Errors:</h4>
 
 - `deleteTask`
-    - Negative example as no index is specified.<br><br>
+  - Negative example as no index is specified.<br><br>
 
   ![deleteTask error_no_index](images/error/deleteTask_error.png)<br><br>
 
 - `deleteTask 1000`
-    - Invalid index is provided.<br><br>
+  - Invalid index is provided.<br><br>
 
   ![deleteTask error_invalid_index](images/error/deleteTask_wrongIndex.png)
 
@@ -873,15 +874,15 @@ findTag KEYWORD [MORE_KEYWORDS]...
 <h4>Examples:</h4>
 
 - `findTag orientation`
-  - Shows all persons and tasks with tags of keyword: "orientation".<br><br>
+  - Shows all persons and tasks containing the tag `orientation`.<br><br>
 
-  ![findTag_success_2](images/output/findTag_success2.png)
+  ![findTag_success_2](images/output/findTag_success2.png)<br><br>
 
 
 - `findTag catering orientation`
-  - Shows all persons and tasks with tags of keywordsL "catering" or "orientation".<br><br>
+  - Shows all persons and tasks containing any of the tags `catering` or `orientation`.<br><br>
 
-  ![findTag_success_1](images/output/findTag_success1.png)<br><br>
+  ![findTag_success_1](images/output/findTag_success1.png)
 
 <h4>Potential Error:</h4>
 
@@ -917,12 +918,12 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 <h4>Examples:</h4>
 
 - `findAllTag orientation`
-  - Shows all persons and tasks with tags of keyword: "catering".<br><br>
+  - Shows all persons and tasks containing the tag `catering`.<br><br>
 
   ![findAllTag_success_1](images/output/findAllTag_success1.png)<br><br>
 
 - `findAllTag catering orientation`
-  - Shows all persons and tasks with tags of keywords: "catering" and "orientation":.<br><br>
+  - Shows all persons and tasks containing both the tags `catering` and `orientation`.<br><br>
 
   ![findAllTag_success_2](images/output/findAllTag_success2.png)
 
@@ -954,7 +955,7 @@ addTagPerson INDEX [t/TAG]…
 - `addTagPerson 1 t/friends t/expensive`
   - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
 
-  ![addTagPerson success](images/output/addTagPerson_success.png)<br><br>
+  ![addTagPerson success](images/output/addTagPerson_success.png)
 
 <h4>Potential Errors:</h4>
 
@@ -975,9 +976,11 @@ addTagPerson INDEX [t/TAG]…
   ![addTagPerson error_noInput](images/error/addTagPerson_error_noInput.png)<br><br>
 
 - `addTagPerson 10 t/friends`
-  - Negative example as invalid index provided.<br><br>
+  - Negative example as an invalid index is provided.<br><br>
 
   ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
+
+<div style="page-break-after: always;"></div>
 
 #### 22. Adding tag(s) to a task: `addTagTask`
 
@@ -989,18 +992,16 @@ Enables you to add tag(s) to the existing list of tags of an existing task in yo
 addTagTask INDEX [t/TAG]…
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
-  index **_must be a positive integer_** 1, 2, 3, …
+- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, …
 - At least one tag must be provided.
 - Existing list of tags will be updated after adding in the input tags.
 
 <h4>Examples:</h4>
 
 - `addTagTask 1 t/day1 t/day2`
-  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the
-    output to have already been included in the list of existing tags.<br><br>
+  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.<br><br>
 
-  ![addTagTask success](images/output/addTagTask_success.png)<br><br>
+  ![addTagTask success](images/output/addTagTask_success.png)
 
 <h4>Potential Errors:</h4>
 
@@ -1020,9 +1021,11 @@ addTagTask INDEX [t/TAG]…
   ![addTagTask error_noInput](images/error/addTagTask_error_noInput.png)<br><br>
 
 - `addTagTask 3 t/day1`
-  - Negative example as invalid index provided.<br><br>
+  - Negative example as an invalid index is provided.<br><br>
 
   ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.png)
+
+<div style="page-break-after: always;"></div>
 
 #### 23. Deleting tag(s) from a person: `deleteTagPerson`
 
@@ -1207,7 +1210,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Add Tag(s) to a Person**](#21-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
 [**Add Tag(s) to a Task**](#22-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
 [**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
-[**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
+[**Delete Tag(s) from Task**](#24-delete-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
 ### General
 
