@@ -1050,7 +1050,7 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 
 <div style="page-break-after: always;"></div>
 
-#### 24. Delete tag(s) from a task: `deleteTagTask`
+#### 24. Deleting tag(s) from a task: `deleteTagTask`
 
 You can remove tag(s) from a task in your task list.
 
@@ -1210,7 +1210,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Add Tag(s) to a Person**](#21-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
 [**Add Tag(s) to a Task**](#22-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
 [**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
-[**Delete Tag(s) from Task**](#24-delete-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
+[**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
 ### General
 
