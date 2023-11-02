@@ -492,6 +492,7 @@ Priorities:
 | `* * *` | event planner | find a person by name | locate a specific person without having to go through the entire list |
 | `* * *` | event planner | delete a contact | remove contacts that I no longer need |
 | `* * *` | event planner | delete all contacts | efficiently restart or declutter my contacts list |
+| `* * *` | event planner | add tags to a person | categorise my contacts for easy reference |
 | `* * *` | event planner | create tasks to do | know what tasks I need to do in preparation for the event |
 | `* * *` | event planner | list each task's details | view all my tasks' details at a quick glance |
 | `* * *` | event planner | edit a task | ensure task details are up-to-date with latest information |
@@ -500,10 +501,14 @@ Priorities:
 | `* * *` | event planner | delete all tasks | clear all task entries and restart with a new clean task list |
 | `* * *` | event planner | mark a task as done | keep track of task progress and the number of tasks that are done |
 | `* * *` | event planner | mark a task as not done | keep track of task progress and the number of tasks that are not done |
+| `* *` | event planner | find all done tasks | quickly see which tasks I have completed |
+| `* *` | event planner | find all not done tasks | quickly see which tasks I have yet to complete |
+| `* *` | event planner | delete all done tasks | ensure that my task list is not cluttered with completed tasks |
+| `* * *` | event planner | add tags to a task | categorise my tasks for easy reference |
+| `* *` | event planner | list all the tags I have used | avoid creating duplicate categories |
+| `* *` | event planner | find a person and tasks by tag | quickly see the persons and tasks in a category |
 | `* * *` | event planner | save my data automatically | ensure that my contact and task data will not be lost |
 | `* * *` | event planner | load my data automatically | quickly continue from where I left off in the last session |
-
-*{More to be added}*
 
 <div style="page-break-after: always;"></div>
 
