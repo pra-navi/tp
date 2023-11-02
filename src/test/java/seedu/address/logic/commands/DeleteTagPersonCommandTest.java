@@ -112,6 +112,11 @@ public class DeleteTagPersonCommandTest {
 
         // different person -> returns false
         assertFalse(deleteTagPersonFirstCommand.equals(deleteTagPersonSecondCommand));
+
+        // different tags -> returns false
+        DeleteTagPersonCommand deleteTagPersonThirdCommand = new DeleteTagPersonCommand(INDEX_FIRST,
+                new HashSet<>(Arrays.asList(new Tag("new"))));
+        assertFalse(deleteTagPersonFirstCommand.equals(deleteTagPersonThirdCommand));
     }
 
     @Test
