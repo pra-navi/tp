@@ -11,8 +11,10 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
@@ -76,13 +78,15 @@ public class DeleteTagPersonCommandTest {
 
         Person editPerson = new PersonBuilder(personToEdit).withTags(VALID_TAG_HUSBAND).build();
 
+        Set<Tag> matchingTag = new HashSet<>(Arrays.asList(new Tag(VALID_TAG_FRIEND)));
+        Set<Tag> missingTag = new HashSet<>(Arrays.asList(new Tag("blabla")));
+        String matchingTagsString = matchingTag.stream().map(Tag::toString).collect(Collectors.joining(", "));
+        String missingTagsString = missingTag.stream().map(Tag::toString).collect(Collectors.joining(", "));
+
         String expectedString = String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_SUCCESS,
                 Messages.format(editPerson))
-                + String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, new HashSet<>() {
-                    {
-                        add(new Tag("blabla"));
-                    }
-                });
+                + String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS, matchingTagsString)
+                + String.format(DeleteTagPersonCommand.MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missingTagsString);
 
         assertEquals(expectedString, DeleteTagPersonCommand.formatResultMessage(personToEdit, editPerson, tags));
     }

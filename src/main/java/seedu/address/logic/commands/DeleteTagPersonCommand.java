@@ -6,6 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
@@ -30,8 +31,9 @@ public class DeleteTagPersonCommand extends Command {
             + PREFIX_TAG + "catering "
             + PREFIX_TAG + "budget";
 
-    public static final String MESSAGE_DELETE_TAG_PERSON_SUCCESS = "Deleted tag(s) from person: %1$s.\n";
-    public static final String MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS = "These tags did not seem to exist: %1$s.\n";
+    public static final String MESSAGE_DELETE_TAG_PERSON_SUCCESS = "Deleted tag(s) from person: %1$s\n";
+    public static final String MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS = "Successfully removed these tags: %1$s\n";
+    public static final String MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS = "These tags did not seem to exist: %1$s\n";
 
     private final Index targetIndex;
     private final Set<Tag> tagsToDelete;
@@ -79,15 +81,21 @@ public class DeleteTagPersonCommand extends Command {
      * Handles cases of missing tags.
      */
     public static String formatResultMessage(Person personToEdit, Person editedPerson, Set<Tag> tagsToDelete) {
-        Set<Tag> toDelete = new HashSet<>(personToEdit.getTags());
-        toDelete.retainAll(tagsToDelete);
+        Set<Tag> matchingTags = new HashSet<>(personToEdit.getTags());
+        matchingTags.retainAll(tagsToDelete);
 
-        Set<Tag> missing = new HashSet<>(tagsToDelete);
-        missing.removeAll(toDelete);
+        Set<Tag> missingTags = new HashSet<>(tagsToDelete);
+        missingTags.removeAll(matchingTags);
 
         String res = String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson));
-        if (missing.size() > 0) {
-            res += String.format(MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missing);
+        if (matchingTags.size() > 0) {
+            String matchingTagsString = matchingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
+            res += String.format(MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS, matchingTagsString);
+        }
+
+        if (missingTags.size() > 0) {
+            String missingTagsString = missingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
+            res += String.format(MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missingTagsString);
         }
         return res;
     }
