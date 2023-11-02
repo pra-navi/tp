@@ -935,7 +935,7 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 
 <div style="page-break-after: always;"></div>
 
-#### 21. Add tag(s) to a person: `addTagPerson`
+#### 21. Adding tag(s) to a person: `addTagPerson`
 
 Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
 
@@ -979,7 +979,7 @@ addTagPerson INDEX [t/TAG]…
 
   ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
 
-#### 22. Add tag(s) to a task: `addTagTask`
+#### 22. Adding tag(s) to a task: `addTagTask`
 
 Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
 
@@ -1204,8 +1204,8 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
 [**Find Tags**](#19-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
 [**Find All Tags**](#20-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
-[**Add Tag(s) to a Person**](#21-add-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
-[**Add Tag(s) to a Task**](#22-add-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
+[**Add Tag(s) to a Person**](#21-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
+[**Add Tag(s) to a Task**](#22-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
 [**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
 [**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
