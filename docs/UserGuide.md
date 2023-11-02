@@ -979,8 +979,6 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
   ![FindTag Example 2](images/error/findTag_error.png)
 
----
-
 <div style="page-break-after: always;"></div>
 
 #### 22. Finding persons and tasks with all matching tags: `findAllTag`
@@ -1023,6 +1021,31 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
   - An invalid command format. The application expects one or more keywords after `findAllTag`.<br><br>
 
   ![FindAllTag Example 2](images/error/findAllTag_error.png)
+
+<div style="page-break-after: always;"></div>
+
+#### 23. Deleting tag(s) from a person: `deleteTagPerson`
+
+You can remove tag(s) from a person in your contact list.
+
+<h4>Format:</h4>
+
+```
+deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
+```
+
+- Removes specified tags from a person at the specified `INDEX`.
+- Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
+- Invalid tags will be ignored.
+
+<h4>Examples:</h4>
+
+- `deleteTagPerson 2 t/colleagues t/friends`
+  - Deletes the tags `colleagues` and `friends` from the 2nd person.<br><br>
+
+  ![deleteTagPerson_success](images/output/deleteTagPerson_success.png)
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -1162,6 +1185,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**List All Tags**](#20-listing-all-tags-listtag) | `listTag` | `listTag`
 [**Find Tags**](#21-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
 [**Find All Tags**](#22-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
+[**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
 
 ### General
 
