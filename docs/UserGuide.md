@@ -439,8 +439,7 @@ addTagPerson INDEX [t/TAG]…
 <h4>Examples:</h4>
 
 - `addTagPerson 1 t/friends t/expensive`
-  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the 
-    output to have already been included in the list of existing tags.<br><br>
+  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
 
   ![addTagPerson success](images/output/addTagPerson_success.png)<br><br>
 
@@ -466,6 +465,8 @@ addTagPerson INDEX [t/TAG]…
   - Negative example as invalid index provided.<br><br>
 
   ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
+
+---
 
 <div style="page-break-after: always;"></div>
 
@@ -864,7 +865,7 @@ Enables you to add tag(s) to the existing list of tags of an existing task in yo
 addTagTask INDEX [t/TAG]…
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The 
+- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
   index **_must be a positive integer_** 1, 2, 3, …
 - At least one tag must be provided.
 - Existing list of tags will be updated after adding in the input tags.
@@ -898,8 +899,6 @@ addTagTask INDEX [t/TAG]…
   - Negative example as invalid index provided.<br><br>
 
   ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.png)
-
-<div style="page-break-after: always;"></div>
 
 ---
 
@@ -986,7 +985,7 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
 #### 22. Finding persons and tasks by tag: `findAllTag`
 
-You can search for persons and tasks using all keywords given. 
+You can search for persons and tasks using all keywords given.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -1072,12 +1071,6 @@ listAll
 
   ![listAll success](images/output/listAll_success.png)
 
-{% include admonition.html type="failure" title="TODO: Missing Screenshot" body="
-
-Please add a screenshot of the output of the command `listAll`.
-
-" %}
-
 <div style="page-break-after: always;"></div>
 
 #### 25. Exiting the program: `exit`
@@ -1135,32 +1128,32 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
 ### Managing Persons
 
- Action | Format                                                                | Example
---------|-----------------------------------------------------------------------|---------
-[**Add Person**](#1-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…`          |`addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-[**List All Person**](#2-listing-all-persons-listperson) | `listPerson`                                                          | `listPerson`
+ Action | Format | Example
+--------|--------|---------
+[**Add Person**](#1-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` |`addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
+[**List All Person**](#2-listing-all-persons-listperson) | `listPerson` | `listPerson`
 [**Edit Person**](#3-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com`
-[**Find Person**](#4-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…`                                 | `findPerson John`
-[**Delete Person**](#5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX`                                                  | `deletePerson 1`
-[**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson`                                                     | `deleteAllPerson`
-[**Add Tag(s) to a Person**](#7-add-tag(s)-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…`                                          | `addTagPerson 1 t/friends`
+[**Find Person**](#4-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John`
+[**Delete Person**](#5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1`
+[**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson`
+[**Add Tag(s) to a Person**](#7-add-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
 
 ### Managing Tasks
 
- Action | Format                              | Example
---------|-------------------------------------|---------
-[**Add Task**](#8-adding-a-task-addtask) | `addTask t/TITLE n/NOTE`            | `addTask t/Get Flowers n/Wedding Anniversary`
-[**List All Task**](#9-listing-all-tasks-listtask) | `listTask`                          | `listTask`
+ Action | Format | Example
+--------|--------|---------
+[**Add Task**](#8-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
+[**List All Task**](#9-listing-all-tasks-listtask) | `listTask` | `listTask`
 [**Edit Task**](#10-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
 [**Find Task**](#11-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
-[**Delete Task**](#12-deleting-a-task-entry-deletetask) | `deleteTask INDEX`                  | `deleteTask 1`
-[**Delete All Task**](#13-clearing-all-task-entries-deletealltask) | `deleteAllTask`                     | `deleteAllTask`
-[**Mark Task**](#14-marking-a-task-as-done-marktask) | `markTask INDEX`                    | `markTask 1`
-[**Unmark Task**](#15-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX`                  | `unmarkTask 1`
-[**Find Done Task**](#16-finding-all-tasks-that-are-done-finddone) | `findDone`                          | `findDone`
-[**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone`                       | `findNotDone`
-[**Delete All Done Task**](#18-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone`                     | `deleteAllDone`
-[**Add Tag(s) to a Task**](#19-add-tag(s)-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…`         | `addTagTask 1 t/day1`
+[**Delete Task**](#12-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1`
+[**Delete All Task**](#13-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
+[**Mark Task**](#14-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
+[**Unmark Task**](#15-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
+[**Find Done Task**](#16-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
+[**Find Not Done Task**](#17-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
+[**Delete All Done Task**](#18-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
+[**Add Tag(s) to a Task**](#19-add-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
 
 ### Managing Tags
 
@@ -1173,6 +1166,6 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example
 --------|--------|---------
-[**View Help**](#22-viewing-help-help) | `help` | `help`
-[**List All Person and Task**](#23-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
-[**Exit**](#24-exiting-the-program-exit) | `exit` | `exit`
+[**View Help**](#23-viewing-help-help) | `help` | `help`
+[**List All Person and Task**](#24-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
+[**Exit**](#25-exiting-the-program-exit) | `exit` | `exit`
