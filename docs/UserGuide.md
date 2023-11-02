@@ -1047,13 +1047,34 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 
 <div style="page-break-after: always;"></div>
 
+#### 24. Delete tag(s) from a task: `deleteTagTask`
+
+You can remove tag(s) from a task in your task list.
+
+<h4>Format:</h4>
+
+```
+deleteTagTask INDEX t/TAG [t/MORE TAGS]…
+```
+
+- Removes specified tags from a task at the specified `INDEX`.
+- Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
+- Invalid tags will be ignored.
+
+<h4>Examples:</h4>
+
+- `deleteTagTask 2 t/class t/finance`
+  - Deletes the tags `class` and `finance` from the 2nd task.<br><br>
+
+  ![deleteTagTask_success](images/output/deleteTagTask_success.png)
+
 ---
 
 <div style="page-break-after: always;"></div>
 
 ### General Commands
 
-#### 23. Viewing help: `help`
+#### 25. Viewing help: `help`
 
 You can view a link to access the user guide at any time, ensuring that you will never be lost.
 
@@ -1072,7 +1093,7 @@ help
 
 <div style="page-break-after: always;"></div>
 
-#### 24. Listing all persons and tasks: `listAll`
+#### 26. Listing all persons and tasks: `listAll`
 
 You can list all persons and tasks in your contact list and task list at the same time.
 
@@ -1096,7 +1117,7 @@ listAll
 
 <div style="page-break-after: always;"></div>
 
-#### 25. Exiting the program: `exit`
+#### 27. Exiting the program: `exit`
 
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
@@ -1186,6 +1207,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Find Tags**](#21-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
 [**Find All Tags**](#22-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
 [**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
+[**Delete Tag(s) from Task**](#23-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
 ### General
 
