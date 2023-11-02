@@ -23,6 +23,7 @@ import seedu.address.logic.commands.DeleteAllPersonCommand;
 import seedu.address.logic.commands.DeleteAllTaskCommand;
 import seedu.address.logic.commands.DeletePersonCommand;
 import seedu.address.logic.commands.DeleteTagPersonCommand;
+import seedu.address.logic.commands.DeleteTagTaskCommand;
 import seedu.address.logic.commands.DeleteTaskCommand;
 import seedu.address.logic.commands.EditPersonCommand;
 import seedu.address.logic.commands.EditPersonCommand.EditPersonDescriptor;
@@ -461,6 +462,27 @@ public class AddressBookParserTest {
                 DeleteTagPersonCommand.SHORTENED_COMMAND_WORD + " " + INDEX_FIRST.getOneBased()
                         + " t/caterer");
         assertEquals(new DeleteTagPersonCommand(INDEX_FIRST, tags), command);
+    }
+
+    @Test
+    public void parseCommand_deleteTagTask() throws Exception {
+        Tag tag = new Tag("caterer");
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag);
+        DeleteTagTaskCommand command = (DeleteTagTaskCommand) parser.parseCommand(
+                DeleteTagTaskCommand.COMMAND_WORD + " " + INDEX_FIRST.getOneBased() + " t/caterer");
+        assertEquals(new DeleteTagTaskCommand(INDEX_FIRST, tags), command);
+    }
+
+    @Test
+    public void parseCommand_shortened_deleteTagTask() throws Exception {
+        Tag tag = new Tag("caterer");
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag);
+        DeleteTagTaskCommand command = (DeleteTagTaskCommand) parser.parseCommand(
+                DeleteTagTaskCommand.SHORTENED_COMMAND_WORD + " " + INDEX_FIRST.getOneBased()
+                        + " t/caterer");
+        assertEquals(new DeleteTagTaskCommand(INDEX_FIRST, tags), command);
     }
 
     @Test

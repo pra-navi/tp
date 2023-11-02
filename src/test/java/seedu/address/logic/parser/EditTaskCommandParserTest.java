@@ -6,12 +6,12 @@ import static seedu.address.logic.commands.CommandTestUtil.INVALID_NOTE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_TASK_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TITLE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.NOTE_DESC_AGENDA;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_AGENDA;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_BUDGET;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_FINANCE;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_LOCATION;
 import static seedu.address.logic.commands.CommandTestUtil.TITLE_DESC_AGENDA;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NOTE_AGENDA;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_AGENDA;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_BUDGET;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FINANCE;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_LOCATION;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_AGENDA;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NOTE;
@@ -80,9 +80,9 @@ public class EditTaskCommandParserTest {
 
         // while parsing {@code PREFIX_TAG} alone will reset the tags of the {@code Task} being edited,
         // parsing it together with a valid tag results in error
-        assertParseFailure(parser, "1" + TAG_DESC_AGENDA + TAG_DESC_BUDGET + TAG_EMPTY, Tag.MESSAGE_CONSTRAINTS);
-        assertParseFailure(parser, "1" + TAG_DESC_AGENDA + TAG_EMPTY + TAG_DESC_BUDGET, Tag.MESSAGE_CONSTRAINTS);
-        assertParseFailure(parser, "1" + TAG_EMPTY + TAG_DESC_AGENDA + TAG_DESC_BUDGET, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_DESC_LOCATION + TAG_DESC_FINANCE + TAG_EMPTY, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_DESC_LOCATION + TAG_EMPTY + TAG_DESC_FINANCE, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_EMPTY + TAG_DESC_LOCATION + TAG_DESC_FINANCE, Tag.MESSAGE_CONSTRAINTS);
 
         // multiple invalid values, but only the first invalid value is captured
         assertParseFailure(parser, "1" + INVALID_TITLE_DESC + INVALID_NOTE_DESC, Title.MESSAGE_CONSTRAINTS);
@@ -91,10 +91,10 @@ public class EditTaskCommandParserTest {
     @Test
     public void parse_allFieldsSpecified_success() {
         Index targetIndex = INDEX_SECOND;
-        String userInput = targetIndex.getOneBased() + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_BUDGET;
+        String userInput = targetIndex.getOneBased() + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_FINANCE;
 
         EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_AGENDA)
-                .withNote(VALID_NOTE_AGENDA).withTags(VALID_TAG_BUDGET).build();
+                .withNote(VALID_NOTE_AGENDA).withTags(VALID_TAG_FINANCE).build();
         EditTaskCommand expectedCommand = new EditTaskCommand(targetIndex, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);
@@ -127,8 +127,8 @@ public class EditTaskCommandParserTest {
         assertParseSuccess(parser, userInput, expectedCommand);
 
         // tags
-        userInput = targetIndex.getOneBased() + TAG_DESC_AGENDA;
-        descriptor = new EditTaskDescriptorBuilder().withTags(VALID_TAG_AGENDA).build();
+        userInput = targetIndex.getOneBased() + TAG_DESC_LOCATION;
+        descriptor = new EditTaskDescriptorBuilder().withTags(VALID_TAG_LOCATION).build();
         expectedCommand = new EditTaskCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
     }
@@ -148,9 +148,9 @@ public class EditTaskCommandParserTest {
         assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_TASK_TITLE));
 
         // multiple valid fields repeated
-        userInput = targetIndex.getOneBased() + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_AGENDA
-                + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_AGENDA
-                + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_AGENDA;
+        userInput = targetIndex.getOneBased() + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_LOCATION
+                + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_LOCATION
+                + TITLE_DESC_AGENDA + NOTE_DESC_AGENDA + TAG_DESC_LOCATION;
         assertParseFailure(parser, userInput,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_TASK_TITLE, PREFIX_TASK_NOTE));
 

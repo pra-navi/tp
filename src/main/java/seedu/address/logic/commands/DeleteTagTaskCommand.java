@@ -13,19 +13,19 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.person.Person;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.task.Task;
 
 /**
- * Deletes a tag from a person identified using its displayed index from the address book.
+ * Deletes a tag from a task identified using its displayed index from the address book.
  */
-public class DeleteTagPersonCommand extends Command {
+public class DeleteTagTaskCommand extends Command {
 
-    public static final String COMMAND_WORD = "deleteTagPerson";
-    public static final String SHORTENED_COMMAND_WORD = "dtagp";
+    public static final String COMMAND_WORD = "deleteTagTask";
+    public static final String SHORTENED_COMMAND_WORD = "dtagt";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " (alias: " + SHORTENED_COMMAND_WORD + ")"
-            + ": Deletes one or more tags from a person identified using its displayed index from the address book.\n"
+            + ": Deletes one or more tags from a task identified using its displayed index from the address book.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + PREFIX_TAG + "TAG "
             + "[" + PREFIX_TAG + "MORE TAGS]...\n"
@@ -33,18 +33,18 @@ public class DeleteTagPersonCommand extends Command {
             + PREFIX_TAG + "catering "
             + PREFIX_TAG + "budget";
 
-    public static final String MESSAGE_DELETE_TAG_PERSON_SUCCESS = "Deleted tag(s) from person: %1$s\n";
-    public static final String MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS = "Successfully removed these tags: %1$s\n";
-    public static final String MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS = "These tags did not seem to exist: %1$s\n";
+    public static final String MESSAGE_DELETE_TAG_TASK_SUCCESS = "Deleted tag(s) from task: %1$s\n";
+    public static final String MESSAGE_DELETE_TAG_TASK_MATCHING_TAGS = "Successfully removed these tags: %1$s\n";
+    public static final String MESSAGE_DELETE_TAG_TASK_MISSING_TAGS = "These tags did not seem to exist: %1$s\n";
 
     private final Index targetIndex;
     private final Set<Tag> tagsToDelete;
 
     /**
-     * @param index of the person in the filtered person list to edit
-     * @param tagsToDelete tags to delete from the person
+     * @param index of the task in the filtered task list to edit
+     * @param tagsToDelete tags to delete from the task
      */
-    public DeleteTagPersonCommand(Index targetIndex, Set<Tag> tagsToDelete) {
+    public DeleteTagTaskCommand(Index targetIndex, Set<Tag> tagsToDelete) {
         this.targetIndex = targetIndex;
         this.tagsToDelete = tagsToDelete;
     }
@@ -52,29 +52,27 @@ public class DeleteTagPersonCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Person> lastShownList = model.getFilteredPersonList();
+        List<Task> lastShownList = model.getFilteredTaskList();
 
         if (targetIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
         }
 
-        Person personToEdit = lastShownList.get(targetIndex.getZeroBased());
-        Person editedPerson = createEditedPerson(personToEdit, tagsToDelete);
-        model.setPerson(personToEdit, editedPerson);
-        return new CommandResult(formatResultMessage(personToEdit, editedPerson, tagsToDelete));
+        Task taskToEdit = lastShownList.get(targetIndex.getZeroBased());
+        Task editedTask = createEditedTask(taskToEdit, tagsToDelete);
+        model.setTask(taskToEdit, editedTask);
+        return new CommandResult(formatResultMessage(taskToEdit, editedTask, tagsToDelete));
     }
 
-    private static Person createEditedPerson(Person personToEdit, Set<Tag> tagsToDelete) {
-        requireNonNull(personToEdit);
+    private static Task createEditedTask(Task taskToEdit, Set<Tag> tagsToDelete) {
+        requireNonNull(taskToEdit);
         requireNonNull(tagsToDelete);
 
-        Set<Tag> newTags = new HashSet<>(personToEdit.getTags());
+        Set<Tag> newTags = new HashSet<>(taskToEdit.getTags());
         newTags.removeAll(tagsToDelete);
-        return new Person(
-                personToEdit.getName(),
-                personToEdit.getPhone(),
-                personToEdit.getEmail(),
-                personToEdit.getAddress(),
+        return new Task(
+                taskToEdit.getTitle(),
+                taskToEdit.getNote(),
                 newTags);
     }
 
@@ -82,22 +80,22 @@ public class DeleteTagPersonCommand extends Command {
      * Determines what the CommandResult string should be.
      * Handles cases of missing tags.
      */
-    public static String formatResultMessage(Person personToEdit, Person editedPerson, Set<Tag> tagsToDelete) {
-        Set<Tag> matchingTags = new HashSet<>(personToEdit.getTags());
+    public static String formatResultMessage(Task taskToEdit, Task editedTask, Set<Tag> tagsToDelete) {
+        Set<Tag> matchingTags = new HashSet<>(taskToEdit.getTags());
         matchingTags.retainAll(tagsToDelete);
 
         Set<Tag> missingTags = new HashSet<>(tagsToDelete);
         missingTags.removeAll(matchingTags);
 
-        String res = String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson));
+        String res = String.format(MESSAGE_DELETE_TAG_TASK_SUCCESS, Messages.format(editedTask));
         if (matchingTags.size() > 0) {
             String matchingTagsString = matchingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
-            res += String.format(MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS, matchingTagsString);
+            res += String.format(MESSAGE_DELETE_TAG_TASK_MATCHING_TAGS, matchingTagsString);
         }
 
         if (missingTags.size() > 0) {
             String missingTagsString = missingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
-            res += String.format(MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missingTagsString);
+            res += String.format(MESSAGE_DELETE_TAG_TASK_MISSING_TAGS, missingTagsString);
         }
         return res;
     }
@@ -109,11 +107,11 @@ public class DeleteTagPersonCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof DeleteTagPersonCommand)) {
+        if (!(other instanceof DeleteTagTaskCommand)) {
             return false;
         }
 
-        DeleteTagPersonCommand otherDeleteCommand = (DeleteTagPersonCommand) other;
+        DeleteTagTaskCommand otherDeleteCommand = (DeleteTagTaskCommand) other;
         return targetIndex.equals(otherDeleteCommand.targetIndex)
                 && tagsToDelete.equals(otherDeleteCommand.tagsToDelete);
     }
