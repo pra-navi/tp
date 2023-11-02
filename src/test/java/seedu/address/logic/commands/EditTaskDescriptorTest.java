@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_TASK_AGENDA;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_TASK_BUDGET;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NOTE_BUDGET;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_BUDGET;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FINANCE;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE_BUDGET;
 
 import org.junit.jupiter.api.Test;
@@ -44,7 +44,7 @@ public class EditTaskDescriptorTest {
         assertFalse(DESC_TASK_AGENDA.equals(editedAgenda));
 
         // different tags -> returns false
-        editedAgenda = new EditTaskDescriptorBuilder(DESC_TASK_AGENDA).withTags(VALID_TAG_BUDGET).build();
+        editedAgenda = new EditTaskDescriptorBuilder(DESC_TASK_AGENDA).withTags(VALID_TAG_FINANCE).build();
         assertFalse(DESC_TASK_AGENDA.equals(editedAgenda));
     }
 

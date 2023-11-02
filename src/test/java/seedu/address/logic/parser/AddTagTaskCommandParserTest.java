@@ -2,9 +2,9 @@ package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_AGENDA;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_BUDGET;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_AGENDA;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_FINANCE;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_LOCATION;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
@@ -36,7 +36,7 @@ public class AddTagTaskCommandParserTest {
     @Test
     public void parse_missingParts_failure() {
         // no index specified
-        assertParseFailure(parser, VALID_TAG_AGENDA, MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, VALID_TAG_LOCATION, MESSAGE_INVALID_FORMAT);
 
         // no field specified
         assertParseFailure(parser, "1", MESSAGE_INVALID_FORMAT);
@@ -48,10 +48,10 @@ public class AddTagTaskCommandParserTest {
     @Test
     public void parse_invalidPreamble_failure() {
         // negative index
-        assertParseFailure(parser, "-5" + TAG_DESC_AGENDA, MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, "-5" + TAG_DESC_LOCATION, MESSAGE_INVALID_FORMAT);
 
         // zero index
-        assertParseFailure(parser, "0" + TAG_DESC_AGENDA, MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, "0" + TAG_DESC_LOCATION, MESSAGE_INVALID_FORMAT);
 
         // invalid arguments being parsed as preamble
         assertParseFailure(parser, "1 some random string", MESSAGE_INVALID_FORMAT);
@@ -65,19 +65,19 @@ public class AddTagTaskCommandParserTest {
         assertParseFailure(parser, "1" + INVALID_TAG_DESC, Tag.MESSAGE_CONSTRAINTS); // invalid tag
 
         // while parsing {@code PREFIX_TAG} together with a valid tag results in error
-        assertParseFailure(parser, "1" + TAG_DESC_AGENDA + TAG_DESC_BUDGET + TAG_EMPTY, Tag.MESSAGE_CONSTRAINTS);
-        assertParseFailure(parser, "1" + TAG_DESC_AGENDA + TAG_EMPTY + TAG_DESC_BUDGET, Tag.MESSAGE_CONSTRAINTS);
-        assertParseFailure(parser, "1" + TAG_EMPTY + TAG_DESC_AGENDA + TAG_DESC_BUDGET, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_DESC_LOCATION + TAG_DESC_FINANCE + TAG_EMPTY, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_DESC_LOCATION + TAG_EMPTY + TAG_DESC_FINANCE, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_EMPTY + TAG_DESC_LOCATION + TAG_DESC_FINANCE, Tag.MESSAGE_CONSTRAINTS);
     }
 
     @Test
     public void parse_allFieldsSpecified_success() {
-        Tag tag = new Tag(VALID_TAG_AGENDA);
+        Tag tag = new Tag(VALID_TAG_LOCATION);
         Set<Tag> tags = new HashSet<>();
         tags.add(tag);
 
         Index targetIndex = INDEX_SECOND;
-        String userInput = targetIndex.getOneBased() + TAG_DESC_AGENDA;
+        String userInput = targetIndex.getOneBased() + TAG_DESC_LOCATION;
 
         Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
