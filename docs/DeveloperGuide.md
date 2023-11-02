@@ -29,7 +29,7 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ## **Design**
 
-{% include admonition.html type="tip" title="Tip" body="
+{% include admonition.html type="note" title="Note" body="
 
 The <code>.puml</code> files used to create diagrams in this document are in the <code>docs/diagrams</code> folder. <br>
 Refer to the <a href='https://se-education.org/guides/tutorials/plantUml.html'><i>PlantUML Tutorial</i> at se-edu/guides</a> to learn how to create and edit diagrams.
@@ -441,17 +441,9 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
-_{more aspects and alternatives to be added}_
-
-<div style="page-break-after: always;"></div>
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
-<div style="page-break-after: always;"></div>
-
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Documentation, logging, testing, configuration, dev-ops**
 
@@ -490,28 +482,26 @@ Priorities:
 * `* *` - Medium (nice to have)
 * `*` - Low (unlikely to have)
 
-| Priority | As a …​                                     | I want to …​                        | So that I can …​                                                        |
-| -------- | ------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see help instructions              | refer to documentation to understand the existing features effectively |
-| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI             |
-| `* * *`  | event planner                              | add a new person's details         | remember details of new people I meet                                  |
-| `* * *`  | event planner                              | list each person's details         | view all my contacts' details at a quick glance                        |
-| `* * *`  | event planner                              | edit a person's details            | update details of persons that are outdated with new information       |
-| `* * *`  | event planner                              | find a person by name              | locate a specific person without having to go through the entire list  |
-| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                  |
-| `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my contacts list                      |
-| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event              |
-| `* * *`  | event planner                              | list each task's details           | view all my tasks' details at a quick glance                           |
-| `* * *`  | event planner                              | edit a task                        | ensure task details are up-to-date with latest information             |
-| `* * *`  | event planner                              | find a task by name                | locate a specific task without having to go through the entire list    |
-| `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                               |
-| `* * *`  | event planner                              | delete all tasks                   | clear all task entries and restart with a new clean task list          |
-| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of tasks that are done      |
-| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of tasks that are not done  |
-| `* * *`  | event planner                              | save my data automatically         | ensure that my contact and task data will not be lost                  |
-| `* * *`  | event planner                              | load my data automatically         | quickly continue from where I left off in the last session             |
-| `*`      | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                 |
+| Priority | As a …​ | I want to …​ | So that I can …​ |
+| -------- | -------| ----------- | --------------- |
+| `* * *` | new user | see help instructions | refer to documentation to understand the existing features effectively |
+| `* * *` | event planner | view both lists on the same screen | compare the task list and contact list while using the GUI |
+| `* * *` | event planner | add a new person's details | remember details of new people I meet |
+| `* * *` | event planner | list each person's details | view all my contacts' details at a quick glance |
+| `* * *` | event planner | edit a person's details | update details of persons that are outdated with new information |
+| `* * *` | event planner | find a person by name | locate a specific person without having to go through the entire list |
+| `* * *` | event planner | delete a contact | remove contacts that I no longer need |
+| `* * *` | event planner | delete all contacts | efficiently restart or declutter my contacts list |
+| `* * *` | event planner | create tasks to do | know what tasks I need to do in preparation for the event |
+| `* * *` | event planner | list each task's details | view all my tasks' details at a quick glance |
+| `* * *` | event planner | edit a task | ensure task details are up-to-date with latest information |
+| `* * *` | event planner | find a task by name | locate a specific task without having to go through the entire list |
+| `* * *` | event planner | delete a task | remove tasks that are no longer relevant |
+| `* * *` | event planner | delete all tasks | clear all task entries and restart with a new clean task list |
+| `* * *` | event planner | mark a task as done | keep track of task progress and the number of tasks that are done |
+| `* * *` | event planner | mark a task as not done | keep track of task progress and the number of tasks that are not done |
+| `* * *` | event planner | save my data automatically | ensure that my contact and task data will not be lost |
+| `* * *` | event planner | load my data automatically | quickly continue from where I left off in the last session |
 
 *{More to be added}*
 
@@ -950,7 +940,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 Given below are instructions to test the app manually.
 
-{% include admonition.html type="info" title="Info" body="
+{% include admonition.html type="note" title="Note" body="
 
 These instructions only provide a starting point for testers to work on;
 testers are expected to do more <i>exploratory testing</i>.
