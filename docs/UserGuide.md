@@ -937,9 +937,9 @@ listTag
 
 <div style="page-break-after: always;"></div>
 
-#### 21. Finding persons and tasks by tag: `findTag`
+#### 21. Finding persons and tasks with any matching tag: `findTag`
 
-You can search for persons and tasks using tags.
+You can search for persons and tasks using any keywords that match their tags.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -983,9 +983,9 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
 <div style="page-break-after: always;"></div>
 
-#### 22. Finding persons and tasks by tag: `findAllTag`
+#### 22. Finding persons and tasks with all matching tags: `findAllTag`
 
-You can search for persons and tasks using all keywords given.
+You can search for persons and tasks using all keywords that match their tags.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -1160,7 +1160,8 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
  Action | Format | Example
 --------|--------|---------
 [**List All Tags**](#20-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Find Tags**](#21-finding-persons-and-tasks-by-tag-findtag) | `indTag TAG [MORE_TAGS]...` | `findTag orientation`
+[**Find Tags**](#21-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
+[**Find All Tags**](#22-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
 
 ### General
 
