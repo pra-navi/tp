@@ -513,18 +513,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC01 - View help instructions**
-
-**MSS**
-
-1. User requests for help.
-2. CoordiMate shows the help instructions, with a link to user guide.
-
-   Use case ends.
-
----
-
-**Use case: UC02 - Add a person to the contact list**
+**Use case: UC01 - Add a person to the contact list**
 
 **MSS**
 
@@ -543,7 +532,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC03 - List all persons in the contact list**
+**Use case: UC02 - List all persons in the contact list**
 
 **MSS**
 
@@ -554,7 +543,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC04 - Edit a person's details in the contact list**
+**Use case: UC03 - Edit a person's details in the contact list**
 
 **MSS**
 
@@ -579,7 +568,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC05 - Find a person in the contact list**
+**Use case: UC04 - Find a person in the contact list**
 
 **MSS**
 
@@ -598,7 +587,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC06 - Delete a person from the contact list**
+**Use case: UC05 - Delete a person from the contact list**
 
 **MSS**
 
@@ -623,7 +612,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC07 - Delete all existing contacts**
+**Use case: UC06 - Delete all existing contacts**
 
 **MSS**
 
@@ -637,6 +626,24 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 * 1a. The contact list is empty.
 
   * 1a1. CoordiMate informs the user that there are no contacts to be deleted.
+
+      Use case ends.
+
+---
+
+**Use case: UC07 - Add tags to a person**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
 
       Use case ends.
 
@@ -818,7 +825,181 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC16 - Exit CoordiMate**
+**Use case: UC16 - Find all tasks that are done**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC17 - Find all tasks that are not done**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC18 - Delete all tasks that are done**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC19 - Add tags to a task**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC20 - List all tags**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC21 - Find all persons and tasks with any matching tag**
+
+**MSS**
+
+1. User requests to find persons and tasks that match any of the given tags.
+2. CoordiMate shows the list of persons and tasks that match any of the given tags.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. All of the given tags do not exist.
+
+   * 1a1. CoordiMate informs the user that there are no persons or tasks that match any of the given tags.
+
+      Use case ends.
+
+* 1b. No persons or tasks match any of the given tags.
+
+   * 1b1. CoordiMate informs the user that there are no persons or tasks that match any of the given tags.
+
+      Use case ends.
+
+* 1c. The provided input for the tag search is invalid.
+
+   * 1c1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
+
+      Use case resumes from step 1.
+
+---
+
+**Use case: UC22 - Find all persons and tasks with all matching tags**
+
+**MSS**
+
+1. User requests to find persons and tasks that match all of the given tags.
+2. CoordiMate shows the list of persons and tasks that match all of the given tags.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. All of the given tags do not exist.
+
+   * 1a1. CoordiMate informs the user that there are no persons or tasks that match all of the given tags.
+
+      Use case ends.
+
+* 1b. No persons or tasks match all of the given tags.
+
+   * 1b1. CoordiMate informs the user that there are no persons or tasks that match all of the given tags.
+
+      Use case ends.
+
+* 1c. The provided input for the tag search is invalid.
+
+   * 1c1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
+
+      Use case resumes from step 1.
+
+---
+
+**Use case: UC23 - View help instructions**
+
+**MSS**
+
+1. User requests for help.
+2. CoordiMate shows the help instructions, with a link to user guide.
+
+   Use case ends.
+
+---
+
+**Use case: UC24 - List all persons and tasks**
+
+**MSS**
+
+1. User requests to list all persons and tasks.
+2. CoordiMate shows the list of all persons and tasks.
+
+   Use case ends.
+
+---
+
+**Use case: UC25 - Exit CoordiMate**
 
 **MSS**
 
@@ -829,7 +1010,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC17 - Load data from save file**
+**Use case: UC26 - Load data from save file**
 
 **MSS**
 
@@ -860,7 +1041,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC18 - Save data to save file**
+**Use case: UC27 - Save data to save file**
 
 **MSS**
 
@@ -884,29 +1065,6 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
       Use case ends.
 
 ---
-
-**Use case: UC19 - Find persons and tasks by tag**
-
-**MSS**
-
-1. User requests to find persons tasks by specific tag(s).
-2. CoordiMate shows two separate lists of persons and tasks associated with the given tag(s).
-
-   Use case ends.
-
-**Extensions**
-
-* 1a. The given tag does not exist or no tasks are associated with it.
-
-    * 1a1. CoordiMate informs the user that there are no tasks associated with the given tag(s).
-
-      Use case ends.
-
-* 1b. The provided input for the tag search is invalid.
-
-    * 1b1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
-
-      Use case resumes at step 1.
 
 <div style="page-break-after: always;"></div>
 
