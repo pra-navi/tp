@@ -136,7 +136,7 @@ How the parsing works:
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
-<img src="images/ModelClassDiagram.png" width="450" />
+<img src="assets/svg/dg/ModelClassDiagram.svg" width="450" />
 
 
 The `Model` component,
@@ -150,7 +150,7 @@ The `Model` component,
 
 An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br>
 
-<img src='images/BetterModelClassDiagram.png' width='450' />
+<img src='assets/svg/dg/BetterModelClassDiagram.svg' width='450' />
 
 " %}
 
@@ -160,7 +160,7 @@ An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</
 
 **API** : [`Storage.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
-<img src="images/StorageClassDiagram.png" width="550" />
+<img src="assets/svg/dg/StorageClassDiagram.svg" width="550" />
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="595px" preserveAspectRatio="none" style="width:509px;height:595px;background:#FFFFFF;" version="1.1" viewBox="0 0 509 595" width="509px" zoomAndPan="magnify"><defs/><g><!--MD5=[0639412964cd6dde026453d507ebb64b]
+cluster ModelPackage--><g id="cluster_ModelPackage"><rect fill="#FFFFFF" height="531" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="476" x="7" y="58"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="44" x="223" y="74.5332">Model</text></g><!--MD5=[2aeb2dbcc9d5f1c77055387181aedc97]
+class ReadOnlyAddressBook--><g id="elem_ReadOnlyAddressBook"><rect codeLine="7" fill="#9D0012" height="44.4971" id="ReadOnlyAddressBook" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="158" x="23" y="94"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="72" x="66" y="113.0698">«interface»</text><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="152" x="26" y="130.3184">ReadOnlyAddressBook</text></g><!--MD5=[a832290d741b8e569f0b0a043ed40841]
+class ReadOnlyUserPrefs--><g id="elem_ReadOnlyUserPrefs"><rect codeLine="8" fill="#9D0012" height="44.4971" id="ReadOnlyUserPrefs" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="137" x="329.5" y="94"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="72" x="362" y="113.0698">«interface»</text><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="131" x="332.5" y="130.3184">ReadOnlyUserPrefs</text></g><!--MD5=[7e20e022571e30ec1001cf6eabd7f3e2]
+class Model--><g id="elem_Model"><rect codeLine="9" fill="#9D0012" height="44.4971" id="Model" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="78" x="216" y="94"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="72" x="219" y="113.0698">«interface»</text><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="38" x="236" y="130.3184">Model</text></g><!--MD5=[d9efb80c2bd3bb699b927ccac912b33c]
+class AddressBook--><g id="elem_AddressBook"><rect codeLine="10" fill="#9D0012" height="27.2485" id="AddressBook" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="93" x="58.5" y="198"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="87" x="61.5" y="217.0698">AddressBook</text></g><!--MD5=[0d23c233efb60477cf7e578633a93a45]
+class ModelManager--><g id="elem_ModelManager"><rect codeLine="11" fill="#9D0012" height="27.2485" id="ModelManager" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="100" x="208" y="198"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="94" x="211" y="217.0698">ModelManager</text></g><!--MD5=[8d0026c7984aa4cd1b21c0238fc19d6b]
+class UserPrefs--><g id="elem_UserPrefs"><rect codeLine="12" fill="#9D0012" height="27.2485" id="UserPrefs" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="72" x="362" y="198"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="66" x="365" y="217.0698">UserPrefs</text></g><!--MD5=[868ed45abf0f905709752fc3fe3fe250]
+class UniquePersonList--><g id="elem_UniquePersonList"><rect codeLine="14" fill="#9D0012" height="27.2485" id="UniquePersonList" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="121" x="42.5" y="285"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="115" x="45.5" y="304.0698">UniquePersonList</text></g><!--MD5=[09ce52be0ee7de43c61b6e2d59bf108b]
+class Person--><g id="elem_Person"><rect codeLine="15" fill="#9D0012" height="27.2485" id="Person" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="53" x="181.5" y="459"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="47" x="184.5" y="478.0698">Person</text></g><!--MD5=[0f39e4cb6f03951afbf6d14bd2505654]
+class Address--><g id="elem_Address"><rect codeLine="16" fill="#9D0012" height="27.2485" id="Address" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="60" x="23" y="546"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="54" x="26" y="565.0698">Address</text></g><!--MD5=[78bec0fde86ad92ec1dc3fb343b83709]
+class Email--><g id="elem_Email"><rect codeLine="17" fill="#9D0012" height="27.2485" id="Email" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="118" y="546"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="37" x="124.5" y="565.0698">Email</text></g><!--MD5=[53f6a92bd21ca2f2960392a061f3a1c6]
+class Name--><g id="elem_Name"><rect codeLine="18" fill="#9D0012" height="27.2485" id="Name" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="203" y="546"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="39" x="208.5" y="565.0698">Name</text></g><!--MD5=[03be55fb4aae919908819e432b9694ea]
+class Phone--><g id="elem_Phone"><rect codeLine="19" fill="#9D0012" height="27.2485" id="Phone" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="288" y="546"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="42" x="292" y="565.0698">Phone</text></g><!--MD5=[39d6d2ea03de602dbf4d534e70c872a9]
+class Tag--><g id="elem_Tag"><rect codeLine="20" fill="#9D0012" height="27.2485" id="Tag" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="373" y="546"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="25" x="385.5" y="565.0698">Tag</text></g><!--MD5=[75b6c2ed89a40aea61dd9d2f01a6d908]
+class UniqueTaskList--><g id="elem_UniqueTaskList"><rect codeLine="22" fill="#9D0012" height="27.2485" id="UniqueTaskList" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="106" x="358" y="285"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="100" x="361" y="304.0698">UniqueTaskList</text></g><!--MD5=[b34797a66dc35cbf1d65f7e3ca75530e]
+class Task--><g id="elem_Task"><rect codeLine="23" fill="#9D0012" height="27.2485" id="Task" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="303" y="372"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="32" x="312" y="391.0698">Task</text></g><!--MD5=[90111e5cdc788a7ef73a3273c23dcc2b]
+class Title--><g id="elem_Title"><rect codeLine="24" fill="#9D0012" height="27.2485" id="Title" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="324" y="459"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="27" x="335.5" y="478.0698">Title</text></g><!--MD5=[5d3c9bb25b1b07c105e03cfa5bc0b7ee]
+class Note--><g id="elem_Note"><rect codeLine="25" fill="#9D0012" height="27.2485" id="Note" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="409" y="459"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="30" x="419" y="478.0698">Note</text></g><!--MD5=[cf39a86b148c3d2a53e894bf08c046dd]
+class I--><g id="elem_I"><rect codeLine="28" fill="#FFFFFF" height="27.2485" id="I" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="50" x="236" y="285"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="3" x="259.5" y="304.0698">I</text></g><!--MD5=[f8dc820cca8808bdb695301f77a92b66]
+class HiddenOutside--><g id="elem_HiddenOutside"><rect codeLine="33" fill="#FFFFFF" height="27.2485" id="HiddenOutside" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="102" x="204" y="7"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="96" x="207" y="26.0698">HiddenOutside</text></g><!--MD5=[2fdf124ad959ab038646c8c9e865db67]
+class HiddenOutsideTopLeft--><g id="elem_HiddenOutsideTopLeft"><rect codeLine="34" fill="#FFFFFF" height="27.2485" id="HiddenOutsideTopLeft" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="151" x="17.5" y="7"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="145" x="20.5" y="26.0698">HiddenOutsideTopLeft</text></g><!--MD5=[a06ba75fcbc849162ff0a7f35e90c1f5]
+class HiddenOutsideTopRight--><g id="elem_HiddenOutsideTopRight"><rect codeLine="35" fill="#FFFFFF" height="27.2485" id="HiddenOutsideTopRight" rx="2.5" ry="2.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="161" x="341.5" y="7"/><text fill="#FFFFFF" font-family="Arial" font-size="15" lengthAdjust="spacing" textLength="155" x="344.5" y="26.0698">HiddenOutsideTopRight</text></g><!--MD5=[7575f8b85c9528924547636d01b57bdc]
+link HiddenOutsideTopLeft to HiddenOutside--><!--MD5=[846f7b32b1f31defda5a1fe59b3285fb]
+reverse link HiddenOutside to HiddenOutsideTopRight--><!--MD5=[139ff64b3784585b5b59be3aa332a048]
+link HiddenOutsideTopLeft to ReadOnlyAddressBook--><!--MD5=[bb1d3112dcfa4d27e9514367df043c02]
+link HiddenOutsideTopRight to ReadOnlyUserPrefs--><!--MD5=[d201fe284d2a1152149acb90a3e86885]
+link HiddenOutside to Model--><g id="link_HiddenOutside_Model"><path codeLine="43" d="M255,34.11 C255,47.93 255,70.51 255,88.31 " fill="none" id="HiddenOutside-to-Model" style="stroke:#9D0012;stroke-width:1.1;stroke-dasharray:7.0,7.0;"/><polygon fill="#9D0012" points="255,93.66,259,84.66,255,88.66,251,84.66,255,93.66" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[1ef48fc073810d6b9ed11d9ae64df6f6]
+reverse link ReadOnlyAddressBook to AddressBook--><g id="link_ReadOnlyAddressBook_AddressBook"><path codeLine="45" d="M103.33,158.42 C103.79,172.76 104.27,187.78 104.6,197.98 " fill="none" id="ReadOnlyAddressBook-backto-AddressBook" style="stroke:#9D0012;stroke-width:1.1;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="96.33,158.43,102.68,138.22,110.32,157.98,96.33,158.43" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[b88a9fc704bcaab99a71844113667eb4]
+reverse link Model to ModelManager--><g id="link_Model_ModelManager"><path codeLine="47" d="M256.33,158.42 C256.79,172.76 257.27,187.78 257.6,197.98 " fill="none" id="Model-backto-ModelManager" style="stroke:#9D0012;stroke-width:1.1;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="249.33,158.43,255.68,138.22,263.32,157.98,249.33,158.43" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[7f61239acdc5636e5180c70735bb5d1e]
+link Model to ReadOnlyUserPrefs--><g id="link_Model_ReadOnlyUserPrefs"><path codeLine="48" d="M294.1,116 C304.12,116 314.15,116 324.17,116 " fill="none" id="Model-to-ReadOnlyUserPrefs" style="stroke:#9D0012;stroke-width:1.1;stroke-dasharray:7.0,7.0;"/><polygon fill="#9D0012" points="329.41,116,320.41,112,324.41,116,320.41,120,329.41,116" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[46c48ab3efdb71f58fd07a116896e6cc]
+reverse link ReadOnlyAddressBook to Model--><g id="link_ReadOnlyAddressBook_Model"><path codeLine="49" d="M186.33,116 C196.15,116 205.97,116 215.79,116 " fill="none" id="ReadOnlyAddressBook-backto-Model" style="stroke:#9D0012;stroke-width:1.1;stroke-dasharray:7.0,7.0;"/><polygon fill="#9D0012" points="181.19,116,190.19,120,186.19,116,190.19,112,181.19,116" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[fdd8f89e1c750fa73ea19dec54098f32]
+reverse link AddressBook to ModelManager--><g id="link_AddressBook_ModelManager"><path codeLine="50" d="M156.88,211.5 C173.82,211.5 190.77,211.5 207.72,211.5 " fill="none" id="AddressBook-backto-ModelManager" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="151.62,211.5,160.62,215.5,156.62,211.5,160.62,207.5,151.62,211.5" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="159.6079" y="207.7283">1</text></g><!--MD5=[42904c058423188f4e71732d0edcdfe2]
+link ModelManager to UserPrefs--><g id="link_ModelManager_UserPrefs"><path codeLine="51" d="M308.04,211.5 C324.28,211.5 340.52,211.5 356.76,211.5 " fill="none" id="ModelManager-to-UserPrefs" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="361.8,211.5,352.8,207.5,356.8,211.5,352.8,215.5,361.8,211.5" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="346.9841" y="207.4303">1</text></g><!--MD5=[69497c261184ae79c34a503b1c31ce5d]
+reverse link ReadOnlyUserPrefs to UserPrefs--><g id="link_ReadOnlyUserPrefs_UserPrefs"><path codeLine="52" d="M398,158.42 C398,172.76 398,187.78 398,197.98 " fill="none" id="ReadOnlyUserPrefs-backto-UserPrefs" style="stroke:#9D0012;stroke-width:1.1;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="391,158.22,398,138.22,405,158.22,391,158.22" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[c7dd86eaf2272b48c339932390e97c9a]
+link AddressBook to UniquePersonList--><g id="link_AddressBook_UniquePersonList"><path codeLine="54" d="M104.41,237.0365 C104.41,237.0365 103.85,261.26 103.6,271.83 " fill="none" id="AddressBook-UniquePersonList" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="103.3,284.91,107.5164,276.0093,103.4208,279.9115,99.5187,275.816,103.3,284.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="103.4208" x2="103.6" y1="279.9115" y2="271.91"/><polygon fill="#9D0012" points="104.7,225.04,100.5562,230.9416,104.41,237.0365,108.5538,231.1349,104.7,225.04" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="95.08" y="274.1936">1</text></g><!--MD5=[73319d42bc6b4e3c7947e9157b43baed]
+link AddressBook to UniqueTaskList--><g id="link_AddressBook_UniqueTaskList"><path codeLine="55" d="M161.7143,228.2442 C161.7143,228.2442 298.61,266.28 353.1,281.42 " fill="none" id="AddressBook-UniqueTaskList" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="365.66,284.91,358.0615,278.644,360.843,283.5698,355.9172,286.3513,365.66,284.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="360.843" x2="353.14" y1="283.5698" y2="281.425"/><polygon fill="#9D0012" points="150.15,225.04,154.8641,230.4969,161.7143,228.2442,157.0002,222.7874,150.15,225.04" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="343.0923" y="275.5397">1</text></g><!--MD5=[3cd6477c51bd9350bbd1dac32ada9023]
+reverse link ModelManager to I--><!--MD5=[8ea8b8a549479b07b647213d0d2a2ca2]
+reverse link I to Task--><!--MD5=[b97229d5e80983cb4533bcce7a3674ae]
+reverse link I to Person--><!--MD5=[9b4d2c13b6158b630beb6973b8ce4a1d]
+link UniquePersonList to I--><!--MD5=[09b38bc57227afd352c654f94206d82a]
+reverse link I to UniqueTaskList--><!--MD5=[0aedc1261ee7a9a85bcaeeb8faa0a4f5]
+reverse link UserPrefs to UniqueTaskList--><!--MD5=[03c7e7cbdb86e4f4cd514083b34aa6d4]
+link UniquePersonList to Person--><g id="link_UniquePersonList_Person"><path codeLine="66" d="M110.72,312.15 C129.3,342.59 176.54,419.96 197.59,454.46 " fill="none" id="UniquePersonList-to-Person" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="200.27,458.83,198.9835,449.0655,197.6599,454.5654,192.16,453.2417,200.27,458.83" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="167.5573" y="448.0831">* all</text></g><!--MD5=[d4e2208d976dafd0005648cdae563e6a]
+link Person to Name--><g id="link_Person_Name"><path codeLine="67" d="M213.7051,497.7194 C213.7051,497.7194 219.47,522.27 222.01,533.04 " fill="none" id="Person-Name" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="225.04,545.91,226.8772,536.234,223.8973,541.0423,219.0889,538.0624,225.04,545.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="223.8973" x2="222.06" y1="541.0423" y2="533.25"/><polygon fill="#9D0012" points="210.95,486.04,208.4344,492.7981,213.7051,497.7194,216.2207,490.9614,210.95,486.04" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[8467688aabdc77a50d4548f73f3f2237]
+link Person to Phone--><g id="link_Person_Phone"><path codeLine="68" d="M232.8126,493.5957 C232.8126,493.5957 270.8,524.34 287.04,537.49 " fill="none" id="Person-Phone" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="297.44,545.91,292.9591,537.1395,293.5529,542.7651,287.9273,543.3589,297.44,545.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="293.5529" x2="287.34" y1="542.7651" y2="537.725"/><polygon fill="#9D0012" points="223.49,486.04,225.6328,492.9254,232.8126,493.5957,230.6699,486.7103,223.49,486.04" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[c84fd83c0ae0719e8dada1fc8106e17d]
+link Person to Email--><g id="link_Person_Email"><path codeLine="69" d="M191.1196,495.5715 C191.1196,495.5715 169.91,523.31 160.71,535.35 " fill="none" id="Person-Email" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="152.63,545.91,161.2708,541.1839,155.6642,541.9359,154.9122,536.3292,152.63,545.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="155.6642" x2="160.525" y1="541.9359" y2="535.58"/><polygon fill="#9D0012" points="198.41,486.04,191.5876,488.3756,191.1196,495.5715,197.942,493.2359,198.41,486.04" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[b73c16dcbb300cfcfb8ac7b75475c389]
+link Person to Address--><g id="link_Person_Address"><path codeLine="70" d="M174.6104,491.8139 C174.6104,491.8139 113.05,525.57 87.39,539.64 " fill="none" id="Person-Address" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="75.96,545.91,85.7751,545.0956,80.3455,543.5084,81.9326,538.0788,75.96,545.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="80.3455" x2="87.365" y1="543.5084" y2="539.66"/><polygon fill="#9D0012" points="185.13,486.04,177.9456,485.4204,174.6104,491.8139,181.7948,492.4335,185.13,486.04" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[d8ea7ee228526c243ddd13a4d03b47a6]
+link Person to Tag--><g id="link_Person_Tag"><path codeLine="71" d="M245.7776,490.392 C245.7776,490.392 327.74,527.07 360.6,541.77 " fill="none" id="Person-Tag" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="372.83,547.24,366.2458,539.9155,368.2653,545.1996,362.9812,547.2191,372.83,547.24" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="368.2653" x2="360.965" y1="545.1996" y2="541.93"/><polygon fill="#9D0012" points="234.82,485.5,238.6681,491.5985,245.7776,490.392,241.9295,484.2935,234.82,485.5" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="5" x="360.0478" y="559.5515">*</text></g><!--MD5=[44c736116019ba75513e6202b286c7b8]
+link Name to Phone--><!--MD5=[0ad9bbd3cbb714a395e16db642e04fb1]
+link Phone to Address--><!--MD5=[e3eeb6369a04a754c13141896b25f265]
+link Address to Email--><!--MD5=[c5cd6db58ce454a0eebfbb460c781f70]
+link UniqueTaskList to Task--><g id="link_UniqueTaskList_Task"><path codeLine="79" d="M398.75,312.04 C384.29,326.86 360.17,351.55 344.18,367.93 " fill="none" id="UniqueTaskList-to-Task" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="340.3,371.91,349.4488,368.2631,343.7923,368.3318,343.7236,362.6754,340.3,371.91" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="349.755" y="361.1936">* all</text></g><!--MD5=[3cf7f116f1a68d0d0d5dad07ccd1817b]
+link Task to Title--><g id="link_Task_Title"><path codeLine="80" d="M333.9763,410.6902 C333.9763,410.6902 340.05,435.27 342.71,446.04 " fill="none" id="Task-Title" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="345.89,458.91,347.6084,449.2122,344.6877,454.0567,339.8432,451.136,345.89,458.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="344.6877" x2="342.77" y1="454.0567" y2="446.285"/><polygon fill="#9D0012" points="331.1,399.04,328.6547,405.8239,333.9763,410.6902,336.4215,403.9063,331.1,399.04" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[0d8b2aeb23be51043d750b2cb9f45736]
+link Task to Note--><g id="link_Task_Note"><path codeLine="81" d="M352.9988,406.5508 C352.9988,406.5508 391.4,437.34 407.8,450.49 " fill="none" id="Task-Note" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="418.3,458.91,413.7785,450.1604,414.3983,455.7832,408.7755,456.403,418.3,458.91" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="414.3983" x2="408.155" y1="455.7832" y2="450.77"/><polygon fill="#9D0012" points="343.64,399.04,345.8158,405.915,352.9988,406.5508,350.823,399.6758,343.64,399.04" style="stroke:#9D0012;stroke-width:1.1;"/></g><!--MD5=[375013c8273a7455a3db3a451265283c]
+link Task to Tag--><g id="link_Task_Tag"><path codeLine="82" d="M314.6597,409.6893 C314.6597,409.6893 294.3,461.88 306,486 C317.5,509.71 340.93,527.99 361.26,540.26 " fill="none" id="Task-Tag" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="372.76,546.79,366.9077,538.8685,368.4117,544.3217,362.9585,545.8258,372.76,546.79" style="stroke:#9D0012;stroke-width:1.1;"/><line style="stroke:#9D0012;stroke-width:1.1;" x1="368.4117" x2="361.455" y1="544.3217" y2="540.375"/><polygon fill="#9D0012" points="320.21,399.05,313.8884,402.5195,314.6597,409.6893,320.9812,406.2197,320.21,399.05" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="5" x="359.9581" y="538.4749">*</text></g><!--MD5=[5fdc67b5100a40ee79658ba2c3d5a456]
+link Title to Note--><!--MD5=[661f9791363661a8e61ded75414577b6]
+link ModelManager to Person--><g id="link_ModelManager_Person"><path codeLine="88" d="M248.73,225.08 C239.08,238.96 224.49,262.34 218,285 C200.8,345.07 203.83,420.37 206.38,453.94 " fill="none" id="ModelManager-to-Person" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="206.78,458.97,210.0453,449.6782,206.379,453.9861,202.0711,450.3198,206.78,458.97" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="216.6086" y="448.2764">* filtered</text></g><!--MD5=[f86afcfcedc9162b2a62a11e28ab4efb]
+link ModelManager to Task--><g id="link_ModelManager_Task"><path codeLine="89" d="M267.59,225.19 C277.72,239.17 293.52,262.63 303,285 C314.61,312.4 321.71,346.41 325.25,366.74 " fill="none" id="ModelManager-to-Task" style="stroke:#9D0012;stroke-width:1.1;"/><polygon fill="#9D0012" points="326.11,371.85,328.5357,362.3045,325.2672,366.9215,320.6501,363.6531,326.11,371.85" style="stroke:#9D0012;stroke-width:1.1;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="261.0957" y="361.1107">* filtered</text></g><!--MD5=[4e74d118aafc992d3c8b24cdb3375879]
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR
+skinparam classBackgroundColor MODEL_COLOR
+
+Package Model as ModelPackage <<Rectangle>>{
+Class "«interface»\nReadOnlyAddressBook" as ReadOnlyAddressBook
+Class "«interface»\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
+Class "«interface»\nModel" as Model
+Class AddressBook
+Class ModelManager
+Class UserPrefs
+
+Class UniquePersonList
+Class Person
+Class Address
+Class Email
+Class Name
+Class Phone
+Class Tag
+
+Class UniqueTaskList
+Class Task
+Class Title
+Class Note
+
+'hidden
+Class I #FFFFFF
+'end hidden
+}
+
+'hidden
+Class HiddenOutside #FFFFFF
+Class HiddenOutsideTopLeft #FFFFFF
+Class HiddenOutsideTopRight #FFFFFF
+
+HiddenOutsideTopLeft -[hidden]right-> HiddenOutside
+HiddenOutsideTopRight -[hidden]left-> HiddenOutside
+HiddenOutsideTopLeft -[hidden]down-> ReadOnlyAddressBook
+HiddenOutsideTopRight -[hidden]down-> ReadOnlyUserPrefs
+'end hidden
+
+HiddenOutside ..> Model
+
+AddressBook .up.|> ReadOnlyAddressBook
+
+ModelManager .up.|> Model
+Model .right.> ReadOnlyUserPrefs
+Model .left.> ReadOnlyAddressBook
+ModelManager -left-> "1" AddressBook
+ModelManager -right-> "1" UserPrefs
+UserPrefs .up.|> ReadOnlyUserPrefs
+
+AddressBook *- -> "1" UniquePersonList
+AddressBook *- -> "1" UniqueTaskList
+
+'hidden
+I -[hidden]up-> ModelManager
+Task -[hidden]up-> I
+Person -[hidden]up- -> I
+UniquePersonList -[hidden]right-> I
+UniqueTaskList -[hidden]left-> I
+UniqueTaskList -[hidden]up-> UserPrefs
+'end hidden
+
+UniquePersonList - -> "~* all" Person
+Person *- -> Name
+Person *- -> Phone
+Person *- -> Email
+Person *- -> Address
+Person *- -> "*" Tag
+
+'hidden
+Name -[hidden]right-> Phone
+Phone -[hidden]right-> Address
+Address -[hidden]right-> Email
+'end hidden
+
+UniqueTaskList - -> "~* all" Task
+Task *- -> Title
+Task *- -> Note
+Task *- -> "*" Tag
+
+'hidden
+Title -[hidden]right-> Note
+'end hidden
+
+ModelManager - -> "~* filtered" Person
+ModelManager - -> "~* filtered" Task
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+
+skinparam Package {
+    BackgroundColor #FFFFFF
+    BorderThickness 1
+    FontSize 16
+}
+
+skinparam Class {
+    FontColor #FFFFFF
+    FontSize 15
+    BorderThickness 1
+    BorderColor #FFFFFF
+    StereotypeFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Actor {
+    BorderColor #000000
+    Color #000000
+    FontName Arial
+}
+
+skinparam Sequence {
+    MessageAlign center
+    BoxFontSize 15
+    BoxPadding 0
+    BoxFontColor #FFFFFF
+    FontName Arial
+}
+
+skinparam Participant {
+    FontColor #FFFFFFF
+    Padding 20
+}
+
+skinparam ArrowFontStyle bold
+skinparam MinClassWidth 50
+skinparam ParticipantPadding 10
+skinparam Shadowing false
+skinparam DefaultTextAlignment center
+skinparam packageStyle Rectangle
+
+hide footbox
+hide members
+hide circle
+skinparam arrowThickness 1.1
+skinparam arrowColor #9D0012
+skinparam classBackgroundColor #9D0012
+
+Package Model as ModelPackage <<Rectangle>>{
+Class "«interface»\nReadOnlyAddressBook" as ReadOnlyAddressBook
+Class "«interface»\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
+Class "«interface»\nModel" as Model
+Class AddressBook
+Class ModelManager
+Class UserPrefs
+
+Class UniquePersonList
+Class Person
+Class Address
+Class Email
+Class Name
+Class Phone
+Class Tag
+
+Class UniqueTaskList
+Class Task
+Class Title
+Class Note
+
+Class I #FFFFFF
+}
+
+Class HiddenOutside #FFFFFF
+Class HiddenOutsideTopLeft #FFFFFF
+Class HiddenOutsideTopRight #FFFFFF
+
+HiddenOutsideTopLeft -[hidden]right-> HiddenOutside
+HiddenOutsideTopRight -[hidden]left-> HiddenOutside
+HiddenOutsideTopLeft -[hidden]down-> ReadOnlyAddressBook
+HiddenOutsideTopRight -[hidden]down-> ReadOnlyUserPrefs
+
+HiddenOutside ..> Model
+
+AddressBook .up.|> ReadOnlyAddressBook
+
+ModelManager .up.|> Model
+Model .right.> ReadOnlyUserPrefs
+Model .left.> ReadOnlyAddressBook
+ModelManager -left-> "1" AddressBook
+ModelManager -right-> "1" UserPrefs
+UserPrefs .up.|> ReadOnlyUserPrefs
+
+AddressBook *- -> "1" UniquePersonList
+AddressBook *- -> "1" UniqueTaskList
+
+I -[hidden]up-> ModelManager
+Task -[hidden]up-> I
+Person -[hidden]up- -> I
+UniquePersonList -[hidden]right-> I
+UniqueTaskList -[hidden]left-> I
+UniqueTaskList -[hidden]up-> UserPrefs
+
+UniquePersonList - -> "~* all" Person
+Person *- -> Name
+Person *- -> Phone
+Person *- -> Email
+Person *- -> Address
+Person *- -> "*" Tag
+
+Name -[hidden]right-> Phone
+Phone -[hidden]right-> Address
+Address -[hidden]right-> Email
+
+UniqueTaskList - -> "~* all" Task
+Task *- -> Title
+Task *- -> Note
+Task *- -> "*" Tag
+
+Title -[hidden]right-> Note
+
+ModelManager - -> "~* filtered" Person
+ModelManager - -> "~* filtered" Task
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 01:01:30 SGT 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: SG
+--></g></svg>
