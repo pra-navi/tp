@@ -875,29 +875,29 @@ addTagTask INDEX [t/TAG]…
   - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the
     output to have already been included in the list of existing tags.<br><br>
 
-  ![addTagTask success](images/output/addTagTask_success_oneNewOneOld.jpg)<br><br>
+  ![addTagTask success](images/output/addTagTask_success.png)<br><br>
 
 <h4>Potential Errors:</h4>
 
 - `addTagTask`
   - Negative example as no index or field is specified.<br><br>
 
-  ![addTagTask error_noParameters](images/error/addTagTask_error_noParam.jpg)<br><br>
+  ![addTagTask error_noParameters](images/error/addTagTask_error_noParameters.png)<br><br>
 
 - `addTagTask 1`
   - Negative example as no tag is specified.<br><br>
 
-  ![addTagTask error_validIndex](images/error/addTagTask_error_validIndex.jpg)<br><br>
+  ![addTagTask error_validIndex](images/error/addTagTask_error_validIndex.png)<br><br>
 
 - `addTagTask 1 t/`
   - Negative example as no input is specified.<br><br>
 
-  ![addTagTask error_noInput](images/error/addTagTask_error_prefix.jpg)<br><br>
+  ![addTagTask error_noInput](images/error/addTagTask_error_noInput.png)<br><br>
 
 - `addTagTask 3 t/day1`
   - Negative example as invalid index provided.<br><br>
 
-  ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.jpg)
+  ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.png)
 
 <div style="page-break-after: always;"></div>
 
