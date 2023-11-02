@@ -906,17 +906,10 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 **MSS**
 
-1. TODO
+1. User requests to list all tags.
+2. CoordiMate shows a list of all tags, with the number of persons and tasks that each tag has.
 
    Use case ends.
-
-**Extensions**
-
-* 1a. TODO
-
-  * 1a1. TODO
-
-      Use case ends.
 
 ---
 
