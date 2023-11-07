@@ -106,7 +106,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
    - `listTask` : Lists all tasks.
 
-   - `addTask T/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding Anniversary` to the task list.
+   - `addTask T/Get Flowers n/for Finale Night` : Adds a task titled `Get Flowers` with note `for Finale Night` to the task list.
 
    - `markTask 1` : Marks the 1st task shown in the current task list as done.
 
@@ -119,6 +119,8 @@ Throughout this guide, you will see different text styles that are used to highl
 <div style="page-break-after: always;"></div>
 
 ## Features
+
+[Back to Top](#table-of-contents)
 
 1. **Easy Management of People**:
   - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
