@@ -62,7 +62,7 @@ The bulk of the app's work is done by the following four components:
 
 **How the architecture components interact with each other**
 
-The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
+The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `deletePerson 1`.
 
 <img src="images/ArchitectureSequenceDiagram.png" width="574" />
 
@@ -94,7 +94,7 @@ The `UI` component,
 * executes user commands using the `Logic` component.
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
-* depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
+* depends on some classes in the `Model` component, as it displays `Person` and `Task` object residing in the `Model`.
 
 <div style="page-break-after: always;"></div>
 
@@ -108,18 +108,20 @@ Here's a (partial) class diagram of the `Logic` component:
 
 The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete 1")` API call as an example.
 
-![Interactions Inside the Logic Component for the `delete 1` Command](images/DeleteSequenceDiagram.png)
+![Interactions Inside the Logic Component for the `deletePerson 1` Command](images/DeletePersonSequenceDiagram.png)
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeletePersonCommandParser</code> should end at the destroy marker (X) but due to a limitation of 
+PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
 How the `Logic` component works:
 
 1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
-2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
+2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeletePersonCommand`) 
+   which is executed by the `LogicManager`.
 3. The command can communicate with the `Model` when it is executed (e.g. to delete a person).
 4. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
@@ -128,8 +130,12 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
-* All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
+* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a 
+  placeholder for the specific command name e.g., `AddPersonCommandParser`) which uses the other classes shown above to 
+  parse the user command and create a `XYZCommand` object (e.g., `AddPersonCommand`) which the `AddressBookParser` 
+  returns back as a `Command` object.
+* All `XYZCommandParser` classes (e.g., `AddPersonCommandParser`, `DeletePersonCommandParser`, ...) inherit from the 
+  `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 <div style="page-break-after: always;"></div>
 
@@ -180,6 +186,38 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### Delete Person feature
+
+#### Implementation
+
+The `deletePerson` command accepts a numeric Index, and removes the person at that index from the person list.
+
+The sequence diagram below illustrates how the `deletePerson` command works for the example input `deletePerson 1`.
+
+![DeletePersonSequenceDiagram](images/DeletePersonSequenceDiagram.png)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>DeletePersonCommandParser</code> and <code>DeletePersonCommand</code> should end at the destroy 
+marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: How delete executes:**
+
+* **Alternative 1 (current choice):** Deletes task based on the filtered list shown to the user.
+    * Pros: Users do not have to use the `listPerson` command everytime before they delete a person.
+    * Cons: Users cannot delete a person that is not shown in the filtered list. <br/><br/>
+
+* **Alternative 2:** Deletes person based on the full list of persons.
+    * Pros: Users can delete a person that is not shown in the filtered list.
+    * Cons: Users have to use the `listPerson` command everytime to confirm the index of the person before they 
+      delete the person.
+
+<div style="page-break-after: always;"></div>
 
 ### List Task feature
 
@@ -335,8 +373,8 @@ The sequence diagram below illustrates how the `deleteTask` command works for th
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>DeleteTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
-PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeleteTaskCommandParser</code> and <code>DeleteTaskCommand</code>  should end at the destroy 
+marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
@@ -490,30 +528,30 @@ Priorities:
 * `* *` - Medium (nice to have)
 * `*` - Low (unlikely to have)
 
-| Priority | As a …​                                     | I want to …​                        | So that I can …​                                                        |
-| -------- | ------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------- |
+| Priority | As a …​                                     | I want to …​                       | So that I can …​                                                     |
+| -------- | ------------------------------------------ |------------------------------------|----------------------------------------------------------------------|
 | `* * *`  | new user                                   | see help instructions              | refer to documentation to understand the existing features effectively |
-| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI             |
-| `* * *`  | event planner                              | add a new person's details         | remember details of new people I meet                                  |
-| `* * *`  | event planner                              | list each person's details         | view all my contacts' details at a quick glance                        |
-| `* * *`  | event planner                              | edit a person's details            | update details of persons that are outdated with new information       |
-| `* * *`  | event planner                              | find a person by name              | locate a specific person without having to go through the entire list  |
-| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                  |
-| `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my contacts list                      |
-| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event              |
-| `* * *`  | event planner                              | list each task's details           | view all my tasks' details at a quick glance                           |
-| `* * *`  | event planner                              | edit a task                        | ensure task details are up-to-date with latest information             |
-| `* * *`  | event planner                              | find a task by name                | locate a specific task without having to go through the entire list    |
-| `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                               |
-| `* * *`  | event planner                              | delete all tasks                   | clear all task entries and restart with a new clean task list          |
-| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of tasks that are done      |
-| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of tasks that are not done  |
-| `* * *`  | event planner                              | save my data automatically         | ensure that my contact and task data will not be lost                  |
-| `* * *`  | event planner                              | load my data automatically         | quickly continue from where I left off in the last session             |
-| `*`      | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                 |
-
-*{More to be added}*
+| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI           |
+| `* * *`  | event planner                              | add a new person's details         | remember details of new people I meet                                |
+| `* * *`  | event planner                              | list each person's details         | view all my contacts' details at a quick glance                      |
+| `* * *`  | event planner                              | edit a person's details            | update details of persons that are outdated with new information     |
+| `* * *`  | event planner                              | find a person by name              | locate a specific person without having to go through the entire list |
+| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                |
+| `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my contacts list                    |
+| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event            |
+| `* * *`  | event planner                              | list each task's details           | view all my tasks' details at a quick glance                         |
+| `* * *`  | event planner                              | edit a task                        | ensure task details are up-to-date with latest information           |
+| `* * *`  | event planner                              | find a task by name                | locate a specific task without having to go through the entire list  |
+| `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                             |
+| `* * *`  | event planner                              | delete all tasks                   | clear all task entries and restart with a new clean task list        |
+| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of tasks that are done    |
+| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of tasks that are not done |
+| `* * *`  | event planner                              | add tag(s) to a person             | can just add tag(s) to the existing list of tags of the indexed person |
+| `* * *`  | event planner                              | add tag(s) to a task               | can just add tag(s) to the existing list of tags of the indexed task |
+| `* * *`  | event planner                              | save my data automatically         | ensure that my contact and task data will not be lost                |
+| `* * *`  | event planner                              | load my data automatically         | quickly continue from where I left off in the last session           |
+| `*`      | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident              |
+| `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                               |
 
 <div style="page-break-after: always;"></div>
 
@@ -828,7 +866,69 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC16 - Exit CoordiMate**
+**Use case: UC16 - Add tag to a person in the contact list**
+
+**MSS**
+
+1. User requests to list all persons.
+2. CoordiMate shows a list of persons.
+3. User requests to add tag(s) to a specific person in the list by index.
+4. CoordiMate edits the person to include the specified tag(s).
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. The contact list is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+
+      Use case resumes from step 3.
+
+* 3b. The given tag(s) are invalid.
+
+    * 3b1. CoordiMate shows an error message and prompts the user to enter valid tag(s).
+
+      Use case resumes from step 3.
+
+---
+
+**Use case: UC17 - Add tag to a task in the task list**
+
+**MSS**
+
+1. User requests to list all tasks.
+2. CoordiMate shows a list of tasks.
+3. User requests to add tag(s) to a specific task in the list by index.
+4. CoordiMate edits the task to include the specified tag(s).
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. The task list is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+
+      Use case resumes from step 3.
+
+* 3b. The given tag(s) are invalid.
+
+    * 3b1. CoordiMate shows an error message and prompts the user to enter valid tag(s).
+
+      Use case resumes from step 3.
+
+---
+
+**Use case: UC18 - Exit CoordiMate**
 
 **MSS**
 
@@ -839,7 +939,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC17 - Load data from save file**
+**Use case: UC19 - Load data from save file**
 
 **MSS**
 
@@ -870,7 +970,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC18 - Save data to save file**
+**Use case: UC20 - Save data to save file**
 
 **MSS**
 
@@ -895,7 +995,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC19 - Find persons and tasks by tag**
+**Use case: UC21 - Find persons and tasks by tag**
 
 **MSS**
 
@@ -978,15 +1078,74 @@ testers are expected to do more <i>exploratory testing</i>.
 
 1. Deleting a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all persons using the `listPerson` command. Multiple persons in the list.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+   2. Test case: `deletePerson 1`<br>
+      Expected: First contact is deleted from the list. Details of the deleted contact shown in the result display. 
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+   3. Test case: `deletePerson` <br>
+      Expected: No person is deleted. Error details shown in the result display.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+   4. Other incorrect deletePerson commands to try: `deletePerson 0`, `deletePerson -5`, `deletePerson x` (where x is 
+      larger than the list size)<br>
+      Expected: Similar to previous.
+
+### Deleting a task
+
+1. Deleting a task while all the tasks are being shown
+
+   1. Prerequisites: List all tasks using the `listTask` command. Multiple tasks in the list.
+
+   2. Test case: `deleteTask 1`<br>
+      Expected: First task is deleted from the list. Details of the deleted task shown in the result display. 
+
+   3. Test case: `deleteTask` <br>
+      Expected: No task is deleted. Error details shown in the result display.
+
+   4. Other incorrect deleteTask commands to try: `deleteTask 0`, `deleteTask -5`, `deleteTask x` (where x is larger 
+      than the list size)<br>
+      Expected: Similar to previous.
+
+### Adding tag(s) to a person
+
+1. Adding a tag to a person with multiple tags
+
+   1. Prerequisites: List all persons using the `listPerson` command. Multiple persons in the list. 
+
+   2. Test case: `addTagPerson 1 t/caterer`<br>
+      Expected: Tag is added to the first person in the list. Details of the person shown in the result display. 
+
+   3. Test case: `addTagPerson 1 t/caterer` followed by `addTagPerson 1 t/caterer t/summer`<br>
+      Expected: Tag is added to the first person in the list. When the second command is run, `summer` is dded to 
+      the first person in the list but `caterer` is not added as a duplicate. Instead `caterer` is returned to the 
+      result display to already exist for the first person.
+
+   4. Test case: `addTagPerson`<br>
+      Expected: No tag is added to the first person in the list. Error details shown in the result display.
+
+   5. Other incorrect addTagPerson commands to try: `addTagPerson 1`, `addTagPerson 1 t/`, `addTagPerson x t/caterer` 
+      (where x is larger than the list size)<br>
+      Expected: Similar to previous.
+
+### Adding tag(s) to a task
+
+1. Adding a tag to a task with multiple tags
+
+   1. Prerequisites: List all tasks using the `listTask` command. Multiple tasks in the list. 
+
+   2. Test case: `addTagTask 1 t/finance`<br>
+      Expected: Tag is added to the first task in the list. Details of the task shown in the result display. 
+
+   3. Test case: `addTagTask 1 t/finance` followed by `addTagTask 1 t/finance t/class`<br>
+      Expected: Tag is added to the first task in the list. When the second command is run, `class` is added to 
+      the first task in the list but `finance` is not added as a duplicate. Instead `finance` is returned to the 
+      result display to already exist for the first task.
+
+   4. Test case: `addTagTask`<br>
+      Expected: No tag is added to the first task in the list. Error details shown in the result display.
+
+   5. Other incorrect addTagTask commands to try: `addTagTask 1`, `addTagTask 1 t/`, `addTagTask x t/finance` 
+      (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_

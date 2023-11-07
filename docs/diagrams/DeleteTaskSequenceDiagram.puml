@@ -23,7 +23,7 @@ LogicManager -> AddressBookParser : parseCommand("deleteTask 1")
 activate AddressBookParser
 
 create DeleteTaskCommandParser
-AddressBookParser -> DeleteTaskCommandParser
+AddressBookParser -> DeleteTaskCommandParser : DeleteTaskCommandParser()
 activate DeleteTaskCommandParser
 
 DeleteTaskCommandParser --> AddressBookParser
@@ -33,7 +33,7 @@ AddressBookParser -> DeleteTaskCommandParser : parse("1")
 activate DeleteTaskCommandParser
 
 create DeleteTaskCommand
-DeleteTaskCommandParser -> DeleteTaskCommand
+DeleteTaskCommandParser -> DeleteTaskCommand : DeleteTaskCommand(index)
 activate DeleteTaskCommand
 
 DeleteTaskCommand --> DeleteTaskCommandParser : c
@@ -84,6 +84,9 @@ deactivate CommandResult
 
 DeleteTaskCommand --> LogicManager : r
 deactivate DeleteTaskCommand
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+DeleteTaskCommand -[hidden]-> LogicManager
+destroy DeleteTaskCommand
 
 [<--LogicManager
 deactivate LogicManager

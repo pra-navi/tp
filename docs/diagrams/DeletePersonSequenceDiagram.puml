@@ -1,0 +1,93 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":DeletePersonCommandParser" as DeletePersonCommandParser LOGIC_COLOR
+participant "c:DeletePersonCommand" as DeletePersonCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "m:ModelManager" as ModelManager MODEL_COLOR
+participant ":AddressBook" as AddressBook MODEL_COLOR
+participant ":UniquePersonList" as UniquePersonList MODEL_COLOR
+end box
+
+[-> LogicManager : execute("deletePerson 1")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("deletePerson 1")
+activate AddressBookParser
+
+create DeletePersonCommandParser
+AddressBookParser -> DeletePersonCommandParser : DeletePersonCommandParser()
+activate DeletePersonCommandParser
+
+DeletePersonCommandParser --> AddressBookParser
+deactivate DeletePersonCommandParser
+
+AddressBookParser -> DeletePersonCommandParser : parse("1")
+activate DeletePersonCommandParser
+
+create DeletePersonCommand
+DeletePersonCommandParser -> DeletePersonCommand : DeletePersonCommand(index)
+activate DeletePersonCommand
+
+DeletePersonCommand --> DeletePersonCommandParser : c
+deactivate DeletePersonCommand
+
+DeletePersonCommandParser --> AddressBookParser : c
+deactivate DeletePersonCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+DeletePersonCommandParser -[hidden]-> AddressBookParser
+destroy DeletePersonCommandParser
+
+AddressBookParser --> LogicManager : c
+deactivate AddressBookParser
+
+LogicManager -> DeletePersonCommand : execute(m)
+activate DeletePersonCommand
+
+DeletePersonCommand -> ModelManager : getFilteredPersonList()
+activate ModelManager
+
+ModelManager --> DeletePersonCommand : lastShownList
+deactivate ModelManager
+
+DeletePersonCommand -> ModelManager : deletePerson(person)
+activate ModelManager
+
+ModelManager -> AddressBook : deletePerson(person)
+activate AddressBook
+
+AddressBook -> UniquePersonList : delete(person)
+activate UniquePersonList
+
+UniquePersonList --> AddressBook
+deactivate UniquePersonList
+
+AddressBook --> ModelManager
+deactivate AddressBook
+
+ModelManager --> DeletePersonCommand
+deactivate ModelManager
+
+create CommandResult
+DeletePersonCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> DeletePersonCommand
+deactivate CommandResult
+
+DeletePersonCommand --> LogicManager : r
+deactivate DeletePersonCommand
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+DeletePersonCommand -[hidden]-> LogicManager
+destroy DeletePersonCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml
