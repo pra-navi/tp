@@ -26,36 +26,35 @@ Given below are my contributions to the project.
 * **New Feature**: `markTask` & `unmarkTask` (PR [#86](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/86))
   * What it does: Allows users to mark tasks as completed or undo task completion status, indicating progress and keeping track of accomplished tasks.
   * Justification: Easy task status update, ensuring users stay on top of their to-do list, aiding in progress assessment and prioritization.
-  * Highlights: ..
-
+  * Highlights: ..<br><br>
+  
 * **New Feature**: `findDone` & `findNotDone` (PR [#99](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/99))
   * What it does: Facilitates quick search and display of all completed or pending tasks, aiding in review and prioritization.
   * Justification: Instant retrieval of completed or pending tasks, promoting effective task analysis.
-  * Highlights: ..
+  * Highlights: ..<br><br>
 
 * **New Feature**: `deleteAllDone` (PR [#115](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/115))
   * What it does: Provides the option to delete all completed tasks, keeping the task list concise and relevant.
   * Justification: Reduces clutter, ensuring users focus on ongoing and upcoming tasks without distractions.
-  * Highlights: ..
+  * Highlights: ..<br><br>
 
-* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=m1oojv&breakdown=true)
+* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=m1oojv&breakdown=true)<br><br>
 
 * **Project management**:
   * Set up assertions for gradle (PR [#110](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/110))
   * Addressed javafx plugin + problem that was brought up in the forum (PR [#18](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/18))
-  * Opened issues for each milestones (Issue [#41](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/41), [#98](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/98), [#114](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/114))
+  * Opened issues for each milestones (Issue [#41](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/41), [#98](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/98), [#114](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/114))<br><br>
 
 * **Enhancements to existing features**:
-  * Update help messages data to have more realistic tags towards event planning 
-  * Add limits to input fields in `editPerson` command
+  * Update help messages data to have more realistic tags towards event planning.<br><br>
 
 * **Documentation**:
   * User Guide:
     * Add documentation for the `editPerson`, `deleteAllTask`, `markTask`, `unmarkTask`, `findDone`, `findNotDone` and `deleteAllDone` commands.
-    * Add self drawn mockups of GUI for User Guide [\#0a25954](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/20/commits/0a25954d0d7a5b4d0a5b5da7ddf313bd0861c78b)
+    * Add self drawn mockups of GUI for User Guide (Commit [#0a25954](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/20/commits/0a25954d0d7a5b4d0a5b5da7ddf313bd0861c78b))
   * Developer Guide:
     * Add user stories and use cases for `editPerson`, `deleteAllTask`, `markTask`, `unmarkTask`, `findDone`, `findNotDone` and `deleteAllDone` commands.
-    * Added implementation details of `markTask` feature.
+    * Added implementation details of `markTask` feature.<br><br>
 
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [Coming soon!]
@@ -63,4 +62,4 @@ Given below are my contributions to the project.
   * Reported 5 bugs and suggestions during PE Dry Run. ([Repo](https://github.com/m1oojv/ped/issues))<br><br>
 
 * **Tools**:
-  * Created mockup templates for teammates to use when adding mockups to the UG ([link](https://docs.google.com/presentation/d/1fXBqhAU6SSoSZdYVog3G9v5H6gXFMCzPAQ2BjzzWzM4/edit#slide=id.p))
+  * Created mockup templates for teammates to use when adding mockups to the UG ([link](https://docs.google.com/presentation/d/1fXBqhAU6SSoSZdYVog3G9v5H6gXFMCzPAQ2BjzzWzM4/edit#slide=id.p))<br><br>
