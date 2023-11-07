@@ -40,8 +40,6 @@ The loop iteration from the back was found to be essential for proper deletion, 
 
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=m1oojv&breakdown=true)
 
-<div style="page-break-after: always;"></div>
-
 * **Project management**:
   * Set up assertions for gradle (PR [#110](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/110))
   * Addressed javafx plugin + problem that was brought up in the forum (PR [#18](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/18))
