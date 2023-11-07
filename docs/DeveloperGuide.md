@@ -29,7 +29,7 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ## **Design**
 
-{% include admonition.html type="tip" title="Tip" body="
+{% include admonition.html type="note" title="Note" body="
 
 The <code>.puml</code> files used to create diagrams in this document are in the <code>docs/diagrams</code> folder. <br>
 Refer to the <a href='https://se-education.org/guides/tutorials/plantUml.html'><i>PlantUML Tutorial</i> at se-edu/guides</a> to learn how to create and edit diagrams.
@@ -38,7 +38,7 @@ Refer to the <a href='https://se-education.org/guides/tutorials/plantUml.html'><
 
 ### Architecture
 
-<img src="images/ArchitectureDiagram.png" width="280" />
+<img src="assets/svg/dg/ArchitectureDiagram.svg" width="280" />
 
 The ***Architecture Diagram*** given above explains the high-level design of the App.
 
@@ -64,7 +64,7 @@ The bulk of the app's work is done by the following four components:
 
 The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
 
-<img src="images/ArchitectureSequenceDiagram.png" width="574" />
+<img src="assets/svg/dg/ArchitectureSequenceDiagram.svg" width="574" />
 
 Each of the four main components (also shown in the diagram above),
 
@@ -73,7 +73,7 @@ Each of the four main components (also shown in the diagram above),
 
 For example, the `Logic` component defines its API in the `Logic.java` interface and implements its functionality using the `LogicManager.java` class which follows the `Logic` interface. Other components interact with a given component through its interface rather than the concrete class (reason: to prevent outside component's being coupled to the implementation of a component), as illustrated in the (partial) class diagram below.
 
-<img src="images/ComponentManagers.png" width="300" />
+<img src="assets/svg/dg/ComponentManagers.svg" width="300" />
 
 The sections below give more details of each component.
 
@@ -83,7 +83,7 @@ The sections below give more details of each component.
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
-![Structure of the UI Component](images/UiClassDiagram.png)
+![Structure of the UI Component](assets/svg/dg/UiClassDiagram.svg)
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
@@ -104,39 +104,39 @@ The `UI` component,
 
 Here's a (partial) class diagram of the `Logic` component:
 
-<img src="images/LogicClassDiagram.png" width="550"/>
+<img src="assets/svg/dg/LogicClassDiagram.svg" width="550"/>
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete 1")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("deleteTask 1")` API call as an example.
 
-![Interactions Inside the Logic Component for the `delete 1` Command](images/DeleteSequenceDiagram.png)
+![Interactions Inside the Logic Component for the `deleteTask 1` Command](assets/svg/dg/DeleteTaskSequenceDiagram.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeleteTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
-2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
+1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteTaskCommandParser`) and uses it to parse the command.
+2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteTaskCommand`) which is executed by the `LogicManager`.
 3. The command can communicate with the `Model` when it is executed (e.g. to delete a person).
 4. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
 
-<img src="images/ParserClasses.png" width="600"/>
+<img src="assets/svg/dg/ParserClasses.svg" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
-* All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
+* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddPersonCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddPersonCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* All `XYZCommandParser` classes (e.g., `AddPersonCommandParser`, `DeletePersonCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 <div style="page-break-after: always;"></div>
 
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
-<img src="images/ModelClassDiagram.png" width="450" />
+<img src="assets/svg/dg/ModelClassDiagram.svg" width="450" />
 
 
 The `Model` component,
@@ -150,7 +150,7 @@ The `Model` component,
 
 An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br>
 
-<img src='images/BetterModelClassDiagram.png' width='450' />
+<img src='assets/svg/dg/BetterModelClassDiagram.svg' width='450' />
 
 " %}
 
@@ -160,7 +160,7 @@ An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</
 
 **API** : [`Storage.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
-<img src="images/StorageClassDiagram.png" width="550" />
+<img src="assets/svg/dg/StorageClassDiagram.svg" width="550" />
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
@@ -331,7 +331,7 @@ The `deleteTask` command accepts a numeric Index, and removes the task at that i
 
 The sequence diagram below illustrates how the `deleteTask` command works for the example input `deleteTask 1`.
 
-![DeleteTaskSequenceDiagram](images/DeleteTaskSequenceDiagram.png)
+![DeleteTaskSequenceDiagram](assets/svg/dg/DeleteTaskSequenceDiagram.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -371,15 +371,15 @@ Given below is an example usage scenario and how the undo/redo mechanism behaves
 
 Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
 
-![UndoRedoState0](images/UndoRedoState0.png)
+![UndoRedoState0](assets/svg/dg/UndoRedoState0.svg)
 
 Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
 
-![UndoRedoState1](images/UndoRedoState1.png)
+![UndoRedoState1](assets/svg/dg/UndoRedoState1.svg)
 
 Step 3. The user executes `add n/David …​` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
 
-![UndoRedoState2](images/UndoRedoState2.png)
+![UndoRedoState2](assets/svg/dg/UndoRedoState2.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -389,7 +389,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 
 Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
 
-![UndoRedoState3](images/UndoRedoState3.png)
+![UndoRedoState3](assets/svg/dg/UndoRedoState3.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -400,7 +400,7 @@ than attempting to perform the undo.
 
 The following sequence diagram shows how the undo operation works:
 
-![UndoSequenceDiagram](images/UndoSequenceDiagram.png)
+![UndoSequenceDiagram](assets/svg/dg/UndoSequenceDiagram.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -418,15 +418,15 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 
 Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
 
-![UndoRedoState4](images/UndoRedoState4.png)
+![UndoRedoState4](assets/svg/dg/UndoRedoState4.svg)
 
 Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
 
-![UndoRedoState5](images/UndoRedoState5.png)
+![UndoRedoState5](assets/svg/dg/UndoRedoState5.svg)
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-<img src="images/CommitActivityDiagram.png" width="250" />
+<img src="assets/svg/dg/CommitActivityDiagram.svg" width="250" />
 
 #### Design considerations:
 
@@ -441,17 +441,9 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
-_{more aspects and alternatives to be added}_
-
-<div style="page-break-after: always;"></div>
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
-<div style="page-break-after: always;"></div>
-
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Documentation, logging, testing, configuration, dev-ops**
 
@@ -490,30 +482,33 @@ Priorities:
 * `* *` - Medium (nice to have)
 * `*` - Low (unlikely to have)
 
-| Priority | As a …​                                     | I want to …​                        | So that I can …​                                                        |
-| -------- | ------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see help instructions              | refer to documentation to understand the existing features effectively |
-| `* * *`  | event planner                              | view both lists on the same screen | compare the task list and contact list while using the GUI             |
-| `* * *`  | event planner                              | add a new person's details         | remember details of new people I meet                                  |
-| `* * *`  | event planner                              | list each person's details         | view all my contacts' details at a quick glance                        |
-| `* * *`  | event planner                              | edit a person's details            | update details of persons that are outdated with new information       |
-| `* * *`  | event planner                              | find a person by name              | locate a specific person without having to go through the entire list  |
-| `* * *`  | event planner                              | delete a contact                   | remove contacts that I no longer need                                  |
-| `* * *`  | event planner                              | delete all contacts                | efficiently restart or declutter my contacts list                      |
-| `* * *`  | event planner                              | create tasks to do                 | know what tasks I need to do in preparation for the event              |
-| `* * *`  | event planner                              | list each task's details           | view all my tasks' details at a quick glance                           |
-| `* * *`  | event planner                              | edit a task                        | ensure task details are up-to-date with latest information             |
-| `* * *`  | event planner                              | find a task by name                | locate a specific task without having to go through the entire list    |
-| `* * *`  | event planner                              | delete a task                      | remove tasks that are no longer relevant                               |
-| `* * *`  | event planner                              | delete all tasks                   | clear all task entries and restart with a new clean task list          |
-| `* * *`  | event planner                              | mark a task as done                | keep track of task progress and the number of tasks that are done      |
-| `* * *`  | event planner                              | mark a task as not done            | keep track of task progress and the number of tasks that are not done  |
-| `* * *`  | event planner                              | save my data automatically         | ensure that my contact and task data will not be lost                  |
-| `* * *`  | event planner                              | load my data automatically         | quickly continue from where I left off in the last session             |
-| `*`      | user                                       | hide private contact details       | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name               | locate a person easily                                                 |
-
-*{More to be added}*
+| Priority | As a …​ | I want to …​ | So that I can …​ |
+| -------- | -------| ----------- | --------------- |
+| `* * *` | new user | see help instructions | refer to documentation to understand the existing features effectively |
+| `* * *` | event planner | view both lists on the same screen | compare the task list and contact list while using the GUI |
+| `* * *` | event planner | add a new person's details | remember details of new people I meet |
+| `* * *` | event planner | list each person's details | view all my contacts' details at a quick glance |
+| `* * *` | event planner | edit a person's details | update details of persons that are outdated with new information |
+| `* * *` | event planner | find a person by name | locate a specific person without having to go through the entire list |
+| `* * *` | event planner | delete a contact | remove contacts that I no longer need |
+| `* * *` | event planner | delete all contacts | efficiently restart or declutter my contacts list |
+| `* * *` | event planner | add tags to a person | categorise my contacts for easy reference |
+| `* * *` | event planner | create tasks to do | know what tasks I need to do in preparation for the event |
+| `* * *` | event planner | list each task's details | view all my tasks' details at a quick glance |
+| `* * *` | event planner | edit a task | ensure task details are up-to-date with latest information |
+| `* * *` | event planner | find a task by name | locate a specific task without having to go through the entire list |
+| `* * *` | event planner | delete a task | remove tasks that are no longer relevant |
+| `* * *` | event planner | delete all tasks | clear all task entries and restart with a new clean task list |
+| `* * *` | event planner | mark a task as done | keep track of task progress and the number of tasks that are done |
+| `* * *` | event planner | mark a task as not done | keep track of task progress and the number of tasks that are not done |
+| `* *` | event planner | find all done tasks | quickly see which tasks I have completed |
+| `* *` | event planner | find all not done tasks | quickly see which tasks I have yet to complete |
+| `* *` | event planner | delete all done tasks | ensure that my task list is not cluttered with completed tasks |
+| `* * *` | event planner | add tags to a task | categorise my tasks for easy reference |
+| `* *` | event planner | list all the tags I have used | avoid creating duplicate categories |
+| `* *` | event planner | find a person and tasks by tag | quickly see the persons and tasks in a category |
+| `* * *` | event planner | save my data automatically | ensure that my contact and task data will not be lost |
+| `* * *` | event planner | load my data automatically | quickly continue from where I left off in the last session |
 
 <div style="page-break-after: always;"></div>
 
@@ -523,18 +518,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC01 - View help instructions**
-
-**MSS**
-
-1. User requests for help.
-2. CoordiMate shows the help instructions, with a link to user guide.
-
-   Use case ends.
-
----
-
-**Use case: UC02 - Add a person to the contact list**
+**Use case: UC01 - Add a person to the contact list**
 
 **MSS**
 
@@ -553,7 +537,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC03 - List all persons in the contact list**
+**Use case: UC02 - List all persons in the contact list**
 
 **MSS**
 
@@ -564,7 +548,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC04 - Edit a person's details in the contact list**
+**Use case: UC03 - Edit a person's details in the contact list**
 
 **MSS**
 
@@ -589,7 +573,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC05 - Find a person in the contact list**
+**Use case: UC04 - Find a person in the contact list**
 
 **MSS**
 
@@ -608,7 +592,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC06 - Delete a person from the contact list**
+**Use case: UC05 - Delete a person from the contact list**
 
 **MSS**
 
@@ -633,7 +617,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC07 - Delete all existing contacts**
+**Use case: UC06 - Delete all existing contacts**
 
 **MSS**
 
@@ -647,6 +631,24 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 * 1a. The contact list is empty.
 
   * 1a1. CoordiMate informs the user that there are no contacts to be deleted.
+
+      Use case ends.
+
+---
+
+**Use case: UC07 - Add tags to a person**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
 
       Use case ends.
 
@@ -828,7 +830,174 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC16 - Exit CoordiMate**
+**Use case: UC16 - Find all tasks that are done**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC17 - Find all tasks that are not done**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC18 - Delete all tasks that are done**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC19 - Add tags to a task**
+
+**MSS**
+
+1. TODO
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. TODO
+
+  * 1a1. TODO
+
+      Use case ends.
+
+---
+
+**Use case: UC20 - List all tags**
+
+**MSS**
+
+1. User requests to list all tags.
+2. CoordiMate shows a list of all tags, with the number of persons and tasks that each tag has.
+
+   Use case ends.
+
+---
+
+**Use case: UC21 - Find all persons and tasks with any matching tag**
+
+**MSS**
+
+1. User requests to find persons and tasks that match any of the given tags.
+2. CoordiMate shows the list of persons and tasks that match any of the given tags.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. All of the given tags do not exist.
+
+   * 1a1. CoordiMate informs the user that there are no persons or tasks that match any of the given tags.
+
+      Use case ends.
+
+* 1b. No persons or tasks match any of the given tags.
+
+   * 1b1. CoordiMate informs the user that there are no persons or tasks that match any of the given tags.
+
+      Use case ends.
+
+* 1c. The provided input for the tag search is invalid.
+
+   * 1c1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
+
+      Use case resumes from step 1.
+
+---
+
+**Use case: UC22 - Find all persons and tasks with all matching tags**
+
+**MSS**
+
+1. User requests to find persons and tasks that match all of the given tags.
+2. CoordiMate shows the list of persons and tasks that match all of the given tags.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. All of the given tags do not exist.
+
+   * 1a1. CoordiMate informs the user that there are no persons or tasks that match all of the given tags.
+
+      Use case ends.
+
+* 1b. No persons or tasks match all of the given tags.
+
+   * 1b1. CoordiMate informs the user that there are no persons or tasks that match all of the given tags.
+
+      Use case ends.
+
+* 1c. The provided input for the tag search is invalid.
+
+   * 1c1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
+
+      Use case resumes from step 1.
+
+---
+
+**Use case: UC23 - View help instructions**
+
+**MSS**
+
+1. User requests for help.
+2. CoordiMate shows the help instructions, with a link to user guide.
+
+   Use case ends.
+
+---
+
+**Use case: UC24 - List all persons and tasks**
+
+**MSS**
+
+1. User requests to list all persons and tasks.
+2. CoordiMate shows the list of all persons and tasks.
+
+   Use case ends.
+
+---
+
+**Use case: UC25 - Exit CoordiMate**
 
 **MSS**
 
@@ -839,7 +1008,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC17 - Load data from save file**
+**Use case: UC26 - Load data from save file**
 
 **MSS**
 
@@ -870,7 +1039,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC18 - Save data to save file**
+**Use case: UC27 - Save data to save file**
 
 **MSS**
 
@@ -894,29 +1063,6 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
       Use case ends.
 
 ---
-
-**Use case: UC19 - Find persons and tasks by tag**
-
-**MSS**
-
-1. User requests to find persons tasks by specific tag(s).
-2. CoordiMate shows two separate lists of persons and tasks associated with the given tag(s).
-
-   Use case ends.
-
-**Extensions**
-
-* 1a. The given tag does not exist or no tasks are associated with it.
-
-    * 1a1. CoordiMate informs the user that there are no tasks associated with the given tag(s).
-
-      Use case ends.
-
-* 1b. The provided input for the tag search is invalid.
-
-    * 1b1. CoordiMate shows an error message and prompts the user to provide a valid input for the tag.
-
-      Use case resumes at step 1.
 
 <div style="page-break-after: always;"></div>
 
@@ -950,7 +1096,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 Given below are instructions to test the app manually.
 
-{% include admonition.html type="info" title="Info" body="
+{% include admonition.html type="note" title="Note" body="
 
 These instructions only provide a starting point for testers to work on;
 testers are expected to do more <i>exploratory testing</i>.
