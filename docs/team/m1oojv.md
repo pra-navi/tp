@@ -38,7 +38,7 @@ Given below are my contributions to the project.
   * Highlights: Implementing this feature required an in-depth understanding of how dynamic nature of the list and the necessity to maintain order, the loop approach was adjusted. 
 The loop iteration from the back was found to be essential for proper deletion, overcoming index errors and ensuring the accurate removal of completed tasks.<br><br>
 
-* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=m1oojv&breakdown=true)<br><br>
+* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=m1oojv&breakdown=true)
 
 * **Project management**:
   * Set up assertions for gradle (PR [#110](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/110))
@@ -54,10 +54,10 @@ The loop iteration from the back was found to be essential for proper deletion, 
     * Add self drawn mockups of GUI for User Guide (Commit [#0a25954](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/20/commits/0a25954d0d7a5b4d0a5b5da7ddf313bd0861c78b))
   * Developer Guide:
     * Add user stories and use cases for `editPerson`, `deleteAllTask`, `markTask`, `unmarkTask`, `findDone`, `findNotDone` and `deleteAllDone` commands.
-    * Added implementation details of `markTask` feature.<br><br>
+    * Added implementation details and design considerations of `markTask` feature.<br><br>
 
 * **Community**:
-  * PRs reviewed (with non-trivial review comments): [Coming soon!]
+  * PRs reviewed (with non-trivial review comments): PR [#56](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/56), [#91](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/91), [#89](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/89), [#88](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/88), [#84](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/84)
   * Contributed to forum discussions: Forum [#6](https://github.com/nus-cs2103-AY2324S1/forum/issues/6)
   * Reported 5 bugs and suggestions during PE Dry Run. ([Repo](https://github.com/m1oojv/ped/issues))<br><br>
 
