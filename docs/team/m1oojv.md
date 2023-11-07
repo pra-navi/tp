@@ -19,18 +19,18 @@ Given below are my contributions to the project.
 * **New Feature**: `deleteAllTask` (PR [#90](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/90))
   * What it does: Enables users to delete all tasks at once, cleaning up to a fresh new start of the task list.
   * Justification: Provides a quick solution for clearing tasks, enhancing organization and decluttering the interface.
-  * Highlights:  This feature required me to have an in-depth understanding of the execution pipeline for commands and making the right design decisions when creating and manipulating a task list based on existing UniquePersonList.
+  * Highlights:  This feature required me to have an in-depth understanding of the execution pipeline for commands and making the right design decisions when creating and manipulating a task list based on existing `UniquePersonList`.
   * Credits: The `deleteAllTask` command was inspired by the `clear` command in AB3.<br><br>
 
 * **New Feature**: `markTask` & `unmarkTask` (PR [#86](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/86))
   * What it does: Allows users to mark tasks as completed or undo task completion status, indicating progress and keeping track of accomplished tasks.
   * Justification: Easy task status update, ensuring users stay on top of their to-do list, aiding in progress assessment and prioritization.
-  * Highlights: This feature involved creating a new "Status" field and "TaskStatus" enumeration, ensuring a clear distinction between completed (DONE) and pending (NOT_DONE) tasks. Utilizing STATUS_DONE and STATUS_NOT_DONE constants further enhanced readability and differentiation of task states within the Status class. <br><br>
+  * Highlights: This feature involved creating a new `Status` field and `TaskStatus` enumeration, ensuring a clear distinction between completed (`DONE`) and pending (`NOT_DONE`) tasks. Utilizing `STATUS_DONE` and `STATUS_NOT_DONE` constants further enhanced readability and differentiation of task states within the `Status` class. <br><br>
   
 * **New Feature**: `findDone` & `findNotDone` (PR [#99](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/99))
   * What it does: Facilitates quick search and display of all completed or pending tasks, aiding in review and prioritization.
   * Justification: Instant retrieval of completed or pending tasks, promoting effective task analysis.
-  * Highlights: Implementing this feature required an in-depth understanding of how lists are displayed in JavaFX. New predicates were implemented based on the existing PREDICATE_SHOW_ALL_PERSONS in AB3. <br><br>
+  * Highlights: Implementing this feature required an in-depth understanding of how lists are displayed in JavaFX. New predicates were implemented based on the existing `PREDICATE_SHOW_ALL_PERSONS` in AB3. <br><br>
 
 * **New Feature**: `deleteAllDone` (PR [#115](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/115))
   * What it does: Provides the option to delete all completed tasks, keeping the task list concise and relevant.
@@ -46,15 +46,16 @@ The loop iteration from the back was found to be essential for proper deletion, 
   * Opened issues for each milestones (Issue [#41](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/41), [#98](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/98), [#114](https://github.com/AY2324S1-CS2103T-T10-2/tp/issues/114))<br><br>
 
 * **Enhancements to existing features**:
-  * Update help messages data to have more realistic tags towards event planning.<br><br>
+  * Revise help messages to incorporate authentic event planning terminology and context, providing users with a more relevant and intuitive experience. (PR [#108](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/108)) <br><br> 
 
 * **Documentation**:
   * User Guide:
     * Add documentation for the `editPerson`, `deleteAllTask`, `markTask`, `unmarkTask`, `findDone`, `findNotDone` and `deleteAllDone` commands.
+    * Add list of features of CoordiMate (PR [#108](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/108))
     * Add self drawn mockups of GUI for User Guide (Commit [#0a25954](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/20/commits/0a25954d0d7a5b4d0a5b5da7ddf313bd0861c78b))
   * Developer Guide:
     * Add user stories and use cases for `editPerson`, `deleteAllTask`, `markTask`, `unmarkTask`, `findDone`, `findNotDone` and `deleteAllDone` commands.
-    * Added implementation details and design considerations of `markTask` feature.<br><br>
+    * Added implementation details and design considerations of `markTask` feature (PR [#100](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/100))<br><br>
 
 * **Community**:
   * PRs reviewed (with non-trivial review comments): PR [#56](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/56), [#91](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/91), [#89](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/89), [#88](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/88), [#84](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/84)
