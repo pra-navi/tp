@@ -195,6 +195,50 @@ If you are using a PDF version of this document, be careful when copying and pas
 
 " %}
 
+### Command Aliases
+
+CoordiMate supports predefined aliases for commands, so that you can get things done faster!<br>
+
+**Example 1: Adding a person**
+
+Instead of typing:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>addPerson</b> n/John Doe p/12345678 e/john@example.com a/1 John Street t/friend</code></pre>
+</div>
+
+you can simply type:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>ap</b> n/John Doe p/12345678 e/john@example.com a/1 John Street t/friend</code></pre>
+</div>
+
+Both commands will add a person named `John Doe` with phone number `12345678`, email `john@example.com`, address `1 John Street`, and tag `friend` to your contact list.<br><br>
+
+<br>
+
+**Example 2: Listing all persons**
+
+Instead of typing:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>listPerson</b></code></pre>
+</div>
+
+you can simply type:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>lp</b></code></pre>
+</div>
+
+Both commands will show a full list of all the contacts in your contact list.
+
+<br>
+
+A summary of valid aliases is shown in the [Command Summary](#command-summary) section below.
+
+---
+
 <div style="page-break-after: always;"></div>
 
 ### 1. Commands to Manage Persons
