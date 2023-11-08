@@ -269,9 +269,15 @@ The sequence diagram below illustrates how the `findTask` command works.
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>FindTaskCommandParser</code>, <code>TaskContainsKeywordsPredicate</code> and <code>FindTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>FindTaskCommandParser</code> and <code>FindTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
+
+The sequence diagrams below show the details of the respective reference frames.
+
+![CreateTaskPredicate](assets/svg/dg/SDCreateTaskPredicate.svg)
+
+![CreateFindTaskCommandResult](assets/svg/dg/SDCreateFindTaskCommandResult.svg)
 
 This feature is accomplished by a `TaskContainsKeywordPredicate` class which is used to filter the list of tasks in the `Model` component.
 
