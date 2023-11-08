@@ -197,7 +197,7 @@ If you are using a PDF version of this document, be careful when copying and pas
 
 <div style="page-break-after: always;"></div>
 
-### Commands to Manage Persons
+### 1. Commands to Manage Persons
 
 #### 1. Adding a person: `addPerson`
 
@@ -347,7 +347,7 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 
 <div style="page-break-after: always;"></div>
 
-#### 5. Deleting a person entry: `deletePerson`
+#### 1.5 Deleting a person entry: `deletePerson`
 
 Allows you to remove an outdated person from your contact list with ease.
 
@@ -361,6 +361,12 @@ This action is irreversible.
 
 ```
 deletePerson INDEX
+```
+
+<h4>Alias:</h4>
+
+```
+dp INDEX
 ```
 
 - Deletes the person at the specified `INDEX`.
@@ -420,7 +426,7 @@ deleteAllPerson
 
 <div style="page-break-after: always;"></div>
 
-### Commands to Manage Tasks
+### 2. Commands to Manage Tasks
 
 #### 7. Adding a task: `addTask`
 
@@ -554,7 +560,7 @@ findTask KEYWORD [MORE_KEYWORDS]…
 
 <div style="page-break-after: always;"></div>
 
-#### 11. Deleting a task entry: `deleteTask`
+#### 2.5 Deleting a task entry: `deleteTask`
 
 Allows you to remove a task from your task list with ease.
 
@@ -566,7 +572,15 @@ This action is irreversible.
 
 <h4>Format:</h4>
 
-`deleteTask INDEX`
+```
+deleteTask INDEX
+```
+
+<h4>Alias:</h4>
+
+```
+dt INDEX
+```
 
 - Deletes the task at the specified `INDEX`.
 - The index refers to the index number shown in the task list currently displayed.
@@ -809,7 +823,7 @@ deleteAllDone
 
 <div style="page-break-after: always;"></div>
 
-### Commands to Manage Tags
+### 3. Commands to Manage Tags
 
 #### 18. Listing all tags: `listTag`
 
@@ -929,7 +943,7 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 
 <div style="page-break-after: always;"></div>
 
-#### 21. Adding tag(s) to a person: `addTagPerson`
+#### 3.4 Adding tag(s) to a person: `addTagPerson`
 
 Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
 
@@ -937,6 +951,12 @@ Enables you to add tag(s) to the existing list of tags of an existing contact in
 
 ```
 addTagPerson INDEX [t/TAG]…
+```
+
+<h4>Alias:</h4>
+
+```
+atagp INDEX [t/TAG]…
 ```
 
 - Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
@@ -975,7 +995,7 @@ addTagPerson INDEX [t/TAG]…
 
 <div style="page-break-after: always;"></div>
 
-#### 22. Adding tag(s) to a task: `addTagTask`
+#### 3.5 Adding tag(s) to a task: `addTagTask`
 
 Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
 
@@ -983,6 +1003,12 @@ Enables you to add tag(s) to the existing list of tags of an existing task in yo
 
 ```
 addTagTask INDEX [t/TAG]…
+```
+
+<h4>Alias:</h4>
+
+```
+atagt INDEX [t/TAG]…
 ```
 
 - Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, …
@@ -1168,24 +1194,24 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
 ### Managing Persons
 
- Action | Format | Example
---------|--------|---------
-[**Add Person**](#1-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` |`addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-[**List All Person**](#2-listing-all-persons-listperson) | `listPerson` | `listPerson`
-[**Edit Person**](#3-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com`
-[**Find Person**](#4-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John`
-[**Delete Person**](#5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1`
-[**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson`
+ Action | Format | Example | Alias
+--------|--------|---------|------
+[**Add Person**](#1-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` | `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` |
+[**List All Person**](#2-listing-all-persons-listperson) | `listPerson` | `listPerson` |
+[**Edit Person**](#3-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com` |
+[**Find Person**](#4-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John` |
+[**Delete Person**](#1.5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1` | `dp`
+[**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` |
 
 ### Managing Tasks
 
- Action | Format | Example
---------|--------|---------
+ Action | Format | Example | Alias
+--------|--------|---------|------
 [**Add Task**](#7-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
 [**List All Task**](#8-listing-all-tasks-listtask) | `listTask` | `listTask`
 [**Edit Task**](#9-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
 [**Find Task**](#10-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
-[**Delete Task**](#11-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1`
+[**Delete Task**](#2.5-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1` | `dt`
 [**Delete All Task**](#12-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
 [**Mark Task**](#13-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
 [**Unmark Task**](#14-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
@@ -1195,13 +1221,13 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
 ### Managing Tags
 
- Action | Format | Example
---------|--------|---------
+ Action | Format | Example | Alias
+--------|--------|---------|------
 [**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
 [**Find Tags**](#19-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
 [**Find All Tags**](#20-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
-[**Add Tag(s) to a Person**](#21-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
-[**Add Tag(s) to a Task**](#22-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
+[**Add Tag(s) to a Person**](#3.4-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
+[**Add Tag(s) to a Task**](#3.5-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
 [**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
 [**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
