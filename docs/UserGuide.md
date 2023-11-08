@@ -371,7 +371,7 @@ dp
 
 - Deletes the person at the specified `INDEX`.
 - The index refers to the index number shown in the displayed person list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
 <h4>Examples:</h4>
 
@@ -384,7 +384,7 @@ dp
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is specified.
+`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
 `The person index provided is invalid` | Ensure that the index provided is in range.
 
 <div style="page-break-after: always;"></div>
@@ -574,6 +574,7 @@ dt
 
 - Deletes the task at the specified `INDEX`.
 - The index refers to the index number shown in the task list currently displayed.
+- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
 <h4>Examples:</h4>
 
@@ -586,7 +587,7 @@ dt
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is specified.
+`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
 `The task index provided is invalid` | Ensure that the index provided is in range.
 
 - `deleteTask`
@@ -949,7 +950,8 @@ addTagPerson INDEX [t/TAG]…
 atagp
 ```
 
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
+- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The 
+  index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 - At least one tag must be provided.
 - Existing list of tags will be updated after adding in the input tags.
 - Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
@@ -965,7 +967,7 @@ atagp
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index AND tag are both specified.
+`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specfiied as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
 `The person index provided is invalid` | Ensure that the index provided is in range.
 
@@ -987,7 +989,7 @@ addTagTask INDEX [t/TAG]…
 atagt
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, …
+- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 - At least one tag must be provided.
 - Existing list of tags will be updated after adding in the input tags.
 - Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
@@ -1003,7 +1005,7 @@ atagt
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index AND tag are both specified.
+`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specified as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
 `The task index provided is invalid` | Ensure that the index provided is in range.
 
