@@ -28,7 +28,7 @@ Given below are my contributions to the project.
   * **Credits**: The `findTask` command was inspired by the `find` command in AB3.<br><br>
 
 
-* **New Feature**: Implemented the `listTags` command. (PR [#102](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/102))
+* **New Feature**: Implemented the `listTag` command. (PR [#102](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/102))
   * **What it does**: It allows users to view all the tags that have been used in the contact and task list.
   * **Justification**: When the contact and task lists get long, it can be difficult for the users to remember the tags that they have used. This feature allows users to quickly view all the tags that have been used so far, along with their frequencies.
 
@@ -46,10 +46,10 @@ Given below are my contributions to the project.
 * **Documentation**:
   * **User Guide**:
     * Added Admonitions to User Guide. (PR [#2](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/2))
-    * Added documentation for the `findPerson`, `findTask` and `listTags` commands. (PR [#70](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/70/), [#108](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/108))<br><br>
+    * Added documentation for the `findPerson`, `findTask` and `listTag` commands. (PR [#70](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/70/), [#108](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/108))<br><br>
   * **Developer Guide**:
     * Added Admonitions to Developer Guide. (PR [#54](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/54))
-    * Added user stories and use cases for `findPerson`, `findTask` and `listTags` commands. (PR [#54](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/54), [#121](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/121))
+    * Added user stories and use cases for `findPerson`, `findTask` and `listTag` commands. (PR [#54](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/54), [#121](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/121))
     * Added implementation details of `findTask` feature. (PR [#100](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/100/))
     * Updated existing Storage and Model class diagrams to include `Task` class. (PR [#121](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/121))
     * Converted existing PNG diagrams to SVG format for better readability. (PR [#121](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/121))<br><br>
