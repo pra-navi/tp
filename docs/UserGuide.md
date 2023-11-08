@@ -495,24 +495,32 @@ Adds a task to your task list.
 addTask T/TITLE n/NOTE [t/TAG]...
 ```
 
+<h4>Alias:</h4>
+
+```
+at
+```
+
+- Provide the title of the task using the `T/` prefix. This field is **mandatory**.
+- Provide the note of the task using the `n/` prefix. This field is **mandatory**.
+- Tag the task using the `t/` prefix. This field is **optional**.
+- You may add multiple tags to a task by specifying the `t/` prefix multiple times.
+
+<h4></h4>
+
 <h4>Examples:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
   - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.<br><br>
 
-  ![addTask_success](images/output/addTask_success1.png)<br><br>
-
-- `addTask T/Call Caterers n/For 292 people t/orientation`
-  - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`.<br><br>
-
-  ![addTask_success](images/output/addTask_success2.png)
+  ![addTask_success](images/output/addTask_success.png)<br><br>
 
 <h4>Potential Errors:</h4>
 
-- `addTask T/Book rooms`
-  - Negative example as the note is not specified.<br><br>
-
-  ![addTask_error](images/error/addTask_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the title and note are specified.
+`Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and note specified are not blank. Whitespaces at the start and end are trimmed.
 
 <div style="page-break-after: always;"></div>
 
@@ -1302,7 +1310,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**Add Task**](#21-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary` | `at`
+[**Add Task**](#21-adding-a-task-addtask) | `addTask T/TITLE n/NOTE [t/TAG]` | `addTask T/Get Flowers n/Wedding Anniversary` | `at`
 [**List All Task**](#22-listing-all-tasks-listtask) | `listTask` | `listTask` | `lt`
 [**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer` | `et`
 [**Find Task**](#24-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding` | `ft`
