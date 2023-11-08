@@ -94,7 +94,7 @@ Throughout this guide, you will see different text styles that are used to highl
    A GUI similar to the below screenshot should appear in a few seconds. Note how the app contains some sample data.<br><br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br><br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br><br>
 
    Some example commands you can try:
 
