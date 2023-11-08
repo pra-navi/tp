@@ -366,7 +366,7 @@ deletePerson INDEX
 <h4>Alias:</h4>
 
 ```
-dp INDEX
+dp
 ```
 
 - Deletes the person at the specified `INDEX`.
@@ -375,11 +375,6 @@ dp INDEX
 
 <h4>Examples:</h4>
 
-- `listPerson` followed by `deletePerson 2`
-  - Deletes the 2nd person in your contact list.<br><br>
-
-  ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)<br><br>
-
 - `findPerson Bernice` followed by `deletePerson 1`
   - Deletes the 1st person in the results of the `findPerson` command.<br><br>
 
@@ -387,15 +382,10 @@ dp INDEX
 
 <h4>Potential Errors:</h4>
 
-- `deletePerson`
-  - Negative example as no index is specified.<br><br>
-
-  ![deletePerson error_no_index](images/error/deletePerson_error.png)<br><br>
-
-- `deletePerson 1000`
-  - Invalid index is provided.<br><br>
-
-  ![deletePerson error_invalid_index](images/error/deletePerson_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index is specified.
+`The person index provided is invalid` | Ensure that the index provided is in range.
 
 <div style="page-break-after: always;"></div>
 
@@ -579,7 +569,7 @@ deleteTask INDEX
 <h4>Alias:</h4>
 
 ```
-dt INDEX
+dt
 ```
 
 - Deletes the task at the specified `INDEX`.
@@ -587,17 +577,17 @@ dt INDEX
 
 <h4>Examples:</h4>
 
-- `listTask` followed by `deleteTask 2`
-  - Deletes the 2nd task in your task list.<br><br>
-
-  ![deleteTask_success_with_listTask](images/output/deleteTask_success.png)<br><br>
-
 - `findTask caterer` followed by `deleteTask 1`
   - Deletes the 1st task in the results of the `findTask` command.<br><br>
 
   ![deleteTask_success_with_findTask](images/output/deleteTask_success_filteredList.png)
 
 <h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index is specified.
+`The task index provided is invalid` | Ensure that the index provided is in range.
 
 - `deleteTask`
   - Negative example as no index is specified.<br><br>
@@ -973,26 +963,11 @@ atagp INDEX [t/TAG]…
 
 <h4>Potential Errors:</h4>
 
-- `addTagPerson`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![addTagPerson error_noParameters](images/error/addTagPerson_error_noParameters.png)<br><br>
-
-- `addTagPerson 1`
-  - Negative example as no tag is specified.<br><br>
-
-  ![addTagPerson error_validIndex](images/error/addTagPerson_error_validIndex.png)<br><br>
-
-
-- `addTagPerson 1 t/`
-  - Negative example as no input is specified.<br><br>
-
-  ![addTagPerson error_noInput](images/error/addTagPerson_error_noInput.png)<br><br>
-
-- `addTagPerson 10 t/friends`
-  - Negative example as an invalid index is provided.<br><br>
-
-  ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index AND tag are both specified.
+`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
+`The person index provided is invalid` | Ensure that the index provided is in range.
 
 <div style="page-break-after: always;"></div>
 
@@ -1026,25 +1001,11 @@ atagt INDEX [t/TAG]…
 
 <h4>Potential Errors:</h4>
 
-- `addTagTask`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![addTagTask error_noParameters](images/error/addTagTask_error_noParameters.png)<br><br>
-
-- `addTagTask 1`
-  - Negative example as no tag is specified.<br><br>
-
-  ![addTagTask error_validIndex](images/error/addTagTask_error_validIndex.png)<br><br>
-
-- `addTagTask 1 t/`
-  - Negative example as no input is specified.<br><br>
-
-  ![addTagTask error_noInput](images/error/addTagTask_error_noInput.png)<br><br>
-
-- `addTagTask 3 t/day1`
-  - Negative example as an invalid index is provided.<br><br>
-
-  ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index AND tag are both specified.
+`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
+`The task index provided is invalid` | Ensure that the index provided is in range.
 
 <div style="page-break-after: always;"></div>
 
