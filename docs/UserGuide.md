@@ -557,30 +557,36 @@ You can edit the details of a task in your task list.
 editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the task list currently displayed.
+<h4>Alias:</h4>
+
+```
+et
+```
+
+- Edits the task at the specified `INDEX`. The index refers to the index number shown in the task list currently displayed. This field is **mandatory**.
 - Specify a new title with the `T/` prefix. This field is **optional**.
 - Specify a new note with the `n/` prefix. This field is **optional**.
 - Specify new tags with the `t/` prefix. This field is **optional**.
+  - You may add multiple tags to a task by specifying the `t/` prefix multiple times.
+  - Note that this will replace all existing tags of the task. If you wish to add to the existing tags of the task, use the [`addTagTask` command](#32-adding-tags-to-a-task-addtagtask) instead.
+  - Specifying `t/` without any tags will clear all existing tags of the task.
 - At least one of the optional fields must be provided for the command to be valid.
 
 <h4>Examples:</h4>
 
-- `editTask 1 T/Find Caterer`
-  - Edits the title of the 1st task to be `Find Caterer`.<br><br>
-
-  ![editTask_success](images/output/editTask_success1.png)<br><br>
-
 - `editTask 2 T/Book room n/By Friday t/orientation`
   - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.<br><br>
 
-  ![editTask_success](images/output/editTask_success2.png)
+  ![editTask_success](images/output/editTask_success.png)
 
-<h4>Potential Error:</h4>
+<h4>Potential Errors:</h4>
 
-- `editTask`
-  - Negative example as the index is not specified.<br><br>
-
-  ![editTask_error](images/error/editTask_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`At least one field to edit must be provided.` | Ensure that at least one of title, note, or tag is specified.
+`Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and/or note specified are not blank. Whitespaces at the start and end are trimmed.
+`This task already exists in the address book.` | Ensure that the new title and note specified do not match an existing task.
 
 <div style="page-break-after: always;"></div>
 
@@ -1313,7 +1319,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 --------|--------|---------|------
 [**Add Task**](#21-adding-a-task-addtask) | `addTask T/TITLE n/NOTE [t/TAG]` | `addTask T/Get Flowers n/Wedding Anniversary` | `at`
 [**List All Task**](#22-listing-all-tasks-listtask) | `listTask` | `listTask` | `lt`
-[**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer` | `et`
+[**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]` | `editTask 1 T/Call Caterer n/Wedding Dinner` | `et`
 [**Find Task**](#24-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding` | `ft`
 [**Delete Task**](#25-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1` | `dt`
 [**Delete All Task**](#26-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask` | `dat`
