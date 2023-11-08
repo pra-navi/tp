@@ -234,6 +234,15 @@ The lifeline for <code>EditTaskCommandParser</code> and <code>EditTaskCommand</c
 
 " %}
 
+The sequence diagrams below show the details of the respective reference frames.
+
+<img width=>
+
+![CreateEditTaskDescriptor](assets/svg/dg/SDCreateEditTaskDescriptor.svg)
+
+![CreateEditTaskCommandResult](assets/svg/dg/SDCreateEditTaskCommandResult.svg)
+
+
 #### Design considerations
 
 **Aspect: How to encapsulate edited fields:**
