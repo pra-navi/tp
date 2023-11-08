@@ -906,7 +906,89 @@ deleteAllDone
 
 ### 3. Commands to Manage Tags
 
-#### 3.1. Listing all tags: `listTag`
+#### 3.1. Adding tag(s) to a person: `addTagPerson`
+
+[Back to Table of Contents](#table-of-contents)
+
+Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
+
+<h4>Format:</h4>
+
+```
+addTagPerson INDEX [t/TAG]…
+```
+
+<h4>Alias:</h4>
+
+```
+atagp
+```
+
+- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
+  index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
+- At least one tag must be provided.
+- Existing list of tags will be updated after adding in the input tags.
+- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
+
+<h4>Examples:</h4>
+
+- `addTagPerson 1 t/friends t/expensive`
+  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
+
+  ![addTagPerson success](images/output/addTagPerson_success.png)
+
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specfiied as an integer.
+`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
+`The person index provided is invalid` | Ensure that the index provided is in range.
+
+<div style="page-break-after: always;"></div>
+
+#### 3.2. Adding tag(s) to a task: `addTagTask`
+
+[Back to Table of Contents](#table-of-contents)
+
+Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
+
+<h4>Format:</h4>
+
+```
+addTagTask INDEX [t/TAG]…
+```
+
+<h4>Alias:</h4>
+
+```
+atagt
+```
+
+- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
+- At least one tag must be provided.
+- Existing list of tags will be updated after adding in the input tags.
+- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
+
+<h4>Examples:</h4>
+
+- `addTagTask 1 t/day1 t/day2`
+  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.<br><br>
+
+  ![addTagTask success](images/output/addTagTask_success.png)
+
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specified as an integer.
+`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
+`The task index provided is invalid` | Ensure that the index provided is in range.
+
+<div style="page-break-after: always;"></div>
+
+
+#### 3.3. Listing all tags: `listTag`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -939,7 +1021,7 @@ listTag
 
 <div style="page-break-after: always;"></div>
 
-#### 3.2. Finding persons and tasks with any matching tag: `findTag`
+#### 3.4. Finding persons and tasks with any matching tag: `findTag`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -986,7 +1068,7 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
 <div style="page-break-after: always;"></div>
 
-#### 3.3. Finding persons and tasks with all matching tags: `findAllTag`
+#### 3.5. Finding persons and tasks with all matching tags: `findAllTag`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1029,87 +1111,6 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
   - An invalid command format. The application expects one or more keywords after `findAllTag`.<br><br>
 
   ![FindAllTag Example 2](images/error/findAllTag_error.png)
-
-<div style="page-break-after: always;"></div>
-
-#### 3.4. Adding tag(s) to a person: `addTagPerson`
-
-[Back to Table of Contents](#table-of-contents)
-
-Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
-
-<h4>Format:</h4>
-
-```
-addTagPerson INDEX [t/TAG]…
-```
-
-<h4>Alias:</h4>
-
-```
-atagp
-```
-
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
-  index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
-- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
-
-<h4>Examples:</h4>
-
-- `addTagPerson 1 t/friends t/expensive`
-  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
-
-  ![addTagPerson success](images/output/addTagPerson_success.png)
-
-<h4>Potential Errors:</h4>
-
- Error message | How to resolve
----------------|---------------
-`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specfiied as an integer.
-`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
-`The person index provided is invalid` | Ensure that the index provided is in range.
-
-<div style="page-break-after: always;"></div>
-
-#### 3.5. Adding tag(s) to a task: `addTagTask`
-
-[Back to Table of Contents](#table-of-contents)
-
-Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
-
-<h4>Format:</h4>
-
-```
-addTagTask INDEX [t/TAG]…
-```
-
-<h4>Alias:</h4>
-
-```
-atagt
-```
-
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
-- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
-
-<h4>Examples:</h4>
-
-- `addTagTask 1 t/day1 t/day2`
-  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.<br><br>
-
-  ![addTagTask success](images/output/addTagTask_success.png)
-
-<h4>Potential Errors:</h4>
-
- Error message | How to resolve
----------------|---------------
-`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specified as an integer.
-`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
-`The task index provided is invalid` | Ensure that the index provided is in range.
 
 <div style="page-break-after: always;"></div>
 
@@ -1321,11 +1322,11 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**List All Tags**](#31-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
-[**Find Tags**](#32-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
-[**Find All Tags**](#33-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation` | `fatag`
-[**Add Tag(s) to a Person**](#34-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
-[**Add Tag(s) to a Task**](#35-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
+[**Add Tag(s) to a Person**](#31-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
+[**Add Tag(s) to a Task**](#32-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
+[**List All Tags**](#33-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
+[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
+[**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation` | `fatag`
 [**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering` | `dtagp`
 [**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering` | `dtagt`
 
