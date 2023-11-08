@@ -66,7 +66,8 @@ The bulk of the app's work is done by the following four components:
 
 **How the architecture components interact with each other**
 
-The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
+The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user 
+issues the command `deletePerson 1`.
 
 <img src="assets/svg/dg/ArchitectureSequenceDiagram.svg" width="574" />
 
@@ -98,7 +99,7 @@ The `UI` component,
 * executes user commands using the `Logic` component.
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
-* depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
+* depends on some classes in the `Model` component, as it displays `Person` and `Task` object residing in the `Model`.
 
 <div style="page-break-after: always;"></div>
 
@@ -187,6 +188,40 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### Add Tag(s) To Person feature
+
+#### Implementation
+
+The `addTagPerson` command is designed to allow users to add tags to existing persons in CoordiMate. It takes in an index to specify which person to add the tags to. It then takes in one or more tags to add to the list of existing tags of the specified person.
+
+To get a visual representation of how the `addTagPerson` command operates, the sequence diagram below provides a detailed overview:
+
+![AddTagPersonSequenceDiagram](assets/svg/dg/AddTagPersonSequenceDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+The lifeline for <code>AddTagPersonCommandParser</code> and <code>AddTagPersonCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+" %}
+
+#### Design considerations
+
+**Aspect: Design and format of task display:**
+
+* **Alternative 1:** Simply present tasks using basic string output.
+  * Pros: Direct approach and simple to design and implement.
+  * Cons: Users are unsure which of their tag inputs are duplicates of current tag in existing list of tags for the 
+    specified person and which have been newly added due to their input. <br/><br/>
+
+* **Alternative 2 (current choice):** Present tasks using basic string output and indicates which of the input tags are 
+  duplicates of existing tags for the specified person and which have been newly added to the list of tags.
+  * Pros: Users are able to identify which of their tag inputs are duplicates of current tag in existing list of tags 
+    for the specified person and which have been newly added due to their input.
+  * Cons: More complex to design and implement. 
+  * Cons: Result output is longer and harder to read for users. <br/><br/>
+
+<div style="page-break-after: always;"></div>
 
 ### List Task feature
 
@@ -342,8 +377,8 @@ The sequence diagram below illustrates how the `deleteTask` command works for th
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>DeleteTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of
-PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeleteTaskCommandParser</code>  and <code>DeleteTaskCommand</code> should end at the destroy 
+marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
@@ -515,6 +550,8 @@ Priorities:
 | `* *` | event planner | delete all done tasks | ensure that my task list is not cluttered with completed tasks |
 | `* *` | event planner | list all the tags I have used | avoid creating duplicate categories |
 | `* *` | event planner | find a person and tasks by tag | quickly see the persons and tasks in a category |
+| `* *` | event planner | add tag(s) to a person | can just add tag(s) to the existing list of tags of the indexed person |
+| `* *` | event planner | add tag(s) to a task | can just add tag(s) to the existing list of tags of the indexed task |
 
 <div style="page-break-after: always;"></div>
 
@@ -642,21 +679,34 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC07 - Add tags to a person**
+**Use case: UC07 - Add tag to a person in the contact list**
 
 **MSS**
 
-1. TODO
+1. User requests to list all persons.
+2. CoordiMate shows a list of persons.
+3. User requests to add tag(s) to a specific person in the list by index.
+4. CoordiMate edits the person to include the specified tag(s).
 
    Use case ends.
 
 **Extensions**
 
-* 1a. TODO
+* 2a. The contact list is empty.
 
-  * 1a1. TODO
+  Use case ends.
 
-      Use case ends.
+* 3a. The given index is invalid.
+
+  * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+
+    Use case resumes from step 3.
+
+* 3b. The given tag(s) are invalid.
+
+  * 3b1. CoordiMate shows an error message and prompts the user to enter valid tag(s).
+
+    Use case resumes from step 3.
 
 ---
 
@@ -890,21 +940,34 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC19 - Add tags to a task**
+**Use case: UC19 - Add tag to a task in the task list**
 
 **MSS**
 
-1. TODO
+1. User requests to list all tasks.
+2. CoordiMate shows a list of tasks.
+3. User requests to add tag(s) to a specific task in the list by index.
+4. CoordiMate edits the task to include the specified tag(s).
 
    Use case ends.
 
 **Extensions**
 
-* 1a. TODO
+* 2a. The task list is empty.
 
-  * 1a1. TODO
+   Use case ends.
 
-      Use case ends.
+* 3a. The given index is invalid.
+
+  * 3a1. CoordiMate shows an error message and prompts the user to enter a valid index.
+
+      Use case resumes from step 3.
+
+* 3b. The given tag(s) are invalid.
+
+  * 3b1. CoordiMate shows an error message and prompts the user to enter valid tag(s).
+
+      Use case resumes from step 3.
 
 ---
 
@@ -1210,6 +1273,36 @@ testers are expected to do more <i>exploratory testing</i>.
    3. Other incorrect find commands to try: `findPerson`<br>
       Expected: No command is executed. An error message is shown.
 
+### Adding tag(s) to a person
+
+1. Adding a tag to a person with multiple tags
+
+   1. Prerequisites: List all persons using the `listPerson` command. Multiple persons in the list.
+
+   2. Test case: `addTagPerson 1 t/caterer`<br>
+      Expected: Tag is added to the first person in the list. Details of the person shown in the result display.
+
+   3. Test case: `addTagPerson 1 t/caterer` followed by `addTagPerson 1 t/caterer t/summer`<br>
+      Expected: Tag is added to the first person in the list. When the second command is run, `summer` is added to
+      the first person in the list but `caterer` is not added as a duplicate. Instead `caterer` is returned to the
+      result display to already exist for the first person.
+
+   4. Other incorrect addTagPerson commands to try: `addTagPerson`, `addTagPerson 1`, `addTagPerson 1 t/`,
+      `addTagPerson x t/caterer` (where x is larger than the list size), `addTagPerson y t/caterer` (where y is less than or equal to 0)<br>
+      Expected: No tag is added to the first person in the list. An error message is shown.
+
+### Deleting a Task
+
+1. Deleting a task while all tasks are being shown
+
+   1. Prerequisites: List all tasks using the `listTask` command. Multiple tasks in the list.
+
+   2. Test case: `deleteTask 1`<br>
+      Expected: The first task is deleted from the task list.
+
+   3. Other incorrect delete commands to try: `deleteTask`, `deleteTask x` (where x is a positive integer larger than the task list size), `deleteTask y` (where y is less than or equal to 0) <br>
+      Expected: No task is deleted. An error message is shown.
+
 ### Marking/Unmarking a Task as done
 
 1. Marking a task as done
@@ -1231,6 +1324,24 @@ testers are expected to do more <i>exploratory testing</i>.
 
    3. Other incorrect unmark commands to try: `unmarkTask`, `unmarkTask x` (where x is a positive integer larger than the task list size), `unmarkTask y` (where y is less than or equal to 0) <br>
       Expected: No task is marked as not done. An error message is shown.
+
+### Adding tag(s) to a task
+
+1. Adding a tag to a task with multiple tags
+
+   1. Prerequisites: List all tasks using the `listTask` command. Multiple tasks in the list.
+
+   2. Test case: `addTagTask 1 t/finance`<br>
+      Expected: Tag is added to the first task in the list. Details of the task shown in the result display.
+
+   3. Test case: `addTagTask 1 t/finance` followed by `addTagTask 1 t/finance t/class`<br>
+      Expected: Tag is added to the first task in the list. When the second command is run, `class` is added to
+      the first task in the list but `finance` is not added as a duplicate. Instead `finance` is returned to the
+      result display to already exist for the first task.
+
+   4. Other incorrect addTagTask commands to try: `addTagTask`, `addTagTask 1`, `addTagTask 1 t/`, 
+      `addTagTask x t/finance` (where x is larger than the list size), `addTagTask y t/finance` (where y is less than or equal to 0)<br>
+      Expected: No tag is added to the first task in the list. An error message is shown.
 
 ### Saving/Loading data from data file
 
