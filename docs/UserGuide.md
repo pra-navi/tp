@@ -81,6 +81,8 @@ Throughout this guide, you will see different text styles that are used to highl
 
 ## Quick Start
 
+[Back to Table of Contents](#table-of-contents)
+
 1. Ensure you have Java `11` or above installed in your computer.
 
 2. Download the latest `CoordiMate.jar` from [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/releases).
@@ -120,7 +122,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
 ## Features
 
-[Back to Top](#table-of-contents)
+[Back to Table of Contents](#table-of-contents)
 
 1. **Easy Management of People**:
   - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
@@ -146,6 +148,8 @@ Always make a backup before you edit!
 <div style="page-break-after: always;"></div>
 
 ## Usage
+
+[Back to Table of Contents](#table-of-contents)
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -195,7 +199,11 @@ If you are using a PDF version of this document, be careful when copying and pas
 
 " %}
 
+<div style="page-break-after: always;"></div>
+
 ### Command Aliases
+
+[Back to Table of Contents](#table-of-contents)
 
 CoordiMate supports predefined aliases for commands, so that you can get things done faster!<br>
 
@@ -245,6 +253,8 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 #### 1. Adding a person: `addPerson`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can add new individuals to your list such as clients, vendors, or friends.
 
 <h4>Format:</h4>
@@ -282,6 +292,8 @@ A person can have any number of tags (including 0).
 
 #### 2. Listing all persons: `listPerson`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can view details of all your contacts.
 
 <h4>Format:</h4>
@@ -299,6 +311,8 @@ listPerson
 <div style="page-break-after: always;"></div>
 
 #### 3. Editing a person: `editPerson`
+
+[Back to Table of Contents](#table-of-contents)
 
 Enables you to change the details or particulars of an existing contact in your contact list.
 
@@ -347,6 +361,8 @@ editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 
 #### 4. Finding a specific person: `findPerson`
 
+[Back to Table of Contents](#table-of-contents)
+
 Allows you to quickly find a specific person's details by their name.
 
 {% include admonition.html type="note" title="Note" body="
@@ -393,6 +409,8 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 
 #### 1.5 Deleting a person entry: `deletePerson`
 
+[Back to Table of Contents](#table-of-contents)
+
 Allows you to remove an outdated person from your contact list with ease.
 
 {% include admonition.html type="danger" title="Danger" body="
@@ -435,6 +453,8 @@ dp
 
 #### 6. Clearing all person entries: `deleteAllPerson`
 
+[Back to Table of Contents](#table-of-contents)
+
 Clears **all** contacts in your contact list.
 
 {% include admonition.html type="danger" title="Danger" body="
@@ -463,6 +483,8 @@ deleteAllPerson
 ### 2. Commands to Manage Tasks
 
 #### 7. Adding a task: `addTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 Adds a task to your task list.
 
@@ -495,6 +517,8 @@ addTask T/TITLE n/NOTE [t/TAG]...
 
 #### 8. Listing all tasks: `listTask`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can view details of all your tasks.
 
 <h4>Format:</h4>
@@ -512,6 +536,8 @@ listTask
 <div style="page-break-after: always;"></div>
 
 #### 9. Editing a task: `editTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can edit the details of a task in your task list.
 
@@ -549,6 +575,8 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 <div style="page-break-after: always;"></div>
 
 #### 10. Finding a specific task: `findTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can quickly locate tasks that contains your specified keywords in their title and/or note.
 
@@ -595,6 +623,8 @@ findTask KEYWORD [MORE_KEYWORDS]…
 <div style="page-break-after: always;"></div>
 
 #### 2.5 Deleting a task entry: `deleteTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 Allows you to remove a task from your task list with ease.
 
@@ -648,6 +678,8 @@ dt
 
 #### 12. Clearing all task entries: `deleteAllTask`
 
+[Back to Table of Contents](#table-of-contents)
+
 Allows you to remove **all** entries from your task list.
 
 {% include admonition.html type="danger" title="Danger" body="
@@ -672,6 +704,8 @@ deleteAllTask
 <div style="page-break-after: always;"></div>
 
 #### 13. Marking a task as done: `markTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 Allows you to indicate that a specific task as **completed**.
 
@@ -717,6 +751,8 @@ Tasks are marked as not done by default.
 <div style="page-break-after: always;"></div>
 
 #### 14. Marking a task as not done: `unmarkTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 Allows you to indicate that a specific task as **not completed**.
 
@@ -764,6 +800,8 @@ Tasks are marked as not done by default.
 
 #### 15. Finding all tasks that are done: `findDone`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or track completed items with ease.
 
 {% include admonition.html type="note" title="Note" body="
@@ -795,6 +833,8 @@ findDone
 
 #### 16. Finding all tasks that are not done: `findNotDone`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively.
 
 {% include admonition.html type="note" title="Note" body="
@@ -825,6 +865,8 @@ findNotDone
 <div style="page-break-after: always;"></div>
 
 #### 17. Deleting all tasks that are done: `deleteAllDone`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can easily clean up your task list by deleting all completed tasks, allowing you maintain an organized and clutter-free task management system.
 
@@ -862,6 +904,8 @@ deleteAllDone
 
 #### 18. Listing all tags: `listTag`
 
+[Back to Table of Contents](#table-of-contents)
+
 Provides you with a complete list of tags you have used in your contact list and task list, and the number of times each tag has been used.
 
 The list is sorted by frequency of each tag in descending order.
@@ -892,6 +936,8 @@ listTag
 <div style="page-break-after: always;"></div>
 
 #### 19. Finding persons and tasks with any matching tag: `findTag`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can search for persons and tasks using any keywords that match their tags.
 
@@ -937,6 +983,8 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
 #### 20. Finding persons and tasks with all matching tags: `findAllTag`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can search for persons and tasks using all keywords that match their tags.
 
 {% include admonition.html type="note" title="Note" body="
@@ -980,6 +1028,8 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 
 #### 3.4 Adding tag(s) to a person: `addTagPerson`
 
+[Back to Table of Contents](#table-of-contents)
+
 Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
 
 <h4>Format:</h4>
@@ -1019,6 +1069,8 @@ atagp
 
 #### 3.5 Adding tag(s) to a task: `addTagTask`
 
+[Back to Table of Contents](#table-of-contents)
+
 Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
 
 <h4>Format:</h4>
@@ -1057,6 +1109,8 @@ atagt
 
 #### 23. Deleting tag(s) from a person: `deleteTagPerson`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can remove tag(s) from a person in your contact list.
 
 <h4>Format:</h4>
@@ -1079,6 +1133,8 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 <div style="page-break-after: always;"></div>
 
 #### 24. Deleting tag(s) from a task: `deleteTagTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can remove tag(s) from a task in your task list.
 
@@ -1107,6 +1163,8 @@ deleteTagTask INDEX t/TAG [t/MORE TAGS]…
 
 #### 25. Viewing help: `help`
 
+[Back to Table of Contents](#table-of-contents)
+
 You can view a link to access the user guide at any time, ensuring that you will never be lost.
 
 <h4>Format:</h4>
@@ -1125,6 +1183,8 @@ help
 <div style="page-break-after: always;"></div>
 
 #### 26. Listing all persons and tasks: `listAll`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can list all persons and tasks in your contact list and task list at the same time.
 
@@ -1150,6 +1210,8 @@ listAll
 
 #### 27. Exiting the program: `exit`
 
+[Back to Table of Contents](#table-of-contents)
+
 Once you are done with your work in CoordiMate, you can exit the program by typing a command.
 
 <h4>Format:</h4>
@@ -1169,6 +1231,8 @@ exit
 <div style="page-break-after: always;"></div>
 
 ## FAQ
+
+[Back to Table of Contents](#table-of-contents)
 
 {% include admonition.html type="question" title="How do I backup/restore my data?" body="
 
@@ -1192,6 +1256,8 @@ To restore from a backup data file:<br>
 
 ## Known Issues
 
+[Back to Table of Contents](#table-of-contents)
+
 {% include admonition.html type="bug" title="CoordiMate does not open on the correct screen." body="
 
 CoordiMate remembers the last screen it was on when it was closed. If that screen is no longer available when CoordiMate is opened, you will not be able to see the application window. <br><br>
@@ -1210,6 +1276,8 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
 ### Managing Persons
 
+[Back to Table of Contents](#table-of-contents)
+
  Action | Format | Example | Alias
 --------|--------|---------|------
 [**Add Person**](#1-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` | `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` |
@@ -1219,7 +1287,11 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Delete Person**](#1.5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1` | `dp`
 [**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` |
 
+<div style="page-break-after: always;"></div>
+
 ### Managing Tasks
+
+[Back to Table of Contents](#table-of-contents)
 
  Action | Format | Example | Alias
 --------|--------|---------|------
@@ -1235,7 +1307,11 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Find Not Done Task**](#16-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
 [**Delete All Done Task**](#17-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
 
+<div style="page-break-after: always;"></div>
+
 ### Managing Tags
+
+[Back to Table of Contents](#table-of-contents)
 
  Action | Format | Example | Alias
 --------|--------|---------|------
@@ -1247,7 +1323,11 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
 [**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
+<div style="page-break-after: always;"></div>
+
 ### General
+
+[Back to Table of Contents](#table-of-contents)
 
  Action | Format | Example
 --------|--------|---------
