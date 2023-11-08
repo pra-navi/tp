@@ -251,7 +251,7 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 ### 1. Commands to Manage Persons
 
-#### 1. Adding a person: `addPerson`
+#### 1.1. Adding a person: `addPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -290,7 +290,7 @@ A person can have any number of tags (including 0).
 
 <div style="page-break-after: always;"></div>
 
-#### 2. Listing all persons: `listPerson`
+#### 1.2. Listing all persons: `listPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -310,7 +310,7 @@ listPerson
 
 <div style="page-break-after: always;"></div>
 
-#### 3. Editing a person: `editPerson`
+#### 1.3. Editing a person: `editPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -359,7 +359,7 @@ editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 
 <div style="page-break-after: always;"></div>
 
-#### 4. Finding a specific person: `findPerson`
+#### 1.4. Finding a specific person: `findPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -407,7 +407,7 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 
 <div style="page-break-after: always;"></div>
 
-#### 1.5 Deleting a person entry: `deletePerson`
+#### 1.5. Deleting a person entry: `deletePerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -451,7 +451,7 @@ dp
 
 <div style="page-break-after: always;"></div>
 
-#### 6. Clearing all person entries: `deleteAllPerson`
+#### 1.6. Clearing all person entries: `deleteAllPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -482,7 +482,7 @@ deleteAllPerson
 
 ### 2. Commands to Manage Tasks
 
-#### 7. Adding a task: `addTask`
+#### 2.1. Adding a task: `addTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -515,7 +515,7 @@ addTask T/TITLE n/NOTE [t/TAG]...
 
 <div style="page-break-after: always;"></div>
 
-#### 8. Listing all tasks: `listTask`
+#### 2.2. Listing all tasks: `listTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -535,7 +535,7 @@ listTask
 
 <div style="page-break-after: always;"></div>
 
-#### 9. Editing a task: `editTask`
+#### 2.3. Editing a task: `editTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -574,7 +574,7 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
 
 <div style="page-break-after: always;"></div>
 
-#### 10. Finding a specific task: `findTask`
+#### 2.4. Finding a specific task: `findTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -676,7 +676,7 @@ dt
 
 <div style="page-break-after: always;"></div>
 
-#### 12. Clearing all task entries: `deleteAllTask`
+#### 2.6. Clearing all task entries: `deleteAllTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -703,7 +703,7 @@ deleteAllTask
 
 <div style="page-break-after: always;"></div>
 
-#### 13. Marking a task as done: `markTask`
+#### 2.7. Marking a task as done: `markTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -750,7 +750,7 @@ Tasks are marked as not done by default.
 
 <div style="page-break-after: always;"></div>
 
-#### 14. Marking a task as not done: `unmarkTask`
+#### 2.8. Marking a task as not done: `unmarkTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -798,7 +798,7 @@ Tasks are marked as not done by default.
 
 <div style="page-break-after: always;"></div>
 
-#### 15. Finding all tasks that are done: `findDone`
+#### 2.9. Finding all tasks that are done: `findDone`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -831,7 +831,7 @@ findDone
 
 <div style="page-break-after: always;"></div>
 
-#### 16. Finding all tasks that are not done: `findNotDone`
+#### 2.10. Finding all tasks that are not done: `findNotDone`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -864,7 +864,7 @@ findNotDone
 
 <div style="page-break-after: always;"></div>
 
-#### 17. Deleting all tasks that are done: `deleteAllDone`
+#### 2.11. Deleting all tasks that are done: `deleteAllDone`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -902,7 +902,7 @@ deleteAllDone
 
 ### 3. Commands to Manage Tags
 
-#### 18. Listing all tags: `listTag`
+#### 3.1. Listing all tags: `listTag`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -935,7 +935,7 @@ listTag
 
 <div style="page-break-after: always;"></div>
 
-#### 19. Finding persons and tasks with any matching tag: `findTag`
+#### 3.2. Finding persons and tasks with any matching tag: `findTag`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -981,7 +981,7 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
 <div style="page-break-after: always;"></div>
 
-#### 20. Finding persons and tasks with all matching tags: `findAllTag`
+#### 3.3. Finding persons and tasks with all matching tags: `findAllTag`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1026,7 +1026,7 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 
 <div style="page-break-after: always;"></div>
 
-#### 3.4 Adding tag(s) to a person: `addTagPerson`
+#### 3.4. Adding tag(s) to a person: `addTagPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1044,7 +1044,7 @@ addTagPerson INDEX [t/TAG]…
 atagp
 ```
 
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The 
+- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
   index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 - At least one tag must be provided.
 - Existing list of tags will be updated after adding in the input tags.
@@ -1067,7 +1067,7 @@ atagp
 
 <div style="page-break-after: always;"></div>
 
-#### 3.5 Adding tag(s) to a task: `addTagTask`
+#### 3.5. Adding tag(s) to a task: `addTagTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1107,7 +1107,7 @@ atagt
 
 <div style="page-break-after: always;"></div>
 
-#### 23. Deleting tag(s) from a person: `deleteTagPerson`
+#### 3.6. Deleting tag(s) from a person: `deleteTagPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1132,7 +1132,7 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 
 <div style="page-break-after: always;"></div>
 
-#### 24. Deleting tag(s) from a task: `deleteTagTask`
+#### 3.7. Deleting tag(s) from a task: `deleteTagTask`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1159,9 +1159,9 @@ deleteTagTask INDEX t/TAG [t/MORE TAGS]…
 
 <div style="page-break-after: always;"></div>
 
-### General Commands
+### 4. General Commands
 
-#### 25. Viewing help: `help`
+#### 4.1. Viewing help: `help`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1182,7 +1182,7 @@ help
 
 <div style="page-break-after: always;"></div>
 
-#### 26. Listing all persons and tasks: `listAll`
+#### 4.2. Listing all persons and tasks: `listAll`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1208,7 +1208,7 @@ listAll
 
 <div style="page-break-after: always;"></div>
 
-#### 27. Exiting the program: `exit`
+#### 4.3. Exiting the program: `exit`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1280,12 +1280,12 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**Add Person**](#1-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` | `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` |
-[**List All Person**](#2-listing-all-persons-listperson) | `listPerson` | `listPerson` |
-[**Edit Person**](#3-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com` |
-[**Find Person**](#4-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John` |
-[**Delete Person**](#1.5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1` | `dp`
-[**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` |
+[**Add Person**](#11-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` | `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` |
+[**List All Person**](#12-listing-all-persons-listperson) | `listPerson` | `listPerson` |
+[**Edit Person**](#13-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com` |
+[**Find Person**](#14-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John` |
+[**Delete Person**](#15-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1` | `dp`
+[**Delete All Person**](#16-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` |
 
 <div style="page-break-after: always;"></div>
 
@@ -1295,17 +1295,17 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**Add Task**](#7-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
-[**List All Task**](#8-listing-all-tasks-listtask) | `listTask` | `listTask`
-[**Edit Task**](#9-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
-[**Find Task**](#10-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
-[**Delete Task**](#2.5-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1` | `dt`
-[**Delete All Task**](#12-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
-[**Mark Task**](#13-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
-[**Unmark Task**](#14-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
-[**Find Done Task**](#15-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
-[**Find Not Done Task**](#16-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
-[**Delete All Done Task**](#17-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
+[**Add Task**](#21-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
+[**List All Task**](#22-listing-all-tasks-listtask) | `listTask` | `listTask`
+[**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
+[**Find Task**](#24-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
+[**Delete Task**](#25-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1` | `dt`
+[**Delete All Task**](#26-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
+[**Mark Task**](#27-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
+[**Unmark Task**](#28-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
+[**Find Done Task**](#29-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
+[**Find Not Done Task**](#210-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
+[**Delete All Done Task**](#211-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
 
 <div style="page-break-after: always;"></div>
 
@@ -1315,13 +1315,13 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Find Tags**](#19-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
-[**Find All Tags**](#20-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
-[**Add Tag(s) to a Person**](#3.4-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
-[**Add Tag(s) to a Task**](#3.5-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
-[**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
-[**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
+[**List All Tags**](#31-listing-all-tags-listtag) | `listTag` | `listTag`
+[**Find Tags**](#32-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
+[**Find All Tags**](#33-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
+[**Add Tag(s) to a Person**](#34-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
+[**Add Tag(s) to a Task**](#35-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
+[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
+[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
 
 <div style="page-break-after: always;"></div>
 
@@ -1331,6 +1331,6 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example
 --------|--------|---------
-[**View Help**](#25-viewing-help-help) | `help` | `help`
-[**List All Person and Task**](#26-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
-[**Exit**](#27-exiting-the-program-exit) | `exit` | `exit`
+[**View Help**](#41-viewing-help-help) | `help` | `help`
+[**List All Person and Task**](#42-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
+[**Exit**](#43-exiting-the-program-exit) | `exit` | `exit`
