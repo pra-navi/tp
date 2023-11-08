@@ -397,7 +397,7 @@ Allows you to remove an outdated person from your contact list with ease.
 
 {% include admonition.html type="danger" title="Danger" body="
 
-This action is irreversible.
+The person will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
 
 " %}
 
@@ -439,7 +439,7 @@ Clears **all** contacts in your contact list.
 
 {% include admonition.html type="danger" title="Danger" body="
 
-This action is irreversible.
+<b>All</b> persons will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
 
 " %}
 
@@ -600,7 +600,7 @@ Allows you to remove a task from your task list with ease.
 
 {% include admonition.html type="danger" title="Danger" body="
 
-This action is irreversible.
+The task will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
 
 " %}
 
@@ -652,7 +652,7 @@ Allows you to remove **all** entries from your task list.
 
 {% include admonition.html type="danger" title="Danger" body="
 
-This action is irreversible.
+<b>All</b> tasks will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
 
 " %}
 
@@ -830,7 +830,7 @@ You can easily clean up your task list by deleting all completed tasks, allowing
 
 {% include admonition.html type="danger" title="Danger" body="
 
-This action is irreversible.
+<b>All</b> completed tasks will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
 
 " %}
 
@@ -1170,10 +1170,17 @@ exit
 
 ## FAQ
 
-{% include admonition.html type="question" title="How do I transfer my data to another computer?" body="
+{% include admonition.html type="question" title="How do I backup/restore my data?" body="
 
-1. Locate the save file at <code>[CoordiMate JAR file location]/data/addressbook.json</code> on your current computer. <br>
-2. Copy the save file to the same location on your new computer.
+To make a backup:<br>
+
+1. Locate the data file at <code>[CoordiMate JAR file location]/data/addressbook.json</code> on your current computer. <br>
+2. Copy the data file to a safe location.<br><br>
+
+To restore from a backup data file:<br>
+
+1. Copy the data file to <code>[CoordiMate JAR file location]/data/addressbook.json</code>.<br>
+2. Launch CoordiMate, and your data will be automatically imported.
 
 " %}
 
