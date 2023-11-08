@@ -742,7 +742,7 @@ dat
 
 [Back to Table of Contents](#table-of-contents)
 
-Allows you to indicate that a specific task as **completed**.
+You can indicate that a specific task as **completed**, updating that the task has been successfully completed or resolved.
 
 <h4>Format:</h4>
 
@@ -786,7 +786,7 @@ Tasks are marked as not done by default.
 
 [Back to Table of Contents](#table-of-contents)
 
-Allows you to indicate that a specific task as **not completed**.
+You can indicate that a specific task as **not completed**, updating that the task remains open and pending further action or completion.
 
 <h4>Format:</h4>
 
@@ -846,17 +846,18 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 findDone
 ```
 
+<h4>Alias:</h4>
+
+```
+fd
+```
+
 <h4>Examples:</h4>
 
 - `findDone`
   - Tasks are displayed as they are marked as done.<br><br>
 
   ![findDone_success](images/output/findDone_success.png)<br><br>
-
-- `findDone`
-  - There are no tasks to be displayed, as no Task is done.<br><br>
-
-  ![findDone_noResults](images/output/findDone_noResults.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -880,17 +881,18 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 findNotDone
 ```
 
+<h4>Alias:</h4>
+
+```
+fnd
+```
+
 <h4>Examples:</h4>
 
 - `findNotDone`
   - Tasks are displayed as they are marked as not done.<br><br>
 
   ![findNotDone_success](images/output/findNotDone_success.png)<br><br>
-
-- `findNotDone`
-  - There are no tasks to be displayed, as no Task is not done.<br><br>
-
-  ![findNotDone_noResults](images/output/findNotDone_noResults.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -912,6 +914,12 @@ You can easily clean up your task list by deleting all completed tasks, allowing
 deleteAllDone
 ```
 
+<h4>Alias:</h4>
+
+```
+dad
+```
+
 <h4>Examples:</h4>
 
 - `deleteAllDone`
@@ -921,10 +929,9 @@ deleteAllDone
 
 <h4>Potential Errors:</h4>
 
-- `deleteAllDone`
-  - There are no tasks found that are marked as done.<br><br>
-
-  ![deleteAllDone_error](images/error/deleteAllDone_error.png)<br><br>
+ Error message | How to resolve
+---------------|---------------
+`No Done tasks found in task list` | Ensure that there are tasks marked as done in your task list with [`findDone` command](#29-finding-all-tasks-that-are-done-finddone).
 
 ---
 
