@@ -256,6 +256,24 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 <div style="page-break-after: always;"></div>
 
+### Understanding Our UI
+
+[Back to Table of Contents](#table-of-contents)
+
+![Ui](images/Ui_explanation.png)
+
+1. Menu Bar: Access to features File and Help
+2. Command Line: Type your commands here. 
+3. Command Result: View command results or error messages through here. 
+4. Contact List: View and manage contacts here. 
+5. Task List: View and organize tasks here. 
+6. Data Storage: This is where user data is saved.
+
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ### 1. Commands to Manage Persons
 
 #### 1.1. Adding a person: `addPerson`
