@@ -368,7 +368,8 @@ Allows you to quickly find a specific person's details by their name.
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all persons that do not match the search criteria. <br>
-To reset the Persons view, simply run the <code>listPerson</code> command to list all persons.
+(i.e. If no persons match the search criteria, the list will be empty.)<br><br>
+To reset the persons view, simply run the <code>listPerson</code> command to list all persons.
 
 " %}
 
@@ -376,6 +377,12 @@ To reset the Persons view, simply run the <code>listPerson</code> command to lis
 
 ```
 findPerson KEYWORD [MORE_KEYWORDS]…
+```
+
+<h4>Alias:</h4>
+
+```
+fp
 ```
 
 - At least one keyword is required to search.
@@ -386,24 +393,18 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 - Persons matching at least one keyword will be returned (i.e. `OR` search).
   - e.g. `Hans Bo` will match `Hans Gruber`, `Bo Yang`.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findPerson alex yu`
   - Finds all persons whose names contains either `alex` or `yu`.<br><br>
 
   ![findPerson success with a list](images/output/findPerson_success.png)<br><br>
 
-- `findPerson David`
-  - No results are displayed as no person has a name that contains `David`.<br><br>
-
-  ![findPerson success with zero results](images/output/findPerson_noResults.png)
-
 <h4>Potential Error:</h4>
 
-- `findPerson`
-  - Negative example as no keywords are specified.<br><br>
-
-  ![findPerson error](images/error/findPerson_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
@@ -582,8 +583,9 @@ You can quickly locate tasks that contains your specified keywords in their titl
 
 {% include admonition.html type="note" title="Note" body="
 
-This command hides all Tasks that do not match the search criteria. <br>
-To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
+This command hides all tasks that do not match the search criteria. <br>
+(i.e. If no tasks match the search criteria, the list will be empty.)<br><br>
+To reset the tasks view, simply run the <code>listTask</code> command to list all tasks.
 
 " %}
 
@@ -591,6 +593,12 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 ```
 findTask KEYWORD [MORE_KEYWORDS]…
+```
+
+<h4>Alias:</h4>
+
+```
+ft
 ```
 
 - At least one keyword is required to search.
@@ -601,24 +609,18 @@ findTask KEYWORD [MORE_KEYWORDS]…
 - Tasks matching at least one keyword in either the title or the note will be returned (i.e. `OR` search).
   - e.g. `Budget Venue` will match `Find Venue`, `Create Budget`.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findTask Find Finale`
   - Finds tasks with titles or notes containing either `Find` or `Finale`.<br><br>
 
   ![findTask_success](images/output/findTask_success.png)<br><br>
 
-- `findTask Photography`
-  - No results are displayed as no task has a title or note that contains `Photography`.<br><br>
-
-  ![findTask_noResults](images/output/findTask_noResults.png)
-
 <h4>Potential Error:</h4>
 
-- `findTask`
-  - Negative example as no keywords are specified.<br><br>
-
-  ![findTask_error](images/error/findTask_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
@@ -807,6 +809,7 @@ You can filter the task list to find all the completed tasks, allowing you to re
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all Tasks that are not done. <br>
+(i.e. If no Tasks are done, the list will be empty.)<br><br>
 To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
 
 " %}
@@ -839,7 +842,8 @@ You can filter the task list to find all the not completed tasks, allowing you t
 
 {% include admonition.html type="note" title="Note" body="
 
-This command hides all Tasks that are not done. <br>
+This command hides all Tasks that are done. <br>
+(i.e. If no Tasks are not done, the list will be empty.)<br><br>
 To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
 
 " %}
@@ -944,6 +948,7 @@ You can search for persons and tasks using any keywords that match their tags.
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all persons and tasks that do not match the search criteria. <br>
+(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
 To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
 
 " %}
@@ -990,6 +995,7 @@ You can search for persons and tasks using all keywords that match their tags.
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all persons and tasks that do not match the search criteria. <br>
+(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
 To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
 
 " %}
