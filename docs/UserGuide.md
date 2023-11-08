@@ -505,6 +505,7 @@ at
 - Provide the note of the task using the `n/` prefix. This field is **mandatory**.
 - Tag the task using the `t/` prefix. This field is **optional**.
 - You may add multiple tags to a task by specifying the `t/` prefix multiple times.
+- A task is identified by the combination of its title and note. This means that you cannot have two tasks with the same title and note.
 
 <h4></h4>
 
