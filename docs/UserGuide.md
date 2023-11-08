@@ -470,6 +470,12 @@ Clears **all** contacts in your contact list.
 deleteAllPerson
 ```
 
+<h4>Alias:</h4>
+
+```
+dap
+```
+
 <h4>Example:</h4>
 
 - `deleteAllPerson`
