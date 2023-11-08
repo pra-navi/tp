@@ -962,6 +962,7 @@ atagp INDEX [t/TAG]…
 - Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
 - At least one tag must be provided.
 - Existing list of tags will be updated after adding in the input tags.
+- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
 
 <h4>Examples:</h4>
 
@@ -1014,6 +1015,7 @@ atagt INDEX [t/TAG]…
 - Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, …
 - At least one tag must be provided.
 - Existing list of tags will be updated after adding in the input tags.
+- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
 
 <h4>Examples:</h4>
 
