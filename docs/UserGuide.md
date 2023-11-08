@@ -953,6 +953,8 @@ deleteAllDone
 dad
 ```
 
+- After completing the deletion of completed tasks, the task list will automatically revert back to displaying all tasks, ensuring you have a comprehensive overview of your remaining to-dos.
+
 <h4>Examples:</h4>
 
 - `deleteAllDone`
