@@ -1201,6 +1201,12 @@ You can view a link to access the user guide at any time, ensuring that you will
 help
 ```
 
+<h4>Alias:</h4>
+
+```
+h
+```
+
 <h4>Example:</h4>
 
 - `help`
