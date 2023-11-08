@@ -354,7 +354,7 @@ ep
 ---------------|---------------
 `Invalid command format!...` | Ensure that the index is correctly specified as an integer.
 `At least one field to edit must be provided.` | Ensure that at least one of name, phone, email, address or tag is specified.
-`The person index provided is invalid` | Ensure that the index provided is in range.
+`The person index provided is invalid` | Ensure that the index provided is within the valid range.
 `Names should only contain alphanumeric characters and spaces, and it should not be blank` | Ensure that the name specified is not blank and contain only alphanumeric characters. Whitespaces at the start and end are trimmed.
 `Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
 `Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
@@ -452,7 +452,7 @@ dp
  Error message | How to resolve
 ---------------|---------------
 `Invalid command format!...` | Ensure that the index is correctly specified as an integer.
-`The person index provided is invalid` | Ensure that the index provided is in range.
+`The person index provided is invalid` | Ensure that the index provided is within the valid range.
 
 <div style="page-break-after: always;"></div>
 
@@ -691,7 +691,7 @@ dt
  Error message | How to resolve
 ---------------|---------------
 `Invalid command format!...` | Ensure that the index is correctly specified as an integer.
-`The task index provided is invalid` | Ensure that the index provided is in range.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
 
 - `deleteTask`
   - Negative example as no index is specified.<br><br>
@@ -723,6 +723,12 @@ Allows you to remove **all** entries from your task list.
 deleteAllTask
 ```
 
+<h4>Alias:</h4>
+
+```
+dat
+```
+
 <h4>Example:</h4>
 
 - `deleteAllTask`
@@ -744,9 +750,14 @@ Allows you to indicate that a specific task as **completed**.
 markTask INDEX
 ```
 
-- Marks the task at the specified `INDEX`.
-- The index refers to the index number shown in the displayed task list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+<h4>Alias:</h4>
+
+```
+mt
+```
+
+- Marks the task at the specified `INDEX` as done. The index refers to the index number shown in the displayed person list. This field is **mandatory**.
+- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -761,21 +772,13 @@ Tasks are marked as not done by default.
 
   ![markTask_success](images/output/markTask_success.png)<br><br>
 
-- `findTask budget` followed by `markTask 1`
-  - Marks the 1st task in the results of the `findTask` command as **done**<br><br>
-
-  ![markTask_success](images/output/markTask_success_filteredList.png)
-
 <h4>Potential Errors:</h4>
-- `markTask`
-  - Negative example as no index is given.<br><br>
 
-  ![markTask_error](images/error/markTask_error.png)<br><br>
-
-- `markTask 10`
-  - Negative example as invalid index is given.<br><br>
-
-  ![markTask_wrongIndex](images/error/markTask_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
+`This task is already marked as done in the task list.` | Ensure that the task specified for marking is not already done in the task list.
 
 <div style="page-break-after: always;"></div>
 
@@ -791,9 +794,14 @@ Allows you to indicate that a specific task as **not completed**.
 unmarkTask INDEX
 ```
 
-- Marks the task at the specified `INDEX`.
-- The index refers to the index number shown in the displayed task list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+<h4>Alias:</h4>
+
+```
+ut
+```
+
+- Marks the task at the specified `INDEX` as not done. The index refers to the index number shown in the displayed person list. This field is **mandatory**.
+- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -808,22 +816,13 @@ Tasks are marked as not done by default.
 
   ![unmarkTask_success](images/output/unmarkTask_success.png)<br><br>
 
-- `findTask budget` followed by `unmarkTask 1`
-  - marks the 1st task in the results of the `findTask` command as **not done**<br><br>
-
-  ![unmarkTask_success](images/output/unmarkTask_success_filteredList.png)
-
 <h4>Potential Errors:</h4>
 
-- `unmarkTask`
-  - Negative example as no index is given.<br><br>
-
-  ![unmarkTask_error](images/error/unmarkTask_error.png)<br><br>
-
-- `unmarkTask 10`
-  - Negative example as invalid index is given.<br><br>
-
-  ![markTask_wrongIndex](images/error/unmarkTask_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
+`This task is already marked as not done in the task list.` | Ensure that the specified task is not already marked as not done in the task list.
 
 <div style="page-break-after: always;"></div>
 
@@ -970,7 +969,7 @@ atagp
 ---------------|---------------
 `Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specfiied as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
-`The person index provided is invalid` | Ensure that the index provided is in range.
+`The person index provided is invalid` | Ensure that the index provided is within the valid range.
 
 <div style="page-break-after: always;"></div>
 
@@ -1010,7 +1009,7 @@ atagt
 ---------------|---------------
 `Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specified as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
-`The task index provided is invalid` | Ensure that the index provided is in range.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
 
 <div style="page-break-after: always;"></div>
 
