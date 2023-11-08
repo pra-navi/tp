@@ -340,6 +340,17 @@ The lifeline for <code>MarkTaskCommandParser</code>, <code>ParserUtil</code> and
 
 " %}
 
+The activity diagram below models the action sequence of how the `markTask` command works for the example input `markTask 1`.
+
+![MarkTaskActivityDiagram](assets/svg/dg/MarkTaskActivityDiagram.svg)
+
+{% include admonition.html type="note" title="Note" body="
+
+Since the beta syntax does not support placing the condition outside the diamond we place it as the true branch instead.
+
+" %}
+'
+
 #### Design considerations
 
 **Aspect: How to create status of a Task:**
