@@ -9,7 +9,7 @@ title: Developer Guide
 
 <div style="page-break-after: always;"></div>
 
---------------------------------------------------------------------------------------------------------------------
+---
 
 ## **Acknowledgements**
 
@@ -21,7 +21,7 @@ title: Developer Guide
 
 <div style="page-break-after: always;"></div>
 
---------------------------------------------------------------------------------------------------------------------
+---
 
 ## **Setting up, getting started**
 
@@ -29,7 +29,7 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 <div style="page-break-after: always;"></div>
 
---------------------------------------------------------------------------------------------------------------------
+---
 
 ## **Design**
 
@@ -182,7 +182,7 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 <div style="page-break-after: always;"></div>
 
---------------------------------------------------------------------------------------------------------------------
+---
 
 ## **Implementation**
 
@@ -447,7 +447,7 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
---------------------------------------------------------------------------------------------------------------------
+---
 
 <div style="page-break-after: always;"></div>
 
@@ -459,7 +459,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 * [Configuration guide](Configuration.md)
 * [DevOps guide](DevOps.md)
 
---------------------------------------------------------------------------------------------------------------------
+---
 
 <div style="page-break-after: always;"></div>
 
@@ -1095,11 +1095,15 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 <div style="page-break-after: always;"></div>
 
---------------------------------------------------------------------------------------------------------------------
+---
 
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
+
+The commands in this section are based on the assumption that the tester is using the sample data provided by CoordiMate.
+
+To reset to the sample data, delete the `data` folder in the same directory as the JAR file, and restart the app.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -1112,40 +1116,172 @@ testers are expected to do more <i>exploratory testing</i>.
 
 1. Initial launch
 
-   1. Download the jar file and copy into an empty folder
+   1. Download the `CoordiMate.jar` file and copy into an empty folder.
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Open a terminal and navigate to the folder you downloaded the JAR file to.
 
-1. Saving window preferences
+   3. Run the command `java -jar CoordiMate.jar`.<br>
+      Expected: The app launches with a GUI window and has a set of sample contacts and tasks.<br>
+
+
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
-       Expected: The most recent window size and location is retained.
+   2. Re-launch the app by running the command `java -jar CoordiMate.jar`.<br>
+      Expected: The most recent window size and location is retained.<br>
 
-1. _{ more test cases …​ }_
 
-### Deleting a person
+3. Closing the application by clicking the close button
+
+   1. Click the close button on the top right corner of the window.<br>
+      Expected: The app closes.<br><br>
+
+4. Closing the application by typing the `exit` command
+
+   1. Type the command `exit` (alias: `e`) in the command box and press Enter.<br>
+      Expected: The app closes.
+
+### Adding a Person
+
+1. Adding a person to the contact list
+
+   1. Test case: `addPerson n/Daniel Meier p/95352563 e/dan@example.com a/1 Wall Street t/friends`<br>
+      Expected: If a person named `Daniel Meier` exists in the contacts list, then an error message will be shown. Otherwise, a person named `Daniel Meier` with phone number `95352563`, email `dan@example.com`, address `1 Wall Street` and tag `friends` will be added to the contacts list.
+
+   2. Test case: `addPerson n/Emily Meyer p/94825224 e/emily@example.com a/789, Ang Mo Kio Ave 6, #12-111`<br>
+      Expected: If a person named `Emily Meyer` exists in the contacts list, then an error message will be shown. Otherwise, a person named `Emily Meyer` with phone number `94825224`, email `emily@example.com`, address `789, Ang Mo Kio Ave 6, #12-111` and no tags will be added to the contacts list.
+
+   3. Other incorrect commands to try: `addPerson`, `addPerson n/Fiona L. p/12345678 e/fiona@example.com a/123 Circle Ave`, `addPerson n/Fiona Kunz p/12345678`, ... (where one or more parameters, except tags, are missing)<br>
+      Expected: No person is added. An error message is shown.
+
+### Listing all Persons
+
+1. Listing all persons while all persons are being shown
+
+   1. Prerequisites: All persons are listed, and multiple persons in the list.
+
+   2. Test case: `listPerson`<br>
+      Expected: The list of persons shown is unchanged.
+
+2. Listing all persons when some persons are filtered out
+
+   1. Prerequisites: Not all persons are listed (e.g. run the `findPerson bernice` command), and multiple persons in the list.
+
+   2. Test case: `listPerson`<br>
+      Expected: All persons are listed (e.g. persons not having `bernice` in their names are also listed).
+
+### Editing a Person's details
+
+1. Editing a person's details
+
+   1. Prerequisites: All persons are listed, and multiple persons in the list.
+
+   2. Test case: `editPerson 1 n/George Lim`<br>
+      Expected: The name of the first person in the contact list is changed to `George Lim`.
+
+   3. Test case: `editPerson 1 t/`<br>
+      Expected: The tags of the first person in the contact list is cleared.
+
+   4. Other incorrect commands to try: `editPerson`, `editPerson x n/John` (where x is a positive integer larger than the contact list size), `editPerson y n/John` (where y is less than or equal to 0) <br>
+      Expected: No person is edited. An error message is shown.
+
+### Deleting a Person
 
 1. Deleting a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all persons using the `listPerson` command. Multiple persons in the list.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+   2. Test case: `deletePerson 1`<br>
+      Expected: The first person is deleted from the contact list.
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+   3. Other incorrect delete commands to try: `deletePerson`, `deletePerson x` (where x is a positive integer larger than the contact list size), `deletePerson y` (where y is less than or equal to 0) <br>
+      Expected: No person is deleted. An error message is shown.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+### Finding a Person
 
-1. _{ more test cases …​ }_
+1. Finding a person by name
 
-### Saving data
+   1. Prerequisites: Multiple persons in the list.
 
-1. Dealing with missing/corrupted data files
+   2. Test case: `findPerson bernice`<br>
+      Expected: If no there are no Persons with `bernice` in their names, an empty list is shown. Otherwise, only Persons with `bernice` in their names are shown.
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+   3. Other incorrect find commands to try: `findPerson`<br>
+      Expected: No command is executed. An error message is shown.
 
-1. _{ more test cases …​ }_
+### Marking/Unmarking a Task as done
+
+1. Marking a task as done
+
+   1. Prerequisites: Multiple tasks in the list.
+
+   2. Test case: `markTask 1`<br>
+      Expected: If the first task is already marked as done, an error message is shown. Otherwise, the first task is marked as done.
+
+   3. Other incorrect mark commands to try: `markTask`, `markTask x` (where x is a positive integer larger than the task list size), `markTask y` (where y is less than or equal to 0) <br>
+      Expected: No task is marked as done. An error message is shown.
+
+2. Unmarking a task as done
+
+   1. Prerequisites: Multiple tasks in the list.
+
+   2. Test case: `unmarkTask 1`<br>
+      Expected: If the first task is already marked as not done, an error message is shown. Otherwise, the first task is marked as not done.
+
+   3. Other incorrect unmark commands to try: `unmarkTask`, `unmarkTask x` (where x is a positive integer larger than the task list size), `unmarkTask y` (where y is less than or equal to 0) <br>
+      Expected: No task is marked as not done. An error message is shown.
+
+### Saving/Loading data from data file
+
+1. Saving and loading data from data file
+
+   1. Prerequisites: The data file located at `data/addressbook.json` contains valid data.
+
+   2. Update the data in CoordiMate (e.g. add a person, delete a task, etc.)
+
+   3. Close the app and launch CoordiMate again. <br>
+      Expected: The data from the save file is loaded and shown in the lists. The changes made in step 2 are reflected in the lists.
+
+2. Dealing with corrupted data file
+
+   1. Prerequisites: The data file located at `data/addressbook.json` exists.
+
+   2. Open the data file located at `data/addressbook.json` and add an invalid character to the file. (e.g. Add a `$` character at the start of the file)
+
+   3. Relaunch CoordiMate. <br>
+      Expected: No data is loaded and the lists are empty. An error message is shown in the terminal.
+
+3. Dealing with missing data file
+
+   1. Prerequisites: The data file located at `data/addressbook.json` exists.
+
+   2. Delete the data file located at `data/addressbook.json`.
+
+   3. Relaunch CoordiMate.<br>
+      Expected: Sample data is shown in the lists. After executing a command that modifies the data (e.g. `addPerson`), a new data file is created.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## **Appendix: Planned Enhancements**
+
+1. TODO
+2. TODO
+3. TODO
+4. TODO
+5. TODO
+6. TODO
+7. TODO
+8. TODO
+9. TODO
+10. TODO
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## **Appendix: Effort**
+
+TODO
