@@ -13,7 +13,11 @@ title: Developer Guide
 
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* CoordiMate is based on the [AddressBook-Level3](https://github.com/se-edu/addressbook-level3) project created by the [SE-EDU initiative](https://se-education.org).
+* CoordiMate makes use of the following open source libraries:
+  * [JavaFX](https://openjfx.io/) for the Graphical User Interface (GUI).
+  * [JUnit 5](https://junit.org/junit5/) for unit testing.
+  * [Jackson](https://github.com/FasterXML/jackson) for parsing JavaScript Object Notation (JSON) files.
 
 <div style="page-break-after: always;"></div>
 
@@ -141,14 +145,17 @@ How the parsing works:
 
 The `Model` component,
 
-* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
-* stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
+* stores the data currently in CoordiMate i.e., all `Person` objects and `Task` objects.
+  * These objects are contained in `UniquePersonList` and `UniqueTaskList` objects respectively.
+* stores the lists currently 'selected' `Person` and `Task` objects (e.g., results of a search query) as separate _filtered_ lists which is exposed to outsiders as an unmodifiable `ObservableList<Person>` and `ObservableList<Task>` that can be 'observed'.
+  * e.g. the UI can be bound to these lists so that the UI automatically updates when the data in the lists change.
+
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
 {% include admonition.html type="note" title="Note" body="
 
-An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br>
+An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</code> list in the <code>AddressBook</code>, which <code>Person</code> references. This allows <code>AddressBook</code> to only require one <code>Tag</code> object per unique tag, instead of each <code>Person</code> needing their own <code>Tag</code> objects. <br><br>
 
 <img src='assets/svg/dg/BetterModelClassDiagram.svg' width='450' />
 
@@ -163,7 +170,7 @@ An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</
 <img src="assets/svg/dg/StorageClassDiagram.svg" width="550" />
 
 The `Storage` component,
-* can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
+* can save both CoordiMate's data and user preference data in JSON format, and read them back into corresponding objects.
 * inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
@@ -202,12 +209,12 @@ The lifeline for <code>ListTaskCommand</code> should end at the destroy marker (
 **Aspect: Design and format of task display:**
 
 * **Alternative 1:** Simply present tasks using basic string output.
-    * Pros: Direct approach and simple to design and implement.
-    * Cons: Can seem too plain and might not capture users' attention effectively. <br/><br/>
+  * Pros: Direct approach and simple to design and implement.
+  * Cons: Can seem too plain and might not capture users' attention effectively. <br/><br/>
 
 * **Alternative 2 (current choice):** Offer a more structured and visually enhanced display format for tasks.
-    * Pros: Ensures better user engagement due to organized and eye-catching content presentation.
-    * Cons: Can be challenging to implement given the added layers of design and subsequent testing.
+  * Pros: Ensures better user engagement due to organized and eye-catching content presentation.
+  * Cons: Can be challenging to implement given the added layers of design and subsequent testing.
 
 <div style="page-break-after: always;"></div>
 
@@ -232,12 +239,12 @@ The lifeline for <code>EditTaskCommandParser</code> and <code>EditTaskCommand</c
 **Aspect: How to encapsulate edited fields:**
 
 * **Alternative 1:** Store each edited field in a separate variable directly into `EditTaskCommand` after parsing.
-      * Pros: Simple to implement.
-      * Cons: Low level of abstraction. Difficult to test, maintain, and extend if more fields are to be added. It is also difficult to pass each field around to classes that need access to the edited fields.  <br/><br/>
+  * Pros: Simple to implement.
+  * Cons: Low level of abstraction. Difficult to test, maintain, and extend if more fields are to be added. It is also difficult to pass each field around to classes that need access to the edited fields.  <br/><br/>
 
 * **Alternative 2 (current choice):** Encapsulate edited fields in a `EditTaskDescriptor` class.
-      * Pros: High level of abstraction. Encapsulation allows the details of an `editTask` command to be passed around as a single object to be used by other classes.
-      * Cons: More complex to implement due to boilerplate code.
+  * Pros: High level of abstraction. Encapsulation allows the details of an `editTask` command to be passed around as a single object to be used by other classes.
+  * Cons: More complex to implement due to boilerplate code.
 
 <div style="page-break-after: always;"></div>
 
@@ -271,14 +278,14 @@ These two predicates are used to filter the list of tasks in the `Model` compone
 
 **Aspect: How to implement the `Predicate<Task>` class:**
 
-  * **Alternative 1:** Use a single `TaskContainsKeywordPredicate` class that implements `Predicate<Task>` to search both the task's `Title` and `Note`.
-    * Pros: Simple to implement.
-    * Cons: Not extensible. If we want to search other fields in the future, we will have to modify the `TaskContainsKeywordPredicate` class. <br/><br/>
+* **Alternative 1:** Use a single `TaskContainsKeywordPredicate` class that implements `Predicate<Task>` to search both the task's `Title` and `Note`.
+  * Pros: Simple to implement.
+  * Cons: Not extensible. If we want to search other fields in the future, we will have to modify the `TaskContainsKeywordPredicate` class. <br/><br/>
 
 
-  * **Alternative 2 (current choice):** Use two `Predicate<Task>` classes, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, to search the task's `Title` and `Note` respectively.
-    * Pros: Extensible. We can easily add more `Predicate<Task>` classes to search other fields in the future. <br/>These classes also allow us to search the task's `Title` and `Note` separately, if needed.
-    * Cons: More complex to implement.
+* **Alternative 2 (current choice):** Use two `Predicate<Task>` classes, namely, `TitleContainsKeywordPredicate` and `NoteContainsKeywordPredicate`, to search the task's `Title` and `Note` respectively.
+  * Pros: Extensible. We can easily add more `Predicate<Task>` classes to search other fields in the future. <br/>These classes also allow us to search the task's `Title` and `Note` separately, if needed.
+  * Cons: More complex to implement.
 
 <div style="page-break-after: always;"></div>
 
@@ -303,23 +310,23 @@ The lifeline for <code>MarkTaskCommandParser</code>, <code>ParserUtil</code> and
 **Aspect: How to create status of a Task:**
 
 * **Alternative 1:** Using String input to create a status.
-    * Pros: Simple to implement. Provides flexibility, allowing for dynamic input without changing code.
-    * Cons: Can lead to potential issues related to typos or inconsistent naming conventions.
-  Any string can be passed as a status, potentially resulting in invalid or unexpected states.<br/><br/>
+  * Pros: Simple to implement. Provides flexibility, allowing for dynamic input without changing code.
+  * Cons: Can lead to potential issues related to typos or inconsistent naming conventions.
+Any string can be passed as a status, potentially resulting in invalid or unexpected states.<br/><br/>
 
 * **Alternative 2 (current choice):** Using an enum input to create a status.
-    * Pros: Provides a type-safe way to represent task statuses, ensuring that only valid status values can be used. If new status types are introduced, developers can easily update the TaskStatus enum, ensuring all usages are consistent
-    * Cons: More complex to implement. Require modifying the enum itself to add new status types, potentially leading to more extensive code changes <br/><br/>
+  * Pros: Provides a type-safe way to represent task statuses, ensuring that only valid status values can be used. If new status types are introduced, developers can easily update the TaskStatus enum, ensuring all usages are consistent
+  * Cons: More complex to implement. Require modifying the enum itself to add new status types, potentially leading to more extensive code changes <br/><br/>
 
 **Aspect: How to update the task status of a Task:**
 
 * **Alternative 1:** Directly change the status attribute of each task every time it is marked.
-    * Pros: More memory-efficient
-    * Cons: Not immutable. Can lead to challenges in testing and tracking task state changes over time <br/><br/>
+  * Pros: More memory-efficient
+  * Cons: Not immutable. Can lead to challenges in testing and tracking task state changes over time <br/><br/>
 
 * **Alternative 2 (current choice):** Create a new task with same details and a done status every time it is marked.
-    * Pros: Ensures immutability and preserves the history of task states, allowing for easy tracking of changes and maintaining a clear historical record of task statuses.
-    * Cons: Incur a slight performance overhead, especially if the tasks contain a large amount of data, impacting the overall execution speed of the program. <br/><br/>
+  * Pros: Ensures immutability and preserves the history of task states, allowing for easy tracking of changes and maintaining a clear historical record of task statuses.
+  * Cons: Incur a slight performance overhead, especially if the tasks contain a large amount of data, impacting the overall execution speed of the program. <br/><br/>
 
 <div style="page-break-after: always;"></div>
 
@@ -345,13 +352,12 @@ PlantUML, the lifeline reaches the end of diagram.
 **Aspect: How delete executes:**
 
 * **Alternative 1 (current choice):** Deletes task based on the filtered list shown to the user.
-    * Pros: Users do not have to use the `listTask` command everytime before they delete a task.
-    * Cons: Users cannot delete a task that is not shown in the filtered list. <br/><br/>
+  * Pros: Users do not have to use the `listTask` command everytime before they delete a task.
+  * Cons: Users cannot delete a task that is not shown in the filtered list. <br/><br/>
 
 * **Alternative 2:** Deletes task based on the full list of tasks.
-    * Pros: Users can delete a task that is not shown in the filtered list.
-    * Cons: Users have to use the `listTask` command everytime to confirm the index of the task before they delete the
-      task.
+  * Pros: Users can delete a task that is not shown in the filtered list.
+  * Cons: Users have to use the `listTask` command everytime to confirm the index of the task before they delete the task.
 
 <div style="page-break-after: always;"></div>
 
@@ -501,14 +507,14 @@ Priorities:
 | `* * *` | event planner | delete all tasks | clear all task entries and restart with a new clean task list |
 | `* * *` | event planner | mark a task as done | keep track of task progress and the number of tasks that are done |
 | `* * *` | event planner | mark a task as not done | keep track of task progress and the number of tasks that are not done |
+| `* * *` | event planner | add tags to a task | categorise my tasks for easy reference |
+| `* * *` | event planner | save my data automatically | ensure that my contact and task data will not be lost |
+| `* * *` | event planner | load my data automatically | quickly continue from where I left off in the last session |
 | `* *` | event planner | find all done tasks | quickly see which tasks I have completed |
 | `* *` | event planner | find all not done tasks | quickly see which tasks I have yet to complete |
 | `* *` | event planner | delete all done tasks | ensure that my task list is not cluttered with completed tasks |
-| `* * *` | event planner | add tags to a task | categorise my tasks for easy reference |
 | `* *` | event planner | list all the tags I have used | avoid creating duplicate categories |
 | `* *` | event planner | find a person and tasks by tag | quickly see the persons and tasks in a category |
-| `* * *` | event planner | save my data automatically | ensure that my contact and task data will not be lost |
-| `* * *` | event planner | load my data automatically | quickly continue from where I left off in the last session |
 
 <div style="page-break-after: always;"></div>
 
@@ -1086,7 +1092,6 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 * **GUI**: Graphical User Interface, a way of interacting with a computer program by manipulating graphical elements on the screen.
 * **Mainstream OS**: One of these operating systems: Windows, Linux, Unix, OS-X
 * **MSS**: Main Success Scenario, which is the most straightforward interaction for a given use case assuming that nothing goes wrong.
-* **Private contact detail**: A contact detail that is not meant to be shared with others
 
 <div style="page-break-after: always;"></div>
 
