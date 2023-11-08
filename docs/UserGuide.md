@@ -322,11 +322,24 @@ Enables you to change the details or particulars of an existing contact in your 
 editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 ```
 
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
-- At least one of the optional fields must be provided.
+<h4>Alias:</h4>
+
+```
+ep
+```
+
+- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. This field is **mandatory**.
+  - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 - Existing values will be updated to the input values.
-- When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
-- You can remove all the person’s tags by typing `t/` without specifying any tags after it.
+- Specify a new name with the `n/` prefix. This field is **optional**.
+- Specify a new phone number with the `p/` prefix. This field is **optional**.
+- Specify a new email with the `e/` prefix. This field is **optional**.
+- Specify a new address with the `a/` prefix. This field is **optional**.
+- Specify new tags with the `t/` prefix. This field is **optional**.
+  - You may add multiple tags to a person by specifying the `t/` prefix multiple times.
+  - Note that this will replace all existing tags of the task. If you wish to add to the existing tags of the task, use the [`addTagPerson` command](#31-adding-tags-to-a-person-addtagperson) instead.
+  - Specifying `t/` without any tags will clear all existing tags of the task.
+- At least one of the optional fields must be provided for the command to be valid.
 
 <h4>Examples:</h4>
 
@@ -335,27 +348,18 @@ editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 
   ![editPerson success](images/output/editPerson_success.png)<br><br>
 
-- `editPerson 2 n/Betsy Crower t/`
-  - Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.<br><br>
-
-  ![editPerson success](images/output/editPerson_success_clearTag.png)
-
 <h4>Potential Errors:</h4>
 
-- `editPerson`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![editPerson error](images/error/editPerson_error.png)<br><br>
-
-- `editPerson 1`
-  - Negative example as no fields are specified.<br><br>
-
-  ![editPerson error](images/error/editPerson_missingFields.png)<br><br>
-
-- `editPerson 10 p/91234567 e/johndoe@example.com`
-  - Negative example as invalid index provided.<br><br>
-
-  ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`At least one field to edit must be provided.` | Ensure that at least one of name, phone, email, address or tag is specified.
+`The person index provided is invalid` | Ensure that the index provided is in range.
+`Names should only contain alphanumeric characters and spaces, and it should not be blank` | Ensure that the name specified is not blank and contain only alphanumeric characters. Whitespaces at the start and end are trimmed.
+`Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
+`Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
+`Emails should be of the format local-part@domain and adhere to the following constraints: ...` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
+`This person already exists in the address book.` | Ensure that the new name specified do not match an existing person.
 
 <div style="page-break-after: always;"></div>
 
@@ -570,6 +574,8 @@ et
 ```
 
 - Edits the task at the specified `INDEX`. The index refers to the index number shown in the task list currently displayed. This field is **mandatory**.
+  - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
+- Existing values will be updated to the input values.
 - Specify a new title with the `T/` prefix. This field is **optional**.
 - Specify a new note with the `n/` prefix. This field is **optional**.
 - Specify new tags with the `t/` prefix. This field is **optional**.
