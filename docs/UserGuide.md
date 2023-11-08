@@ -1280,12 +1280,12 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**Add Person**](#11-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` | `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` |
-[**List All Person**](#12-listing-all-persons-listperson) | `listPerson` | `listPerson` |
-[**Edit Person**](#13-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com` |
-[**Find Person**](#14-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John` |
+[**Add Person**](#11-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` | `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` | `ap`
+[**List All Person**](#12-listing-all-persons-listperson) | `listPerson` | `listPerson` | `lp`
+[**Edit Person**](#13-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com` | `ep`
+[**Find Person**](#14-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John` | `fp`
 [**Delete Person**](#15-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1` | `dp`
-[**Delete All Person**](#16-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` |
+[**Delete All Person**](#16-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` | `dap`
 
 <div style="page-break-after: always;"></div>
 
@@ -1295,17 +1295,17 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**Add Task**](#21-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
-[**List All Task**](#22-listing-all-tasks-listtask) | `listTask` | `listTask`
-[**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
-[**Find Task**](#24-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
+[**Add Task**](#21-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary` | `at`
+[**List All Task**](#22-listing-all-tasks-listtask) | `listTask` | `listTask` | `lt`
+[**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer` | `et`
+[**Find Task**](#24-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding` | `ft`
 [**Delete Task**](#25-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1` | `dt`
-[**Delete All Task**](#26-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
-[**Mark Task**](#27-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
-[**Unmark Task**](#28-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
-[**Find Done Task**](#29-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
-[**Find Not Done Task**](#210-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
-[**Delete All Done Task**](#211-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
+[**Delete All Task**](#26-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask` | `dat`
+[**Mark Task**](#27-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1` | `mt`
+[**Unmark Task**](#28-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1` | `ut`
+[**Find Done Task**](#29-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone` | `fd`
+[**Find Not Done Task**](#210-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone` | `fnd`
+[**Delete All Done Task**](#211-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone` | `dad`
 
 <div style="page-break-after: always;"></div>
 
@@ -1315,13 +1315,13 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
  Action | Format | Example | Alias
 --------|--------|---------|------
-[**List All Tags**](#31-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Find Tags**](#32-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
-[**Find All Tags**](#33-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
+[**List All Tags**](#31-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
+[**Find Tags**](#32-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
+[**Find All Tags**](#33-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation` | `fatag`
 [**Add Tag(s) to a Person**](#34-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
 [**Add Tag(s) to a Task**](#35-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
-[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
-[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
+[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering` | `dtagp`
+[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering` | `dtagt`
 
 <div style="page-break-after: always;"></div>
 
@@ -1329,8 +1329,8 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
 [Back to Table of Contents](#table-of-contents)
 
- Action | Format | Example
---------|--------|---------
-[**View Help**](#41-viewing-help-help) | `help` | `help`
-[**List All Person and Task**](#42-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
-[**Exit**](#43-exiting-the-program-exit) | `exit` | `exit`
+ Action | Format | Example | Alias
+--------|--------|---------|------
+[**View Help**](#41-viewing-help-help) | `help` | `help` | `h`
+[**List All Person and Task**](#42-listing-all-persons-and-tasks-listall) | `listAll` | `listAll` | `la`
+[**Exit**](#43-exiting-the-program-exit) | `exit` | `exit` | `e`
