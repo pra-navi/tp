@@ -1442,6 +1442,13 @@ testers are expected to do more <i>exploratory testing</i>.
 - **Reason**: To ensure the software is inclusive and capable of accurately recording names from a diverse range of ethnic backgrounds.
 - **Example**: Under the current system, a name like "Séamus O'Connor" or "Anand Sai-Krishna" might be rejected due to special characters. The enhancement would allow these names to be entered and stored correctly.
 
+
+### 6. Enhanced UI Indicators for Empty Task/Person Lists
+
+- **Enhancement**: Implement clear and prominent UI indicators when task or person lists are empty, particularly after performing actions such as marking tasks complete.
+- **Reason**: To provide immediate and unmistakable visual feedback to users when there are no items to display, enhancing the user experience by avoiding potential confusion or the impression that the list may not have loaded properly.
+- **Example**: After a user completes the last remaining task with `markTask` and no incomplete tasks are left, instead of the minimalistic message "0 tasks listed!", the UI could display a more noticeable and friendly graphic or message such as "All tasks complete! 🎉". This visual cue would be both informative and encouraging to the user.
+
 ---
 
 <div style="page-break-after: always;"></div>
