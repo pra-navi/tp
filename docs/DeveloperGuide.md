@@ -321,6 +321,8 @@ The sequence diagrams below show the details of the respective reference frames.
 
 ![CreateEditTaskDescriptor](assets/svg/dg/SDCreateEditTaskDescriptor.svg)
 
+![EditTaskInTaskList](assets/svg/dg/SDEditTaskInTaskList.svg)
+
 ![CreateEditTaskCommandResult](assets/svg/dg/SDCreateEditTaskCommandResult.svg)
 
 
