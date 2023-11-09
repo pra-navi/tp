@@ -1189,6 +1189,12 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 findAllTag KEYWORD [MORE_KEYWORDS]...
 ```
 
+<h4>Alias:</h4>
+
+```
+mt
+```
+
 - Finds the persons and tasks whose tags completely match all of the specified `KEYWORD`(s).
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
 - Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
@@ -1425,7 +1431,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Add Tag(s) to a Person**](#31-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
 [**Add Tag(s) to a Task**](#32-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
 [**List All Tags**](#33-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
-[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
+[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tags-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
 [**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation` | `fatag`
 [**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering` | `dtagp`
 [**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering` | `dtagt`
