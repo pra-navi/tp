@@ -549,6 +549,8 @@ Priorities:
 | `* *` | event planner | find a person and tasks by tag | quickly see the persons and tasks in a category |
 | `* *` | event planner | add tag(s) to a person | can just add tag(s) to the existing list of tags of the indexed person |
 | `* *` | event planner | add tag(s) to a task | can just add tag(s) to the existing list of tags of the indexed task |
+| `* *` | event planner | delete tag(s) from a person | remove unwanted or outdated tag(s) |
+| `* *` | event planner | delete tag(s) from a task | remove unwanted or outdated tag(s) |
 {: .user-story-table}
 
 <div style="page-break-after: always;"></div>
@@ -1044,7 +1046,65 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC23 - View help instructions**
+**Use case: UC23 - Deleting tag(s) from a person**
+
+**MSS**
+
+1. User requests to list all persons.
+2. CoordiMate shows a list of persons.
+3. User requests to delete tag(s) from a specific person in the list by index.
+4. CoordiMate deletes the tag(s) from the person.
+5. CoordiMate informs the user of the deleted tag(s).
+
+   Use case ends.
+
+**Extensions**
+
+* 3a. Some given tag(s) do not exist in the person.
+
+   * 3a1. CoordiMate only deletes the tag(s) that exist.
+   * 3a2. CoordiMate informs the user of the deleted tag(s), as well as the tag(s) that do not exist.
+
+      Use case ends.
+
+* 3b. The provided index for the person is invalid.
+
+   * 3b1. CoordiMate shows an error message and prompts the user to provide a valid index for the person.
+
+      Use case resumes from step 3.
+
+---
+
+**Use case: UC24 - Deleting tag(s) from a task**
+
+**MSS**
+
+1. User requests to list all tasks.
+2. CoordiMate shows a list of tasks.
+3. User requests to delete tag(s) from a specific task in the list by index.
+4. CoordiMate deletes the tag(s) from the task.
+5. CoordiMate informs the user of the deleted tag(s).
+
+   Use case ends.
+
+**Extensions**
+
+* 3a. Some given tag(s) do not exist in the task.
+
+   * 3a1. CoordiMate only deletes the tag(s) that exist.
+   * 3a2. CoordiMate informs the user of the deleted tag(s), as well as the tag(s) that do not exist.
+
+      Use case ends.
+
+* 3b. The provided index for the task is invalid.
+
+   * 3b1. CoordiMate shows an error message and prompts the user to provide a valid index for the task.
+
+      Use case resumes from step 3.
+
+---
+
+**Use case: UC25 - View help instructions**
 
 **MSS**
 
