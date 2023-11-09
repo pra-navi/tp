@@ -1149,10 +1149,13 @@ findTag KEYWORD [MORE_KEYWORDS]...
 ftag
 ```
 
-- Finds the persons and tasks whose tags completely match at least one of the specified `KEYWORD`.
+- At least one keyword is required to search.
+- The search is case-sensitive, e.g. `findTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+- Only full words will be matched, e.g. `findTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Shows results that contain at least one of the specified keywords.
+- Specify more tag(s) to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Persons and tasks matching **at least one** keyword in their tag(s) will be returned (i.e. OR search).
+  - e.g. `findTag catering orientation` will match all persons and tasks which tags contain `catering`, `orientation` or both.
 
 <h4>Example:</h4>
 
@@ -1195,9 +1198,14 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 mt
 ```
 
+- At least one keyword is required to search.
+- The search is case-sensitive, e.g. `findAllTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+- Only full words will be matched, e.g. `findAllTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
 - Finds the persons and tasks whose tags completely match all of the specified `KEYWORD`(s).
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
 - Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Persons and tasks matching **all** keyword(s) in their tag(s) will be returned (i.e. AND search).
+  - e.g. `findAllTag catering orientation` will match all persons and tasks which contain both `catering` and `orientation` tags.
 
 <h4>Example:</h4>
 
