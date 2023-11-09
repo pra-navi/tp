@@ -1404,17 +1404,43 @@ testers are expected to do more <i>exploratory testing</i>.
 
 ## **Appendix: Planned Enhancements**
 
-1. We plan to make error messages more specific. For example, we will specify the error of "Tag names should be 
+### 1. We plan to make error messages more specific. For example, we will specify the error of "Tag names should be 
    alphanumeric" to "Tag names should be ONLY alphanumeric". This will help users to understand the error better.
-2. TODO
-3. TODO
-4. TODO
-5. TODO
-6. TODO
-7. TODO
-8. TODO
-9. TODO
-10. TODO
+
+### 2. Character Limits for Person Fields and Tasks
+
+- **Enhancement**: Implement character limits for various fields associated with persons and tasks to ensure data consistency and integrity.
+- **Reason**: To maintain a structured format for data entry and prevent excessively long inputs that could affect the display and usability of the system.
+- **Example**: 
+  - For `Person` entities:
+    - **Name**: Limit to 1 - 100 characters to ensure the name is detailed enough yet concise.
+    - **Phone**: Limit to 3 - 15 characters to accommodate international formats without extraneous digits.
+    - **Email**: Limit to 5 - 100 characters to include most valid email addresses while preventing abuse.
+    - **Address**: Maximum of 200 characters to include full addresses in a readable format.
+  - For `Task` entities:
+    - **Title**: Limit to 1 - 100 characters to encapsulate the task effectively.
+    - **Note**: Limit to 1 - 200 characters to provide a thorough 
+    description without becoming verbose.
+   - For `Person/Task` tags:
+      - **Tag**: Maximum of 30 characters to keep tags succinct and meaningful.
+
+### 3. Command-Specific Error Messages
+
+- **Enhancement**: Error messages will pinpoint the specific part of the command that has triggered the error.
+- **Reason**: Users will be able to identify and correct the exact issue with their command input without having to guess which part was incorrect.
+- **Example**: For an invalid command due to an excessively long or short user input, a possible error message would be "Invalid addPerson command: person's name exceeded 100 characters."
+
+### 4. Stricter Validity Checks for Email Addresses
+
+- **Enhancement**: Revise the regex used for validating email addresses to ensure the domain name is present and correctly formatted.
+- **Reason**: To prevent the acceptance of invalid email addresses that lack a top-level domain e.g. `.com`, which are not very usable for actual communication.
+- **Example**: The current regex might validate `johndoe@example`, which is incorrect as it lacks a domain name. The enhanced regex would correctly invalidate this and require a proper top-level domain, like `johndoe@example.com`.
+
+### 5. Accommodating Special Characters in Person Names
+
+- **Enhancement**: Update the name input validation to allow some special characters that are part of valid names in various cultures, including diacritics and other linguistic markers.
+- **Reason**: To ensure the software is inclusive and capable of accurately recording names from a diverse range of ethnic backgrounds.
+- **Example**: Under the current system, a name like "Séamus O'Connor" or "Anand Sai-Krishna" might be rejected due to special characters. The enhancement would allow these names to be entered and stored correctly.
 
 ---
 
