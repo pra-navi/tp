@@ -451,6 +451,13 @@ The person will be removed from your contact list <b>immediately</b>. This actio
 
 " %}
 
+{% include admonition.html type="note" title="Note" body="
+
+This command is used after the list is defined either as a filtered list through `findPerson bernice` or through `listPerson`.<br><br>
+Then, the index of the person in the defined list is used to delete the person.<br><br>
+
+" %}
+
 <h4>Format:</h4>
 
 ```
@@ -469,10 +476,10 @@ dp
 
 <h4>Example:</h4>
 
-- `findPerson Bernice` followed by `deletePerson 1`
-  - Deletes the 1st person in the results of the `findPerson` command.<br><br>
-
-  ![deletePerson_success_with_findPerson](images/output/deletePerson_success_filteredList.png)
+- `listPerson` followed by `deletePerson 2`
+  - Deletes the 2nd person in the results of the `listPerson` command.
+  - Example output for correct usage of `deletePerson` command: <br><br>
+  ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
 
 <h4>Potential Errors:</h4>
 
@@ -696,6 +703,13 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 
 " %}
 
+{% include admonition.html type="note" title="Note" body="
+
+This command is used after the list is defined either as a filtered list through `findTask caterer` or through `listTask`.<br><br>
+Then, the index of the task in the defined list is used to delete the task.<br><br>
+
+" %}
+
 <h4>Format:</h4>
 
 ```
@@ -714,10 +728,11 @@ dt
 
 <h4>Example:</h4>
 
-- `findTask caterer` followed by `deleteTask 1`
-  - Deletes the 1st task in the results of the `findTask` command.<br><br>
+- `listTask` followed by `deleteTask 2`
+  - Deletes the 2nd task in the results of the `listTask` command.
+  - Example output for correct usage of `deleteTask` command: <br><br>
 
-  ![deleteTask_success_with_findTask](images/output/deleteTask_success_filteredList.png)
+  ![deleteTask_success](images/output/deleteTask_success.png)
 
 <h4>Potential Errors:</h4>
 
@@ -1001,7 +1016,8 @@ atagp
 <h4>Example:</h4>
 
 - `addTagPerson 1 t/friends t/expensive`
-  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
+  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.
+  - Example output for correct usage of `addTagPerson` command: <br><br>
 
   ![addTagPerson success](images/output/addTagPerson_success.png)
 
@@ -1041,7 +1057,8 @@ atagt
 <h4>Example:</h4>
 
 - `addTagTask 1 t/day1 t/day2`
-  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.<br><br>
+  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.
+  - Example output for correct usage of `addTagTask` command: <br><br>
 
   ![addTagTask success](images/output/addTagTask_success.png)
 
