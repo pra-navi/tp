@@ -366,7 +366,7 @@ ap
 
 [Back to Table of Contents](#table-of-contents)
 
-You can view details of all your contacts.
+You can view your entire contact list so that you can quickly access and manage your connections.
 
 <h4>Format:</h4>
 
@@ -628,7 +628,7 @@ at
 
 [Back to Table of Contents](#table-of-contents)
 
-You can view details of all your tasks.
+You can view your entire task list so that you can stay organized and on top of your responsibilities.
 
 <h4>Format:</h4>
 
@@ -1171,7 +1171,7 @@ ltag
 
 [Back to Table of Contents](#table-of-contents)
 
-You can expand your search with this command when you aim to locate any person and task that corresponds with at least one of the keywords you provide.
+You can extend your search with keywords so that you can locate any person or task with at least one matching tag.
 
 <h4>Format:</h4>
 
@@ -1223,7 +1223,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 
 [Back to Table of Contents](#table-of-contents)
 
-You can narrow your search with this command when you want to find only those persons and tasks that include every keyword you list.
+You can narrow your search using multiple keywords so that you can find only those contacts and tasks that include every tag you need.
 
 <h4>Format:</h4>
 
