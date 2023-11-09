@@ -58,10 +58,11 @@ Given below are my contributions to the project.
 
 * **Documentation**:
   * User Guide:
-    * Added documentation for `deleteAllPerson`, `addTask`, `editTask`, `deleteTagPerson`, `deleteTagTask`, `help`.
+    * Added documentation for `deleteAllPerson`, `addTask`, `editTask`, `deleteTagPerson`, `deleteTagTask`, `help`, `exit`.
   * Developer Guide:
     * Added implementation details for `editTask`.
-    * Added user stories and use cases for `deleteAllPerson`, `addTask`, `editTask`, `deleteTagPerson`, `deleteTagTask`, `help`.<br><br>
+    * Added user stories and use cases for `deleteAllPerson`, `addTask`, `editTask`, `deleteTagPerson`, `deleteTagTask`, `help`.
+    * Added Non-Functional Requirements section.<br><br>
 
 * **Community**:
   * PRs reviewed by me can be found [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/pulls?q=is%3Apr+reviewed-by%3AHugeNoob+).
