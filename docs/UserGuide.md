@@ -193,7 +193,7 @@ The commands are split into 5 main sections:
   <li>
     <p>
       Words in <code>UPPER_CASE</code> are the fields to be supplied by the user.<br>
-      e.g. in <code>addPerson n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>addPerson n/John Doe</code>, where <code>John Doe</code> is the value of the parameter <code>NAME</code>. <br>
+      e.g. in <code>addPerson n/NAME</code>, <code>NAME</code> is a field which can be used as <code>addPerson n/John Doe</code>, where <code>John Doe</code> is the value of the field <code>NAME</code>. <br>
     </p>
   </li>
 
@@ -339,7 +339,7 @@ ap
 | `TAG` | `t/` | No | Tag(s) for the individual.|
 {: .field-table}
 
-- A person is uniquely identified by their `NAME`. This parameter is case sensitive.
+- A person is uniquely identified by their `NAME`. This field is case sensitive.
 
 <h4>Example:</h4>
 
