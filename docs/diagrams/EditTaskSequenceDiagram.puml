@@ -10,10 +10,6 @@ participant ":EditTaskCommandParser" as EditTaskCommandParser LOGIC_COLOR
 participant "cmd:EditTaskCommand" as EditTaskCommand LOGIC_COLOR
 end box
 
-box Model MODEL_COLOR_T1
-participant ":Model" as Model MODEL_COLOR
-end box
-
 [-> LogicManager : execute("editTask...")
 activate LogicManager
 
@@ -52,27 +48,7 @@ deactivate AddressBookParser
 LogicManager -> EditTaskCommand : execute()
 activate EditTaskCommand
 
-EditTaskCommand -> Model : getFilteredTaskList()
-activate Model
-
-Model --> EditTaskCommand : filteredTaskList
-deactivate Model
-
-'Create edited task
-EditTaskCommand -> EditTaskCommand : createEditedTask(taskToEdit, descriptor)
-activate EditTaskCommand
-EditTaskCommand --> EditTaskCommand : editedTask
-deactivate EditTaskCommand
-
-EditTaskCommand -> Model : setTask(taskToEdit, editedTask)
-activate Model
-Model --> EditTaskCommand
-deactivate Model
-
-EditTaskCommand -> Model : updateFilteredTaskList(SHOW_ALL_TASKS)
-activate Model
-Model --> EditTaskCommand
-deactivate Model
+ref over EditTaskCommand: Edit task in task list 
 
 ref over EditTaskCommand: Create successful CommandResult
 

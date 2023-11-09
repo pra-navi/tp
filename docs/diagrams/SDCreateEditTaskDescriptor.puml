@@ -8,8 +8,9 @@ mainframe: **sd** Create EditTaskDescriptor from arguments
 participant ":EditTaskCommandParser" as EditTaskCommandParser LOGIC_COLOR
 participant "desc:EditTaskDescriptor" as EditTaskDescriptor LOGIC_COLOR
 
+activate EditTaskCommandParser
+
 'Constructor for EditTaskDescriptor
-create EditTaskCommandParser
 create EditTaskDescriptor
 
 EditTaskCommandParser -> EditTaskDescriptor : EditTaskDescriptor()
@@ -37,5 +38,7 @@ activate EditTaskDescriptor
 EditTaskDescriptor --> EditTaskCommandParser
 deactivate EditTaskDescriptor
 end opt
+
+deactivate EditTaskCommandParser
 
 @enduml
