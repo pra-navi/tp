@@ -125,22 +125,18 @@ Throughout this guide, you will see different text styles that are used to highl
 [Back to Table of Contents](#table-of-contents)
 
 1. **Easy Management of People**:
-
 - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
 
 2. **Effortless Task Management**:
-
 - CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.
 
 3. **Simplified Searching**:
-
 - Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!
 
 4. **Hassle-Free Data Management**:
-
 - CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
-- When CoordiMate starts, your existing data is automatically loaded, allowing you to pick up where you left off.
-- For advanced users, CoordiMate offers complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
+- When CoordiMate starts, your existing data is automatically loaded in, allowing you to pick up where you left off.
+- For advanced users, CoordiMate offers you complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
 
 {% include admonition.html type="danger" title="Danger" body="
 
@@ -262,13 +258,18 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 ![Ui](images/Ui_explanation.png)
 
-1. Menu Bar: Access to features File and Help
+1. Menu Bar: Quick access to File and Help features
 2. Command Line: Type your commands here. 
 3. Command Result: View command results or error messages through here. 
 4. Contact List: View and manage contacts here. 
-5. Task List: View and organize tasks here. 
-6. Data Storage: This is where user data is saved.
+5. Task List: View and manage tasks here. 
+6. Data Storage: Displays the path where your data is stored.
 
+{% include admonition.html type="note" title="Note" body="
+
+**Protip**: Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a gentle drag in or out to customize the view according to your preference
+
+" %}
 
 ---
 
