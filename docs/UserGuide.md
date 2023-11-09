@@ -125,15 +125,22 @@ Throughout this guide, you will see different text styles that are used to highl
 [Back to Table of Contents](#table-of-contents)
 
 1. **Easy Management of People**:
-  - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
+
+- Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
+
 2. **Effortless Task Management**:
-  - CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.
+
+- CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.
+
 3. **Simplified Searching**:
-  - Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!
+
+- Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!
+
 4. **Hassle-Free Data Management**:
-  - CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
-  - When CoordiMate starts, your existing data is automatically loaded, allowing you to pick up where you left off.
-  - For advanced users, CoordiMate offers complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
+
+- CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
+- When CoordiMate starts, your existing data is automatically loaded, allowing you to pick up where you left off.
+- For advanced users, CoordiMate offers complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
 
 {% include admonition.html type="danger" title="Danger" body="
 
@@ -281,11 +288,19 @@ You can add new individuals to your list such as clients, vendors, or friends.
 addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 ```
 
+<h4>Alias:</h4>
+
+```
+ap
+```
+
 - Provide the full name of the individual using the `n/` prefix. This field is **mandatory**.
 - Provide the phone number with the `p/` prefix. This field is **mandatory**.
 - Provide the email address using the `e/` prefix. This field is **mandatory**.
 - Provide the address using the `a/` prefix. This field is **mandatory**.
 - Tag the person using the `t/` prefix. This field is **optional**.
+- You may add multiple tags to a task by specifying the `t/` prefix multiple times.
+- A person is identified by their name. This means that you cannot have two persons with the same name.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -300,11 +315,17 @@ A person can have any number of tags (including 0).
 
   ![addPerson success](images/output/addPerson_success.png)
 
-<h4>Potential Error:</h4>
-- `addPerson`
-  - Negative example as the name, phone number, email address, and address are not specified.<br><br>
+<h4>Potential Errors:</h4>
 
-  ![addPerson error](images/error/addPerson_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the name, phone number, email address and address are specified.
+`Names should only contain alphanumeric characters and spaces, and it should not be blank` | Ensure that the name specified is not blank and contain only alphanumeric characters. Whitespaces at the start and end are trimmed.
+`Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
+`Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
+`Emails should be of the format local-part@domain and adhere to the following constraints: ...` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
+`This person already exists in the address book.` | Ensure that the new name specified do not match an existing person.
+`Multiple values specified for the following single-valued field(s): n/ e/ a/ p/` | Ensure that duplicate tags for name, email, address and phone number are removed.
 
 <div style="page-break-after: always;"></div>
 
@@ -318,6 +339,12 @@ You can view details of all your contacts.
 
 ```
 listPerson
+```
+
+<h4>Alias:</h4>
+
+```
+lp
 ```
 
 <h4>Example:</h4>
@@ -359,7 +386,7 @@ ep
   - Specifying `t/` without any tags will clear all existing tags of the task.
 - At least one of the optional fields must be provided for the command to be valid.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `editPerson 1 p/91234567 e/johndoe@example.com`
   - Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.<br><br>
@@ -458,7 +485,7 @@ dp
 - The index refers to the index number shown in the displayed person list.
 - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findPerson Bernice` followed by `deletePerson 1`
   - Deletes the 1st person in the results of the `findPerson` command.<br><br>
@@ -537,7 +564,7 @@ at
 
 <h4></h4>
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
   - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.<br><br>
@@ -565,7 +592,13 @@ You can view details of all your tasks.
 listTask
 ```
 
-<h4>Examples:</h4>
+<h4>Alias:</h4>
+
+```
+lt
+```
+
+<h4>Example:</h4>
 - `listTask`
     - Displays a complete list of all tasks in your task list.<br><br>
 
@@ -602,7 +635,7 @@ et
   - Specifying `t/` without any tags will clear all existing tags of the task.
 - At least one of the optional fields must be provided for the command to be valid.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `editTask 2 T/Book room n/By Friday t/orientation`
   - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.<br><br>
@@ -697,7 +730,7 @@ dt
 - The index refers to the index number shown in the task list currently displayed.
 - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findTask caterer` followed by `deleteTask 1`
   - Deletes the 1st task in the results of the `findTask` command.<br><br>
@@ -783,7 +816,7 @@ Tasks are marked as not done by default.
 
 " %}
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `listTask` followed by `markTask 1`
   - Marks the 1st task in the task list as **done**<br><br>
@@ -827,7 +860,7 @@ Tasks are marked as not done by default.
 
 " %}
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `listTask` followed by `unmarkTask 1`
   - Marks the 1st task in the task list as **not done**<br><br>
@@ -870,7 +903,7 @@ findDone
 fd
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findDone`
   - Tasks are displayed as they are marked as done.<br><br>
@@ -905,7 +938,7 @@ findNotDone
 fnd
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findNotDone`
   - Tasks are displayed as they are marked as not done.<br><br>
@@ -940,14 +973,14 @@ dad
 
 - After completing the deletion of completed tasks, the task list will automatically revert back to displaying all tasks, ensuring you have a comprehensive overview of your remaining to-dos.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteAllDone`
   - All tasks that are marked as done are deleted.<br><br>
 
   ![deleteAllDone_success](images/output/deleteAllDone_success.png)<br><br>
 
-<h4>Potential Errors:</h4>
+<h4>Potential Error:</h4>
 
  Error message | How to resolve
 ---------------|---------------
@@ -983,7 +1016,7 @@ atagp
 - Existing list of tags will be updated after adding in the input tags.
 - Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `addTagPerson 1 t/friends t/expensive`
   - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
@@ -1023,7 +1056,7 @@ atagt
 - Existing list of tags will be updated after adding in the input tags.
 - Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `addTagTask 1 t/day1 t/day2`
   - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.<br><br>
@@ -1039,7 +1072,6 @@ atagt
 `The task index provided is invalid` | Ensure that the index provided is within the valid range.
 
 <div style="page-break-after: always;"></div>
-
 
 #### 3.3. Listing all tags: `listTag`
 
@@ -1074,11 +1106,11 @@ listTag
 
 <div style="page-break-after: always;"></div>
 
-#### 3.4. Finding persons and tasks with any matching tag: `findTag`
+#### 3.4. Finding persons and tasks with any matching tag(s): `findTag`
 
 [Back to Table of Contents](#table-of-contents)
 
-You can search for persons and tasks using any keywords that match their tags.
+You can expand your search with this command when you aim to locate any person and task that corresponds with at least one of the keywords you provide.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -1094,18 +1126,21 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 findTag KEYWORD [MORE_KEYWORDS]...
 ```
 
-- Finds the persons and tasks whose tags contain at least one of the specified `TAG`.
+<h4>Alias:</h4>
+
+```
+ftag
+```
+
+- At least one keyword is required to search.
+- The search is case-sensitive, e.g. `findTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+- Only full words will be matched, e.g. `findTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tags to expand your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Shows results that contain at least one of the specified keywords.
+- Specify more tag(s) to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Persons and tasks matching **at least one** keyword in their tag(s) will be returned (i.e. OR search).
+  - e.g. `findTag catering orientation` will match all persons and tasks which tags contain `catering`, `orientation` or both.
 
-<h4>Examples:</h4>
-
-- `findTag orientation`
-  - Shows all persons and tasks containing the tag `orientation`.<br><br>
-
-  ![findTag_success_2](images/output/findTag_success2.png)<br><br>
-
+<h4>Example:</h4>
 
 - `findTag catering orientation`
   - Shows all persons and tasks containing any of the tags `catering` or `orientation`.<br><br>
@@ -1114,18 +1149,17 @@ findTag KEYWORD [MORE_KEYWORDS]...
 
 <h4>Potential Error:</h4>
 
-- `findTag`
-  - An invalid command format. The application expects one or more keywords after `findTag`.<br><br>
-
-  ![FindTag Example 2](images/error/findTag_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
-#### 3.5. Finding persons and tasks with all matching tags: `findAllTag`
+#### 3.5. Finding persons and tasks with all matching tag(s): `findAllTag`
 
 [Back to Table of Contents](#table-of-contents)
 
-You can search for persons and tasks using all keywords that match their tags.
+You can narrow your search with this command when you want to find only those persons and tasks that include every keyword you list.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -1141,17 +1175,22 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 findAllTag KEYWORD [MORE_KEYWORDS]...
 ```
 
-- Finds the persons and tasks whose tags contain at least one of the specified `KEYWORD`.
+<h4>Alias:</h4>
+
+```
+mt
+```
+
+- At least one keyword is required to search.
+- The search is case-sensitive, e.g. `findAllTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+- Only full words will be matched, e.g. `findAllTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
+- Finds the persons and tasks whose tags completely match all of the specified `KEYWORD`(s).
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tags to expand your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Shows only results that contain all keywords given.
+- Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Persons and tasks matching **all** keyword(s) in their tag(s) will be returned (i.e. AND search).
+  - e.g. `findAllTag catering orientation` will match all persons and tasks which contain both `catering` and `orientation` tags.
 
-<h4>Examples:</h4>
-
-- `findAllTag orientation`
-  - Shows all persons and tasks containing the tag `catering`.<br><br>
-
-  ![findAllTag_success_1](images/output/findAllTag_success1.png)<br><br>
+<h4>Example:</h4>
 
 - `findAllTag catering orientation`
   - Shows all persons and tasks containing both the tags `catering` and `orientation`.<br><br>
@@ -1160,10 +1199,9 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 
 <h4>Potential Error:</h4>
 
-- `findAllTag`
-  - An invalid command format. The application expects one or more keywords after `findAllTag`.<br><br>
-
-  ![FindAllTag Example 2](images/error/findAllTag_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
@@ -1183,7 +1221,7 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 - Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
 - Invalid tags will be ignored.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteTagPerson 2 t/colleagues t/friends`
   - Deletes the tags `colleagues` and `friends` from the 2nd person.<br><br>
@@ -1208,7 +1246,7 @@ deleteTagTask INDEX t/TAG [t/MORE TAGS]…
 - Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
 - Invalid tags will be ignored.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteTagTask 2 t/class t/finance`
   - Deletes the tags `class` and `finance` from the 2nd task.<br><br>
@@ -1384,7 +1422,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Add Tag(s) to a Person**](#31-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
 [**Add Tag(s) to a Task**](#32-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
 [**List All Tags**](#33-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
-[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
+[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tags-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
 [**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation` | `fatag`
 [**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering` | `dtagp`
 [**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering` | `dtagt`
