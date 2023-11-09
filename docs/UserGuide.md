@@ -256,6 +256,24 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 <div style="page-break-after: always;"></div>
 
+### Understanding Our UI
+
+[Back to Table of Contents](#table-of-contents)
+
+![Ui](images/Ui_explanation.png)
+
+1. Menu Bar: Access to features File and Help
+2. Command Line: Type your commands here. 
+3. Command Result: View command results or error messages through here. 
+4. Contact List: View and manage contacts here. 
+5. Task List: View and organize tasks here. 
+6. Data Storage: This is where user data is saved.
+
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ### 1. Commands to Manage Persons
 
 #### 1.1. Adding a person: `addPerson`
@@ -1131,10 +1149,13 @@ findTag KEYWORD [MORE_KEYWORDS]...
 ftag
 ```
 
-- Finds the persons and tasks whose tags completely match at least one of the specified `KEYWORD`.
+- At least one keyword is required to search.
+- The search is case-sensitive, e.g. `findTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+- Only full words will be matched, e.g. `findTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Shows results that contain at least one of the specified keywords.
+- Specify more tag(s) to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Persons and tasks matching **at least one** keyword in their tag(s) will be returned (i.e. OR search).
+  - e.g. `findTag catering orientation` will match all persons and tasks which tags contain `catering`, `orientation` or both.
 
 <h4>Example:</h4>
 
@@ -1171,9 +1192,20 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 findAllTag KEYWORD [MORE_KEYWORDS]...
 ```
 
+<h4>Alias:</h4>
+
+```
+mt
+```
+
+- At least one keyword is required to search.
+- The search is case-sensitive, e.g. `findAllTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+- Only full words will be matched, e.g. `findAllTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
 - Finds the persons and tasks whose tags completely match all of the specified `KEYWORD`(s).
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
 - Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
+- Persons and tasks matching **all** keyword(s) in their tag(s) will be returned (i.e. AND search).
+  - e.g. `findAllTag catering orientation` will match all persons and tasks which contain both `catering` and `orientation` tags.
 
 <h4>Example:</h4>
 
@@ -1407,7 +1439,7 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Add Tag(s) to a Person**](#31-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
 [**Add Tag(s) to a Task**](#32-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
 [**List All Tags**](#33-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
-[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
+[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tags-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
 [**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation` | `fatag`
 [**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering` | `dtagp`
 [**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering` | `dtagt`
