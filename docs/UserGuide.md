@@ -158,6 +158,14 @@ Always make a backup before you edit!
 
 [Back to Table of Contents](#table-of-contents)
 
+The commands are split into 5 main sections:
+
+1. [Managing Person commands](#1-commands-to-manage-persons)
+2. [Managing Task commands](#2-commands-to-manage-tasks)
+3. [Managing Tag commands](#3-commands-to-manage-tags)
+4. [General commands](#4-general-commands)
+
+
 {% include admonition.html type="note" title="Note" body="
 
 <ul>
