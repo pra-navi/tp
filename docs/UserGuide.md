@@ -187,7 +187,6 @@ The commands are split into 5 main sections:
 3. [Managing Tag commands](#3-commands-to-manage-tags)
 4. [General commands](#4-general-commands)
 
-
 {% include admonition.html type="note" title="Note" body="
 
 <ul>
@@ -292,7 +291,7 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 ![Ui](images/Ui_explanation.png)
 
-1. Menu Bar: Quick access to File and Help features
+1. Menu Bar: Quick access to File and Help features.
 2. Command Line: Type your commands here.
 3. Command Result: View command results or error messages through here.
 4. Contact List: View and manage contacts here.
@@ -315,7 +314,7 @@ Here's a handy trick – you can easily resize sections like Command Result, Con
 
 [Back to Table of Contents](#table-of-contents)
 
-You can add new individuals to your list such as clients, vendors, or friends.
+You can add new persons to your contact list, so that you can remember details of new people you meet.
 
 <h4>Format:</h4>
 
@@ -329,26 +328,25 @@ addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 ap
 ```
 
-- Provide the full name of the individual using the `n/` prefix. This field is **mandatory**.
-- Provide the phone number with the `p/` prefix. This field is **mandatory**.
-- Provide the email address using the `e/` prefix. This field is **mandatory**.
-- Provide the address using the `a/` prefix. This field is **mandatory**.
-- Tag the person using the `t/` prefix. This field is **optional**.
-- You may add multiple tags to a task by specifying the `t/` prefix multiple times.
-- A person is identified by their name. This means that you cannot have two persons with the same name.
+<h4>Fields:</h4>
 
-{% include admonition.html type="note" title="Note" body="
+| Fields | Prefix | Required | Remarks |
+|--------|--------|----------|---------|
+| `NAME` | `n/` | Yes | Full name of the individual.|
+| `PHONE_NUMBER` | `p/` | Yes | Phone number of the individual.|
+| `EMAIL` | `e/` | Yes | Email address of the individual.|
+| `ADDRESS` | `a/` | Yes | Physical address of the individual.|
+| `TAG` | `t/` | No | Tag(s) for the individual.|
+{: .field-table}
 
-A person can have any number of tags (including 0).
-
-" %}
+- A person is uniquely identified by their `NAME`. This parameter is case sensitive.
 
 <h4>Example:</h4>
-- `addPerson n/Charlotte Oliveiro p/93210283 e/charlotteo@example.com a/Blk 11 Ang Mo Kio Street 74, #11-04 t/flowers`
-  - Adds a person named `Charlotte Oliveiro` with phone number `93210283`, email `charlotteo@example.com`,
-   address `Blk 11 Ang Mo Kio Street 74, #11-04`, and tag `flowers`.<br><br>
 
+- `addPerson n/Charlotte Oliveiro p/93210283 e/charlotteo@example.com a/Blk 11 Ang Mo Kio Street 74, #11-04 t/flowers`<br><br>
   ![addPerson success](images/output/addPerson_success.png)
+
+  *<center>CoordiMate adds a new contact with the corresponding details.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -360,7 +358,7 @@ A person can have any number of tags (including 0).
 `Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
 `Emails should be of the format local-part@domain and adhere to the following constraints: …` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
 `This person already exists in the address book.` | Ensure that the new name specified do not match an existing person.
-`Multiple values specified for the following single-valued field(s): n/ e/ a/ p/` | Ensure that duplicate tags for name, email, address and phone number are removed.
+`Multiple values specified for the following single-valued field(s): n/ e/ a/ p/` | Ensure that there are no duplicate fields for name, email, address and phone number.
 
 <div style="page-break-after: always;"></div>
 
@@ -383,10 +381,12 @@ lp
 ```
 
 <h4>Example:</h4>
-- `listPerson`
-    - Shows a full list of all the contacts in your contact list.<br><br>
 
+- `listPerson`<br><br>
   ![listPerson success](images/output/listPerson_success.png)
+
+  *<center>CoordiMate shows you the full contact list.</center>*
+
 
 <div style="page-break-after: always;"></div>
 
@@ -643,10 +643,11 @@ lt
 ```
 
 <h4>Example:</h4>
-- `listTask`
-    - Displays a complete list of all tasks in your task list.<br><br>
 
+- `listTask`<br><br>
   ![listTask success](images/output/listTask_success.png)
+
+  *<center>CoordiMate shows you the full task list.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -1172,14 +1173,6 @@ ltag
 
 You can expand your search with this command when you aim to locate any person and task that corresponds with at least one of the keywords you provide.
 
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all persons and tasks that do not match the search criteria. <br>
-(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
-To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
-
-" %}
-
 <h4>Format:</h4>
 
 ```
@@ -1192,20 +1185,31 @@ findTag KEYWORD [MORE_KEYWORDS]…
 ftag
 ```
 
-- At least one keyword is required to search.
-- The search is case-sensitive, e.g. `findTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|----------|---------|
+| `KEYWORD` | No Prefix | Yes | The keyword to search for tags.|
+| `MORE_KEYWORDS` | No Prefix | No | Additional keyword(s) to search for tags.|
+{: .field-table}
+
+- Persons and tasks matching at least one of `KEYWORD` in their tag(s) will be returned (i.e. OR search). This field is case insensitive and the order of keywords does not matter.
 - Only full words will be matched, e.g. `findTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
-- Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tag(s) to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Persons and tasks matching **at least one** keyword in their tag(s) will be returned (i.e. OR search).
-  - e.g. `findTag catering orientation` will match all persons and tasks which tags contain `catering`, `orientation` or both.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all persons and tasks that do not match the search criteria. <br>
+(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
+To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
+
+" %}
 
 <h4>Example:</h4>
 
-- `findTag catering orientation`
-  - Shows all persons and tasks containing any of the tags `catering` or `orientation`.<br><br>
-
+- `findTag catering orientation`<br><br>
   ![findTag_success_1](images/output/findTag_success1.png)
+  
+  *<center>CoordiMate finds all persons and tasks mtaching any of <code>catering</code> or <code>orientation</code> tags.</center>*
 
 <h4>Potential Error:</h4>
 
@@ -1221,14 +1225,6 @@ ftag
 
 You can narrow your search with this command when you want to find only those persons and tasks that include every keyword you list.
 
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all persons and tasks that do not match the search criteria. <br>
-(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
-To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
-
-" %}
-
 <h4>Format:</h4>
 
 ```
@@ -1238,24 +1234,34 @@ findAllTag KEYWORD [MORE_KEYWORDS]…
 <h4>Alias:</h4>
 
 ```
-mt
+fatag
 ```
 
-- At least one keyword is required to search.
-- The search is case-sensitive, e.g. `findAllTag orientation` will match persons and tasks which tag(s) must contain `orientation`.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|----------|---------|
+| `KEYWORD` | No Prefix | Yes | The keyword to search for tags.|
+| `MORE_KEYWORDS` | No Prefix | No | Additional keyword(s) to search for tags.|
+{: .field-table}
+
+- Persons and tasks matching all `KEYWORD` in their tag(s) will be returned (i.e. AND search). This field is case insensitive and the order of keywords does not matter.
 - Only full words will be matched, e.g. `findAllTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
-- Finds the persons and tasks whose tags completely match all of the specified `KEYWORD`(s).
-- Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Persons and tasks matching **all** keyword(s) in their tag(s) will be returned (i.e. AND search).
-  - e.g. `findAllTag catering orientation` will match all persons and tasks which contain both `catering` and `orientation` tags.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all persons and tasks that do not match the search criteria. <br>
+(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
+To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
+
+" %}
 
 <h4>Example:</h4>
 
-- `findAllTag catering orientation`
-  - Shows all persons and tasks containing both the tags `catering` and `orientation`.<br><br>
-
+- `findAllTag catering orientation`<br><br>
   ![findAllTag_success_2](images/output/findAllTag_success2.png)
+
+  *<center>CoordiMate finds persons and tasks matching all of <code>catering</code> and <code>orientation</code> in theri tag(s).</center>*
 
 <h4>Potential Error:</h4>
 
