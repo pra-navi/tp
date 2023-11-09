@@ -3,15 +3,43 @@ layout: page
 title: Developer Guide
 ---
 
-<h2> Table of Contents </h2>
-* Table of Contents
-{:toc}
+<!-- Inject widths for User Story table -->
+<style>
+.user-story-table th:nth-child(1) {
+    width: 12%;
+}
 
-<div style="page-break-after: always;"></div>
+.user-story-table th:nth-child(2) {
+    width: 12%;
+}
+
+.user-story-table th:nth-child(3) {
+    width: 28%;
+}
+
+.user-story-table th:nth-child(4) {
+    width: 48%;
+}
+</style>
+
+CoordiMate is a **desktop application** designed specifically for **SoC Computing Club event planners** to help **manage their contacts and tasks** for their events, so that they can focus on the event itself.
+
+This Developer Guide will help you get familiar with the architecture of CoordiMate and understand the implementation details behind some of its features.
 
 ---
 
+## **Table of Contents**
+
+* Table of Contents
+{:toc}
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ## **Acknowledgements**
+
+[Back to Table of Contents](#table-of-contents)
 
 * CoordiMate is based on the [AddressBook-Level3](https://github.com/se-edu/addressbook-level3) project created by the [SE-EDU initiative](https://se-education.org).
 * CoordiMate makes use of the following open source libraries:
@@ -19,19 +47,23 @@ title: Developer Guide
   * [JUnit 5](https://junit.org/junit5/) for unit testing.
   * [Jackson](https://github.com/FasterXML/jackson) for parsing JavaScript Object Notation (JSON) files.
 
-<div style="page-break-after: always;"></div>
-
 ---
+
+<div style="page-break-after: always;"></div>
 
 ## **Setting up, getting started**
 
-Refer to the guide [_Setting up and getting started_](SettingUp.md).
+[Back to Table of Contents](#table-of-contents)
 
-<div style="page-break-after: always;"></div>
+Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ## **Design**
+
+[Back to Table of Contents](#table-of-contents)
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -41,6 +73,8 @@ Refer to the <a href='https://se-education.org/guides/tutorials/plantUml.html'><
 " %}
 
 ### Architecture
+
+[Back to Table of Contents](#table-of-contents)
 
 <img src="assets/svg/dg/ArchitectureDiagram.svg" width="280" />
 
@@ -66,8 +100,7 @@ The bulk of the app's work is done by the following four components:
 
 **How the architecture components interact with each other**
 
-The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user 
-issues the command `deletePerson 1`.
+The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `deletePerson 1`.
 
 <img src="assets/svg/dg/ArchitectureSequenceDiagram.svg" width="574" />
 
@@ -85,6 +118,8 @@ The sections below give more details of each component.
 <div style="page-break-after: always;"></div>
 
 ### UI component
+
+[Back to Table of Contents](#table-of-contents)
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
@@ -104,6 +139,8 @@ The `UI` component,
 <div style="page-break-after: always;"></div>
 
 ### Logic component
+
+[Back to Table of Contents](#table-of-contents)
 
 **API** : [`Logic.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
@@ -139,10 +176,12 @@ How the parsing works:
 <div style="page-break-after: always;"></div>
 
 ### Model component
+
+[Back to Table of Contents](#table-of-contents)
+
 **API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="assets/svg/dg/ModelClassDiagram.svg" width="450" />
-
 
 The `Model` component,
 
@@ -166,6 +205,8 @@ An alternative (arguably, a more OOP) model is given below. It has a <code>Tag</
 
 ### Storage component
 
+[Back to Table of Contents](#table-of-contents)
+
 **API** : [`Storage.java`](https://github.com/AY2324S1-CS2103T-T10-2/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="assets/svg/dg/StorageClassDiagram.svg" width="550" />
@@ -179,6 +220,8 @@ The `Storage` component,
 
 ### Common classes
 
+[Back to Table of Contents](#table-of-contents)
+
 Classes used by multiple components are in the `seedu.addressbook.commons` package.
 
 <div style="page-break-after: always;"></div>
@@ -187,9 +230,13 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 ## **Implementation**
 
+[Back to Table of Contents](#table-of-contents)
+
 This section describes some noteworthy details on how certain features are implemented.
 
 ### Add Tag(s) To Person feature
+
+[Back to Table of Contents](#table-of-contents)
 
 #### Implementation
 
@@ -211,19 +258,18 @@ The lifeline for <code>AddTagPersonCommandParser</code> and <code>AddTagPersonCo
 
 * **Alternative 1:** Simply present tasks using basic string output.
   * Pros: Direct approach and simple to design and implement.
-  * Cons: Users are unsure which of their tag inputs are duplicates of current tag in existing list of tags for the 
-    specified person and which have been newly added due to their input. <br/><br/>
+  * Cons: Users are unsure which of their tag inputs are duplicates of current tag in existing list of tags for the specified person and which have been newly added due to their input. <br/><br/>
 
-* **Alternative 2 (current choice):** Present tasks using basic string output and indicates which of the input tags are 
-  duplicates of existing tags for the specified person and which have been newly added to the list of tags.
-  * Pros: Users are able to identify which of their tag inputs are duplicates of current tag in existing list of tags 
-    for the specified person and which have been newly added due to their input.
-  * Cons: More complex to design and implement. 
+* **Alternative 2 (current choice):** Present tasks using basic string output and indicates which of the input tags are duplicates of existing tags for the specified person and which have been newly added to the list of tags.
+  * Pros: Users are able to identify which of their tag inputs are duplicates of current tag in existing list of tags for the specified person and which have been newly added due to their input.
+  * Cons: More complex to design and implement.
   * Cons: Result output is longer and harder to read for users. <br/><br/>
 
 <div style="page-break-after: always;"></div>
 
 ### List Task feature
+
+[Back to Table of Contents](#table-of-contents)
 
 #### Implementation
 
@@ -255,6 +301,8 @@ The lifeline for <code>ListTaskCommand</code> should end at the destroy marker (
 
 ### Edit Task feature
 
+[Back to Table of Contents](#table-of-contents)
+
 #### Implementation
 
 The `editTask` command accepts an index, title, note, and tags, and edits the task at that index with the new fields. The index should be numeric. The title, note, and tags can be any string. At least one of the title, note, or tag must be provided for the command to be valid.
@@ -270,8 +318,6 @@ The lifeline for <code>EditTaskCommandParser</code> and <code>EditTaskCommand</c
 " %}
 
 The sequence diagrams below show the details of the respective reference frames.
-
-<img width=>
 
 ![CreateEditTaskDescriptor](assets/svg/dg/SDCreateEditTaskDescriptor.svg)
 
@@ -293,6 +339,8 @@ The sequence diagrams below show the details of the respective reference frames.
 <div style="page-break-after: always;"></div>
 
 ### Find Task feature
+
+[Back to Table of Contents](#table-of-contents)
 
 #### Implementation
 
@@ -341,6 +389,8 @@ These two predicates are used to filter the list of tasks in the `Model` compone
 
 ### Mark Task feature
 
+[Back to Table of Contents](#table-of-contents)
+
 #### Implementation
 
 The `markTask` command accepts an index and marks the task at that index with task status of **done**. The index should be numeric.
@@ -364,7 +414,7 @@ The activity diagram below models the action sequence of how the `markTask` comm
 Since the beta syntax does not support placing the condition outside the diamond we place it as the true branch instead.
 
 " %}
-'
+
 
 #### Design considerations
 
@@ -393,6 +443,8 @@ Any string can be passed as a status, potentially resulting in invalid or unexpe
 
 ### Delete Task feature
 
+[Back to Table of Contents](#table-of-contents)
+
 #### Implementation
 
 The `deleteTask` command accepts a numeric Index, and removes the task at that index from the task list.
@@ -403,8 +455,7 @@ The sequence diagram below illustrates how the `deleteTask` command works for th
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>DeleteTaskCommandParser</code>  and <code>DeleteTaskCommand</code> should end at the destroy 
-marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeleteTaskCommandParser</code> and <code>DeleteTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
 
@@ -420,99 +471,13 @@ marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of 
   * Pros: Users can delete a task that is not shown in the filtered list.
   * Cons: Users have to use the `listTask` command everytime to confirm the index of the task before they delete the task.
 
-<div style="page-break-after: always;"></div>
-
-### \[Proposed\] Undo/redo feature
-
-#### Proposed Implementation
-
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:
-
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
-
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
-
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
-
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
-
-![UndoRedoState0](assets/svg/dg/UndoRedoState0.svg)
-
-Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
-
-![UndoRedoState1](assets/svg/dg/UndoRedoState1.svg)
-
-Step 3. The user executes `add n/David …​` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
-
-![UndoRedoState2](assets/svg/dg/UndoRedoState2.svg)
-
-{% include admonition.html type="note" title="Note" body="
-
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-
-" %}
-
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
-
-![UndoRedoState3](assets/svg/dg/UndoRedoState3.svg)
-
-{% include admonition.html type="note" title="Note" body="
-
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-" %}
-
-The following sequence diagram shows how the undo operation works:
-
-![UndoSequenceDiagram](assets/svg/dg/UndoSequenceDiagram.svg)
-
-{% include admonition.html type="note" title="Note" body="
-
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-" %}
-
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
-
-{% include admonition.html type="note" title="Note" body="
-
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone AddressBook states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
-" %}
-
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
-
-![UndoRedoState4](assets/svg/dg/UndoRedoState4.svg)
-
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
-
-![UndoRedoState5](assets/svg/dg/UndoRedoState5.svg)
-
-The following activity diagram summarizes what happens when a user executes a new command:
-
-<img src="assets/svg/dg/CommitActivityDiagram.svg" width="250" />
-
-#### Design considerations:
-
-**Aspect: How undo & redo executes:**
-
-* **Alternative 1 (current choice):** Saves the entire address book.
-  * Pros: Easy to implement.
-  * Cons: May have performance issues in terms of memory usage.
-
-* **Alternative 2:** Individual command knows how to undo/redo by
-  itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
-  * Cons: We must ensure that the implementation of each individual command are correct.
-
 ---
 
 <div style="page-break-after: always;"></div>
 
-## **Documentation, logging, testing, configuration, dev-ops**
+## **Documentation, Logging, Testing, Configuration, Dev-Ops**
+
+[Back to Table of Contents](#table-of-contents)
 
 * [Documentation guide](Documentation.md)
 * [Testing guide](Testing.md)
@@ -526,7 +491,11 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ## **Appendix: Requirements**
 
+[Back to Table of Contents](#table-of-contents)
+
 ### Product scope
+
+[Back to Table of Contents](#table-of-contents)
 
 **Target user profile**:
 
@@ -542,6 +511,8 @@ CoordiMate helps event planners to easily keep track of contact details as well 
 <div style="page-break-after: always;"></div>
 
 ### User stories
+
+[Back to Table of Contents](#table-of-contents)
 
 Priorities:
 
@@ -578,10 +549,13 @@ Priorities:
 | `* *` | event planner | find a person and tasks by tag | quickly see the persons and tasks in a category |
 | `* *` | event planner | add tag(s) to a person | can just add tag(s) to the existing list of tags of the indexed person |
 | `* *` | event planner | add tag(s) to a task | can just add tag(s) to the existing list of tags of the indexed task |
+{: .user-story-table}
 
 <div style="page-break-after: always;"></div>
 
 ### Use cases
+
+[Back to Table of Contents](#table-of-contents)
 
 For all use cases below, the **System** is `CoordiMate` and the **Actor** is the `user`, unless specified otherwise.
 
@@ -1163,6 +1137,8 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ### Non-Functional Requirements
 
+[Back to Table of Contents](#table-of-contents)
+
 1. Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2. Should be able to hold up to 1000 persons and tasks without a noticeable sluggishness in performance for typical usage.
 3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
@@ -1176,9 +1152,13 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ### Glossary
 
+[Back to Table of Contents](#table-of-contents)
+
+* **API**: Application Programming Interface, a set of predefined functions that a software program can use to interact with another software program.
 * **CLI**: Command Line Interface, a way of interacting with a computer program by typing commands and receiving text responses.
 * **Exploratory testing**: Testing a feature based on the tester's intuitive understanding of how the feature should function.
 * **GUI**: Graphical User Interface, a way of interacting with a computer program by manipulating graphical elements on the screen.
+* **JSON**: JavaScript Object Notation, a data format that is widely supported, human-readable and easy for computers to parse.
 * **Mainstream OS**: One of these operating systems: Windows, Linux, Unix, OS-X
 * **MSS**: Main Success Scenario, which is the most straightforward interaction for a given use case assuming that nothing goes wrong.
 
@@ -1187,6 +1167,8 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 ---
 
 ## **Appendix: Instructions for manual testing**
+
+[Back to Table of Contents](#table-of-contents)
 
 Given below are instructions to test the app manually.
 
@@ -1361,11 +1343,10 @@ testers are expected to do more <i>exploratory testing</i>.
       Expected: Tag is added to the first task in the list. Details of the task shown in the result display.
 
    3. Test case: `addTagTask 1 t/finance` followed by `addTagTask 1 t/finance t/class`<br>
-      Expected: Tag is added to the first task in the list. When the second command is run, `class` is added to
-      the first task in the list but `finance` is not added as a duplicate. Instead `finance` is returned to the
-      result display to already exist for the first task.
+      Expected: Tag is added to the first task in the list. When the second command is run, `class` is added to the first task in the list but `finance` is not added as a duplicate.
+      Instead `finance` is returned to the result display to already exist for the first task.
 
-   4. Other incorrect addTagTask commands to try: `addTagTask`, `addTagTask 1`, `addTagTask 1 t/`, 
+   4. Other incorrect addTagTask commands to try: `addTagTask`, `addTagTask 1`, `addTagTask 1 t/`,
       `addTagTask x t/finance` (where x is larger than the list size), `addTagTask y t/finance` (where y is less than or equal to 0)<br>
       Expected: No tag is added to the first task in the list. An error message is shown.
 
@@ -1404,14 +1385,15 @@ testers are expected to do more <i>exploratory testing</i>.
 
 ## **Appendix: Planned Enhancements**
 
-### 1. We plan to make error messages more specific. For example, we will specify the error of "Tag names should be 
-   alphanumeric" to "Tag names should be ONLY alphanumeric". This will help users to understand the error better.
+[Back to Table of Contents](#table-of-contents)
+
+### 1. We plan to make error messages more specific. For example, we will specify the error of "Tag names should be alphanumeric" to "Tag names should be ONLY alphanumeric". This will help users to understand the error better.
 
 ### 2. Character Limits for Person Fields and Tasks
 
 - **Enhancement**: Implement character limits for various fields associated with persons and tasks to ensure data consistency and integrity.
 - **Reason**: To maintain a structured format for data entry and prevent excessively long inputs that could affect the display and usability of the system.
-- **Example**: 
+- **Example**:
   - For `Person` entities:
     - **Name**: Limit to 1 - 100 characters to ensure the name is detailed enough yet concise.
     - **Phone**: Limit to 3 - 15 characters to accommodate international formats without extraneous digits.
@@ -1419,8 +1401,7 @@ testers are expected to do more <i>exploratory testing</i>.
     - **Address**: Maximum of 200 characters to include full addresses in a readable format.
   - For `Task` entities:
     - **Title**: Limit to 1 - 100 characters to encapsulate the task effectively.
-    - **Note**: Limit to 1 - 200 characters to provide a thorough 
-    description without becoming verbose.
+    - **Note**: Limit to 1 - 200 characters to provide a thorough description without becoming verbose.
    - For `Person/Task` tags:
       - **Tag**: Maximum of 30 characters to keep tags succinct and meaningful.
 
@@ -1454,5 +1435,7 @@ testers are expected to do more <i>exploratory testing</i>.
 <div style="page-break-after: always;"></div>
 
 ## **Appendix: Effort**
+
+[Back to Table of Contents](#table-of-contents)
 
 TODO
