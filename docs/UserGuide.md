@@ -3,6 +3,34 @@ layout: page
 title: User Guide
 ---
 
+<!-- Inject styles for custom table widths -->
+
+<style>
+.field-table th:nth-child(1) {
+    width: 15%;
+}
+
+.field-table th:nth-child(2) {
+    width: 15%;
+}
+
+.field-table th:nth-child(3) {
+    width: 10%;
+}
+
+.field-table th:nth-child(4) {
+    width: 60%;
+}
+
+.errors-table th:nth-child(1) {
+    width: 50%;
+}
+
+.errors-table th:nth-child(2) {
+    width: 50%;
+}
+</style>
+
 Are you a School of Computing (SoC) Computing Club event planner juggling numerous tasks and contacts for your upcoming events?
 
 Managing everything efficiently just got easier with CoordiMate!
@@ -31,15 +59,9 @@ If you are an experienced user, you can use the [Table of Contents](#table-of-co
 
 Here are some annotations used in this guide:
 
-{% include admonition.html type="danger" title="Danger" body="
-
-Be careful when performing these operations as they can lead to data loss.
-
-" %}
-
 {% include admonition.html type="warning" title="Warning" body="
 
-Take note of these as they can cause unexpected behaviour when using CoordiMate.
+Take note of these as they can cause unexpected behaviour or data loss when using CoordiMate.
 
 " %}
 
@@ -142,7 +164,7 @@ Throughout this guide, you will see different text styles that are used to highl
 - When CoordiMate starts, your existing data is automatically loaded in, allowing you to pick up where you left off.
 - For advanced users, CoordiMate offers you complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
 
-{% include admonition.html type="danger" title="Danger" body="
+{% include admonition.html type="warning" title="Warning" body="
 
 If your changes to the data file makes its format invalid, CoordiMate will not be able to load the data file, resulting in the contact and task lists being empty. <br>
 
@@ -171,14 +193,14 @@ The commands are split into 5 main sections:
 <ul>
   <li>
     <p>
-      Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.<br>
+      Words in <code>UPPER_CASE</code> are the fields to be supplied by the user.<br>
       e.g. in <code>addPerson n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>addPerson n/John Doe</code>, where <code>John Doe</code> is the value of the parameter <code>NAME</code>. <br>
     </p>
   </li>
 
   <li>
     <p>
-      Items in square brackets are optional.<br>
+      Fields in square brackets are optional.<br>
       e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.<br>
       Note that the square brackets (<code>[</code> and <code>]</code>) are not part of the syntax.
     </p>
@@ -186,21 +208,21 @@ The commands are split into 5 main sections:
 
   <li>
     <p>
-      Items in square brackets with <code>…</code> after them can be used multiple times, including zero times.<br>
+      Fields in square brackets with <code>…</code> after them can be used multiple times, including zero times.<br>
       e.g. <code>[t/TAG]…​</code> can be used as <code> </code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.
     </p>
   </li>
 
   <li>
     <p>
-      Parameters can be in any order.<br>
+      Fields can be in any order.<br>
       e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.
     </p>
   </li>
 
   <li>
     <p>
-      Extraneous parameters for commands that do not take in parameters (such as <code>help</code>, <code>listPerson</code>, <code>deleteAllPerson</code>, <code>listTask</code>, <code>deleteAllTask</code> and <code>exit</code>) will be ignored.<br>
+      Extraneous fields for commands that do not take in fields (such as <code>help</code>, <code>listPerson</code>, <code>deleteAllPerson</code>, <code>listTask</code>, <code>deleteAllTask</code> and <code>exit</code>) will be ignored.<br>
       e.g. if the command specifies <code>help 123</code>, it will be interpreted as <code>help</code>.
     </p>
   </li>
@@ -332,11 +354,11 @@ A person can have any number of tags (including 0).
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the name, phone number, email address and address are specified.
+`Invalid command format!…` | Ensure that the name, phone number, email address and address are specified.
 `Names should only contain alphanumeric characters and spaces, and it should not be blank` | Ensure that the name specified is not blank and contain only alphanumeric characters. Whitespaces at the start and end are trimmed.
 `Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
 `Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
-`Emails should be of the format local-part@domain and adhere to the following constraints: ...` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
+`Emails should be of the format local-part@domain and adhere to the following constraints: …` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
 `This person already exists in the address book.` | Ensure that the new name specified do not match an existing person.
 `Multiple values specified for the following single-valued field(s): n/ e/ a/ p/` | Ensure that duplicate tags for name, email, address and phone number are removed.
 
@@ -410,13 +432,13 @@ ep
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
 `At least one field to edit must be provided.` | Ensure that at least one of name, phone, email, address or tag is specified.
 `The person index provided is invalid` | Ensure that the index provided is within the valid range.
 `Names should only contain alphanumeric characters and spaces, and it should not be blank` | Ensure that the name specified is not blank and contain only alphanumeric characters. Whitespaces at the start and end are trimmed.
 `Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
 `Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
-`Emails should be of the format local-part@domain and adhere to the following constraints: ...` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
+`Emails should be of the format local-part@domain and adhere to the following constraints: …` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
 `This person already exists in the address book.` | Ensure that the new name specified do not match an existing person.
 
 <div style="page-break-after: always;"></div>
@@ -425,15 +447,7 @@ ep
 
 [Back to Table of Contents](#table-of-contents)
 
-Allows you to quickly find a specific person's details by their name.
-
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all persons that do not match the search criteria. <br>
-(i.e. If no persons match the search criteria, the list will be empty.)<br><br>
-To reset the persons view, simply run the <code>listPerson</code> command to list all persons.
-
-" %}
+You can find a person by their name, so that you can quickly locate their contact details.
 
 <h4>Format:</h4>
 
@@ -447,26 +461,36 @@ findPerson KEYWORD [MORE_KEYWORDS]…
 fp
 ```
 
-- At least one keyword is required to search.
-- The search is case-insensitive. e.g `hans` will match `Hans`.
-- The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
-- Only the **name** is searched.
-- Only full words will be matched e.g. `Han` will not match `Hans`.
-- Persons matching at least one keyword will be returned (i.e. `OR` search).
-  - e.g. `Hans Bo` will match `Hans Gruber`, `Bo Yang`.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|----------|---------|
+| `KEYWORD` | No Prefix | Yes | The keyword to search for.|
+{: .field-table}
+
+- Persons matching at least one `KEYWORD` in their names will be shown. This field is case insensitive and the order of keywords does not matter.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all persons that do not match the search criteria. <br>
+(i.e. If no persons match the search criteria, the list will be empty.)<br><br>
+To reset the persons view, simply run the <code>listPerson</code> command to list all persons.
+
+" %}
 
 <h4>Example:</h4>
 
-- `findPerson alex yu`
-  - Finds all persons whose names contains either `alex` or `yu`.<br><br>
+- `findPerson alex yu`<br><br>
+  ![findPerson success with a list](images/output/findPerson_success.png)
 
-  ![findPerson success with a list](images/output/findPerson_success.png)<br><br>
+  *<center>CoordiMate finds all persons whose names contains either <code>alex</code> or <code>yu</code>.</center>*
 
 <h4>Potential Error:</h4>
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that a keyword is provided.
+`Invalid command format!…` | Ensure that a keyword is provided.
+{: .errors-table}
 
 <div style="page-break-after: always;"></div>
 
@@ -476,7 +500,7 @@ fp
 
 Allows you to remove an outdated person from your contact list with ease.
 
-{% include admonition.html type="danger" title="Danger" body="
+{% include admonition.html type="warning" title="Warning" body="
 
 The person will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
 
@@ -516,7 +540,7 @@ dp
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
 `The person index provided is invalid` | Ensure that the index provided is within the valid range.
 
 <div style="page-break-after: always;"></div>
@@ -527,7 +551,7 @@ dp
 
 Clears **all** contacts in your contact list.
 
-{% include admonition.html type="danger" title="Danger" body="
+{% include admonition.html type="warning" title="Warning" body="
 
 <b>All</b> persons will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
 
@@ -567,7 +591,7 @@ Adds a task to your task list.
 <h4>Format:</h4>
 
 ```
-addTask T/TITLE n/NOTE [t/TAG]...
+addTask T/TITLE n/NOTE [t/TAG]…
 ```
 
 <h4>Alias:</h4>
@@ -595,7 +619,7 @@ at
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the title and note are specified.
+`Invalid command format!…` | Ensure that the title and note are specified.
 `Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and note specified are not blank. Whitespaces at the start and end are trimmed.
 
 <div style="page-break-after: always;"></div>
@@ -635,7 +659,7 @@ You can edit the details of a task in your task list.
 <h4>Format:</h4>
 
 ```
-editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
+editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]…
 ```
 
 <h4>Alias:</h4>
@@ -666,7 +690,7 @@ et
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
 `At least one field to edit must be provided.` | Ensure that at least one of title, note, or tag is specified.
 `Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and/or note specified are not blank. Whitespaces at the start and end are trimmed.
 `This task already exists in the address book.` | Ensure that the new title and note specified do not match an existing task.
@@ -718,7 +742,7 @@ ft
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that a keyword is provided.
+`Invalid command format!…` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
@@ -728,7 +752,7 @@ ft
 
 Allows you to remove a task from your task list with ease.
 
-{% include admonition.html type="danger" title="Danger" body="
+{% include admonition.html type="warning" title="Warning" body="
 
 The task will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
 
@@ -769,7 +793,7 @@ dt
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
 `The task index provided is invalid` | Ensure that the index provided is within the valid range.
 
 - `deleteTask`
@@ -790,7 +814,7 @@ dt
 
 Allows you to remove **all** entries from your task list.
 
-{% include admonition.html type="danger" title="Danger" body="
+{% include admonition.html type="warning" title="Warning" body="
 
 <b>All</b> tasks will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
 
@@ -855,7 +879,7 @@ Tasks are marked as not done by default.
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
 `The task index provided is invalid` | Ensure that the index provided is within the valid range.
 `This task is already marked as done in the task list.` | Ensure that the task specified for marking is not already done in the task list.
 
@@ -899,7 +923,7 @@ Tasks are marked as not done by default.
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
 `The task index provided is invalid` | Ensure that the index provided is within the valid range.
 `This task is already marked as not done in the task list.` | Ensure that the specified task is not already marked as not done in the task list.
 
@@ -981,7 +1005,7 @@ fnd
 
 You can easily clean up your task list by deleting all completed tasks, allowing you maintain an organized and clutter-free task management system.
 
-{% include admonition.html type="danger" title="Danger" body="
+{% include admonition.html type="warning" title="Warning" body="
 
 <b>All</b> completed tasks will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
 
@@ -1056,7 +1080,7 @@ atagp
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specfiied as an integer.
+`Invalid command format!…` | Ensure that the index AND tag are both specified. The index should be correctly specfiied as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
 `The person index provided is invalid` | Ensure that the index provided is within the valid range.
 
@@ -1097,7 +1121,7 @@ atagt
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index AND tag are both specified. The index should be correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index AND tag are both specified. The index should be correctly specified as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
 `The task index provided is invalid` | Ensure that the index provided is within the valid range.
 
@@ -1127,6 +1151,12 @@ For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noo
 listTag
 ```
 
+<h4>Alias:</h4>
+
+```
+ltag
+```
+
 <h4>Example:</h4>
 
 - `listTag`
@@ -1153,7 +1183,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 <h4>Format:</h4>
 
 ```
-findTag KEYWORD [MORE_KEYWORDS]...
+findTag KEYWORD [MORE_KEYWORDS]…
 ```
 
 <h4>Alias:</h4>
@@ -1181,7 +1211,7 @@ ftag
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that a keyword is provided.
+`Invalid command format!…` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
@@ -1202,7 +1232,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 <h4>Format:</h4>
 
 ```
-findAllTag KEYWORD [MORE_KEYWORDS]...
+findAllTag KEYWORD [MORE_KEYWORDS]…
 ```
 
 <h4>Alias:</h4>
@@ -1231,7 +1261,7 @@ mt
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that a keyword is provided.
+`Invalid command format!…` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
@@ -1268,7 +1298,7 @@ dtagp
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer. At least one tag must be specified.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer. At least one tag must be specified.
 `The person index provided is invalid` | Ensure that the index specified is in the range of the displayed number of persons.
 `Tags names should be alphanumeric` | Ensure that the tags specified are alphanumeric and not empty. Whitespaces are trimmed, but spaces between characters are not allowed.
 
@@ -1307,7 +1337,7 @@ dtagt
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!...` | Ensure that the index is correctly specified as an integer. At least one tag must be specified.
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer. At least one tag must be specified.
 `The task index provided is invalid` | Ensure that the index specified is in the range of the displayed number of tasks.
 `Tags names should be alphanumeric` | Ensure that the tags specified are alphanumeric and not empty. Whitespaces are trimmed, but spaces between characters are not allowed.
 
@@ -1362,11 +1392,17 @@ You can use this command to quickly clear all filters after using the <code>find
 listAll
 ```
 
-<h4>Example:</h4>
-- `listAll`
-  - Shows all the persons and tasks in your contact list and task list.<br><br>
+<h4>Alias:</h4>
 
+```
+la
+```
+
+<h4>Example:</h4>
+- `listAll`<br><br>
   ![listAll success](images/output/listAll_success.png)
+
+  *<center>CoordiMate shows all the persons and tasks in your contact list and task list.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -1396,9 +1432,11 @@ exit
 
 [Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="question" title="How do I backup/restore my data?" body="
+{% include admonition.html type="question" title="Question" body="
 
-To make a backup:<br>
+<b>Q: How do I backup/restore my data?</b><br>
+
+<b>A: </b>To make a backup:<br>
 
 1. Locate the data file at <code>[CoordiMate JAR file location]/data/addressbook.json</code> on your current computer. <br>
 2. Copy the data file to a safe location.<br><br>
@@ -1420,11 +1458,27 @@ To restore from a backup data file:<br>
 
 [Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="bug" title="CoordiMate does not open on the correct screen." body="
+{% include admonition.html type="bug" title="Known Issue" body="
 
-CoordiMate remembers the last screen it was on when it was closed. If that screen is no longer available when CoordiMate is opened, you will not be able to see the application window. <br><br>
+<b>Issue:</b> CoordiMate does not open on the correct screen. <br><br>
 
-To resolve this issue, you can simply delete the <code>preferences.json</code> file that is in the same folder as the CoordiMate JAR file.
+<b>Workaround:</b> To resolve this issue, you can simply delete the <code>preferences.json</code> file that is in the same folder as the CoordiMate JAR file.
+
+"%}
+
+{% include admonition.html type="bug" title="Known Issue" body="
+
+<b>Issue:</b> The application becomes laggy after I enter a very long string.<br><br>
+
+<b>Workaround:</b> As a workaround, we recommend that you keep inputs (such as a person's name or a task's title) to less than 200 characters each.
+
+"%}
+
+{% include admonition.html type="bug" title="Known Issue" body="
+
+<b>Issue:</b> I am unable to input a name that contains special characters (e.g. <code>Ravi s/o Veegan</code>).<br><br>
+
+<b>Workaround:</b> As a workaround, we suggest that you omit the special characters in the name. (e.g. <code>Ravi so Veegan</code>)
 
 "%}
 
@@ -1480,10 +1534,10 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 [**Add Tag(s) to a Person**](#31-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
 [**Add Tag(s) to a Task**](#32-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
 [**List All Tags**](#33-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
-[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tags-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation` | `ftag`
-[**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation` | `fatag`
-[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering` | `dtagp`
-[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering` | `dtagt`
+[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tags-findtag) | `findTag KEYWORD [MORE_KEYWORDS]…` | `findTag orientation` | `ftag`
+[**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]…` | `findAllTag orientation` | `fatag`
+[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]…` | `deleteTagPerson 1 t/catering` | `dtagp`
+[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]…` | `deleteTagTask 1 t/catering` | `dtagt`
 
 <div style="page-break-after: always;"></div>
 
