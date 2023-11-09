@@ -11,7 +11,7 @@ Given below are my contributions to the project.
 
 * **New Feature**: `addPerson` (PR [#73](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/73))
   * What it does: Allows users to quickly add new contacts uniquely identified by their name.
-  * Justification: Enables users 
+  * Justification: Essential for users to keep track of new people that they meet.
   * Credits: The `addPerson` command was adapted from the `add` command in the AddressBook-Level3 project (AB3) created by the [SE-EDU initiative](https://se-education.org).<br><br>
 
 * **New Feature**: `listPerson` (PR [#82](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/82))
