@@ -1115,7 +1115,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC24 - List all persons and tasks**
+**Use case: UC26 - List all persons and tasks**
 
 **MSS**
 
@@ -1126,7 +1126,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC25 - Exit CoordiMate**
+**Use case: UC27 - Exit CoordiMate**
 
 **MSS**
 
@@ -1137,7 +1137,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC26 - Load data from save file**
+**Use case: UC28 - Load data from save file**
 
 **MSS**
 
@@ -1168,7 +1168,7 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 ---
 
-**Use case: UC27 - Save data to save file**
+**Use case: UC29 - Save data to save file**
 
 **MSS**
 
