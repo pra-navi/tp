@@ -39,6 +39,4 @@ EditTaskDescriptor --> EditTaskCommandParser
 deactivate EditTaskDescriptor
 end opt
 
-deactivate EditTaskCommandParser
-
 @enduml

@@ -8,6 +8,8 @@ mainframe: **sd** Create successful CommandResult
 participant "cmd:EditTaskCommand" as EditTaskCommand LOGIC_COLOR
 participant "res:CommandResult" as CommandResult LOGIC_COLOR
 
+activate EditTaskCommand
+
 create CommandResult
 EditTaskCommand -> CommandResult : CommandResult(MESSAGE_EDIT_TASK_SUCCESS)
 

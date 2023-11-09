@@ -35,7 +35,5 @@ activate Model
 Model --> EditTaskCommand
 deactivate Model
 
-deactivate EditTaskCommand
-
 @enduml
 
