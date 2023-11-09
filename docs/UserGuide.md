@@ -263,10 +263,10 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 ![Ui](images/Ui_explanation.png)
 
 1. Menu Bar: Quick access to File and Help features
-2. Command Line: Type your commands here. 
-3. Command Result: View command results or error messages through here. 
-4. Contact List: View and manage contacts here. 
-5. Task List: View and manage tasks here. 
+2. Command Line: Type your commands here.
+3. Command Result: View command results or error messages through here.
+4. Contact List: View and manage contacts here.
+5. Task List: View and manage tasks here.
 6. Data Storage: Displays the path where your data is stored.
 
 {% include admonition.html type="note" title="Note" body="
