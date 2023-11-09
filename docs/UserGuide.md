@@ -1226,7 +1226,7 @@ mt
 
 [Back to Table of Contents](#table-of-contents)
 
-You can remove tag(s) from a person in your contact list.
+Remove tag(s) from a person in your contact list.
 
 <h4>Format:</h4>
 
@@ -1234,9 +1234,15 @@ You can remove tag(s) from a person in your contact list.
 deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 ```
 
+<h4>Alias:</h4>
+
+```
+dtagp
+```
+
 - Removes specified tags from a person at the specified `INDEX`.
 - Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
-- Invalid tags will be ignored.
+- Tags that do not belong to the person will be ignored.
 
 <h4>Example:</h4>
 
@@ -1244,6 +1250,14 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
   - Deletes the tags `colleagues` and `friends` from the 2nd person.<br><br>
 
   ![deleteTagPerson_success](images/output/deleteTagPerson_success.png)
+
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!...` | Ensure that the index is correctly specified as an integer. At least one tag must be specified.
+`The person index provided is invalid` | Ensure that the index specified is in the range of the displayed number of persons.
+`Tags names should be alphanumeric` | Ensure that the tags specified are alphanumeric and not empty. Whitespaces are trimmed, but spaces between characters are not allowed.
 
 <div style="page-break-after: always;"></div>
 
