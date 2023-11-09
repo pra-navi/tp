@@ -48,7 +48,7 @@ deactivate AddressBookParser
 LogicManager -> EditTaskCommand : execute()
 activate EditTaskCommand
 
-ref over EditTaskCommand: Edit task in task list 
+ref over EditTaskCommand: Edit task in task list
 
 ref over EditTaskCommand: Create successful CommandResult
 
