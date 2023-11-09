@@ -368,7 +368,7 @@ ep
   - Specifying `t/` without any tags will clear all existing tags of the task.
 - At least one of the optional fields must be provided for the command to be valid.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `editPerson 1 p/91234567 e/johndoe@example.com`
   - Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.<br><br>
@@ -467,7 +467,7 @@ dp
 - The index refers to the index number shown in the displayed person list.
 - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findPerson Bernice` followed by `deletePerson 1`
   - Deletes the 1st person in the results of the `findPerson` command.<br><br>
@@ -546,7 +546,7 @@ at
 
 <h4></h4>
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
   - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.<br><br>
@@ -580,7 +580,7 @@ listTask
 lt
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 - `listTask`
     - Displays a complete list of all tasks in your task list.<br><br>
 
@@ -617,7 +617,7 @@ et
   - Specifying `t/` without any tags will clear all existing tags of the task.
 - At least one of the optional fields must be provided for the command to be valid.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `editTask 2 T/Book room n/By Friday t/orientation`
   - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.<br><br>
@@ -712,7 +712,7 @@ dt
 - The index refers to the index number shown in the task list currently displayed.
 - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findTask caterer` followed by `deleteTask 1`
   - Deletes the 1st task in the results of the `findTask` command.<br><br>
@@ -798,7 +798,7 @@ Tasks are marked as not done by default.
 
 " %}
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `listTask` followed by `markTask 1`
   - Marks the 1st task in the task list as **done**<br><br>
@@ -842,7 +842,7 @@ Tasks are marked as not done by default.
 
 " %}
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `listTask` followed by `unmarkTask 1`
   - Marks the 1st task in the task list as **not done**<br><br>
@@ -885,7 +885,7 @@ findDone
 fd
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findDone`
   - Tasks are displayed as they are marked as done.<br><br>
@@ -920,7 +920,7 @@ findNotDone
 fnd
 ```
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findNotDone`
   - Tasks are displayed as they are marked as not done.<br><br>
@@ -955,14 +955,14 @@ dad
 
 - After completing the deletion of completed tasks, the task list will automatically revert back to displaying all tasks, ensuring you have a comprehensive overview of your remaining to-dos.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteAllDone`
   - All tasks that are marked as done are deleted.<br><br>
 
   ![deleteAllDone_success](images/output/deleteAllDone_success.png)<br><br>
 
-<h4>Potential Errors:</h4>
+<h4>Potential Error:</h4>
 
  Error message | How to resolve
 ---------------|---------------
@@ -998,7 +998,7 @@ atagp
 - Existing list of tags will be updated after adding in the input tags.
 - Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `addTagPerson 1 t/friends t/expensive`
   - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
@@ -1038,7 +1038,7 @@ atagt
 - Existing list of tags will be updated after adding in the input tags.
 - Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `addTagTask 1 t/day1 t/day2`
   - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.<br><br>
@@ -1119,7 +1119,7 @@ ftag
 - Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
 - Shows results that contain at least one of the specified keywords.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findTag catering orientation`
   - Shows all persons and tasks containing any of the tags `catering` or `orientation`.<br><br>
@@ -1158,7 +1158,7 @@ findAllTag KEYWORD [MORE_KEYWORDS]...
 - Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
 - Specify more tags to refine your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `findAllTag catering orientation`
   - Shows all persons and tasks containing both the tags `catering` and `orientation`.<br><br>
@@ -1189,7 +1189,7 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 - Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
 - Invalid tags will be ignored.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteTagPerson 2 t/colleagues t/friends`
   - Deletes the tags `colleagues` and `friends` from the 2nd person.<br><br>
@@ -1214,7 +1214,7 @@ deleteTagTask INDEX t/TAG [t/MORE TAGS]…
 - Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
 - Invalid tags will be ignored.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
 - `deleteTagTask 2 t/class t/finance`
   - Deletes the tags `class` and `finance` from the 2nd task.<br><br>
