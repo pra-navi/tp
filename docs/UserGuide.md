@@ -268,6 +268,8 @@ addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 - Provide the email address using the `e/` prefix. This field is **mandatory**.
 - Provide the address using the `a/` prefix. This field is **mandatory**.
 - Tag the person using the `t/` prefix. This field is **optional**.
+- You may add multiple tags to a task by specifying the `t/` prefix multiple times.
+- A person is identified by their name. This means that you cannot have two persons with the same name.
 
 {% include admonition.html type="note" title="Note" body="
 
