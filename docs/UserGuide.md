@@ -517,6 +517,7 @@ dp
 | Fields  | Prefix | Required                                           | Remarks                                                                                                                         |
 |---------|--------|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
 | `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The person at this index in the displayed person list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+{: .field-table}
 
 {% include admonition.html type="warning" title="Warning" body="
 
@@ -769,6 +770,7 @@ dt
 | Fields  | Prefix | Required                                           | Remarks                                                                                                                     |
 |---------|--------|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The task at this index in the displayed task list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+{: .field-table}
 
 {% include admonition.html type="warning" title="Warning" body="
 
@@ -1053,6 +1055,7 @@ atagp
 | `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png)     | The person at this index in the displayed person list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
 | `TAG` | `t/` | ![required](../src/main/resources/images/done.png)     | The tag to be added to the person. |
 | `MORE_TAGS` | `t/` | ![optional](../src/main/resources/images/not_done.png) | More additional tags to be added to the person. |
+{: .field-table}
 
 - A tag is uniquely identified by the `TAG`. This field is case sensitive.
 
@@ -1099,6 +1102,7 @@ atagt
 | `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png)     | The task at this index in the displayed task list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
 | `TAG` | `t/` | ![required](../src/main/resources/images/done.png)     | The tag to be added to the task. |
 | `MORE_TAGS` | `t/` | ![optional](../src/main/resources/images/not_done.png) | More additional tags to be added to the task. |
+{: .field-table}
 
 - A tag is uniquely identified by the `TAG`. This field is case sensitive.
 
