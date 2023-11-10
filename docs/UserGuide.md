@@ -1306,7 +1306,7 @@ dtagp
 - `deleteTagPerson 2 t/EragonSounds t/soundSystems t/catering`<br><br>
   ![deleteTagPerson_success](images/output/deleteTagPerson_success.png)
 
-  *<center>CoordiMate deletes `EragonSounds` and `soundSystems` tags from the 2nd person, and ignores the `catering` tag.</center>*
+  *<center>CoordiMate deletes <code>EragonSounds</code> and <code>soundSystems</code> tags from the 2nd person, and ignores the <code>catering</code> tag.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -1352,7 +1352,7 @@ dtagt
 - `deleteTagTask 2 t/finance t/orientation t/caterer`<br><br>
   ![deleteTagTask_success](images/output/deleteTagTask_success.png)
 
-  *<center>CoordiMate deletes `finance` and `orientation` tags from the 2nd task, and ignores the `caterer` tag.</center>*
+  *<center>CoordiMate deletes <code>finance</code> and <code>orientation</code> tags from the 2nd task, and ignores the <code>caterer</code> tag.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -1389,7 +1389,6 @@ h
 <h4>Example:</h4>
 
 - `help`<br><br>
-
   ![help message](images/output/help_success.png)
 
   *<center>CoordiMate opens a new window with a link to the user guide.</center>*
