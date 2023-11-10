@@ -674,8 +674,8 @@ et
 | Fields | Prefix | Required | Remarks |
 |--------|--------|:--------:|---------|
 | `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
-| `TITLE` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Title describing the task. |
-| `NOTE` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Note providing details about the task. |
+| `TITLE` | `T/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Title describing the task. |
+| `NOTE` | `n/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Note providing details about the task. |
 | `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the task.|
 {: .field-table}
 
