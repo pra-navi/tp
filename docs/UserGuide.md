@@ -424,9 +424,9 @@ ep
 <h4>Example:</h4>
 
 - `editPerson 1 p/91234567 e/johndoe@example.com`
-  - Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.<br><br>
+<br><br>
 
-  ![editPerson success](images/output/editPerson_success.png)<br><br>
+![editPerson success](images/output/editPerson_success.png)<br><br>
 
 <h4>Potential Errors:</h4>
 
