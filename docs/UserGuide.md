@@ -548,7 +548,7 @@ This person will be removed from your contact list <b>immediately</b>. This acti
 
 <div style="page-break-after: always;"></div>
 
-#### 1.6. Clearing all person entries: `deleteAllPerson`
+#### 1.6. Deleting all person entries: `deleteAllPerson`
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -1529,7 +1529,7 @@ Example: abc123
 [**Edit Person**](#13-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com` | `ep`
 [**Find Person**](#14-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John` | `fp`
 [**Delete Person**](#15-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1` | `dp`
-[**Delete All Person**](#16-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` | `dap`
+[**Delete All Person**](#16-deleting-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` | `dap`
 
 <div style="page-break-after: always;"></div>
 
@@ -1544,7 +1544,7 @@ Example: abc123
 [**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]` | `editTask 1 T/Call Caterer n/Wedding Dinner` | `et`
 [**Find Task**](#24-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding` | `ft`
 [**Delete Task**](#25-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1` | `dt`
-[**Delete All Task**](#26-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask` | `dat`
+[**Delete All Task**](#26-deleting-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask` | `dat`
 [**Mark Task**](#27-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1` | `mt`
 [**Unmark Task**](#28-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1` | `ut`
 [**Find Done Task**](#29-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone` | `fd`
