@@ -252,6 +252,12 @@ The lifeline for <code>AddTagPersonCommandParser</code> and <code>AddTagPersonCo
 
 " %}
 
+The sequence diagrams below show the details of the respective reference frames.
+
+![AddTagsToPerson](assets/svg/dg/SDAddTagsToPerson.svg)
+
+![CreateAddTagCommandResult](assets/svg/dg/SDCreateAddTagCommandResult.svg)
+
 #### Design considerations
 
 **Aspect: Design and format of task display:**
