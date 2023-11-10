@@ -552,13 +552,7 @@ This person will be removed from your contact list <b>immediately</b>. This acti
 
 [Back to Table of Contents](#table-of-contents)
 
-Clears **all** contacts in your contact list.
-
-{% include admonition.html type="warning" title="Warning" body="
-
-<b>All</b> persons will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
-
-" %}
+You can delete all persons in your contact list, so that you can start afresh with a clean slate.
 
 <h4>Format:</h4>
 
@@ -572,12 +566,19 @@ deleteAllPerson
 dap
 ```
 
+{% include admonition.html type="warning" title="Warning" body="
+
+All persons will be removed from your contact list immediately. This action is irreversible.
+
+" %}
+
 <h4>Example:</h4>
 
 - `deleteAllPerson`
-  - Deletes all persons in your contact list.<br><br>
 
   ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
+
+  *<center>CoordiMate deletes all persons in your contact list.</center>*
 
 ---
 
