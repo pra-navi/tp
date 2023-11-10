@@ -255,8 +255,6 @@ you can simply type:
 
 Both commands will add a person named `John Doe` with phone number `12345678`, email `john@example.com`, address `1 John Street`, and tag `friend` to your contact list.<br><br>
 
-<br>
-
 **Example 2: Listing all persons**
 
 Instead of typing:
@@ -271,9 +269,7 @@ you can simply type:
   <pre class="highlight"><code><b>lp</b></code></pre>
 </div>
 
-Both commands will show a full list of all the contacts in your contact list.
-
-<br>
+Both commands will show a full list of all the contacts in your contact list.<br>
 
 A summary of valid aliases is shown in the [Command Summary](#command-summary) section below.
 
