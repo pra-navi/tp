@@ -1281,12 +1281,12 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 
 [Back to Table of Contents](#table-of-contents)
 
-Remove tag(s) from a person in your contact list.
+You can delete tag(s) from a person in your contacts list, so that you can remove unwanted or irrelevant tags.
 
 <h4>Format:</h4>
 
 ```
-deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
+deleteTagPerson INDEX t/TAG [t/MORE_TAGS]…
 ```
 
 <h4>Alias:</h4>
@@ -1295,16 +1295,24 @@ deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
 dtagp
 ```
 
-- Removes specified tags from a person at the specified `INDEX`.
-- Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/required.svg'> | Tag(s) to be deleted for the person.|
+{: .field-table}
+
+- You may delete multiple tags from a person by specifying the `t/` prefix multiple times.
 - Tags that do not belong to the person will be ignored.
 
 <h4>Example:</h4>
 
-- `deleteTagPerson 2 t/colleagues t/friends`
-  - Deletes the tags `colleagues` and `friends` from the 2nd person.<br><br>
+- `deleteTagPerson 2 t/EragonSounds t/soundSystems t/catering`
 
   ![deleteTagPerson_success](images/output/deleteTagPerson_success.png)
+
+  *<center>CoordiMate deletes `EragonSounds` and `soundSystems` tags from the 2nd person, and ignores the `catering` tag.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -1315,7 +1323,6 @@ dtagp
 `Tags names should be alphanumeric` | Ensure that the tags specified are alphanumeric and not empty. Whitespaces are trimmed, but spaces between characters are not allowed.
 
 <div style="page-break-after: always;"></div>
-
 #### 3.7. Deleting tag(s) from a task: `deleteTagTask`
 
 [Back to Table of Contents](#table-of-contents)
