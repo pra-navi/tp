@@ -408,18 +408,24 @@ editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 ep
 ```
 
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. This field is **mandatory**.
-  - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+| `NAME` | `n/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Full name of the individual.|
+| `PHONE_NUMBER` | `p/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Phone number of the individual.|
+| `EMAIL` | `e/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Email address of the individual.|
+| `ADDRESS` | `a/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Physical address of the individual.|
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the individual.|
+{: .field-table}
+
 - Existing values will be updated to the input values.
-- Specify a new name with the `n/` prefix. This field is **optional**.
-- Specify a new phone number with the `p/` prefix. This field is **optional**.
-- Specify a new email with the `e/` prefix. This field is **optional**.
-- Specify a new address with the `a/` prefix. This field is **optional**.
-- Specify new tags with the `t/` prefix. This field is **optional**.
-  - You may add multiple tags to a person by specifying the `t/` prefix multiple times.
+- At least one of the optional fields must be provided for the command to be valid.
+- A person is uniquely identified by their `NAME`. This field is case sensitive.
+- You may add multiple tags to a person by specifying the `t/` prefix multiple times.
   - Note that this will replace all existing tags of the task. If you wish to add to the existing tags of the task, use the [`addTagPerson` command](#31-adding-tags-to-a-person-addtagperson) instead.
   - Specifying `t/` without any tags will clear all existing tags of the task.
-- At least one of the optional fields must be provided for the command to be valid.
 
 <h4>Example:</h4>
 
