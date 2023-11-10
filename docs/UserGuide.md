@@ -349,8 +349,8 @@ ap
 `Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
 `Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
 `Emails should be of the format local-part@domain and adhere to the following constraints: …` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
-`This person already exists in the address book.` | Ensure that the new name specified do not match an existing person.
-`Multiple values specified for the following single-valued field(s): n/ e/ a/ p/` | Ensure that there are no duplicate fields for name, email, address and phone number.
+`This person already exists in the address book.` | Ensure that the new name specified does not match an existing person.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for name, email, address and phone number.
 
 <div style="page-break-after: always;"></div>
 
@@ -435,7 +435,8 @@ ep
 `Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
 `Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
 `Emails should be of the format local-part@domain and adhere to the following constraints: …` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
-`This person already exists in the address book.` | Ensure that the new name specified do not match an existing person.
+`This person already exists in the address book.` | Ensure that the new name specified does not match an existing person.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for name, email, address and phone number.
 
 <div style="page-break-after: always;"></div>
 
@@ -621,6 +622,7 @@ at
 ---------------|---------------
 `Invalid command format!…` | Ensure that the title and note are specified.
 `Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and note specified are not blank. Whitespaces at the start and end are trimmed.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for title and note.
 
 <div style="page-break-after: always;"></div>
 
@@ -701,6 +703,7 @@ et
 `At least one field to edit must be provided.` | Ensure that at least one of title, note, or tag is specified.
 `Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and/or note specified are not blank. Whitespaces at the start and end are trimmed.
 `This task already exists in the address book.` | Ensure that the new title and note specified do not match an existing task.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for title and note.
 
 <div style="page-break-after: always;"></div>
 
