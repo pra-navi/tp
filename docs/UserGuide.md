@@ -425,6 +425,7 @@ ep
 
 - `editPerson 1 p/91234567 e/johndoe@example.com`<br><br>
   ![editPerson success](images/output/editPerson_success.png)
+
   *<center>CoordiMate edits the phone number and email of the 1st person in the contact list.</center>*
 
 <h4>Potential Errors:</h4>
@@ -735,7 +736,8 @@ To reset the tasks view, simply run the <code>listTask</code> command to list al
 <h4>Example:</h4>
 
 - `findTask Find Finale`<br><br>
-  ![findTask_success](images/output/findTask_success.png)<br><br>
+  ![findTask_success](images/output/findTask_success.png)
+
   *<center>CoordiMate finds all tasks whose titles or notes contain either <code>Find</code> or <code>Finale</code>.</center>*
 
 <h4>Potential Error:</h4>
@@ -1065,7 +1067,6 @@ atagp
 <h4>Example:</h4>
 
 - `addTagPerson 1 t/friends t/expensive`.<br><br>
-
   ![addTagPerson success](images/output/addTagPerson_success.png)
 
   *<center>CoordiMate adds tag `expensive` to the person at the index <code>1</code>, while `friends` is not added because it already exists in the list of tags.</center>*
@@ -1112,7 +1113,6 @@ atagt
 <h4>Example:</h4>
 
 - `addTagTask 1 t/day1 t/day2`.<br><br>
-
   ![addTagTask success](images/output/addTagTask_success.png)
 
   *<center>CoordiMate adds tag `day2` to the task at the index <code>1</code>, while `day1` is not added because it already exists in the list of tags.</center>*
@@ -1160,7 +1160,8 @@ ltag
 <h4>Example:</h4>
 
 - `listTag`<br><br>
-  ![listTag success](images/output/listTag_success.png)<br><br>
+  ![listTag success](images/output/listTag_success.png)
+
   *<center>CoordiMate shows you the list of all tags used and their frequencies.</center>*
 
 <div style="page-break-after: always;"></div>
@@ -1397,6 +1398,7 @@ la
 ```
 
 <h4>Example:</h4>
+
 - `listAll`<br><br>
   ![listAll success](images/output/listAll_success.png)
 
