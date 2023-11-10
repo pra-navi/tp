@@ -514,8 +514,8 @@ dp
 
 <h4>Fields:</h4>
 
-| Fields  | Prefix | Required                                           | Remarks                                                                                                                         |
-|---------|--------|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|----------|---------|
 | `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The person at this index in the displayed person list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
 {: .field-table}
 
@@ -527,7 +527,7 @@ This person will be removed from your contact list <b>immediately</b>. This acti
 
 <h4>Example:</h4>
 
-- `listPerson` followed by `deletePerson 2`.<br><br>
+- `listPerson` followed by `deletePerson 2`.
   ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
 
   *<center>CoordiMate deletes the person at the index <code>2</code>, displayed after a `listPerson` command.</center>*
@@ -767,8 +767,8 @@ dt
 
 <h4>Fields:</h4>
 
-| Fields  | Prefix | Required                                           | Remarks                                                                                                                     |
-|---------|--------|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|----------|---------|
 | `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The task at this index in the displayed task list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
 {: .field-table}
 
@@ -780,7 +780,7 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 
 <h4>Example:</h4>
 
-- `listTask` followed by `deleteTask 2`<br><br>
+- `listTask` followed by `deleteTask 2`
   ![deleteTask_success](images/output/deleteTask_success.png)
 
   *<center>CoordiMate deletes the task at the index <code>2</code>, displayed after a `listTask` command.</center>*
