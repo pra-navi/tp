@@ -527,7 +527,7 @@ This person will be removed from your contact list <b>immediately</b>. This acti
 
 <h4>Example:</h4>
 
-- `listPerson` followed by `deletePerson 2`.
+- `listPerson` followed by `deletePerson 2`.<br><br>
   ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
 
   *<center>CoordiMate deletes the person at the index <code>2</code>, displayed after a `listPerson` command.</center>*
@@ -780,7 +780,7 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 
 <h4>Example:</h4>
 
-- `listTask` followed by `deleteTask 2`
+- `listTask` followed by `deleteTask 2`<br><br>
   ![deleteTask_success](images/output/deleteTask_success.png)
 
   *<center>CoordiMate deletes the task at the index <code>2</code>, displayed after a `listTask` command.</center>*
