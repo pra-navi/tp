@@ -404,10 +404,10 @@ ep
 | Fields | Prefix | Required | Remarks |
 |--------|--------|:--------:|---------|
 | `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
-| `NAME` | `n/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Full name of the individual.|
-| `PHONE_NUMBER` | `p/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Phone number of the individual.|
-| `EMAIL` | `e/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Email address of the individual.|
-| `ADDRESS` | `a/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Physical address of the individual.|
+| `NAME` | `n/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Full name of the individual.|
+| `PHONE_NUMBER` | `p/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Phone number of the individual.|
+| `EMAIL` | `e/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Email address of the individual.|
+| `ADDRESS` | `a/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Physical address of the individual.|
 | `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the individual.|
 {: .field-table}
 
@@ -1136,15 +1136,7 @@ Provides you with a complete list of tags you have used in your contact list and
 
 The list is sorted by frequency of each tag in descending order.
 
-If two tags have the same frequency, the tags are sorted in the order as defined in the American Standard Code for Information Interchange (ASCII).
-
-{% include admonition.html type="note" title="Note" body="
-
-The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
-In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
-For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
-
-" %}
+If two tags have the same frequency, the tags are sorted in the order as defined in the [American Standard Code for Information Interchange (ASCII)](#american-standard-code-for-information-interchange-ascii).
 
 <h4>Format:</h4>
 
@@ -1482,25 +1474,45 @@ To restore from a backup data file:<br>
 
 A text-based interface used to interact with a computer or software by entering commands into a terminal or command prompt.
 
-Example: Copying files by typing `copy file.txt destination` and pressing Enter.
+Example: In order to delete a task, user types `deleteTask 1` and pressing Enter. The task specified is deleted.
 
 ### Graphical User Interface
 
 A visual interface that allows users to interact with software using graphical elements like icons and windows, making it more user-friendly.
 
-Example: Opening a photo album by clicking on a `Photos` icon.
+Example: After `listAll` command, users can scroll the contact list and task list to view information in both lists and see different icons for done and not done tasks respectively.
 
 ### Integer
+<<<<<<< Updated upstream
 
 A whole number without fractions or decimals.
+=======
+A whole number without fractions or decimals, commonly used in CoordiMate to denote the position of an item in a collection or list.
+>>>>>>> Stashed changes
 
-Example: 1, 2, 3, … , 2147483647
+The valid range for accepted integers is 1, 2, 3, … , 2147483647
+
+Example: In a list of 3 alphabets containing (“a”, “b”, “c”) in that order,
+  - index 1 refers to “a”
+  - index 2 refers to “b”
+  - index 3 refers to “c”
 
 ### Alphanumeric
 
-A combination of letters and numbers only, no spaces or special characters
+A combination of letters and numbers only, no spaces or special characters.
 
-Example: abc123
+For more information, see <a href='https://en.wikipedia.org/wiki/Alphanumericals' rel='noopener noreferrer' target='_blank'>Alphanumericals</a> on Wikipedia.
+
+Example: In `TAGS`, entries like `day1` or `day2` are valid, while entries like `hyped!!` or `sad :(` are invalid. 
+
+### American Standard Code for Information Interchange (ASCII)
+
+The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
+In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
+
+For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
+
+Example: After a `listTag` command, `Finale Night` tag is listed before `finale night` in the command result.
 
 <br><br>
 
