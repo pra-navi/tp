@@ -1482,6 +1482,14 @@ To restore from a backup data file:<br>
 
 [Back to Table of Contents](#table-of-contents)
 
+### Alphanumeric
+
+A combination of letters and numbers only, no spaces or special characters.
+
+For more information, see <a href='https://en.wikipedia.org/wiki/Alphanumericals' rel='noopener noreferrer' target='_blank'>Alphanumericals</a> on Wikipedia.
+
+Example: For tags, entries like `day1` or `day2` are valid, while entries like `day 1` or `day-2` are invalid.
+
 ### American Standard Code for Information Interchange (ASCII)
 
 The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
@@ -1508,6 +1516,7 @@ Example: After `listAll` command, users can scroll the contact list and task lis
 For more information on CoordiMate's GUI, read more about it [here](#understanding-our-gui).
 
 ### Integer
+
 A whole number without fractions or decimals, commonly used in CoordiMate to denote the position of an item in a collection or list.
 
 The valid range for accepted integers is 1, 2, 3, … , 2147483647.
@@ -1516,14 +1525,6 @@ Example: In a list of 3 alphabets containing (“a”, “b”, “c”) in that
   - Index 1 refers to “a”
   - Index 2 refers to “b”
   - Index 3 refers to “c”
-
-### Alphanumeric
-
-A combination of letters and numbers only, no spaces or special characters.
-
-For more information, see <a href='https://en.wikipedia.org/wiki/Alphanumericals' rel='noopener noreferrer' target='_blank'>Alphanumericals</a> on Wikipedia.
-
-Example: For tags, entries like `day1` or `day2` are valid, while entries like `day 1` or `day-2` are invalid.
 
 <br><br>
 
