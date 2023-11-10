@@ -41,7 +41,7 @@ public class DeleteTagPersonCommand extends Command {
     private final Set<Tag> tagsToDelete;
 
     /**
-     * @param index of the person in the filtered person list to edit
+     * @param targetIndex of the person in the filtered person list to edit
      * @param tagsToDelete tags to delete from the person
      */
     public DeleteTagPersonCommand(Index targetIndex, Set<Tag> tagsToDelete) {
@@ -90,12 +90,12 @@ public class DeleteTagPersonCommand extends Command {
         missingTags.removeAll(matchingTags);
 
         String res = String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson));
-        if (matchingTags.size() > 0) {
+        if (!matchingTags.isEmpty()) {
             String matchingTagsString = matchingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
             res += String.format(MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS, matchingTagsString);
         }
 
-        if (missingTags.size() > 0) {
+        if (!missingTags.isEmpty()) {
             String missingTagsString = missingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
             res += String.format(MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missingTagsString);
         }
