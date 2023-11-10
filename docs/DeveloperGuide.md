@@ -918,17 +918,10 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 **MSS**
 
-1. TODO
+1. User requests for all done tasks in task list.
+2. CoordiMate lists all tasks whose status is done.
 
    Use case ends.
-
-**Extensions**
-
-* 1a. TODO
-
-  * 1a1. TODO
-
-      Use case ends.
 
 ---
 
@@ -936,17 +929,10 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 **MSS**
 
-1. TODO
+1. User requests for all not done tasks in task list.
+2. CoordiMate lists all tasks whose status is not done.
 
    Use case ends.
-
-**Extensions**
-
-* 1a. TODO
-
-  * 1a1. TODO
-
-      Use case ends.
 
 ---
 
@@ -954,15 +940,16 @@ For all use cases below, the **System** is `CoordiMate` and the **Actor** is the
 
 **MSS**
 
-1. TODO
+1. User requests to clear all done tasks in task list.
+2. CoordiMate clears all tasks whose status is done.
 
    Use case ends.
 
 **Extensions**
 
-* 1a. TODO
+* 1a. The task list has no done tasks.
 
-  * 1a1. TODO
+  * 1a1. CoordiMate informs the user that there are no done tasks to be deleted.
 
       Use case ends.
 
