@@ -419,6 +419,12 @@ The lifeline for <code>MarkTaskCommandParser</code>, <code>ParserUtil</code> and
 
 " %}
 
+The sequence diagrams below show the details of the respective reference frames.
+
+![MarkTaskInTaskList](assets/svg/dg/SDMarkTaskInTaskList.svg)
+
+![CreateMarkTaskCommandResult](assets/svg/dg/SDCreateMarkTaskCommandResult.svg)
+
 The activity diagram below models the action sequence of how the `markTask` command works for the example input `markTask 1`.
 
 ![MarkTaskActivityDiagram](assets/svg/dg/MarkTaskActivityDiagram.svg)
