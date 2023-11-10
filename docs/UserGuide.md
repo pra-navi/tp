@@ -3,6 +3,34 @@ layout: page
 title: User Guide
 ---
 
+<!-- Inject styles for custom table widths -->
+
+<style>
+.field-table th:nth-child(1) {
+    width: 23%;
+}
+
+.field-table th:nth-child(2) {
+    width: 14%;
+}
+
+.field-table th:nth-child(3) {
+    width: 10%;
+}
+
+.field-table th:nth-child(4) {
+    width: 53%;
+}
+
+.errors-table th:nth-child(1) {
+    width: 50%;
+}
+
+.errors-table th:nth-child(2) {
+    width: 50%;
+}
+</style>
+
 Are you a School of Computing (SoC) Computing Club event planner juggling numerous tasks and contacts for your upcoming events?
 
 Managing everything efficiently just got easier with CoordiMate!
@@ -13,7 +41,7 @@ And here's the best part – while it's perfect for members of SoC Computing Clu
 
 <h4>Why choose CoordiMate?</h4>
 
-1. **User-Friendly Command Line Interface (CLI)**: CoordiMate is optimized for use via a CLI, combining all the benefits of a Graphical User Interface (GUI) with the efficiency of a CLI.
+1. **User-Friendly [Command Line Interface (CLI)](#command-line-interface)**: CoordiMate is optimized for use via a CLI, combining all the benefits of a [Graphical User Interface (GUI)](#graphical-user-interface) with the efficiency of a CLI.
 
 2. **Speedy Navigation**: If you're a fast typist, CoordiMate will help you complete your contact and tasks management faster than traditional GUI apps, maximising your productivity.
 
@@ -31,15 +59,9 @@ If you are an experienced user, you can use the [Table of Contents](#table-of-co
 
 Here are some annotations used in this guide:
 
-{% include admonition.html type="danger" title="Danger" body="
-
-Be careful when performing these operations as they can lead to data loss.
-
-" %}
-
 {% include admonition.html type="warning" title="Warning" body="
 
-Take note of these as they can cause unexpected behaviour when using CoordiMate.
+Take note of these as they can cause unexpected behaviour or data loss when using CoordiMate.
 
 " %}
 
@@ -79,7 +101,39 @@ Throughout this guide, you will see different text styles that are used to highl
 
 <div style="page-break-after: always;"></div>
 
+## Features
+
+[Back to Table of Contents](#table-of-contents)
+
+  1. **Easy Management of People**:
+      - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.<br><br>
+
+  2. **Effortless Task Management**:
+      - CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.<br><br>
+
+  3. **Simplified Searching**:
+      - Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!<br><br>
+
+  4. **Hassle-Free Data Management**:
+      - CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
+      - When CoordiMate starts, your existing data is automatically loaded in, allowing you to pick up where you left off.
+      - For advanced users, CoordiMate offers you complete data control by saving your data in a human-readable format. <br>Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
+
+{% include admonition.html type="warning" title="Warning" body="
+
+If your changes to the data file makes its format invalid, CoordiMate will not be able to load the data file, resulting in the contact and task lists being empty. <br>
+
+Always make a backup before you edit!
+
+" %}
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ## Quick Start
+
+[Back to Table of Contents](#table-of-contents)
 
 1. Ensure you have Java `11` or above installed in your computer.
 
@@ -92,7 +146,7 @@ Throughout this guide, you will see different text styles that are used to highl
    A GUI similar to the below screenshot should appear in a few seconds. Note how the app contains some sample data.<br><br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br><br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br><br>
 
    Some example commands you can try:
 
@@ -106,7 +160,7 @@ Throughout this guide, you will see different text styles that are used to highl
 
    - `listTask` : Lists all tasks.
 
-   - `addTask T/Get Flowers n/Wedding Anniversary` : Adds a task titled `Get Flowers` with note `Wedding Anniversary` to the task list.
+   - `addTask T/Get Flowers n/for Finale Night` : Adds a task titled `Get Flowers` with note `for Finale Night` to the task list.
 
    - `markTask 1` : Marks the 1st task shown in the current task list as done.
 
@@ -118,55 +172,30 @@ Throughout this guide, you will see different text styles that are used to highl
 
 <div style="page-break-after: always;"></div>
 
-## Features
-
-1. **Easy Management of People**:
-    - Seamlessly create, update, and delete person records. CoordiMate ensures your contact list is always up-to-date, putting people at the heart of your event planning.
-2. **Quick Person Search**:
-    - Find specific individuals effortlessly. No more digging through piles of data. With CoordiMate, finding the right person is just a search away, making your interactions more personal and meaningful.
-3. **Effortless Task Control**:
-    - Manage tasks without the fuss. CoordiMate's intuitive interface lets you handle tasks with ease. From creation to completion, stay in control of every event detail.
-4. **Simplified Task Tracking**:
-    - Easily locate tasks based on your criteria. CoordiMate streamlines your search, ensuring you stay organized and focused on tasks that matter most to you and your attendees.
-5. **Hassle-Free Data Handling**:
-    - Automatic Data Management:
-      - CoordiMate takes care of saving and loading data for you. No need to worry about manual saves; your information is secure and ready whenever you are.
-      - Saved data safely as a JSON file located at `[JAR file location]/data/CoordiMate.json`.
-    - Startup Ready:
-      - Instantly pick up where you left off. CoordiMate loads your existing data upon startup, eliminating downtime and ensuring you're always in the loop.
-6. **Empowering User Control**:
-    - Editable File Format:
-      - For advanced users, CoordiMate offers complete data control. Tailor your event data directly by editing the data file, putting you in charge of your event management.
-
-With these user-centric features, CoordiMate empowers you to focus on what truly matters: creating exceptional events and nurturing valuable connections. Experience event planning made personal, efficient, and stress-free with CoordiMate!
-
-{% include admonition.html type="danger" title="Danger" body="
-
-If your changes to the data file makes its format invalid, CoordiMate will discard all data and start with an empty data file at the next run.
-
-Always make a backup before you edit!
-
-" %}
-
----
-
-<div style="page-break-after: always;"></div>
-
 ## Usage
+
+[Back to Table of Contents](#table-of-contents)
+
+The commands are split into 4 main sections:
+
+1. [Commands to Manage Persons](#1-commands-to-manage-persons)
+2. [Commands to Manage Tasks](#2-commands-to-manage-tasks)
+3. [Commands to Manage Tags](#3-commands-to-manage-tags)
+4. [General commands](#4-general-commands)
 
 {% include admonition.html type="note" title="Note" body="
 
 <ul>
   <li>
     <p>
-      Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.<br>
-      e.g. in <code>addPerson n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>addPerson n/John Doe</code>, where <code>John Doe</code> is the value of the parameter <code>NAME</code>. <br>
+      Words in <code>UPPER_CASE</code> are the fields to be supplied by the user.<br>
+      e.g. in <code>addPerson n/NAME</code>, <code>NAME</code> is a field which can be used as <code>addPerson n/John Doe</code>, where <code>John Doe</code> is the value of the field <code>NAME</code>. <br>
     </p>
   </li>
 
   <li>
     <p>
-      Items in square brackets are optional.<br>
+      Fields in square brackets are optional.<br>
       e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.<br>
       Note that the square brackets (<code>[</code> and <code>]</code>) are not part of the syntax.
     </p>
@@ -174,21 +203,21 @@ Always make a backup before you edit!
 
   <li>
     <p>
-      Items in square brackets with <code>…</code> after them can be used multiple times, including zero times.<br>
+      Fields in square brackets with <code>…</code> after them can be used multiple times, including zero times.<br>
       e.g. <code>[t/TAG]…​</code> can be used as <code> </code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.
     </p>
   </li>
 
   <li>
     <p>
-      Parameters can be in any order.<br>
+      Fields can be in any order.<br>
       e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.
     </p>
   </li>
 
   <li>
     <p>
-      Extraneous parameters for commands that do not take in parameters (such as <code>help</code>, <code>listPerson</code>, <code>deleteAllPerson</code>, <code>listTask</code>, <code>deleteAllTask</code> and <code>exit</code>) will be ignored.<br>
+      Extraneous fields for commands that do not take in fields (such as <code>help</code>, <code>listPerson</code>, <code>deleteAllPerson</code>, <code>listTask</code>, <code>deleteAllTask</code> and <code>exit</code>) will be ignored.<br>
       e.g. if the command specifies <code>help 123</code>, it will be interpreted as <code>help</code>.
     </p>
   </li>
@@ -204,11 +233,80 @@ If you are using a PDF version of this document, be careful when copying and pas
 
 <div style="page-break-after: always;"></div>
 
-### Commands to Manage Persons
+### Command Aliases
 
-#### 1. Adding a person: `addPerson`
+[Back to Table of Contents](#table-of-contents)
 
-You can add new individuals to your list such as clients, vendors, or friends.
+CoordiMate supports predefined aliases for commands, so that you can get things done faster!<br>
+
+**Example 1: Adding a person**
+
+Instead of typing:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>addPerson</b> n/John Doe p/12345678 e/john@example.com a/1 John Street t/friend</code></pre>
+</div>
+
+you can simply type:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>ap</b> n/John Doe p/12345678 e/john@example.com a/1 John Street t/friend</code></pre>
+</div>
+
+Both commands will add a person named `John Doe` with phone number `12345678`, email `john@example.com`, address `1 John Street`, and tag `friend` to your contact list.<br><br>
+
+**Example 2: Listing all persons**
+
+Instead of typing:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>listPerson</b></code></pre>
+</div>
+
+you can simply type:
+
+<div class="highlight">
+  <pre class="highlight"><code><b>lp</b></code></pre>
+</div>
+
+Both commands will show a full list of all the contacts in your contact list.<br>
+
+A summary of valid aliases is shown in the [Command Summary](#command-summary) section below.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+### Understanding Our GUI
+
+[Back to Table of Contents](#table-of-contents)
+
+![Ui](images/Ui_explanation.png)
+
+1. Menu Bar: Quick access to File and Help features.
+2. Command Line: Type your commands here.
+3. Command Result: View command results or error messages through here.
+4. Contact List: View and manage contacts here.
+5. Task List: View and manage tasks here.
+6. Data Storage: Displays the path where your data is stored.
+
+{% include admonition.html type="note" title="Note" body="
+
+Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a drag in or out to customize the view according to your preference.
+
+" %}
+
+---
+
+<div style="page-break-after: always;"></div>
+
+### 1. Commands to Manage Persons
+
+#### 1.1. Adding a person: `addPerson`
+
+[Back to Table of Contents](#table-of-contents)
+
+You can add new persons to your contact list, so that you can remember details of new people you meet.
 
 <h4>Format:</h4>
 
@@ -216,36 +314,51 @@ You can add new individuals to your list such as clients, vendors, or friends.
 addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
 ```
 
-- Provide the full name of the individual using the `n/` prefix. This field is **mandatory**.
-- Provide the phone number with the `p/` prefix. This field is **mandatory**.
-- Provide the email address using the `e/` prefix. This field is **mandatory**.
-- Provide the address using the `a/` prefix. This field is **mandatory**.
-- Tag the person using the `t/` prefix. This field is **optional**.
+<h4>Alias:</h4>
 
-{% include admonition.html type="note" title="Note" body="
+```
+ap
+```
 
-A person can have any number of tags (including 0).
+<h4>Fields:</h4>
 
-" %}
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `NAME` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Full name of the individual.|
+| `PHONE_NUMBER` | `p/` | <img width=30px src='assets/svg/ug/required.svg'> | Phone number of the individual.|
+| `EMAIL` | `e/` | <img width=30px src='assets/svg/ug/required.svg'> | Email address of the individual.|
+| `ADDRESS` | `a/` | <img width=30px src='assets/svg/ug/required.svg'> | Physical address of the individual.|
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the individual.|
+{: .field-table}
+
+- A person is uniquely identified by their `NAME`. This field is case sensitive.
 
 <h4>Example:</h4>
-- `addPerson n/Charlotte Oliveiro p/93210283 e/charlotteo@example.com a/Blk 11 Ang Mo Kio Street 74, #11-04 t/flowers`
-  - Adds a person named `Charlotte Oliveiro` with phone number `93210283`, email `charlotteo@example.com`,
-   address `Blk 11 Ang Mo Kio Street 74, #11-04`, and tag `flowers`.<br><br>
 
+- `addPerson n/Charlotte Oliveiro p/93210283 e/charlotteo@example.com a/Blk 11 Ang Mo Kio Street 74, #11-04 t/flowers`<br><br>
   ![addPerson success](images/output/addPerson_success.png)
 
-<h4>Potential Error:</h4>
-- `addPerson`
-  - Negative example as the name, phone number, email address, and address are not specified.<br><br>
+  *<center>CoordiMate adds a new contact with the corresponding details.</center>*
 
-  ![addPerson error](images/error/addPerson_error.png)
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the name, phone number, email address and address are specified.
+`Names should only contain alphanumeric characters and spaces, and it should not be blank` | Ensure that the name specified is not blank and contain only alphanumeric characters. Whitespaces at the start and end are trimmed.
+`Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
+`Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
+`Emails should be of the format local-part@domain and adhere to the following constraints: …` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
+`This person already exists in the address book.` | Ensure that the new name specified does not match an existing person.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for name, email, address and phone number.
 
 <div style="page-break-after: always;"></div>
 
-#### 2. Listing all persons: `listPerson`
+#### 1.2. Listing all persons: `listPerson`
 
-You can view details of all your contacts.
+[Back to Table of Contents](#table-of-contents)
+
+You can view your entire contact list, so that you can quickly access and manage your connections.
 
 <h4>Format:</h4>
 
@@ -253,17 +366,26 @@ You can view details of all your contacts.
 listPerson
 ```
 
-<h4>Example:</h4>
-- `listPerson`
-    - Shows a full list of all the contacts in your contact list.<br><br>
+<h4>Alias:</h4>
 
+```
+lp
+```
+
+<h4>Example:</h4>
+
+- `listPerson`<br><br>
   ![listPerson success](images/output/listPerson_success.png)
+
+  *<center>CoordiMate shows you the full contact list.</center>*
 
 <div style="page-break-after: always;"></div>
 
-#### 3. Editing a person: `editPerson`
+#### 1.3. Editing a person: `editPerson`
 
-Enables you to change the details or particulars of an existing contact in your contact list.
+[Back to Table of Contents](#table-of-contents)
+
+You can change the details of an existing person in your contact list, so that you can keep information in your contact list constantly up-to-date.
 
 <h4>Format:</h4>
 
@@ -271,53 +393,59 @@ Enables you to change the details or particulars of an existing contact in your 
 editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 ```
 
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
-- At least one of the optional fields must be provided.
+<h4>Alias:</h4>
+
+```
+ep
+```
+
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+| `NAME` | `n/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Full name of the individual.|
+| `PHONE_NUMBER` | `p/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Phone number of the individual.|
+| `EMAIL` | `e/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Email address of the individual.|
+| `ADDRESS` | `a/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Physical address of the individual.|
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the individual.|
+{: .field-table}
+
 - Existing values will be updated to the input values.
-- When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
-- You can remove all the person’s tags by typing `t/` without specifying any tags after it.
+- At least one of the optional fields must be provided for the command to be valid.
+- A person is uniquely identified by their `NAME`. This field is case sensitive.
+- You may add multiple tags to a person by specifying the `t/` prefix multiple times.
+  - Note that this will replace all existing tags of the task. If you wish to add to the existing tags of the task, use the [`addTagPerson` command](#31-adding-tags-to-a-person-addtagperson) instead.
+  - Specifying `t/` without any tags will clear all existing tags of the task.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
-- `editPerson 1 p/91234567 e/johndoe@example.com`
-  - Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.<br><br>
+- `editPerson 1 p/91234567 e/johndoe@example.com`<br><br>
+  ![editPerson success](images/output/editPerson_success.png)
 
-  ![editPerson success](images/output/editPerson_success.png)<br><br>
-
-- `editPerson 2 n/Betsy Crower t/`
-  - Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.<br><br>
-
-  ![editPerson success](images/output/editPerson_success_clearTag.png)
+  *<center>CoordiMate edits the phone number and email of the 1st person in the contact list.</center>*
 
 <h4>Potential Errors:</h4>
 
-- `editPerson`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![editPerson error](images/error/editPerson_error.png)<br><br>
-
-- `editPerson 1`
-  - Negative example as no fields are specified.<br><br>
-
-  ![editPerson error](images/error/editPerson_missingFields.png)<br><br>
-
-- `editPerson 10 p/91234567 e/johndoe@example.com`
-  - Negative example as invalid index provided.<br><br>
-
-  ![editPerson wrongIndex](images/error/editPerson_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
+`At least one field to edit must be provided.` | Ensure that at least one of name, phone, email, address or tag is specified.
+`The person index provided is invalid` | Ensure that the index provided is within the valid range.
+`Names should only contain alphanumeric characters and spaces, and it should not be blank` | Ensure that the name specified is not blank and contain only alphanumeric characters. Whitespaces at the start and end are trimmed.
+`Phone numbers should only contain numbers, and it should be at least 3 digits long` | Ensure that the phone number specified is not blank, contain only numbers and at least 3 digits long. Whitespaces at the start and end are trimmed.
+`Addresses can take any values, and it should not be blank` | Ensure that the address specified is not blank. Whitespaces at the start and end are trimmed.
+`Emails should be of the format local-part@domain and adhere to the following constraints: …` | Ensure that the email specified is not blank and adheres to the constraints specified. Whitespaces at the start and end are trimmed.
+`This person already exists in the address book.` | Ensure that the new name specified does not match an existing person.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for name, email, address and phone number.
 
 <div style="page-break-after: always;"></div>
 
-#### 4. Finding a specific person: `findPerson`
+#### 1.4. Finding a specific person: `findPerson`
 
-Allows you to quickly find a specific person's details by their name.
+[Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all persons that do not match the search criteria. <br>
-To reset the Persons view, simply run the <code>listPerson</code> command to list all persons.
-
-" %}
+You can find a person by their name, so that you can quickly locate their contact details.
 
 <h4>Format:</h4>
 
@@ -325,44 +453,52 @@ To reset the Persons view, simply run the <code>listPerson</code> command to lis
 findPerson KEYWORD [MORE_KEYWORDS]…
 ```
 
-- At least one keyword is required to search.
-- The search is case-insensitive. e.g `hans` will match `Hans`.
-- The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
-- Only the **name** is searched.
-- Only full words will be matched e.g. `Han` will not match `Hans`.
-- Persons matching at least one keyword will be returned (i.e. `OR` search).
-  - e.g. `Hans Bo` will match `Hans Gruber`, `Bo Yang`.
+<h4>Alias:</h4>
 
-<h4>Examples:</h4>
+```
+fp
+```
 
-- `findPerson alex yu`
-  - Finds all persons whose names contains either `alex` or `yu`.<br><br>
+<h4>Fields:</h4>
 
-  ![findPerson success with a list](images/output/findPerson_success.png)<br><br>
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for. |
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keywords to search for. |
+{: .field-table}
 
-- `findPerson David`
-  - No results are displayed as no person has a name that contains `David`.<br><br>
+- Persons matching at least one `KEYWORD` in their names will be shown. This field is case insensitive and the order of keywords does not matter.
+- Only full words will be matched, e.g. the keyword `Alex` will not match the name `Alexis`.
 
-  ![findPerson success with zero results](images/output/findPerson_noResults.png)
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all persons that do not match the search criteria. <br>
+(i.e. If no persons match the search criteria, the list will be empty.)<br><br>
+To reset the persons view, simply run the <code>listPerson</code> command to list all persons.
+
+" %}
+
+<h4>Example:</h4>
+
+- `findPerson alex yu`<br><br>
+  ![findPerson success with a list](images/output/findPerson_success.png)
+
+  *<center>CoordiMate finds all persons whose names contains either <code>alex</code> or <code>yu</code>.</center>*
 
 <h4>Potential Error:</h4>
 
-- `findPerson`
-  - Negative example as no keywords are specified.<br><br>
-
-  ![findPerson error](images/error/findPerson_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that a keyword is provided.
+{: .errors-table}
 
 <div style="page-break-after: always;"></div>
 
-#### 5. Deleting a person entry: `deletePerson`
+#### 1.5. Deleting a person entry: `deletePerson`
 
-Allows you to remove an outdated person from your contact list with ease.
+[Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="danger" title="Danger" body="
-
-This action is irreversible.
-
-" %}
+You can remove a person from your contact list, so that you can remove contacts that you no longer need.
 
 <h4>Format:</h4>
 
@@ -370,45 +506,46 @@ This action is irreversible.
 deletePerson INDEX
 ```
 
-- Deletes the person at the specified `INDEX`.
-- The index refers to the index number shown in the displayed person list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+<h4>Alias:</h4>
 
-<h4>Examples:</h4>
+```
+dp
+```
 
-- `listPerson` followed by `deletePerson 2`
-  - Deletes the 2nd person in your contact list.<br><br>
+<h4>Fields:</h4>
 
-  ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)<br><br>
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is deleted. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+{: .field-table}
 
-- `findPerson Bernice` followed by `deletePerson 1`
-  - Deletes the 1st person in the results of the `findPerson` command.<br><br>
+{% include admonition.html type="warning" title="Warning" body="
 
-  ![deletePerson_success_with_findPerson](images/output/deletePerson_success_filteredList.png)
+This person will be removed from your contact list immediately. This action is irreversible.
+
+" %}
+
+<h4>Example:</h4>
+
+- `listPerson` followed by `deletePerson 2`.<br><br>
+  ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
+
+  *<center>CoordiMate deletes the person at the index <code>2</code>.</center>*
 
 <h4>Potential Errors:</h4>
 
-- `deletePerson`
-  - Negative example as no index is specified.<br><br>
-
-  ![deletePerson error_no_index](images/error/deletePerson_error.png)<br><br>
-
-- `deletePerson 1000`
-  - Invalid index is provided.<br><br>
-
-  ![deletePerson error_invalid_index](images/error/deletePerson_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
+`The person index provided is invalid` | Ensure that the index provided is within the valid range.
 
 <div style="page-break-after: always;"></div>
 
-#### 6. Clearing all person entries: `deleteAllPerson`
+#### 1.6. Deleting all person entries: `deleteAllPerson`
 
-Clears **all** contacts in your contact list.
+[Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="danger" title="Danger" body="
-
-This action is irreversible.
-
-" %}
+You can delete all persons in your contact list, so that you can restart easily with a clean slate and an empty contact list.
 
 <h4>Format:</h4>
 
@@ -416,53 +553,85 @@ This action is irreversible.
 deleteAllPerson
 ```
 
+<h4>Alias:</h4>
+
+```
+dap
+```
+
+{% include admonition.html type="warning" title="Warning" body="
+
+All persons will be removed from your contact list immediately. This action is irreversible.
+
+" %}
+
 <h4>Example:</h4>
 
-- `deleteAllPerson`
-  - Deletes all persons in your contact list.<br><br>
-
+- `deleteAllPerson`<br><br>
   ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
+
+  *<center>CoordiMate deletes all persons in your contact list.</center>*
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### Commands to Manage Tasks
+### 2. Commands to Manage Tasks
 
-#### 7. Adding a task: `addTask`
+#### 2.1. Adding a task: `addTask`
 
-Adds a task to your task list.
+[Back to Table of Contents](#table-of-contents)
+
+You can add a task to your task list, so that you can keep track of important things to do.
 
 <h4>Format:</h4>
 
 ```
-addTask T/TITLE n/NOTE [t/TAG]...
+addTask T/TITLE n/NOTE [t/TAG]…
 ```
 
-<h4>Examples:</h4>
+<h4>Alias:</h4>
 
-- `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
-  - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.<br><br>
+```
+at
+```
 
-  ![addTask_success](images/output/addTask_success1.png)<br><br>
+<h4>Fields:</h4>
 
-- `addTask T/Call Caterers n/For 292 people t/orientation`
-  - Adds a task titled `Call Caterers` with note `For 292 people` and tag `orientation`.<br><br>
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `TITLE` | `T/` | <img width=30px src='assets/svg/ug/required.svg'> | Title describing the task. |
+| `NOTE` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Note providing details about the task. |
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the task.|
+{: .field-table}
 
-  ![addTask_success](images/output/addTask_success2.png)
+- A task is uniquely identified by the combination of its `TITLE` and `NOTE`. These fields are case sensitive.
+- You may add multiple tags to a task by specifying the `t/` prefix multiple times.
+
+<h4></h4>
+
+<h4>Example:</h4>
+
+- `addTask T/Book rooms n/For day 2 t/orientation t/bookings`<br><br>
+  ![addTask_success](images/output/addTask_success.png)
+
+  *<center>CoordiMate adds a new task with the corresponding details.</center>*
 
 <h4>Potential Errors:</h4>
 
-- `addTask T/Book rooms`
-  - Negative example as the note is not specified.<br><br>
-
-  ![addTask_error](images/error/addTask_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the title and note are specified.
+`Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and note specified are not blank. Whitespaces at the start and end are trimmed.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for title and note.
 
 <div style="page-break-after: always;"></div>
 
-#### 8. Listing all tasks: `listTask`
+#### 2.2. Listing all tasks: `listTask`
 
-You can view details of all your tasks.
+[Back to Table of Contents](#table-of-contents)
+
+You can view your entire task list, so that you can stay organized and on top of your responsibilities.
 
 <h4>Format:</h4>
 
@@ -470,61 +639,80 @@ You can view details of all your tasks.
 listTask
 ```
 
-<h4>Examples:</h4>
-- `listTask`
-    - Displays a complete list of all tasks in your task list.<br><br>
+<h4>Alias:</h4>
 
+```
+lt
+```
+
+<h4>Example:</h4>
+
+- `listTask`<br><br>
   ![listTask success](images/output/listTask_success.png)
+
+  *<center>CoordiMate shows you the full task list.</center>*
 
 <div style="page-break-after: always;"></div>
 
-#### 9. Editing a task: `editTask`
+#### 2.3. Editing a task: `editTask`
 
-You can edit the details of a task in your task list.
+[Back to Table of Contents](#table-of-contents)
+
+You can edit a task in your task list, so that you can ensure task details are up-to-date with the latest information.
 
 <h4>Format:</h4>
 
 ```
-editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]...
+editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]…
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the task list currently displayed.
-- Specify a new title with the `T/` prefix. This field is **optional**.
-- Specify a new note with the `n/` prefix. This field is **optional**.
-- Specify new tags with the `t/` prefix. This field is **optional**.
+<h4>Alias:</h4>
+
+```
+et
+```
+
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+| `TITLE` | `T/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Title describing the task. |
+| `NOTE` | `n/` | <img width=30px src='assets/svg/ug/not_required.svg'> | Note providing details about the task. |
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the task.|
+{: .field-table}
+
 - At least one of the optional fields must be provided for the command to be valid.
+- Fields that are not specified will preserve their existing values.
+- You may edit the task to have multiple tags by specifying the `t/` prefix multiple times.
+- If you specify at least one tag with this command, all old tags will be replaced.
+  - If you wish to add to the existing tags of the task, use the [`addTagTask` command](#32-adding-tags-to-a-task-addtagtask) instead.
+  - Specifying `t/` without any tags will clear all existing tags of the task.
 
-<h4>Examples:</h4>
+<h4>Example:</h4>
 
-- `editTask 1 T/Find Caterer`
-  - Edits the title of the 1st task to be `Find Caterer`.<br><br>
+- `editTask 2 T/Book room n/By Friday t/orientation`<br><br>
+  ![editTask_success](images/output/editTask_success.png)
 
-  ![editTask_success](images/output/editTask_success1.png)<br><br>
+  *<center>CoordiMate edits the title, note, and tags of the 2nd task in the task list.</center>*
 
-- `editTask 2 T/Book room n/By Friday t/orientation`
-  - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.<br><br>
+<h4>Potential Errors:</h4>
 
-  ![editTask_success](images/output/editTask_success2.png)
-
-<h4>Potential Error:</h4>
-
-- `editTask`
-  - Negative example as the index is not specified.<br><br>
-
-  ![editTask_error](images/error/editTask_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
+`At least one field to edit must be provided.` | Ensure that at least one of title, note, or tag is specified.
+`Titles/Notes can take any value, as long as it is not blank and does not start with a whitespace` | Ensure that the title and/or note specified are not blank. Whitespaces at the start and end are trimmed.
+`This task already exists in the address book.` | Ensure that the new title and note specified do not match an existing task.
+`Multiple values specified for the following single-valued field(s): …` | Ensure that there are no duplicate fields for title and note.
 
 <div style="page-break-after: always;"></div>
 
-#### 10. Finding a specific task: `findTask`
+#### 2.4. Finding a specific task: `findTask`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can quickly locate tasks that contains your specified keywords in their title and/or note.
-
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all Tasks that do not match the search criteria. <br>
-To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
-
-" %}
 
 <h4>Format:</h4>
 
@@ -532,87 +720,102 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 findTask KEYWORD [MORE_KEYWORDS]…
 ```
 
-- At least one keyword is required to search.
-- The search is case-insensitive. e.g `find` will match `Find`.
-- The order of the keywords does not matter. e.g. `Find Venue` will match `Venue Find`.
-- Both the **title and note** of a task are searched.
-- Only full words will be matched e.g. `Venue` will not match `Venues`.
-- Tasks matching at least one keyword in either the title or the note will be returned (i.e. `OR` search).
-  - e.g. `Budget Venue` will match `Find Venue`, `Create Budget`.
+<h4>Alias:</h4>
 
-<h4>Examples:</h4>
+```
+ft
+```
 
-- `findTask Find Finale`
-  - Finds tasks with titles or notes containing either `Find` or `Finale`.<br><br>
+<h4>Fields:</h4>
 
-  ![findTask_success](images/output/findTask_success.png)<br><br>
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for. |
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keywords to search for. |
+{: .field-table}
 
-- `findTask Photography`
-  - No results are displayed as no task has a title or note that contains `Photography`.<br><br>
+- Tasks matching at least one `KEYWORD` in their title or note will be shown. This field is case insensitive and the order of keywords does not matter.
+- Only full words will be matched, e.g. the keyword `Photo` will not match the title `Photography`.
 
-  ![findTask_noResults](images/output/findTask_noResults.png)
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all tasks that do not match the search criteria. <br>
+(i.e. If no tasks match the search criteria, the list will be empty.)<br><br>
+To reset the tasks view, simply run the <code>listTask</code> command to list all tasks.
+
+" %}
+
+<h4>Example:</h4>
+
+- `findTask Find Finale`<br><br>
+  ![findTask_success](images/output/findTask_success.png)
+
+  *<center>CoordiMate finds all tasks whose titles or notes contain either <code>Find</code> or <code>Finale</code>.</center>*
 
 <h4>Potential Error:</h4>
 
-- `findTask`
-  - Negative example as no keywords are specified.<br><br>
-
-  ![findTask_error](images/error/findTask_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
-#### 11. Deleting a task entry: `deleteTask`
+#### 2.5 Deleting a task entry: `deleteTask`
 
-Allows you to remove a task from your task list with ease.
+[Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="danger" title="Danger" body="
-
-This action is irreversible.
-
-" %}
+You can remove a task from your task list, so that you can remove tasks that you no longer need.
 
 <h4>Format:</h4>
 
-`deleteTask INDEX`
+```
+deleteTask INDEX
+```
+
+<h4>Alias:</h4>
+
+```
+dt
+```
 
 - Deletes the task at the specified `INDEX`.
 - The index refers to the index number shown in the task list currently displayed.
+- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
-<h4>Examples:</h4>
+<h4>Fields:</h4>
 
-- `listTask` followed by `deleteTask 2`
-  - Deletes the 2nd task in your task list.<br><br>
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is deleted. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+{: .field-table}
 
-  ![deleteTask_success_with_listTask](images/output/deleteTask_success.png)<br><br>
+{% include admonition.html type="warning" title="Warning" body="
 
-- `findTask caterer` followed by `deleteTask 1`
-  - Deletes the 1st task in the results of the `findTask` command.<br><br>
+The task will be removed from your task list immediately. This action is irreversible.
 
-  ![deleteTask_success_with_findTask](images/output/deleteTask_success_filteredList.png)
+" %}
+
+<h4>Example:</h4>
+
+- `listTask` followed by `deleteTask 2`<br><br>
+  ![deleteTask_success](images/output/deleteTask_success.png)
+
+  *<center>CoordiMate deletes the task at the index <code>2</code>.</center>*
 
 <h4>Potential Errors:</h4>
 
-- `deleteTask`
-  - Negative example as no index is specified.<br><br>
-
-  ![deleteTask error_no_index](images/error/deleteTask_error.png)<br><br>
-
-- `deleteTask 1000`
-  - Invalid index is provided.<br><br>
-
-  ![deleteTask error_invalid_index](images/error/deleteTask_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
 
 <div style="page-break-after: always;"></div>
 
-#### 12. Clearing all task entries: `deleteAllTask`
+#### 2.6. Deleting all task entries: `deleteAllTask`
 
-Allows you to remove **all** entries from your task list.
+[Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="danger" title="Danger" body="
-
-This action is irreversible.
-
-" %}
+You can remove all tasks from your task list, so that you can restart easily with a clean slate and an empty task list.
 
 <h4>Format:</h4>
 
@@ -620,18 +823,32 @@ This action is irreversible.
 deleteAllTask
 ```
 
+<h4>Alias:</h4>
+
+```
+dat
+```
+
+{% include admonition.html type="warning" title="Warning" body="
+
+All tasks will be removed from your task list immediately. This action is irreversible.
+
+" %}
+
 <h4>Example:</h4>
 
-- `deleteAllTask`
-  - Deletes all tasks in your task list.<br><br>
-
+- `deleteAllTask`<br><br>
   ![deleteAllTask success](images/output/deleteAllTask_success.png)
+
+  *<center>CoordiMate deletes all tasks in the task list.</center>*
 
 <div style="page-break-after: always;"></div>
 
-#### 13. Marking a task as done: `markTask`
+#### 2.7. Marking a task as done: `markTask`
 
-Allows you to indicate that a specific task as **completed**.
+[Back to Table of Contents](#table-of-contents)
+
+You can indicate that a specific task as completed, so that you can keep track of task progress and identify tasks that are done.
 
 <h4>Format:</h4>
 
@@ -639,44 +856,43 @@ Allows you to indicate that a specific task as **completed**.
 markTask INDEX
 ```
 
-- Marks the task at the specified `INDEX`.
-- The index refers to the index number shown in the displayed task list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+<h4>Alias:</h4>
 
-{% include admonition.html type="note" title="Note" body="
+```
+mt
+```
 
-Tasks are marked as not done by default.
+<h4>Fields:</h4>
 
-" %}
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is marked as done. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+{: .field-table}
 
-<h4>Examples:</h4>
+- Tasks are marked as not done by default.
 
-- `listTask` followed by `markTask 1`
-  - Marks the 1st task in the task list as **done**<br><br>
+<h4>Example:</h4>
 
-  ![markTask_success](images/output/markTask_success.png)<br><br>
+- `listTask` followed by `markTask 1`<br><br>
+  ![markTask_success](images/output/markTask_success.png)
 
-- `findTask budget` followed by `markTask 1`
-  - Marks the 1st task in the results of the `findTask` command as **done**<br><br>
-
-  ![markTask_success](images/output/markTask_success_filteredList.png)
+  *<center>CoordiMate marks the task at the index <code>1</code> in the task list as done.</center>*
 
 <h4>Potential Errors:</h4>
-- `markTask`
-  - Negative example as no index is given.<br><br>
 
-  ![markTask_error](images/error/markTask_error.png)<br><br>
-
-- `markTask 10`
-  - Negative example as invalid index is given.<br><br>
-
-  ![markTask_wrongIndex](images/error/markTask_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
+`This task is already marked as done in the task list.` | Ensure that the task specified for marking is not already done in the task list.
 
 <div style="page-break-after: always;"></div>
 
-#### 14. Marking a task as not done: `unmarkTask`
+#### 2.8. Marking a task as not done: `unmarkTask`
 
-Allows you to indicate that a specific task as **not completed**.
+[Back to Table of Contents](#table-of-contents)
+
+You can indicate that a specific task as not completed, so that you can keep track of task progress and identify tasks that are pending further action or completion.
 
 <h4>Format:</h4>
 
@@ -684,52 +900,43 @@ Allows you to indicate that a specific task as **not completed**.
 unmarkTask INDEX
 ```
 
-- Marks the task at the specified `INDEX`.
-- The index refers to the index number shown in the displayed task list.
-- The index **_must be a positive integer_** 1, 2, 3, …
+<h4>Alias:</h4>
 
-{% include admonition.html type="note" title="Note" body="
+```
+ut
+```
 
-Tasks are marked as not done by default.
+<h4>Fields:</h4>
 
-" %}
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is marked as not done. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+{: .field-table}
 
-<h4>Examples:</h4>
+- Tasks are marked as not done by default.
 
-- `listTask` followed by `unmarkTask 1`
-  - Marks the 1st task in the task list as **not done**<br><br>
+<h4>Example:</h4>
 
-  ![unmarkTask_success](images/output/unmarkTask_success.png)<br><br>
+- `listTask` followed by `unmarkTask 1`<br><br>
+  ![unmarkTask_success](images/output/unmarkTask_success.png)
 
-- `findTask budget` followed by `unmarkTask 1`
-  - marks the 1st task in the results of the `findTask` command as **not done**<br><br>
-
-  ![unmarkTask_success](images/output/unmarkTask_success_filteredList.png)
+  *<center>CoordiMate marks the task at the index <code>1</code> in the task list as not done.</center>*
 
 <h4>Potential Errors:</h4>
 
-- `unmarkTask`
-  - Negative example as no index is given.<br><br>
-
-  ![unmarkTask_error](images/error/unmarkTask_error.png)<br><br>
-
-- `unmarkTask 10`
-  - Negative example as invalid index is given.<br><br>
-
-  ![markTask_wrongIndex](images/error/unmarkTask_wrongIndex.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
+`This task is already marked as not done in the task list.` | Ensure that the specified task is not already marked as not done in the task list.
 
 <div style="page-break-after: always;"></div>
 
-#### 15. Finding all tasks that are done: `findDone`
+#### 2.9. Finding all tasks that are done: `findDone`
 
-You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or track completed items with ease.
+[Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all Tasks that are not done. <br>
-To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
-
-" %}
+You can filter the task list to locate all completed tasks, so that you can keep track of task progress and the number of completed tasks with ease.
 
 <h4>Format:</h4>
 
@@ -737,30 +944,34 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 findDone
 ```
 
-<h4>Examples:</h4>
+<h4>Alias:</h4>
 
-- `findDone`
-  - Tasks are displayed as they are marked as done.<br><br>
-
-  ![findDone_success](images/output/findDone_success.png)<br><br>
-
-- `findDone`
-  - There are no tasks to be displayed, as no Task is done.<br><br>
-
-  ![findDone_noResults](images/output/findDone_noResults.png)
-
-<div style="page-break-after: always;"></div>
-
-#### 16. Finding all tasks that are not done: `findNotDone`
-
-You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively.
+```
+fd
+```
 
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all Tasks that are not done. <br>
+(i.e. If no Tasks are not done, the list will be empty.)<br><br>
 To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
 
 " %}
+
+<h4>Example:</h4>
+
+- `findDone`<br><br>
+  ![findDone_success](images/output/findDone_success.png)
+
+  *<center>CoordiMate finds all tasks whose status is done.</center>*
+
+<div style="page-break-after: always;"></div>
+
+#### 2.10. Finding all tasks that are not done: `findNotDone`
+
+[Back to Table of Contents](#table-of-contents)
+
+You can filter the task list to locate all not completed tasks, so that you can keep track of task progress and the number of not completed tasks with ease.
 
 <h4>Format:</h4>
 
@@ -768,29 +979,34 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 findNotDone
 ```
 
-<h4>Examples:</h4>
+<h4>Alias:</h4>
 
-- `findNotDone`
-  - Tasks are displayed as they are marked as not done.<br><br>
+```
+fnd
+```
 
-  ![findNotDone_success](images/output/findNotDone_success.png)<br><br>
+{% include admonition.html type="note" title="Note" body="
 
-- `findNotDone`
-  - There are no tasks to be displayed, as no Task is not done.<br><br>
+This command hides all Tasks that are done. <br>
+(i.e. If no Tasks are done, the list will be empty.)<br><br>
+To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
 
-  ![findNotDone_noResults](images/output/findNotDone_noResults.png)
+" %}
+
+<h4>Example:</h4>
+
+- `findNotDone`<br><br>
+  ![findNotDone_success](images/output/findNotDone_success.png)
+
+  *<center>CoordiMate finds all tasks whose status is not done.</center>*
 
 <div style="page-break-after: always;"></div>
 
-#### 17. Deleting all tasks that are done: `deleteAllDone`
+#### 2.11. Deleting all tasks that are done: `deleteAllDone`
 
-You can easily clean up your task list by deleting all completed tasks, allowing you maintain an organized and clutter-free task management system.
+[Back to Table of Contents](#table-of-contents)
 
-{% include admonition.html type="danger" title="Danger" body="
-
-This action is irreversible.
-
-" %}
+You can remove all completed tasks in the task list, so that you can focus on not completed tasks and maintain an organized and clutter-free task list.
 
 <h4>Format:</h4>
 
@@ -798,41 +1014,136 @@ This action is irreversible.
 deleteAllDone
 ```
 
-<h4>Examples:</h4>
+<h4>Alias:</h4>
 
-- `deleteAllDone`
-  - All tasks that are marked as done are deleted.<br><br>
+```
+dad
+```
 
-  ![deleteAllDone_success](images/output/deleteAllDone_success.png)<br><br>
+- After completing the deletion of completed tasks, the task list will automatically revert back to displaying all tasks, ensuring you have a comprehensive overview of your remaining to-dos.
 
-<h4>Potential Errors:</h4>
+{% include admonition.html type="warning" title="Warning" body="
 
-- `deleteAllDone`
-  - There are no tasks found that are marked as done.<br><br>
+All completed tasks will be removed from your task list immediately. This action is irreversible.
 
-  ![deleteAllDone_error](images/error/deleteAllDone_error.png)<br><br>
+" %}
+
+<h4>Example:</h4>
+
+- `deleteAllDone`<br><br>
+  ![deleteAllDone_success](images/output/deleteAllDone_success.png)
+
+  *<center>CoordiMate deletes all tasks whose status is done.</center>*
+
+<h4>Potential Error:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`No Done tasks found in task list` | Ensure that there are tasks marked as done in your task list with [`findDone` command](#29-finding-all-tasks-that-are-done-finddone).
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### Commands to Manage Tags
+### 3. Commands to Manage Tags
 
-#### 18. Listing all tags: `listTag`
+#### 3.1. Adding tag(s) to a person: `addTagPerson`
 
-Provides you with a complete list of tags you have used in your contact list and task list, and the number of times each tag has been used.
+[Back to Table of Contents](#table-of-contents)
 
-The list is sorted by frequency of each tag in descending order.
+You can add tag(s) to a person, so that you can simply add to the existing list of tags of the indexed person.
 
-If two tags have the same frequency, the tags are sorted in the order as defined in the American Standard Code for Information Interchange (ASCII).
+<h4>Format:</h4>
 
-{% include admonition.html type="note" title="Note" body="
+```
+addTagPerson INDEX t/TAG [t/MORE_TAGS]…
+```
 
-The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
-In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
-For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
+<h4>Alias:</h4>
 
-" %}
+```
+atagp
+```
+
+<h4>Fields:</h4>
+
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+| `TAG` | `t/` | <img width=30px src='assets/svg/ug/required.svg'> | The tag to be added to the person. |
+| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional tag(s) to be added to the person. |
+{: .field-table}
+
+- A tag is uniquely identified by the `TAG`. This field is case sensitive.
+
+<h4>Example:</h4>
+
+- `addTagPerson 1 t/friends t/expensive`.<br><br>
+  ![addTagPerson success](images/output/addTagPerson_success.png)
+
+  *<center>CoordiMate adds tag <code>expensive</code> to the person at the index <code>1</code>, while <code>friends</code> is not added because it already exists in the list of tags.</center>*
+
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index and tag are both specified. The index should be correctly specfiied as an integer.
+`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
+`The person index provided is invalid` | Ensure that the index provided is within the valid range.
+
+<div style="page-break-after: always;"></div>
+
+#### 3.2. Adding tag(s) to a task: `addTagTask`
+
+[Back to Table of Contents](#table-of-contents)
+
+You can add tag(s) to a task, so that you can simply add to the existing list of tags of the indexed task.
+
+<h4>Format:</h4>
+
+```
+addTagTask INDEX t/TAG [t/MORE_TAGS]…
+```
+
+<h4>Alias:</h4>
+
+```
+atagt
+```
+
+<h4>Fields:</h4>
+
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+| `TAG` | `t/` | <img width=30px src='assets/svg/ug/required.svg'> | The tag to be added to the task. |
+| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional tag(s) to be added to the task. |
+{: .field-table}
+
+- A tag is uniquely identified by the `TAG`. This field is case sensitive.
+
+<h4>Example:</h4>
+
+- `addTagTask 1 t/day1 t/day2`.<br><br>
+  ![addTagTask success](images/output/addTagTask_success.png)
+
+  *<center>CoordiMate adds tag <code>day2</code> to the task at the index <code>1</code>, while <code>day1</code> is not added because it already exists in the list of tags.</center>*
+
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index and tag are both specified. The index should be correctly specified as an integer.
+`Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
+`The task index provided is invalid` | Ensure that the index provided is within the valid range.
+
+<div style="page-break-after: always;"></div>
+
+#### 3.3. Listing all tags: `listTag`
+
+[Back to Table of Contents](#table-of-contents)
+
+You can view the tags in your contact list and task list and their frequencies, so that you can keep track of the tags you have used.
 
 <h4>Format:</h4>
 
@@ -840,246 +1151,230 @@ For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noo
 listTag
 ```
 
+<h4>Alias:</h4>
+
+```
+ltag
+```
+
+- The list is sorted by frequency of each tag in descending order.
+
+- If two tags have the same frequency, the tags are sorted in the order as defined in the [American Standard Code for Information Interchange (ASCII)](#american-standard-code-for-information-interchange-ascii).
+
 <h4>Example:</h4>
 
-- `listTag`
-  - Shows you a list of all tags used in your contact list and task list and the number of times each tag has been used.<br><br>
-
+- `listTag`<br><br>
   ![listTag success](images/output/listTag_success.png)
 
+  *<center>CoordiMate shows you the list of all tags used and their frequencies.</center>*
+
 <div style="page-break-after: always;"></div>
 
-#### 19. Finding persons and tasks with any matching tag: `findTag`
+#### 3.4. Finding persons and tasks with any matching tag(s): `findTag`
 
-You can search for persons and tasks using any keywords that match their tags.
+[Back to Table of Contents](#table-of-contents)
+
+You can extend your search with keywords, so that you can locate any person or task with at least one matching tag.
+
+<h4>Format:</h4>
+
+```
+findTag KEYWORD [MORE_KEYWORDS]…
+```
+
+<h4>Alias:</h4>
+
+```
+ftag
+```
+
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for tags.|
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keyword(s) to search for tags.|
+{: .field-table}
+
+- Persons and tasks matching at least one of `KEYWORD` in their tag(s) will be returned (i.e. OR search). This field is case insensitive and the order of keywords does not matter.
+- Only full words will be matched, e.g. `findTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
 
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all persons and tasks that do not match the search criteria. <br>
+(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
 To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
 
 " %}
 
-<h4>Format:</h4>
+<h4>Example:</h4>
 
-```
-findTag KEYWORD [MORE_KEYWORDS]...
-```
+- `findTag catering orientation`<br><br>
+  ![findTag_success](images/output/findTag_success.png)
 
-- Finds the persons and tasks whose tags contain at least one of the specified `TAG`.
-- Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tags to expand your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Shows results that contain at least one of the specified keywords.
-
-<h4>Examples:</h4>
-
-- `findTag orientation`
-  - Shows all persons and tasks containing the tag `orientation`.<br><br>
-
-  ![findTag_success_2](images/output/findTag_success2.png)<br><br>
-
-
-- `findTag catering orientation`
-  - Shows all persons and tasks containing any of the tags `catering` or `orientation`.<br><br>
-
-  ![findTag_success_1](images/output/findTag_success1.png)
+  *<center>CoordiMate finds all persons and tasks matching any of <code>catering</code> or <code>orientation</code> tags.</center>*
 
 <h4>Potential Error:</h4>
 
-- `findTag`
-  - An invalid command format. The application expects one or more keywords after `findTag`.<br><br>
-
-  ![FindTag Example 2](images/error/findTag_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
-#### 20. Finding persons and tasks with all matching tags: `findAllTag`
+#### 3.5. Finding persons and tasks with all matching tag(s): `findAllTag`
 
-You can search for persons and tasks using all keywords that match their tags.
+[Back to Table of Contents](#table-of-contents)
+
+You can narrow your search using multiple keywords, so that you can find only those contacts and tasks that include every tag you need.
+
+<h4>Format:</h4>
+
+```
+findAllTag KEYWORD [MORE_KEYWORDS]…
+```
+
+<h4>Alias:</h4>
+
+```
+fatag
+```
+
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'>  | The keyword to search for tags.|
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keyword(s) to search for tags.|
+{: .field-table}
+
+- Persons and tasks matching all `KEYWORD` in their tag(s) will be returned (i.e. AND search). This field is case insensitive and the order of keywords does not matter.
+- Only full words will be matched, e.g. `findAllTag catering` will not match persons and tasks which tag(s) contain only `foodcatering`.
 
 {% include admonition.html type="note" title="Note" body="
 
 This command hides all persons and tasks that do not match the search criteria. <br>
+(i.e. If no persons or tasks match the search criteria, the list will be empty.)<br><br>
 To reset the Persons and Tasks view, simply run the <code>listAll</code> command to list all persons and tasks.
 
 " %}
 
-<h4>Format:</h4>
+<h4>Example:</h4>
 
-```
-findAllTag KEYWORD [MORE_KEYWORDS]...
-```
+- `findAllTag catering orientation`<br><br>
+  ![findAllTag_success](images/output/findAllTag_success.png)
 
-- Finds the persons and tasks whose tags contain at least one of the specified `KEYWORD`.
-- Specify a tag with the `KEYWORD` parameter. This field is **mandatory**.
-- Specify more tags to expand your search scope with the `MORE_KEYWORDS` parameter. This field is **optional**.
-- Shows only results that contain all keywords given.
-
-<h4>Examples:</h4>
-
-- `findAllTag orientation`
-  - Shows all persons and tasks containing the tag `catering`.<br><br>
-
-  ![findAllTag_success_1](images/output/findAllTag_success1.png)<br><br>
-
-- `findAllTag catering orientation`
-  - Shows all persons and tasks containing both the tags `catering` and `orientation`.<br><br>
-
-  ![findAllTag_success_2](images/output/findAllTag_success2.png)
+  *<center>CoordiMate finds persons and tasks matching all of <code>catering</code> and <code>orientation</code> in their tag(s).</center>*
 
 <h4>Potential Error:</h4>
 
-- `findAllTag`
-  - An invalid command format. The application expects one or more keywords after `findAllTag`.<br><br>
-
-  ![FindAllTag Example 2](images/error/findAllTag_error.png)
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that a keyword is provided.
 
 <div style="page-break-after: always;"></div>
 
-#### 21. Adding tag(s) to a person: `addTagPerson`
+#### 3.6. Deleting tag(s) from a person: `deleteTagPerson`
 
-Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
+[Back to Table of Contents](#table-of-contents)
+
+You can delete tag(s) from a person in your contacts list, so that you can remove unwanted or irrelevant tags.
 
 <h4>Format:</h4>
 
 ```
-addTagPerson INDEX [t/TAG]…
+deleteTagPerson INDEX t/TAG [t/MORE_TAGS]…
 ```
 
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **_must be a positive integer_** 1, 2, 3, …
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
-
-<h4>Examples:</h4>
-
-- `addTagPerson 1 t/friends t/expensive`
-  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.<br><br>
-
-  ![addTagPerson success](images/output/addTagPerson_success.png)
-
-<h4>Potential Errors:</h4>
-
-- `addTagPerson`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![addTagPerson error_noParameters](images/error/addTagPerson_error_noParameters.png)<br><br>
-
-- `addTagPerson 1`
-  - Negative example as no tag is specified.<br><br>
-
-  ![addTagPerson error_validIndex](images/error/addTagPerson_error_validIndex.png)<br><br>
-
-
-- `addTagPerson 1 t/`
-  - Negative example as no input is specified.<br><br>
-
-  ![addTagPerson error_noInput](images/error/addTagPerson_error_noInput.png)<br><br>
-
-- `addTagPerson 10 t/friends`
-  - Negative example as an invalid index is provided.<br><br>
-
-  ![addTagPerson error_invalidIndex](images/error/addTagPerson_error_invalidIndex.png)
-
-<div style="page-break-after: always;"></div>
-
-#### 22. Adding tag(s) to a task: `addTagTask`
-
-Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
-
-<h4>Format:</h4>
+<h4>Alias:</h4>
 
 ```
-addTagTask INDEX [t/TAG]…
+dtagp
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, …
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
+<h4>Fields:</h4>
 
-<h4>Examples:</h4>
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/required.svg'> | Tag(s) to be deleted for the person.|
+{: .field-table}
 
-- `addTagTask 1 t/day1 t/day2`
-  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.<br><br>
+- You may delete multiple tags from a person by specifying the `t/` prefix multiple times.
+- Tags that do not belong to the person will be ignored.
 
-  ![addTagTask success](images/output/addTagTask_success.png)
+<h4>Example:</h4>
 
-<h4>Potential Errors:</h4>
-
-- `addTagTask`
-  - Negative example as no index or field is specified.<br><br>
-
-  ![addTagTask error_noParameters](images/error/addTagTask_error_noParameters.png)<br><br>
-
-- `addTagTask 1`
-  - Negative example as no tag is specified.<br><br>
-
-  ![addTagTask error_validIndex](images/error/addTagTask_error_validIndex.png)<br><br>
-
-- `addTagTask 1 t/`
-  - Negative example as no input is specified.<br><br>
-
-  ![addTagTask error_noInput](images/error/addTagTask_error_noInput.png)<br><br>
-
-- `addTagTask 3 t/day1`
-  - Negative example as an invalid index is provided.<br><br>
-
-  ![addTagTask error_invalidIndex](images/error/addTagTask_error_invalidIndex.png)
-
-<div style="page-break-after: always;"></div>
-
-#### 23. Deleting tag(s) from a person: `deleteTagPerson`
-
-You can remove tag(s) from a person in your contact list.
-
-<h4>Format:</h4>
-
-```
-deleteTagPerson INDEX t/TAG [t/MORE TAGS]…
-```
-
-- Removes specified tags from a person at the specified `INDEX`.
-- Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
-- Invalid tags will be ignored.
-
-<h4>Examples:</h4>
-
-- `deleteTagPerson 2 t/colleagues t/friends`
-  - Deletes the tags `colleagues` and `friends` from the 2nd person.<br><br>
-
+- `deleteTagPerson 2 t/EragonSounds t/soundSystems t/catering`<br><br>
   ![deleteTagPerson_success](images/output/deleteTagPerson_success.png)
 
+  *<center>CoordiMate deletes <code>EragonSounds</code> and <code>soundSystems</code> tags from the 2nd person, and ignores the <code>catering</code> tag.</center>*
+
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer. At least one tag must be specified.
+`The person index provided is invalid` | Ensure that the index specified is in the range of the displayed number of persons.
+`Tags names should be alphanumeric` | Ensure that the tags specified are alphanumeric and not empty. Whitespaces are trimmed, but spaces between characters are not allowed.
+
 <div style="page-break-after: always;"></div>
 
-#### 24. Deleting tag(s) from a task: `deleteTagTask`
+#### 3.7. Deleting tag(s) from a task: `deleteTagTask`
 
-You can remove tag(s) from a task in your task list.
+[Back to Table of Contents](#table-of-contents)
+
+You can delete tag(s) from a task in your task list, so that you can remove unwanted or irrelevant tags.
 
 <h4>Format:</h4>
 
 ```
-deleteTagTask INDEX t/TAG [t/MORE TAGS]…
+deleteTagTask INDEX t/TAG [t/MORE_TAGS]…
 ```
 
-- Removes specified tags from a task at the specified `INDEX`.
-- Specify one or more tags with the `t/` prefix before each tag. At least one tag must be provided.
-- Invalid tags will be ignored.
+<h4>Alias:</h4>
 
-<h4>Examples:</h4>
+```
+dtagt
+```
 
-- `deleteTagTask 2 t/class t/finance`
-  - Deletes the tags `class` and `finance` from the 2nd task.<br><br>
+<h4>Fields:</h4>
 
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/required.svg'> | Tag(s) to be deleted for the task.|
+{: .field-table}
+
+- You may delete multiple tags from a task by specifying the `t/` prefix multiple times.
+- Tags that do not belong to the task will be ignored.
+
+<h4>Example:</h4>
+
+- `deleteTagTask 2 t/finance t/orientation t/caterer`<br><br>
   ![deleteTagTask_success](images/output/deleteTagTask_success.png)
+
+  *<center>CoordiMate deletes <code>finance</code> and <code>orientation</code> tags from the 2nd task, and ignores the <code>caterer</code> tag.</center>*
+
+<h4>Potential Errors:</h4>
+
+ Error message | How to resolve
+---------------|---------------
+`Invalid command format!…` | Ensure that the index is correctly specified as an integer. At least one tag must be specified.
+`The task index provided is invalid` | Ensure that the index specified is in the range of the displayed number of tasks.
+`Tags names should be alphanumeric` | Ensure that the tags specified are alphanumeric and not empty. Whitespaces are trimmed, but spaces between characters are not allowed.
 
 ---
 
 <div style="page-break-after: always;"></div>
 
-### General Commands
+### 4. General Commands
 
-#### 25. Viewing help: `help`
+#### 4.1. Viewing help: `help`
 
-You can view a link to access the user guide at any time, ensuring that you will never be lost.
+[Back to Table of Contents](#table-of-contents)
+
+You can view a link to access the user guide at any time, so that you can refer to documentation to understand the existing features.
 
 <h4>Format:</h4>
 
@@ -1087,24 +1382,26 @@ You can view a link to access the user guide at any time, ensuring that you will
 help
 ```
 
+<h4>Alias:</h4>
+
+```
+h
+```
+
 <h4>Example:</h4>
 
-- `help`
-  - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly.<br><br>
-
+- `help`<br><br>
   ![help message](images/output/help_success.png)
+
+  *<center>CoordiMate opens a new window with a link to the user guide.</center>*
 
 <div style="page-break-after: always;"></div>
 
-#### 26. Listing all persons and tasks: `listAll`
+#### 4.2. Listing all persons and tasks: `listAll`
+
+[Back to Table of Contents](#table-of-contents)
 
 You can list all persons and tasks in your contact list and task list at the same time.
-
-{% include admonition.html type="note" title="Note" body="
-
-You can use this command to quickly clear all filters after using the <code>findPerson</code>, <code>findTask</code>, <code>findDone</code>, <code>findNotDone</code>, or <code>findTag</code> commands, instead of having to type the <code>listPerson</code> and <code>listTask</code> commands manually.
-
-" %}
 
 <h4>Format:</h4>
 
@@ -1112,17 +1409,26 @@ You can use this command to quickly clear all filters after using the <code>find
 listAll
 ```
 
-<h4>Example:</h4>
-- `listAll`
-  - Shows all the persons and tasks in your contact list and task list.<br><br>
+<h4>Alias:</h4>
 
+```
+la
+```
+
+<h4>Example:</h4>
+
+- `listAll`<br><br>
   ![listAll success](images/output/listAll_success.png)
+
+  *<center>CoordiMate shows all the persons and tasks in your contact list and task list.</center>*
 
 <div style="page-break-after: always;"></div>
 
-#### 27. Exiting the program: `exit`
+#### 4.3. Exiting the program: `exit`
 
-Once you are done with your work in CoordiMate, you can exit the program by typing a command.
+[Back to Table of Contents](#table-of-contents)
+
+You can exit the application, so that you can close the application window and stop the program.
 
 <h4>Format:</h4>
 
@@ -1130,9 +1436,15 @@ Once you are done with your work in CoordiMate, you can exit the program by typi
 exit
 ```
 
+<h4>Alias:</h4>
+
+```
+e
+```
+
 <h4>Example:</h4>
+
 - `exit`
-  - CoordiMate exits and the program window closes.
 
 <br><br>
 
@@ -1142,10 +1454,21 @@ exit
 
 ## FAQ
 
-{% include admonition.html type="question" title="How do I transfer my data to another computer?" body="
+[Back to Table of Contents](#table-of-contents)
 
-1. Locate the save file at <code>[CoordiMate JAR file location]/data/addressbook.json</code> on your current computer. <br>
-2. Copy the save file to the same location on your new computer.
+{% include admonition.html type="question" title="Question" body="
+
+<b>Q: How do I backup/restore my data?</b><br>
+
+<b>A: </b>To make a backup:<br>
+
+1. Locate the data file at <code>[CoordiMate JAR file location]/data/addressbook.json</code> on your current computer. <br>
+2. Copy the data file to a safe location.<br><br>
+
+To restore from a backup data file:<br>
+
+1. Copy the data file to <code>[CoordiMate JAR file location]/data/addressbook.json</code>.<br>
+2. Launch CoordiMate, and your data will be automatically imported.
 
 " %}
 
@@ -1155,13 +1478,85 @@ exit
 
 <div style="page-break-after: always;"></div>
 
+## Glossary
+
+[Back to Table of Contents](#table-of-contents)
+
+### Alphanumeric
+
+A combination of letters and numbers only, no spaces or special characters.
+
+For more information, see <a href='https://en.wikipedia.org/wiki/Alphanumericals' rel='noopener noreferrer' target='_blank'>Alphanumericals</a> on Wikipedia.
+
+Example: For tags, entries like `day1` or `day2` are valid, while entries like `day 1` or `day-2` are invalid.
+
+### American Standard Code for Information Interchange (ASCII)
+
+The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
+In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
+
+Example: After a `listTag` command, `Finale` tag is listed before `finale` in the command result.
+
+For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
+
+### Command Line Interface
+
+A text-based interface used to interact with a computer or software by entering commands into a terminal or command prompt.
+
+Example: In order to delete a task, user types `deleteTask 1` and pressing Enter. The task specified is deleted.
+
+For more information on CoordiMate's commands, read more about it [here](#usage).
+
+### Graphical User Interface
+
+A visual interface that allows users to interact with software using graphical elements like icons and windows, making it more user-friendly.
+
+Example: After `listAll` command, users can scroll the contact list and task list to view information in both lists and see different icons for done and not done tasks respectively.
+
+For more information on CoordiMate's GUI, read more about it [here](#understanding-our-gui).
+
+### Integer
+
+A whole number without fractions or decimals, commonly used in CoordiMate to denote the position of an item in a collection or list.
+
+The valid range for accepted integers is 1, 2, 3, … , 2147483647.
+
+Example: In a list of 3 alphabets containing (“a”, “b”, “c”) in that order,
+  - Index 1 refers to “a”
+  - Index 2 refers to “b”
+  - Index 3 refers to “c”
+
+<br><br>
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ## Known Issues
 
-{% include admonition.html type="bug" title="CoordiMate does not open on the correct screen." body="
+[Back to Table of Contents](#table-of-contents)
 
-CoordiMate remembers the last screen it was on when it was closed. If that screen is no longer available when CoordiMate is opened, you will not be able to see the application window. <br><br>
+{% include admonition.html type="bug" title="Known Issue" body="
 
-To resolve this issue, you can simply delete the <code>preferences.json</code> file that is in the same folder as the CoordiMate JAR file.
+<b>Issue:</b> CoordiMate does not open on the correct screen. <br><br>
+
+<b>Workaround:</b> To resolve this issue, you can simply delete the <code>preferences.json</code> file that is in the same folder as the CoordiMate JAR file.
+
+"%}
+
+{% include admonition.html type="bug" title="Known Issue" body="
+
+<b>Issue:</b> The application becomes laggy after I enter a very long string.<br><br>
+
+<b>Workaround:</b> As a workaround, we recommend that you keep inputs (such as a person's name or a task's title) to less than 200 characters each.
+
+"%}
+
+{% include admonition.html type="bug" title="Known Issue" body="
+
+<b>Issue:</b> I am unable to input a name that contains special characters (e.g. <code>Ravi s/o Veegan</code>).<br><br>
+
+<b>Workaround:</b> As a workaround, we suggest that you omit the special characters in the name. (e.g. <code>Ravi so Veegan</code>)
 
 "%}
 
@@ -1175,47 +1570,61 @@ To resolve this issue, you can simply delete the <code>preferences.json</code> f
 
 ### Managing Persons
 
- Action | Format | Example
---------|--------|---------
-[**Add Person**](#1-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` |`addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-[**List All Person**](#2-listing-all-persons-listperson) | `listPerson` | `listPerson`
-[**Edit Person**](#3-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com`
-[**Find Person**](#4-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John`
-[**Delete Person**](#5-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1`
-[**Delete All Person**](#6-clearing-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson`
+[Back to Table of Contents](#table-of-contents)
+
+ Action | Format | Example | Alias
+--------|--------|---------|------
+[**Add Person**](#11-adding-a-person-addperson)| `addPerson n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…` | `addPerson n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` | `ap`
+[**List All Person**](#12-listing-all-persons-listperson) | `listPerson` | `listPerson` | `lp`
+[**Edit Person**](#13-editing-a-person-editperson) | `editPerson INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​` | `editPerson 1 p/91234567 e/johndoe@example.com` | `ep`
+[**Find Person**](#14-finding-a-specific-person-findperson) | `findPerson KEYWORD [MORE_KEYWORDS]…` | `findPerson John` | `fp`
+[**Delete Person**](#15-deleting-a-person-entry-deleteperson) | `deletePerson INDEX` | `deletePerson 1` | `dp`
+[**Delete All Person**](#16-deleting-all-person-entries-deleteallperson) | `deleteAllPerson` | `deleteAllPerson` | `dap`
+
+<div style="page-break-after: always;"></div>
 
 ### Managing Tasks
 
- Action | Format | Example
---------|--------|---------
-[**Add Task**](#7-adding-a-task-addtask) | `addTask t/TITLE n/NOTE` | `addTask t/Get Flowers n/Wedding Anniversary`
-[**List All Task**](#8-listing-all-tasks-listtask) | `listTask` | `listTask`
-[**Edit Task**](#9-editing-a-task-edittask) | `editTask INDEX [t/TITLE] [n/NOTE]` | `editTask 1 t/Call Caterer`
-[**Find Task**](#10-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding`
-[**Delete Task**](#11-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1`
-[**Delete All Task**](#12-clearing-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask`
-[**Mark Task**](#13-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1`
-[**Unmark Task**](#14-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1`
-[**Find Done Task**](#15-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone`
-[**Find Not Done Task**](#16-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone`
-[**Delete All Done Task**](#17-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone`
+[Back to Table of Contents](#table-of-contents)
+
+ Action | Format | Example | Alias
+--------|--------|---------|------
+[**Add Task**](#21-adding-a-task-addtask) | `addTask T/TITLE n/NOTE [t/TAG]` | `addTask T/Get Flowers n/Wedding Anniversary` | `at`
+[**List All Task**](#22-listing-all-tasks-listtask) | `listTask` | `listTask` | `lt`
+[**Edit Task**](#23-editing-a-task-edittask) | `editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]` | `editTask 1 T/Call Caterer n/Wedding Dinner` | `et`
+[**Find Task**](#24-finding-a-specific-task-findtask) | `findTask KEYWORD [MORE_KEYWORDS]…` | `findTask Call Wedding` | `ft`
+[**Delete Task**](#25-deleting-a-task-entry-deletetask) | `deleteTask INDEX` | `deleteTask 1` | `dt`
+[**Delete All Task**](#26-deleting-all-task-entries-deletealltask) | `deleteAllTask` | `deleteAllTask` | `dat`
+[**Mark Task**](#27-marking-a-task-as-done-marktask) | `markTask INDEX` | `markTask 1` | `mt`
+[**Unmark Task**](#28-marking-a-task-as-not-done-unmarktask) | `unmarkTask INDEX` | `unmarkTask 1` | `ut`
+[**Find Done Task**](#29-finding-all-tasks-that-are-done-finddone) | `findDone` | `findDone` | `fd`
+[**Find Not Done Task**](#210-finding-all-tasks-that-are-not-done-findnotdone) | `findNotDone` | `findNotDone` | `fnd`
+[**Delete All Done Task**](#211-deleting-all-tasks-that-are-done-deletealldone) | `deleteAllDone` | `deleteAllDone` | `dad`
+
+<div style="page-break-after: always;"></div>
 
 ### Managing Tags
 
- Action | Format | Example
---------|--------|---------
-[**List All Tags**](#18-listing-all-tags-listtag) | `listTag` | `listTag`
-[**Find Tags**](#19-finding-persons-and-tasks-with-any-matching-tag-findtag) | `findTag KEYWORD [MORE_KEYWORDS]...` | `findTag orientation`
-[**Find All Tags**](#20-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]...` | `findAllTag orientation`
-[**Add Tag(s) to a Person**](#21-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends`
-[**Add Tag(s) to a Task**](#22-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1`
-[**Delete Tag(s) from Person**](#23-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]...` | `deleteTagPerson 1 t/catering`
-[**Delete Tag(s) from Task**](#24-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]...` | `deleteTagTask 1 t/catering`
+[Back to Table of Contents](#table-of-contents)
+
+ Action | Format | Example | Alias
+--------|--------|---------|------
+[**Add Tag(s) to a Person**](#31-adding-tags-to-a-person-addtagperson) | `addTagPerson INDEX [t/TAG]…` | `addTagPerson 1 t/friends` | `atagp`
+[**Add Tag(s) to a Task**](#32-adding-tags-to-a-task-addtagtask) | `addTagTask INDEX [t/TAG]…` | `addTagTask 1 t/day1` | `atagt`
+[**List All Tags**](#33-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
+[**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tags-findtag) | `findTag KEYWORD [MORE_KEYWORDS]…` | `findTag orientation` | `ftag`
+[**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]…` | `findAllTag orientation` | `fatag`
+[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE_TAGS]…` | `deleteTagPerson 1 t/catering` | `dtagp`
+[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE_TAGS]…` | `deleteTagTask 1 t/catering` | `dtagt`
+
+<div style="page-break-after: always;"></div>
 
 ### General
 
- Action | Format | Example
---------|--------|---------
-[**View Help**](#25-viewing-help-help) | `help` | `help`
-[**List All Person and Task**](#26-listing-all-persons-and-tasks-listall) | `listAll` | `listAll`
-[**Exit**](#27-exiting-the-program-exit) | `exit` | `exit`
+[Back to Table of Contents](#table-of-contents)
+
+ Action | Format | Example | Alias
+--------|--------|---------|------
+[**View Help**](#41-viewing-help-help) | `help` | `help` | `h`
+[**List All Person and Task**](#42-listing-all-persons-and-tasks-listall) | `listAll` | `listAll` | `la`
+[**Exit**](#43-exiting-the-program-exit) | `exit` | `exit` | `e`
