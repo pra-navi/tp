@@ -461,6 +461,12 @@ The lifeline for <code>DeleteTaskCommandParser</code> and <code>DeleteTaskComman
 
 " %}
 
+The sequence diagrams below show the details of the respective reference frames.
+
+![DeleteTaskInTaskList](assets/svg/dg/SDDeleteTaskInTaskList.svg)
+
+![CreateDeleteTaskCommandResult](assets/svg/dg/SDCreateDeleteTaskCommandResult.svg)
+
 #### Design considerations
 
 **Aspect: How delete executes:**
