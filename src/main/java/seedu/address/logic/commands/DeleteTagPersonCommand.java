@@ -90,12 +90,12 @@ public class DeleteTagPersonCommand extends Command {
         missingTags.removeAll(matchingTags);
 
         String res = String.format(MESSAGE_DELETE_TAG_PERSON_SUCCESS, Messages.format(editedPerson));
-        if (matchingTags.size() > 0) {
+        if (!matchingTags.isEmpty()) {
             String matchingTagsString = matchingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
             res += String.format(MESSAGE_DELETE_TAG_PERSON_MATCHING_TAGS, matchingTagsString);
         }
 
-        if (missingTags.size() > 0) {
+        if (!missingTags.isEmpty()) {
             String missingTagsString = missingTags.stream().map(Tag::toString).collect(Collectors.joining(", "));
             res += String.format(MESSAGE_DELETE_TAG_PERSON_MISSING_TAGS, missingTagsString);
         }
