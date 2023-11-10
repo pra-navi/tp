@@ -55,6 +55,6 @@ deactivate AddTagPersonCommand
 AddTagPersonCommand -[hidden]-> LogicManager
 destroy AddTagPersonCommand
 
-[<--LogicManager
+[<--LogicManager : r
 deactivate LogicManager
 @enduml

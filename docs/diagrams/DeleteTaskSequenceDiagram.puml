@@ -55,6 +55,6 @@ deactivate DeleteTaskCommand
 DeleteTaskCommand -[hidden]-> LogicManager
 destroy DeleteTaskCommand
 
-[<--LogicManager
+[<--LogicManager : r
 deactivate LogicManager
 @enduml
