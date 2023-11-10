@@ -1598,8 +1598,8 @@ Example: abc123
 [**List All Tags**](#33-listing-all-tags-listtag) | `listTag` | `listTag` | `ltag`
 [**Find Tags**](#34-finding-persons-and-tasks-with-any-matching-tags-findtag) | `findTag KEYWORD [MORE_KEYWORDS]…` | `findTag orientation` | `ftag`
 [**Find All Tags**](#35-finding-persons-and-tasks-with-all-matching-tags-findalltag) | `findAllTag KEYWORD [MORE_KEYWORDS]…` | `findAllTag orientation` | `fatag`
-[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE TAGS]…` | `deleteTagPerson 1 t/catering` | `dtagp`
-[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE TAGS]…` | `deleteTagTask 1 t/catering` | `dtagt`
+[**Delete Tag(s) from Person**](#36-deleting-tags-from-a-person-deletetagperson) | `deleteTagPerson INDEX t/TAG [t/MORE_TAGS]…` | `deleteTagPerson 1 t/catering` | `dtagp`
+[**Delete Tag(s) from Task**](#37-deleting-tags-from-a-task-deletetagtask) | `deleteTagTask INDEX t/TAG [t/MORE_TAGS]…` | `deleteTagTask 1 t/catering` | `dtagt`
 
 <div style="page-break-after: always;"></div>
 
