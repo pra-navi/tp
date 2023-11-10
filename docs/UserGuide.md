@@ -424,9 +424,9 @@ ep
 <h4>Example:</h4>
 
 - `editPerson 1 p/91234567 e/johndoe@example.com`
-<br><br>
 
-![editPerson success](images/output/editPerson_success.png)<br><br>
+  ![editPerson success](images/output/editPerson_success.png)
+  *<center>CoordiMate edits the 1st person's phone number and email.</center>*
 
 <h4>Potential Errors:</h4>
 
