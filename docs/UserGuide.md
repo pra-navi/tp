@@ -570,7 +570,7 @@ All persons will be removed from your contact list immediately. This action is i
 
 <h4>Example:</h4>
 
-- `deleteAllPerson`
+- `deleteAllPerson`<br><br>
 
   ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
 
@@ -616,9 +616,9 @@ at
 
 <h4>Example:</h4>
 
-- `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
+- `addTask T/Book rooms n/For day 2 t/orientation t/bookings`<br><br>
 
-  ![addTask_success](images/output/addTask_success.png)<br><br>
+  ![addTask_success](images/output/addTask_success.png)
 
   *<center>CoordiMate adds a new task with the corresponding details.</center>*
 
@@ -695,7 +695,7 @@ et
 
 <h4>Example:</h4>
 
-- `editTask 2 T/Book room n/By Friday t/orientation`
+- `editTask 2 T/Book room n/By Friday t/orientation`<br><br>
 
   ![editTask_success](images/output/editTask_success.png)
 
@@ -1308,7 +1308,7 @@ dtagp
 
 <h4>Example:</h4>
 
-- `deleteTagPerson 2 t/EragonSounds t/soundSystems t/catering`
+- `deleteTagPerson 2 t/EragonSounds t/soundSystems t/catering`<br><br>
 
   ![deleteTagPerson_success](images/output/deleteTagPerson_success.png)
 
@@ -1355,7 +1355,7 @@ dtagt
 
 <h4>Example:</h4>
 
-- `deleteTagTask 2 t/finance t/orientation t/caterer`
+- `deleteTagTask 2 t/finance t/orientation t/caterer`<br><br>
 
   ![deleteTagTask_success](images/output/deleteTagTask_success.png)
 
@@ -1379,7 +1379,7 @@ dtagt
 
 [Back to Table of Contents](#table-of-contents)
 
-You can view a link to access the user guide at any time, ensuring that you will never be lost.
+You can view a link to access the user guide at any time, so that you can refer to documentation to understand the existing features.
 
 <h4>Format:</h4>
 
@@ -1395,10 +1395,11 @@ h
 
 <h4>Example:</h4>
 
-- `help`
-  - Opens a window with a link to our user guide. You can copy the URL into a browser, or click on the "Open in browser" button to access the user guide directly.<br><br>
+- `help`<br><br>
 
   ![help message](images/output/help_success.png)
+
+  *<center>CoordiMate opens a new window with a link to the user guide.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -1452,7 +1453,6 @@ e
 - `exit`
 
 <br><br>
-
 
 ---
 
