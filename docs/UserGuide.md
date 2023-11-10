@@ -105,23 +105,23 @@ Throughout this guide, you will see different text styles that are used to highl
 
 [Back to Table of Contents](#table-of-contents)
 
-1. **Easy Management of People**:
+  1. **Easy Management of People**:
 
-  - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
+      - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
 
-2. **Effortless Task Management**:
+  2. **Effortless Task Management**:
 
-  - CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.
+      - CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.
 
-3. **Simplified Searching**:
+  3. **Simplified Searching**:
 
-  - Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!
+      - Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!
 
-4. **Hassle-Free Data Management**:
+  4. **Hassle-Free Data Management**:
 
-  - CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
-  - When CoordiMate starts, your existing data is automatically loaded in, allowing you to pick up where you left off.
-  - For advanced users, CoordiMate offers you complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
+      - CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
+      - When CoordiMate starts, your existing data is automatically loaded in, allowing you to pick up where you left off.
+      - For advanced users, CoordiMate offers you complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
 
 {% include admonition.html type="warning" title="Warning" body="
 
