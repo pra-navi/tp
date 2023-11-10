@@ -1,19 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1052px" preserveAspectRatio="none" style="width:1739px;height:1052px;background:#FFFFFF;" version="1.1" viewBox="0 0 1739 1052" width="1739px" zoomAndPan="magnify"><defs/><g><rect fill="#C8C8FA" height="1033.584" style="stroke:#181818;stroke-width:0.5;" width="1553" x="86" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="842.5" y="18.5684">Logic</text><rect fill="#F97181" height="1033.584" style="stroke:#181818;stroke-width:0.5;" width="92" x="1641" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="41" x="1664.5" y="18.5684">Model</text><rect fill="#FFFFFF" height="939.4746" style="stroke:#181818;stroke-width:1.0;" width="10" x="152" y="88.1094"/><rect fill="#FFFFFF" height="522.8809" style="stroke:#181818;stroke-width:1.0;" width="10" x="363" y="117.4199"/><rect fill="#FFFFFF" height="16.1777" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="156.7305"/><rect fill="#FFFFFF" height="394.7715" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="202.2188"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="241.5293"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="326.6387"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="401.2598"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="475.8809"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="1124" y="536.1914"/><rect fill="#FFFFFF" height="329.9727" style="stroke:#181818;stroke-width:1.0;" width="10" x="1124" y="669.6113"/><rect fill="#FFFFFF" height="40.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1129" y="765.543"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="1544" y="938.7852"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1682" y="698.9219"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="1682" y="842.1641"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="1682" y="885.4746"/><rect fill="#FFFFFF" height="60.6211" style="stroke:#000000;stroke-width:1.5;" width="480" x="551" y="288.0176"/><rect fill="#FFFFFF" height="60.6211" style="stroke:#000000;stroke-width:1.5;" width="480" x="551" y="362.6387"/><rect fill="#FFFFFF" height="60.6211" style="stroke:#000000;stroke-width:1.5;" width="480" x="551" y="437.2598"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="157" x2="157" y1="56.7988" y2="1045.584"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="367.5" x2="367.5" y1="56.7988" y2="1045.584"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="666" x2="666" y1="156.1641" y2="1045.584"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="922" x2="922" y1="240.9629" y2="1045.584"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1129" x2="1129" y1="535.625" y2="1045.584"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1549" x2="1549" y1="938.2188" y2="1045.584"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1687" x2="1687" y1="56.7988" y2="1045.584"/><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="114" x="100" y="25.3105"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="107" y="45.8457">:LogicManager</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="292.5" y="25.3105"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="299.5" y="45.8457">:AddressBookParser</text><rect fill="#9D0012" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="1655" y="25.3105"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="1664" y="45.8457">:Model</text><rect fill="#FFFFFF" height="939.4746" style="stroke:#181818;stroke-width:1.0;" width="10" x="152" y="88.1094"/><rect fill="#FFFFFF" height="522.8809" style="stroke:#181818;stroke-width:1.0;" width="10" x="363" y="117.4199"/><rect fill="#FFFFFF" height="16.1777" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="156.7305"/><rect fill="#FFFFFF" height="394.7715" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="202.2188"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="241.5293"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="326.6387"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="401.2598"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="917" y="475.8809"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="1124" y="536.1914"/><rect fill="#FFFFFF" height="329.9727" style="stroke:#181818;stroke-width:1.0;" width="10" x="1124" y="669.6113"/><rect fill="#FFFFFF" height="40.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1129" y="765.543"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="1544" y="938.7852"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1682" y="698.9219"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="1682" y="842.1641"/><rect fill="#FFFFFF" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="1682" y="885.4746"/><polygon fill="#181818" points="140,84.1094,150,88.1094,140,92.1094,144,88.1094" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="0" x2="146" y1="88.1094" y2="88.1094"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="9.5" y="83.3672">execute("editTask...")</text><polygon fill="#181818" points="351,113.4199,361,117.4199,351,121.4199,355,117.4199" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="162" x2="357" y1="117.4199" y2="117.4199"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="182" x="171.5" y="112.6777">parseCommand("editTask...")</text><polygon fill="#181818" points="559,142.7305,569,146.7305,559,150.7305,563,146.7305" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="373" x2="565" y1="146.7305" y2="146.7305"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="390" y="141.9883">EditTaskCommandParser()</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="190" x="571" y="125.4199"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="578" y="145.9551">:EditTaskCommandParser</text><polygon fill="#181818" points="384,168.9082,374,172.9082,384,176.9082,380,172.9082" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="378" x2="665" y1="172.9082" y2="172.9082"/><polygon fill="#181818" points="649,198.2188,659,202.2188,649,206.2188,653,202.2188" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="373" x2="655" y1="202.2188" y2="202.2188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="482.5" y="197.4766">parse(args)</text><polygon fill="#181818" points="821,227.5293,831,231.5293,821,235.5293,825,231.5293" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="671" x2="827" y1="231.5293" y2="231.5293"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="688" y="226.7871">EditTaskDescriptor()</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="178" x="833" y="210.2188"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="840" y="230.7539">desc:EditTaskDescriptor</text><polygon fill="#181818" points="682,269.0176,672,273.0176,682,277.0176,678,273.0176" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="676" x2="921" y1="273.0176" y2="273.0176"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="782" y="268.2754">desc</text><path d="M551,288.0176 L618,288.0176 L618,295.3281 L608,305.3281 L551,305.3281 L551,288.0176 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="60.6211" style="stroke:#000000;stroke-width:1.5;" width="480" x="551" y="288.0176"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="22" x="566" y="301.5859">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="53" x="633" y="300.6523">[has title]</text><polygon fill="#181818" points="905,322.6387,915,326.6387,905,330.6387,909,326.6387" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="671" x2="911" y1="326.6387" y2="326.6387"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="754" y="321.8965">setTitle(title)</text><polygon fill="#181818" points="682,336.6387,672,340.6387,682,344.6387,678,340.6387" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="676" x2="921" y1="340.6387" y2="340.6387"/><path d="M551,362.6387 L618,362.6387 L618,369.9492 L608,379.9492 L551,379.9492 L551,362.6387 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="60.6211" style="stroke:#000000;stroke-width:1.5;" width="480" x="551" y="362.6387"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="22" x="566" y="376.207">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="55" x="633" y="375.2734">[has note]</text><polygon fill="#181818" points="905,397.2598,915,401.2598,905,405.2598,909,401.2598" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="671" x2="911" y1="401.2598" y2="401.2598"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="751.5" y="396.5176">setNote(note)</text><polygon fill="#181818" points="682,411.2598,672,415.2598,682,419.2598,678,415.2598" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="676" x2="921" y1="415.2598" y2="415.2598"/><path d="M551,437.2598 L618,437.2598 L618,444.5703 L608,454.5703 L551,454.5703 L551,437.2598 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="60.6211" style="stroke:#000000;stroke-width:1.5;" width="480" x="551" y="437.2598"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="22" x="566" y="450.8281">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="54" x="633" y="449.8945">[has tags]</text><polygon fill="#181818" points="905,471.8809,915,475.8809,905,479.8809,909,475.8809" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="671" x2="911" y1="475.8809" y2="475.8809"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="752" y="471.1387">setTags(tags)</text><polygon fill="#181818" points="682,485.8809,672,489.8809,682,493.8809,678,489.8809" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="676" x2="921" y1="489.8809" y2="489.8809"/><polygon fill="#181818" points="1029,522.1914,1039,526.1914,1029,530.1914,1033,526.1914" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="671" x2="1035" y1="526.1914" y2="526.1914"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="198" x="757" y="521.4492">EditTaskCommand(index, desc)</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="176" x="1041" y="504.8809"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="1048" y="525.416">cmd:EditTaskCommand</text><polygon fill="#181818" points="682,563.6797,672,567.6797,682,571.6797,678,567.6797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="676" x2="1128" y1="567.6797" y2="567.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="886.5" y="562.9375">cmd</text><polygon fill="#181818" points="384,592.9902,374,596.9902,384,600.9902,380,596.9902" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="378" x2="665" y1="596.9902" y2="596.9902"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="506" y="592.248">cmd</text><line style="stroke:#A80036;stroke-width:2.0;" x1="657" x2="675" y1="601.9902" y2="619.9902"/><line style="stroke:#A80036;stroke-width:2.0;" x1="657" x2="675" y1="619.9902" y2="601.9902"/><polygon fill="#181818" points="173,636.3008,163,640.3008,173,644.3008,169,640.3008" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="167" x2="367" y1="640.3008" y2="640.3008"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="251.5" y="635.5586">cmd</text><polygon fill="#181818" points="1112,665.6113,1122,669.6113,1112,673.6113,1116,669.6113" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="162" x2="1118" y1="669.6113" y2="669.6113"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="614.5" y="664.8691">execute()</text><polygon fill="#181818" points="1670,694.9219,1680,698.9219,1670,702.9219,1674,698.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1134" x2="1676" y1="698.9219" y2="698.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="1344" y="694.1797">getFilteredTaskList()</text><polygon fill="#181818" points="1145,724.2324,1135,728.2324,1145,732.2324,1141,728.2324" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1139" x2="1686" y1="728.2324" y2="728.2324"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="1361.5" y="723.4902">filteredTaskList</text><line style="stroke:#181818;stroke-width:1.0;" x1="1134" x2="1181" y1="752.543" y2="752.543"/><line style="stroke:#181818;stroke-width:1.0;" x1="1181" x2="1181" y1="752.543" y2="765.543"/><line style="stroke:#181818;stroke-width:1.0;" x1="1140" x2="1181" y1="765.543" y2="765.543"/><polygon fill="#181818" points="1150,761.543,1140,765.543,1150,769.543,1146,765.543" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="310" x="1146" y="747.8008">createEditedTask(taskToEdit, editTaskDescriptor)</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1139" x2="1181" y1="804.8535" y2="804.8535"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1181" x2="1181" y1="804.8535" y2="817.8535"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1134" x2="1181" y1="817.8535" y2="817.8535"/><polygon fill="#181818" points="1144,813.8535,1134,817.8535,1144,821.8535,1140,817.8535" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1146" y="800.1113">editedTask</text><polygon fill="#181818" points="1670,838.1641,1680,842.1641,1670,846.1641,1674,842.1641" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1134" x2="1676" y1="842.1641" y2="842.1641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="201" x="1307.5" y="837.4219">setTask(taskToEdit, editedTask)</text><polygon fill="#181818" points="1145,852.1641,1135,856.1641,1145,860.1641,1141,856.1641" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1139" x2="1686" y1="856.1641" y2="856.1641"/><polygon fill="#181818" points="1670,881.4746,1680,885.4746,1670,889.4746,1674,885.4746" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1134" x2="1676" y1="885.4746" y2="885.4746"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="265" x="1275.5" y="880.7324">updateFilteredTaskList(SHOW_ALL_TASKS)</text><polygon fill="#181818" points="1145,895.4746,1135,899.4746,1145,903.4746,1141,899.4746" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1139" x2="1686" y1="899.4746" y2="899.4746"/><polygon fill="#181818" points="1461,924.7852,1471,928.7852,1461,932.7852,1465,928.7852" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1134" x2="1467" y1="928.7852" y2="928.7852"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="305" x="1151" y="924.043">CommandResult(MESSAGE_EDIT_TASK_SUCCESS)</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="152" x="1473" y="907.4746"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="1480" y="928.0098">res:CommandResult</text><polygon fill="#181818" points="1145,966.2734,1135,970.2734,1145,974.2734,1141,970.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1139" x2="1548" y1="970.2734" y2="970.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="19" x="1332" y="965.5313">res</text><polygon fill="#181818" points="173,995.584,163,999.584,173,1003.584,169,999.584" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="167" x2="1128" y1="999.584" y2="999.584"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="19" x="636" y="994.8418">res</text><line style="stroke:#A80036;stroke-width:2.0;" x1="1120" x2="1138" y1="1004.584" y2="1022.584"/><line style="stroke:#A80036;stroke-width:2.0;" x1="1120" x2="1138" y1="1022.584" y2="1004.584"/><polygon fill="#181818" points="11,1023.584,1,1027.584,11,1031.584,7,1027.584" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="5" x2="156" y1="1027.584" y2="1027.584"/><!--MD5=[19bcfe79d9578b4f096d2c920fac4942]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="604px" preserveAspectRatio="none" style="width:1137px;height:604px;background:#FFFFFF;" version="1.1" viewBox="0 0 1137 604" width="1137px" zoomAndPan="magnify"><defs/><g><rect fill="#C8C8FA" height="585.7227" style="stroke:#181818;stroke-width:0.5;" width="1042" x="86" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="587" y="18.5684">Logic</text><rect fill="#FFFFFF" height="491.6133" style="stroke:#181818;stroke-width:1.0;" width="10" x="152" y="88.1094"/><rect fill="#FFFFFF" height="286.7949" style="stroke:#181818;stroke-width:1.0;" width="10" x="363" y="117.4199"/><rect fill="#FFFFFF" height="16.1777" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="156.7305"/><rect fill="#FFFFFF" height="158.6855" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="202.2188"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="1021" y="300.1055"/><rect fill="#FFFFFF" height="118.1973" style="stroke:#181818;stroke-width:1.0;" width="10" x="1021" y="433.5254"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="157" x2="157" y1="56.7988" y2="597.7227"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="367.5" x2="367.5" y1="56.7988" y2="597.7227"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="666" x2="666" y1="156.1641" y2="597.7227"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1026" x2="1026" y1="299.5391" y2="597.7227"/><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="114" x="100" y="25.3105"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="107" y="45.8457">:LogicManager</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="292.5" y="25.3105"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="299.5" y="45.8457">:AddressBookParser</text><rect fill="#FFFFFF" height="491.6133" style="stroke:#181818;stroke-width:1.0;" width="10" x="152" y="88.1094"/><rect fill="#FFFFFF" height="286.7949" style="stroke:#181818;stroke-width:1.0;" width="10" x="363" y="117.4199"/><rect fill="#FFFFFF" height="16.1777" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="156.7305"/><rect fill="#FFFFFF" height="158.6855" style="stroke:#181818;stroke-width:1.0;" width="10" x="661" y="202.2188"/><rect fill="#FFFFFF" height="31.4883" style="stroke:#181818;stroke-width:1.0;" width="10" x="1021" y="300.1055"/><rect fill="#FFFFFF" height="118.1973" style="stroke:#181818;stroke-width:1.0;" width="10" x="1021" y="433.5254"/><polygon fill="#181818" points="140,84.1094,150,88.1094,140,92.1094,144,88.1094" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="0" x2="146" y1="88.1094" y2="88.1094"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="9.5" y="83.3672">execute("editTask...")</text><polygon fill="#181818" points="351,113.4199,361,117.4199,351,121.4199,355,117.4199" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="162" x2="357" y1="117.4199" y2="117.4199"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="182" x="171.5" y="112.6777">parseCommand("editTask...")</text><polygon fill="#181818" points="559,142.7305,569,146.7305,559,150.7305,563,146.7305" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="373" x2="565" y1="146.7305" y2="146.7305"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="390" y="141.9883">EditTaskCommandParser()</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="190" x="571" y="125.4199"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="578" y="145.9551">:EditTaskCommandParser</text><polygon fill="#181818" points="384,168.9082,374,172.9082,384,176.9082,380,172.9082" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="378" x2="665" y1="172.9082" y2="172.9082"/><polygon fill="#181818" points="649,198.2188,659,202.2188,649,206.2188,653,202.2188" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="373" x2="655" y1="202.2188" y2="202.2188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="482.5" y="197.4766">parse(args)</text><rect fill="#FFFFFF" height="53.5762" style="stroke:#000000;stroke-width:1.5;" width="216" x="558" y="210.2188"/><path d="M558,210.2188 L622,210.2188 L622,217.2188 L612,227.2188 L558,227.2188 L558,210.2188 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="571" y="224.7871">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="152" x="590" y="242.8203">Create EditTaskDescriptor</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="92" x="620" y="256.9531">from arguments</text><polygon fill="#181818" points="926,286.1055,936,290.1055,926,294.1055,930,290.1055" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="671" x2="932" y1="290.1055" y2="290.1055"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="233" x="688" y="285.3633">EditTaskCommand(index, descriptor)</text><rect fill="#3333C4" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="176" x="938" y="268.7949"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="945" y="289.3301">cmd:EditTaskCommand</text><polygon fill="#181818" points="682,327.5938,672,331.5938,682,335.5938,678,331.5938" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="676" x2="1025" y1="331.5938" y2="331.5938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="835" y="326.8516">cmd</text><polygon fill="#181818" points="384,356.9043,374,360.9043,384,364.9043,380,360.9043" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="378" x2="665" y1="360.9043" y2="360.9043"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="506" y="356.1621">cmd</text><line style="stroke:#A80036;stroke-width:2.0;" x1="657" x2="675" y1="365.9043" y2="383.9043"/><line style="stroke:#A80036;stroke-width:2.0;" x1="657" x2="675" y1="383.9043" y2="365.9043"/><polygon fill="#181818" points="173,400.2148,163,404.2148,173,408.2148,169,404.2148" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="167" x2="367" y1="404.2148" y2="404.2148"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="251.5" y="399.4727">cmd</text><polygon fill="#181818" points="1009,429.5254,1019,433.5254,1009,437.5254,1013,433.5254" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="162" x2="1015" y1="433.5254" y2="433.5254"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="563" y="428.7832">execute()</text><rect fill="#FFFFFF" height="39.4434" style="stroke:#000000;stroke-width:1.5;" width="202" x="925" y="441.5254"/><path d="M925,441.5254 L989,441.5254 L989,448.5254 L979,458.5254 L925,458.5254 L925,441.5254 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="938" y="456.0938">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="112" x="970" y="474.127">Edit task in task list</text><rect fill="#FFFFFF" height="39.4434" style="stroke:#000000;stroke-width:1.5;" width="206" x="925" y="485.9688"/><path d="M925,485.9688 L989,485.9688 L989,492.9688 L979,502.9688 L925,502.9688 L925,485.9688 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="938" y="500.5371">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="198" x="929" y="518.5703">Create successful CommandResult</text><polygon fill="#181818" points="173,547.7227,163,551.7227,173,555.7227,169,551.7227" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="167" x2="1025" y1="551.7227" y2="551.7227"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="19" x="584.5" y="546.9805">res</text><line style="stroke:#A80036;stroke-width:2.0;" x1="1017" x2="1035" y1="556.7227" y2="574.7227"/><line style="stroke:#A80036;stroke-width:2.0;" x1="1017" x2="1035" y1="574.7227" y2="556.7227"/><polygon fill="#181818" points="11,575.7227,1,579.7227,11,583.7227,7,579.7227" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="5" x2="156" y1="579.7227" y2="579.7227"/><!--MD5=[7858740ed34aeb1408ca74b192b88117]
 @startuml
 !include style.puml
 skinparam ArrowFontStyle plain
+skinparam sequenceReferenceBackgroundColor white
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":EditTaskCommandParser" as EditTaskCommandParser LOGIC_COLOR
-participant "desc:EditTaskDescriptor" as EditTaskDescriptor LOGIC_COLOR
 participant "cmd:EditTaskCommand" as EditTaskCommand LOGIC_COLOR
-participant "res:CommandResult" as CommandResult LOGIC_COLOR
-end box
-
-box Model MODEL_COLOR_T1
-participant ":Model" as Model MODEL_COLOR
 end box
 
 [-> LogicManager : execute("editTask...")
@@ -32,37 +27,11 @@ deactivate EditTaskCommandParser
 AddressBookParser -> EditTaskCommandParser : parse(args)
 activate EditTaskCommandParser
 
-'Constructor for EditTaskDescriptor
-create EditTaskDescriptor
-EditTaskCommandParser -> EditTaskDescriptor : EditTaskDescriptor()
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser : desc
-deactivate EditTaskDescriptor
-
-opt has title
-EditTaskCommandParser -> EditTaskDescriptor : setTitle(title)
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser
-deactivate EditTaskDescriptor
-end opt
-
-opt has note
-EditTaskCommandParser -> EditTaskDescriptor : setNote(note)
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser
-deactivate EditTaskDescriptor
-end opt
-
-opt has tags
-EditTaskCommandParser -> EditTaskDescriptor : setTags(tags)
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser
-deactivate EditTaskDescriptor
-end opt
+ref over EditTaskCommandParser: Create EditTaskDescriptor\nfrom arguments
 
 'Constructor for EditTaskCommand
 create EditTaskCommand
-EditTaskCommandParser -> EditTaskCommand : EditTaskCommand(index, desc)
+EditTaskCommandParser -> EditTaskCommand : EditTaskCommand(index, descriptor)
 activate EditTaskCommand
 EditTaskCommand - -> EditTaskCommandParser : cmd
 deactivate EditTaskCommand
@@ -80,34 +49,9 @@ deactivate AddressBookParser
 LogicManager -> EditTaskCommand : execute()
 activate EditTaskCommand
 
-EditTaskCommand -> Model : getFilteredTaskList()
-activate Model
+ref over EditTaskCommand: Edit task in task list
 
-Model - -> EditTaskCommand : filteredTaskList
-deactivate Model
-
-'Create edited task
-EditTaskCommand -> EditTaskCommand : createEditedTask(taskToEdit, editTaskDescriptor)
-activate EditTaskCommand
-EditTaskCommand - -> EditTaskCommand : editedTask
-deactivate EditTaskCommand
-
-EditTaskCommand -> Model : setTask(taskToEdit, editedTask)
-activate Model
-Model - -> EditTaskCommand
-deactivate Model
-
-EditTaskCommand -> Model : updateFilteredTaskList(SHOW_ALL_TASKS)
-activate Model
-Model - -> EditTaskCommand
-deactivate Model
-
-create CommandResult
-EditTaskCommand -> CommandResult : CommandResult(MESSAGE_EDIT_TASK_SUCCESS)
-activate CommandResult
-
-CommandResult - -> EditTaskCommand : res
-deactivate CommandResult
+ref over EditTaskCommand: Create successful CommandResult
 
 EditTaskCommand - -> LogicManager : res
 deactivate EditTaskCommand
@@ -174,18 +118,13 @@ hide footbox
 hide members
 hide circle
 skinparam ArrowFontStyle plain
+skinparam sequenceReferenceBackgroundColor white
 
 box Logic #C8C8FA
 participant ":LogicManager" as LogicManager #3333C4
 participant ":AddressBookParser" as AddressBookParser #3333C4
 participant ":EditTaskCommandParser" as EditTaskCommandParser #3333C4
-participant "desc:EditTaskDescriptor" as EditTaskDescriptor #3333C4
 participant "cmd:EditTaskCommand" as EditTaskCommand #3333C4
-participant "res:CommandResult" as CommandResult #3333C4
-end box
-
-box Model #F97181
-participant ":Model" as Model #9D0012
 end box
 
 [-> LogicManager : execute("editTask...")
@@ -204,35 +143,10 @@ deactivate EditTaskCommandParser
 AddressBookParser -> EditTaskCommandParser : parse(args)
 activate EditTaskCommandParser
 
-create EditTaskDescriptor
-EditTaskCommandParser -> EditTaskDescriptor : EditTaskDescriptor()
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser : desc
-deactivate EditTaskDescriptor
-
-opt has title
-EditTaskCommandParser -> EditTaskDescriptor : setTitle(title)
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser
-deactivate EditTaskDescriptor
-end opt
-
-opt has note
-EditTaskCommandParser -> EditTaskDescriptor : setNote(note)
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser
-deactivate EditTaskDescriptor
-end opt
-
-opt has tags
-EditTaskCommandParser -> EditTaskDescriptor : setTags(tags)
-activate EditTaskDescriptor
-EditTaskDescriptor - -> EditTaskCommandParser
-deactivate EditTaskDescriptor
-end opt
+ref over EditTaskCommandParser: Create EditTaskDescriptor\nfrom arguments
 
 create EditTaskCommand
-EditTaskCommandParser -> EditTaskCommand : EditTaskCommand(index, desc)
+EditTaskCommandParser -> EditTaskCommand : EditTaskCommand(index, descriptor)
 activate EditTaskCommand
 EditTaskCommand - -> EditTaskCommandParser : cmd
 deactivate EditTaskCommand
@@ -249,33 +163,9 @@ deactivate AddressBookParser
 LogicManager -> EditTaskCommand : execute()
 activate EditTaskCommand
 
-EditTaskCommand -> Model : getFilteredTaskList()
-activate Model
+ref over EditTaskCommand: Edit task in task list
 
-Model - -> EditTaskCommand : filteredTaskList
-deactivate Model
-
-EditTaskCommand -> EditTaskCommand : createEditedTask(taskToEdit, editTaskDescriptor)
-activate EditTaskCommand
-EditTaskCommand - -> EditTaskCommand : editedTask
-deactivate EditTaskCommand
-
-EditTaskCommand -> Model : setTask(taskToEdit, editedTask)
-activate Model
-Model - -> EditTaskCommand
-deactivate Model
-
-EditTaskCommand -> Model : updateFilteredTaskList(SHOW_ALL_TASKS)
-activate Model
-Model - -> EditTaskCommand
-deactivate Model
-
-create CommandResult
-EditTaskCommand -> CommandResult : CommandResult(MESSAGE_EDIT_TASK_SUCCESS)
-activate CommandResult
-
-CommandResult - -> EditTaskCommand : res
-deactivate CommandResult
+ref over EditTaskCommand: Create successful CommandResult
 
 EditTaskCommand - -> LogicManager : res
 deactivate EditTaskCommand
