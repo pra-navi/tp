@@ -808,13 +808,7 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 
 [Back to Table of Contents](#table-of-contents)
 
-Allows you to remove **all** entries from your task list.
-
-{% include admonition.html type="warning" title="Warning" body="
-
-<b>All</b> tasks will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
-
-" %}
+Allows you to remove all entries from your task list.
 
 <h4>Format:</h4>
 
@@ -827,6 +821,13 @@ deleteAllTask
 ```
 dat
 ```
+
+{% include admonition.html type="warning" title="Warning" body="
+
+All tasks will be removed from your task list immediately. This action is irreversible.
+
+" %}
+
 
 <h4>Example:</h4>
 
