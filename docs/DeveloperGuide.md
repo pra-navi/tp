@@ -6,7 +6,7 @@ title: Developer Guide
 <!-- Inject widths for User Story table -->
 <style>
 .user-story-table th:nth-child(1) {
-    width: 12%;
+    width: 14%;
 }
 
 .user-story-table th:nth-child(2) {
@@ -14,11 +14,11 @@ title: Developer Guide
 }
 
 .user-story-table th:nth-child(3) {
-    width: 28%;
+    width: 27%;
 }
 
 .user-story-table th:nth-child(4) {
-    width: 48%;
+    width: 47%;
 }
 </style>
 
