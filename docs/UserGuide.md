@@ -7,11 +7,11 @@ title: User Guide
 
 <style>
 .field-table th:nth-child(1) {
-    width: 15%;
+    width: 23%;
 }
 
 .field-table th:nth-child(2) {
-    width: 15%;
+    width: 14%;
 }
 
 .field-table th:nth-child(3) {
@@ -19,7 +19,7 @@ title: User Guide
 }
 
 .field-table th:nth-child(4) {
-    width: 60%;
+    width: 53%;
 }
 
 .errors-table th:nth-child(1) {
@@ -331,12 +331,12 @@ ap
 <h4>Fields:</h4>
 
 | Fields | Prefix | Required | Remarks |
-|--------|--------|----------|---------|
-| `NAME` | `n/` | Yes | Full name of the individual.|
-| `PHONE_NUMBER` | `p/` | Yes | Phone number of the individual.|
-| `EMAIL` | `e/` | Yes | Email address of the individual.|
-| `ADDRESS` | `a/` | Yes | Physical address of the individual.|
-| `TAG` | `t/` | No | Tag(s) for the individual.|
+|--------|--------|:--------:|---------|
+| `NAME` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Full name of the individual.|
+| `PHONE_NUMBER` | `p/` | <img width=30px src='assets/svg/ug/required.svg'> | Phone number of the individual.|
+| `EMAIL` | `e/` | <img width=30px src='assets/svg/ug/required.svg'> | Email address of the individual.|
+| `ADDRESS` | `a/` | <img width=30px src='assets/svg/ug/required.svg'> | Physical address of the individual.|
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the individual.|
 {: .field-table}
 
 - A person is uniquely identified by their `NAME`. This field is case sensitive.
@@ -463,8 +463,8 @@ fp
 <h4>Fields:</h4>
 
 | Fields | Prefix | Required | Remarks |
-|--------|--------|----------|---------|
-| `KEYWORD` | No Prefix | Yes | The keyword to search for.|
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for.|
 {: .field-table}
 
 - Persons matching at least one `KEYWORD` in their names will be shown. This field is case insensitive and the order of keywords does not matter.
@@ -514,8 +514,8 @@ dp
 <h4>Fields:</h4>
 
 | Fields  | Prefix | Required | Remarks |
-|---------|--------|----------|---------|
-| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The person at this index in the displayed person list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is deleted. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
 {: .field-table}
 
 {% include admonition.html type="warning" title="Warning" body="
@@ -767,8 +767,8 @@ dt
 <h4>Fields:</h4>
 
 | Fields  | Prefix | Required | Remarks |
-|---------|--------|----------|---------|
-| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The task at this index in the displayed task list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is deleted. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
 {: .field-table}
 
 {% include admonition.html type="warning" title="Warning" body="
@@ -1050,10 +1050,10 @@ atagp
 <h4>Fields:</h4>
 
 | Fields  | Prefix | Required | Remarks |
-|---------|--------|----------|---------|
-| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png)     | The person at this index in the displayed person list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
-| `TAG` | `t/` | ![required](../src/main/resources/images/done.png)     | The tag to be added to the person. |
-| `MORE_TAGS` | `t/` | ![optional](../src/main/resources/images/not_done.png) | More additional tags to be added to the person. |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+| `TAG` | `t/` | <img width=30px src='assets/svg/ug/required.svg'> | The tag to be added to the person. |
+| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | More additional tags to be added to the person. |
 {: .field-table}
 
 - A tag is uniquely identified by the `TAG`. This field is case sensitive.
@@ -1097,10 +1097,10 @@ atagt
 <h4>Fields:</h4>
 
 | Fields  | Prefix | Required | Remarks |
-|---------|--------|----------|---------|
-| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png)     | The task at this index in the displayed task list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
-| `TAG` | `t/` | ![required](../src/main/resources/images/done.png)     | The tag to be added to the task. |
-| `MORE_TAGS` | `t/` | ![optional](../src/main/resources/images/not_done.png) | More additional tags to be added to the task. |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+| `TAG` | `t/` | <img width=30px src='assets/svg/ug/required.svg'> | The tag to be added to the task. |
+| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | More additional tags to be added to the task. |
 {: .field-table}
 
 - A tag is uniquely identified by the `TAG`. This field is case sensitive.
@@ -1183,9 +1183,9 @@ ftag
 <h4>Fields:</h4>
 
 | Fields | Prefix | Required | Remarks |
-|--------|--------|----------|---------|
-| `KEYWORD` | No Prefix | Yes | The keyword to search for tags.|
-| `MORE_KEYWORDS` | No Prefix | No | Additional keyword(s) to search for tags.|
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for tags.|
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keyword(s) to search for tags.|
 {: .field-table}
 
 - Persons and tasks matching at least one of `KEYWORD` in their tag(s) will be returned (i.e. OR search). This field is case insensitive and the order of keywords does not matter.
@@ -1203,7 +1203,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 
 - `findTag catering orientation`<br><br>
   ![findTag_success_1](images/output/findTag_success1.png)
-  
+
   *<center>CoordiMate finds all persons and tasks mtaching any of <code>catering</code> or <code>orientation</code> tags.</center>*
 
 <h4>Potential Error:</h4>
@@ -1235,9 +1235,9 @@ fatag
 <h4>Fields:</h4>
 
 | Fields | Prefix | Required | Remarks |
-|--------|--------|----------|---------|
-| `KEYWORD` | No Prefix | Yes | The keyword to search for tags.|
-| `MORE_KEYWORDS` | No Prefix | No | Additional keyword(s) to search for tags.|
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'>  | The keyword to search for tags.|
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keyword(s) to search for tags.|
 {: .field-table}
 
 - Persons and tasks matching all `KEYWORD` in their tag(s) will be returned (i.e. AND search). This field is case insensitive and the order of keywords does not matter.
