@@ -41,7 +41,7 @@ public class DeleteTagPersonCommand extends Command {
     private final Set<Tag> tagsToDelete;
 
     /**
-     * @param index of the person in the filtered person list to edit
+     * @param targetIndex of the person in the filtered person list to edit
      * @param tagsToDelete tags to delete from the person
      */
     public DeleteTagPersonCommand(Index targetIndex, Set<Tag> tagsToDelete) {

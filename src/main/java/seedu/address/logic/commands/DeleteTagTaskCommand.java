@@ -41,7 +41,7 @@ public class DeleteTagTaskCommand extends Command {
     private final Set<Tag> tagsToDelete;
 
     /**
-     * @param index of the task in the filtered task list to edit
+     * @param targetIndex of the task in the filtered task list to edit
      * @param tagsToDelete tags to delete from the task
      */
     public DeleteTagTaskCommand(Index targetIndex, Set<Tag> tagsToDelete) {
