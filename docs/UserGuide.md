@@ -1132,11 +1132,7 @@ atagt
 
 [Back to Table of Contents](#table-of-contents)
 
-Provides you with a complete list of tags you have used in your contact list and task list, and the number of times each tag has been used.
-
-The list is sorted by frequency of each tag in descending order.
-
-If two tags have the same frequency, the tags are sorted in the order as defined in the [American Standard Code for Information Interchange (ASCII)](#american-standard-code-for-information-interchange-ascii).
+You can view the tags in your contact list and task list and their frequencies, so that you can keep track of the tags you have used.
 
 <h4>Format:</h4>
 
@@ -1149,6 +1145,10 @@ listTag
 ```
 ltag
 ```
+
+- The list is sorted by frequency of each tag in descending order.
+
+- If two tags have the same frequency, the tags are sorted in the order as defined in the [American Standard Code for Information Interchange (ASCII)](#american-standard-code-for-information-interchange-ascii).
 
 <h4>Example:</h4>
 
@@ -1470,6 +1470,15 @@ To restore from a backup data file:<br>
 
 [Back to Table of Contents](#table-of-contents)
 
+### American Standard Code for Information Interchange (ASCII)
+
+The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
+In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
+
+Example: After a `listTag` command, `Finale` tag is listed before `finale` in the command result.
+
+For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
+
 ### Command Line Interface
 
 A text-based interface used to interact with a computer or software by entering commands into a terminal or command prompt.
@@ -1503,16 +1512,7 @@ A combination of letters and numbers only, no spaces or special characters.
 
 For more information, see <a href='https://en.wikipedia.org/wiki/Alphanumericals' rel='noopener noreferrer' target='_blank'>Alphanumericals</a> on Wikipedia.
 
-Example: In `TAGS`, entries like `day1` or `day2` are valid, while entries like `hyped!!` or `sad :(` are invalid. 
-
-### American Standard Code for Information Interchange (ASCII)
-
-The American Standard Code for Information Interchange (ASCII) is a character encoding standard that is well understood by computers. <br>
-In ASCII ordering, uppercase letters come before lowercase letters (<code>A</code> comes before <code>a</code>), unlike in alphabetical ordering where case does not matter. <br>
-
-For more information, see <a href='https://en.wikipedia.org/wiki/ASCII' rel='noopener noreferrer' target='_blank'>ASCII</a> on Wikipedia.
-
-Example: After a `listTag` command, `Finale Night` tag is listed before `finale night` in the command result.
+Example: In `TAGS`, entries like `day1` or `day2` are valid, while entries like `hyped!!` or `sad :(` are invalid.
 
 <br><br>
 
