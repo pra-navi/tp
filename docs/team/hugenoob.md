@@ -30,6 +30,7 @@ Given below are my contributions to the project.
 * **New Feature**: `editTask` ([PR #91](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/91))
   * What it does: Allows users to edit the title, note, or tags of a task.
   * Justification: Enables users to correct mistakes or update the details of their tasks.
+  * Highlights: The implementation of this command is quite different from the rest. AB3 had an `EditPersonDescriptor` class that acts as an intermediate representation of all edits to be made to a person. I had to deeply understand this existing design and adapt it to `editTask`.
   * Credits: The `editTask` command was inspired by the `edit` command in AB3.<br><br>
 
 * **New Feature**: `deleteTagPerson` ([PR #120](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/120))
@@ -65,6 +66,6 @@ Given below are my contributions to the project.
     * Added Non-Functional Requirements section.<br><br>
 
 * **Community**:
-  * PRs reviewed by me can be found [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/pulls?q=is%3Apr+reviewed-by%3AHugeNoob+).
+  * PRs reviewed by me can be found [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/pulls?q=is%3Apr+reviewed-by%3AHugeNoob+). As of time of writing, I have reviewed more than 50% of all PRs.
   * Forum discussions that I have participated in can be found [here](https://github.com/nus-cs2103-AY2324S1/forum/issues?q=is%3Aissue+commenter%3AHugeNoob+).
   * Reported [10 bugs and suggestions](https://github.com/HugeNoob/ped/issues) for other teams during the PE dry run.<br><br>
