@@ -1449,13 +1449,11 @@ testers are expected to do more <i>exploratory testing</i>.
 
 [Back to Table of Contents](#table-of-contents)
 
-### 1. We plan to make error messages more specific. For example, we will specify the error of "Tag names should be alphanumeric" to "Tag names should be ONLY alphanumeric". This will help users to understand the error better.
-
-### 2. Character Limits for Person Fields and Tasks
+### 1. Character limits for person fields and tasks
 
 - **Enhancement**: Implement character limits for various fields associated with persons and tasks to ensure data consistency and integrity.
 - **Reason**: To maintain a structured format for data entry and prevent excessively long inputs that could affect the display and usability of the system.
-- **Example**:
+- **Examples**:
   - For `Person` entities:
     - **Name**: Limit to 1 - 100 characters to ensure the name is detailed enough yet concise.
     - **Phone**: Limit to 3 - 15 characters to accommodate international formats without extraneous digits.
@@ -1464,34 +1462,44 @@ testers are expected to do more <i>exploratory testing</i>.
   - For `Task` entities:
     - **Title**: Limit to 1 - 100 characters to encapsulate the task effectively.
     - **Note**: Limit to 1 - 200 characters to provide a thorough description without becoming verbose.
-   - For `Person/Task` tags:
-      - **Tag**: Maximum of 30 characters to keep tags succinct and meaningful.
+  - For `Person/Task` tags:
+    - **Tag**: Maximum of 30 characters to keep tags succinct and meaningful.
 
-### 3. Command-Specific Error Messages
+### 2. Command-specific error messages
 
 - **Enhancement**: Error messages will pinpoint the specific part of the command that has triggered the error.
 - **Reason**: Users will be able to identify and correct the exact issue with their command input without having to guess which part was incorrect.
-- **Example**: For an invalid command due to an excessively long or short user input, a possible error message would be "Invalid addPerson command: person's name exceeded 100 characters."
+- **Examples**:
+    - For an invalid command due to an excessively long or short user input, a possible error message would be "Invalid addPerson command: person's name exceeded 100 characters."
+    - For tag-related commands, specifying error messages such as changing "Tag names should be alphanumeric" to "Tag names should be ONLY alphanumeric" for better clarity.
 
-### 4. Stricter Validity Checks for Email Addresses
+### 3. Stricter validity checks for email addresses
 
 - **Enhancement**: Revise the regex used for validating email addresses to ensure the domain name is present and correctly formatted.
 - **Reason**: To prevent the acceptance of invalid email addresses that lack a top-level domain e.g. `.com`, which are not very usable for actual communication.
-- **Example**: The current regex might validate `johndoe@example`, which is incorrect as it lacks a domain name. The enhanced regex would correctly invalidate this and require a proper top-level domain, like `johndoe@example.com`.
+- **Example**:
+  - The current regex might validate `johndoe@example`, which is incorrect as it lacks a domain name. The enhanced regex would correctly invalidate this and require a proper top-level domain, like `johndoe@example.com`.
 
-### 5. Accommodating Special Characters in Person Names
+### 4. Accommodating Special Characters in Person Names
 
 - **Enhancement**: Update the name input validation to allow some special characters that are part of valid names in various cultures, including diacritics and other linguistic markers.
 - **Reason**: To ensure the software is inclusive and capable of accurately recording names from a diverse range of ethnic backgrounds.
-- **Example**: Under the current system, a name like "Séamus O'Connor" or "Anand Sai-Krishna" might be rejected due to special characters. The enhancement would allow these names to be entered and stored correctly.
+- **Example**:
+  - Under the current system, a name like "Séamus O'Connor" or "Anand Sai-Krishna" might be rejected due to special characters. The enhancement would allow these names to be entered and stored correctly.
 
-
-### 6. Enhanced UI Indicators for Empty Task/Person Lists
+### 5. Enhanced UI indicators for empty person/tasks lists
 
 - **Enhancement**: Implement clear and prominent UI indicators when task or person lists are empty, particularly after performing actions such as marking tasks complete.
 - **Reason**: To provide immediate and unmistakable visual feedback to users when there are no items to display, enhancing the user experience by avoiding potential confusion or the impression that the list may not have loaded properly.
-- **Example**: After a user completes the last remaining task with `markTask` and no incomplete tasks are left, instead of the minimalistic message "0 tasks listed!", the UI could display a more noticeable and friendly graphic or message such as "All tasks complete! 🎉". This visual cue would be both informative and encouraging to the user.
+- **Example**:
+  - After a user completes the last remaining task with `markTask` and no incomplete tasks are left, instead of the minimalistic message "0 tasks listed!", the UI could display a more noticeable and friendly graphic or message such as "All tasks complete!" within the task list itself. This visual cue would be both informative and encouraging to the user.
 
+### 6. Preventing list jump on selection
+
+- **Enhancement**: Modify the UI behavior to maintain the current scroll position when selecting an item at the bottom of a list.
+- **Reason**: To improve the usability of the application, especially when dealing with long lists, by preventing the list from jumping back to the top after selection.
+- **Example**:
+  - Currently, when a user selects an item at the bottom of a long list, the list resets to the top position. This enhancement will keep the list at the current scroll position, making it easier to manage and navigate long lists.
 ---
 
 <div style="page-break-after: always;"></div>
