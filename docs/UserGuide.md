@@ -804,7 +804,7 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 
 <div style="page-break-after: always;"></div>
 
-#### 2.6. Clearing all task entries: `deleteAllTask`
+#### 2.6. Deleting all task entries: `deleteAllTask`
 
 [Back to Table of Contents](#table-of-contents)
 
