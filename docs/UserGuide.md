@@ -425,7 +425,6 @@ ep
 
 - `editPerson 1 p/91234567 e/johndoe@example.com`<br><br>
   ![editPerson success](images/output/editPerson_success.png)
-
   *<center>CoordiMate edits the phone number and email of the 1st person in the contact list.</center>*
 
 <h4>Potential Errors:</h4>
@@ -825,10 +824,9 @@ dat
 
 <h4>Example:</h4>
 
-- `deleteAllTask`
-  - Deletes all tasks in your task list.<br><br>
-
+- `deleteAllTask`<br><br>
   ![deleteAllTask success](images/output/deleteAllTask_success.png)
+  *<center>CoordiMate deletes all tasks in the task list.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -861,10 +859,8 @@ Tasks are marked as not done by default.
 
 <h4>Example:</h4>
 
-- `listTask` followed by `markTask 1`
-  - Marks the 1st task in the task list as **done**<br><br>
-
-  ![markTask_success](images/output/markTask_success.png)<br><br>
+- `markTask 1`<br><br>
+  ![markTask_success](images/output/markTask_success.png)*<center>CoordiMate marks the 1st task in the task list as done.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -905,10 +901,8 @@ Tasks are marked as not done by default.
 
 <h4>Example:</h4>
 
-- `listTask` followed by `unmarkTask 1`
-  - Marks the 1st task in the task list as **not done**<br><br>
-
-  ![unmarkTask_success](images/output/unmarkTask_success.png)<br><br>
+- `unmarkTask 1`<br><br>
+  ![unmarkTask_success](images/output/unmarkTask_success.png)*<center>CoordiMate marks the 1st task in the task list as not done.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -948,10 +942,8 @@ fd
 
 <h4>Example:</h4>
 
-- `findDone`
-  - Tasks are displayed as they are marked as done.<br><br>
-
-  ![findDone_success](images/output/findDone_success.png)<br><br>
+- `findDone`<br><br>
+  ![findDone_success](images/output/findDone_success.png)*<center>CoordiMate finds all tasks whose status is done.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -983,10 +975,8 @@ fnd
 
 <h4>Example:</h4>
 
-- `findNotDone`
-  - Tasks are displayed as they are marked as not done.<br><br>
-
-  ![findNotDone_success](images/output/findNotDone_success.png)<br><br>
+- `findNotDone`<br><br>
+  ![findNotDone_success](images/output/findNotDone_success.png)*<center>CoordiMate finds all tasks whose status is not done.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -1018,10 +1008,9 @@ dad
 
 <h4>Example:</h4>
 
-- `deleteAllDone`
-  - All tasks that are marked as done are deleted.<br><br>
-
-  ![deleteAllDone_success](images/output/deleteAllDone_success.png)<br><br>
+- `deleteAllDone`<br><br>
+  ![deleteAllDone_success](images/output/deleteAllDone_success.png)
+  *<center>CoordiMate deletes all tasks whose status is done.</center>*
 
 <h4>Potential Error:</h4>
 
