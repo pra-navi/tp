@@ -666,7 +666,7 @@ lt
 
 [Back to Table of Contents](#table-of-contents)
 
-You can edit the details of a task in your task list.
+You can edit a task in your task list, so that you can ensure task details are up-to-date with the latest information.
 
 <h4>Format:</h4>
 
@@ -680,23 +680,30 @@ editTask INDEX [T/TITLE] [n/NOTE] [t/TAG]…
 et
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the task list currently displayed. This field is **mandatory**.
-  - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
-- Existing values will be updated to the input values.
-- Specify a new title with the `T/` prefix. This field is **optional**.
-- Specify a new note with the `n/` prefix. This field is **optional**.
-- Specify new tags with the `t/` prefix. This field is **optional**.
-  - You may add multiple tags to a task by specifying the `t/` prefix multiple times.
-  - Note that this will replace all existing tags of the task. If you wish to add to the existing tags of the task, use the [`addTagTask` command](#32-adding-tags-to-a-task-addtagtask) instead.
-  - Specifying `t/` without any tags will clear all existing tags of the task.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is edited. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+| `TITLE` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Title describing the task. |
+| `NOTE` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Note providing details about the task. |
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the task.|
+{: .field-table}
+
 - At least one of the optional fields must be provided for the command to be valid.
+- Fields that are not specified will preserve their existing values.
+- You may edit the task to have multiple tags by specifying the `t/` prefix multiple times.
+- If you specify at least one tag with this command, all old tags will be replaced.
+  - If you wish to add to the existing tags of the task, use the [`addTagTask` command](#32-adding-tags-to-a-task-addtagtask) instead.
+  - Specifying `t/` without any tags will clear all existing tags of the task.
 
 <h4>Example:</h4>
 
 - `editTask 2 T/Book room n/By Friday t/orientation`
-  - Edits the title of the 2nd task to be `Book room`, the note to be `By Friday`, and the tag to be `orientation`.<br><br>
 
   ![editTask_success](images/output/editTask_success.png)
+
+  *<center>CoordiMate edits the title, note, and tags of the 2nd task in the task list.</center>*
 
 <h4>Potential Errors:</h4>
 
