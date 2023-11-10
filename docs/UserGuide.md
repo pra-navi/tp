@@ -180,11 +180,11 @@ Always make a backup before you edit!
 
 [Back to Table of Contents](#table-of-contents)
 
-The commands are split into 5 main sections:
+The commands are split into 4 main sections:
 
-1. [Managing Person commands](#1-commands-to-manage-persons)
-2. [Managing Task commands](#2-commands-to-manage-tasks)
-3. [Managing Tag commands](#3-commands-to-manage-tags)
+1. [Commands to Manage Persons](#1-commands-to-manage-persons)
+2. [Commands to Manage Tasks](#2-commands-to-manage-tasks)
+3. [Commands to Manage Tags](#3-commands-to-manage-tags)
 4. [General commands](#4-general-commands)
 
 {% include admonition.html type="note" title="Note" body="
@@ -285,7 +285,7 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 <div style="page-break-after: always;"></div>
 
-### Understanding Our UI
+### Understanding Our GUI
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -300,7 +300,7 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 {% include admonition.html type="note" title="Note" body="
 
-Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a gentle drag in or out to customize the view according to your preference
+Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a drag in or out to customize the view according to your preference
 
 " %}
 
