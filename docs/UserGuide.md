@@ -1197,7 +1197,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 - `findTag catering orientation`<br><br>
   ![findTag_success_1](images/output/findTag_success1.png)
 
-  *<center>CoordiMate finds all persons and tasks mtaching any of <code>catering</code> or <code>orientation</code> tags.</center>*
+  *<center>CoordiMate finds all persons and tasks matching any of <code>catering</code> or <code>orientation</code> tags.</center>*
 
 <h4>Potential Error:</h4>
 
