@@ -148,15 +148,21 @@ Here's a (partial) class diagram of the `Logic` component:
 
 <img src="assets/svg/dg/LogicClassDiagram.svg" width="550"/>
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("listTask")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("deleteTask 1")` API call as an example.
 
-![Interactions Inside the Logic Component for the `listTask` Command](assets/svg/dg/ListTaskSequenceDiagram.svg)
+![Interactions Inside the Logic Component for the `deleteTask 1` Command](assets/svg/dg/DeleteTaskSequenceDiagram.svg)
 
 {% include admonition.html type="note" title="Note" body="
 
-The lifeline for <code>ListTaskCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeleteTaskCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 " %}
+
+The sequence diagrams below show the details of the respective reference frames.
+
+![DeleteTaskInTaskList](assets/svg/dg/SDDeleteTaskInTaskList.svg)
+
+![CreateDeleteTaskCommandResult](assets/svg/dg/SDCreateDeleteTaskCommandResult.svg)
 
 How the `Logic` component works:
 
