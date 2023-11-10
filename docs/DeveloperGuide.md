@@ -549,8 +549,8 @@ Priorities:
 | `* *` | event planner | delete all done tasks | ensure that my task list is not cluttered with completed tasks |
 | `* *` | event planner | list all the tags I have used | avoid creating duplicate categories |
 | `* *` | event planner | find a person and tasks by tag | quickly see the persons and tasks in a category |
-| `* *` | event planner | add tag(s) to a person | can just add tag(s) to the existing list of tags of the indexed person |
-| `* *` | event planner | add tag(s) to a task | can just add tag(s) to the existing list of tags of the indexed task |
+| `* *` | event planner | add tag(s) to a person | add tag(s) to the existing list of tags of the indexed person |
+| `* *` | event planner | add tag(s) to a task | add tag(s) to the existing list of tags of the indexed task |
 | `* *` | event planner | delete tag(s) from a person | remove unwanted or outdated tag(s) |
 | `* *` | event planner | delete tag(s) from a task | remove unwanted or outdated tag(s) |
 {: .user-story-table}
