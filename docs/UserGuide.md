@@ -464,10 +464,12 @@ fp
 
 | Fields | Prefix | Required | Remarks |
 |--------|--------|:--------:|---------|
-| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for.|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for. |
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keywords to search for. |
 {: .field-table}
 
 - Persons matching at least one `KEYWORD` in their names will be shown. This field is case insensitive and the order of keywords does not matter.
+- Only full words will be matched, e.g. the keyword `Alex` will not match the name `Alexis`.
 
 {% include admonition.html type="note" title="Note" body="
 
@@ -699,14 +701,6 @@ et
 
 You can quickly locate tasks that contains your specified keywords in their title and/or note.
 
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all tasks that do not match the search criteria. <br>
-(i.e. If no tasks match the search criteria, the list will be empty.)<br><br>
-To reset the tasks view, simply run the <code>listTask</code> command to list all tasks.
-
-" %}
-
 <h4>Format:</h4>
 
 ```
@@ -719,20 +713,30 @@ findTask KEYWORD [MORE_KEYWORDS]…
 ft
 ```
 
-- At least one keyword is required to search.
-- The search is case-insensitive. e.g `find` will match `Find`.
-- The order of the keywords does not matter. e.g. `Find Venue` will match `Venue Find`.
-- Both the **title and note** of a task are searched.
-- Only full words will be matched e.g. `Venue` will not match `Venues`.
-- Tasks matching at least one keyword in either the title or the note will be returned (i.e. `OR` search).
-  - e.g. `Budget Venue` will match `Find Venue`, `Create Budget`.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `KEYWORD` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The keyword to search for. |
+| `MORE_KEYWORDS` | No prefix | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional keywords to search for. |
+{: .field-table}
+
+- Tasks matching at least one `KEYWORD` in their title or note will be shown. This field is case insensitive and the order of keywords does not matter.
+- Only full words will be matched, e.g. the keyword `Photo` will not match the title `Photography`.
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all tasks that do not match the search criteria. <br>
+(i.e. If no tasks match the search criteria, the list will be empty.)<br><br>
+To reset the tasks view, simply run the <code>listTask</code> command to list all tasks.
+
+" %}
 
 <h4>Example:</h4>
 
-- `findTask Find Finale`
-  - Finds tasks with titles or notes containing either `Find` or `Finale`.<br><br>
-
+- `findTask Find Finale`<br><br>
   ![findTask_success](images/output/findTask_success.png)<br><br>
+  *<center>CoordiMate finds all tasks whose titles or notes contain either <code>Find</code> or <code>Finale</code>.</center>*
 
 <h4>Potential Error:</h4>
 
@@ -1155,10 +1159,9 @@ ltag
 
 <h4>Example:</h4>
 
-- `listTag`
-  - Shows you a list of all tags used in your contact list and task list and the number of times each tag has been used.<br><br>
-
-  ![listTag success](images/output/listTag_success.png)
+- `listTag`<br><br>
+  ![listTag success](images/output/listTag_success.png)<br><br>
+  *<center>CoordiMate shows you the list of all tags used and their frequencies.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -1380,12 +1383,6 @@ h
 [Back to Table of Contents](#table-of-contents)
 
 You can list all persons and tasks in your contact list and task list at the same time.
-
-{% include admonition.html type="note" title="Note" body="
-
-You can use this command to quickly clear all filters after using the <code>findPerson</code>, <code>findTask</code>, <code>findDone</code>, <code>findNotDone</code>, or <code>findTag</code> commands, instead of having to type the <code>listPerson</code> and <code>listTask</code> commands manually.
-
-" %}
 
 <h4>Format:</h4>
 
