@@ -867,7 +867,7 @@ mt
 <h4>Example:</h4>
 
 - `listTask` followed by `markTask 1`<br><br>
-  ![markTask_success](images/output/markTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as done after a `listTask` command.</center>*
+  ![markTask_success](images/output/markTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as done.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -909,7 +909,7 @@ ut
 <h4>Example:</h4>
 
 - `listTask` followed by `unmarkTask 1`<br><br>
-  ![unmarkTask_success](images/output/unmarkTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as not done after a `listTask` command.</center>*
+  ![unmarkTask_success](images/output/unmarkTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as not done.</center>*
 
 <h4>Potential Errors:</h4>
 
