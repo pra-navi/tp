@@ -1511,7 +1511,22 @@ testers are expected to do more <i>exploratory testing</i>.
 - **Reason**: To improve the usability of the application, especially when dealing with long lists, by preventing the list from jumping back to the top after selection.
 - **Example**:
   - Currently, when a user selects an item at the bottom of a long list, the list resets to the top position. This enhancement will keep the list at the current scroll position, making it easier to manage and navigate long lists.
-  
+
+### 7. Error messages for invalid JSON file format
+
+- **Enhancement**: Error messages will be provided to pinpoint the specific part of the JSON file that does not follow the required format.
+- **Reason**: To improve the usability of the application, especially when users use the JSON file to import large amounts of data, users will be able to identify and correct the exact issue with their JSON data file without having to guess which part was incorrect.
+- **Example**:
+  - Currently, when a user imports an invalid JSON data file, CoordiMate will discard all data and start with an empty data file at the next run. This enhancement will be able to retain the information the user imported and allow the user to correct the format of the JSON file effectively.
+
+### 8. Standardise all command behaviours
+
+- **Enhancement**: Modify the behavior of deleteAllDone to be similar with the other delete commands.
+- **Reason**: To reduce the confusion of the user when using the application and standardise all delete behaviours in the application.
+- **Example**:
+  - Currently, when a user uses the `deleteAllDone` command, the task list resets to show all tasks after deletion. However, when a user uses the other `delete..` commands, the task list does not reset the list after deletion.
+  - This enhancement will keep allow the `deleteAllDone` command to not reset the task list after deletion so that users will not get confused of the state of the task list.
+
 ---
 <div style="page-break-after: always;"></div>
 
