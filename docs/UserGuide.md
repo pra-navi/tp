@@ -519,7 +519,7 @@ dp
 
 {% include admonition.html type="warning" title="Warning" body="
 
-This person will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
+This person will be removed from your contact list immediately. This action is irreversible.
 
 " %}
 
@@ -528,7 +528,7 @@ This person will be removed from your contact list <b>immediately</b>. This acti
 - `listPerson` followed by `deletePerson 2`.<br><br>
   ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
 
-  *<center>CoordiMate deletes the person at the index <code>2</code>, displayed after a `listPerson` command.</center>*
+  *<center>CoordiMate deletes the person at the index <code>2</code>.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -787,7 +787,7 @@ dt
 
 {% include admonition.html type="warning" title="Warning" body="
 
-The task will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
+The task will be removed from your task list immediately. This action is irreversible.
 
 " %}
 
@@ -796,7 +796,7 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 - `listTask` followed by `deleteTask 2`<br><br>
   ![deleteTask_success](images/output/deleteTask_success.png)
 
-  *<center>CoordiMate deletes the task at the index <code>2</code>, displayed after a `listTask` command.</center>*
+  *<center>CoordiMate deletes the task at the index <code>2</code>.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -1057,7 +1057,7 @@ atagp
 |---------|--------|:--------:|---------|
 | `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The person at this index in the displayed person list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
 | `TAG` | `t/` | <img width=30px src='assets/svg/ug/required.svg'> | The tag to be added to the person. |
-| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | More additional tags to be added to the person. |
+| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional tag(s) to be added to the person. |
 {: .field-table}
 
 - A tag is uniquely identified by the `TAG`. This field is case sensitive.
@@ -1067,7 +1067,7 @@ atagp
 - `addTagPerson 1 t/friends t/expensive`.<br><br>
   ![addTagPerson success](images/output/addTagPerson_success.png)
 
-  *<center>CoordiMate adds tag `expensive` to the person at the index <code>1</code>, while `friends` is not added because it already exists in the list of tags.</center>*
+  *<center>CoordiMate adds tag <code>expensive</code> to the person at the index <code>1</code>, while <code>friends</code> is not added because it already exists in the list of tags.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -1103,7 +1103,7 @@ atagt
 |---------|--------|:--------:|---------|
 | `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
 | `TAG` | `t/` | <img width=30px src='assets/svg/ug/required.svg'> | The tag to be added to the task. |
-| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | More additional tags to be added to the task. |
+| `MORE_TAGS` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Additional tag(s) to be added to the task. |
 {: .field-table}
 
 - A tag is uniquely identified by the `TAG`. This field is case sensitive.
@@ -1113,7 +1113,7 @@ atagt
 - `addTagTask 1 t/day1 t/day2`.<br><br>
   ![addTagTask success](images/output/addTagTask_success.png)
 
-  *<center>CoordiMate adds tag `day2` to the task at the index <code>1</code>, while `day1` is not added because it already exists in the list of tags.</center>*
+  *<center>CoordiMate adds tag <code>day2</code> to the task at the index <code>1</code>, while <code>day1</code> is not added because it already exists in the list of tags.</center>*
 
 <h4>Potential Errors:</h4>
 
