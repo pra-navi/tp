@@ -927,14 +927,6 @@ ut
 
 You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or track completed items with ease.
 
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all Tasks that are not done. <br>
-(i.e. If no Tasks are done, the list will be empty.)<br><br>
-To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
-
-" %}
-
 <h4>Format:</h4>
 
 ```
@@ -946,6 +938,14 @@ findDone
 ```
 fd
 ```
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all Tasks that are not done. <br>
+(i.e. If no Tasks are not done, the list will be empty.)<br><br>
+To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
+
+" %}
 
 <h4>Example:</h4>
 
@@ -960,14 +960,6 @@ fd
 
 You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively.
 
-{% include admonition.html type="note" title="Note" body="
-
-This command hides all Tasks that are done. <br>
-(i.e. If no Tasks are not done, the list will be empty.)<br><br>
-To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
-
-" %}
-
 <h4>Format:</h4>
 
 ```
@@ -979,6 +971,14 @@ findNotDone
 ```
 fnd
 ```
+
+{% include admonition.html type="note" title="Note" body="
+
+This command hides all Tasks that are done. <br>
+(i.e. If no Tasks are done, the list will be empty.)<br><br>
+To reset the Tasks view, simply run the <code>listTask</code> command to list all Tasks.
+
+" %}
 
 <h4>Example:</h4>
 
@@ -993,12 +993,6 @@ fnd
 
 You can easily clean up your task list by deleting all completed tasks, allowing you maintain an organized and clutter-free task management system.
 
-{% include admonition.html type="warning" title="Warning" body="
-
-<b>All</b> completed tasks will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
-
-" %}
-
 <h4>Format:</h4>
 
 ```
@@ -1012,6 +1006,12 @@ dad
 ```
 
 - After completing the deletion of completed tasks, the task list will automatically revert back to displaying all tasks, ensuring you have a comprehensive overview of your remaining to-dos.
+
+{% include admonition.html type="warning" title="Warning" body="
+
+All completed tasks will be removed from your task list immediately. This action is irreversible.
+
+" %}
 
 <h4>Example:</h4>
 
