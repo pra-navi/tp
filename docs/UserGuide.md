@@ -394,7 +394,7 @@ lp
 
 [Back to Table of Contents](#table-of-contents)
 
-Enables you to change the details or particulars of an existing contact in your contact list.
+You can change the details of an existing person in your contact list so that you can keep information in your contact list constantly up-to-date.
 
 <h4>Format:</h4>
 
@@ -808,7 +808,7 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 
 [Back to Table of Contents](#table-of-contents)
 
-Allows you to remove all entries from your task list.
+You can remove all tasks from your task list so that you can restart easily with a clean slate and an empty task list.
 
 <h4>Format:</h4>
 
@@ -841,7 +841,7 @@ All tasks will be removed from your task list immediately. This action is irreve
 
 [Back to Table of Contents](#table-of-contents)
 
-You can indicate that a specific task as completed, updating that the task has been successfully completed or resolved.
+You can indicate that a specific task as completed so that you can keep track of task progress and identify tasks that are done.
 
 <h4>Format:</h4>
 
@@ -883,7 +883,7 @@ mt
 
 [Back to Table of Contents](#table-of-contents)
 
-You can indicate that a specific task as not completed, updating that the task remains open and pending further action or completion.
+You can indicate that a specific task as not completed so that you can keep track of task progress and identify tasks that are pending further action or completion.
 
 <h4>Format:</h4>
 
@@ -925,7 +925,7 @@ ut
 
 [Back to Table of Contents](#table-of-contents)
 
-You can filter the task list to find all the completed tasks, allowing you to review your accomplishments or track completed items with ease.
+You can filter the task list to locate all completed tasks so that you can keep track of task progress and the number of completed tasks with ease.
 
 <h4>Format:</h4>
 
@@ -958,7 +958,7 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 [Back to Table of Contents](#table-of-contents)
 
-You can filter the task list to find all the not completed tasks, allowing you to identify pending tasks, helping you focus on what needs to be done and prioritize your workflow effectively.
+You can filter the task list to locate all not completed tasks so that you can keep track of task progress and the number of not completed tasks with ease.
 
 <h4>Format:</h4>
 
@@ -991,7 +991,7 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 [Back to Table of Contents](#table-of-contents)
 
-You can easily clean up your task list by deleting all completed tasks, allowing you maintain an organized and clutter-free task management system.
+You can remove all completed tasks in the task list so that you can focus on not completed tasks and maintain an organized and clutter-free task list.
 
 <h4>Format:</h4>
 
