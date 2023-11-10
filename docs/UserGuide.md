@@ -422,6 +422,7 @@ ep
 
 - `editPerson 1 p/91234567 e/johndoe@example.com`<br><br>
   ![editPerson success](images/output/editPerson_success.png)
+
   *<center>CoordiMate edits the phone number and email of the 1st person in the contact list.</center>*
 
 <h4>Potential Errors:</h4>
@@ -838,6 +839,7 @@ All tasks will be removed from your task list immediately. This action is irreve
 
 - `deleteAllTask`<br><br>
   ![deleteAllTask success](images/output/deleteAllTask_success.png)
+
   *<center>CoordiMate deletes all tasks in the task list.</center>*
 
 <div style="page-break-after: always;"></div>
@@ -872,7 +874,9 @@ mt
 <h4>Example:</h4>
 
 - `listTask` followed by `markTask 1`<br><br>
-  ![markTask_success](images/output/markTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as done.</center>*
+  ![markTask_success](images/output/markTask_success.png)
+
+  *<center>CoordiMate marks the task at the index <code>1</code> in the task list as done.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -914,7 +918,9 @@ ut
 <h4>Example:</h4>
 
 - `listTask` followed by `unmarkTask 1`<br><br>
-  ![unmarkTask_success](images/output/unmarkTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as not done.</center>*
+  ![unmarkTask_success](images/output/unmarkTask_success.png)
+
+  *<center>CoordiMate marks the task at the index <code>1</code> in the task list as not done.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -955,7 +961,9 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 <h4>Example:</h4>
 
 - `findDone`<br><br>
-  ![findDone_success](images/output/findDone_success.png)*<center>CoordiMate finds all tasks whose status is done.</center>*
+  ![findDone_success](images/output/findDone_success.png)
+
+  *<center>CoordiMate finds all tasks whose status is done.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -988,7 +996,9 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 <h4>Example:</h4>
 
 - `findNotDone`<br><br>
-  ![findNotDone_success](images/output/findNotDone_success.png)*<center>CoordiMate finds all tasks whose status is not done.</center>*
+  ![findNotDone_success](images/output/findNotDone_success.png)
+
+  *<center>CoordiMate finds all tasks whose status is not done.</center>*
 
 <div style="page-break-after: always;"></div>
 
@@ -1022,6 +1032,7 @@ All completed tasks will be removed from your task list immediately. This action
 
 - `deleteAllDone`<br><br>
   ![deleteAllDone_success](images/output/deleteAllDone_success.png)
+
   *<center>CoordiMate deletes all tasks whose status is done.</center>*
 
 <h4>Potential Error:</h4>
@@ -1199,7 +1210,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 <h4>Example:</h4>
 
 - `findTag catering orientation`<br><br>
-  ![findTag_success_1](images/output/findTag_success1.png)
+  ![findTag_success](images/output/findTag_success.png)
 
   *<center>CoordiMate finds all persons and tasks matching any of <code>catering</code> or <code>orientation</code> tags.</center>*
 
@@ -1251,7 +1262,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 <h4>Example:</h4>
 
 - `findAllTag catering orientation`<br><br>
-  ![findAllTag_success_2](images/output/findAllTag_success2.png)
+  ![findAllTag_success](images/output/findAllTag_success.png)
 
   *<center>CoordiMate finds persons and tasks matching all of <code>catering</code> and <code>orientation</code> in their tag(s).</center>*
 
@@ -1408,6 +1419,7 @@ la
 
 - `listAll`<br><br>
   ![listAll success](images/output/listAll_success.png)
+
   *<center>CoordiMate shows all the persons and tasks in your contact list and task list.</center>*
 
 <div style="page-break-after: always;"></div>
@@ -1498,12 +1510,12 @@ For more information on CoordiMate's GUI, read more about it [here](#understandi
 ### Integer
 A whole number without fractions or decimals, commonly used in CoordiMate to denote the position of an item in a collection or list.
 
-The valid range for accepted integers is 1, 2, 3, … , 2147483647
+The valid range for accepted integers is 1, 2, 3, … , 2147483647.
 
 Example: In a list of 3 alphabets containing (“a”, “b”, “c”) in that order,
-  - index 1 refers to “a”
-  - index 2 refers to “b”
-  - index 3 refers to “c”
+  - Index 1 refers to “a”
+  - Index 2 refers to “b”
+  - Index 3 refers to “c”
 
 ### Alphanumeric
 
@@ -1511,7 +1523,7 @@ A combination of letters and numbers only, no spaces or special characters.
 
 For more information, see <a href='https://en.wikipedia.org/wiki/Alphanumericals' rel='noopener noreferrer' target='_blank'>Alphanumericals</a> on Wikipedia.
 
-Example: In `TAGS`, entries like `day1` or `day2` are valid, while entries like `hyped!!` or `sad :(` are invalid.
+Example: For tags, entries like `day1` or `day2` are valid, while entries like `day 1` or `day-2` are invalid.
 
 <br><br>
 
