@@ -1506,8 +1506,8 @@ testers are expected to do more <i>exploratory testing</i>.
 - **Reason**: To improve the usability of the application, especially when dealing with long lists, by preventing the list from jumping back to the top after selection.
 - **Example**:
   - Currently, when a user selects an item at the bottom of a long list, the list resets to the top position. This enhancement will keep the list at the current scroll position, making it easier to manage and navigate long lists.
+  
 ---
-
 <div style="page-break-after: always;"></div>
 
 ## **Appendix: Effort**
