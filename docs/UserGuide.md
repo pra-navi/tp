@@ -383,7 +383,6 @@ lp
 
   *<center>CoordiMate shows you the full contact list.</center>*
 
-
 <div style="page-break-after: always;"></div>
 
 #### 1.3. Editing a person: `editPerson`
@@ -571,7 +570,6 @@ All persons will be removed from your contact list immediately. This action is i
 <h4>Example:</h4>
 
 - `deleteAllPerson`<br><br>
-
   ![deleteAllPerson success](images/output/deleteAllPerson_success.png)
 
   *<center>CoordiMate deletes all persons in your contact list.</center>*
@@ -617,7 +615,6 @@ at
 <h4>Example:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`<br><br>
-
   ![addTask_success](images/output/addTask_success.png)
 
   *<center>CoordiMate adds a new task with the corresponding details.</center>*
@@ -696,7 +693,6 @@ et
 <h4>Example:</h4>
 
 - `editTask 2 T/Book room n/By Friday t/orientation`<br><br>
-
   ![editTask_success](images/output/editTask_success.png)
 
   *<center>CoordiMate edits the title, note, and tags of the 2nd task in the task list.</center>*
@@ -838,7 +834,6 @@ dat
 All tasks will be removed from your task list immediately. This action is irreversible.
 
 " %}
-
 
 <h4>Example:</h4>
 
@@ -1267,7 +1262,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 - `findAllTag catering orientation`<br><br>
   ![findAllTag_success_2](images/output/findAllTag_success2.png)
 
-  *<center>CoordiMate finds persons and tasks matching all of <code>catering</code> and <code>orientation</code> in theri tag(s).</center>*
+  *<center>CoordiMate finds persons and tasks matching all of <code>catering</code> and <code>orientation</code> in their tag(s).</center>*
 
 <h4>Potential Error:</h4>
 
@@ -1309,7 +1304,6 @@ dtagp
 <h4>Example:</h4>
 
 - `deleteTagPerson 2 t/EragonSounds t/soundSystems t/catering`<br><br>
-
   ![deleteTagPerson_success](images/output/deleteTagPerson_success.png)
 
   *<center>CoordiMate deletes `EragonSounds` and `soundSystems` tags from the 2nd person, and ignores the `catering` tag.</center>*
@@ -1356,7 +1350,6 @@ dtagt
 <h4>Example:</h4>
 
 - `deleteTagTask 2 t/finance t/orientation t/caterer`<br><br>
-
   ![deleteTagTask_success](images/output/deleteTagTask_success.png)
 
   *<center>CoordiMate deletes `finance` and `orientation` tags from the 2nd task, and ignores the `caterer` tag.</center>*
@@ -1425,7 +1418,6 @@ la
 
 - `listAll`<br><br>
   ![listAll success](images/output/listAll_success.png)
-
   *<center>CoordiMate shows all the persons and tasks in your contact list and task list.</center>*
 
 <div style="page-break-after: always;"></div>
@@ -1485,6 +1477,7 @@ To restore from a backup data file:<br>
 <div style="page-break-after: always;"></div>
 
 ## Glossary
+
 [Back to Table of Contents](#table-of-contents)
 
 ### Command Line Interface
@@ -1500,6 +1493,7 @@ A visual interface that allows users to interact with software using graphical e
 Example: Opening a photo album by clicking on a `Photos` icon.
 
 ### Integer
+
 A whole number without fractions or decimals.
 
 Example: 1, 2, 3, … , 2147483647
