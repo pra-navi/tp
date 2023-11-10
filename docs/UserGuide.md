@@ -841,7 +841,7 @@ All tasks will be removed from your task list immediately. This action is irreve
 
 [Back to Table of Contents](#table-of-contents)
 
-You can indicate that a specific task as **completed**, updating that the task has been successfully completed or resolved.
+You can indicate that a specific task as completed, updating that the task has been successfully completed or resolved.
 
 <h4>Format:</h4>
 
@@ -855,19 +855,19 @@ markTask INDEX
 mt
 ```
 
-- Marks the task at the specified `INDEX` as done. The index refers to the index number shown in the displayed person list. This field is **mandatory**.
-- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
+<h4>Fields:</h4>
 
-{% include admonition.html type="note" title="Note" body="
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is marked as done. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+{: .field-table}
 
-Tasks are marked as not done by default.
-
-" %}
+- Tasks are marked as not done by default.
 
 <h4>Example:</h4>
 
-- `markTask 1`<br><br>
-  ![markTask_success](images/output/markTask_success.png)*<center>CoordiMate marks the 1st task in the task list as done.</center>*
+- `listTask` followed by `markTask 1`<br><br>
+  ![markTask_success](images/output/markTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as done after a `listTask` command.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -883,7 +883,7 @@ Tasks are marked as not done by default.
 
 [Back to Table of Contents](#table-of-contents)
 
-You can indicate that a specific task as **not completed**, updating that the task remains open and pending further action or completion.
+You can indicate that a specific task as not completed, updating that the task remains open and pending further action or completion.
 
 <h4>Format:</h4>
 
@@ -897,19 +897,19 @@ unmarkTask INDEX
 ut
 ```
 
-- Marks the task at the specified `INDEX` as not done. The index refers to the index number shown in the displayed person list. This field is **mandatory**.
-- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
+<h4>Fields:</h4>
 
-{% include admonition.html type="note" title="Note" body="
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|:--------:|---------|
+| `INDEX` | No prefix | <img width=30px src='assets/svg/ug/required.svg'> | The task at this index in the displayed task list is marked as not done. The index must be a positive integer (i.e. 1, 2, 3, … , 2147483647). |
+{: .field-table}
 
-Tasks are marked as not done by default.
-
-" %}
+- Tasks are marked as not done by default.
 
 <h4>Example:</h4>
 
-- `unmarkTask 1`<br><br>
-  ![unmarkTask_success](images/output/unmarkTask_success.png)*<center>CoordiMate marks the 1st task in the task list as not done.</center>*
+- `listTask` followed by `unmarkTask 1`<br><br>
+  ![unmarkTask_success](images/output/unmarkTask_success.png)*<center>CoordiMate marks the task at the index <code>1</code> in the task list as not done after a `listTask` command.</center>*
 
 <h4>Potential Errors:</h4>
 
