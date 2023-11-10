@@ -5,9 +5,7 @@ title: Megan Loo's Project Portfolio Page
 
 ### Project: CoordiMate
 
-CoordiMate is an intuitive desktop application designed specifically for School of Computing (SoC) Computing Club event planners. 
-
-It streamlines the complexities of contact and task management with its user-friendly interface, ensuring seamless navigation and increased productivity for efficient event planning. 
+CoordiMate is a **desktop application** designed specifically for **SoC Computing Club event planners** to help **manage their contacts and tasks** for their events, so that they can focus on the event itself.
 
 Given below are my contributions to the project.
 
