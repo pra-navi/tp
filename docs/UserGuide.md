@@ -1433,7 +1433,7 @@ la
 
 [Back to Table of Contents](#table-of-contents)
 
-Once you are done with your work in CoordiMate, you can exit the program by typing a command.
+You can exit the application, so that you can close the application window and stop the program.
 
 <h4>Format:</h4>
 
@@ -1441,11 +1441,18 @@ Once you are done with your work in CoordiMate, you can exit the program by typi
 exit
 ```
 
+<h4>Alias:</h4>
+
+```
+e
+```
+
 <h4>Example:</h4>
+
 - `exit`
-  - CoordiMate exits and the program window closes.
 
 <br><br>
+
 
 ---
 
