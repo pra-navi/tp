@@ -101,6 +101,40 @@ Throughout this guide, you will see different text styles that are used to highl
 
 <div style="page-break-after: always;"></div>
 
+## Features
+
+[Back to Table of Contents](#table-of-contents)
+
+1. **Easy Management of People**:
+
+  - Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
+
+2. **Effortless Task Management**:
+
+  - CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.
+
+3. **Simplified Searching**:
+
+  - Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!
+
+4. **Hassle-Free Data Management**:
+
+  - CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
+  - When CoordiMate starts, your existing data is automatically loaded in, allowing you to pick up where you left off.
+  - For advanced users, CoordiMate offers you complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
+
+{% include admonition.html type="warning" title="Warning" body="
+
+If your changes to the data file makes its format invalid, CoordiMate will not be able to load the data file, resulting in the contact and task lists being empty. <br>
+
+Always make a backup before you edit!
+
+" %}
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ## Quick Start
 
 [Back to Table of Contents](#table-of-contents)
@@ -142,49 +176,15 @@ Throughout this guide, you will see different text styles that are used to highl
 
 <div style="page-break-after: always;"></div>
 
-## Features
-
-[Back to Table of Contents](#table-of-contents)
-
-1. **Easy Management of People**:
-
-- Seamlessly create, update, and delete your contacts, ensuring your contact list is always up-to-date.
-
-2. **Effortless Task Management**:
-
-- CoordiMate records down your tasks and their completion status, allowing you to stay on top of your to-do list.
-
-3. **Simplified Searching**:
-
-- Easily locate contacts or tasks based on your criteria. No more scrolling through endless lists!
-
-4. **Hassle-Free Data Management**:
-
-- CoordiMate automatically saves your data on every change, so you never have to worry about losing your data.
-- When CoordiMate starts, your existing data is automatically loaded in, allowing you to pick up where you left off.
-- For advanced users, CoordiMate offers you complete data control by saving your data in a human-readable format. Locate the data file at `[JAR file location]/data/addressbook.json` to edit CoordiMate's data directly!
-
-{% include admonition.html type="warning" title="Warning" body="
-
-If your changes to the data file makes its format invalid, CoordiMate will not be able to load the data file, resulting in the contact and task lists being empty. <br>
-
-Always make a backup before you edit!
-
-" %}
-
----
-
-<div style="page-break-after: always;"></div>
-
 ## Usage
 
 [Back to Table of Contents](#table-of-contents)
 
-The commands are split into 5 main sections:
+The commands are split into 4 main sections:
 
-1. [Managing Person commands](#1-commands-to-manage-persons)
-2. [Managing Task commands](#2-commands-to-manage-tasks)
-3. [Managing Tag commands](#3-commands-to-manage-tags)
+1. [Commands to Manage Persons](#1-commands-to-manage-persons)
+2. [Commands to Manage Tasks](#2-commands-to-manage-tasks)
+3. [Commands to Manage Tags](#3-commands-to-manage-tags)
 4. [General commands](#4-general-commands)
 
 {% include admonition.html type="note" title="Note" body="
@@ -285,7 +285,7 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 <div style="page-break-after: always;"></div>
 
-### Understanding Our UI
+### Understanding Our GUI
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -300,7 +300,7 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 {% include admonition.html type="note" title="Note" body="
 
-Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a gentle drag in or out to customize the view according to your preference
+Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a drag in or out to customize the view according to your preference
 
 " %}
 
