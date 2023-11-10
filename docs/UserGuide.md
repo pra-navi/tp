@@ -300,7 +300,7 @@ A summary of valid aliases is shown in the [Command Summary](#command-summary) s
 
 {% include admonition.html type="note" title="Note" body="
 
-Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a drag in or out to customize the view according to your preference
+Here's a handy trick – you can easily resize sections like Command Result, Contact List, and Task List. Just give the sides a drag in or out to customize the view according to your preference.
 
 " %}
 
