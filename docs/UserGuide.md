@@ -362,7 +362,7 @@ ap
 
 [Back to Table of Contents](#table-of-contents)
 
-You can view your entire contact list so that you can quickly access and manage your connections.
+You can view your entire contact list, so that you can quickly access and manage your connections.
 
 <h4>Format:</h4>
 
@@ -390,7 +390,7 @@ lp
 
 [Back to Table of Contents](#table-of-contents)
 
-You can change the details of an existing person in your contact list so that you can keep information in your contact list constantly up-to-date.
+You can change the details of an existing person in your contact list, so that you can keep information in your contact list constantly up-to-date.
 
 <h4>Format:</h4>
 
@@ -501,7 +501,7 @@ To reset the persons view, simply run the <code>listPerson</code> command to lis
 
 [Back to Table of Contents](#table-of-contents)
 
-You can remove a person from your contact list so that you can remove contacts that you no longer need.
+You can remove a person from your contact list, so that you can remove contacts that you no longer need.
 
 <h4>Format:</h4>
 
@@ -548,7 +548,7 @@ This person will be removed from your contact list <b>immediately</b>. This acti
 
 [Back to Table of Contents](#table-of-contents)
 
-You can delete all persons in your contact list, so that you can start afresh with a clean slate.
+You can delete all persons in your contact list, so that you can restart easily with a clean slate and an empty contact list.
 
 <h4>Format:</h4>
 
@@ -635,7 +635,7 @@ at
 
 [Back to Table of Contents](#table-of-contents)
 
-You can view your entire task list so that you can stay organized and on top of your responsibilities.
+You can view your entire task list, so that you can stay organized and on top of your responsibilities.
 
 <h4>Format:</h4>
 
@@ -768,7 +768,7 @@ To reset the tasks view, simply run the <code>listTask</code> command to list al
 
 [Back to Table of Contents](#table-of-contents)
 
-You can remove a task from your task list so that you can remove tasks that you no longer need.
+You can remove a task from your task list, so that you can remove tasks that you no longer need.
 
 <h4>Format:</h4>
 
@@ -819,7 +819,7 @@ The task will be removed from your task list <b>immediately</b>. This action is 
 
 [Back to Table of Contents](#table-of-contents)
 
-You can remove all tasks from your task list so that you can restart easily with a clean slate and an empty task list.
+You can remove all tasks from your task list, so that you can restart easily with a clean slate and an empty task list.
 
 <h4>Format:</h4>
 
@@ -852,7 +852,7 @@ All tasks will be removed from your task list immediately. This action is irreve
 
 [Back to Table of Contents](#table-of-contents)
 
-You can indicate that a specific task as completed so that you can keep track of task progress and identify tasks that are done.
+You can indicate that a specific task as completed, so that you can keep track of task progress and identify tasks that are done.
 
 <h4>Format:</h4>
 
@@ -894,7 +894,7 @@ mt
 
 [Back to Table of Contents](#table-of-contents)
 
-You can indicate that a specific task as not completed so that you can keep track of task progress and identify tasks that are pending further action or completion.
+You can indicate that a specific task as not completed, so that you can keep track of task progress and identify tasks that are pending further action or completion.
 
 <h4>Format:</h4>
 
@@ -936,7 +936,7 @@ ut
 
 [Back to Table of Contents](#table-of-contents)
 
-You can filter the task list to locate all completed tasks so that you can keep track of task progress and the number of completed tasks with ease.
+You can filter the task list to locate all completed tasks, so that you can keep track of task progress and the number of completed tasks with ease.
 
 <h4>Format:</h4>
 
@@ -969,7 +969,7 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 [Back to Table of Contents](#table-of-contents)
 
-You can filter the task list to locate all not completed tasks so that you can keep track of task progress and the number of not completed tasks with ease.
+You can filter the task list to locate all not completed tasks, so that you can keep track of task progress and the number of not completed tasks with ease.
 
 <h4>Format:</h4>
 
@@ -1002,7 +1002,7 @@ To reset the Tasks view, simply run the <code>listTask</code> command to list al
 
 [Back to Table of Contents](#table-of-contents)
 
-You can remove all completed tasks in the task list so that you can focus on not completed tasks and maintain an organized and clutter-free task list.
+You can remove all completed tasks in the task list, so that you can focus on not completed tasks and maintain an organized and clutter-free task list.
 
 <h4>Format:</h4>
 
@@ -1046,7 +1046,7 @@ All completed tasks will be removed from your task list immediately. This action
 
 [Back to Table of Contents](#table-of-contents)
 
-You can add tag(s) to a person so that you can simply add to the existing list of tags of the indexed person.
+You can add tag(s) to a person, so that you can simply add to the existing list of tags of the indexed person.
 
 <h4>Format:</h4>
 
@@ -1092,7 +1092,7 @@ atagp
 
 [Back to Table of Contents](#table-of-contents)
 
-You can add tag(s) to a task so that you can simply add to the existing list of tags of the indexed task.
+You can add tag(s) to a task, so that you can simply add to the existing list of tags of the indexed task.
 
 <h4>Format:</h4>
 
@@ -1177,7 +1177,7 @@ ltag
 
 [Back to Table of Contents](#table-of-contents)
 
-You can extend your search with keywords so that you can locate any person or task with at least one matching tag.
+You can extend your search with keywords, so that you can locate any person or task with at least one matching tag.
 
 <h4>Format:</h4>
 
@@ -1229,7 +1229,7 @@ To reset the Persons and Tasks view, simply run the <code>listAll</code> command
 
 [Back to Table of Contents](#table-of-contents)
 
-You can narrow your search using multiple keywords so that you can find only those contacts and tasks that include every tag you need.
+You can narrow your search using multiple keywords, so that you can find only those contacts and tasks that include every tag you need.
 
 <h4>Format:</h4>
 
