@@ -1485,19 +1485,18 @@ A text-based interface used to interact with a computer or software by entering 
 
 Example: In order to delete a task, user types `deleteTask 1` and pressing Enter. The task specified is deleted.
 
+For more information on CoordiMate's commands, read more about it [here](#usage).
+
 ### Graphical User Interface
 
 A visual interface that allows users to interact with software using graphical elements like icons and windows, making it more user-friendly.
 
 Example: After `listAll` command, users can scroll the contact list and task list to view information in both lists and see different icons for done and not done tasks respectively.
 
-### Integer
-<<<<<<< Updated upstream
+For more information on CoordiMate's GUI, read more about it [here](#understanding-our-gui).
 
-A whole number without fractions or decimals.
-=======
+### Integer
 A whole number without fractions or decimals, commonly used in CoordiMate to denote the position of an item in a collection or list.
->>>>>>> Stashed changes
 
 The valid range for accepted integers is 1, 2, 3, … , 2147483647
 
