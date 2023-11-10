@@ -41,7 +41,7 @@ And here's the best part – while it's perfect for members of SoC Computing Clu
 
 <h4>Why choose CoordiMate?</h4>
 
-1. **User-Friendly Command Line Interface (CLI)**: CoordiMate is optimized for use via a CLI, combining all the benefits of a Graphical User Interface (GUI) with the efficiency of a CLI.
+1. **User-Friendly [Command Line Interface (CLI)](#command-line-interface)**: CoordiMate is optimized for use via a CLI, combining all the benefits of a [Graphical User Interface (GUI)](#graphical-user-interface) with the efficiency of a CLI.
 
 2. **Speedy Navigation**: If you're a fast typist, CoordiMate will help you complete your contact and tasks management faster than traditional GUI apps, maximising your productivity.
 
