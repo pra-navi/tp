@@ -1450,6 +1450,38 @@ To restore from a backup data file:<br>
 
 <div style="page-break-after: always;"></div>
 
+## Glossary
+[Back to Table of Contents](#table-of-contents)
+
+### Command Line Interface
+
+A text-based interface used to interact with a computer or software by entering commands into a terminal or command prompt.
+
+Example: Copying files by typing `copy file.txt destination` and pressing Enter.
+
+### Graphical User Interface
+
+A visual interface that allows users to interact with software using graphical elements like icons and windows, making it more user-friendly.
+
+Example: Opening a photo album by clicking on a `Photos` icon.
+
+### Integer
+A whole number without fractions or decimals.
+
+Example: 1, 2, 3, … , 2147483647
+
+### Alphanumeric
+
+A combination of letters and numbers only, no spaces or special characters
+
+Example: abc123
+
+<br><br>
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ## Known Issues
 
 [Back to Table of Contents](#table-of-contents)
