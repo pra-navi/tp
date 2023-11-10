@@ -590,7 +590,7 @@ All persons will be removed from your contact list immediately. This action is i
 
 [Back to Table of Contents](#table-of-contents)
 
-Adds a task to your task list.
+You can add a task to your task list, so that you can keep track of important things to do.
 
 <h4>Format:</h4>
 
@@ -604,20 +604,27 @@ addTask T/TITLE n/NOTE [t/TAG]…
 at
 ```
 
-- Provide the title of the task using the `T/` prefix. This field is **mandatory**.
-- Provide the note of the task using the `n/` prefix. This field is **mandatory**.
-- Tag the task using the `t/` prefix. This field is **optional**.
+<h4>Fields:</h4>
+
+| Fields | Prefix | Required | Remarks |
+|--------|--------|:--------:|---------|
+| `TITLE` | `T/` | <img width=30px src='assets/svg/ug/required.svg'> | Title describing the task. |
+| `NOTE` | `n/` | <img width=30px src='assets/svg/ug/required.svg'> | Note providing details about the task. |
+| `TAG` | `t/` | <img width=33px src='assets/svg/ug/not_required.svg'> | Tag(s) for the task.|
+{: .field-table}
+
+- A task is uniquely identified by the combination of its `TITLE` and `NOTE`. These fields are case sensitive.
 - You may add multiple tags to a task by specifying the `t/` prefix multiple times.
-- A task is identified by the combination of its title and note. This means that you cannot have two tasks with the same title and note.
 
 <h4></h4>
 
 <h4>Example:</h4>
 
 - `addTask T/Book rooms n/For day 2 t/orientation t/bookings`
-  - Adds a task titled `Book rooms` with note `For day 2` and tags `orientation` and `bookings`.<br><br>
 
   ![addTask_success](images/output/addTask_success.png)<br><br>
+
+  *<center>CoordiMate adds a new task with the corresponding details.</center>*
 
 <h4>Potential Errors:</h4>
 
