@@ -498,20 +498,7 @@ To reset the persons view, simply run the <code>listPerson</code> command to lis
 
 [Back to Table of Contents](#table-of-contents)
 
-Allows you to remove an outdated person from your contact list with ease.
-
-{% include admonition.html type="warning" title="Warning" body="
-
-The person will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
-
-" %}
-
-{% include admonition.html type="note" title="Note" body="
-
-This command is used after the list is defined either as a filtered list through `findPerson bernice` or through `listPerson`.<br><br>
-Then, the index of the person in the defined list is used to delete the person.<br><br>
-
-" %}
+You can remove a person from your contact list so that you can remove contacts that you no longer need.
 
 <h4>Format:</h4>
 
@@ -525,16 +512,24 @@ deletePerson INDEX
 dp
 ```
 
-- Deletes the person at the specified `INDEX`.
-- The index refers to the index number shown in the displayed person list.
-- The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
+<h4>Fields:</h4>
+
+| Fields  | Prefix | Required                                           | Remarks                                                                                                                         |
+|---------|--------|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The person at this index in the displayed person list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+
+{% include admonition.html type="warning" title="Warning" body="
+
+This person will be removed from your contact list <b>immediately</b>. This action is <b>irreversible</b>.
+
+" %}
 
 <h4>Example:</h4>
 
-- `listPerson` followed by `deletePerson 2`
-  - Deletes the 2nd person in the results of the `listPerson` command.
-  - Example output for correct usage of `deletePerson` command: <br><br>
+- `listPerson` followed by `deletePerson 2`.
   ![deletePerson_success_with_listPerson](images/output/deletePerson_success.png)
+
+  *<center>CoordiMate deletes the person at the index <code>2</code>, displayed after a `listPerson` command.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -751,20 +746,7 @@ ft
 
 [Back to Table of Contents](#table-of-contents)
 
-Allows you to remove a task from your task list with ease.
-
-{% include admonition.html type="warning" title="Warning" body="
-
-The task will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
-
-" %}
-
-{% include admonition.html type="note" title="Note" body="
-
-This command is used after the list is defined either as a filtered list through `findTask caterer` or through `listTask`.<br><br>
-Then, the index of the task in the defined list is used to delete the task.<br><br>
-
-" %}
+You can remove a task from your task list so that you can remove tasks that you no longer need.
 
 <h4>Format:</h4>
 
@@ -782,13 +764,24 @@ dt
 - The index refers to the index number shown in the task list currently displayed.
 - The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
 
+<h4>Fields:</h4>
+
+| Fields  | Prefix | Required                                           | Remarks                                                                                                                     |
+|---------|--------|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png) | The task at this index in the displayed task list is deleted. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+
+{% include admonition.html type="warning" title="Warning" body="
+
+The task will be removed from your task list <b>immediately</b>. This action is <b>irreversible</b>.
+
+" %}
+
 <h4>Example:</h4>
 
 - `listTask` followed by `deleteTask 2`
-  - Deletes the 2nd task in the results of the `listTask` command.
-  - Example output for correct usage of `deleteTask` command: <br><br>
-
   ![deleteTask_success](images/output/deleteTask_success.png)
+
+  *<center>CoordiMate deletes the task at the index <code>2</code>, displayed after a `listTask` command.</center>*
 
 <h4>Potential Errors:</h4>
 
@@ -796,16 +789,6 @@ dt
 ---------------|---------------
 `Invalid command format!…` | Ensure that the index is correctly specified as an integer.
 `The task index provided is invalid` | Ensure that the index provided is within the valid range.
-
-- `deleteTask`
-  - Negative example as no index is specified.<br><br>
-
-  ![deleteTask error_no_index](images/error/deleteTask_error.png)<br><br>
-
-- `deleteTask 1000`
-  - Invalid index is provided.<br><br>
-
-  ![deleteTask error_invalid_index](images/error/deleteTask_wrongIndex.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -1049,12 +1032,12 @@ dad
 
 [Back to Table of Contents](#table-of-contents)
 
-Enables you to add tag(s) to the existing list of tags of an existing contact in your contact list.
+You can add tag(s) to a person so that you can simply add to the existing list of tags of the indexed person.
 
 <h4>Format:</h4>
 
 ```
-addTagPerson INDEX [t/TAG]…
+addTagPerson INDEX t/TAG [t/MORE_TAGS]…
 ```
 
 <h4>Alias:</h4>
@@ -1063,25 +1046,29 @@ addTagPerson INDEX [t/TAG]…
 atagp
 ```
 
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The
-  index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
-- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
+<h4>Fields:</h4>
+
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|----------|---------|
+| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png)     | The person at this index in the displayed person list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+| `TAG` | `t/` | ![required](../src/main/resources/images/done.png)     | The tag to be added to the person. |
+| `MORE_TAGS` | `t/` | ![optional](../src/main/resources/images/not_done.png) | More additional tags to be added to the person. |
+
+- A tag is uniquely identified by the `TAG`. This field is case sensitive.
 
 <h4>Example:</h4>
 
-- `addTagPerson 1 t/friends t/expensive`
-  - Adds the tag `expensive` to the list of existing tags of the 1st person, while `friends` is mentioned in the output to have already been included in the list of existing tags.
-  - Example output for correct usage of `addTagPerson` command: <br><br>
+- `addTagPerson 1 t/friends t/expensive`.<br><br>
 
   ![addTagPerson success](images/output/addTagPerson_success.png)
+
+  *<center>CoordiMate adds tag `expensive` to the person at the index <code>1</code>, while `friends` is not added because it already exists in the list of tags.</center>*
 
 <h4>Potential Errors:</h4>
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!…` | Ensure that the index AND tag are both specified. The index should be correctly specfiied as an integer.
+`Invalid command format!…` | Ensure that the index and tag are both specified. The index should be correctly specfiied as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
 `The person index provided is invalid` | Ensure that the index provided is within the valid range.
 
@@ -1091,12 +1078,12 @@ atagp
 
 [Back to Table of Contents](#table-of-contents)
 
-Enables you to add tag(s) to the existing list of tags of an existing task in your task list.
+You can add tag(s) to a task so that you can simply add to the existing list of tags of the indexed task.
 
 <h4>Format:</h4>
 
 ```
-addTagTask INDEX [t/TAG]…
+addTagTask INDEX t/TAG [t/MORE_TAGS]…
 ```
 
 <h4>Alias:</h4>
@@ -1105,24 +1092,29 @@ addTagTask INDEX [t/TAG]…
 atagt
 ```
 
-- Edits the task at the specified `INDEX`. The index refers to the index number shown in the displayed task list. The index **_must be a positive integer_** 1, 2, 3, … , 2147483647.
-- At least one tag must be provided.
-- Existing list of tags will be updated after adding in the input tags.
-- Tags are uniquely identified so `finance` and `Finance` are considered two different tags.
+<h4>Fields:</h4>
+
+| Fields  | Prefix | Required | Remarks |
+|---------|--------|----------|---------|
+| `INDEX` | No Prefix | ![required](../src/main/resources/images/done.png)     | The task at this index in the displayed task list is edited. The index must be a positive integer 1, 2, 3, … , 2147483647. |
+| `TAG` | `t/` | ![required](../src/main/resources/images/done.png)     | The tag to be added to the task. |
+| `MORE_TAGS` | `t/` | ![optional](../src/main/resources/images/not_done.png) | More additional tags to be added to the task. |
+
+- A tag is uniquely identified by the `TAG`. This field is case sensitive.
 
 <h4>Example:</h4>
 
-- `addTagTask 1 t/day1 t/day2`
-  - Adds the tag `day2` to the list of existing tags of the 1st task, while `day1` is mentioned in the output to have already been included in the list of existing tags.
-  - Example output for correct usage of `addTagTask` command: <br><br>
+- `addTagTask 1 t/day1 t/day2`.<br><br>
 
   ![addTagTask success](images/output/addTagTask_success.png)
+
+  *<center>CoordiMate adds tag `day2` to the task at the index <code>1</code>, while `day1` is not added because it already exists in the list of tags.</center>*
 
 <h4>Potential Errors:</h4>
 
  Error message | How to resolve
 ---------------|---------------
-`Invalid command format!…` | Ensure that the index AND tag are both specified. The index should be correctly specified as an integer.
+`Invalid command format!…` | Ensure that the index and tag are both specified. The index should be correctly specified as an integer.
 `Tags names should be alphanumeric` | Ensure that the tag is specified and is alphanumeric.
 `The task index provided is invalid` | Ensure that the index provided is within the valid range.
 
