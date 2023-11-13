@@ -40,8 +40,6 @@ Given below are my contributions to the project.
     `editTask` command.
   * Credits: The `addTagTask` command was inspired by the `editTask` command in AB3.<br><br>
 
-<div style="page-break-after: always;"></div>
-
 * **Code contributed**: [RepoSense Link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=pra-navi&breakdown=true)
 
 * **Project management**:
@@ -78,5 +76,4 @@ Given below are my contributions to the project.
 
 * **Community**:
     * PRs reviewed by me can be found [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/pulls?q=is%3Apr+reviewed-by%3Apra-navi).
-    * Some parts of the history feature I added was adopted by several other class mates: To be added soon!
     * Reported 8 bugs and suggestions during PE Dry Run. ([Repo](https://github.com/pra-navi/ped/issues))<br><br>
