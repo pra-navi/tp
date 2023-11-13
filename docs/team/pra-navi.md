@@ -65,14 +65,14 @@ Given below are my contributions to the project.
     * User Guide:
         * Added the documentation for the `deletePerson`, `deleteTask`, `addTagPerson` and `addTagTask` commands. 
           (PR [#59](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/59), [#69](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/69), [#107](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/107), 
-          [#108](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/108), [#160](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/160)) 
+          [#108](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/108), [#160](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/160), [#172](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/172)) 
           <br><br>
     * Developer Guide:
         * Added user stories and use cases for `deletePerson`, `deleteTask`, `addTagPerson` and `addTagTask` 
           commands. (PR [#55](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/55))
         * Added the implementation details of `deleteTask` and `addTagPerson` commands. (PR [100](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/100), [#109](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/109), 
           [#163](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/163)) 
-          <br><br>
+        * Added Improved UI section. (PR [#174](https://github.com/AY2324S1-CS2103T-T10-2/tp/pull/174))<br><br>
 
 * **Community**:
     * PRs reviewed by me can be found [here](https://github.com/AY2324S1-CS2103T-T10-2/tp/pulls?q=is%3Apr+reviewed-by%3Apra-navi).
